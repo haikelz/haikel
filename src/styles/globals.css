@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Lexend:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+  font-family: "Lexend", sans-serif;
+}
+
+/*Underline hover effect*/
+
+.logo {
+  font-family: "Caveat", sans-serif;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  @apply font-medium;
+}
