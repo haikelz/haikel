@@ -22,7 +22,7 @@ const About = () => {
               Hello. I&#39;m Haikel. From Bangka Belitung. Focusing on building
               beautiful and minimal Website. When i have free time, i usually
               watch tech related videos, playing chess, write something on my{" "}
-              <Link href="https://haikelz.me/posts">
+              <Link href="https://haikelz.me/posts" passHref>
                 <span className="text-blue-500 font-bold hover:text-blue-600 duration-500 cursor-pointer">
                   Blog
                 </span>

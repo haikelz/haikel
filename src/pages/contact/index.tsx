@@ -16,17 +16,17 @@ const Contact = () => {
               Find me on:{" "}
             </h1>
             <div className="flex justify-center">
-              <Link href="https://github.com/haikelz">
+              <Link href="https://github.com/haikelz" passHref>
                 <p className="cursor-pointer mx-4 hover:text-blue-500 duration-500">
                   <FaGithub />
                 </p>
               </Link>
-              <Link href="https://t.me/pempek_kapal_selem">
+              <Link href="https://t.me/pempek_kapal_selem" passHref>
                 <p className="cursor-pointer mx-4 hover:text-blue-500 duration-500">
                   <FaTelegram />
                 </p>
               </Link>
-              <Link href="https://facebook.com/kelgfx">
+              <Link href="https://facebook.com/kelgfx" passHref>
                 <p className="cursor-pointer mx-4 hover:text-blue-500 duration-500">
                   <FaFacebook />
                 </p>

@@ -8,7 +8,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="nav fixed z-50 w-full backdrop-blur-md bg-[#191724] opacity-75">
+    <nav className="nav fixed z-50 w-full bg-[#191724]">
       <div className="text-sm max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center h-12 justify-between">
           <Link href="/" passHref>
