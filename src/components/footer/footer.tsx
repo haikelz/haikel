@@ -1,10 +1,7 @@
 import Link from "next/link";
-import { useColorModeValue, Box } from "@chakra-ui/react";
 
 const Footer = () => {
   const today = new Date();
-  const bg = useColorModeValue("#f1f5f9", "#191724");
-  const color = useColorModeValue("black", "white");
 
   return (
     <div className="body-font tracking-widest pb-4 text-center">
