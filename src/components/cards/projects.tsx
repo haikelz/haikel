@@ -1,6 +1,5 @@
 import { cn } from "@/src/utils/className";
 import { ProjectsList } from "./projectsList";
-import { Flex, Box, Text } from "@chakra-ui/react";
 import { GrGithub } from "react-icons/gr";
 import { FiExternalLink } from "react-icons/fi";
 import { List } from "./typeList";
