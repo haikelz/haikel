@@ -35,20 +35,20 @@ const Projects = ({ setLoading, isLoading }: List) => {
               <p className="tracking-wide text-sm mb-2">{work.p}</p>
 
               <div className="flex mt-3">
-                <p className="mr-2 px-1.5">{work.stack1}</p>
-                <p className="px-1.5">{work.stack2}</p>
+                <span className="mr-2 px-1.5 text-slate-900 bg-[#d1d9d0]">
+                  {work.stack1}
+                </span>
+                <span className="px-1.5 text-slate-900 bg-[#d1d9d0]">
+                  {work.stack2}
+                </span>
               </div>
 
               <div className="flex mt-3 justify-end">
                 <Link href={work.repo} passHref>
-                  <a>
-                    <GrGithub className="hover:text-blue-400 duration-500 mr-2" />
-                  </a>
+                  <GrGithub className="hover:text-blue-400 duration-500 mr-2 cursor-pointer" />
                 </Link>
                 <Link href={work.preview} passHref>
-                  <a>
-                    <FiExternalLink className="hover:text-blue-500 duration-500" />
-                  </a>
+                  <FiExternalLink className="hover:text-blue-500 duration-500 cursor-pointer" />
                 </Link>
               </div>
             </div>
