@@ -7,11 +7,7 @@ const Footer = () => {
   const color = useColorModeValue("black", "white");
 
   return (
-    <Box
-      bg={bg}
-      color={color}
-      className="body-font tracking-widest pb-4 text-center"
-    >
+    <div className="body-font tracking-widest pb-4 text-center">
       <p className="text-xs pb-1">©2020-{today.getFullYear()} Haikel.</p>
       <p className="text-xs">
         Built with{" "}
@@ -27,7 +23,7 @@ const Footer = () => {
           </span>
         </Link>
       </p>
-    </Box>
+    </div>
   );
 };
 

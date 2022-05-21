@@ -1,13 +1,10 @@
-import { Box, useColorModeValue } from "@chakra-ui/react";
 import { FaGithub, FaTelegram, FaFacebook } from "react-icons/fa";
 import Head from "next/head";
 import Link from "next/link";
 
 const Contact = () => {
-  const bg = useColorModeValue("#f1f5f9", "#191724");
-  const color = useColorModeValue("black", "white");
   return (
-    <Box bg={bg} color={color}>
+    <>
       <Head>
         <title>Contact</title>
       </Head>
@@ -38,7 +35,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
-    </Box>
+    </>
   );
 };
 

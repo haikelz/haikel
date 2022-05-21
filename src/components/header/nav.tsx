@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { NavList } from "./navList";
+import Link from "next/link";
 
 const Nav = () => {
   return (

@@ -1,14 +1,10 @@
-import { Box, useColorModeValue } from "@chakra-ui/react";
 import Head from "next/head";
 import Underline from "@/src/components/underline/underline";
 import Cards from "@/src/components/cards/cards";
 
 const Works = () => {
-  const bg = useColorModeValue("#f1f5f9", "#191724");
-  const color = useColorModeValue("black", "white");
-
   return (
-    <Box bg={bg} color={color}>
+    <>
       <Head>
         <title>Works</title>
       </Head>
@@ -31,7 +27,7 @@ const Works = () => {
           </div>
         </div>
       </section>
-    </Box>
+    </>
   );
 };
 
