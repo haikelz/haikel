@@ -1,8 +1,12 @@
+import { cn } from "@/src/utils/className";
 import Head from "next/head";
 import Link from "next/link";
 import Underline from "@/src/components/underline/underline";
+import Image from "next/image";
+import { useState } from "react";
 
 const About = () => {
+  const [isLoading, setLoading] = useState(true);
   return (
     <div>
       <Head>
@@ -18,17 +22,35 @@ const About = () => {
               </h1>
               <Underline />
             </div>
-            <p className="text-md w-full leading-relaxed mt-4 text-center">
-              Hello. I&#39;m Haikel. From Bangka Belitung. Focusing on building
-              beautiful and minimal Website. When i have free time, i usually
-              watch tech related videos, playing chess, write something on my{" "}
-              <Link href="https://haikelz.me/posts" passHref>
-                <span className="text-blue-500 font-bold hover:text-blue-600 duration-500 cursor-pointer">
-                  Blog
-                </span>
-              </Link>
-              , and jogging.
-            </p>
+            <div className="mt-2 sm:mt-4 flex justify-center items-center flex-col sm:flex-row">
+              <div className="overflow-hidden rounded-md">
+                <Image
+                  src="https://avatars.githubusercontent.com/u/77146709?v=4"
+                  width="250px"
+                  height="250px"
+                  priority
+                  className={cn(
+                    "rounded-md mb-6 hover:opacity-75 duration-700 ease-in-out",
+                    isLoading
+                      ? "grayscale blur-2xl scale-110"
+                      : "grayscale-0 blur-0 scale-100"
+                  )}
+                  onLoadingComplete={() => setLoading(false)}
+                />
+              </div>
+              <p className="text-md sm:w-1/2 md:w-[40%] leading-relaxed sm:ml-4 mt-3 sm:mt-0 text-center">
+                Hello. I&#39;m Haikel. From Bangka Belitung Islands. Focusing on
+                building beautiful and minimal Website. When i have free time, i
+                usually watch tech related videos, playing chess, write
+                something on my{" "}
+                <Link href="https://haikelz.me/posts" passHref>
+                  <span className="text-blue-500 font-bold hover:text-blue-600 duration-500 cursor-pointer">
+                    Blog
+                  </span>
+                </Link>
+                , and jogging. Love to meet new people, and new opportunity.
+              </p>
+            </div>
           </div>
         </div>
       </section>
