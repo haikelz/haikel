@@ -1,18 +1,20 @@
-import { useState } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
+import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
+import { FiMenu, FiMoon, FiSun, FiX } from "react-icons/fi";
 import Link from "next/link";
 import Nav from "./nav";
 import NavMobile from "./navMobile";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   return (
-    <nav className="nav fixed z-50 w-full bg-[#191724]">
+    <nav className="nav fixed z-50 w-full bg-white dark:bg-[#191724]">
       <div className="text-sm max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center h-12 justify-between">
           <Link href="/" passHref>
-            <p className="logo cursor-pointer text-2xl font-bold tracking-widest border-none outline-none hover:text-blue-600 duration-500">
+            <p className="logo cursor-pointer text-2xl font-bold tracking-widest border-none outline-none hover:text-blue-600 duration-300">
               Haikel
             </p>
           </Link>
@@ -22,6 +24,14 @@ const Header = () => {
             <div className="hidden md:block">
               <div className="ml-8 flex space-x-4 tracking-widest">
                 <Nav />
+                <button
+                  aria-label="toggle Dark Mode"
+                  type="button"
+                  className=""
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                >
+                  {theme === "dark" ? <FiSun /> : <FiMoon />}
+                </button>
               </div>
             </div>
           </div>
@@ -49,6 +59,12 @@ const Header = () => {
         <div className="md:hidden" id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <NavMobile />
+            <p
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="hover:bg-[#2a273f] hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >
+              {theme === "light" ? "Dark" : "Light"} Mode
+            </p>
           </div>
         </div>
       ) : (

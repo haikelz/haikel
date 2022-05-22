@@ -19,8 +19,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: white;
-  background: #191724;
+  @apply bg-white dark:bg-[#191724];
 }
 
 p {
