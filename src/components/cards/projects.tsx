@@ -8,9 +8,12 @@ import Image from "next/image";
 const Projects = ({ setLoading, isLoading }: List) => {
   return (
     <>
-      {ProjectsList.map((work) => (
-        <div className="works_image xl:w-1/4 md:w-1/2 z-0 p-4" key={work.id}>
-          <div className="overflow-hidden shadow-lg rounded-lg bg-slate-100 dark:bg-[#1f1d2e]">
+      <div className="grid grid-cols-1 grid-rows-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+        {ProjectsList.map((work) => (
+          <div
+            className="overflow-hidden shadow-lg rounded-lg bg-slate-100 dark:bg-[#1f1d2e]"
+            key={work.id}
+          >
             <Image
               alt="placeholder"
               width={"640px"}
@@ -56,8 +59,8 @@ const Projects = ({ setLoading, isLoading }: List) => {
               </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </>
   );
 };

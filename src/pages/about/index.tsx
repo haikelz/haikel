@@ -28,9 +28,8 @@ const About = () => {
                   src="https://avatars.githubusercontent.com/u/77146709?v=4"
                   width="250px"
                   height="250px"
-                  priority
                   className={cn(
-                    "cursor-pointer rounded-md mb-6 hover:opacity-75 duration-700 ease-in-out",
+                    "cursor-pointer rounded-md hover:opacity-75 duration-700 ease-in-out",
                     isLoading
                       ? "grayscale blur-2xl scale-110"
                       : "grayscale-0 blur-0 scale-100"
