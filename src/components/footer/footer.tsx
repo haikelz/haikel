@@ -14,9 +14,9 @@ const Footer = () => {
           </span>
         </Link>
         , Hosted on{" "}
-        <Link href="https://vercel.com" passHref>
+        <Link href="https://pages.cloudflare.com/" passHref>
           <span className="cursor-pointer hover:underline font-bold">
-            Vercel
+            Cloudflare
           </span>
         </Link>
       </p>
