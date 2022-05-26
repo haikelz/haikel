@@ -28,6 +28,7 @@ const About = () => {
                   src="https://avatars.githubusercontent.com/u/77146709?v=4"
                   width="250px"
                   height="250px"
+                  alt="Profile"
                   className={cn(
                     "cursor-pointer rounded-md hover:opacity-75 duration-700 ease-in-out",
                     isLoading
