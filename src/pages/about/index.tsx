@@ -1,9 +1,9 @@
-import { cn } from "@/src/utils/className";
+import { cn } from "@/src/class/className";
+import { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import Underline from "@/src/components/underline/underline";
 import Image from "next/image";
-import { useState } from "react";
+import Underline from "@/src/components/underline";
 
 const About = () => {
   const [isLoading, setLoading] = useState(true);

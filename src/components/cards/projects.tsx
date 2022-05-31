@@ -1,4 +1,4 @@
-import { cn } from "@/src/utils/className";
+import { cn } from "@/src/class/className";
 import { ProjectsList } from "./projectsList";
 import { GrGithub } from "react-icons/gr";
 import { FiExternalLink } from "react-icons/fi";

@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Underline from "@/src/components/underline/underline";
-import Cards from "@/src/components/cards/cards";
+import Underline from "@/src/components/underline";
+import Cards from "@/src/components/cards";
 
 const Works = () => {
   return (

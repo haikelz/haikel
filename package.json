@@ -14,12 +14,14 @@
   "dependencies": {
     "next": "12.1.6",
     "next-themes": "^0.2.0",
+    "nprogress": "^0.2.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-icons": "^4.3.1"
   },
   "devDependencies": {
     "@types/node": "17.0.35",
+    "@types/nprogress": "^0.2.0",
     "@types/react": "18.0.9",
     "autoprefixer": "^10.4.7",
     "eslint": "8.16.0",
