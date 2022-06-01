@@ -8,7 +8,7 @@ import Image from "next/image";
 const Projects = ({ setLoading, isLoading }: List) => {
   return (
     <>
-      <div className="grid grid-cols-1 grid-rows-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+      <div className="grid grid-cols-1 grid-rows-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
         {ProjectsList.map((work) => (
           <div
             className="overflow-hidden shadow-lg rounded-lg bg-slate-100 dark:bg-[#1f1d2e]"

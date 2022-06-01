@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import type { AppProps } from "next/app";
 import "@/src/styles/globals.css";
 import "@/src/styles/progress.css";
-import Layout from "@/src/components/layout/layout";
+import Layout from "@/src/components/layout";
 import NProgress from "nprogress";
 
 function MyApp({ Component, pageProps }: AppProps) {

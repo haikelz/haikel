@@ -4,7 +4,7 @@ const Footer = () => {
   const today = new Date();
 
   return (
-    <div className="body-font tracking-widest pb-4 text-center">
+    <div className="body-font mb-16 md:mb-0 tracking-widest pb-4 text-center">
       <p className="text-xs pb-1">©2020-{today.getFullYear()} Haikel.</p>
       <p className="text-xs">
         Built with{" "}

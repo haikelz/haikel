@@ -10,8 +10,8 @@ const Header = () => {
   const { theme, setTheme } = useTheme();
 
   return (
-    <nav className="nav fixed z-50 w-full bg-white dark:bg-[#191724]">
-      <div className="text-sm max-w-7xl mx-auto px-4 sm:px-6">
+    <header className="fixed hidden md:block z-50 w-full bg-white dark:bg-[#191724]">
+      <nav className="text-sm max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center h-12 justify-between">
           <Link href="/" passHref>
             <p className="logo cursor-pointer text-2xl font-bold tracking-widest border-none outline-none hover:text-blue-600 duration-300">
@@ -52,11 +52,11 @@ const Header = () => {
             </button>
           </div>
         </div>
-      </div>
+      </nav>
 
       {/*Navbar*/}
       {isOpen ? (
-        <div className="md:hidden" id="mobile-menu">
+        <nav className="md:hidden" id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <NavMobile />
             <p
@@ -66,11 +66,11 @@ const Header = () => {
               {theme === "light" ? "Dark" : "Light"} Mode
             </p>
           </div>
-        </div>
+        </nav>
       ) : (
         ""
       )}
-    </nav>
+    </header>
   );
 };
 

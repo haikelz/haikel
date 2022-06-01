@@ -1,6 +1,7 @@
 import Header from "@/src/components/header";
 import Footer from "@/src/components/footer";
 import Head from "next/head";
+import BottomNav from "../bottomNav";
 
 const Layout = ({ children }: { children: any }) => {
   return (
@@ -14,6 +15,7 @@ const Layout = ({ children }: { children: any }) => {
       <Header />
       {children}
       <Footer />
+      <BottomNav />
     </>
   );
 };
