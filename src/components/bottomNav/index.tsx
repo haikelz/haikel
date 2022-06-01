@@ -12,18 +12,18 @@ const BottomNav = () => {
           <li className="inline-block">
             <Link href="/" passHref>
               {theme === "dark" ? (
-                <FaHome className="text-white text-2xl relative" />
+                <FaHome className="hover:text-white text-2xl text-slate-400 duration-300 transition-all" />
               ) : (
-                <FaHome className="text-slate-500 text-2xl" />
+                <FaHome className="text-slate-500 text-2xl hover:text-slate-600 duration-300 transition-all" />
               )}
             </Link>
           </li>
           <li className="inline-block">
             <Link href="/about" passHref>
               {theme === "dark" ? (
-                <FaUserAlt className="text-white text-2xl relative" />
+                <FaUserAlt className="hover:text-white text-2xl text-slate-400 duration-300 transition-all" />
               ) : (
-                <FaUserAlt className="text-slate-500 text-2xl relative" />
+                <FaUserAlt className="text-slate-500 text-2xl hover:text-slate-600 duration-300 transition-all" />
               )}
             </Link>
           </li>
@@ -31,9 +31,9 @@ const BottomNav = () => {
           <li className="inline-block">
             <Link href="/works" passHref>
               {theme === "dark" ? (
-                <FaBook className="text-white text-2xl" />
+                <FaBook className="hover:text-white text-2xl text-slate-400 duration-300 transition-all" />
               ) : (
-                <FaBook className="text-slate-500 text-2xl" />
+                <FaBook className="text-slate-500 text-2xl hover:text-slate-600 duration-300 transition-all" />
               )}
             </Link>
           </li>
@@ -41,9 +41,9 @@ const BottomNav = () => {
           <li className="inline-block">
             <Link href="/contact" passHref>
               {theme === "dark" ? (
-                <FaPaperPlane className="text-white text-2xl" />
+                <FaPaperPlane className="hover:text-white text-2xl text-slate-400 duration-300 transition-all" />
               ) : (
-                <FaPaperPlane className="text-slate-500 text-2xl" />
+                <FaPaperPlane className="text-slate-500 text-2xl hover:text-slate-600 duration-300 transition-all" />
               )}
             </Link>
           </li>
@@ -55,9 +55,9 @@ const BottomNav = () => {
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           >
             {theme === "dark" ? (
-              <FiSun className="text-white text-2xl" />
+              <FiSun className="hover:text-white text-2xl text-slate-400 duration-300 transition-all" />
             ) : (
-              <FiMoon className="text-slate-500 text-2xl" />
+              <FiMoon className="text-slate-500 text-2xl hover:text-slate-600 duration-300 transition-all" />
             )}
           </button>
         </ul>
