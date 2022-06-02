@@ -1,11 +1,13 @@
 import { ThemeProvider } from "next-themes";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { DefaultSeo } from "next-seo";
 import type { AppProps } from "next/app";
 import "@/src/styles/globals.css";
 import "@/src/styles/progress.css";
 import Layout from "@/src/components/layout";
 import NProgress from "nprogress";
+import SEO from "next-seo.config";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -32,6 +34,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeProvider attribute="class">
+      <DefaultSeo {...SEO} />
       <Layout>
         <Component {...pageProps} />
       </Layout>
