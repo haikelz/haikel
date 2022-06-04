@@ -11,40 +11,48 @@ const BottomNav = () => {
         <ul className="flex gap-12 justify-center items-center">
           <li className="inline-block">
             <Link href="/" passHref>
-              {theme === "dark" ? (
-                <FaHome className="hover:text-white text-2xl text-slate-400 duration-300 transition-all" />
-              ) : (
-                <FaHome className="text-slate-500 text-2xl hover:text-slate-600 duration-300 transition-all" />
-              )}
+              <>
+                {theme === "dark" ? (
+                  <FaHome className="hover:text-white text-2xl text-slate-400 duration-300 transition-all" />
+                ) : (
+                  <FaHome className="text-slate-500 text-2xl hover:text-slate-600 duration-300 transition-all" />
+                )}
+              </>
             </Link>
           </li>
           <li className="inline-block">
             <Link href="/about" passHref>
-              {theme === "dark" ? (
-                <FaUserAlt className="hover:text-white text-2xl text-slate-400 duration-300 transition-all" />
-              ) : (
-                <FaUserAlt className="text-slate-500 text-2xl hover:text-slate-600 duration-300 transition-all" />
-              )}
+              <>
+                {theme === "dark" ? (
+                  <FaUserAlt className="hover:text-white text-2xl text-slate-400 duration-300 transition-all" />
+                ) : (
+                  <FaUserAlt className="text-slate-500 text-2xl hover:text-slate-600 duration-300 transition-all" />
+                )}
+              </>
             </Link>
           </li>
 
           <li className="inline-block">
             <Link href="/works" passHref>
-              {theme === "dark" ? (
-                <FaBook className="hover:text-white text-2xl text-slate-400 duration-300 transition-all" />
-              ) : (
-                <FaBook className="text-slate-500 text-2xl hover:text-slate-600 duration-300 transition-all" />
-              )}
+              <>
+                {theme === "dark" ? (
+                  <FaBook className="hover:text-white text-2xl text-slate-400 duration-300 transition-all" />
+                ) : (
+                  <FaBook className="text-slate-500 text-2xl hover:text-slate-600 duration-300 transition-all" />
+                )}
+              </>
             </Link>
           </li>
 
           <li className="inline-block">
             <Link href="/contact" passHref>
-              {theme === "dark" ? (
-                <FaPaperPlane className="hover:text-white text-2xl text-slate-400 duration-300 transition-all" />
-              ) : (
-                <FaPaperPlane className="text-slate-500 text-2xl hover:text-slate-600 duration-300 transition-all" />
-              )}
+              <>
+                {theme === "dark" ? (
+                  <FaPaperPlane className="hover:text-white text-2xl text-slate-400 duration-300 transition-all" />
+                ) : (
+                  <FaPaperPlane className="text-slate-500 text-2xl hover:text-slate-600 duration-300 transition-all" />
+                )}
+              </>
             </Link>
           </li>
 

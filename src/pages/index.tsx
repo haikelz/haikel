@@ -11,7 +11,7 @@ const Index = () => {
           <h1 className="title-font text-3xl mb-1 font-bold">
             Hello, I&#39;m Haikel 👋
           </h1>
-          <p className="mb-4 leading-relaxed">Penikmat kopi dan pempek</p>
+          <p className="mb-4 leading-relaxed">Student and nature enjoyer</p>
         </div>
       </section>
     </>
