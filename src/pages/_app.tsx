@@ -1,6 +1,6 @@
 import { ThemeProvider } from "next-themes";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { DefaultSeo } from "next-seo";
 import type { AppProps } from "next/app";
 import "@/src/styles/globals.css";
@@ -10,10 +10,13 @@ import NProgress from "nprogress";
 import SEO from "next-seo.config";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const [mounted, setMounted] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
-    const handleStart = (url: string) => {
+    setMounted(true);
+
+    const handleStart = () => {
       NProgress.start();
     };
 
@@ -33,12 +36,14 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [router]);
 
   return (
-    <ThemeProvider attribute="class">
-      <DefaultSeo {...SEO} />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ThemeProvider>
+    mounted && (
+      <ThemeProvider attribute="class">
+        <DefaultSeo {...SEO} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
+    )
   );
 }
 
