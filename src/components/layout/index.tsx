@@ -7,10 +7,7 @@ const Layout = ({ children }: { children: any }) => {
   return (
     <>
       <Head>
-        <link
-          rel="shortcut icon"
-          href="https://avatars.githubusercontent.com/u/77146709?v=4"
-        />
+        <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       <Header />
       {children}
