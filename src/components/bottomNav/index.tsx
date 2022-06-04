@@ -11,48 +11,48 @@ const BottomNav = () => {
         <ul className="flex gap-12 justify-center items-center">
           <li className="inline-block">
             <Link href="/" passHref>
-              <>
+              <a>
                 {theme === "dark" ? (
                   <FaHome className="hover:text-white text-2xl text-slate-400 duration-300 transition-all" />
                 ) : (
                   <FaHome className="text-slate-500 text-2xl hover:text-slate-600 duration-300 transition-all" />
                 )}
-              </>
+              </a>
             </Link>
           </li>
           <li className="inline-block">
             <Link href="/about" passHref>
-              <>
+              <a>
                 {theme === "dark" ? (
                   <FaUserAlt className="hover:text-white text-2xl text-slate-400 duration-300 transition-all" />
                 ) : (
                   <FaUserAlt className="text-slate-500 text-2xl hover:text-slate-600 duration-300 transition-all" />
                 )}
-              </>
+              </a>
             </Link>
           </li>
 
           <li className="inline-block">
             <Link href="/works" passHref>
-              <>
+              <a>
                 {theme === "dark" ? (
                   <FaBook className="hover:text-white text-2xl text-slate-400 duration-300 transition-all" />
                 ) : (
                   <FaBook className="text-slate-500 text-2xl hover:text-slate-600 duration-300 transition-all" />
                 )}
-              </>
+              </a>
             </Link>
           </li>
 
           <li className="inline-block">
             <Link href="/contact" passHref>
-              <>
+              <a>
                 {theme === "dark" ? (
                   <FaPaperPlane className="hover:text-white text-2xl text-slate-400 duration-300 transition-all" />
                 ) : (
                   <FaPaperPlane className="text-slate-500 text-2xl hover:text-slate-600 duration-300 transition-all" />
                 )}
-              </>
+              </a>
             </Link>
           </li>
 
