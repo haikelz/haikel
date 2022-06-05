@@ -20,8 +20,8 @@ const Contact = () => {
             </div>
             <div className="mt-2 sm:mt-4 flex justify-center items-center flex-col">
               <p className="text-md leading-relaxed sm:ml-4 mt-3 sm:mt-0 text-center">
-                You can reach me on{" "}
-                <Link href="https://haikelz.me/posts" passHref>
+                You can find me on{" "}
+                <Link href="https://github.com/haikelz" passHref>
                   <span className="text-[#2563eb] font-bold hover:text-blue-700 duration-500 cursor-pointer">
                     Github
                   </span>
