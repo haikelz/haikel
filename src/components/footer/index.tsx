@@ -9,15 +9,11 @@ const Footer = () => {
       <p className="text-xs">
         Built with{" "}
         <Link href="https://nextjs.org" passHref>
-          <span className="cursor-pointer font-bold hover:underline">
-            NextJS
-          </span>
+          <a className="font-bold hover:underline">NextJS</a>
         </Link>
         , Hosted on{" "}
         <Link href="https://pages.cloudflare.com/" passHref>
-          <span className="cursor-pointer hover:underline font-bold">
-            Cloudflare
-          </span>
+          <a className="hover:underline font-bold">Cloudflare</a>
         </Link>
       </p>
     </div>

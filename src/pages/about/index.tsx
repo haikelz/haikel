@@ -14,7 +14,7 @@ const About = () => {
       </Head>
 
       <section className="body-font h-screen tracking-wide">
-        <div className="container py-24 sm:py-24 mx-auto object-center max-w-7xl px-4 sm:px-6">
+        <div className="container pt-10 md:py-24 mx-auto object-center max-w-7xl px-4 sm:px-6">
           <div className="flex flex-wrap w-full mb-10">
             <div className="w-full mb-1 lg:mb-0 flex justify-center items-center flex-col">
               <h1 className="sm:text-3xl text-3xl font-bold title-font mb-1 text-center">
@@ -44,9 +44,9 @@ const About = () => {
                 usually watch tech related videos, playing chess, write
                 something on my{" "}
                 <Link href="https://haikelz.me/posts" passHref>
-                  <span className="text-blue-500 font-bold hover:text-blue-600 duration-500 cursor-pointer">
+                  <a className="text-blue-500 font-bold hover:text-blue-600 duration-500">
                     Blog
-                  </span>
+                  </a>
                 </Link>
                 , and jogging.
               </p>

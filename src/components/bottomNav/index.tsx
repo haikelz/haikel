@@ -6,7 +6,7 @@ import Link from "next/link";
 const BottomNav = () => {
   const { theme, setTheme } = useTheme();
   return (
-    <div className="text-center dark:bg-[#191724] dark:border-slate-800 border-t-2 p-5 bg-white border-slate-200 md:hidden fixed bottom-0 left-0 right-0">
+    <div className="text-center dark:bg-[#191724] dark:border-slate-800 border-t-[1px] p-5 bg-white border-slate-200 md:hidden fixed bottom-0 left-0 right-0">
       <div className="flex justify-center px-4 items-center">
         <ul className="flex gap-12 justify-center items-center">
           <li className="inline-block">

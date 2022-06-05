@@ -27,7 +27,11 @@ const Header = () => {
                   className=""
                   onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 >
-                  {theme === "dark" ? <FiSun /> : <FiMoon />}
+                  {theme === "dark" ? (
+                    <FiSun size={18} />
+                  ) : (
+                    <FiMoon size={18} />
+                  )}
                 </button>
               </div>
             </div>
