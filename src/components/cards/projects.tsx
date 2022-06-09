@@ -1,35 +1,17 @@
-import { cn } from "@/src/class/className";
 import { ProjectsList } from "./projectsList";
 import { GrGithub } from "react-icons/gr";
 import { FiExternalLink } from "react-icons/fi";
-import { List } from "./typeList";
-import Image from "next/image";
 
-const Projects = ({ setLoading, isLoading }: List) => {
+const Projects = () => {
   return (
     <>
       <div className="grid grid-cols-1 grid-rows-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
-        {ProjectsList.map((work) => (
+        {ProjectsList.map((work, index) => (
           <div
-            className="overflow-hidden shadow-lg rounded-lg bg-slate-100 dark:bg-[#1f1d2e]"
-            key={work.id}
+            className="overflow-hidden border-[1.5px] border-black dark:border-white rounded-lg bg-slate-100 dark:bg-[#1f1d2e]"
+            key={index + 1}
           >
-            <Image
-              alt="placeholder"
-              width={"640px"}
-              height={"426px"}
-              priority
-              src={work.img}
-              className={cn(
-                "cursor-pointer rounded-t-lg h-full w-full object-cover object-center mb-6 hover:opacity-75 duration-700 ease-in-out",
-                isLoading
-                  ? "grayscale blur-2xl scale-110"
-                  : "grayscale-0 blur-0 scale-100"
-              )}
-              onLoadingComplete={() => setLoading(false)}
-            />
-
-            <div className="px-6 pb-6">
+            <div className="px-6 pb-6 pt-3">
               <h2 className="text-lg font-bold title-font mt-2 mb-2">
                 {work.h2}
               </h2>
