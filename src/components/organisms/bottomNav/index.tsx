@@ -1,9 +1,25 @@
 import { useTheme } from "next-themes";
-import HomeIcon from "@/src/components/atoms/bottomNav/iconBottomNav/homeIcon";
-import ToggleDarkIcon from "@/src/components/atoms/bottomNav/iconBottomNav/toggleDarkIcon";
-import ContactIcon from "@/src/components/atoms/bottomNav/iconBottomNav/contactIcon";
-import WorksIcon from "@/src/components/atoms/bottomNav/iconBottomNav/worksIcon";
-import AboutIcon from "@/src/components/atoms/bottomNav/iconBottomNav/aboutIcon";
+import dynamic from "next/dynamic";
+
+const HomeIcon = dynamic(
+  () => import("@/src/components/atoms/bottomNav/iconBottomNav/homeIcon")
+);
+
+const ToggleDarkIcon = dynamic(
+  () => import("@/src/components/atoms/bottomNav/iconBottomNav/toggleDarkIcon")
+);
+
+const ContactIcon = dynamic(
+  () => import("@/src/components/atoms/bottomNav/iconBottomNav/contactIcon")
+);
+
+const WorksIcon = dynamic(
+  () => import("@/src/components/atoms/bottomNav/iconBottomNav/worksIcon")
+);
+
+const AboutIcon = dynamic(
+  () => import("@/src/components/atoms/bottomNav/iconBottomNav/aboutIcon")
+);
 
 const BottomNav = () => {
   const { theme, setTheme } = useTheme();

@@ -1,7 +1,18 @@
 import { useTheme } from "next-themes";
-import ToggleDarkModeHeader from "@/src/components/atoms/header/headerListItem/toggleDarkModeHeader";
-import HeaderLogo from "@/src/components/atoms/header/headerLogo";
-import HeaderListItem from "@/src/components/atoms/header/headerListItem";
+import dynamic from "next/dynamic";
+
+const ToggleDarkModeHeader = dynamic(
+  () =>
+    import("@/src/components/atoms/header/headerListItem/toggleDarkModeHeader")
+);
+
+const HeaderLogo = dynamic(
+  () => import("@/src/components/atoms/header/headerLogo")
+);
+
+const HeaderListItem = dynamic(
+  () => import("@/src/components/atoms/header/headerListItem")
+);
 
 const Header = () => {
   const { theme, setTheme } = useTheme();

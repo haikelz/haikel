@@ -1,8 +1,10 @@
 import { components } from "@/src/types";
+import dynamic from "next/dynamic";
 import Head from "next/head";
-import Header from "@/src/components/organisms/header";
-import Footer from "@/src/components/organisms/footer";
-import BottomNav from "@/src/components/organisms/bottomNav";
+
+const Header = dynamic(() => import("@/src/components/organisms/header"));
+const Footer = dynamic(() => import("@/src/components/organisms/footer"));
+const BottomNav = dynamic(() => import("@/src/components/organisms/bottomNav"));
 
 const Layout = ({ children }: components) => {
   return (

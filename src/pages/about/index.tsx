@@ -1,15 +1,16 @@
-import { lazy, useState } from "react";
+import { useState } from "react";
 import Head from "next/head";
+import dynamic from "next/dynamic";
 
-const AboutTitle = lazy(
+const AboutTitle = dynamic(
   () => import("@/src/components/atoms/about/aboutText/title")
 );
 
-const AboutImage = lazy(
+const AboutImage = dynamic(
   () => import("@/src/components/atoms/about/aboutImage")
 );
 
-const AboutDesc = lazy(
+const AboutDesc = dynamic(
   () => import("@/src/components/atoms/about/aboutText/desc")
 );
 

@@ -1,13 +1,13 @@
-import { lazy } from "react";
+import dynamic from "next/dynamic";
 import Head from "next/head";
 
-const GridCards = lazy(() => import("@/src/components/organisms/gridCards"));
+const GridCards = dynamic(() => import("@/src/components/organisms/gridCards"));
 
-const WorksTitle = lazy(
+const WorksTitle = dynamic(
   () => import("@/src/components/atoms/works/worksText/worksTitle")
 );
 
-const WorksDesc = lazy(
+const WorksDesc = dynamic(
   () => import("@/src/components/atoms/works/worksText/worksDesc")
 );
 

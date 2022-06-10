@@ -1,7 +1,7 @@
+import dynamic from "next/dynamic";
 import Head from "next/head";
-import { lazy } from "react";
 
-const HomeGreeting = lazy(
+const HomeGreeting = dynamic(
   () => import("@/src/components/moleculs/homeGreeting")
 );
 

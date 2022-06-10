@@ -1,11 +1,11 @@
-import { lazy } from "react";
+import dynamic from "next/dynamic";
 import Head from "next/head";
 
-const ContactDesc = lazy(
+const ContactDesc = dynamic(
   () => import("@/src/components/atoms/contact/contactText/contactDesc")
 );
 
-const ContactTitle = lazy(
+const ContactTitle = dynamic(
   () => import("@/src/components/atoms/contact/contactText/contactTitle")
 );
 
