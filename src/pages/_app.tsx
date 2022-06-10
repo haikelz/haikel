@@ -5,7 +5,7 @@ import { DefaultSeo } from "next-seo";
 import type { AppProps } from "next/app";
 import "@/src/styles/globals.css";
 import "@/src/styles/progress.css";
-import Layout from "@/src/components/layout";
+import Layout from "@/src/components/templates/layout";
 import NProgress from "nprogress";
 import SEO from "next-seo.config";
 

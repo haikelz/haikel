@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Underline from "@/src/components/underline";
-import Cards from "@/src/components/cards";
+import Underline from "@/src/components/atoms/underline";
+import GridCards from "@/src/components/organisms/gridCards";
 
 const Works = () => {
   return (
@@ -23,7 +23,7 @@ const Works = () => {
           </div>
 
           <div className="flex flex-wrap -m-4">
-            <Cards />
+            <GridCards />
           </div>
         </div>
       </section>
