@@ -1,8 +1,17 @@
-import { useState } from "react";
+import { lazy, useState } from "react";
 import Head from "next/head";
-import AboutTitle from "@/src/components/atoms/about/aboutText/title";
-import AboutImage from "@/src/components/atoms/about/aboutImage";
-import AboutDesc from "@/src/components/atoms/about/aboutText/desc";
+
+const AboutTitle = lazy(
+  () => import("@/src/components/atoms/about/aboutText/title")
+);
+
+const AboutImage = lazy(
+  () => import("@/src/components/atoms/about/aboutImage")
+);
+
+const AboutDesc = lazy(
+  () => import("@/src/components/atoms/about/aboutText/desc")
+);
 
 const About = () => {
   const [isLoading, setLoading] = useState(true);

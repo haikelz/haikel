@@ -1,7 +1,15 @@
+import { lazy } from "react";
 import Head from "next/head";
-import GridCards from "@/src/components/organisms/gridCards";
-import WorksTitle from "@/src/components/atoms/works/worksText/worksTitle";
-import WorksDesc from "@/src/components/atoms/works/worksText/worksDesc";
+
+const GridCards = lazy(() => import("@/src/components/organisms/gridCards"));
+
+const WorksTitle = lazy(
+  () => import("@/src/components/atoms/works/worksText/worksTitle")
+);
+
+const WorksDesc = lazy(
+  () => import("@/src/components/atoms/works/worksText/worksDesc")
+);
 
 const Works = () => {
   return (

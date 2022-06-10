@@ -1,5 +1,9 @@
 import Head from "next/head";
-import HomeGreeting from "../components/moleculs/homeGreeting";
+import { lazy } from "react";
+
+const HomeGreeting = lazy(
+  () => import("@/src/components/moleculs/homeGreeting")
+);
 
 const Index = () => {
   return (

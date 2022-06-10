@@ -1,6 +1,13 @@
+import { lazy } from "react";
 import Head from "next/head";
-import ContactDesc from "@/src/components/atoms/contact/contactText/contactDesc";
-import ContactTitle from "@/src/components/atoms/contact/contactText/contactTitle";
+
+const ContactDesc = lazy(
+  () => import("@/src/components/atoms/contact/contactText/contactDesc")
+);
+
+const ContactTitle = lazy(
+  () => import("@/src/components/atoms/contact/contactText/contactTitle")
+);
 
 const Contact = () => {
   return (
