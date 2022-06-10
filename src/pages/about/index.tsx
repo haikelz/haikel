@@ -1,18 +1,8 @@
 import { useState } from "react";
 import Head from "next/head";
-import dynamic from "next/dynamic";
-
-const AboutTitle = dynamic(
-  () => import("@/src/components/atoms/about/aboutText/title")
-);
-
-const AboutImage = dynamic(
-  () => import("@/src/components/atoms/about/aboutImage")
-);
-
-const AboutDesc = dynamic(
-  () => import("@/src/components/atoms/about/aboutText/desc")
-);
+import AboutTitle from "@/src/components/atoms/about/aboutText/title";
+import AboutImage from "@/src/components/atoms/about/aboutImage";
+import AboutDesc from "@/src/components/atoms/about/aboutText/desc";
 
 const About = () => {
   const [isLoading, setLoading] = useState(true);

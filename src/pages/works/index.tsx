@@ -1,15 +1,7 @@
-import dynamic from "next/dynamic";
 import Head from "next/head";
-
-const GridCards = dynamic(() => import("@/src/components/organisms/gridCards"));
-
-const WorksTitle = dynamic(
-  () => import("@/src/components/atoms/works/worksText/worksTitle")
-);
-
-const WorksDesc = dynamic(
-  () => import("@/src/components/atoms/works/worksText/worksDesc")
-);
+import GridCards from "@/src/components/organisms/gridCards";
+import WorksTitle from "@/src/components/atoms/works/worksText/worksTitle";
+import WorksDesc from "@/src/components/atoms/works/worksText/worksDesc";
 
 const Works = () => {
   return (

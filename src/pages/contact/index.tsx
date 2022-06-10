@@ -1,13 +1,6 @@
-import dynamic from "next/dynamic";
 import Head from "next/head";
-
-const ContactDesc = dynamic(
-  () => import("@/src/components/atoms/contact/contactText/contactDesc")
-);
-
-const ContactTitle = dynamic(
-  () => import("@/src/components/atoms/contact/contactText/contactTitle")
-);
+import ContactDesc from "@/src/components/atoms/contact/contactText/contactDesc";
+import ContactTitle from "@/src/components/atoms/contact/contactText/contactTitle";
 
 const Contact = () => {
   return (

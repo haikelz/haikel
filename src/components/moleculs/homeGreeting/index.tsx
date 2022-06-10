@@ -1,12 +1,5 @@
-import { lazy } from "react";
-
-const HomeDesc = lazy(
-  () => import("@/src/components/atoms/home/homeTextGreeting/homeDesc")
-);
-
-const HomeName = lazy(
-  () => import("@/src/components/atoms/home/homeTextGreeting/homeName")
-);
+import HomeDesc from "@/src/components/atoms/home/homeTextGreeting/homeDesc";
+import HomeName from "@/src/components/atoms/home/homeTextGreeting/homeName";
 
 const HomeGreeting = () => {
   return (

@@ -1,7 +1,5 @@
-import dynamic from "next/dynamic";
 import { ProjectsList } from "./projectsList";
-
-const Icons = dynamic(() => import("@/src/components/moleculs/works/icons"));
+import Icons from "@/src/components/moleculs/works/icons";
 
 const GridCards = () => {
   return (

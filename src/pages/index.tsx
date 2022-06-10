@@ -1,9 +1,5 @@
-import dynamic from "next/dynamic";
 import Head from "next/head";
-
-const HomeGreeting = dynamic(
-  () => import("@/src/components/moleculs/homeGreeting")
-);
+import HomeGreeting from "../components/moleculs/homeGreeting";
 
 const Index = () => {
   return (

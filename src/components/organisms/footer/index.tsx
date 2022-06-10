@@ -1,8 +1,4 @@
-import dynamic from "next/dynamic";
-
-const FooterText = dynamic(
-  () => import("@/src/components/atoms/footer/footerText")
-);
+import FooterText from "@/src/components/atoms/footer/footerText";
 
 const Footer = () => {
   const today = new Date();

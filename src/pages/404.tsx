@@ -1,9 +1,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import dynamic from "next/dynamic";
-
-const NotFound = dynamic(() => import("@/src/components/moleculs/notFound"));
+import NotFound from "../components/moleculs/notFound";
 
 const NotFoundPage = () => {
   const router = useRouter();

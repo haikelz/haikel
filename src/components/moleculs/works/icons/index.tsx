@@ -1,13 +1,6 @@
 import { components } from "@/src/types";
-import dynamic from "next/dynamic";
-
-const GithubIcon = dynamic(
-  () => import("@/src/components/atoms/bottomNav/iconCards/github")
-);
-
-const PreviewIcon = dynamic(
-  () => import("@/src/components/atoms/bottomNav/iconCards/preview")
-);
+import GithubIcon from "@/src/components/atoms/bottomNav/iconCards/github";
+import PreviewIcon from "@/src/components/atoms/bottomNav/iconCards/preview";
 
 const Icons = ({ linkPreview, linkGithub }: components) => {
   return (
