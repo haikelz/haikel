@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import NotFound from "../components/moleculs/notFound";
+import NotFoundDesc from "@/src/components/atoms/notFound/notFoundDesc";
+import NotFoundImage from "@/src/components/atoms/notFound/notFoundImage";
 
 const NotFoundPage = () => {
   const router = useRouter();
@@ -19,7 +20,8 @@ const NotFoundPage = () => {
         <title>Not Found</title>
       </Head>
       <div className="h-screen flex flex-col text-center justify-center items-center">
-        <NotFound />
+        <NotFoundImage />
+        <NotFoundDesc />
       </div>
     </>
   );
