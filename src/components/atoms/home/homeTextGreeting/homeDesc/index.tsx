@@ -1,5 +1,5 @@
-const Desc = () => {
+const HomeDesc = () => {
   return <p className="mb-4 leading-relaxed">Student and nature enjoyer</p>;
 };
 
-export default Desc;
+export default HomeDesc;
