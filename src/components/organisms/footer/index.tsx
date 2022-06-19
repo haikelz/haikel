@@ -1,5 +1,9 @@
 import { LazyMotion, m, domAnimation } from "framer-motion";
-import FooterText from "@/src/components/atoms/footer/footerText";
+import dynamic from "next/dynamic";
+
+const FooterText = dynamic(
+  () => import("@/src/components/atoms/footer/footerText")
+);
 
 const Footer = () => {
   const today = new Date();

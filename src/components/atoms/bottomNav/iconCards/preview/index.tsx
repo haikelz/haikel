@@ -5,9 +5,9 @@ import { components } from "@/src/types";
 const PreviewIcon = ({ link }: components) => {
   return (
     <Link href={link} passHref>
-      <span>
+      <a>
         <FiExternalLink className="hover:text-blue-500 duration-500 cursor-pointer" />
-      </span>
+      </a>
     </Link>
   );
 };

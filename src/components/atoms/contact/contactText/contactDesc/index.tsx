@@ -2,8 +2,8 @@ import Link from "next/link";
 
 const ContactDesc = () => {
   return (
-    <div className="mt-2 sm:mt-4 flex justify-center items-center flex-col">
-      <p className="text-md leading-relaxed sm:ml-4 mt-3 sm:mt-0 text-center">
+    <div className="flex justify-center items-center flex-col">
+      <p className="text-md leading-relaxed text-center">
         You can find me on{" "}
         <Link href="https://github.com/haikelz" passHref>
           <span className="underline font-bold hover:text-blue-700">
