@@ -1,5 +1,10 @@
+import { domAnimation, LazyMotion, m } from "framer-motion";
 import Head from "next/head";
-import HomeGreeting from "../components/moleculs/homeGreeting";
+import dynamic from "next/dynamic";
+
+const HomeContainer = dynamic(
+  () => import("@/src/components/organisms/homeContainer")
+);
 
 const Index = () => {
   return (
@@ -7,7 +12,16 @@ const Index = () => {
       <Head>
         <title>Home</title>
       </Head>
-      <HomeGreeting />
+      <LazyMotion features={domAnimation}>
+        <m.section
+          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="body-font tracking-wide"
+        >
+          <HomeContainer />
+        </m.section>
+      </LazyMotion>
     </>
   );
 };

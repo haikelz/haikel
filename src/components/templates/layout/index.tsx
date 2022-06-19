@@ -1,10 +1,9 @@
 import { components } from "@/src/types";
-import dynamic from "next/dynamic";
 import Head from "next/head";
-
-const Header = dynamic(() => import("@/src/components/organisms/header"));
-const Footer = dynamic(() => import("@/src/components/organisms/footer"));
-const BottomNav = dynamic(() => import("@/src/components/organisms/bottomNav"));
+import Header from "@/src/components/organisms/header";
+import Footer from "@/src/components/organisms/footer";
+import BottomNav from "@/src/components/organisms/bottomNav";
+import { LazyMotion, m, domAnimation } from "framer-motion";
 
 const Layout = ({ children }: components) => {
   return (
@@ -13,8 +12,16 @@ const Layout = ({ children }: components) => {
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       <Header />
-      {children}
-      <Footer />
+      <LazyMotion features={domAnimation}>
+        <m.div
+          transition={{ duration: 1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
+          {children}
+          <Footer />
+        </m.div>
+      </LazyMotion>
       <BottomNav />
     </>
   );

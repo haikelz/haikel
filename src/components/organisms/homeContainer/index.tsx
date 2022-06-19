@@ -1,0 +1,13 @@
+import HomeDesc from "@/src/components/atoms/home/homeTextGreeting/homeDesc";
+import HomeName from "@/src/components/atoms/home/homeTextGreeting/homeName";
+
+const HomeContainer = () => {
+  return (
+    <div className="container mx-auto flex pt-10 md:py-24 max-w-7xl px-4 sm:px-6 items-center justify-center flex-col h-screen">
+      <HomeName />
+      <HomeDesc />
+    </div>
+  );
+};
+
+export default HomeContainer;

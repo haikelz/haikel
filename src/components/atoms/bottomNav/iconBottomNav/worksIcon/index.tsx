@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const WorksIcon = ({ theme }: components) => {
   return (
-    <li className="inline-block">
+    <li className="flex justify-center items-center">
       <Link href="/works" passHref>
         <a>
           {theme === "dark" ? (

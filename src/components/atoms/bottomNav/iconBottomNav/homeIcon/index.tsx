@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const HomeIcon = ({ theme }: components) => {
   return (
-    <li className="inline-block">
+    <li className="flex justify-center items-center">
       <Link href="/" passHref>
         <a>
           {theme === "dark" ? (

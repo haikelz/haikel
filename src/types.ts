@@ -12,3 +12,8 @@ export interface components {
     isLoading?: any,
     loadingProsess?: any,
 }
+
+export interface list {
+    setLoading: (loading: boolean) => void,
+    isLoading: boolean,
+}

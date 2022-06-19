@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const ContactIcon = ({ theme }: components) => {
   return (
-    <li className="inline-block">
+    <li className="flex justify-center items-center">
       <Link href="/contact" passHref>
         <a>
           {theme === "dark" ? (
