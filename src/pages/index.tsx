@@ -1,4 +1,5 @@
 import { domAnimation, LazyMotion, m } from "framer-motion";
+import { memo } from "react";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 
@@ -26,4 +27,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default memo(Index);

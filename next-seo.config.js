@@ -11,7 +11,7 @@ const defaultSEOConfig = {
     description: "Student and nature enjoyer",
     images: [
       {
-        url: "https://raw.githubusercontent.com/haikelz/portfolio/master/public/img/og-image.webp",
+        url: "https://raw.githubusercontent.com/haikelz/website/master/public/img/og-image.webp",
         alt: "Haikel",
       },
     ],
