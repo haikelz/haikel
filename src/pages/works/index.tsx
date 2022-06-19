@@ -1,7 +1,7 @@
 import { LazyMotion, m, domAnimation } from "framer-motion";
+import { memo } from "react";
 import dynamic from "next/dynamic";
 import Head from "next/head";
-import { memo } from "react";
 
 const WorksContainer = dynamic(
   () => import("@/src/components/organisms/worksContainer")

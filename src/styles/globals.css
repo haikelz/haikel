@@ -23,3 +23,7 @@ body {
 p {
   @apply font-medium;
 }
+
+.about-image {
+  box-shadow: 17px 17px 0px -3px blue;
+}

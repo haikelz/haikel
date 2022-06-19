@@ -14,7 +14,7 @@ const Footer = () => {
         transition={{ duration: 0.5 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="body-font mb-16 md:mb-0 tracking-widest pb-4 text-center"
+        className="body-font mb-16 hidden md:block md:mb-0 tracking-widest pb-4 text-center"
       >
         <FooterText />
       </m.div>

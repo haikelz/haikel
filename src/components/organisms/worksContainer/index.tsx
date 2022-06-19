@@ -4,7 +4,7 @@ import WorksDesc from "@/src/components/atoms/works/worksText/worksDesc";
 
 const WorksContainer = () => {
   return (
-    <div className="container py-10 md:py-24 mx-auto object-center max-w-7xl px-4 sm:px-6">
+    <div className="container pt-10 pb-24 md:py-24 mx-auto object-center max-w-7xl px-4 sm:px-6">
       <div className="flex flex-wrap w-full mb-10">
         <WorksTitle />
         <WorksDesc />
