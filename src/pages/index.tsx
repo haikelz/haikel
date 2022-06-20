@@ -18,6 +18,7 @@ const Index = () => {
           transition={{ duration: 0.5 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
           className="body-font tracking-wide"
         >
           <HomeContainer />

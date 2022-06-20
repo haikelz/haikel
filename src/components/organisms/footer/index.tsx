@@ -11,6 +11,7 @@ const Footer = () => {
   return (
     <LazyMotion features={domAnimation}>
       <m.div
+        layout
         transition={{ duration: 0.5 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

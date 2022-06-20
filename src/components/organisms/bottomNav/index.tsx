@@ -11,7 +11,7 @@ const BottomNav = () => {
 
   return (
     <div className="flex flex-col justify-center items-center w-full">
-      <div className="grid grid-cols-5 grid-rows-1 dark:bg-[#191724] dark:border-slate-800 border-t-2 p-5 bg-slate-50 border-slate-300 md:hidden fixed bottom-0 left-0 right-0">
+      <div className="grid grid-cols-5 grid-rows-1 dark:bg-[#191724] dark:border-slate-800 border-t-[1px] p-5 bg-slate-50 border-slate-300 md:hidden fixed bottom-0 left-0 right-0">
         <HomeIcon theme={theme} />
         <AboutIcon theme={theme} />
         <WorksIcon theme={theme} />
