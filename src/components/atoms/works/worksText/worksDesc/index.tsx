@@ -1,8 +1,6 @@
 const WorksDesc = () => {
   return (
-    <p className="text-md w-full leading-relaxed text-center">
-      List some of my works
-    </p>
+    <p className="w-full leading-relaxed text-center">List some of my works</p>
   );
 };
 
