@@ -12,7 +12,7 @@ const NotFoundPage = () => {
     setTimeout(() => {
       router.push("/");
     }, 4000);
-  }, []);
+  }, [router]);
 
   return (
     <>
