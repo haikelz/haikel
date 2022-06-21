@@ -1,16 +1,16 @@
 import { ReactNode } from "react";
 
 export interface components {
-    theme?: any,
-    changeTheme?: any,
+    theme?: string,
+    changeTheme?: () => void,
     link?: any,
     linkPreview?: string,
     linkGithub?: string,
     stack1?: string,
     stack2?: string,
     children?: ReactNode[] | JSX.Element,
-    isLoading?: any,
-    loadingProsess?: any,
+    isLoading?: boolean,
+    loadingProsess?: () => void,
 }
 
 export interface list {
