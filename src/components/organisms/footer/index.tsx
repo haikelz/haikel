@@ -5,9 +5,7 @@ const FooterText = dynamic(
   () => import("@/src/components/atoms/footer/footerText")
 );
 
-const Footer = () => {
-  const today = new Date();
-
+const Footer = () => { 
   return (
     <LazyMotion features={domAnimation}>
       <m.div
