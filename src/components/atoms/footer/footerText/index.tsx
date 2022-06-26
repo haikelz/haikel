@@ -4,8 +4,8 @@ const FooterText = () => {
   const today = new Date();
   return (
     <>
-      <p className="text-xs pb-1">©2020-{today.getFullYear()} Haikel.</p>
-      <p className="text-xs">
+      <p className="text-sm pb-1">2020-{today.getFullYear()} Haikel.</p>
+      <p className="text-sm">
         Built with{" "}
         <Link href="https://nextjs.org" passHref>
           <a className="font-bold hover:underline">NextJS</a>

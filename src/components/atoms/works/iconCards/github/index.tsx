@@ -6,7 +6,10 @@ const GithubIcon = ({ link }: components) => {
   return (
     <Link href={link} passHref>
       <a>
-        <GrGithub className="hover:text-blue-400 duration-500 mr-2 cursor-pointer" />
+        <GrGithub
+          className="hover:text-blue-400 duration-500 mr-2 cursor-pointer"
+          size="20px"
+        />
       </a>
     </Link>
   );

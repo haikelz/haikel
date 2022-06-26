@@ -15,7 +15,7 @@ const About = () => {
       </Head>
       <LazyMotion features={domAnimation}>
         <m.section
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           className="body-font h-screen tracking-wide"

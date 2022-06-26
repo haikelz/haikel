@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <LazyMotion features={domAnimation}>
       <m.header
-        transition={{ delay: 1.5 }}
+        transition={{ delay: 1 }}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         className="fixed hidden md:block z-50 w-full backdrop-filter backdrop-blur-lg bg-slate-50/70 dark:bg-[#171923]/70"

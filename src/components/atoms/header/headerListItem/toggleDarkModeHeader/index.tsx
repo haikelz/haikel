@@ -9,7 +9,7 @@ const ToggleDarkModeHeader = ({ changeTheme, theme }: components) => {
       className=""
       onClick={changeTheme}
     >
-      {theme === "dark" ? <FiSun size={18} /> : <FiMoon size={18} />}
+      {theme === "dark" ? <FiSun size={20} /> : <FiMoon size={20} />}
     </button>
   );
 };

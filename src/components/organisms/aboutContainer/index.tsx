@@ -12,7 +12,7 @@ const AboutContainer = () => {
         <div className="w-full mb-1 lg:mb-0 flex justify-center items-center flex-col">
           <AboutTitle />
         </div>
-        <div className="mt-2 sm:mt-4 flex justify-center items-center flex-col sm:flex-row">
+        <div className="mt-2 sm:mt-4 flex flex-col justify-center items-center">
           <AboutImage isLoading={isLoading} loadingProsess={loadingProsess} />
           <AboutDesc />
         </div>
