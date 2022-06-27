@@ -14,9 +14,7 @@ const GridCards = () => {
               <h2 className="text-xl font-bold title-font mt-2 mb-2">
                 {work.h2}
               </h2>
-
               <p className="tracking-wide mb-2">{work.p}</p>
-
               <div className="flex mt-3">
                 <span className="mr-2 px-1.5 text-sm text-white dark:text-slate-900 bg-[#247881] dark:bg-[#d1d9d0]">
                   {work.stack1}
@@ -25,7 +23,6 @@ const GridCards = () => {
                   {work.stack2}
                 </span>
               </div>
-
               <Icons linkGithub={work.repo} linkPreview={work.preview} />
             </div>
           </div>
