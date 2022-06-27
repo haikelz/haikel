@@ -22,7 +22,7 @@ body {
 }
 
 p {
-  @apply text-lg font-medium;
+  @apply text-base font-normal;
 }
 
 .about-image {
