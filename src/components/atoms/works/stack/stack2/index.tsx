@@ -1,4 +1,4 @@
-import { components } from "@/src/types";
+import { components } from "@/src/props";
 
 const Stack2 = ({ stack2 }: components) => {
   return (

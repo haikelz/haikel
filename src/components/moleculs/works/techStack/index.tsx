@@ -1,5 +1,5 @@
 // Really, i confuse to give name of every components
-import { components } from "@/src/types";
+import { components } from "@/src/props";
 import Stack1 from "@/src/components/atoms/works/stack/stack1";
 import Stack2 from "@/src/components/atoms/works/stack/stack2";
 

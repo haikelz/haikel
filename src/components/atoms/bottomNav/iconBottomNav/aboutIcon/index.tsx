@@ -1,5 +1,5 @@
 import { FaUserAlt } from "react-icons/fa";
-import { components } from "@/src/types";
+import { components } from "@/src/props";
 import Link from "next/link";
 
 const AboutIcon = ({ theme }: components) => {

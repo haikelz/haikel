@@ -1,4 +1,4 @@
-import { components } from "@/src/types";
+import { components } from "@/src/props";
 import GithubIcon from "@/src/components/atoms/works/iconCards/github";
 import PreviewIcon from "@/src/components/atoms/works/iconCards/preview";
 

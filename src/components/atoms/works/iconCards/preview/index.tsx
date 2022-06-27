@@ -1,4 +1,4 @@
-import { components } from "@/src/types";
+import { components } from "@/src/props";
 import { FiExternalLink } from "react-icons/fi";
 import Link from "next/link";
 
