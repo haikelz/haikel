@@ -1,10 +1,5 @@
-import { memo } from "react";
-import dynamic from "next/dynamic";
 import Head from "next/head";
-
-const ContactContainer = dynamic(
-  () => import("@/src/components/organisms/contactContainer")
-);
+import ContactContainer from "@/src/components/organisms/contactContainer";
 
 const Contact = () => {
   return (
@@ -19,4 +14,4 @@ const Contact = () => {
   );
 };
 
-export default memo(Contact);
+export default Contact;

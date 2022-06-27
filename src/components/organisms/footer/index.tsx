@@ -1,24 +1,12 @@
-import { LazyMotion, m, domAnimation } from "framer-motion";
-import dynamic from "next/dynamic";
+import { memo } from "react";
+import FooterText from "@/src/components/atoms/footer/footerText";
 
-const FooterText = dynamic(
-  () => import("@/src/components/atoms/footer/footerText")
-);
-
-const Footer = () => { 
+const Footer = () => {
   return (
-    <LazyMotion features={domAnimation}>
-      <m.div
-        layout
-        transition={{ duration: 0.5 }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="body-font mb-16 hidden md:block md:mb-0 tracking-widest pb-4 text-center"
-      >
-        <FooterText />
-      </m.div>
-    </LazyMotion>
+    <div className="body-font mb-16 hidden md:block md:mb-0 tracking-widest pb-4 text-center">
+      <FooterText />
+    </div>
   );
 };
 
-export default Footer;
+export default memo(Footer);

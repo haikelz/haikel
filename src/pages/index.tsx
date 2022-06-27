@@ -1,12 +1,7 @@
-import { memo } from "react";
 import Head from "next/head";
-import dynamic from "next/dynamic";
+import HomeContainer from "@/src/components/organisms/homeContainer";
 
-const HomeContainer = dynamic(
-  () => import("@/src/components/organisms/homeContainer")
-);
-
-const Index = () => {
+const Home = () => {
   return (
     <>
       <Head>
@@ -19,4 +14,4 @@ const Index = () => {
   );
 };
 
-export default memo(Index);
+export default Home;

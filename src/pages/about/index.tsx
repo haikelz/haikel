@@ -1,10 +1,5 @@
-import { memo } from "react";
-import dynamic from "next/dynamic";
 import Head from "next/head";
-
-const AboutContainer = dynamic(
-  () => import("@/src/components/organisms/aboutContainer")
-);
+import AboutContainer from "@/src/components/organisms/aboutContainer";
 
 const About = () => {
   return (
@@ -19,4 +14,4 @@ const About = () => {
   );
 };
 
-export default memo(About);
+export default About;

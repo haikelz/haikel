@@ -1,8 +1,9 @@
 import { cn } from "@/src/className";
-import { components } from "@/src/types";
+import { components } from "@/src/props";
 import Image from "next/image";
 
 const AboutImage = ({ isLoading, loadingProsess }: components) => {
+  console.log("dirender dua kali atau lebih", 1 + 1);
   return (
     <div className="overflow-hidden rounded-full drop-shadow-sm flex justify-center items-center">
       <Image
