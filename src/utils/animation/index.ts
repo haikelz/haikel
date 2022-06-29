@@ -1,5 +1,5 @@
 export const headerAnimation = {
-    transition: { delay: 0.7 },
+    transition: { delay: 0.8 },
     initial: { opacity: 0, y: -100 },
     animate: { opacity: 1, y: 0 },
 }

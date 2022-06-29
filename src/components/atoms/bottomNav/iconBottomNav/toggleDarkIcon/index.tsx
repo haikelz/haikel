@@ -7,7 +7,7 @@ const ToggleDarkIcon = ({ theme, changeTheme }: components) => {
       <button
         aria-label="toggle Dark Mode"
         type="button"
-        className="flex justify-center items-center"
+        className="flex justify-center items-center outline-none"
         onClick={changeTheme}
       >
         {theme === "dark" ? (
