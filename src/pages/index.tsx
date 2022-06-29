@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+import { homeAnimation } from "../utils/animation";
 import Head from "next/head";
 import HomeContainer from "@/src/components/organisms/homeContainer";
 
@@ -7,9 +9,9 @@ const Home = () => {
       <Head>
         <title>Home</title>
       </Head>
-      <section className="body-font tracking-wide">
+      <motion.section {...homeAnimation} className="body-font tracking-wide">
         <HomeContainer />
-      </section>
+      </motion.section>
     </>
   );
 };

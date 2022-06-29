@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+import { headerAnimation } from "@/src/utils/animation";
 import { useTheme } from "next-themes";
 import { memo } from "react";
 import ToggleDarkModeHeader from "@/src/components/atoms/header/headerListItem/toggleDarkModeHeader";
@@ -9,7 +11,10 @@ const Header = () => {
   const changeTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
   return (
-    <header className="fixed hidden md:block z-50 w-full backdrop-filter backdrop-blur-lg bg-slate-50/70 dark:bg-[#171923]/70">
+    <motion.header
+      {...headerAnimation}
+      className="fixed hidden md:block z-50 w-full backdrop-filter backdrop-blur-lg bg-slate-50/70 dark:bg-[#171923]/70"
+    >
       <nav className="text-sm max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center h-12 justify-between">
           <HeaderLogo />
@@ -23,7 +28,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
-    </header>
+    </motion.header>
   );
 };
 

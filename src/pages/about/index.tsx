@@ -1,5 +1,7 @@
+import { motion } from "framer-motion";
 import Head from "next/head";
 import AboutContainer from "@/src/components/organisms/aboutContainer";
+import { sectionAnimation } from "@/src/utils/animation";
 
 const About = () => {
   return (
@@ -7,9 +9,12 @@ const About = () => {
       <Head>
         <title>About</title>
       </Head>
-      <section className="body-font h-screen tracking-wide">
+      <motion.section
+        {...sectionAnimation}
+        className="body-font h-screen tracking-wide"
+      >
         <AboutContainer />
-      </section>
+      </motion.section>
     </>
   );
 };
