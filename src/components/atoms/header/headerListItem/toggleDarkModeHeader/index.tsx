@@ -6,7 +6,7 @@ const ToggleDarkModeHeader = ({ changeTheme, theme }: components) => {
     <button
       aria-label="toggle Dark Mode"
       type="button"
-      className=""
+      className="outline-none"
       onClick={changeTheme}
     >
       {theme === "dark" ? <FiSun size={20} /> : <FiMoon size={20} />}

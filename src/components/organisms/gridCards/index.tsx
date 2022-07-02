@@ -4,7 +4,7 @@ import Icons from "@/src/components/moleculs/works/icons";
 const GridCards = () => {
   return (
     <>
-      <div className="grid grid-cols-1 grid-rows-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
+      <div className="grid grid-cols-1 grid-rows-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
         {ProjectsList.map((work, index) => (
           <div
             className="overflow-hidden dark:hover:shadow-dark hover:shadow-cards duration-200 transition-all border-2 cursor-pointer border-black dark:border-white bg-slate-100 dark:bg-[#1f1d2e]"

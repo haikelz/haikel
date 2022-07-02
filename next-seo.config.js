@@ -3,12 +3,12 @@ const defaultSEOConfig = {
   title: "Haikel",
   titleTemplate: "%s | Haikel",
   defaultTitle: "Haikel",
-  description: "Student and nature enjoyer",
-  canonical: "https://haikel.pages.dev/",
+  description: "Coffee and Nature Enjoyer",
+  canonical: "https://haikel.my.id/",
   openGraph: {
-    url: "https://haikel.pages.dev/",
+    url: "https://haikel.my.id/",
     title: "Haikel",
-    description: "Student and nature enjoyer",
+    description: "Coffee and Nature Enjoyer",
     images: [
       {
         url: "https://raw.githubusercontent.com/haikelz/website/master/public/img/og-image.webp",

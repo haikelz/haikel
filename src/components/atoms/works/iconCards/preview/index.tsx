@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const PreviewIcon = ({ link }: components) => {
   return (
-    <Link href={link} passHref>
+    <Link href={`${link}`} passHref>
       <a>
         <FiExternalLink
           className="hover:text-blue-500 duration-500 cursor-pointer"

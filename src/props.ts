@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 export interface components {
     theme?: string,
     changeTheme?: () => void,
-    link?: any,
+    link?: string,
     linkPreview?: string,
     linkGithub?: string,
     stack1?: string,
