@@ -9,7 +9,7 @@ const linux = "linux";
 
 export const ProjectsList = [
   { h2: "The Sugiharto", p: 'Slicing UI Design bang Nauval', repo: "https://github.com/haikelz/the-sugiharto", preview: "https://the-sugiharto.vercel.app", img: "/img/Project_7.webp", stack1: next, stack2: `framermotion` },
-  { h2: 'Dotfiles', p: 'My Linux configuration', repo: 'https://github.com/haikelz/dotfiles', preview: '', img: '/img/Project_2.webp', stack1: linux, stack2: bspwm },
+  { h2: 'Dotfiles', p: 'My Linux configuration for daily use', repo: 'https://github.com/haikelz/dotfiles', preview: '', img: '/img/Project_2.webp', stack1: linux, stack2: bspwm },
   { h2: 'Anime Words', p: 'Kumpulan kalimat(bukan motivasi) dari tokoh-tokoh Anime.', repo: 'https://github.com/haikelz/anime-words', preview: 'https://anime-words.vercel.app', img: '/img/Project_2.webp', stack1: next, stack2: chakra },
   { h2: 'Cli Quiz Game', p: 'Simple Quiz Game in your terminal', repo: 'https://github.com/haikelz/cli-quiz-game', preview: "", img: '/img/Project_5.webp', stack1: 'nodejs', stack2: 'chalk' },
 
