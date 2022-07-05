@@ -5,6 +5,7 @@ import { memo } from "react";
 import ToggleDarkModeHeader from "@/src/components/atoms/header/headerListItem/toggleDarkModeHeader";
 import HeaderLogo from "@/src/components/atoms/header/headerLogo";
 import HeaderListItem from "@/src/components/atoms/header/headerListItem";
+import { ChangeThemeContext } from "@/src/context/changeTheme";
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
@@ -22,7 +23,9 @@ const Header = () => {
             <div className="hidden md:block">
               <div className="ml-8 flex space-x-4 tracking-widest">
                 <HeaderListItem />
-                <ToggleDarkModeHeader theme={theme} changeTheme={changeTheme} />
+                <ChangeThemeContext.Provider value={changeTheme}>
+                  <ToggleDarkModeHeader theme={theme} />
+                </ChangeThemeContext.Provider>
               </div>
             </div>
           </div>
