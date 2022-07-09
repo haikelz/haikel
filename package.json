@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "framer-motion": "^6.3.16",
+    "jotai": "^1.7.4",
     "next": "12.1.6",
     "next-seo": "^5.4.0",
     "next-themes": "^0.2.0",

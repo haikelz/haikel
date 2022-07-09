@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useAtom } from "jotai";
+import { loadingAtom } from "@/src/store";
 import AboutTitle from "@/src/components/atoms/about/aboutText/title";
 import AboutImage from "@/src/components/atoms/about/aboutImage";
 import AboutDesc from "@/src/components/atoms/about/aboutText/desc";
 
 const AboutContainer = () => {
-  const [isLoading, setLoading] = useState(true);
-  const loadingProsess = () => setLoading(false);
+  const [isLoading, setLoading] = useAtom(loadingAtom);
+  const loadingProsess = () => setLoading(!loadingAtom);
+
   return (
     <div className="container pt-10 md:py-24 mx-auto object-center max-w-7xl px-4 sm:px-6">
       <div className="flex justify-center items-center flex-wrap w-full mb-10">
