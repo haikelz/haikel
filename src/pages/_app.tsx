@@ -1,7 +1,7 @@
-import { ThemeProvider } from "next-themes";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { DefaultSeo } from "next-seo";
+import { useTheme } from "../hooks/useTheme";
 import type { AppProps } from "next/app";
 import "@/src/styles/globals.css";
 import "@/src/styles/progress.css";
@@ -11,6 +11,7 @@ import SEO from "next-seo.config";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [mounted, setMounted] = useState(false);
+  const [theme] = useTheme();
   const router = useRouter();
 
   useEffect(() => {
@@ -37,12 +38,20 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     mounted && (
-      <ThemeProvider attribute="class">
+      <>
         <DefaultSeo {...SEO} />
         <Layout>
-          <Component {...pageProps} />
+          {theme === "dark" ? (
+            <div className="bg-[#191724] text-white">
+              <Component {...pageProps} />
+            </div>
+          ) : (
+            <div className="bg-slate-50">
+              <Component {...pageProps} />
+            </div>
+          )}
         </Layout>
-      </ThemeProvider>
+      </>
     )
   );
 }
