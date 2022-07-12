@@ -41,15 +41,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <>
         <DefaultSeo {...SEO} />
         <Layout>
-          {theme === "dark" ? (
-            <div className="bg-[#191724] text-white">
-              <Component {...pageProps} />
-            </div>
-          ) : (
-            <div className="bg-slate-50">
-              <Component {...pageProps} />
-            </div>
-          )}
+          <div className="dark:bg-[#191724] dark:text-white bg-slate-50">
+            <Component {...pageProps} />
+          </div>
         </Layout>
       </>
     )

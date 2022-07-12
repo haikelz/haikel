@@ -1,17 +1,12 @@
 import { FaPaperPlane } from "react-icons/fa";
-import { components } from "@/src/props";
 import Link from "next/link";
 
-const ContactIcon = ({ theme }: components) => {
+const ContactIcon = () => {
   return (
     <li className="flex justify-center items-center">
       <Link href="/contact" passHref>
         <a>
-          {theme === "dark" ? (
-            <FaPaperPlane className="hover:text-white text-2xl text-slate-400 duration-300 transition-all" />
-          ) : (
-            <FaPaperPlane className="text-slate-500 text-2xl hover:text-slate-600 duration-300 transition-all" />
-          )}
+          <FaPaperPlane className="hover:text-slate-600 dark:hover:text-white text-2xl text-slate-500 dark:text-slate-400 duration-300 transition-all" />
         </a>
       </Link>
     </li>

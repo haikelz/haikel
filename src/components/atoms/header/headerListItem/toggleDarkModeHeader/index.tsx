@@ -1,7 +1,7 @@
 import { components } from "@/src/props";
 import { FiSun, FiMoon } from "react-icons/fi";
 
-const ToggleDarkModeHeader = ({ theme, changeTheme }: any) => {
+const ToggleDarkModeHeader = ({ theme, changeTheme }: components) => {
   return (
     <button
       aria-label="toggle Dark Mode"
