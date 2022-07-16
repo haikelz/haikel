@@ -2,9 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["avatars.githubusercontent.com"],
-    loader: 'akamai', 
-    path: '',
+    domains: ["avatars.githubusercontent.com", "cdn.statically.io"],
+    loader: "akamai",
+    path: "",
   },
 };
 
