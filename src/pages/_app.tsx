@@ -1,7 +1,8 @@
+import { useAtom } from "jotai";
+import { mountedAtom } from "../store";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { DefaultSeo } from "next-seo";
-import { useTheme } from "../hooks/useTheme";
 import type { AppProps } from "next/app";
 import "@/src/styles/globals.css";
 import "@/src/styles/progress.css";
@@ -10,8 +11,7 @@ import NProgress from "nprogress";
 import SEO from "next-seo.config";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [mounted, setMounted] = useState(false);
-  const [theme] = useTheme();
+  const [mounted, setMounted] = useAtom(mountedAtom);
   const router = useRouter();
 
   useEffect(() => {
