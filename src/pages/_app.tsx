@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       router.events.off("routeChangeComplete", handleStop);
       router.events.off("routeChangeError", handleStop);
     };
-  }, [router, mounted]);
+  }, [router]);
 
   return (
     mounted && (
