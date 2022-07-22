@@ -1,12 +1,10 @@
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 import AboutContainer from "@/src/components/organisms/aboutContainer";
 
 const About = () => {
   return (
     <>
-      <Head>
-        <title>About</title>
-      </Head>
+      <NextSeo title="About" />
       <section className="body-font h-screen tracking-wide">
         <AboutContainer />
       </section>

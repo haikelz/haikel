@@ -1,14 +1,15 @@
 /** @type {import('next-seo').DefaultSeoProps} */
 const defaultSEOConfig = {
-  title: "Haikel",
-  titleTemplate: "%s | Haikel",
-  defaultTitle: "Haikel",
-  description: "Coffee and Nature Enjoyer",
+  title: "Haikel's Website",
+  titleTemplate: "%s",
+  defaultTitle: "Haikel's Website",
+  description: "Penikmat Angin Pantai",
   canonical: "https://haikel.my.id/",
   openGraph: {
+    type: "website",
     url: "https://haikel.my.id/",
     title: "Haikel",
-    description: "Coffee and Nature Enjoyer",
+    description: "Penikmat Angin Pantai",
     images: [
       {
         url: "https://raw.githubusercontent.com/haikelz/website/master/public/img/og-image.webp",
