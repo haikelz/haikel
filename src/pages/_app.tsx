@@ -3,14 +3,14 @@ import { mountedAtom } from "../store";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { DefaultSeo } from "next-seo";
+import { AnimatePresence, motion } from "framer-motion";
+import { appAnimation } from "../utils/animation";
 import type { AppProps } from "next/app";
 import "@/src/styles/globals.css";
 import "@/src/styles/progress.css";
 import Layout from "@/src/components/templates/layout";
 import NProgress from "nprogress";
 import SEO from "next-seo.config";
-import { AnimatePresence, motion } from "framer-motion";
-import { appAnimation } from "../utils/animation";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   const [mounted, setMounted] = useAtom(mountedAtom);

@@ -5,14 +5,14 @@ import NotFoundDesc from "@/src/components/atoms/notFound/notFoundDesc";
 import NotFoundImage from "@/src/components/atoms/notFound/notFoundImage";
 
 const NotFoundPage = () => {
-  const router = useRouter();
+  const Router = useRouter();
 
   // Note: redirect user to homepage after 5s waiting, in here i use useRouter and useEffect
   useEffect(() => {
     setTimeout(() => {
-      router.push("/");
+      Router.push("/");
     }, 4000);
-  }, [router]);
+  }, [Router]);
 
   return (
     <>
