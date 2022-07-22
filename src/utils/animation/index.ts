@@ -4,14 +4,9 @@ export const headerAnimation = {
     animate: { opacity: 1, y: 0 },
 }
 
-export const sectionAnimation = {
+export const appAnimation = {
     transition: { duration: 0.5 },
-    initial: { opacity: 0, y: 100 },
+    initial: { opacity: 0, y: 50 },
     animate: { opacity: 1, y: 0 },
-}
-
-export const homeAnimation = {
-    transition: { duration: 0.5 },
-    initial: { opacity: 0 },
-    animate: { opacity: 1 },
+    exit: { opacity: 0, y: 50 },
 }

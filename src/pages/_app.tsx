@@ -9,10 +9,12 @@ import "@/src/styles/progress.css";
 import Layout from "@/src/components/templates/layout";
 import NProgress from "nprogress";
 import SEO from "next-seo.config";
+import { AnimatePresence, motion } from "framer-motion";
+import { appAnimation } from "../utils/animation";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, router }: AppProps) {
   const [mounted, setMounted] = useAtom(mountedAtom);
-  const router = useRouter();
+  const Router = useRouter();
 
   useEffect(() => {
     setMounted(true);
@@ -25,25 +27,27 @@ function MyApp({ Component, pageProps }: AppProps) {
       NProgress.done();
     };
 
-    router.events.on("routeChangeStart", handleStart);
-    router.events.on("routeChangeComplete", handleStop);
-    router.events.on("routeChangeError", handleStop);
+    Router.events.on("routeChangeStart", handleStart);
+    Router.events.on("routeChangeComplete", handleStop);
+    Router.events.on("routeChangeError", handleStop);
 
     return () => {
-      router.events.off("routeChangeStart", handleStart);
-      router.events.off("routeChangeComplete", handleStop);
-      router.events.off("routeChangeError", handleStop);
+      Router.events.off("routeChangeStart", handleStart);
+      Router.events.off("routeChangeComplete", handleStop);
+      Router.events.off("routeChangeError", handleStop);
     };
-  }, [router]);
+  }, [Router]);
 
   return (
     mounted && (
       <>
         <DefaultSeo {...SEO} />
         <Layout>
-          <div className="dark:bg-[#191724] dark:text-white bg-slate-50">
-            <Component {...pageProps} />
-          </div>
+          <AnimatePresence exitBeforeEnter initial={false}>
+            <motion.div key={router.route} {...appAnimation}>
+              <Component {...pageProps} />
+            </motion.div>
+          </AnimatePresence>
         </Layout>
       </>
     )

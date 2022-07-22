@@ -10,10 +10,12 @@ const Layout = ({ children }: components) => {
       <Head>
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
-      <Header />
-      {children}
-      <Footer />
-      <BottomNav />
+      <div className="dark:bg-[#191724] dark:text-white bg-slate-50">
+        <Header />
+        {children}
+        <Footer />
+        <BottomNav />
+      </div>
     </>
   );
 };
