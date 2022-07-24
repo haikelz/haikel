@@ -1,4 +1,4 @@
-import { cn } from "@/src/className";
+import { cn } from "@/src/utils/className";
 import { components } from "@/src/props";
 import Image from "next/image";
 
