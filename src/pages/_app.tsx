@@ -1,4 +1,4 @@
-import { useAtom } from "jotai";
+import { Provider, useAtom } from "jotai";
 import { mountedAtom } from "../store";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
@@ -42,13 +42,15 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
     mounted && (
       <>
         <DefaultSeo {...SEO} />
-        <Layout>
-          <AnimatePresence exitBeforeEnter initial={false}>
-            <motion.div key={router.route} {...appAnimation}>
-              <Component {...pageProps} />
-            </motion.div>
-          </AnimatePresence>
-        </Layout>
+        <Provider>
+          <Layout>
+            <AnimatePresence exitBeforeEnter initial={false}>
+              <motion.div key={router.route} {...appAnimation}>
+                <Component {...pageProps} />
+              </motion.div>
+            </AnimatePresence>
+          </Layout>
+        </Provider>
       </>
     )
   );
