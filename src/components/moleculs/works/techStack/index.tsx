@@ -1,9 +1,8 @@
-// Really, i confuse to give name of every components
-import { components } from "@/src/props";
+import { Components } from "@/src/props";
 import Stack1 from "@/src/components/atoms/works/stack/stack1";
 import Stack2 from "@/src/components/atoms/works/stack/stack2";
 
-const TechStack = ({ stack1, stack2 }: components) => {
+const TechStack = ({ stack1, stack2 }: Components) => {
   return (
     <div className="flex mt-3">
       <Stack1 stack1={stack1} />

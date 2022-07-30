@@ -23,3 +23,7 @@ body {
 p {
   @apply text-base font-normal;
 }
+
+.border-onscroll {
+  @apply border-b dark:border-b-gray-500 border-b-gray-300;
+}

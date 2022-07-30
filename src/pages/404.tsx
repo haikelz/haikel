@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 import NotFoundDesc from "@/src/components/atoms/notFound/notFoundDesc";
 import NotFoundImage from "@/src/components/atoms/notFound/notFoundImage";
 
@@ -16,9 +16,7 @@ const NotFoundPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Not Found</title>
-      </Head>
+      <NextSeo title="Not Found!" />
       <div className="h-screen flex flex-col text-center justify-center items-center">
         <NotFoundImage />
         <NotFoundDesc />

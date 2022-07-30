@@ -12,7 +12,7 @@ import Layout from "@/src/components/templates/layout";
 import NProgress from "nprogress";
 import SEO from "next-seo.config";
 
-function MyApp({ Component, pageProps, router }: AppProps) {
+const MyApp = ({ Component, pageProps, router }: AppProps) => {
   const [mounted, setMounted] = useAtom(mountedAtom);
   const Router = useRouter();
 
@@ -52,6 +52,6 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       </>
     )
   );
-}
+};
 
 export default MyApp;

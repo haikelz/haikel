@@ -6,7 +6,7 @@ import AboutDesc from "@/src/components/atoms/about/aboutText/desc";
 
 const AboutContainer = () => {
   const [isLoading, setLoading] = useAtom(loadingAtom);
-  const loadingProsess = () => setLoading(!loadingAtom);
+  const loadingProsess: () => void = () => setLoading(!loadingAtom);
 
   return (
     <div className="container pt-10 md:py-24 mx-auto object-center max-w-7xl px-4 sm:px-6">

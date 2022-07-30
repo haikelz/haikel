@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export interface components {
+export interface Components {
     theme?: string;
     changeTheme?: () => void;
     link?: string;
@@ -13,7 +13,7 @@ export interface components {
     loadingProsess?: () => void;
 }
 
-export interface list {
+export interface List {
     setLoading: (loading: boolean) => void;
     isLoading: boolean;
 }

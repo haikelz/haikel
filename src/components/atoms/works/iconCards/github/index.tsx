@@ -1,8 +1,8 @@
-import { components } from "@/src/props";
+import { Components } from "@/src/props";
 import { GrGithub } from "react-icons/gr";
 import Link from "next/link";
 
-const GithubIcon = ({ link }: components) => {
+const GithubIcon = ({ link }: Components) => {
   return (
     <Link href={`${link}`} passHref>
       <a>

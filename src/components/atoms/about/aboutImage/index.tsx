@@ -1,8 +1,8 @@
 import { cn } from "@/src/utils/className";
-import { components } from "@/src/props";
+import { Components } from "@/src/props";
 import Image from "next/image";
 
-const AboutImage = ({ isLoading, loadingProsess }: components) => {
+const AboutImage = ({ isLoading, loadingProsess }: Components) => {
   return (
     <div className="overflow-hidden rounded-full drop-shadow-sm flex justify-center items-center">
       <Image

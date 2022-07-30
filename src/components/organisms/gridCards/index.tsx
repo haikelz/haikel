@@ -1,4 +1,4 @@
-import { ProjectsList } from "./projectsList";
+import { ProjectsList } from "@/src/utils/data";
 import Icons from "@/src/components/moleculs/works/icons";
 
 const GridCards = () => {

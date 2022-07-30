@@ -1,10 +1,10 @@
-import { components } from "@/src/props";
+import { Components } from "@/src/props";
 import Head from "next/head";
 import Header from "@/src/components/organisms/header";
 import BottomNav from "@/src/components/organisms/bottomNav";
 import Footer from "@/src/components/organisms/footer";
 
-const Layout = ({ children }: components) => {
+const Layout = ({ children }: Components) => {
   return (
     <>
       <Head>

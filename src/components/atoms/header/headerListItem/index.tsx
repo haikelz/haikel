@@ -1,4 +1,4 @@
-import { List } from "./list";
+import { List } from "@/src/utils/data";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
