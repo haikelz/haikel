@@ -1,4 +1,4 @@
-import { Components } from "@/src/props";
+import { Components } from "@/src/interfaces";
 import { FiSun, FiMoon } from "react-icons/fi";
 
 const ToggleDarkModeHeader = ({ theme, changeTheme }: Components) => {

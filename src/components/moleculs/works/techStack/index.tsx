@@ -1,4 +1,4 @@
-import { Components } from "@/src/props";
+import { Components } from "@/src/interfaces";
 import Stack1 from "@/src/components/atoms/works/stack/stack1";
 import Stack2 from "@/src/components/atoms/works/stack/stack2";
 

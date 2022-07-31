@@ -10,7 +10,7 @@ export interface Components {
     stack2?: string;
     children?: ReactNode[] | JSX.Element;
     isLoading?: boolean;
-    loadingProsess?: () => void;
+    loadingProcess?: () => void;
 }
 
 export interface List {

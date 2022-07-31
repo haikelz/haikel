@@ -20,4 +20,3 @@ export const List = [
     { id: "b", text: "Works", href: "/works" },
     { id: "c", text: "Contact", href: "/contact" },
 ];
-

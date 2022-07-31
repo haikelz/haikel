@@ -1,4 +1,4 @@
-import { Components } from "@/src/props";
+import { Components } from "@/src/interfaces";
 import Head from "next/head";
 import Header from "@/src/components/organisms/header";
 import BottomNav from "@/src/components/organisms/bottomNav";

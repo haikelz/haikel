@@ -1,8 +1,8 @@
 import { cn } from "@/src/utils/className";
-import { Components } from "@/src/props";
+import { Components } from "@/src/interfaces";
 import Image from "next/image";
 
-const AboutImage = ({ isLoading, loadingProsess }: Components) => {
+const AboutImage = ({ isLoading, loadingProcess }: Components) => {
   return (
     <div className="overflow-hidden rounded-full drop-shadow-sm flex justify-center items-center">
       <Image
@@ -16,7 +16,7 @@ const AboutImage = ({ isLoading, loadingProsess }: Components) => {
             ? "grayscale rounded-full blur-2xl scale-110"
             : "grayscale-0 blur-0 rounded-full scale-100"
         )}
-        onLoadingComplete={loadingProsess}
+        onLoadingComplete={loadingProcess}
       />
     </div>
   );
