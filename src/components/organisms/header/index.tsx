@@ -22,7 +22,7 @@ const Header = () => {
   });
 
   return (
-    <header className="fixed hidden md:block z-50 w-full backdrop-filter backdrop-blur-lg bg-slate-50/80 dark:text-white dark:bg-[#171923]/80">
+    <header className="fixed hidden md:block z-50 w-full backdrop-filter backdrop-blur-lg bg-slate-50/70 dark:text-white dark:bg-dark/70">
       <nav className="text-sm max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center h-12 justify-between">
           <HeaderLogo />

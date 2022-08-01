@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const ContactDesc = () => {
-  const link = "underline font-bold hover:text-sky-600";
+  const link = "underline underline-offset-2 font-bold hover:text-textHover";
 
   return (
     <div className="flex justify-center mt-1 w-full sm:w-[90%] md:w-[70%]  items-center flex-col">

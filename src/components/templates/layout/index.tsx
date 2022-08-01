@@ -10,7 +10,7 @@ const Layout = ({ children }: Components) => {
       <Head>
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
-      <div className="dark:bg-[#191724] dark:text-white bg-slate-50">
+      <div className="dark:bg-dark dark:text-white bg-light">
         <Header />
         {children}
         <Footer />

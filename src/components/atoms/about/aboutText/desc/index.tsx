@@ -5,18 +5,19 @@ import { useReducerAtom } from "jotai/utils";
 const AboutDesc = () => {
   const [language, toggleLanguage] = useReducerAtom(languageAtom, setLanguage);
 
-  const span = "cursor-pointer underline font-bold hover:text-sky-600";
+  const span =
+    "cursor-pointer underline underline-offset-2 font-bold hover:text-textHover";
   const p =
     "text-md sm:w-9/12 lg:w-[50%] leading-relaxed sm:ml-4 mt-3 text-center";
 
   return (
     <>
       {/* 
-    Logic: 
+      Logic: 
 
-    - Jika language bernilai true, maka tampilkan bahasa Inggris dulu 
-    - Jika language bernilai false, maka tampilkan bahasa Indonesia
-    */}
+      - Jika language bernilai true, maka tampilkan bahasa Inggris dulu 
+      - Jika language bernilai false, maka tampilkan bahasa Indonesia
+      */}
       {language ? (
         <p className={p}>
           Hello. I&#39;m Haikel. From Bangka Belitung Islands. Mainly using

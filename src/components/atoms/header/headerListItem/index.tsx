@@ -11,7 +11,7 @@ const HeaderListItem = () => {
         <Link href={nav.href} key={nav.id} passHref>
           <p
             className={`duration-200 active:bg-slate-300 active:dark:bg-slate-800 px-3 py-1.5 rounded-sm font-semibold ${
-              router.asPath == nav.href ? "underline" : ""
+              router.asPath == nav.href && "underline underline-offset-2"
             } cursor-pointer`}
           >
             {nav.text}
