@@ -10,9 +10,9 @@ module.exports = {
       },
       colors: {
         light: "#F8FAFC",
-        dark: "#171717",
+        dark: "#191724",
         lightCard: "#F1F5F9",
-        darkCard: "#1E1E20",
+        darkCard: "#1F1D2E",
         textHover: "#2563EB",
         lightTag: "#247881",
         darkTag: "#D1D9D0",

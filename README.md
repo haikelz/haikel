@@ -1,8 +1,10 @@
-# website
+<div align="center">
+  <h1>Website</h1>
+  <p>Yep, just my Website</p>
+</div>
 
-Yup, just my website
 
-# Credits
+## Credits
 
 Thanks for give me inspiration!
 

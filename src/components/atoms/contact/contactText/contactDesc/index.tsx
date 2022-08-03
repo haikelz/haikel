@@ -11,7 +11,7 @@ const ContactDesc = () => {
         <Link href="https://t.me/pempek_kapal_selem" passHref>
           <a className={link}>Telegram</a>
         </Link>
-        (yeah, mostly active in Telegram), or you can send friendlist to my{" "}
+        , or you can send friendlist to my{" "}
         <Link href="https://facebook.com/kelgfx" passHref>
           <a className={link}>Facebook</a>
         </Link>{" "}
