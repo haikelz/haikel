@@ -4,7 +4,7 @@ import HomeContainer from "@/src/components/organisms/homeContainer";
 const Home = () => {
   return (
     <>
-      <NextSeo title="Home" />
+      <NextSeo title="Haikel" />
       <section className="body-font tracking-wide">
         <HomeContainer />
       </section>

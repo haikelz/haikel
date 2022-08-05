@@ -6,8 +6,7 @@ import HeaderListItem from "@/src/components/atoms/header/headerListItem";
 
 const Header = () => {
   const [theme, setTheme] = useTheme();
-  const changeTheme: () => void = () =>
-    setTheme(theme === "dark" ? "light" : "dark");
+  const changeTheme: () => void = () => setTheme(theme === "dark" ? "light" : "dark");
 
   useEffect(() => {
     const header = document.querySelector("header");

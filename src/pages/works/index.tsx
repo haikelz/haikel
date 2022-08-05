@@ -5,7 +5,7 @@ const Works = () => {
   return (
     <>
       <NextSeo title="Works" />
-      <section id="works" className="body-font tracking-wide">
+      <section id="works" className="body-font min-h-screen tracking-wide">
         <WorksContainer />
       </section>
     </>

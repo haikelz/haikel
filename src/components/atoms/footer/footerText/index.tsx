@@ -1,7 +1,7 @@
+import { today } from "@/src/utils/today";
 import Link from "next/link";
 
 const FooterText = () => {
-  const today = new Date();
   return (
     <>
       <p className="text-sm pb-1">2020-{today.getFullYear()} Haikel.</p>

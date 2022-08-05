@@ -7,8 +7,7 @@ import AboutIcon from "@/src/components/atoms/bottomNav/iconBottomNav/aboutIcon"
 
 const BottomNav = () => {
   const [theme, setTheme] = useTheme();
-  const changeTheme: () => void = () =>
-    setTheme(theme === "dark" ? "light" : "dark");
+  const changeTheme: () => void = () => setTheme(theme === "dark" ? "light" : "dark");
 
   return (
     <div className="flex flex-col justify-center items-center w-full">
