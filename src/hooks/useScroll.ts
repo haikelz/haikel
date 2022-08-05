@@ -18,7 +18,7 @@ export const useScroll = () => {
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
-    }, [scroll]);
+    }, [scroll, handleScroll]);
 
     return [scroll, setScroll] as const;
 }
