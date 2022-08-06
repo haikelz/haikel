@@ -6,10 +6,7 @@ const PreviewIcon = ({ link }: Components) => {
   return (
     <Link href={`${link}`} passHref>
       <a>
-        <FiExternalLink
-          className="hover:text-blue-500 duration-500 cursor-pointer"
-          size="20px"
-        />
+        <FiExternalLink className="hover:text-blue-500 duration-500 cursor-pointer" size="20px" />
       </a>
     </Link>
   );
