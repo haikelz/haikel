@@ -36,7 +36,7 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
       Router.events.off("routeChangeComplete", handleStop);
       Router.events.off("routeChangeError", handleStop);
     };
-  }, [Router]);
+  }, [Router, setMounted]);
 
   return (
     mounted && (
