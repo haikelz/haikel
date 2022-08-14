@@ -1,5 +1,5 @@
 const HomeDesc = () => {
-  return <p className="mb-4 leading-relaxed">Penikmat Angin Pantai</p>;
+  return <p className="mb-4 leading-relaxed">Front End Enthusiast</p>;
 };
 
 export default HomeDesc;

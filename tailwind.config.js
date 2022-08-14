@@ -7,6 +7,7 @@ module.exports = {
       boxShadow: {
         light: "10px 10px 0px -3px #000000",
         dark: "10px 10px 0px -3px #FFFFFF",
+        progress: "0 0 10px #29d, 0 0 5px #29d",
       },
       colors: {
         light: "#F8FAFC",
@@ -16,6 +17,10 @@ module.exports = {
         textHover: "#2563EB",
         lightTag: "#247881",
         darkTag: "#D1D9D0",
+      },
+      fontFamily: {
+        logo: ["Caveat"],
+        body: ["Lexend"],
       },
     },
   },
