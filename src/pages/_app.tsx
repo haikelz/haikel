@@ -1,6 +1,6 @@
 import { Provider, useAtom } from "jotai";
 import { mountedAtom } from "../store";
-import { useRouter } from "next/router";
+import { NextRouter, useRouter } from "next/router";
 import { useEffect } from "react";
 import { DefaultSeo } from "next-seo";
 import { AnimatePresence, motion } from "framer-motion";
@@ -13,7 +13,7 @@ import SEO from "next-seo.config";
 
 const MyApp = ({ Component, pageProps, router }: AppProps) => {
   const [mounted, setMounted] = useAtom(mountedAtom);
-  const Router = useRouter();
+  const Router: NextRouter = useRouter();
 
   useEffect(() => {
     setMounted(true);

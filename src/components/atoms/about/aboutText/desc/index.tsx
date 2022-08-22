@@ -10,12 +10,11 @@ const AboutDesc = () => {
 
   return (
     <>
-      {/* 
-      Logic: 
-
-      - Jika language bernilai true, maka tampilkan bahasa Inggris dulu 
-      - Jika language bernilai false, maka tampilkan bahasa Indonesia
-      */}
+      {/**
+       * Logic:
+       * Jika language bernilai true, maka tampilkan bahasa Inggris dulu
+       * Jika language bernilai false, maka tampilkan bahasa Indonesia
+       **/}
       {language ? (
         <p className={p}>
           Hello. I&#39;m Haikel. From Bangka Belitung Islands. Mainly using

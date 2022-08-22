@@ -3,8 +3,8 @@ import { useEffect } from "react";
 
 type Theme = 'light' | 'dark';
 
-const browser = typeof window !== 'undefined';
-const localValue = (browser ? localStorage.getItem('theme') : 'light') as Theme;
+const browser: boolean = typeof window !== 'undefined';
+const localValue: Theme = (browser ? localStorage.getItem('theme') : 'light') as Theme;
 const systemTheme: Theme = browser && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 const themeAtom = atom<Theme>(localValue || systemTheme);
 
