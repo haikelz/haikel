@@ -9,7 +9,7 @@ const Header = () => {
   const changeTheme: () => void = () => setTheme(theme === "dark" ? "light" : "dark");
 
   useEffect(() => {
-    const header = document.querySelector("header");
+    const header: HTMLElement | null = document.querySelector("header");
 
     window.onscroll = () => {
       if (window.pageYOffset > 0) {
