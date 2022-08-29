@@ -1,5 +1,5 @@
 import { Components } from "@/src/interfaces";
-import { FiSun, FiMoon } from "react-icons/fi";
+import { MdLightMode, MdDarkMode } from "react-icons/md";
 
 const ToggleDarkIcon = ({ theme, changeTheme }: Components) => {
   return (
@@ -10,9 +10,9 @@ const ToggleDarkIcon = ({ theme, changeTheme }: Components) => {
       onClick={changeTheme}
     >
       {theme === "dark" ? (
-        <FiSun className="hover:text-white text-2xl text-slate-400 duration-300 transition-all" />
+        <MdLightMode className="hover:text-white text-2xl text-slate-400 duration-300 transition-all" />
       ) : (
-        <FiMoon className="text-slate-500 text-2xl hover:text-slate-600 duration-300 transition-all" />
+        <MdDarkMode className="text-slate-500 text-2xl hover:text-slate-600 duration-300 transition-all" />
       )}
     </button>
   );

@@ -1,9 +1,9 @@
 import { HeaderList } from "@/src/utils/data";
-import { useRouter } from "next/router";
+import { NextRouter, useRouter } from "next/router";
 import Link from "next/link";
 
 const HeaderListItem = () => {
-  const router = useRouter();
+  const router: NextRouter = useRouter();
 
   return (
     <>
@@ -11,7 +11,7 @@ const HeaderListItem = () => {
         <Link href={nav.href} key={nav.id} passHref>
           <p
             className={`duration-200 active:bg-slate-300 active:dark:bg-slate-800 px-3 py-1.5 rounded-sm font-semibold ${
-              router.asPath == nav.href && "underline underline-offset-2"
+              router.asPath === nav.href && "underline underline-offset-4 decoration-dashed"
             } cursor-pointer`}
           >
             {nav.text}

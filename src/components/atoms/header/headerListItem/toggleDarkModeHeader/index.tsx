@@ -1,5 +1,5 @@
 import { Components } from "@/src/interfaces";
-import { FiSun, FiMoon } from "react-icons/fi";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 const ToggleDarkModeHeader = ({ theme, changeTheme }: Components) => {
   return (
@@ -9,7 +9,7 @@ const ToggleDarkModeHeader = ({ theme, changeTheme }: Components) => {
       className="outline-none"
       onClick={changeTheme}
     >
-      {theme === "dark" ? <FiSun size={20} /> : <FiMoon size={20} />}
+      {theme === "dark" ? <MdDarkMode size={20} /> : <MdLightMode size={20} />}
     </button>
   );
 };

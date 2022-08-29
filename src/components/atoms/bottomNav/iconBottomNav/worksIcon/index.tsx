@@ -1,4 +1,4 @@
-import { FaBook } from "react-icons/fa";
+import { MdLibraryBooks } from "react-icons/md";
 import { NextRouter, useRouter } from "next/router";
 import Link from "next/link";
 
@@ -9,7 +9,7 @@ const WorksIcon = () => {
     <li className="flex justify-center items-center">
       <Link href="/works" passHref>
         <a>
-          <FaBook
+          <MdLibraryBooks
             className={`text-2xl ${
               router.asPath == "/works"
                 ? "text-slate-600 dark:text-white"

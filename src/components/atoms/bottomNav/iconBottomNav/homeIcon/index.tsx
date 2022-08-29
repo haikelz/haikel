@@ -1,4 +1,4 @@
-import { FaHome } from "react-icons/fa";
+import { MdHomeFilled } from "react-icons/md";
 import { NextRouter, useRouter } from "next/router";
 import Link from "next/link";
 
@@ -9,7 +9,7 @@ const HomeIcon = () => {
     <li className="flex justify-center items-center">
       <Link href="/" passHref>
         <a>
-          <FaHome
+          <MdHomeFilled
             className={`text-2xl ${
               router.asPath == "/"
                 ? "text-slate-600 dark:text-white"

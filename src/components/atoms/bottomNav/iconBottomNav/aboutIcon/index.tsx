@@ -1,4 +1,4 @@
-import { FaUserAlt } from "react-icons/fa";
+import { MdAccountCircle, MdPerson } from "react-icons/md";
 import { NextRouter, useRouter } from "next/router";
 import Link from "next/link";
 
@@ -9,7 +9,7 @@ const AboutIcon = () => {
     <li className="flex justify-center items-center">
       <Link href="/about" passHref>
         <a>
-          <FaUserAlt
+          <MdAccountCircle
             className={`text-2xl ${
               router.asPath == "/about"
                 ? "text-slate-600 dark:text-white"

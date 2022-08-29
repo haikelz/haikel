@@ -20,7 +20,7 @@ module.exports = {
       },
       fontFamily: {
         logo: ["Caveat"],
-        body: ["Lexend"],
+        body: ["Montserrat"],
       },
     },
   },

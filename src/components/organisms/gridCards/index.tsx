@@ -10,10 +10,10 @@ const GridCards = () => {
           key={index + 1}
         >
           <div className="px-6 pb-6 pt-3">
-            <h2 className="text-xl font-bold title-font mt-2 mb-2">{work.h2}</h2>
+            <h2 className="text-xl font-bold  mt-2 mb-2">{work.h2}</h2>
             <p className="tracking-wide mb-2">{work.p}</p>
-            <div className="flex mt-3">
-              <span className="mr-2 px-1.5 text-sm text-white dark:text-slate-900 bg-lightTag dark:bg-darkTag">
+            <div className="flex gap-2 font-medium mt-3">
+              <span className="px-1.5 text-sm text-white dark:text-slate-900 bg-lightTag dark:bg-darkTag">
                 {work.stack1}
               </span>
               <span className="px-1.5 text-white dark:text-slate-900 text-sm bg-lightTag dark:bg-darkTag">

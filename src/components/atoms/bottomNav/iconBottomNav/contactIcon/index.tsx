@@ -1,4 +1,4 @@
-import { FaPaperPlane } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import { NextRouter, useRouter } from "next/router";
 import Link from "next/link";
 
@@ -9,7 +9,7 @@ const ContactIcon = () => {
     <li className="flex justify-center items-center">
       <Link href="/contact" passHref>
         <a>
-          <FaPaperPlane
+          <MdEmail
             className={`text-2xl ${
               router.asPath == "/contact"
                 ? "text-slate-600 dark:text-white"
