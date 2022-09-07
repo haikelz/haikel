@@ -1,3 +1,1 @@
-export const setLanguage = (language: boolean) => {
-    return !language;
-};
+export const setLanguage = (language: boolean) => !language;

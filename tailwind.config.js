@@ -11,8 +11,10 @@ module.exports = {
       },
       colors: {
         light: "#F8FAFC",
-        dark: "#191724",
+        dark: "#16161D",
         lightCard: "#F1F5F9",
+        lightUnderline: "#F05454",
+        darkUnderline: "#2563EB",
         darkCard: "#1F1D2E",
         textHover: "#2563EB",
         lightTag: "#247881",
@@ -20,7 +22,7 @@ module.exports = {
       },
       fontFamily: {
         logo: ["Caveat"],
-        body: ["Montserrat"],
+        body: ["Rubik"],
       },
     },
   },

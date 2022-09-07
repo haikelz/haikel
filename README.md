@@ -3,7 +3,6 @@
   <p>Yep, just my Website</p>
 </div>
 
-
 ## Credits
 
 Thanks for give me inspiration!

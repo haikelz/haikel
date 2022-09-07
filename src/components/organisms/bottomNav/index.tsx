@@ -1,4 +1,5 @@
 import { useTheme } from "@/src/hooks/useTheme";
+import { memo } from "react";
 import HomeIcon from "@/src/components/atoms/bottomNav/iconBottomNav/homeIcon";
 import ToggleDarkIcon from "@/src/components/atoms/bottomNav/iconBottomNav/toggleDarkIcon";
 import ContactIcon from "@/src/components/atoms/bottomNav/iconBottomNav/contactIcon";
@@ -24,4 +25,4 @@ const BottomNav = () => {
   );
 };
 
-export default BottomNav;
+export default memo(BottomNav);

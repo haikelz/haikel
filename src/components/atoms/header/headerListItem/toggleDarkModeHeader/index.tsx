@@ -1,5 +1,5 @@
 import { Components } from "@/src/interfaces";
-import { MdDarkMode, MdLightMode } from "react-icons/md";
+import { MdDarkMode, MdLightMode, MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
 
 const ToggleDarkModeHeader = ({ theme, changeTheme }: Components) => {
   return (
@@ -9,7 +9,7 @@ const ToggleDarkModeHeader = ({ theme, changeTheme }: Components) => {
       className="outline-none"
       onClick={changeTheme}
     >
-      {theme === "dark" ? <MdDarkMode size={20} /> : <MdLightMode size={20} />}
+      {theme === "dark" ? <MdOutlineDarkMode size={22} /> : <MdOutlineLightMode size={22} />}
     </button>
   );
 };

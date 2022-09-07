@@ -10,11 +10,12 @@ const ContactIcon = () => {
       <Link href="/contact" passHref>
         <a>
           <MdEmail
-            className={`text-2xl ${
+            className={`${
               router.asPath == "/contact"
                 ? "text-slate-600 dark:text-white"
                 : "text-slate-500 dark:text-slate-400"
             } duration-200 transition-all`}
+            size={28}
           />
         </a>
       </Link>
