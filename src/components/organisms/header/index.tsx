@@ -1,15 +1,17 @@
-import { memo, useEffect } from "react";
-import { useTheme } from "@/src/hooks/useTheme";
-import { useScroll } from "@/src/hooks/useScroll";
-import ToggleDarkModeHeader from "@/src/components/atoms/header/headerListItem/toggleDarkModeHeader";
-import HeaderLogo from "@/src/components/atoms/header/headerLogo";
-import HeaderListItem from "@/src/components/atoms/header/headerListItem";
+import { memo } from "react";
+import { useTheme } from "@/hooks/useTheme";
+import { useScroll } from "@/hooks/useScroll";
+import ToggleDarkModeHeader from "@/components/atoms/header/headerListItem/toggleDarkModeHeader";
+import HeaderLogo from "@/components/atoms/header/headerLogo";
+import HeaderListItem from "@/components/atoms/header/headerListItem";
+
+type ChangeTheme = () => void;
 
 const Header = () => {
   const [theme, setTheme] = useTheme();
   const [scroll] = useScroll();
 
-  const changeTheme: () => void = () => setTheme(theme === "dark" ? "light" : "dark");
+  const changeTheme: ChangeTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
   return (
     <header

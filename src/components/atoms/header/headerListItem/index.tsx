@@ -1,4 +1,4 @@
-import { HeaderList } from "@/src/utils/data";
+import { HeaderList } from "@/utils/data";
 import { NextRouter, useRouter } from "next/router";
 import Link from "next/link";
 

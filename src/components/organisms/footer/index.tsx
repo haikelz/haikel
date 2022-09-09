@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { today } from "@/src/utils/today";
+import { today } from "@/utils/today";
 import Link from "next/link";
 
 const Footer = () => {

@@ -1,10 +1,10 @@
-import { useTheme } from "@/src/hooks/useTheme";
+import { useTheme } from "@/hooks/useTheme";
 import { memo } from "react";
-import HomeIcon from "@/src/components/atoms/bottomNav/iconBottomNav/homeIcon";
-import ToggleDarkIcon from "@/src/components/atoms/bottomNav/iconBottomNav/toggleDarkIcon";
-import ContactIcon from "@/src/components/atoms/bottomNav/iconBottomNav/contactIcon";
-import WorksIcon from "@/src/components/atoms/bottomNav/iconBottomNav/worksIcon";
-import AboutIcon from "@/src/components/atoms/bottomNav/iconBottomNav/aboutIcon";
+import HomeIcon from "@/components/atoms/bottomNav/iconBottomNav/homeIcon";
+import ToggleDarkIcon from "@/components/atoms/bottomNav/iconBottomNav/toggleDarkIcon";
+import ContactIcon from "@/components/atoms/bottomNav/iconBottomNav/contactIcon";
+import WorksIcon from "@/components/atoms/bottomNav/iconBottomNav/worksIcon";
+import AboutIcon from "@/components/atoms/bottomNav/iconBottomNav/aboutIcon";
 
 type ChangeTheme = () => void;
 

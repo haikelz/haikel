@@ -1,7 +1,7 @@
 import { NextSeo } from "next-seo";
-import Underline from "@/src/components/atoms/underline";
-import Link from "next/link";
 import { memo } from "react";
+import Underline from "@/components/atoms/underline";
+import Link from "next/link";
 
 const Contact = () => {
   const link: string = "font-bold hover:text-textHover";
@@ -9,7 +9,7 @@ const Contact = () => {
   return (
     <>
       <NextSeo title="Contact" />
-      <section className="body-font h-screen tracking-wide">
+      <section className=" h-screen tracking-wide">
         <div className="container pt-6 md:py-24 mx-auto object-center max-w-7xl px-4 sm:px-6">
           <div className="flex flex-wrap justify-center items-center w-full mb-10">
             <div className="w-full flex justify-center items-center flex-col">

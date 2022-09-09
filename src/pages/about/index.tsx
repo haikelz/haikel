@@ -1,12 +1,12 @@
 import { NextSeo } from "next-seo";
-import { languageAtom, loadingAtom } from "@/src/store";
-import { setIsLoading } from "@/src/helpers/setIsLoading";
+import { languageAtom, loadingAtom } from "@/store/index";
+import { setIsLoading } from "@/helpers/setIsLoading";
 import { useReducerAtom } from "jotai/utils";
-import { setLanguage } from "@/src/helpers/setLanguage";
+import { setLanguage } from "@/helpers/setLanguage";
 import { memo } from "react";
-import Underline from "@/src/components/atoms/underline";
-import AboutImage from "@/src/components/atoms/aboutImage";
-import Steps from "@/src/components/moleculs/steps";
+import Underline from "@/components/atoms/underline";
+import AboutImage from "@/components/atoms/aboutImage";
+import Steps from "@/components/moleculs/steps";
 
 const About = () => {
   const [isLoading, loadingProcess] = useReducerAtom(loadingAtom, setIsLoading);

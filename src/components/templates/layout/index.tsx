@@ -1,9 +1,9 @@
 import { Components } from "@/src/interfaces";
 import Head from "next/head";
-import Header from "@/src/components/organisms/header";
-import BottomNav from "@/src/components/organisms/bottomNav";
-import Footer from "@/src/components/organisms/footer";
-import BackToTop from "@/src/components/atoms/backToTop";
+import Header from "@/components/organisms/header";
+import BottomNav from "@/components/organisms/bottomNav";
+import Footer from "@/components/organisms/footer";
+import BackToTop from "@/components/atoms/backToTop";
 
 const Layout = ({ children }: Components) => {
   return (

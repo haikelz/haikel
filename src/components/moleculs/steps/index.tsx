@@ -1,6 +1,6 @@
-import ComingSoon from "@/src/components/atoms/journey/step/comingSoon";
-import SMA from "@/src/components/atoms/journey/step/sma";
-import SMP from "@/src/components/atoms/journey/step/smp";
+import ComingSoon from "@/components/atoms/journey/step/comingSoon";
+import SMA from "@/components/atoms/journey/step/sma";
+import SMP from "@/components/atoms/journey/step/smp";
 
 const Steps = () => {
   return (

@@ -1,5 +1,5 @@
-import { ProjectsList } from "@/src/utils/data";
-import Icons from "@/src/components/moleculs/icons";
+import { ProjectsList } from "@/utils/data";
+import Icons from "@/components/moleculs/icons";
 
 const GridCards = () => {
   return (

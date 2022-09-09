@@ -8,7 +8,7 @@
     "start": "next start",
     "export": "next export",
     "prepare": "husky install",
-    "lint": "eslint ."
+    "lint": "next lint"
   },
   "dependencies": {
     "framer-motion": "^6.3.16",

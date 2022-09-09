@@ -1,13 +1,13 @@
 import { Provider, useAtom } from "jotai";
-import { mountedAtom } from "../store";
+import { mountedAtom } from "@/store/index";
 import { NextRouter, useRouter } from "next/router";
 import { useEffect } from "react";
 import { DefaultSeo } from "next-seo";
 import { AnimatePresence, motion } from "framer-motion";
-import { appAnimation } from "../utils/animation";
+import { appAnimation } from "@/utils/animation";
 import type { AppProps } from "next/app";
-import "@/src/styles/globals.css";
-import Layout from "@/src/components/templates/layout";
+import "@/styles/globals.css";
+import Layout from "@/components/templates/layout";
 import NProgress from "nprogress";
 import SEO from "next-seo.config";
 

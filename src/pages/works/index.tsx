@@ -1,14 +1,14 @@
 import { NextSeo } from "next-seo";
-import { ProjectsList } from "@/src/utils/data";
+import { ProjectsList } from "@/utils/data";
 import { memo } from "react";
-import Underline from "@/src/components/atoms/underline";
-import Icons from "@/src/components/moleculs/icons";
+import Underline from "@/components/atoms/underline";
+import Icons from "@/components/moleculs/icons";
 
 const Works = () => {
   return (
     <>
       <NextSeo title="Works" />
-      <section id="works" className="body-font min-h-screen tracking-wide">
+      <section id="works" className="min-h-screen tracking-wide">
         <div className="container flex justify-center items-center flex-col pt-6 pb-24 md:py-24 mx-auto object-center max-w-7xl px-4 sm:px-6">
           <div className="flex flex-wrap w-full mb-10">
             <div className="w-full flex justify-center items-center flex-col">

@@ -26,6 +26,27 @@
       "@/src/*": [
         "src/*"
       ],
+      "@/components/*": [
+        "src/components/*"
+      ],
+      "@/helpers/*": [
+        "src/helpers/*"
+      ],
+      "@/hooks/*": [
+        "src/hooks/*"
+      ],
+      "@/pages/*": [
+        "src/pages/*"
+      ],
+      "@/store/*": [
+        "src/store/*"
+      ],
+      "@/styles/*": [
+        "src/styles/*"
+      ],
+      "@/utils/*": [
+        "src/utils/*"
+      ]
     }
   },
   "include": [
