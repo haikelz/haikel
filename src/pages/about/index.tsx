@@ -6,7 +6,7 @@ import { setLanguage } from "@/helpers/setLanguage";
 import { memo } from "react";
 import Underline from "@/components/atoms/underline";
 import AboutImage from "@/components/atoms/aboutImage";
-import Steps from "@/components/moleculs/steps";
+import Steps from "@/src/components/molecules/steps";
 
 const About = () => {
   const [isLoading, loadingProcess] = useReducerAtom(loadingAtom, setIsLoading);

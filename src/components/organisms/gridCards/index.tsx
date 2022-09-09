@@ -1,12 +1,12 @@
 import { ProjectsList } from "@/utils/data";
-import Icons from "@/components/moleculs/icons";
+import Icons from "@/components/molecules/icons";
 
 const GridCards = () => {
   return (
     <div className="grid grid-cols-1 grid-rows-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
       {ProjectsList.map((work, index) => (
         <div
-          className="overflow-hidden dark:hover:shadow-light hover:shadow-dark duration-200 transition-all border-2 cursor-pointer border-black dark:border-white bg-lightCard dark:bg-darkCard"
+          className="overflow-hidden dark:hover:shadow-light hover:shadow-dark duration-200 transition-all border-[2.5px] cursor-pointer border-black dark:border-white bg-lightCard dark:bg-darkCard"
           key={index + 1}
         >
           <div className="px-6 pb-6 pt-3">
