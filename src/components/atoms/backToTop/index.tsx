@@ -2,7 +2,6 @@ import { FaChevronUp } from "react-icons/fa";
 import { useScroll } from "@/hooks/useScroll";
 import { AnimatePresence, motion } from "framer-motion";
 import { backToTopAnimation } from "@/utils/animation";
-import { MdKeyboardArrowUp } from "react-icons/md";
 
 const BackToTop = () => {
   const [scroll] = useScroll();
@@ -27,7 +26,7 @@ const BackToTop = () => {
             className="p-2.5 rounded-md bg-lightUnderline dark:bg-darkUnderline hover:bg-red-500 dark:hover:bg-blue-700 duration-300 transition"
             onClick={handleClick}
           >
-            <MdKeyboardArrowUp className="text-white" size={20} />
+            <FaChevronUp className="text-white" size={20} />
           </button>
         </motion.div>
       )}
