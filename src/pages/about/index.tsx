@@ -6,10 +6,10 @@ import { setLanguage } from "@/helpers/setLanguage";
 import { memo } from "react";
 import Underline from "@/components/atoms/underline";
 import AboutImage from "@/components/atoms/aboutImage";
-import Steps from "@/src/components/molecules/steps";
+import Steps from "@/components/molecules/steps";
 
 const About = () => {
-  const [isLoading, loadingProcess] = useReducerAtom(loadingAtom, setIsLoading);
+  const [isLoading, loadingProcess] = useReducerAtom<boolean, unknown>(loadingAtom, setIsLoading);
   const [language, toggleLanguage] = useReducerAtom<boolean, unknown>(languageAtom, setLanguage);
 
   const span: string = "cursor-pointer underline underline-offset-2 font-bold hover:text-textHover";
@@ -19,7 +19,7 @@ const About = () => {
   return (
     <>
       <NextSeo title="About" />
-      <section className="min-h-screen tracking-wide">
+      <div className="min-h-screen tracking-wide">
         <div className="container pt-6 md:pt-24 mx-auto object-center max-w-7xl px-4 sm:px-6">
           <div className="flex justify-center items-center flex-wrap w-full mb-10">
             <div className="mb-1 lg:mb-0 flex justify-center items-center flex-col">
@@ -67,7 +67,7 @@ const About = () => {
           </div>
           <Steps />
         </div>
-      </section>
+      </div>
     </>
   );
 };

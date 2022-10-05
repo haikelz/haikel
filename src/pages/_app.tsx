@@ -6,7 +6,7 @@ import { DefaultSeo } from "next-seo";
 import { AnimatePresence, motion } from "framer-motion";
 import { appAnimation } from "@/utils/animation";
 import type { AppProps } from "next/app";
-import "@/styles/globals.css";
+import "@/styles/index.scss";
 import Layout from "@/components/templates/layout";
 import NProgress from "nprogress";
 import SEO from "next-seo.config";

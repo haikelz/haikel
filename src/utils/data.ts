@@ -18,7 +18,7 @@ export const ProjectsList = [
   },
   {
     h2: "The Sugiharto",
-    p: "Slicing UI Design bang Nauval",
+    p: "Slicing UI Design bang Nauval Array ID",
     repo: "https://github.com/haikelz/the-sugiharto",
     preview: "https://the-sugiharto.vercel.app",
     stack1: next,
@@ -37,6 +37,14 @@ export const ProjectsList = [
     p: "A website to search your favorite anime, and manga",
     repo: "https://github.com/haikelz/animeow",
     preview: "https://animeow-red.vercel.app",
+    stack1: next,
+    stack2: reactQuery,
+  },
+  {
+    h2: "Beritakan",
+    p: "Kumpulan berita dari berbagai sumber",
+    repo: "https://github.com/haikelz/beritakan",
+    preview: "https://beritakan.vercel.app",
     stack1: next,
     stack2: reactQuery,
   },
@@ -78,4 +86,11 @@ export const HeaderList = [
   { id: "a", text: "About", href: "/about" },
   { id: "b", text: "Works", href: "/works" },
   { id: "c", text: "Contact", href: "/contact" },
+];
+
+export const socialMediaList = [
+  { name: "Telegram", link: "https://t.me/pempek_kapal_selem" },
+  { name: "Facebook", link: "https://facebook.com/kelgfx" },
+  { name: "Github", link: "https://github.com/haikelz" },
+  { name: "Linkedin", link: "https://www.linkedin.com/in/haikel-ilham-hakim" },
 ];

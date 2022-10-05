@@ -5,10 +5,10 @@ const defaultSEOConfig = {
   titleTemplate: "%s",
   defaultTitle: "Haikel's Website",
   description: "Frontend Enthusiast",
-  canonical: "https://haikel.my.id/",
+  canonical: "https://haikel.my.id",
   openGraph: {
     type: "website",
-    url: "https://haikel.my.id/",
+    url: "https://haikel.my.id",
     title: "Haikel",
     description: "Frontend Enthusiast",
     images: [

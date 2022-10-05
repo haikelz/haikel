@@ -1,4 +1,4 @@
-import { MdAccountCircle, MdPerson } from "react-icons/md";
+import { MdAccountCircle } from "react-icons/md";
 import { NextRouter, useRouter } from "next/router";
 import Link from "next/link";
 

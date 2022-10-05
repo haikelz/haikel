@@ -1,23 +1,18 @@
-@import "nprogress.css";
+@use "./nprogress.scss";
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Rubik:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
+@layer base {
   * {
     @apply scroll-smooth;
   }
-
   body {
     @apply font-body m-0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-
-  .logo {
-    @apply font-logo text-3xl;
   }
 
   a {
@@ -27,8 +22,14 @@
   p {
     @apply text-base font-medium;
   }
+}
 
+@layer components {
   .border-onscroll {
     @apply border-b dark:border-b-gray-500 border-b-gray-300;
+  }
+
+  .logo {
+    @apply font-logo text-3xl;
   }
 }
