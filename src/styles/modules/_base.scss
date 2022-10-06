@@ -1,0 +1,19 @@
+@layer base {
+  * {
+    @apply scroll-smooth;
+
+    body {
+      @apply m-0 font-body;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
+      a {
+        @apply underline underline-offset-2;
+      }
+
+      p {
+        @apply text-base font-medium;
+      }
+    }
+  }
+}

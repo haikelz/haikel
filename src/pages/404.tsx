@@ -16,7 +16,7 @@ const NotFoundPage = () => {
   return (
     <>
       <NextSeo title="Not Found!" />
-      <div className="min-h-screen flex flex-col text-center justify-center items-center">
+      <div className="flex min-h-screen flex-col items-center justify-center text-center">
         <NotFoundImage />
         <div className="mt-6 flex flex-col items-center">
           <h2 className="text-xl font-bold sm:text-2xl">Oops....</h2>

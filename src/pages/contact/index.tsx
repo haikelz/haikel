@@ -11,14 +11,14 @@ const Contact = () => {
     <>
       <NextSeo title="Contact" />
       <div className=" h-screen tracking-wide">
-        <div className="container pt-6 md:py-24 mx-auto object-center max-w-7xl px-4 sm:px-6">
-          <div className="flex flex-wrap justify-center items-center w-full mb-10">
-            <div className="w-full flex justify-center items-center flex-col">
-              <h1 className="text-3xl font-bold text-center">Contact</h1>
+        <div className="container mx-auto max-w-7xl object-center px-4 pt-6 sm:px-6 md:py-24">
+          <div className="mb-10 flex w-full flex-wrap items-center justify-center">
+            <div className="flex w-full flex-col items-center justify-center">
+              <h1 className="text-center text-3xl font-bold">Contact</h1>
               <Underline />
             </div>
-            <div className="flex justify-center mt-1 w-full sm:w-[90%] md:w-[70%] items-center flex-col">
-              <p className="leading-relaxed font-normal text-center">
+            <div className="mt-1 flex w-full flex-col items-center justify-center sm:w-[90%] md:w-[70%]">
+              <p className="text-center font-normal leading-relaxed">
                 Feel free to reach me via{" "}
                 {socialMediaList.map((item, index) => (
                   <>

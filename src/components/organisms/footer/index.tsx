@@ -4,8 +4,8 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="mb-16 hidden md:block tracking-widest md:mb-0 pb-4 text-center">
-      <p className="text-sm font-semibold pb-1">2020-{today.getFullYear()} Haikel</p>
+    <div className="mb-16 hidden pb-4 text-center tracking-widest md:mb-0 md:block">
+      <p className="pb-1 text-sm font-semibold">2020-{today.getFullYear()} Haikel</p>
       <p className="text-sm font-semibold">
         This Website is under{" "}
         <Link href="https://github.com/haikelz/website/blob/master/LICENSE" passHref>

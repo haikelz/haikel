@@ -23,7 +23,7 @@ const BackToTop = () => {
           className="fixed bottom-20 right-3 md:bottom-4 md:right-4"
         >
           <button
-            className="p-2.5 rounded-md bg-lightUnderline dark:bg-darkUnderline hover:bg-red-500 dark:hover:bg-blue-700 duration-300 transition"
+            className="rounded-md bg-lightUnderline p-2.5 transition duration-300 hover:bg-red-500 dark:bg-darkUnderline dark:hover:bg-blue-700"
             onClick={handleClick}
           >
             <FaChevronUp className="text-white" size={20} />

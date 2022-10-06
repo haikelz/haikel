@@ -15,14 +15,14 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed hidden md:block z-50 w-full backdrop-filter backdrop-blur-lg bg-slate-50/70 dark:text-white dark:bg-dark/70 ${
+      className={`fixed z-50 hidden w-full bg-slate-50/70 backdrop-blur-lg backdrop-filter dark:bg-dark/70 dark:text-white md:block ${
         scroll > 0 && "border-onscroll"
       }`}
     >
-      <nav className="text-sm max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center h-12 justify-between">
+      <nav className="mx-auto max-w-7xl px-4 text-sm sm:px-6">
+        <div className="flex h-12 items-center justify-between">
           <HeaderLogo />
-          <div className="flex justify-center items-center">
+          <div className="flex items-center justify-center">
             <div className="hidden md:block">
               <div className="ml-8 flex space-x-4 tracking-widest">
                 <HeaderListItem />

@@ -4,7 +4,7 @@ import PreviewIcon from "@/components/atoms/iconCards/preview";
 
 const Icons = ({ linkPreview, linkGithub }: Components) => {
   return (
-    <div className="flex mt-3 justify-end">
+    <div className="mt-3 flex justify-end">
       <GithubIcon link={linkGithub} />
       <PreviewIcon link={linkPreview} />
     </div>

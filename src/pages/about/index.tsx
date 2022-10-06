@@ -20,14 +20,14 @@ const About = () => {
     <>
       <NextSeo title="About" />
       <div className="min-h-screen tracking-wide">
-        <div className="container pt-6 md:pt-24 mx-auto object-center max-w-7xl px-4 sm:px-6">
-          <div className="flex justify-center items-center flex-wrap w-full mb-10">
-            <div className="mb-1 lg:mb-0 flex justify-center items-center flex-col">
-              <div className="w-full flex justify-center items-center flex-col">
-                <h1 className="text-3xl font-bold text-center">About</h1>
+        <div className="container mx-auto max-w-7xl object-center px-4 pt-6 sm:px-6 md:pt-24">
+          <div className="mb-10 flex w-full flex-wrap items-center justify-center">
+            <div className="mb-1 flex flex-col items-center justify-center lg:mb-0">
+              <div className="flex w-full flex-col items-center justify-center">
+                <h1 className="text-center text-3xl font-bold">About</h1>
                 <Underline />
               </div>
-              <div className="mt-2 sm:mt-4 flex flex-col justify-center items-center">
+              <div className="mt-2 flex flex-col items-center justify-center sm:mt-4">
                 <AboutImage isLoading={isLoading} loadingProcess={loadingProcess} />
                 {/**
                  * Logic:
@@ -59,11 +59,11 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="container py-10 md:py-24 mx-auto object-center max-w-7xl px-4 sm:px-6">
-          <div className="w-full flex justify-center items-center flex-col">
-            <h1 className="text-3xl font-bold text-center">Journey</h1>
+        <div className="container mx-auto max-w-7xl object-center py-10 px-4 sm:px-6 md:py-24">
+          <div className="flex w-full flex-col items-center justify-center">
+            <h1 className="text-center text-3xl font-bold">Journey</h1>
             <Underline />
-            <p className="w-full leading-relaxed text-center">My Experience, and journey</p>
+            <p className="w-full text-center leading-relaxed">My Experience, and journey</p>
           </div>
           <Steps />
         </div>

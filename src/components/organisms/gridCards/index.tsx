@@ -3,20 +3,20 @@ import Icons from "@/components/molecules/icons";
 
 const GridCards = () => {
   return (
-    <div className="grid grid-cols-1 grid-rows-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 grid-rows-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
       {ProjectsList.map((work, index) => (
         <div
-          className="overflow-hidden dark:hover:shadow-light hover:shadow-dark duration-200 transition-all border-[2.5px] cursor-pointer border-black dark:border-white bg-lightCard dark:bg-darkCard"
+          className="cursor-pointer overflow-hidden border-[2.5px] border-black bg-lightCard transition-all duration-200 hover:shadow-dark dark:border-white dark:bg-darkCard dark:hover:shadow-light"
           key={index + 1}
         >
           <div className="px-6 pb-6 pt-3">
-            <h2 className="text-xl font-bold mt-2 mb-2">{work.h2}</h2>
-            <p className="tracking-wide mb-2">{work.p}</p>
-            <div className="flex gap-2 font-medium mt-3">
-              <span className="px-1.5 text-sm text-white dark:text-slate-900 bg-lightTag dark:bg-darkTag">
+            <h2 className="mt-2 mb-2 text-xl font-bold">{work.h2}</h2>
+            <p className="mb-2 tracking-wide">{work.p}</p>
+            <div className="mt-3 flex gap-2 font-medium">
+              <span className="bg-lightTag px-1.5 text-sm text-white dark:bg-darkTag dark:text-slate-900">
                 {work.stack1}
               </span>
-              <span className="px-1.5 text-white dark:text-slate-900 text-sm bg-lightTag dark:bg-darkTag">
+              <span className="bg-lightTag px-1.5 text-sm text-white dark:bg-darkTag dark:text-slate-900">
                 {work.stack2}
               </span>
             </div>

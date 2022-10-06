@@ -8,13 +8,13 @@ const Works = () => {
     <>
       <NextSeo title="Works" />
       <div className="min-h-screen tracking-wide">
-        <div className="container flex justify-center items-center flex-col pt-6 pb-24 md:py-24 mx-auto object-center max-w-7xl px-4 sm:px-6">
-          <div className="flex flex-wrap w-full mb-10">
-            <div className="w-full flex justify-center items-center flex-col">
-              <h1 className="text-3xl font-bold text-center">Works</h1>
+        <div className="container mx-auto flex max-w-7xl flex-col items-center justify-center object-center px-4 pt-6 pb-24 sm:px-6 md:py-24">
+          <div className="mb-10 flex w-full flex-wrap">
+            <div className="flex w-full flex-col items-center justify-center">
+              <h1 className="text-center text-3xl font-bold">Works</h1>
               <Underline />
             </div>
-            <p className="w-full leading-relaxed text-center">List some of my works</p>
+            <p className="w-full text-center leading-relaxed">List some of my works</p>
           </div>
           <div className="flex flex-wrap">
             <GridCards />

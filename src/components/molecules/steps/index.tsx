@@ -4,7 +4,7 @@ import SMP from "@/components/atoms/journey/step/smp";
 
 const Steps = () => {
   return (
-    <div className="mt-10 flex flex-col justify-center items-center">
+    <div className="mt-10 flex flex-col items-center justify-center">
       <div>
         <ComingSoon />
         <SMA />
