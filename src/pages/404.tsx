@@ -16,13 +16,13 @@ const NotFoundPage = () => {
   return (
     <>
       <NextSeo title="Not Found!" />
-      <div className="flex min-h-screen flex-col items-center justify-center text-center">
+      <section className="flex min-h-screen flex-col items-center justify-center text-center">
         <NotFoundImage />
         <div className="mt-6 flex flex-col items-center">
           <h2 className="text-xl font-bold sm:text-2xl">Oops....</h2>
           <p className="text-xs sm:text-base">Halaman yang anda cari tidak ditemukan!</p>
         </div>
-      </div>
+      </section>
     </>
   );
 };

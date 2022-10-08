@@ -1,5 +1,5 @@
 import { Components } from "@/src/interfaces";
-import { MdDarkMode, MdLightMode, MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
+import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
 
 const ToggleDarkModeHeader = ({ theme, changeTheme }: Components) => {
   return (

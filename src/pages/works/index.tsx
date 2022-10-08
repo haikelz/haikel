@@ -7,7 +7,7 @@ const Works = () => {
   return (
     <>
       <NextSeo title="Works" />
-      <div className="min-h-screen tracking-wide">
+      <section className="min-h-screen tracking-wide">
         <div className="container mx-auto flex max-w-7xl flex-col items-center justify-center object-center px-4 pt-6 pb-24 sm:px-6 md:py-24">
           <div className="mb-10 flex w-full flex-wrap">
             <div className="flex w-full flex-col items-center justify-center">
@@ -20,7 +20,7 @@ const Works = () => {
             <GridCards />
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

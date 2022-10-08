@@ -6,13 +6,13 @@ import BackToTop from "@/components/atoms/backToTop";
 
 const Layout = ({ children }: Components) => {
   return (
-    <section className="min-h-screen bg-light dark:bg-dark dark:text-white">
+    <div className="min-h-screen bg-light dark:bg-dark dark:text-white">
       <Header />
       {children}
       <BackToTop />
       <Footer />
       <BottomNav />
-    </section>
+    </div>
   );
 };
 

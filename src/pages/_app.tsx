@@ -44,9 +44,9 @@ const App = ({ Component, pageProps, router }: AppProps) => {
         <Provider>
           <Layout>
             <AnimatePresence exitBeforeEnter initial={false}>
-              <motion.div key={router.route} {...appAnimation}>
+              <motion.main key={router.route} {...appAnimation}>
                 <Component {...pageProps} />
-              </motion.div>
+              </motion.main>
             </AnimatePresence>
           </Layout>
         </Provider>

@@ -12,14 +12,10 @@ const About = () => {
   const [isLoading, loadingProcess] = useReducerAtom<boolean, unknown>(loadingAtom, setIsLoading);
   const [language, toggleLanguage] = useReducerAtom<boolean, unknown>(languageAtom, setLanguage);
 
-  const span: string = "cursor-pointer underline underline-offset-2 font-bold hover:text-textHover";
-  const p: string =
-    "sm:w-9/12 font-normal lg:w-[50%] leading-relaxed sm:ml-4 mt-3 tracking-wide text-center";
-
   return (
     <>
       <NextSeo title="About" />
-      <div className="min-h-screen tracking-wide">
+      <section className="min-h-screen tracking-wide">
         <div className="container mx-auto max-w-7xl object-center px-4 pt-6 sm:px-6 md:pt-24">
           <div className="mb-10 flex w-full flex-wrap items-center justify-center">
             <div className="mb-1 flex flex-col items-center justify-center lg:mb-0">
@@ -35,24 +31,20 @@ const About = () => {
                  * Jika language bernilai false, maka tampilkan bahasa Indonesia
                  **/}
                 {language ? (
-                  <p className={p}>
+                  <p className="about-desc">
                     Hello. I&#39;m Haikel. From Bangka Belitung. Mainly using
                     <b> Javascript/Typescript, ReactJS(NextJS), TailwindCSS/ChakraUI, Jotai,</b> and
                     using <b>Linux</b> as primary OS. I enjoy nature, playing chess, jogging, and
                     recently i also enjoy reading book.{" "}
-                    <span onClick={toggleLanguage} className={span}>
-                      See in Indonesia.
-                    </span>
+                    <span onClick={toggleLanguage}>See in Indonesia.</span>
                   </p>
                 ) : (
-                  <p className={p}>
+                  <p className="about-desc">
                     Halo. Saya Haikel. Berasal dari Bangka Belitung. Biasanya menggunakan
                     <b> Javascript/Typescript, ReactJS(NextJS), TailwindCSS/ChakraUI, Jotai, </b>dan
                     menggunakan <b>Linux</b> sebagai OS utama. Saya senang menikmati alam, bermain
                     catur, jogging, dan baru-baru ini saya juga senang membaca buku.{" "}
-                    <span onClick={toggleLanguage} className={span}>
-                      Lihat di Bahasa Inggris.
-                    </span>
+                    <span onClick={toggleLanguage}>Lihat di Bahasa Inggris.</span>
                   </p>
                 )}
               </div>
@@ -67,7 +59,7 @@ const About = () => {
           </div>
           <Steps />
         </div>
-      </div>
+      </section>
     </>
   );
 };

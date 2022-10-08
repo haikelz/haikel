@@ -6,4 +6,16 @@
   .logo {
     @apply font-logo text-3xl;
   }
+
+  .about-desc {
+    @apply mt-3 text-center font-normal leading-relaxed tracking-wide sm:ml-4 sm:w-9/12 lg:w-[50%];
+
+    span {
+      @apply cursor-pointer font-bold underline underline-offset-2 hover:text-textHover;
+    }
+  }
+
+  .link-contact {
+    @apply font-bold hover:text-textHover;
+  }
 }
