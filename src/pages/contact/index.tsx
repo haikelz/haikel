@@ -21,7 +21,9 @@ const Contact = () => {
                 {socialMediaList.map((item, index) => (
                   <Link key={index + 1} href={item.link} passHref>
                     <>
-                      <a className="link-contact">{item.name}</a>
+                      <a className="link-contact" href={item.link}>
+                        {item.name}
+                      </a>
                       {item.name === "Telegram" || item.name === "Facebook"
                         ? ", "
                         : item.name === "Github"
