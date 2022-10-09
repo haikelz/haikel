@@ -14,6 +14,10 @@
       p {
         @apply text-base font-medium;
       }
+
+      button {
+        @apply outline-none;
+      }
     }
   }
 }
