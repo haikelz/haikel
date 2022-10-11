@@ -16,7 +16,7 @@ const BackToTop = () => {
   const height: number = 50;
 
   return (
-    <AnimatePresence key={height} exitBeforeEnter>
+    <AnimatePresence key={height} mode="wait">
       {scroll > height && (
         <motion.div
           {...backToTopAnimation}

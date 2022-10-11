@@ -18,5 +18,6 @@ export const darkModeIconAnimation = {
   transition: { type: "spring", stiffness: 200, damping: 10 },
   initial: { opacity: 0.6, rotate: 90 },
   animate: { opacity: 1, rotate: 0 },
-  whileTap: { scale: 0.95, rotate: 15 },
+  whileTap: whileTap,
 };
+1

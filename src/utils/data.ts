@@ -1,3 +1,5 @@
+import { MdAccountCircle, MdEmail, MdHomeFilled, MdLibraryBooks } from "react-icons/md";
+
 const tailwind: string = "tailwindcss";
 const next: string = "nextjs";
 const chakra: string = "chakra-ui";
@@ -93,4 +95,11 @@ export const socialMediaList = [
   { name: "Facebook", link: "https://facebook.com/kelgfx" },
   { name: "Github", link: "https://github.com/haikelz" },
   { name: "Linkedin", link: "https://www.linkedin.com/in/haikel-ilham-hakim" },
+];
+
+export const bottomNavList = [
+  { name: "Home", icon: MdHomeFilled, link: "/" },
+  { name: "About", icon: MdAccountCircle, link: "/about" },
+  { name: "Works", icon: MdLibraryBooks, link: "/works" },
+  { name: "Contact", icon: MdEmail, link: "/contact" },
 ];

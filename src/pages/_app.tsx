@@ -43,7 +43,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
         <DefaultSeo {...SEO} />
         <Provider>
           <Layout>
-            <AnimatePresence exitBeforeEnter initial={false}>
+            <AnimatePresence mode="wait" initial={false}>
               <motion.main key={router.route} {...appAnimation}>
                 <Component {...pageProps} />
               </motion.main>
