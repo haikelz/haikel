@@ -10,6 +10,7 @@ const AboutImage = ({ isLoading, loadingProcess }: Components) => {
         width="270px"
         height="270px"
         alt="Profile"
+        priority={true}
         className={cn(
           "absolute cursor-pointer rounded-full duration-700 ease-in-out hover:opacity-80",
           isLoading
