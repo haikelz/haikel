@@ -1,10 +1,10 @@
 import { memo, useEffect } from "react";
-import { useRouter } from "next/router";
+import { NextRouter, useRouter } from "next/router";
 import { NextSeo } from "next-seo";
 import NotFoundImage from "@/components/atoms/notFoundImage";
 
 const NotFoundPage = () => {
-  const Router = useRouter();
+  const Router: NextRouter = useRouter();
 
   // Note: redirect user to homepage after 5s waiting, in here i use useRouter and useEffect
   useEffect(() => {
