@@ -4,6 +4,7 @@ import { setIsLoading } from "@/helpers/setIsLoading";
 import { useReducerAtom } from "jotai/utils";
 import { setLanguage } from "@/helpers/setLanguage";
 import { memo } from "react";
+import { useKeydown } from "@/hooks/useKeydown";
 import Underline from "@/components/atoms/underline";
 import AboutImage from "@/components/atoms/aboutImage";
 import Steps from "@/components/molecules/steps";
@@ -11,6 +12,8 @@ import Steps from "@/components/molecules/steps";
 const About = () => {
   const [isLoading, loadingProcess] = useReducerAtom<boolean, unknown>(loadingAtom, setIsLoading);
   const [language, toggleLanguage] = useReducerAtom<boolean, unknown>(languageAtom, setLanguage);
+
+  useKeydown({ isCtrlKey: true, previousUrl: "/", nextUrl: "/works" });
 
   return (
     <>

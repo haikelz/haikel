@@ -1,4 +1,4 @@
-import { Components } from "@/src/interfaces";
+import { Components } from "@/interfaces";
 import { FiExternalLink } from "react-icons/fi";
 import Link from "next/link";
 

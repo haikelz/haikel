@@ -1,4 +1,4 @@
-import { Components } from "@/src/interfaces";
+import { Components } from "@/interfaces";
 import { darkModeIconAnimation, whileTap } from "@/src/utils/animation";
 import { domAnimation, LazyMotion, m } from "framer-motion";
 

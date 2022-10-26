@@ -1,4 +1,4 @@
-import { Components } from "@/src/interfaces";
+import { Components } from "@/interfaces";
 import { GrGithub } from "react-icons/gr";
 import Link from "next/link";
 

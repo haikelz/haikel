@@ -1,10 +1,13 @@
 import { NextSeo } from "next-seo";
 import { memo } from "react";
 import { socialMediaList } from "@/utils/data";
+import { useKeydown } from "@/hooks/useKeydown";
 import Underline from "@/components/atoms/underline";
 import Link from "next/link";
 
 const Contact = () => {
+  useKeydown({ isCtrlKey: true, previousUrl: "/works", nextUrl: "/" });
+
   return (
     <>
       <NextSeo title="Contact" />

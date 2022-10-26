@@ -1,4 +1,4 @@
-import { Components } from "@/src/interfaces";
+import { Components } from "@/interfaces";
 import GithubIcon from "@/components/atoms/iconCards/github";
 import PreviewIcon from "@/components/atoms/iconCards/preview";
 

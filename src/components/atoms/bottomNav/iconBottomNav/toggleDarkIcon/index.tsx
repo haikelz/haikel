@@ -1,4 +1,4 @@
-import { Components } from "@/src/interfaces";
+import { Components } from "@/interfaces";
 import { domAnimation, LazyMotion, m } from "framer-motion";
 import MoonIcon from "../moonIcon";
 import SunIcon from "../sunIcon";

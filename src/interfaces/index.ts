@@ -17,3 +17,14 @@ export interface List {
   setLoading: (loading: boolean) => void;
   isLoading: boolean;
 }
+
+export interface Keydown {
+  isCtrlKey: boolean;
+  previousUrl: string;
+  nextUrl: string;
+}
+
+export interface KeydownEvent {
+  ctrlKey: boolean;
+  key: string;
+}
