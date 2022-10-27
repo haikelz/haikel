@@ -1,8 +1,8 @@
-import { Components } from "@/interfaces";
+import { LinkIcon } from "@/interfaces";
 import { FiExternalLink } from "react-icons/fi";
 import Link from "next/link";
 
-const PreviewIcon = ({ link }: Components) => {
+const PreviewIcon = ({ link }: LinkIcon) => {
   return (
     <Link href={`${link}`} passHref>
       <a>

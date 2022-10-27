@@ -1,14 +1,26 @@
 import { ReactNode } from "react";
 
-export interface Components {
+export interface Theme {
   theme?: string;
   changeTheme?: () => void;
+}
+
+export interface LinkIcon {
   link?: string;
   linkPreview?: string;
   linkGithub?: string;
+}
+
+export interface Stack {
   stack1?: string;
   stack2?: string;
+}
+
+export interface Children {
   children?: ReactNode[] | JSX.Element;
+}
+
+export interface Loading {
   isLoading?: boolean;
   loadingProcess?: () => void;
 }
@@ -27,4 +39,9 @@ export interface Keydown {
 export interface KeydownEvent {
   ctrlKey: boolean;
   key: string;
+}
+
+export interface ShowedModal {
+  isShowed: boolean;
+  setIsShowed: (showed: boolean) => void;
 }

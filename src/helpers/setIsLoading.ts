@@ -1,3 +1,3 @@
-import { loadingAtom } from "@/store/index";
+import { loadingAtom } from "@/store";
 
 export const setIsLoading = () => !loadingAtom;

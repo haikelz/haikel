@@ -1,8 +1,8 @@
-import { Components } from "@/interfaces";
+import { LinkIcon } from "@/interfaces";
 import { GrGithub } from "react-icons/gr";
 import Link from "next/link";
 
-const GithubIcon = ({ link }: Components) => {
+const GithubIcon = ({ link }: LinkIcon) => {
   return (
     <Link href={`${link}`} passHref>
       <a>

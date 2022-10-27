@@ -1,8 +1,8 @@
-import { Components } from "@/interfaces";
+import { Theme } from "@/interfaces";
 import { darkModeIconAnimation, whileTap } from "@/src/utils/animation";
 import { domAnimation, LazyMotion, m } from "framer-motion";
 
-const ToggleDarkModeHeader = ({ theme, changeTheme }: Components) => {
+const ToggleDarkModeHeader = ({ theme, changeTheme }: Theme) => {
   return (
     <LazyMotion features={domAnimation}>
       <m.button

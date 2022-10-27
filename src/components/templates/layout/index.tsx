@@ -1,10 +1,10 @@
-import { Components } from "@/interfaces";
+import { Children } from "@/src/interfaces";
 import Header from "@/components/organisms/header";
 import BottomNav from "@/components/organisms/bottomNav";
 import Footer from "@/components/organisms/footer";
 import BackToTop from "@/components/atoms/backToTop";
 
-const Layout = ({ children }: Components) => {
+const Layout = ({ children }: Children) => {
   return (
     <div className="min-h-screen bg-light dark:bg-dark dark:text-white">
       <Header />

@@ -20,4 +20,10 @@ export const darkModeIconAnimation = {
   animate: { opacity: 1, rotate: 0 },
   whileTap: whileTap,
 };
-1
+
+export const showedModalAnimation = {
+  transition: { duration: 0.2 },
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 },
+};

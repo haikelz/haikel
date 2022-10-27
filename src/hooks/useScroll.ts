@@ -1,6 +1,6 @@
 import { useCallback, useEffect } from "react";
 import { useAtom } from "jotai";
-import { scrollAtom } from "@/store/index";
+import { scrollAtom } from "@/store";
 import { useAtomCallback } from "jotai/utils";
 
 type HandleScroll = () => void;

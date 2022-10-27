@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed z-50 hidden w-full bg-slate-50/70 backdrop-blur-lg backdrop-filter dark:bg-dark/70 dark:text-white md:block ${
+      className={`fixed z-10 hidden w-full bg-slate-50/70 backdrop-blur-lg backdrop-filter dark:bg-dark/70 dark:text-white md:block ${
         scroll > 0 && "border-onscroll"
       }`}
     >

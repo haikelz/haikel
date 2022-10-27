@@ -1,5 +1,5 @@
 import { NextSeo } from "next-seo";
-import { languageAtom, loadingAtom } from "@/store/index";
+import { languageAtom, loadingAtom } from "@/store";
 import { setIsLoading } from "@/helpers/setIsLoading";
 import { useReducerAtom } from "jotai/utils";
 import { setLanguage } from "@/helpers/setLanguage";

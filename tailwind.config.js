@@ -24,6 +24,7 @@ module.exports = {
       fontFamily: {
         logo: ["Caveat"],
         body: ["Rubik"],
+        code: ["JetBrains Mono"],
       },
     },
   },

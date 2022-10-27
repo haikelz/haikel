@@ -1,8 +1,8 @@
-import { Components } from "@/interfaces";
+import { LinkIcon } from "@/interfaces";
 import GithubIcon from "@/components/atoms/iconCards/github";
 import PreviewIcon from "@/components/atoms/iconCards/preview";
 
-const Icons = ({ linkPreview, linkGithub }: Components) => {
+const Icons = ({ linkPreview, linkGithub }: LinkIcon) => {
   return (
     <div className="mt-3 flex justify-end">
       <GithubIcon link={linkGithub} />

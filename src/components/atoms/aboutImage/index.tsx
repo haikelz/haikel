@@ -1,7 +1,7 @@
 import { cn } from "@/utils/className";
-import { Components } from "@/interfaces";
+import { Loading } from "@/interfaces";
 
-const AboutImage = ({ isLoading, loadingProcess }: Components) => {
+const AboutImage = ({ isLoading, loadingProcess }: Loading) => {
   return (
     <div className="flex items-center justify-center overflow-hidden rounded-full border-[6px] border-gray-100 shadow-allAround dark:border-gray-800">
       <svg

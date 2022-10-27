@@ -38,8 +38,8 @@
       "@/pages/*": [
         "src/pages/*"
       ],
-      "@/store/*": [
-        "src/store/*"
+      "@/store": [
+        "src/store"
       ],
       "@/styles/*": [
         "src/styles/*"

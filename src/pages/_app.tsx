@@ -1,5 +1,5 @@
 import { Provider, useAtom } from "jotai";
-import { mountedAtom } from "@/store/index";
+import { mountedAtom } from "@/store";
 import { NextRouter, useRouter } from "next/router";
 import { useEffect } from "react";
 import { DefaultSeo } from "next-seo";

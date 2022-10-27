@@ -1,9 +1,9 @@
-import { Components } from "@/interfaces";
+import { Theme } from "@/interfaces";
 import { domAnimation, LazyMotion, m } from "framer-motion";
 import MoonIcon from "../moonIcon";
 import SunIcon from "../sunIcon";
 
-const ToggleDarkIcon = ({ theme, changeTheme }: Components) => {
+const ToggleDarkIcon = ({ theme, changeTheme }: Theme) => {
   return (
     <div className="flex items-center justify-center">
       <LazyMotion features={domAnimation}>
