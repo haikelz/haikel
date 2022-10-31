@@ -1,4 +1,4 @@
-import { Theme } from "@/interfaces";
+import { Theme } from "@/types";
 import { domAnimation, LazyMotion, m } from "framer-motion";
 import MoonIcon from "../moonIcon";
 import SunIcon from "../sunIcon";

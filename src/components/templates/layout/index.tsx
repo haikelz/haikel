@@ -1,4 +1,4 @@
-import { Children } from "@/interfaces";
+import { Children } from "@/types";
 import Header from "@/components/organisms/header";
 import BottomNav from "@/components/organisms/bottomNav";
 import Footer from "@/components/organisms/footer";

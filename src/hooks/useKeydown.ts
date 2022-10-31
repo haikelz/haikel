@@ -1,6 +1,6 @@
 import { NextRouter, useRouter } from "next/router";
 import { useCallback, useEffect } from "react";
-import { Keydown, KeydownEvent } from "@/interfaces";
+import { Keydown, KeydownEvent } from "@/types";
 
 export const useKeydown = <T extends Keydown>({ isCtrlKey, previousUrl, nextUrl }: T) => {
   const router: NextRouter = useRouter();

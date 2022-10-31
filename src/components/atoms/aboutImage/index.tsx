@@ -1,5 +1,5 @@
 import { cn } from "@/utils/className";
-import { Loading } from "@/interfaces";
+import { Loading } from "@/types";
 
 const AboutImage = ({ isLoading, loadingProcess }: Loading) => {
   return (

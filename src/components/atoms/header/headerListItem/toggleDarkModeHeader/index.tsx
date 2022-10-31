@@ -1,4 +1,4 @@
-import { Theme } from "@/interfaces";
+import { Theme } from "@/types";
 import { darkModeIconAnimation, whileTap } from "@/utils/animation";
 import { domAnimation, LazyMotion, m } from "framer-motion";
 

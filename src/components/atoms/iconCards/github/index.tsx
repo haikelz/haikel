@@ -1,4 +1,4 @@
-import { LinkIcon } from "@/interfaces";
+import { LinkIcon } from "@/types";
 import { GrGithub } from "react-icons/gr";
 import Link from "next/link";
 

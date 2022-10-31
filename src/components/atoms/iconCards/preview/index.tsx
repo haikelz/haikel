@@ -1,4 +1,4 @@
-import { LinkIcon } from "@/interfaces";
+import { LinkIcon } from "@/types";
 import { FiExternalLink } from "react-icons/fi";
 import Link from "next/link";
 

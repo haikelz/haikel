@@ -1,4 +1,4 @@
-import { ShowedModal } from "@/interfaces";
+import { ShowedModal } from "@/types";
 import { showedModalAnimation } from "@/utils/animation";
 import { AnimatePresence, motion } from "framer-motion";
 

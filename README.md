@@ -8,6 +8,7 @@
 - Tailwind CSS
 - Framer Motion
 - Jotai
+- Zod
 
 ## Credits
 

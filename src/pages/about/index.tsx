@@ -32,7 +32,7 @@ const About = () => {
                  * Logic:
                  * Jika language bernilai true, maka tampilkan bahasa Inggris dulu
                  * Jika language bernilai false, maka tampilkan bahasa Indonesia
-                 **/}
+                 */}
                 {language ? (
                   <p className="about-desc">
                     Hello. I&#39;m Haikel. From Bangka Belitung. Mainly using

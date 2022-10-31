@@ -7,6 +7,7 @@ const reactQuery: string = "react-query";
 const jotai: string = "jotai";
 const motion: string = "framer-motion";
 const swr: string = "swr";
+const svelte: string = "svelte";
 
 export const ProjectsList = [
   {
@@ -14,7 +15,6 @@ export const ProjectsList = [
     p: "Website jadwal Sholat dan baca Al-Qur'an",
     repo: "https://github.com/haikelz/jadwal-sholat",
     preview: "https://jadwal-sholat.pages.dev/",
-    img: "",
     stack1: next,
     stack2: tailwind,
   },
@@ -67,12 +67,12 @@ export const ProjectsList = [
     stack2: tailwind,
   },
   {
-    h2: "Pokelist",
-    p: "Simple Pokemon list and details",
-    repo: "https://github.com/haikelz/Pokelist",
-    preview: "https://pokelist-eight.vercel.app/",
-    stack1: next,
-    stack2: chakra,
+    h2: "Wakaranai",
+    p: "A website to convert Romaji to Hiragana/Katakana",
+    repo: "https://github.com/haikelz/wakaranai",
+    preview: "https://wakaranai.vercel.app",
+    stack1: svelte,
+    stack2: tailwind,
   },
   {
     h2: "Todo App",

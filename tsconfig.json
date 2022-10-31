@@ -47,8 +47,8 @@
       "@/utils/*": [
         "src/utils/*"
       ],
-      "@/interfaces": [
-        "src/interfaces"
+      "@/types": [
+        "src/types"
       ]
     }
   },
