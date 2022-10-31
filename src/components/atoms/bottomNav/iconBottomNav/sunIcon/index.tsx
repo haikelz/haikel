@@ -1,4 +1,4 @@
-import { darkModeIconAnimation, whileTap } from "@/src/utils/animation";
+import { darkModeIconAnimation, whileTap } from "@/utils/animation";
 import { m } from "framer-motion";
 
 const SunIcon = () => {

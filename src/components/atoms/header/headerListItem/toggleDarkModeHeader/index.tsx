@@ -1,5 +1,5 @@
 import { Theme } from "@/interfaces";
-import { darkModeIconAnimation, whileTap } from "@/src/utils/animation";
+import { darkModeIconAnimation, whileTap } from "@/utils/animation";
 import { domAnimation, LazyMotion, m } from "framer-motion";
 
 const ToggleDarkModeHeader = ({ theme, changeTheme }: Theme) => {

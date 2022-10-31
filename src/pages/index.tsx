@@ -1,10 +1,9 @@
 import { NextSeo } from "next-seo";
 import { memo } from "react";
 import { useKeydown } from "@/hooks/useKeydown";
-import { atom, useAtom } from "jotai";
+import { isShowedAtom } from "@/store";
+import { useAtom } from "jotai";
 import Modal from "@/components/molecules/modal";
-
-const isShowedAtom = atom<boolean>(false);
 
 const Home = () => {
   const [isShowed, setIsShowed] = useAtom(isShowedAtom);

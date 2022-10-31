@@ -15,9 +15,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed z-10 hidden w-full bg-slate-50/70 backdrop-blur-lg backdrop-filter dark:bg-dark/70 dark:text-white md:block ${
-        scroll > 0 && "border-onscroll"
-      }`}
+      className={`fixed z-10 hidden w-full dark:text-white md:block ${scroll > 0 && "onscroll"}`}
     >
       <nav className="mx-auto max-w-7xl px-4 text-sm sm:px-6">
         <div className="flex h-12 items-center justify-between">
