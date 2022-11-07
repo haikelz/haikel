@@ -22,17 +22,13 @@ const Contact = () => {
               <p className="text-center font-normal leading-relaxed">
                 Feel free to reach me via{" "}
                 {socialMediaList.map((item, index) => (
-                  <Link key={index + 1} href={item.link} passHref>
-                    <>
-                      <a className="link-contact" href={item.link}>
-                        {item.name}
-                      </a>
-                      {item.name === "Telegram" || item.name === "Facebook"
-                        ? ", "
-                        : item.name === "Github"
-                        ? ", and "
-                        : ""}
-                    </>
+                  <Link className="link-contact" key={index + 1} href={item.link} passHref>
+                    {item.name}
+                    {item.name === "Telegram" || item.name === "Facebook"
+                      ? ", "
+                      : item.name === "Github"
+                      ? ", "
+                      : ""}
                   </Link>
                 ))}
               </p>

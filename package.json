@@ -13,7 +13,7 @@
   "dependencies": {
     "framer-motion": "^7.5.3",
     "jotai": "^1.8.5",
-    "next": "12.3.1",
+    "next": "13.0.2",
     "next-seo": "^5.4.0",
     "nprogress": "^0.2.0",
     "react": "18.2.0",
@@ -22,12 +22,12 @@
     "zod": "^3.19.1"
   },
   "devDependencies": {
-    "@types/node": "18.8.4",
+    "@types/node": "18.11.9",
     "@types/nprogress": "^0.2.0",
-    "@types/react": "18.0.21",
+    "@types/react": "18.0.25",
     "autoprefixer": "^10.4.7",
-    "eslint": "8.25.0",
-    "eslint-config-next": "12.3.1",
+    "eslint": "8.27.0",
+    "eslint-config-next": "13.0.2",
     "eslint-config-prettier": "^8.5.0",
     "husky": "^8.0.1",
     "postcss": "^8.4.17",

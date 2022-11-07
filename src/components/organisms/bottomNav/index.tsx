@@ -19,16 +19,14 @@ const BottomNav = () => {
           return (
             <li key={index + 1} className="flex items-center justify-center">
               <Link href={item.link} passHref>
-                <a>
-                  <Icon
-                    className={`${
-                      router.asPath === `${item.link}`
-                        ? "text-slate-600 dark:text-white"
-                        : "text-slate-500 dark:text-slate-400"
-                    } transition-all duration-200`}
-                    size={28}
-                  />
-                </a>
+                <Icon
+                  className={`${
+                    router.asPath === `${item.link}`
+                      ? "text-slate-600 dark:text-white"
+                      : "text-slate-500 dark:text-slate-400"
+                  } transition-all duration-200`}
+                  size={28}
+                />
               </Link>
             </li>
           );
