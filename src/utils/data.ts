@@ -19,6 +19,14 @@ export const ProjectsList = [
     stack2: tailwind,
   },
   {
+    h2: "The Zeitplan",
+    p: "Sebuah cara untuk mengatur kuliah kamu",
+    repo: "https://github.com/haikelz/the-zeitplan",
+    preview: "https://the-zeitplan.pages.dev",
+    stack1: next,
+    stack2: tailwind,
+  },
+  {
     h2: "The Sugiharto",
     p: "Slicing UI Design bang Nauval Array ID",
     repo: "https://github.com/haikelz/the-sugiharto",
@@ -73,14 +81,6 @@ export const ProjectsList = [
     preview: "https://wakaranai.vercel.app",
     stack1: svelte,
     stack2: tailwind,
-  },
-  {
-    h2: "Todo App",
-    p: "Simple Todo List",
-    repo: "https://github.com/haikelz/todo-app",
-    preview: "https://todo-app-haikelz.vercel.app/",
-    stack1: "reactjs",
-    stack2: jotai,
   },
 ];
 

@@ -8,7 +8,6 @@ const Steps = () => {
       <div>
         <ComingSoon />
         <SMA />
-        <SMP />
       </div>
     </div>
   );
