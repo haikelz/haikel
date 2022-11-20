@@ -1,15 +1,15 @@
 export const appAnimation = {
-  transition: { duration: 0.4 },
-  initial: { opacity: 0, y: 50 },
+  transition: { duration: 0.3 },
+  initial: { opacity: 0, y: 30 },
   animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: 50 },
+  exit: { opacity: 0, y: 30 },
 };
 
 export const backToTopAnimation = {
   transition: { duration: 0.3 },
-  initial: { opacity: 0, y: 50 },
+  initial: { opacity: 0, y: 30 },
   animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: 50 },
+  exit: { opacity: 0, y: 30 },
 };
 
 export const whileTap = { scale: 0.95, rotate: 15 };

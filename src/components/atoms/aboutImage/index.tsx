@@ -1,5 +1,6 @@
-import { cn } from "@/utils/className";
+import { cn } from "@/helpers/cn";
 import { Loading } from "@/types";
+import { memo } from "react";
 
 const AboutImage = ({ isLoading, loadingProcess }: Loading) => {
   return (
@@ -36,4 +37,4 @@ const AboutImage = ({ isLoading, loadingProcess }: Loading) => {
   );
 };
 
-export default AboutImage;
+export default memo(AboutImage);

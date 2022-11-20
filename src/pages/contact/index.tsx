@@ -1,5 +1,4 @@
 import { NextSeo } from "next-seo";
-import { memo } from "react";
 import { socialMediaList } from "@/utils/data";
 import { useKeydown } from "@/hooks/useKeydown";
 import Underline from "@/components/atoms/underline";
@@ -40,4 +39,4 @@ const Contact = () => {
   );
 };
 
-export default memo(Contact);
+export default Contact;

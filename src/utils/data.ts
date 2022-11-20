@@ -11,7 +11,7 @@ const svelte: string = "svelte";
 
 export const ProjectsList = [
   {
-    h2: "Jadwal Sholat",
+    h4: "Jadwal Sholat",
     p: "Website jadwal Sholat dan baca Al-Qur'an",
     repo: "https://github.com/haikelz/jadwal-sholat",
     preview: "https://jadwal-sholat.pages.dev/",
@@ -19,7 +19,7 @@ export const ProjectsList = [
     stack2: tailwind,
   },
   {
-    h2: "The Zeitplan",
+    h4: "The Zeitplan",
     p: "Sebuah cara untuk mengatur kuliah kamu",
     repo: "https://github.com/haikelz/the-zeitplan",
     preview: "https://the-zeitplan.pages.dev",
@@ -27,7 +27,7 @@ export const ProjectsList = [
     stack2: tailwind,
   },
   {
-    h2: "The Sugiharto",
+    h4: "The Sugiharto",
     p: "Slicing UI Design bang Nauval Array ID",
     repo: "https://github.com/haikelz/the-sugiharto",
     preview: "https://the-sugiharto.vercel.app",
@@ -35,7 +35,7 @@ export const ProjectsList = [
     stack2: motion,
   },
   {
-    h2: "Kumpulan Do'a",
+    h4: "Kumpulan Do'a",
     p: "Kumpulan do'a sehari-hari",
     repo: "https://github.com/haikelz/kumpulan-doa",
     preview: "https://kumpulan-doa.pages.dev/",
@@ -43,7 +43,7 @@ export const ProjectsList = [
     stack2: chakra,
   },
   {
-    h2: "Animeow",
+    h4: "Animeow",
     p: "A website to search your favorite anime, and manga",
     repo: "https://github.com/haikelz/animeow",
     preview: "https://animeow-red.vercel.app",
@@ -51,7 +51,7 @@ export const ProjectsList = [
     stack2: reactQuery,
   },
   {
-    h2: "Beritakan",
+    h4: "Beritakan",
     p: "Kumpulan berita dari berbagai sumber",
     repo: "https://github.com/haikelz/beritakan",
     preview: "https://beritakan.vercel.app",
@@ -59,7 +59,7 @@ export const ProjectsList = [
     stack2: reactQuery,
   },
   {
-    h2: "Masakan",
+    h4: "Masakan",
     p: "Get daily food recipes inspiration",
     repo: "https://github.com/haikelz/masakan",
     preview: "https://masakan-six.vercel.app/",
@@ -67,7 +67,7 @@ export const ProjectsList = [
     stack2: swr,
   },
   {
-    h2: "Reddit Posts",
+    h4: "Reddit Posts",
     p: "A website to get posts from Reddit(mostly memes)",
     repo: "https://github.com/haikelz/reddit-posts",
     preview: "https://reddit-posts.netlify.app/",
@@ -75,7 +75,7 @@ export const ProjectsList = [
     stack2: tailwind,
   },
   {
-    h2: "Wakaranai",
+    h4: "Wakaranai",
     p: "A website to convert Romaji to Hiragana/Katakana",
     repo: "https://github.com/haikelz/wakaranai",
     preview: "https://wakaranai.vercel.app",

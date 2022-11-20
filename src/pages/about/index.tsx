@@ -3,7 +3,6 @@ import { languageAtom, loadingAtom } from "@/store";
 import { setIsLoading } from "@/helpers/setIsLoading";
 import { useReducerAtom } from "jotai/utils";
 import { setLanguage } from "@/helpers/setLanguage";
-import { memo } from "react";
 import { useKeydown } from "@/hooks/useKeydown";
 import Underline from "@/components/atoms/underline";
 import AboutImage from "@/components/atoms/aboutImage";
@@ -18,7 +17,7 @@ const About = () => {
   return (
     <>
       <NextSeo title="About" />
-      <section className="min-h-screen tracking-wide">
+      <section className="tracking-wide">
         <div className="container mx-auto max-w-7xl object-center px-4 pt-6 sm:px-6 md:pt-24">
           <div className="mb-10 flex w-full flex-wrap items-center justify-center">
             <div className="mb-1 flex flex-col items-center justify-center lg:mb-0">
@@ -67,4 +66,4 @@ const About = () => {
   );
 };
 
-export default memo(About);
+export default About;

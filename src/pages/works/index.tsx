@@ -1,5 +1,4 @@
 import { NextSeo } from "next-seo";
-import { memo } from "react";
 import { useKeydown } from "@/hooks/useKeydown";
 import Underline from "@/components/atoms/underline";
 import GridCards from "@/components/organisms/gridCards";
@@ -28,4 +27,4 @@ const Works = () => {
   );
 };
 
-export default memo(Works);
+export default Works;

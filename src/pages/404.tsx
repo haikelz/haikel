@@ -1,4 +1,4 @@
-import { memo, useEffect } from "react";
+import { useEffect } from "react";
 import { NextRouter, useRouter } from "next/router";
 import { NextSeo } from "next-seo";
 import NotFoundImage from "@/components/atoms/notFoundImage";
@@ -27,4 +27,4 @@ const NotFoundPage = () => {
   );
 };
 
-export default memo(NotFoundPage);
+export default NotFoundPage;

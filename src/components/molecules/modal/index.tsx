@@ -1,6 +1,7 @@
 import { ShowedModal } from "@/types";
 import { showedModalAnimation } from "@/utils/animation";
 import { AnimatePresence, motion } from "framer-motion";
+import { memo } from "react";
 
 const Modal = ({ isShowed, setIsShowed }: ShowedModal) => {
   return (
@@ -32,4 +33,4 @@ const Modal = ({ isShowed, setIsShowed }: ShowedModal) => {
   );
 };
 
-export default Modal;
+export default memo(Modal);

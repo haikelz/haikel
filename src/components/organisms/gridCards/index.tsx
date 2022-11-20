@@ -1,4 +1,5 @@
 import { ProjectsList } from "@/utils/data";
+import { memo } from "react";
 import Icons from "@/components/molecules/icons";
 
 const GridCards = () => {
@@ -10,7 +11,7 @@ const GridCards = () => {
           key={index + 1}
         >
           <div className="px-6 pb-6 pt-3">
-            <h2 className="mt-2 mb-2 text-xl font-bold">{work.h2}</h2>
+            <h4 className="mt-2 mb-2 text-xl font-bold">{work.h4}</h4>
             <p className="mb-2 tracking-wide">{work.p}</p>
             <div className="mt-3 flex gap-2 font-medium">
               <span className="bg-lightTag px-1.5 text-sm text-white dark:bg-darkTag dark:text-slate-900">
@@ -28,4 +29,4 @@ const GridCards = () => {
   );
 };
 
-export default GridCards;
+export default memo(GridCards);

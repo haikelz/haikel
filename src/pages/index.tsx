@@ -1,5 +1,4 @@
 import { NextSeo } from "next-seo";
-import { memo } from "react";
 import { useKeydown } from "@/hooks/useKeydown";
 import { isShowedAtom } from "@/store";
 import { useAtom } from "jotai";
@@ -12,7 +11,7 @@ const Home = () => {
   return (
     <>
       <NextSeo title="Haikel" />
-      <section className="container mx-auto flex h-screen max-w-7xl flex-col items-center justify-center px-4 pt-10 tracking-wide sm:px-6 md:py-24">
+      <section className="container mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center px-4 pt-10 tracking-wide sm:px-6 md:py-24">
         <div className="flex flex-col items-center justify-center text-center">
           <h1 className="mb-1 text-3xl font-bold">
             Hello, I&#39;m Haikel{" "}
@@ -28,4 +27,4 @@ const Home = () => {
   );
 };
 
-export default memo(Home);
+export default Home;
