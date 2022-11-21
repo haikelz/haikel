@@ -1,7 +1,7 @@
 import { NextSeo } from "next-seo";
 import { useKeydown } from "@/hooks/useKeydown";
 import Underline from "@/components/atoms/underline";
-import GridCards from "@/components/organisms/gridCards";
+import ListWorks from "@/components/organisms/listWorks";
 
 const Works = () => {
   useKeydown({ isCtrlKey: true, previousUrl: "/about", nextUrl: "/contact" });
@@ -19,7 +19,7 @@ const Works = () => {
             <p className="w-full text-center leading-relaxed">List some of my works</p>
           </div>
           <div className="flex flex-wrap">
-            <GridCards />
+            <ListWorks />
           </div>
         </div>
       </section>

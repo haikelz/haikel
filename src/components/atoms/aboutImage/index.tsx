@@ -4,7 +4,7 @@ import { memo } from "react";
 
 const AboutImage = ({ isLoading, loadingProcess }: Loading) => {
   return (
-    <div className="flex items-center justify-center overflow-hidden rounded-full border-[6px] border-gray-100 shadow-allAround dark:border-gray-800">
+    <div className="flex items-center justify-center overflow-hidden rounded-full border-[6px] border-light shadow-allAround dark:border-gray-800">
       <svg
         className={cn(
           "cursor-pointer rounded-full duration-700 ease-out",

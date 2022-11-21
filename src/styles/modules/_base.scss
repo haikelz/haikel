@@ -7,19 +7,6 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
 
-      a:not(.logo, .headerlist) {
-        @apply underline underline-offset-2;
-      }
-
-      p {
-        @apply text-base font-medium;
-      }
-
-      code,
-      kbd {
-        @apply font-code underline underline-offset-2;
-      }
-
       button {
         @apply outline-none;
       }

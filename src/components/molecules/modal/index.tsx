@@ -15,7 +15,11 @@ const Modal = ({ isShowed, setIsShowed }: ShowedModal) => {
             <div className="space-y-2 p-5 leading-relaxed tracking-wide">
               <h3 className="text-2xl font-bold">Tips:</h3>
               <p>
-                Use <code>Ctrl + Arrow Right/Arrow Left</code> for move to next/previous page
+                Use{" "}
+                <code className="font-code font-semibold underline-offset-2 underline">
+                  Ctrl + Arrow Right/Arrow Left
+                </code>{" "}
+                for move to next/previous page
               </p>
               <div className="flex items-center justify-end">
                 <button

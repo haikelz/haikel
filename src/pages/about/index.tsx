@@ -4,9 +4,11 @@ import { setIsLoading } from "@/helpers/setIsLoading";
 import { useReducerAtom } from "jotai/utils";
 import { setLanguage } from "@/helpers/setLanguage";
 import { useKeydown } from "@/hooks/useKeydown";
+import { socialMediaList } from "@/utils/data";
 import Underline from "@/components/atoms/underline";
 import AboutImage from "@/components/atoms/aboutImage";
 import Steps from "@/components/molecules/steps";
+import Link from "next/link";
 
 const About = () => {
   const [isLoading, loadingProcess] = useReducerAtom<boolean, unknown>(loadingAtom, setIsLoading);
@@ -34,19 +36,38 @@ const About = () => {
                  */}
                 {language ? (
                   <p className="about-desc">
-                    Hello. I&#39;m Haikel. From Bangka Belitung. Mainly using
-                    <b> Javascript/Typescript, ReactJS(NextJS), TailwindCSS/ChakraUI, Jotai,</b> and
-                    using <b>Linux</b> as primary OS. I enjoy nature, playing chess, jogging, and
-                    recently i also enjoy reading book.{" "}
-                    <span onClick={toggleLanguage}>See in Indonesia.</span>
+                    Hello. I&#39;m Haikel. From Bangka Belitung. An ordinary person who loves Linux
+                    and Front End stuff. I enjoy nature, playing chess, jogging, and recently i also
+                    enjoy reading book. Feel free to reach me via{" "}
+                    {socialMediaList.map((item, index) => (
+                      <Link className="link-contact" key={index + 1} href={item.link} passHref>
+                        {item.name}
+                        {item.name === "Telegram" || item.name === "Facebook"
+                          ? ", "
+                          : item.name === "Github"
+                          ? ", "
+                          : ""}
+                      </Link>
+                    ))}
+                    . <span onClick={toggleLanguage}>See in Indonesia.</span>
                   </p>
                 ) : (
                   <p className="about-desc">
-                    Halo. Saya Haikel. Berasal dari Bangka Belitung. Biasanya menggunakan
-                    <b> Javascript/Typescript, ReactJS(NextJS), TailwindCSS/ChakraUI, Jotai, </b>dan
-                    menggunakan <b>Linux</b> sebagai OS utama. Saya senang menikmati alam, bermain
-                    catur, jogging, dan baru-baru ini saya juga senang membaca buku.{" "}
-                    <span onClick={toggleLanguage}>Lihat di Bahasa Inggris.</span>
+                    Halo. Saya Haikel. Berasal dari Bangka Belitung. Seorang biasa yang menyukai
+                    Linux dan hal-hal yang berkaitan dengan Front End. Saya senang menikmati alam,
+                    bermain catur, jogging, dan baru-baru ini saya juga senang membaca buku. Jangan
+                    sungkan untuk terkoneksi dengan saya via{" "}
+                    {socialMediaList.map((item, index) => (
+                      <Link className="link-contact" key={index + 1} href={item.link} passHref>
+                        {item.name}
+                        {item.name === "Telegram" || item.name === "Facebook"
+                          ? ", "
+                          : item.name === "Github"
+                          ? ", "
+                          : ""}
+                      </Link>
+                    ))}
+                    . <button onClick={toggleLanguage}>Lihat di Bahasa Inggris.</button>
                   </p>
                 )}
               </div>

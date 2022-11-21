@@ -9,11 +9,12 @@
 - Framer Motion
 - Jotai
 - Zod
+- MDX
 
 ## Credits
 
 Thanks for give me inspiration!
 
 - https://rizkicitra.dev/
-- https://hendraaagil.id/
+- https://hendraaagil.dev/
 - https://elianiva.my.id/

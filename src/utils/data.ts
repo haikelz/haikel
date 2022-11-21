@@ -1,4 +1,4 @@
-import { MdAccountCircle, MdEmail, MdHomeFilled, MdLibraryBooks } from "react-icons/md";
+import { MdAccountCircle, MdEmail, MdHomeFilled, MdLibraryBooks, MdWork } from "react-icons/md";
 
 const tailwind: string = "tailwindcss";
 const next: string = "nextjs";
@@ -68,7 +68,7 @@ export const ProjectsList = [
   },
   {
     h4: "Reddit Posts",
-    p: "A website to get posts from Reddit(mostly memes)",
+    p: "A website to get Posts from Reddit(mostly memes)",
     repo: "https://github.com/haikelz/reddit-posts",
     preview: "https://reddit-posts.netlify.app/",
     stack1: next,
@@ -87,7 +87,7 @@ export const ProjectsList = [
 export const HeaderList = [
   { id: "a", text: "About", href: "/about" },
   { id: "b", text: "Works", href: "/works" },
-  { id: "c", text: "Contact", href: "/contact" },
+  { id: "c", text: "Notes", href: "/notes" },
 ];
 
 export const socialMediaList = [
@@ -100,6 +100,6 @@ export const socialMediaList = [
 export const bottomNavList = [
   { name: "Home", icon: MdHomeFilled, link: "/" },
   { name: "About", icon: MdAccountCircle, link: "/about" },
-  { name: "Works", icon: MdLibraryBooks, link: "/works" },
-  { name: "Contact", icon: MdEmail, link: "/contact" },
+  { name: "Works", icon: MdWork, link: "/works" },
+  { name: "Notes", icon: MdLibraryBooks, link: "/notes" },
 ];

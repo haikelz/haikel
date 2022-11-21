@@ -1,7 +1,9 @@
 @use "./modules/base";
 @use "./modules/components";
 @use "./modules/nprogress";
-@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Rubik:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+@use "./modules/utilities";
+
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Rubik:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Naskh+Arabic:wght@700&display=swap");
 
 @tailwind base;
 @tailwind components;

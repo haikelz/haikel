@@ -1,0 +1,36 @@
+---
+author: Haikel
+title: Solving "Access denied for user 'root'@'localhost'"
+tags:
+  - mysql
+  - linux
+date: 2022-10-23
+preview: Fix access permission Mysql in Linux
+---
+
+When i was working with Prisma, i got an error like this:
+
+![access denied](https://i.ibb.co/nbcLDH6/access-denied-mysql.png)
+
+So yeah, i just search the solution on google. And found the solution on [Stackoverflow](https://stackoverflow.com/questions/39281594/error-1698-28000-access-denied-for-user-rootlocalhost)
+
+```sh
+sudo mysql -u root
+mysql> USE mysql;
+mysql> UPDATE user SET plugin='mysql_native_password' WHERE User='root';
+mysql> FLUSH PRIVILEGES;
+mysql> exit;
+sudo service mysql restart
+```
+
+![solution](https://i.ibb.co/Hq7bQLd/access-denied-solution.png)
+
+Btw, the syntax in Mysql isn't case sensitive, so if you type the syntax in lowercase or uppercase, it's fine.
+
+If you want to check the port of your Mysql, you can check it like this(make sure that you've start your Mysql):
+
+```sh
+SHOW GLOBAL VARIABLES LIKE 'PORT';
+```
+
+![check port mysql](https://i.ibb.co/fqm58mT/Screenshot-2022-10-23-33-535x239.png)

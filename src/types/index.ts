@@ -96,3 +96,5 @@ export type List = z.infer<typeof List>;
 export type Keydown = z.infer<typeof Keydown>;
 export type KeydownEvent = z.infer<typeof KeydownEvent>;
 export type ShowedModal = z.infer<typeof ShowedModal>;
+
+export * from "./notesTypes";

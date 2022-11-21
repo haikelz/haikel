@@ -2,7 +2,7 @@ import { ProjectsList } from "@/utils/data";
 import { memo } from "react";
 import Icons from "@/components/molecules/icons";
 
-const GridCards = () => {
+const ListWorks = () => {
   return (
     <div className="grid grid-cols-1 grid-rows-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
       {ProjectsList.map((work, index) => (
@@ -29,4 +29,4 @@ const GridCards = () => {
   );
 };
 
-export default memo(GridCards);
+export default memo(ListWorks);

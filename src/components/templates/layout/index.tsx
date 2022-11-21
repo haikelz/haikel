@@ -6,7 +6,7 @@ import BackToTop from "@/components/atoms/backToTop";
 
 const Layout = ({ children }: Children) => {
   return (
-    <div className="min-h-screen bg-polkadotLight bg-fixed bg-center dark:bg-polkadotDark dark:text-white">
+    <div className="min-h-screen bg-fixed bg-center dark:bg-dark bg-light dark:text-white">
       <Header />
       {children}
       <BackToTop />
