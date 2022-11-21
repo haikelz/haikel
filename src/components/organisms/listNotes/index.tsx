@@ -1,5 +1,6 @@
 import type { NotesArticles } from "@/types";
 import Link from "next/link";
+import { memo } from "react";
 
 const ListNotes = ({ notes }: NotesArticles) => {
   return (
@@ -33,4 +34,4 @@ const ListNotes = ({ notes }: NotesArticles) => {
   );
 };
 
-export default ListNotes;
+export default memo(ListNotes);

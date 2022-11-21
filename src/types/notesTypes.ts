@@ -34,6 +34,11 @@ export interface Paths {
   }[];
 }
 
+export interface VideoProps {
+  title: string;
+  link: string;
+}
+
 export type NotePageProps = {
   note: MDXnote;
 };

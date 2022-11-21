@@ -67,7 +67,7 @@ const About = () => {
                           : ""}
                       </Link>
                     ))}
-                    . <button onClick={toggleLanguage}>Lihat di Bahasa Inggris.</button>
+                    . <span onClick={toggleLanguage}>Lihat di Bahasa Inggris.</span>
                   </p>
                 )}
               </div>

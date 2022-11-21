@@ -29,8 +29,8 @@ const Notes = ({ notes }: NotesProps) => {
               <Underline />
             </div>
             <p className="w-full text-center leading-relaxed">
-              Sometimes i write something, mostly about Web and life. So yeah, i call this as{" "}
-              <b>Notes</b>.
+              Sometimes i write something, mostly about Linux, Web, and life. So yeah, i call this
+              as <b>Notes</b>.
             </p>
           </div>
           <ListNotes notes={notes} />
