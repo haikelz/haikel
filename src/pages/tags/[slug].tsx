@@ -1,4 +1,4 @@
-import ListArticles from "@/components/organisms/listArticles";
+import ListNotes from "@/components/organisms/listNotes";
 import Underline from "@/components/atoms/underline";
 import { getAllnotes } from "@/helpers/getAllNotes";
 import { Note, Tag } from "@/types";
@@ -40,7 +40,7 @@ const Tags = ({ slug, notes }: Tag) => {
               <Underline />
             </div>
           </div>
-          <ListArticles notes={notes} />
+          <ListNotes notes={notes} />
         </div>
       </section>
     </>
