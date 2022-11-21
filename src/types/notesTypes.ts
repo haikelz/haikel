@@ -19,10 +19,6 @@ export interface MDXnote {
   meta: NoteMeta;
 }
 
-export interface IdYoutube {
-  id: string;
-}
-
 export interface NotesArticles {
   notes: NoteMeta[];
 }
