@@ -1,12 +1,12 @@
 import ListNotes from "@/components/organisms/listNotes";
 import Underline from "@/components/atoms/underline";
-import { getAllnotes } from "@/helpers/getAllNotes";
+import { getAllNotes } from "@/helpers/getAllNotes";
 import { Note, Tag } from "@/types";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const notes: Note[] = getAllnotes();
+  const notes: Note[] = getAllNotes();
   const tags: Set<string> = new Set(notes.map((note) => note.meta.tags).flat());
   const paths = Array.from(tags).map((tag) => ({ params: { slug: tag } }));
 
@@ -18,7 +18,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params as { slug: string };
-  const notes = getAllnotes().filter((note) => note.meta.tags.includes(slug));
+  const notes = getAllNotes().filter((note) => note.meta.tags.includes(slug));
 
   return {
     props: {

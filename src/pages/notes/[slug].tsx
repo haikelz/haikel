@@ -44,7 +44,7 @@ const NotePage = ({ note }: NotePageProps) => {
     <>
       <NextSeo title={note.meta.title} />
       <section className="min-h-screen tracking-wide">
-        <div className="container mx-auto flex max-w-7xl flex-col items-center justify-center object-center px-4 pt-6 sm:px-6 pb-10 sm:pb-12 md:py-24">
+        <div className="container mx-auto flex max-w-7xl flex-col items-center justify-center object-center px-4 pt-6 sm:px-6 pb-14 md:py-24">
           <div className="flex justify-center flex-wrap flex-col w-full mb-10">
             <div className="flex flex-col">
               <h1 className="md:text-4xl text-3xl font-medium">{note.meta.title}</h1>
@@ -52,17 +52,17 @@ const NotePage = ({ note }: NotePageProps) => {
                 <Image
                   src="https://avatars.githubusercontent.com/u/77146709?v=4"
                   className="mr-2 rounded-full"
-                  width={27}
-                  height={27}
+                  width={23}
+                  height={23}
                   priority
                   alt="Github Profile Picture"
                 />
-                <p className="text-lg">
+                <p className="text-base">
                   <span className="font-semibold">{note.meta.author}</span> / {note.meta.date}
                 </p>
               </div>
             </div>
-            <div className="max-w-full mt-6 prose-lg prose-slate dark:prose-invert prose w-full">
+            <div className="max-w-full mt-6 lg:prose-lg prose-slate dark:prose-invert prose w-full">
               <p className="font-bold text-right text-2xl font-arabic">
                 بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
               </p>

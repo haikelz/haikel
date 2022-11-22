@@ -2,7 +2,7 @@ import { getSlugs } from "./getSlugs";
 import { getNoteFromSlug } from "./getNoteFromSlug";
 import { Note } from "../types";
 
-export const getAllnotes = () => {
+export const getAllNotes = () => {
   // sort notes based on date
   const notes: Note[] = getSlugs()
     .map((slug) => getNoteFromSlug(slug))

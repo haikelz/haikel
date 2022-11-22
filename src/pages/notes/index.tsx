@@ -1,12 +1,13 @@
 import { GetStaticProps } from "next";
-import { getAllnotes } from "@/helpers/getAllNotes";
+import { getAllNotes } from "@/helpers/getAllNotes";
 import { NoteMeta, NotesProps } from "@/types";
 import { NextSeo } from "next-seo";
+import { useKeydown } from "@/hooks/useKeydown";
 import ListNotes from "@/components/organisms/listNotes";
 import Underline from "@/components/atoms/underline";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const notes: NoteMeta[] = getAllnotes()
+  const notes: NoteMeta[] = getAllNotes()
     .slice(0, 9)
     .map((note) => note.meta);
 
@@ -18,6 +19,7 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Notes = ({ notes }: NotesProps) => {
+  useKeydown({ isCtrlKey: true, previousUrl: "/works", nextUrl: "/" });
   return (
     <>
       <NextSeo title="Notes" />

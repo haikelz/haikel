@@ -6,7 +6,7 @@ import Modal from "@/components/molecules/modal";
 
 const Home = () => {
   const [isShowed, setIsShowed] = useAtom(isShowedAtom);
-  useKeydown({ isCtrlKey: true, previousUrl: "/contact", nextUrl: "/about" });
+  useKeydown({ isCtrlKey: true, previousUrl: "/notes", nextUrl: "/about" });
 
   return (
     <>
@@ -19,7 +19,7 @@ const Home = () => {
               🌸
             </span>
           </h1>
-          <p className="mb-4 leading-relaxed">Frontend Enthusiast</p>
+          <p className="mb-4 leading-relaxed">Someone Who Code</p>
         </div>
         <Modal isShowed={isShowed} setIsShowed={setIsShowed} />
       </section>

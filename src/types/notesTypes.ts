@@ -36,7 +36,7 @@ export interface Paths {
 
 export interface VideoProps {
   title: string;
-  link: string;
+  src: string;
 }
 
 export type NotePageProps = {

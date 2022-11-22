@@ -7,14 +7,14 @@ const AboutImage = ({ isLoading, loadingProcess }: Loading) => {
     <div className="flex items-center justify-center overflow-hidden rounded-full border-[6px] border-light shadow-allAround dark:border-gray-800">
       <svg
         className={cn(
-          "cursor-pointer rounded-full duration-700 ease-out",
+          "cursor-pointer rounded-full duration-700 ease-in-out",
           isLoading
             ? "scale-110 rounded-full blur-2xl grayscale"
             : "scale-100 rounded-full blur-0 grayscale-0"
         )}
         onLoad={loadingProcess}
-        width="270"
-        height="270"
+        width={270}
+        height={270}
         viewBox="0 0 270 270"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

@@ -4,7 +4,7 @@ import Underline from "@/components/atoms/underline";
 import ListWorks from "@/components/organisms/listWorks";
 
 const Works = () => {
-  useKeydown({ isCtrlKey: true, previousUrl: "/about", nextUrl: "/contact" });
+  useKeydown({ isCtrlKey: true, previousUrl: "/about", nextUrl: "/notes" });
 
   return (
     <>
