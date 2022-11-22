@@ -13,7 +13,7 @@ const BottomNav = () => {
 
   return (
     <nav className="flex w-full flex-col items-center justify-center">
-      <div className="fixed bottom-0 left-0 right-0 grid grid-cols-5 grid-rows-1 border-t border-slate-300 bg-light p-5 dark:border-slate-600 dark:bg-dark md:hidden">
+      <div className="fixed bottom-0 left-0 right-0 grid grid-cols-5 grid-rows-1 border-t border-slate-300 p-4 bg-light dark:border-slate-600 dark:bg-dark md:hidden">
         {bottomNavList.map((item, index) => {
           const Icon: IconType = item.icon;
           return (
