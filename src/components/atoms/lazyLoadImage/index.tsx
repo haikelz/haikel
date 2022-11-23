@@ -1,0 +1,20 @@
+import { imageKitLoader } from "@/helpers/imageKitLoader";
+import { LazyLoadImageProps } from "@/types";
+import Image from "next/image";
+
+const LazyLoadImage = ({ src, alt }: LazyLoadImageProps) => {
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      width={500}
+      height={500}
+      placeholder="blur"
+      blurDataURL={src}
+      loader={imageKitLoader}
+      loading="lazy"
+    />
+  );
+};
+
+export default LazyLoadImage;

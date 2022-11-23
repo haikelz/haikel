@@ -43,6 +43,11 @@ const ShowedModal = z.object({
   setIsShowed: z.function().args(z.boolean()),
 });
 
+const LazyLoadImageProps = z.object({
+  src: z.string(),
+  alt: z.string(),
+});
+
 LinkIcon.parse({
   link: "",
   linkPreview: "",
@@ -85,6 +90,11 @@ ShowedModal.parse({
   setIsShowed: (showed: boolean) => {},
 });
 
+LazyLoadImageProps.parse({
+  src: " https://images.unsplash.com/photo-1559311648-d46f5d8593d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1450&q=80",
+  alt: "placeholder image",
+});
+
 export type Children = {
   children: ReactNode[] | JSX.Element;
 };
@@ -96,5 +106,6 @@ export type List = z.infer<typeof List>;
 export type Keydown = z.infer<typeof Keydown>;
 export type KeydownEvent = z.infer<typeof KeydownEvent>;
 export type ShowedModal = z.infer<typeof ShowedModal>;
+export type LazyLoadImageProps = z.infer<typeof LazyLoadImageProps>;
 
 export * from "./notesTypes";

@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["avatars.githubusercontent.com", "cdn.statically.io"],
+    domains: ["avatars.githubusercontent.com", "cdn.statically.io", "ik.imagekit.io"],
     loader: "akamai",
     path:
       "https://avatars.githubusercontent.com/u/77146709?v=4" ||
