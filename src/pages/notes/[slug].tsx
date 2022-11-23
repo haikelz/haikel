@@ -4,6 +4,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import { getNoteFromSlug } from "@/helpers/getNoteFromSlug";
 import { getSlugs } from "@/helpers/getSlugs";
 import { NextSeo } from "next-seo";
+import { readingTime } from "@/helpers/readingTime";
 import type { GetStaticProps, GetStaticPaths } from "next";
 import Image from "next/image";
 import rehypeSlug from "rehype-slug";
@@ -59,7 +60,11 @@ const NotePage = ({ note }: NotePageProps) => {
                   alt="Github Profile Picture"
                 />
                 <p className="text-base">
-                  <span className="font-semibold">{note.meta.author}</span> / {note.meta.date}
+                  <span className="font-semibold">{note.meta.author}</span>,{" "}
+                  <span className="font-semibold">
+                    {readingTime({ ...note.source }.compiledSource)} Min read
+                  </span>{" "}
+                  / {note.meta.date}
                 </p>
               </div>
             </div>
@@ -67,7 +72,7 @@ const NotePage = ({ note }: NotePageProps) => {
               <p className="font-bold text-right text-2xl font-arabic">
                 بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
               </p>
-              <MDXRemote {...note.source} components={{ Image, Video, LazyLoadImage }} />
+              <MDXRemote {...note.source} components={{ Video, LazyLoadImage }} />
             </div>
           </div>
         </div>
