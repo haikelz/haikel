@@ -72,7 +72,7 @@ const NotePage = ({ note }: NotePageProps) => {
               <p className="font-bold text-right text-2xl font-arabic">
                 بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
               </p>
-              <MDXRemote {...note.source} components={{ Video, LazyLoadImage }} />
+              <MDXRemote {...note.source} components={{ Video, LazyLoadImage, Image }} />
             </div>
           </div>
         </div>

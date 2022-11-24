@@ -18,7 +18,7 @@ export const getNoteFromSlug = (slug: string): Note => {
       preview: data.preview ?? "",
       title: data.title ?? slug,
       tags: (data.tags ?? []).sort(),
-      date: (data.date ?? date).toLocaleDateString("id-ID", {
+      date: (data.date ?? date).toLocaleDateString("en-EN", {
         year: "numeric",
         month: "long",
         day: "numeric",

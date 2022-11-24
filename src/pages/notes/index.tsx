@@ -20,6 +20,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Notes = ({ notes }: NotesProps) => {
   useKeydown({ isCtrlKey: true, previousUrl: "/works", nextUrl: "/" });
+
   return (
     <>
       <NextSeo title="Notes" />

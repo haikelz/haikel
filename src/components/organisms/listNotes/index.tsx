@@ -1,6 +1,6 @@
+import { memo } from "react";
 import type { NotesArticles } from "@/types";
 import Link from "next/link";
-import { memo } from "react";
 
 const ListNotes = ({ notes }: NotesArticles) => {
   return (

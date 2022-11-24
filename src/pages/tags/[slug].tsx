@@ -1,9 +1,9 @@
-import ListNotes from "@/components/organisms/listNotes";
-import Underline from "@/components/atoms/underline";
 import { getAllNotes } from "@/helpers/getAllNotes";
 import { Note, Tag } from "@/types";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
+import ListNotes from "@/components/organisms/listNotes";
+import Underline from "@/components/atoms/underline";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const notes: Note[] = getAllNotes();
