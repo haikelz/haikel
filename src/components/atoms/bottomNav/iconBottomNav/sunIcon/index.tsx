@@ -1,7 +1,7 @@
 import { darkModeIconAnimation, whileTap } from "@/utils/animation";
 import { m } from "framer-motion";
 
-const SunIcon = () => {
+export const SunIcon = () => {
   return (
     <m.svg
       stroke="currentColor"
@@ -22,5 +22,3 @@ const SunIcon = () => {
     </m.svg>
   );
 };
-
-export default SunIcon;

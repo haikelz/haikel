@@ -7,7 +7,6 @@ specifiers:
   '@types/nprogress': ^0.2.0
   '@types/react': 18.0.25
   autoprefixer: ^10.4.7
-  date-fns: ^2.29.3
   eslint: 8.27.0
   eslint-config-next: 13.0.2
   eslint-config-prettier: ^8.5.0
@@ -35,7 +34,6 @@ specifiers:
   zod: ^3.19.1
 
 dependencies:
-  date-fns: 2.29.3
   framer-motion: 7.6.7_biqbaboplfbrettd7655fr4n2y
   glob: 8.0.3
   gray-matter: 4.0.3
@@ -838,11 +836,6 @@ packages:
   /damerau-levenshtein/1.0.8:
     resolution: {integrity: sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==}
     dev: true
-
-  /date-fns/2.29.3:
-    resolution: {integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==}
-    engines: {node: '>=0.11'}
-    dev: false
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}

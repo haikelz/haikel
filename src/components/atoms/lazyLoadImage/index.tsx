@@ -1,4 +1,3 @@
-import { memo } from "react";
 import { cn } from "@/helpers/cn";
 import { imageKitLoader } from "@/helpers/imageKitLoader";
 import { isLoadingAtom } from "@/store";
@@ -6,7 +5,7 @@ import { LazyLoadImageProps } from "@/types";
 import { useAtom } from "jotai";
 import Image from "next/image";
 
-const LazyLoadImage = ({ src, alt }: LazyLoadImageProps) => {
+export const LazyLoadImage = ({ src, alt }: LazyLoadImageProps) => {
   const [isLoading, setIsLoading] = useAtom(isLoadingAtom);
 
   return (
@@ -27,5 +26,3 @@ const LazyLoadImage = ({ src, alt }: LazyLoadImageProps) => {
     />
   );
 };
-
-export default memo(LazyLoadImage);

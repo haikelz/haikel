@@ -1,8 +1,8 @@
 import { Children } from "@/types";
+import { BackToTop } from "@/components/atoms/backToTop";
 import Header from "@/components/organisms/header";
 import BottomNav from "@/components/organisms/bottomNav";
 import Footer from "@/components/organisms/footer";
-import BackToTop from "@/components/atoms/backToTop";
 
 const Layout = ({ children }: Children) => {
   return (

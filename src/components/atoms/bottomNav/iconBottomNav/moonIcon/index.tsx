@@ -1,7 +1,7 @@
 import { darkModeIconAnimation, whileTap } from "@/utils/animation";
 import { m } from "framer-motion";
 
-const MoonIcon = () => {
+export const MoonIcon = () => {
   return (
     <m.svg
       stroke="currentColor"
@@ -22,5 +22,3 @@ const MoonIcon = () => {
     </m.svg>
   );
 };
-
-export default MoonIcon;

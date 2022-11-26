@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { NextRouter, useRouter } from "next/router";
 import { NextSeo } from "next-seo";
-import NotFoundImage from "@/components/atoms/notFoundImage";
+import { NotFoundImage } from "@/components/atoms/notFoundImage";
 
 const NotFoundPage = () => {
   const Router: NextRouter = useRouter();

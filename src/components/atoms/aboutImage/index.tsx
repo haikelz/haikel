@@ -1,8 +1,7 @@
 import { cn } from "@/helpers/cn";
 import { Loading } from "@/types";
-import { memo } from "react";
 
-const AboutImage = ({ isLoading, loadingProcess }: Loading) => {
+export const AboutImage = ({ isLoading, loadingProcess }: Loading) => {
   return (
     <div className="flex items-center justify-center overflow-hidden rounded-full border-[6px] border-light shadow-allAround dark:border-gray-800">
       <svg
@@ -36,5 +35,3 @@ const AboutImage = ({ isLoading, loadingProcess }: Loading) => {
     </div>
   );
 };
-
-export default memo(AboutImage);

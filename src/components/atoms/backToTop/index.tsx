@@ -3,7 +3,7 @@ import { useScroll } from "@/hooks/useScroll";
 import { AnimatePresence, motion } from "framer-motion";
 import { backToTopAnimation } from "@/utils/animation";
 
-const BackToTop = () => {
+export const BackToTop = () => {
   const [scroll] = useScroll();
 
   const handleClick: () => void = () => {
@@ -33,5 +33,3 @@ const BackToTop = () => {
     </AnimatePresence>
   );
 };
-
-export default BackToTop;

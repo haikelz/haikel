@@ -1,9 +1,9 @@
 import { Theme } from "@/types";
 import { domAnimation, LazyMotion, m } from "framer-motion";
-import MoonIcon from "../moonIcon";
-import SunIcon from "../sunIcon";
+import { MoonIcon } from "../moonIcon";
+import { SunIcon } from "../sunIcon";
 
-const ToggleDarkIcon = ({ theme, changeTheme }: Theme) => {
+export const ToggleDarkIcon = ({ theme, changeTheme }: Theme) => {
   return (
     <div className="flex items-center justify-center">
       <LazyMotion features={domAnimation}>
@@ -14,5 +14,3 @@ const ToggleDarkIcon = ({ theme, changeTheme }: Theme) => {
     </div>
   );
 };
-
-export default ToggleDarkIcon;

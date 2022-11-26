@@ -1,6 +1,6 @@
 import { VideoProps } from "@/types";
 
-const Video = ({ title, src }: VideoProps) => {
+export const Video = ({ title, src }: VideoProps) => {
   return (
     <div className="relative pb-[56.25%] my-4 h-0 overflow-hidden max-w-full">
       <iframe
@@ -12,5 +12,3 @@ const Video = ({ title, src }: VideoProps) => {
     </div>
   );
 };
-
-export default Video;

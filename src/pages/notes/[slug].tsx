@@ -5,13 +5,13 @@ import { getNoteFromSlug } from "@/helpers/getNoteFromSlug";
 import { getSlugs } from "@/helpers/getSlugs";
 import { NextSeo } from "next-seo";
 import { readingTime } from "@/helpers/readingTime";
+import { Video } from "@/components/atoms/video";
+import { LazyLoadImage } from "@/components/atoms/lazyLoadImage";
 import type { GetStaticProps, GetStaticPaths } from "next";
 import Image from "next/image";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
-import Video from "@/components/atoms/video";
-import LazyLoadImage from "@/components/atoms/lazyLoadImage";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getSlugs().map((slug) => ({ params: { slug } }));
@@ -72,7 +72,7 @@ const NotePage = ({ note }: NotePageProps) => {
               <p className="font-bold text-right text-2xl font-arabic">
                 بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
               </p>
-              <MDXRemote {...note.source} components={{ Video, LazyLoadImage, Image }} />
+              <MDXRemote {...note.source} components={{ Video, LazyLoadImage }} />
             </div>
           </div>
         </div>

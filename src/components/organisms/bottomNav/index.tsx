@@ -3,7 +3,7 @@ import { memo } from "react";
 import { IconType } from "react-icons/lib";
 import { useTheme } from "@/hooks/useTheme";
 import { bottomNavList } from "@/utils/data";
-import ToggleDarkIcon from "@/components/atoms/bottomNav/iconBottomNav/toggleDarkIcon";
+import { ToggleDarkIcon } from "@/components/atoms/bottomNav/iconBottomNav/toggleDarkIcon";
 import Link from "next/link";
 
 const BottomNav = () => {
