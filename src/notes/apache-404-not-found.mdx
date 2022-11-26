@@ -1,0 +1,35 @@
+---
+author: Haikel
+title: Solve Apache 404 Not Found
+tags:
+  - php
+  - linux
+date: 2022-11-26
+preview: Fix Apache Error on Linux
+---
+
+Jadi, ceritanya saya lagi ikutin playlist pak Sandhika Galih tentang Php **MVC(Model, View, Controller)**. Pas dites, muncul tulisan `Not Found. The requested URL was not found on this server`. Awalnya saya kirain ada yang salah di kodingannya, pas diperiksa **"ah ga ada lah, udah bener kok kodingannya"**. Setelah cari di google, akhirnya ketemu solusinya.
+
+1. Pertama-tama, edit file `apache2.conf` yang terletak di folder `/etc/apache2`. Edit dengan akses root.
+
+```
+sudo nano /etc/apache2/apache2.conf
+```
+
+Pada bagian `/var/www/`, fokus ke bagian **AllowOverride None**, nah ganti kata **None** dengan **All**. Jangan lupa disave perubahannya.
+
+<LazyLoadImage
+  src="blog/apache-404-not-found/2022-11-26_20-39.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669470532559"
+  alt="command after saving changes"
+/>
+
+2. Setelah disave, masukkan perintah:
+
+```
+sudo a2enmode rewrite && sudo systemctl restart apache2
+```
+
+<LazyLoadImage
+  src="blog/apache-404-not-found/2022-11-26_20-31.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669470533642"
+  alt="command after saving changes"
+/>
