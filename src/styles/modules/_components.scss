@@ -11,7 +11,7 @@
     @apply mt-3 text-center font-normal leading-[1.75rem] tracking-wide sm:ml-4 sm:w-9/12 lg:w-[70%];
 
     span {
-      @apply cursor-pointer font-bold decoration-2 underline underline-offset-2 hover:text-textHover;
+      @apply cursor-pointer font-bold decoration-2 underline underline-offset-[3px] hover:text-textHover;
     }
   }
 
