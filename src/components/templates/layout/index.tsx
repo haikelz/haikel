@@ -6,7 +6,7 @@ import Footer from "@/components/organisms/footer";
 
 const Layout = ({ children }: Children) => {
   return (
-    <div className="min-h-screen bg-fixed bg-center dark:bg-dark bg-light dark:text-white">
+    <div className="min-h-screen bg-fixed bg-center dark:bg-dark bg-light dark:text-gray-100 w-full">
       <Header />
       {children}
       <BackToTop />

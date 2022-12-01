@@ -10,7 +10,7 @@ const HeaderListItem = () => {
       {HeaderList.map((nav) => (
         <Link
           className={`headerlist rounded-sm px-3 py-1.5 text-base font-semibold duration-200 active:bg-slate-300 active:dark:bg-slate-800 ${
-            router.asPath === nav.href && "underline underline-offset-2"
+            router.asPath === nav.href ? "underline decoration-2 underline-offset-2" : ""
           } cursor-pointer`}
           href={nav.href}
           key={nav.id}

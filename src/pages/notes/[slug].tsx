@@ -45,35 +45,33 @@ const NotePage = ({ note }: NotePageProps) => {
   return (
     <>
       <NextSeo title={note.meta.title} />
-      <section className="min-h-screen tracking-wide">
-        <div className="container mx-auto flex max-w-7xl flex-col items-center justify-center object-center px-4 pt-6 sm:px-6 pb-14 md:py-24">
-          <div className="flex justify-center flex-wrap flex-col w-full mb-10">
-            <div className="flex flex-col">
-              <h1 className="md:text-4xl text-3xl font-medium">{note.meta.title}</h1>
-              <div className="flex my-3 items-center">
-                <Image
-                  src="https://avatars.githubusercontent.com/u/77146709?v=4"
-                  className="mr-2 rounded-full"
-                  width={23}
-                  height={23}
-                  priority
-                  alt="Github Profile Picture"
-                />
-                <p className="text-base">
-                  <span className="font-semibold">{note.meta.author}</span>,{" "}
-                  <span className="font-semibold">
-                    {readingTime({ ...note.source }.compiledSource)} Min read
-                  </span>{" "}
-                  / {note.meta.date}
-                </p>
-              </div>
-            </div>
-            <div className="max-w-full mt-6 lg:prose-lg prose-slate dark:prose-invert prose w-full">
-              <p className="font-bold text-right text-2xl font-arabic">
-                بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+      <section className="container min-h-screen tracking-wide mx-auto flex max-w-5xl flex-col items-center justify-center object-center px-4 pt-6 sm:px-6 pb-14 md:py-24">
+        <div className="flex justify-center flex-wrap flex-col w-full mb-10">
+          <div className="flex flex-col">
+            <h1 className="md:text-4xl text-3xl font-medium">{note.meta.title}</h1>
+            <div className="flex my-3 items-center">
+              <Image
+                src="https://avatars.githubusercontent.com/u/77146709?v=4"
+                className="mr-2 rounded-full"
+                width={23}
+                height={23}
+                priority
+                alt="Github Profile Picture"
+              />
+              <p className="text-base">
+                <span className="font-semibold">{note.meta.author}</span>,{" "}
+                <span className="font-semibold">
+                  {readingTime({ ...note.source }.compiledSource)} Min read
+                </span>{" "}
+                / {note.meta.date}
               </p>
-              <MDXRemote {...note.source} components={{ Video, LazyLoadImage }} />
             </div>
+          </div>
+          <div className="max-w-full mt-6 lg:prose-lg prose-slate dark:prose-invert prose w-full">
+            <p className="font-bold text-right text-2xl font-arabic">
+              بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+            </p>
+            <MDXRemote {...note.source} components={{ Video, LazyLoadImage }} />
           </div>
         </div>
       </section>
