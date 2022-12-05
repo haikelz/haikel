@@ -3,7 +3,6 @@ import { languageAtom, loadingAtom } from "@/store";
 import { setIsLoading } from "@/helpers/setIsLoading";
 import { useReducerAtom } from "jotai/utils";
 import { setLanguage } from "@/helpers/setLanguage";
-import { useKeydown } from "@/hooks/useKeydown";
 import { socialMediaList } from "@/utils/data";
 import { Underline } from "@/components/atoms/underline";
 import { AboutImage } from "@/components/atoms/aboutImage";
@@ -13,8 +12,6 @@ import Link from "next/link";
 const About = () => {
   const [isLoading, loadingProcess] = useReducerAtom<boolean, unknown>(loadingAtom, setIsLoading);
   const [language, toggleLanguage] = useReducerAtom<boolean, unknown>(languageAtom, setLanguage);
-
-  useKeydown({ isCtrlKey: true, previousUrl: "/", nextUrl: "/works" });
 
   return (
     <>
@@ -35,9 +32,8 @@ const About = () => {
                */}
               {language ? (
                 <p className="about-desc">
-                  Hello. I&#39;m Haikel. From Bangka Belitung. An ordinary person who loves Linux
-                  and Front End stuff. I enjoy nature, playing chess, jogging, and recently i also
-                  enjoy reading book. Feel free to reach me via{" "}
+                  Hello. I&#39;m Haikel. An ordinary person who interested in Frontend Stuff, User
+                  Interface/Experience, Design Systems, and Linux. Feel free to reach me via{" "}
                   {socialMediaList.map((item, index) => (
                     <Link className="link-contact" key={index + 1} href={item.link} passHref>
                       {item.name}
@@ -52,10 +48,9 @@ const About = () => {
                 </p>
               ) : (
                 <p className="about-desc">
-                  Halo. Saya Haikel. Berasal dari Bangka Belitung. Seorang biasa yang menyukai Linux
-                  dan hal-hal yang berkaitan dengan Front End. Saya senang menikmati alam, bermain
-                  catur, jogging, dan baru-baru ini saya juga senang membaca buku. Jangan sungkan
-                  untuk terkoneksi dengan saya via{" "}
+                  Halo. Saya Haikel. Seorang biasa yang tertarik dengan hal-hal berbau Frontend,
+                  User Interface/Experience, Design Systems, dan Linux. Jangan sungkan untuk
+                  terkoneksi dengan saya via{" "}
                   {socialMediaList.map((item, index) => (
                     <Link className="link-contact" key={index + 1} href={item.link} passHref>
                       {item.name}

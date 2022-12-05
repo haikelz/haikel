@@ -1,11 +1,8 @@
 import { NextSeo } from "next-seo";
-import { useKeydown } from "@/hooks/useKeydown";
 import { Underline } from "@/components/atoms/underline";
 import ListWorks from "@/components/organisms/listWorks";
 
 const Works = () => {
-  useKeydown({ isCtrlKey: true, previousUrl: "/about", nextUrl: "/notes" });
-
   return (
     <>
       <NextSeo title="Works" />
