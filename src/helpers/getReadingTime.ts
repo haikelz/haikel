@@ -1,5 +1,5 @@
 /** Thanks to: https://bvgsoftware.com/blog/read-time-feature-for-react-markdown-blog */
-export const readingTime = (content: string) => {
+export const getReadingTime = (content: string) => {
   // words per second
   const wps: number = 275 / 60;
   const regex: RegExp = /\W/;

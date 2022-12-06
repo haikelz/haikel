@@ -27,10 +27,12 @@ const Notes = ({ notes }: NotesProps) => {
             <h1 className="text-3xl font-bold title-font text-center">Notes</h1>
             <Underline />
           </div>
-          <p className="w-full text-center leading-relaxed">
-            Sometimes i write something, mostly about Linux, Web, and life. So yeah, i call this as{" "}
-            <b>Notes</b>.
-          </p>
+          <div className="w-full text-center leading-relaxed">
+            <p>
+              Sometimes i write something, mostly about Linux, Web, and life. So yeah, i call this
+              as <b>Notes</b>.
+            </p>
+          </div>
         </div>
         <ListNotes notes={notes} />
       </section>

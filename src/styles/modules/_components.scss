@@ -1,6 +1,6 @@
 @layer components {
   .onscroll {
-    @apply border-b border-b-gray-300 bg-light/80 backdrop-blur-lg backdrop-filter dark:border-b-gray-500 dark:bg-dark/70;
+    @apply border-b-2 border-b-gray-300 bg-light/80 backdrop-blur-lg backdrop-filter dark:border-b-gray-500 dark:bg-dark/70;
   }
 
   .logo {

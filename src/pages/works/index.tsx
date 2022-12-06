@@ -12,11 +12,11 @@ const Works = () => {
             <h1 className="text-center text-3xl font-bold">Works</h1>
             <Underline />
           </div>
-          <p className="w-full text-center leading-relaxed">List some of my works</p>
+          <div className="w-full text-center leading-relaxed">
+            <p>List some of my works</p>
+          </div>
         </div>
-        <div className="flex flex-wrap">
-          <ListWorks />
-        </div>
+        <ListWorks />
       </section>
     </>
   );

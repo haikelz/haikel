@@ -1,10 +1,9 @@
-import { memo } from "react";
 import type { NotesArticles } from "@/types";
 import Link from "next/link";
 
 const ListNotes = ({ notes }: NotesArticles) => {
   return (
-    <div className="grid grid-cols-1 grid-rows-1 gap-6 sm:grid-cols-2">
+    <div className="grid grid-cols-1 grid-rows-1 gap-6 sm:grid-cols-2 w-full">
       {notes.map((note) => (
         <div
           className="overflow-hidden border-[2.5px] border-black bg-lightCard transition-all duration-200 hover:shadow-dark active:scale-95 dark:border-white dark:bg-darkCard dark:hover:shadow-light"
@@ -34,4 +33,4 @@ const ListNotes = ({ notes }: NotesArticles) => {
   );
 };
 
-export default memo(ListNotes);
+export default ListNotes;

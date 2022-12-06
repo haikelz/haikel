@@ -4,9 +4,10 @@ import { serialize } from "next-mdx-remote/serialize";
 import { getNoteFromSlug } from "@/helpers/getNoteFromSlug";
 import { getSlugs } from "@/helpers/getSlugs";
 import { NextSeo } from "next-seo";
-import { readingTime } from "@/helpers/readingTime";
+import { getReadingTime } from "@/helpers/getReadingTime";
 import { Video } from "@/components/atoms/video";
 import { LazyLoadImage } from "@/components/atoms/lazyLoadImage";
+import { useMemo } from "react";
 import type { GetStaticProps, GetStaticPaths } from "next";
 import Image from "next/image";
 import rehypeSlug from "rehype-slug";
@@ -42,6 +43,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 const NotePage = ({ note }: NotePageProps) => {
+  const readingTime = useMemo(
+    () => getReadingTime({ ...note.source }.compiledSource),
+    [note.source]
+  );
+
   return (
     <>
       <NextSeo title={note.meta.title} />
@@ -60,10 +66,7 @@ const NotePage = ({ note }: NotePageProps) => {
               />
               <p className="text-base">
                 <span className="font-semibold">{note.meta.author}</span>,{" "}
-                <span className="font-semibold">
-                  {readingTime({ ...note.source }.compiledSource)} Min read
-                </span>{" "}
-                / {note.meta.date}
+                <span className="font-semibold">{readingTime} Min read</span> / {note.meta.date}
               </p>
             </div>
           </div>

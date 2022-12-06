@@ -32,7 +32,7 @@ const About = () => {
                */}
               {language ? (
                 <p className="about-desc">
-                  Hello. I&#39;m Haikel. An ordinary person who interested in Frontend Stuff, User
+                  Hello. I&#39;m Haikel. An ordinary person who interested in Frontend stuff, User
                   Interface/Experience, Design Systems, and Linux. Feel free to reach me via{" "}
                   {socialMediaList.map((item, index) => (
                     <Link className="link-contact" key={index + 1} href={item.link} passHref>
