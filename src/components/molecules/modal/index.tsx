@@ -16,7 +16,7 @@ const Modal = ({ isShowed, setIsShowed }: ShowedModal) => {
               <h3 className="text-2xl font-bold">Tips:</h3>
               <p>
                 Use{" "}
-                <code className="font-code font-semibold underline-offset-2 underline">
+                <code className="font-code font-semibold underline underline-offset-2">
                   Ctrl + Arrow Right/Arrow Left
                 </code>{" "}
                 for move to next/previous page

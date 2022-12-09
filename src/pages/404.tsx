@@ -1,11 +1,11 @@
-import { NextSeo } from "next-seo";
 import { NotFoundImage } from "@/components/atoms/notFoundImage";
 import { Paragraph } from "@/components/atoms/paragraph";
+import { NextSeo } from "next-seo";
 
 const NotFoundPage = () => {
   return (
     <>
-      <NextSeo title="Not Found!" />
+      <NextSeo title="Not Found!" description="Halaman yang anda cari tidak ditemukan!" />
       <section className="flex min-h-screen flex-col items-center justify-center text-center">
         <NotFoundImage />
         <div className="mt-6 flex flex-col items-center">

@@ -1,10 +1,10 @@
-import { GetStaticProps } from "next";
-import { getAllNotes } from "@/helpers/getAllNotes";
-import { NoteMeta, NotesProps } from "@/types";
-import { NextSeo } from "next-seo";
+import { Paragraph } from "@/components/atoms/paragraph";
 import { Underline } from "@/components/atoms/underline";
 import ListNotes from "@/components/organisms/listNotes";
-import { Paragraph } from "@/components/atoms/paragraph";
+import { getAllNotes } from "@/helpers/getAllNotes";
+import { NoteMeta, NotesProps } from "@/types";
+import { GetStaticProps } from "next";
+import { NextSeo } from "next-seo";
 
 export const getStaticProps: GetStaticProps = async () => {
   const notes: NoteMeta[] = getAllNotes()
@@ -21,11 +21,14 @@ export const getStaticProps: GetStaticProps = async () => {
 const Notes = ({ notes }: NotesProps) => {
   return (
     <>
-      <NextSeo title="Notes" />
-      <section className="mx-auto max-w-5xl px-4 md:pt-24 container min-h-screen tracking-wide flex flex-col items-center justify-center pt-6 pb-12">
-        <div className="flex justify-center items-center flex-wrap w-full mb-10">
-          <div className="flex justify-center items-center flex-col">
-            <h2 className="text-3xl font-bold title-font text-center">Notes</h2>
+      <NextSeo
+        title="Notes"
+        description="Sometimes i write something, mostly about Linux, Web, and life. So yeah, i call this as Notes."
+      />
+      <section className="container mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-4 pt-6 pb-12 tracking-wide md:pt-24">
+        <div className="mb-10 flex w-full flex-wrap items-center justify-center">
+          <div className="flex flex-col items-center justify-center">
+            <h2 className="title-font text-center text-3xl font-bold">Notes</h2>
             <Underline />
           </div>
           <div className="w-full text-center leading-relaxed">

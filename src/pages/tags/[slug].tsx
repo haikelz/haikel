@@ -1,9 +1,9 @@
+import { Underline } from "@/components/atoms/underline";
+import ListNotes from "@/components/organisms/listNotes";
 import { getAllNotes } from "@/helpers/getAllNotes";
 import { Note, Tag } from "@/types";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
-import { Underline } from "@/components/atoms/underline";
-import ListNotes from "@/components/organisms/listNotes";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const notes: Note[] = getAllNotes();
@@ -31,11 +31,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 const Tags = ({ slug, notes }: Tag) => {
   return (
     <>
-      <NextSeo title="Tags" />
-      <section className="mx-auto min-h-screen max-w-5xl px-4 md:pt-24 container tracking-wide flex flex-col items-center justify-start pt-6 pb-12">
-        <div className="flex justify-center items-center flex-wrap w-full mb-10">
-          <div className="flex justify-center items-center flex-col">
-            <h1 className="text-3xl font-bold title-font mb-1 text-center">Tags #{slug}</h1>
+      <NextSeo title={`Tags #${slug}`} description="Tags" />
+      <section className="container mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-start px-4 pt-6 pb-12 tracking-wide md:pt-24">
+        <div className="mb-10 flex w-full flex-wrap items-center justify-center">
+          <div className="flex flex-col items-center justify-center">
+            <h1 className="title-font mb-1 text-center text-3xl font-bold">Tags #{slug}</h1>
             <Underline />
           </div>
         </div>

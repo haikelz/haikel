@@ -1,6 +1,6 @@
 import { HeaderList } from "@/utils/data";
-import { NextRouter, useRouter } from "next/router";
 import Link from "next/link";
+import { NextRouter, useRouter } from "next/router";
 
 const HeaderListItem = () => {
   const router: NextRouter = useRouter();

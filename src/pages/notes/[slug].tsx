@@ -1,19 +1,19 @@
-import { MDXRemote } from "next-mdx-remote";
-import { NotePageProps } from "@/types";
-import { serialize } from "next-mdx-remote/serialize";
-import { getNoteFromSlug } from "@/helpers/getNoteFromSlug";
-import { getSlugs } from "@/helpers/getSlugs";
-import { NextSeo } from "next-seo";
-import { getReadingTime } from "@/helpers/getReadingTime";
-import { Video } from "@/components/atoms/video";
 import { LazyLoadImage } from "@/components/atoms/lazyLoadImage";
-import { useMemo } from "react";
 import { Paragraph } from "@/components/atoms/paragraph";
-import type { GetStaticProps, GetStaticPaths } from "next";
+import { Video } from "@/components/atoms/video";
+import { getNoteFromSlug } from "@/helpers/getNoteFromSlug";
+import { getReadingTime } from "@/helpers/getReadingTime";
+import { getSlugs } from "@/helpers/getSlugs";
+import { NotePageProps } from "@/types";
+import type { GetStaticPaths, GetStaticProps } from "next";
+import { MDXRemote } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
+import { NextSeo } from "next-seo";
 import Image from "next/image";
-import rehypeSlug from "rehype-slug";
+import { useMemo } from "react";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
+import rehypeSlug from "rehype-slug";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getSlugs().map((slug) => ({ params: { slug } }));
@@ -51,12 +51,12 @@ const NotePage = ({ note }: NotePageProps) => {
 
   return (
     <>
-      <NextSeo title={note.meta.title} />
-      <section className="mx-auto max-w-5xl px-4 md:pt-24 container min-h-screen tracking-wide flex flex-col items-center justify-center pt-6 pb-12">
-        <div className="flex justify-center flex-wrap flex-col w-full md:mb-10">
+      <NextSeo title={note.meta.title} description={note.meta.preview} />
+      <section className="container mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-4 pt-6 pb-12 tracking-wide md:pt-24">
+        <div className="flex w-full flex-col flex-wrap justify-center md:mb-10">
           <div className="flex flex-col">
-            <h1 className="md:text-4xl text-3xl font-medium">{note.meta.title}</h1>
-            <div className="flex my-3 items-center">
+            <h1 className="text-3xl font-medium md:text-4xl">{note.meta.title}</h1>
+            <div className="my-3 flex items-center">
               <Image
                 src="https://avatars.githubusercontent.com/u/77146709?v=4"
                 className="mr-2 rounded-full"
@@ -71,8 +71,8 @@ const NotePage = ({ note }: NotePageProps) => {
               </Paragraph>
             </div>
           </div>
-          <div className="max-w-full mt-6 lg:prose-lg prose-slate dark:prose-invert prose w-full">
-            <p className="font-bold text-right text-2xl font-arabic">
+          <div className="prose prose-slate mt-6 w-full max-w-full dark:prose-invert lg:prose-lg">
+            <p className="text-right font-arabic text-2xl font-bold">
               بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
             </p>
             <MDXRemote {...note.source} components={{ Video, LazyLoadImage }} />

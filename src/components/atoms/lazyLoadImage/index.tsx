@@ -12,7 +12,7 @@ export const LazyLoadImage = ({ src, alt }: LazyLoadImageProps) => {
     <Image
       className={cn(
         "duration-700 ease-in-out",
-        isLoading ? "grayscale blur-2xl" : "grayscale-0 blur-0"
+        isLoading ? "blur-2xl grayscale" : "blur-0 grayscale-0"
       )}
       onLoadingComplete={() => setIsLoading(false)}
       src={src}

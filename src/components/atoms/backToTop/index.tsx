@@ -1,7 +1,7 @@
-import { FaChevronUp } from "react-icons/fa";
 import { useScroll } from "@/hooks/useScroll";
-import { AnimatePresence, motion } from "framer-motion";
 import { backToTopAnimation } from "@/utils/animation";
+import { AnimatePresence, motion } from "framer-motion";
+import { FaChevronUp } from "react-icons/fa";
 
 export const BackToTop = () => {
   const [scroll] = useScroll();

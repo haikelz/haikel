@@ -1,15 +1,15 @@
-import { Provider, useAtom } from "jotai";
-import { mountedAtom } from "@/store";
-import { NextRouter, useRouter } from "next/router";
-import { useEffect } from "react";
-import { DefaultSeo } from "next-seo";
-import { AnimatePresence, motion } from "framer-motion";
-import { appAnimation } from "@/utils/animation";
-import type { AppProps } from "next/app";
-import "@/styles/index.scss";
 import Layout from "@/components/templates/layout";
-import NProgress from "nprogress";
+import { mountedAtom } from "@/store";
+import "@/styles/index.scss";
+import { appAnimation } from "@/utils/animation";
+import { AnimatePresence, motion } from "framer-motion";
+import { Provider, useAtom } from "jotai";
+import { DefaultSeo } from "next-seo";
 import SEO from "next-seo.config";
+import type { AppProps } from "next/app";
+import { NextRouter, useRouter } from "next/router";
+import NProgress from "nprogress";
+import { useEffect } from "react";
 
 const App = ({ Component, pageProps, router }: AppProps) => {
   const [mounted, setMounted] = useAtom(mountedAtom);

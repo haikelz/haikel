@@ -1,6 +1,6 @@
 import { LinkIcon } from "@/types";
-import { FiExternalLink } from "react-icons/fi";
 import Link from "next/link";
+import { FiExternalLink } from "react-icons/fi";
 
 export const PreviewIcon = ({ link }: LinkIcon) => {
   return (

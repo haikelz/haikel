@@ -1,15 +1,15 @@
-import { NextSeo } from "next-seo";
-import { languageAtom, loadingAtom } from "@/store";
-import { setIsLoading } from "@/helpers/setIsLoading";
-import { useReducerAtom } from "jotai/utils";
-import { setLanguage } from "@/helpers/setLanguage";
-import { socialMediaList } from "@/utils/data";
-import { Underline } from "@/components/atoms/underline";
 import { AboutImage } from "@/components/atoms/aboutImage";
-import Steps from "@/components/molecules/steps";
-import Link from "next/link";
 import { Paragraph } from "@/components/atoms/paragraph";
+import { Underline } from "@/components/atoms/underline";
 import { UnderlineSpan } from "@/components/atoms/underlineSpan";
+import Steps from "@/components/molecules/steps";
+import { setIsLoading } from "@/helpers/setIsLoading";
+import { setLanguage } from "@/helpers/setLanguage";
+import { languageAtom, loadingAtom } from "@/store";
+import { socialMediaList } from "@/utils/data";
+import { useReducerAtom } from "jotai/utils";
+import { NextSeo } from "next-seo";
+import Link from "next/link";
 
 const About = () => {
   const [isLoading, loadingProcess] = useReducerAtom<boolean, unknown>(loadingAtom, setIsLoading);
@@ -17,8 +17,8 @@ const About = () => {
 
   return (
     <>
-      <NextSeo title="About" />
-      <section className="container mx-auto max-w-5xl px-4 pt-6 md:pt-24 tracking-wide">
+      <NextSeo title="About" description="About Me" />
+      <section className="container mx-auto max-w-5xl px-4 pt-6 tracking-wide md:pt-24">
         <div className="mb-10 flex w-full flex-wrap items-center justify-center">
           <div className="mb-1 flex flex-col items-center justify-center lg:mb-0">
             <div className="flex flex-col items-center justify-center">
@@ -76,7 +76,7 @@ const About = () => {
           </div>
         </div>
         <div className="container mx-auto py-6 px-4 sm:px-6 md:py-24">
-          <div className="flex justify-center items-center w-full">
+          <div className="flex w-full items-center justify-center">
             <div className="flex flex-col items-center justify-center">
               <h2 className="text-center text-3xl font-bold">Journey</h2>
               <Underline />

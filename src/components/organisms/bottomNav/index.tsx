@@ -1,10 +1,10 @@
+import { ToggleDarkIcon } from "@/components/atoms/toggleDarkIcon";
+import { useTheme } from "@/hooks/useTheme";
+import { bottomNavList } from "@/utils/data";
+import Link from "next/link";
 import { NextRouter, useRouter } from "next/router";
 import { memo } from "react";
 import { IconType } from "react-icons/lib";
-import { useTheme } from "@/hooks/useTheme";
-import { bottomNavList } from "@/utils/data";
-import { ToggleDarkIcon } from "@/components/atoms/toggleDarkIcon";
-import Link from "next/link";
 
 const BottomNav = () => {
   const [theme, setTheme] = useTheme();
@@ -13,9 +13,9 @@ const BottomNav = () => {
 
   return (
     <nav
-      className={`flex md:hidden bottom-0 sticky left-0 right-0 w-full flex-col items-center justify-center`}
+      className={`sticky bottom-0 left-0 right-0 flex w-full flex-col items-center justify-center md:hidden`}
     >
-      <div className="grid w-full grid-cols-5 grid-rows-1 border-t border-slate-300 p-4 bg-light dark:border-slate-600 dark:bg-dark">
+      <div className="grid w-full grid-cols-5 grid-rows-1 border-t border-slate-300 bg-light p-4 dark:border-slate-600 dark:bg-dark">
         {bottomNavList.map((item, index) => {
           const Icon: IconType = item.icon;
           return (

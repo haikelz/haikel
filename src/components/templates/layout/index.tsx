@@ -1,12 +1,12 @@
-import { ChildrenProps } from "@/types";
 import { BackToTop } from "@/components/atoms/backToTop";
-import Header from "@/components/organisms/header";
 import BottomNav from "@/components/organisms/bottomNav";
 import Footer from "@/components/organisms/footer";
+import Header from "@/components/organisms/header";
+import { ChildrenProps } from "@/types";
 
 const Layout = ({ children }: ChildrenProps) => {
   return (
-    <div className="min-h-screen bg-fixed bg-center dark:bg-dark bg-light dark:text-gray-100 w-full">
+    <div className="min-h-screen w-full bg-light bg-fixed bg-center dark:bg-dark dark:text-gray-100">
       <Header />
       {children}
       <BackToTop />
