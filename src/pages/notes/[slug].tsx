@@ -8,6 +8,7 @@ import { getReadingTime } from "@/helpers/getReadingTime";
 import { Video } from "@/components/atoms/video";
 import { LazyLoadImage } from "@/components/atoms/lazyLoadImage";
 import { useMemo } from "react";
+import { Paragraph } from "@/components/atoms/paragraph";
 import type { GetStaticProps, GetStaticPaths } from "next";
 import Image from "next/image";
 import rehypeSlug from "rehype-slug";
@@ -64,10 +65,10 @@ const NotePage = ({ note }: NotePageProps) => {
                 priority
                 alt="Github Profile Picture"
               />
-              <p className="text-base">
+              <Paragraph isCenter={false}>
                 <span className="font-semibold">{note.meta.author}</span>,{" "}
                 <span className="font-semibold">{readingTime} Min read</span> / {note.meta.date}
-              </p>
+              </Paragraph>
             </div>
           </div>
           <div className="max-w-full mt-6 lg:prose-lg prose-slate dark:prose-invert prose w-full">

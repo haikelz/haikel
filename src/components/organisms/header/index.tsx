@@ -2,7 +2,7 @@ import { memo } from "react";
 import { useTheme } from "@/hooks/useTheme";
 import { useScroll } from "@/hooks/useScroll";
 import { ToggleDarkModeHeader } from "@/components/atoms/toggleDarkModeHeader";
-import { HeaderLogo } from "@/components/atoms/header/headerLogo";
+import { HeaderLogo } from "@/components/atoms/headerLogo";
 import HeaderListItem from "@/components/molecules/headerListItem";
 
 type ChangeTheme = () => void;

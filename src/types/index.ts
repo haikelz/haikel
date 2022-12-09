@@ -49,7 +49,7 @@ const LazyLoadImageProps = z.object({
 });
 
 export type Children = {
-  children: ReactNode[] | JSX.Element;
+  children: ReactNode;
 };
 export type Theme = z.infer<typeof Theme>;
 export type LinkIcon = z.infer<typeof LinkIcon>;

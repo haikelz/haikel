@@ -8,6 +8,8 @@ import { Underline } from "@/components/atoms/underline";
 import { AboutImage } from "@/components/atoms/aboutImage";
 import Steps from "@/components/molecules/steps";
 import Link from "next/link";
+import { Paragraph } from "@/components/atoms/paragraph";
+import { UnderlineSpan } from "@/components/atoms/underlineSpan";
 
 const About = () => {
   const [isLoading, loadingProcess] = useReducerAtom<boolean, unknown>(loadingAtom, setIsLoading);
@@ -20,7 +22,7 @@ const About = () => {
         <div className="mb-10 flex w-full flex-wrap items-center justify-center">
           <div className="mb-1 flex flex-col items-center justify-center lg:mb-0">
             <div className="flex flex-col items-center justify-center">
-              <h1 className="text-center text-3xl font-bold">About</h1>
+              <h2 className="text-center text-3xl font-bold">About</h2>
               <Underline />
             </div>
             <div className="mt-2 flex flex-col items-center justify-center sm:mt-4">
@@ -30,51 +32,53 @@ const About = () => {
                * Jika language bernilai true, maka tampilkan bahasa Inggris dulu
                * Jika language bernilai false, maka tampilkan bahasa Indonesia
                */}
-              {language ? (
-                <p className="about-desc">
-                  Hello. I&#39;m Haikel. An ordinary person who interested in Frontend stuff, User
-                  Interface/Experience, Design Systems, and Linux. Feel free to reach me via{" "}
-                  {socialMediaList.map((item, index) => (
-                    <Link className="link-contact" key={index + 1} href={item.link} passHref>
-                      {item.name}
-                      {item.name === "Telegram" || item.name === "Facebook"
-                        ? ", "
-                        : item.name === "Github"
-                        ? ", "
-                        : ""}
-                    </Link>
-                  ))}
-                  . <span onClick={toggleLanguage}>See in Indonesia.</span>
-                </p>
-              ) : (
-                <p className="about-desc">
-                  Halo. Saya Haikel. Seorang biasa yang tertarik dengan hal-hal berbau Frontend,
-                  User Interface/Experience, Design Systems, dan Linux. Jangan sungkan untuk
-                  terkoneksi dengan saya via{" "}
-                  {socialMediaList.map((item, index) => (
-                    <Link className="link-contact" key={index + 1} href={item.link} passHref>
-                      {item.name}
-                      {item.name === "Telegram" || item.name === "Facebook"
-                        ? ", "
-                        : item.name === "Github"
-                        ? ", "
-                        : ""}
-                    </Link>
-                  ))}
-                  . <span onClick={toggleLanguage}>Lihat di Bahasa Inggris.</span>
-                </p>
-              )}
+              <div className="sm:w-9/12 lg:w-[70%]">
+                {language ? (
+                  <Paragraph className="mt-3 sm:ml-4" isCenter>
+                    Hello. I&#39;m Haikel. An ordinary person who interested in Frontend stuff, User
+                    Interface/Experience, Design Systems, and Linux. Feel free to reach me via{" "}
+                    {socialMediaList.map((item, index) => (
+                      <Link className="link-contact" key={index + 1} href={item.link} passHref>
+                        {item.name}
+                        {item.name === "Telegram" || item.name === "Facebook"
+                          ? ", "
+                          : item.name === "Github"
+                          ? ", "
+                          : ""}
+                      </Link>
+                    ))}
+                    . <UnderlineSpan>See in Indonesia.</UnderlineSpan>
+                  </Paragraph>
+                ) : (
+                  <Paragraph className="mt-3 sm:ml-4" isCenter>
+                    Halo. Saya Haikel. Seorang biasa yang tertarik dengan hal-hal berbau Frontend,
+                    User Interface/Experience, Design Systems, dan Linux. Jangan sungkan untuk
+                    terkoneksi dengan saya via{" "}
+                    {socialMediaList.map((item, index) => (
+                      <Link className="link-contact" key={index + 1} href={item.link} passHref>
+                        {item.name}
+                        {item.name === "Telegram" || item.name === "Facebook"
+                          ? ", "
+                          : item.name === "Github"
+                          ? ", "
+                          : ""}
+                      </Link>
+                    ))}
+                    . <UnderlineSpan>Lihat di Bahasa Inggris.</UnderlineSpan>
+                  </Paragraph>
+                )}
+              </div>
             </div>
           </div>
         </div>
         <div className="container mx-auto py-6 px-4 sm:px-6 md:py-24">
           <div className="flex justify-center items-center w-full">
             <div className="flex flex-col items-center justify-center">
-              <h1 className="text-center text-3xl font-bold">Journey</h1>
+              <h2 className="text-center text-3xl font-bold">Journey</h2>
               <Underline />
             </div>
           </div>
-          <p className="w-full text-center leading-relaxed">My Experience, and journey</p>
+          <Paragraph isCenter>My Experience, and journey</Paragraph>
           <Steps />
         </div>
       </section>

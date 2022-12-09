@@ -3,7 +3,7 @@ import { memo } from "react";
 import { IconType } from "react-icons/lib";
 import { useTheme } from "@/hooks/useTheme";
 import { bottomNavList } from "@/utils/data";
-import { ToggleDarkIcon } from "@/components/atoms/bottomNav/iconBottomNav/toggleDarkIcon";
+import { ToggleDarkIcon } from "@/components/atoms/toggleDarkIcon";
 import Link from "next/link";
 
 const BottomNav = () => {
@@ -13,9 +13,7 @@ const BottomNav = () => {
 
   return (
     <nav
-      className={`flex md:hidden bottom-0 sticky left-0 right-0 w-full flex-col items-center justify-center ${
-        window.pageYOffset >= 1 ? "" : ""
-      }`}
+      className={`flex md:hidden bottom-0 sticky left-0 right-0 w-full flex-col items-center justify-center`}
     >
       <div className="grid w-full grid-cols-5 grid-rows-1 border-t border-slate-300 p-4 bg-light dark:border-slate-600 dark:bg-dark">
         {bottomNavList.map((item, index) => {

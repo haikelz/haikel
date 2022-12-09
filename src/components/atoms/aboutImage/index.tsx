@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const AboutImage = ({ isLoading, loadingProcess }: Loading) => {
   return (
-    <div className="flex items-center justify-center overflow-hidden rounded-full border-[6px] border-light shadow-allAround dark:border-gray-800">
+    <div className="flex items-center justify-center overflow-hidden rounded-full border-[6px] border-light shadow-allaround dark:border-gray-800">
       <Image
         src="https://avatars.githubusercontent.com/u/77146709?v=4"
         width={270}

@@ -1,5 +1,6 @@
 import { NextSeo } from "next-seo";
 import { NotFoundImage } from "@/components/atoms/notFoundImage";
+import { Paragraph } from "@/components/atoms/paragraph";
 
 const NotFoundPage = () => {
   return (
@@ -9,7 +10,7 @@ const NotFoundPage = () => {
         <NotFoundImage />
         <div className="mt-6 flex flex-col items-center">
           <h2 className="text-xl font-bold sm:text-2xl">Oops....</h2>
-          <p className="text-xs sm:text-base">Halaman yang anda cari tidak ditemukan!</p>
+          <Paragraph isCenter={false}>Halaman yang anda cari tidak ditemukan!</Paragraph>
         </div>
       </section>
     </>

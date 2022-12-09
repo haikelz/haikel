@@ -1,6 +1,6 @@
 import { LinkIcon } from "@/types";
-import { GithubIcon } from "@/components/atoms/iconCards/github";
-import { PreviewIcon } from "@/components/atoms/iconCards/preview";
+import { GithubIcon } from "@/components/atoms/githubIcon";
+import { PreviewIcon } from "@/components/atoms/previewIcon";
 
 const Icons = ({ linkPreview, linkGithub }: LinkIcon) => {
   return (
