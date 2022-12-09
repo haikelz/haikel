@@ -15,9 +15,11 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed z-10 hidden w-full dark:text-white md:block ${scroll > 0 && "onscroll"}`}
+      className={`z-10 hidden fixed top-0 w-full dark:text-white md:block ${
+        scroll > 0 && "onscroll"
+      }`}
     >
-      <nav className="mx-auto max-w-5xl px-4 text-sm sm:px-6">
+      <nav className="mx-auto w-full px-4 max-w-5xl text-sm">
         <div className="flex h-12 items-center justify-between">
           <HeaderLogo />
           <div className="flex items-center justify-center">

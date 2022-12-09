@@ -16,7 +16,7 @@ const About = () => {
   return (
     <>
       <NextSeo title="About" />
-      <section className="container mx-auto max-w-5xl object-center px-4 pt-6 sm:px-6 md:pt-24 tracking-wide">
+      <section className="container mx-auto max-w-5xl px-4 pt-6 md:pt-24 tracking-wide">
         <div className="mb-10 flex w-full flex-wrap items-center justify-center">
           <div className="mb-1 flex flex-col items-center justify-center lg:mb-0">
             <div className="flex flex-col items-center justify-center">
@@ -67,17 +67,17 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
-      <div className="container mx-auto object-center py-10 px-4 sm:px-6 md:py-24">
-        <div className="flex justify-center items-center w-full">
-          <div className="flex flex-col items-center justify-center">
-            <h1 className="text-center text-3xl font-bold">Journey</h1>
-            <Underline />
+        <div className="container mx-auto py-6 px-4 sm:px-6 md:py-24">
+          <div className="flex justify-center items-center w-full">
+            <div className="flex flex-col items-center justify-center">
+              <h1 className="text-center text-3xl font-bold">Journey</h1>
+              <Underline />
+            </div>
           </div>
+          <p className="w-full text-center leading-relaxed">My Experience, and journey</p>
+          <Steps />
         </div>
-        <p className="w-full text-center leading-relaxed">My Experience, and journey</p>
-        <Steps />
-      </div>
+      </section>
     </>
   );
 };

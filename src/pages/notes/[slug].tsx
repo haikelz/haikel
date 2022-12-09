@@ -43,7 +43,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 const NotePage = ({ note }: NotePageProps) => {
-  const readingTime = useMemo(
+  const readingTime: number = useMemo(
     () => getReadingTime({ ...note.source }.compiledSource),
     [note.source]
   );
@@ -51,8 +51,8 @@ const NotePage = ({ note }: NotePageProps) => {
   return (
     <>
       <NextSeo title={note.meta.title} />
-      <section className="container min-h-screen tracking-wide mx-auto flex max-w-5xl flex-col items-center justify-center object-center px-4 pt-6 sm:px-6 pb-14 md:py-24">
-        <div className="flex justify-center flex-wrap flex-col w-full mb-10">
+      <section className="mx-auto max-w-5xl px-4 md:pt-24 container min-h-screen tracking-wide flex flex-col items-center justify-center pt-6 pb-12">
+        <div className="flex justify-center flex-wrap flex-col w-full md:mb-10">
           <div className="flex flex-col">
             <h1 className="md:text-4xl text-3xl font-medium">{note.meta.title}</h1>
             <div className="flex my-3 items-center">

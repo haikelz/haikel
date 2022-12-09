@@ -21,7 +21,7 @@ const Notes = ({ notes }: NotesProps) => {
   return (
     <>
       <NextSeo title="Notes" />
-      <section className="container min-h-screen tracking-wide mx-auto flex max-w-5xl flex-col items-center justify-center object-center px-4 pt-6 pb-24 sm:px-6 md:py-24">
+      <section className="mx-auto max-w-5xl px-4 md:pt-24 container min-h-screen tracking-wide flex flex-col items-center justify-center pt-6 pb-12">
         <div className="flex justify-center items-center flex-wrap w-full mb-10">
           <div className="flex justify-center items-center flex-col">
             <h1 className="text-3xl font-bold title-font text-center">Notes</h1>
