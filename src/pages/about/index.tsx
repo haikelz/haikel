@@ -47,7 +47,8 @@ const About = () => {
                           : ""}
                       </Link>
                     ))}
-                    . <UnderlineSpan>See in Indonesia.</UnderlineSpan>
+                    .{" "}
+                    <UnderlineSpan toggleLanguage={toggleLanguage}>See in Indonesia.</UnderlineSpan>
                   </Paragraph>
                 ) : (
                   <Paragraph className="mt-3 sm:ml-4" isCenter>
@@ -64,7 +65,10 @@ const About = () => {
                           : ""}
                       </Link>
                     ))}
-                    . <UnderlineSpan>Lihat di Bahasa Inggris.</UnderlineSpan>
+                    .{" "}
+                    <UnderlineSpan toggleLanguage={toggleLanguage}>
+                      Lihat di Bahasa Inggris.
+                    </UnderlineSpan>
                   </Paragraph>
                 )}
               </div>

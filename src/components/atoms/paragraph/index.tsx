@@ -1,10 +1,4 @@
-import { ReactNode } from "react";
-
-interface ParagraphProps {
-  className?: string;
-  children: ReactNode;
-  isCenter: boolean;
-}
+import { ParagraphProps } from "@/types";
 
 export const Paragraph = ({ className, children, isCenter }: ParagraphProps) => {
   return (

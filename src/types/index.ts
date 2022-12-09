@@ -48,9 +48,21 @@ const LazyLoadImageProps = z.object({
   alt: z.string(),
 });
 
-export type Children = {
+const UnderlineSpanProps = z.object({
+  children: z.string(),
+  toggleLanguage: z.function(),
+});
+
+export type ChildrenProps = {
   children: ReactNode;
 };
+
+export type ParagraphProps = {
+  className?: string;
+  children: ReactNode;
+  isCenter: boolean;
+};
+
 export type Theme = z.infer<typeof Theme>;
 export type LinkIcon = z.infer<typeof LinkIcon>;
 export type Stack = z.infer<typeof Stack>;
@@ -60,5 +72,6 @@ export type Keydown = z.infer<typeof Keydown>;
 export type KeydownEvent = z.infer<typeof KeydownEvent>;
 export type ShowedModal = z.infer<typeof ShowedModal>;
 export type LazyLoadImageProps = z.infer<typeof LazyLoadImageProps>;
+export type UnderlineSpanProps = z.infer<typeof UnderlineSpanProps>;
 
 export * from "./notesTypes";
