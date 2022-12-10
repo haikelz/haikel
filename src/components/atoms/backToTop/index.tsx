@@ -23,6 +23,7 @@ export const BackToTop = () => {
           className="fixed bottom-20 right-3 md:bottom-4 md:right-4"
         >
           <button
+            aria-label="back to top"
             className="rounded-md bg-underline-light p-2.5 transition duration-300 hover:bg-red-500 dark:bg-underline-dark dark:hover:bg-blue-700"
             onClick={handleClick}
           >

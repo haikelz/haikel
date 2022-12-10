@@ -6,7 +6,7 @@ export const ToggleDarkIcon = ({ theme, changeTheme }: Theme) => {
   return (
     <div className="flex items-center justify-center">
       <LazyMotion features={domAnimation}>
-        <m.button type="button" onClick={changeTheme}>
+        <m.button aria-label="toggle Dark Mode" type="button" onClick={changeTheme}>
           {theme === "dark" ? (
             <m.svg
               key="sun icon"

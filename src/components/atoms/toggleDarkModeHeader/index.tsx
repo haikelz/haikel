@@ -6,6 +6,7 @@ export const ToggleDarkModeHeader = ({ theme, changeTheme }: Theme) => {
   return (
     <LazyMotion features={domAnimation}>
       <m.button
+        aria-label="toggle Dark Mode"
         type="button"
         className="shadow-none hover:bg-transparent active:bg-transparent"
         onClick={changeTheme}
