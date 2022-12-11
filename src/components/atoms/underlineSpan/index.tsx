@@ -1,11 +1,8 @@
-import { UnderlineSpanProps } from "@/types";
+import { ChildrenProps } from "@/types";
 
-export const UnderlineSpan = ({ children, toggleLanguage }: UnderlineSpanProps) => {
+export const UnderlineSpan = ({ children }: ChildrenProps) => {
   return (
-    <span
-      className="cursor-pointer font-bold decoration-2 underline underline-offset-[3px] hover:text-texthover"
-      onClick={toggleLanguage}
-    >
+    <span className="cursor-pointer font-bold underline decoration-2 underline-offset-[3px] hover:text-texthover">
       {children}
     </span>
   );

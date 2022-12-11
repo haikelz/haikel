@@ -5,7 +5,7 @@ export const Paragraph = ({ className, children, isCenter }: ParagraphProps) => 
     <p
       className={`${
         isCenter ? "text-center" : ""
-      } font-normal text-base leading-[1.75rem] tracking-wide ${className}`}
+      } text-base font-normal leading-[1.75rem] tracking-wide ${className}`}
     >
       {children}
     </p>

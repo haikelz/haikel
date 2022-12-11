@@ -1,6 +1,5 @@
 import { cn } from "@/helpers/cn";
 import { Loading } from "@/types";
-import Image from "next/image";
 
 export const AboutImage = ({ isLoading, loadingProcess }: Loading) => {
   return (

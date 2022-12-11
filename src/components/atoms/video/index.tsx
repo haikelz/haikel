@@ -2,12 +2,12 @@ import { VideoProps } from "@/types";
 
 export const Video = ({ title, src }: VideoProps) => {
   return (
-    <div className="relative pb-[56.25%] my-4 h-0 overflow-hidden max-w-full">
+    <div className="relative my-4 h-0 max-w-full overflow-hidden pb-[56.25%]">
       <iframe
         src={src}
         title={title}
         allow="autoplay"
-        className="absolute top-0 left-0 w-full h-full border-0"
+        className="absolute top-0 left-0 h-full w-full border-0"
       />
     </div>
   );

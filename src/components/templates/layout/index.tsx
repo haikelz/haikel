@@ -1,18 +1,10 @@
-import { BackToTop } from "@/components/atoms/backToTop";
-import BottomNav from "@/components/organisms/bottomNav";
-import Footer from "@/components/organisms/footer";
-import Header from "@/components/organisms/header";
-import { ChildrenProps } from "@/types";
+import { LayoutProps } from "@/types";
 
-const Layout = ({ children }: ChildrenProps) => {
+const Layout = ({ children, className }: LayoutProps) => {
   return (
-    <div className="min-h-screen w-full bg-light bg-fixed bg-center dark:bg-dark dark:text-gray-100">
-      <Header />
+    <section className={`container mx-auto max-w-5xl px-4 tracking-wide ${className}`}>
       {children}
-      <BackToTop />
-      <Footer />
-      <BottomNav />
-    </div>
+    </section>
   );
 };
 

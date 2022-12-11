@@ -1,5 +1,6 @@
 import { Underline } from "@/components/atoms/underline";
 import ListNotes from "@/components/organisms/listNotes";
+import Layout from "@/components/templates/layout";
 import { getAllNotes } from "@/helpers/getAllNotes";
 import { Note, Tag } from "@/types";
 import { GetStaticPaths, GetStaticProps } from "next";
@@ -32,7 +33,7 @@ const Tags = ({ slug, notes }: Tag) => {
   return (
     <>
       <NextSeo title={`Tags #${slug}`} description="Tags" />
-      <section className="container mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-start px-4 pt-6 pb-12 tracking-wide md:pt-24">
+      <Layout className="flex min-h-screen flex-col items-center justify-start px-4 pt-6 pb-12 md:pt-24">
         <div className="mb-10 flex w-full flex-wrap items-center justify-center">
           <div className="flex flex-col items-center justify-center">
             <h1 className="title-font mb-1 text-center text-3xl font-bold">Tags #{slug}</h1>
@@ -40,7 +41,7 @@ const Tags = ({ slug, notes }: Tag) => {
           </div>
         </div>
         <ListNotes notes={notes} />
-      </section>
+      </Layout>
     </>
   );
 };

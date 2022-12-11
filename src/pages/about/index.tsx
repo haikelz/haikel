@@ -3,6 +3,7 @@ import { Paragraph } from "@/components/atoms/paragraph";
 import { Underline } from "@/components/atoms/underline";
 import { UnderlineSpan } from "@/components/atoms/underlineSpan";
 import Steps from "@/components/molecules/steps";
+import Layout from "@/components/templates/layout";
 import { setIsLoading } from "@/helpers/setIsLoading";
 import { setLanguage } from "@/helpers/setLanguage";
 import { languageAtom, loadingAtom } from "@/store";
@@ -18,7 +19,7 @@ const About = () => {
   return (
     <>
       <NextSeo title="About" description="About Me" />
-      <section className="container mx-auto max-w-5xl px-4 pt-6 tracking-wide md:pt-24">
+      <Layout className="pt-6 md:pt-24">
         <div className="mb-10 flex w-full flex-wrap items-center justify-center">
           <div className="mb-1 flex flex-col items-center justify-center lg:mb-0">
             <div className="flex flex-col items-center justify-center">
@@ -48,7 +49,9 @@ const About = () => {
                       </Link>
                     ))}
                     .{" "}
-                    <UnderlineSpan toggleLanguage={toggleLanguage}>See in Indonesia.</UnderlineSpan>
+                    <button onClick={toggleLanguage}>
+                      <UnderlineSpan>See in Indonesia.</UnderlineSpan>
+                    </button>
                   </Paragraph>
                 ) : (
                   <Paragraph className="mt-3 sm:ml-4" isCenter>
@@ -66,9 +69,9 @@ const About = () => {
                       </Link>
                     ))}
                     .{" "}
-                    <UnderlineSpan toggleLanguage={toggleLanguage}>
-                      Lihat di Bahasa Inggris.
-                    </UnderlineSpan>
+                    <button onClick={toggleLanguage}>
+                      <UnderlineSpan>Lihat di Bahasa Inggris.</UnderlineSpan>
+                    </button>
                   </Paragraph>
                 )}
               </div>
@@ -85,7 +88,7 @@ const About = () => {
           <Paragraph isCenter>My Experience, and journey</Paragraph>
           <Steps />
         </div>
-      </section>
+      </Layout>
     </>
   );
 };

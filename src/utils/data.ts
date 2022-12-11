@@ -1,4 +1,4 @@
-import { MdAccountCircle, MdEmail, MdHomeFilled, MdLibraryBooks, MdWork } from "react-icons/md";
+import { MdAccountCircle, MdHomeFilled, MdLibraryBooks, MdWork } from "react-icons/md";
 
 const tailwind: string = "tailwindcss";
 const next: string = "nextjs";

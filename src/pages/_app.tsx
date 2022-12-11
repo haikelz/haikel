@@ -1,4 +1,4 @@
-import Layout from "@/components/templates/layout";
+import Template from "@/components/templates";
 import { mountedAtom } from "@/store";
 import "@/styles/index.scss";
 import { appAnimation } from "@/utils/animation";
@@ -42,13 +42,13 @@ const App = ({ Component, pageProps, router }: AppProps) => {
       <>
         <DefaultSeo {...SEO} />
         <Provider>
-          <Layout>
+          <Template>
             <AnimatePresence mode="wait" initial={false}>
               <motion.main key={router.route} {...appAnimation}>
                 <Component {...pageProps} />
               </motion.main>
             </AnimatePresence>
-          </Layout>
+          </Template>
         </Provider>
       </>
     )

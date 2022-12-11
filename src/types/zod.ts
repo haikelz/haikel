@@ -47,11 +47,6 @@ const LazyLoadImageProps = z.object({
   alt: z.string(),
 });
 
-const UnderlineSpanProps = z.object({
-  children: z.string(),
-  toggleLanguage: z.function(),
-});
-
 // notes types
 const NoteMeta = z.object({
   author: z.string(),
@@ -98,7 +93,6 @@ export type Keydown = z.infer<typeof Keydown>;
 export type KeydownEvent = z.infer<typeof KeydownEvent>;
 export type ShowedModal = z.infer<typeof ShowedModal>;
 export type LazyLoadImageProps = z.infer<typeof LazyLoadImageProps>;
-export type UnderlineSpanProps = z.infer<typeof UnderlineSpanProps>;
 export type NoteMeta = z.infer<typeof NoteMeta>;
 export type Note = z.infer<typeof Note>;
 export type NotesArticles = z.infer<typeof NotesArticles>;

@@ -1,6 +1,7 @@
 import { LazyLoadImage } from "@/components/atoms/lazyLoadImage";
 import { Paragraph } from "@/components/atoms/paragraph";
 import { Video } from "@/components/atoms/video";
+import Layout from "@/components/templates/layout";
 import { getNoteFromSlug } from "@/helpers/getNoteFromSlug";
 import { getReadingTime } from "@/helpers/getReadingTime";
 import { getSlugs } from "@/helpers/getSlugs";
@@ -52,7 +53,7 @@ const NotePage = ({ note }: NotePageProps) => {
   return (
     <>
       <NextSeo title={note.meta.title} description={note.meta.preview} />
-      <section className="container mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-4 pt-6 pb-12 tracking-wide md:pt-24">
+      <Layout className="flex min-h-screen flex-col items-center justify-center pt-6 pb-12 md:pt-24">
         <div className="flex w-full flex-col flex-wrap justify-center md:mb-10">
           <div className="flex flex-col">
             <h1 className="text-3xl font-medium md:text-4xl">{note.meta.title}</h1>
@@ -78,7 +79,7 @@ const NotePage = ({ note }: NotePageProps) => {
             <MDXRemote {...note.source} components={{ Video, LazyLoadImage }} />
           </div>
         </div>
-      </section>
+      </Layout>
     </>
   );
 };
