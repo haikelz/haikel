@@ -56,7 +56,7 @@ const NotePage = ({ note }: NotePageProps) => {
       <Layout className="flex min-h-screen flex-col items-center justify-center pt-6 pb-12 md:pt-24">
         <div className="flex w-full flex-col flex-wrap justify-center md:mb-10">
           <div className="flex flex-col">
-            <h1 className="text-3xl font-medium md:text-4xl">{note.meta.title}</h1>
+            <h1 className="gradient text-3xl font-medium md:text-4xl">{note.meta.title}</h1>
             <div className="my-3 flex items-center">
               <Image
                 src="https://avatars.githubusercontent.com/u/77146709?v=4"
