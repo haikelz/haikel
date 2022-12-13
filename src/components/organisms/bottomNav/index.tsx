@@ -16,11 +16,11 @@ const BottomNav = () => {
     <nav
       className={`sticky bottom-0 left-0 right-0 flex w-full flex-col items-center justify-center md:hidden`}
     >
-      <ul className="grid w-full grid-cols-5 grid-rows-1 border-t border-slate-300 bg-light p-4 dark:border-slate-600 dark:bg-dark">
+      <div className="grid w-full grid-cols-5 grid-rows-1 border-t border-slate-300 bg-light p-4 dark:border-slate-600 dark:bg-dark">
         {bottomNavList.map((item, index) => {
           const Icon: IconType = item.icon;
           return (
-            <li key={index + 1} className="flex items-center justify-center">
+            <div key={index + 1} className="flex items-center justify-center">
               <Link href={item.link} aria-label={item.name} passHref>
                 <Icon
                   className={cn(
@@ -32,11 +32,11 @@ const BottomNav = () => {
                   size={28}
                 />
               </Link>
-            </li>
+            </div>
           );
         })}
         <ToggleDarkIcon theme={theme} changeTheme={changeTheme} />
-      </ul>
+      </div>
     </nav>
   );
 };
