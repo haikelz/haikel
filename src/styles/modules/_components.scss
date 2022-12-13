@@ -1,6 +1,6 @@
 @layer components {
   .onscroll {
-    @apply border-b-2 border-b-gray-300 bg-light/80 backdrop-blur-lg backdrop-filter dark:border-b-gray-500 dark:bg-dark/70;
+    @apply backdrop-blur-lg backdrop-filter;
   }
 
   .logo {
@@ -13,5 +13,11 @@
 
   .gradient {
     @apply bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-3xl text-transparent dark:from-[#0093E9] dark:to-[#80D0C7];
+  }
+
+  .shadow-smooth {
+    box-shadow: 0px 0px 40px -23px rgba(0, 0, 0, 1);
+    -webkit-box-shadow: 0px 0px 40px -23px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 40px -23px rgba(0, 0, 0, 1);
   }
 }

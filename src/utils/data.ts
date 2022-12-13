@@ -9,7 +9,7 @@ const motion: string = "framer-motion";
 const swr: string = "swr";
 const svelte: string = "svelte";
 
-export const ProjectsList = [
+export const projectsList = [
   {
     h4: "Jadwal Sholat",
     p: "Website jadwal Sholat dan baca Al-Qur'an",
@@ -84,7 +84,7 @@ export const ProjectsList = [
   },
 ];
 
-export const HeaderList = [
+export const headerList = [
   { id: "a", text: "About", href: "/about" },
   { id: "b", text: "Works", href: "/works" },
   { id: "c", text: "Notes", href: "/notes" },

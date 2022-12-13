@@ -1,11 +1,11 @@
 import { Paragraph } from "@/components/atoms/paragraph";
 import Icons from "@/components/molecules/icons";
-import { ProjectsList } from "@/utils/data";
+import { projectsList } from "@/utils/data";
 
 const ListWorks = () => {
   return (
     <div className="grid w-full grid-cols-1 grid-rows-1 gap-6 sm:grid-cols-2">
-      {ProjectsList.map((work, index) => (
+      {projectsList.map((work, index) => (
         <div
           className="cursor-pointer overflow-hidden border-[2.5px] border-black bg-card-light transition-all duration-200 hover:shadow-dark active:scale-95 dark:border-white dark:bg-card-dark dark:hover:shadow-light"
           key={index + 1}

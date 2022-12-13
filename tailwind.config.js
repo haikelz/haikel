@@ -7,14 +7,13 @@ module.exports = {
         light: "10px 10px 0px -3px #000000",
         dark: "10px 10px 0px -3px #FFFFFF",
         progress: "0 0 10px #29d, 0 0 5px #29d",
-        allaround: "0px 0px 10px 1px rgba(0,0,0,0.25)",
       },
       colors: {
         light: "#ECEFF4",
         dark: "#16161D",
         card: {
           light: "#F1F5F9",
-          dark: "#1F1D2E",
+          dark: "#1F1F28",
         },
         underline: {
           light: "#F05454",

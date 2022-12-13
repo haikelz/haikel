@@ -3,7 +3,7 @@ import { Loading } from "@/types";
 
 export const AboutImage = ({ isLoading, loadingProcess }: Loading) => {
   return (
-    <div className="flex items-center justify-center overflow-hidden rounded-full border-[6px] border-light shadow-allaround dark:border-gray-800">
+    <div className="shadow-smooth flex items-center justify-center overflow-hidden rounded-full border-[6px] border-light dark:border-gray-800">
       <svg
         className={cn(
           "cursor-pointer rounded-full duration-700 ease-in-out",

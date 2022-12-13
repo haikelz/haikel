@@ -1,20 +1,10 @@
-import { cn } from "@/helpers/cn";
 import { imageKitLoader } from "@/helpers/imageKitLoader";
-import { isLoadingAtom } from "@/store";
 import { LazyLoadImageProps } from "@/types";
-import { useAtom } from "jotai";
 import Image from "next/image";
 
 export const LazyLoadImage = ({ src, alt }: LazyLoadImageProps) => {
-  const [isLoading, setIsLoading] = useAtom(isLoadingAtom);
-
   return (
     <Image
-      className={cn(
-        "duration-700 ease-in-out",
-        isLoading ? "blur-2xl grayscale" : "blur-0 grayscale-0"
-      )}
-      onLoadingComplete={() => setIsLoading(false)}
       src={src}
       alt={alt}
       width={500}
