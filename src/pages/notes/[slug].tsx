@@ -1,7 +1,8 @@
-import { LazyLoadImage } from "@/components/atoms/lazyLoadImage";
-import { Paragraph } from "@/components/atoms/paragraph";
-import { Video } from "@/components/atoms/video";
-import Layout from "@/components/templates/layout";
+import { Heading } from "@/components/atoms/Heading";
+import { LazyLoadImage } from "@/components/atoms/LazyLoadImage";
+import { Paragraph } from "@/components/atoms/Paragraph";
+import { Video } from "@/components/atoms/Video";
+import Layout from "@/components/templates/Layout";
 import { getNoteFromSlug } from "@/helpers/getNoteFromSlug";
 import { getReadingTime } from "@/helpers/getReadingTime";
 import { getSlugs } from "@/helpers/getSlugs";
@@ -56,7 +57,9 @@ const NotePage = ({ note }: NotePageProps) => {
       <Layout className="flex min-h-screen flex-col items-center justify-center pt-6 pb-12 md:pt-24">
         <div className="flex w-full flex-col flex-wrap justify-center md:mb-10">
           <div className="flex flex-col">
-            <h1 className="gradient text-3xl font-medium md:text-4xl">{note.meta.title}</h1>
+            <Heading as="h1" className="gradient">
+              {note.meta.title}
+            </Heading>
             <div className="my-3 flex items-center">
               <Image
                 src="https://avatars.githubusercontent.com/u/77146709?v=4"

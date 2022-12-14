@@ -1,5 +1,5 @@
-import ComingSoon from "@/components/molecules/comingSoon";
-import SMA from "@/components/molecules/sma";
+import ComingSoon from "@/components/molecules/ComingSoon";
+import SMA from "@/components/molecules/Sma";
 
 const Steps = () => {
   return (

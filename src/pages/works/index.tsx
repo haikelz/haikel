@@ -1,7 +1,8 @@
-import { Paragraph } from "@/components/atoms/paragraph";
-import { Underline } from "@/components/atoms/underline";
-import ListWorks from "@/components/organisms/listWorks";
-import Layout from "@/components/templates/layout";
+import { Heading } from "@/components/atoms/Heading";
+import { Paragraph } from "@/components/atoms/Paragraph";
+import { Underline } from "@/components/atoms/Underline";
+import ListWorks from "@/components/organisms/ListWorks";
+import Layout from "@/components/templates/Layout";
 import { NextSeo } from "next-seo";
 
 const Works = () => {
@@ -11,7 +12,9 @@ const Works = () => {
       <Layout className="flex min-h-screen flex-col items-center justify-center pt-6 pb-12 md:pt-24">
         <div className="mb-10 flex w-full flex-wrap items-center justify-center">
           <div className="flex flex-col items-center justify-center">
-            <h2 className="text-center text-3xl font-bold">Works</h2>
+            <Heading as="h2" className="text-center">
+              Works
+            </Heading>
             <Underline />
           </div>
           <div className="w-full text-center leading-relaxed">

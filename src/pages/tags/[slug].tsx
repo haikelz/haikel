@@ -1,6 +1,7 @@
-import { Underline } from "@/components/atoms/underline";
-import ListNotes from "@/components/organisms/listNotes";
-import Layout from "@/components/templates/layout";
+import { Heading } from "@/components/atoms/Heading";
+import { Underline } from "@/components/atoms/Underline";
+import ListNotes from "@/components/organisms/ListNotes";
+import Layout from "@/components/templates/Layout";
 import { getAllNotes } from "@/helpers/getAllNotes";
 import { Note, Tag } from "@/types";
 import { GetStaticPaths, GetStaticProps } from "next";
@@ -36,7 +37,9 @@ const Tags = ({ slug, notes }: Tag) => {
       <Layout className="flex min-h-screen flex-col items-center justify-start px-4 pt-6 pb-12 md:pt-24">
         <div className="mb-10 flex w-full flex-wrap items-center justify-center">
           <div className="flex flex-col items-center justify-center">
-            <h1 className="title-font mb-1 text-center text-3xl font-bold">Tags #{slug}</h1>
+            <Heading as="h2" className="title-font mb-1 text-center">
+              Tags #{slug}
+            </Heading>
             <Underline />
           </div>
         </div>

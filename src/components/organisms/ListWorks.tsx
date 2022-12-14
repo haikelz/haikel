@@ -1,5 +1,5 @@
-import { Paragraph } from "@/components/atoms/paragraph";
-import Icons from "@/components/molecules/icons";
+import { Paragraph } from "@/components/atoms/Paragraph";
+import Icons from "@/components/molecules/Icons";
 import { projectsList } from "@/utils/data";
 
 const ListWorks = () => {

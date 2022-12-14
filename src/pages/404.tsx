@@ -1,5 +1,6 @@
-import { NotFoundImage } from "@/components/atoms/notFoundImage";
-import { Paragraph } from "@/components/atoms/paragraph";
+import { Heading } from "@/components/atoms/Heading";
+import { NotFoundImage } from "@/components/atoms/NotFoundImage";
+import { Paragraph } from "@/components/atoms/Paragraph";
 import { NextSeo } from "next-seo";
 
 const NotFoundPage = () => {
@@ -9,7 +10,9 @@ const NotFoundPage = () => {
       <section className="flex min-h-screen flex-col items-center justify-center text-center">
         <NotFoundImage />
         <div className="mt-6 flex flex-col items-center">
-          <h2 className="text-xl font-bold sm:text-2xl">404 Not Found</h2>
+          <Heading as="h4" className="text-xl sm:text-2xl">
+            404 Not Found
+          </Heading>
           <Paragraph isCenter={false}>Halaman yang anda cari tidak ditemukan!</Paragraph>
         </div>
       </section>

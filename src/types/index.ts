@@ -6,16 +6,6 @@ export type ChildrenProps = {
   children: ReactNode;
 };
 
-export type LayoutProps = ChildrenProps & {
-  className: string;
-};
-
-export type ParagraphProps = {
-  className?: string;
-  children: ReactNode;
-  isCenter: boolean;
-};
-
 export type MDXnote = {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
   meta: NoteMeta;

@@ -1,4 +1,9 @@
+import { ReactNode } from "react";
 import { z } from "zod";
+
+type ChildrenProps = {
+  children: ReactNode;
+};
 
 const Theme = z.object({
   theme: z.string(),
@@ -84,6 +89,21 @@ const NotesProps = z.object({
   notes: z.array(NoteMeta),
 });
 
+const ParagraphProps = z.object({
+  className: z.optional(z.string()),
+  isCenter: z.boolean(),
+});
+
+const HeadingProps = z.object({
+  // enum
+  as: z.string(z.enum(["h1", "h2", "h3", "h4", "h5", "h6"])),
+  className: z.string(),
+});
+
+const LayoutProps = z.object({
+  className: z.string(),
+});
+
 export type Theme = z.infer<typeof Theme>;
 export type LinkIcon = z.infer<typeof LinkIcon>;
 export type Stack = z.infer<typeof Stack>;
@@ -100,3 +120,6 @@ export type Tag = z.infer<typeof Tag>;
 export type Paths = z.infer<typeof Paths>;
 export type VideoProps = z.infer<typeof VideoProps>;
 export type NotesProps = z.infer<typeof NotesProps>;
+export type ParagraphProps = ChildrenProps & z.infer<typeof ParagraphProps>;
+export type HeadingProps = ChildrenProps & z.infer<typeof HeadingProps>;
+export type LayoutProps = ChildrenProps & z.infer<typeof LayoutProps>;

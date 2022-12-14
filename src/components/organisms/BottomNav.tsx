@@ -1,4 +1,4 @@
-import { ToggleDarkIcon } from "@/components/atoms/toggleDarkIcon";
+import { ToggleDarkIcon } from "@/components/atoms/ToggleDarkIcon";
 import { cn } from "@/helpers/cn";
 import { useTheme } from "@/hooks/useTheme";
 import { bottomNavList } from "@/utils/data";

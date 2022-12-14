@@ -1,9 +1,10 @@
-import { AboutImage } from "@/components/atoms/aboutImage";
-import { Paragraph } from "@/components/atoms/paragraph";
-import { Underline } from "@/components/atoms/underline";
-import { UnderlineSpan } from "@/components/atoms/underlineSpan";
-import Steps from "@/components/molecules/steps";
-import Layout from "@/components/templates/layout";
+import { AboutImage } from "@/components/atoms/AboutImage";
+import { Heading } from "@/components/atoms/Heading";
+import { Paragraph } from "@/components/atoms/Paragraph";
+import { Underline } from "@/components/atoms/Underline";
+import { UnderlineSpan } from "@/components/atoms/UnderlineSpan";
+import Steps from "@/components/molecules/Steps";
+import Layout from "@/components/templates/Layout";
 import { setIsLoading } from "@/helpers/setIsLoading";
 import { setLanguage } from "@/helpers/setLanguage";
 import { languageAtom, loadingAtom } from "@/store";
@@ -23,7 +24,9 @@ const About = () => {
         <div className="mb-10 flex w-full flex-wrap items-center justify-center">
           <div className="mb-1 flex flex-col items-center justify-center lg:mb-0">
             <div className="flex flex-col items-center justify-center">
-              <h2 className="text-center text-3xl font-bold">About</h2>
+              <Heading as="h2" className="text-center">
+                About
+              </Heading>
               <Underline />
             </div>
             <div className="mt-2 flex flex-col items-center justify-center sm:mt-4">
@@ -81,7 +84,9 @@ const About = () => {
         <div className="container mx-auto py-6 px-4 sm:px-6 md:py-24">
           <div className="flex w-full items-center justify-center">
             <div className="flex flex-col items-center justify-center">
-              <h2 className="text-center text-3xl font-bold">Journey</h2>
+              <Heading as="h2" className="text-center">
+                Journey
+              </Heading>
               <Underline />
             </div>
           </div>
