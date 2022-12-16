@@ -1,4 +1,4 @@
-import { CustomSeo } from "@/components/atoms/CustomSeo";
+import { Seo } from "@/components/atoms/Seo";
 import { Heading } from "@/components/atoms/Heading";
 import { Paragraph } from "@/components/atoms/Paragraph";
 import { Underline } from "@/components/atoms/Underline";
@@ -23,7 +23,7 @@ export const getStaticProps: GetStaticProps = async () => {
 const Notes = ({ notes }: NotesProps) => {
   return (
     <>
-      <CustomSeo
+      <Seo
         title="Notes"
         description="Sometimes i write something, mostly about Linux, Web, and life. So yeah, i call this as Notes."
       />

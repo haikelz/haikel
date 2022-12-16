@@ -1,11 +1,7 @@
+import { SeoProps } from "@/types";
 import { NextSeo } from "next-seo";
 
-type CustomSeoProps = {
-  title: string;
-  description: string;
-};
-
-export const CustomSeo = ({ title, description }: CustomSeoProps) => {
+export const Seo = ({ title, description }: SeoProps) => {
   return (
     <NextSeo
       title={title}

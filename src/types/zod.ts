@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { z } from "zod";
+import { TypeOf, z } from "zod";
 
 type ChildrenProps = {
   children: ReactNode;
@@ -104,6 +104,11 @@ const LayoutProps = z.object({
   className: z.string(),
 });
 
+const SeoProps = z.object({
+  title: z.string(),
+  description: z.string(),
+});
+
 export type ThemeProps = z.infer<typeof ThemeProps>;
 export type LinkIconProps = z.infer<typeof LinkIconProps>;
 export type StackProps = z.infer<typeof StackProps>;
@@ -123,3 +128,4 @@ export type NotesProps = z.infer<typeof NotesProps>;
 export type ParagraphProps = ChildrenProps & z.infer<typeof ParagraphProps>;
 export type HeadingProps = ChildrenProps & z.infer<typeof HeadingProps>;
 export type LayoutProps = ChildrenProps & z.infer<typeof LayoutProps>;
+export type SeoProps = z.infer<typeof SeoProps>;

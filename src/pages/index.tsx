@@ -1,4 +1,4 @@
-import { CustomSeo } from "@/components/atoms/CustomSeo";
+import { Seo } from "@/components/atoms/Seo";
 import { Heading } from "@/components/atoms/Heading";
 import { Paragraph } from "@/components/atoms/Paragraph";
 import Layout from "@/components/templates/Layout";
@@ -7,7 +7,7 @@ import { cn } from "@/helpers/cn";
 const Home = () => {
   return (
     <>
-      <CustomSeo title="Haikel" description="Frontend Enthusiast" />
+      <Seo title="Haikel" description="Frontend Enthusiast" />
       <Layout className="flex min-h-screen flex-col items-center justify-center">
         <div className="flex flex-col items-center justify-center text-center">
           <Heading as="h2" className="mb-1">
