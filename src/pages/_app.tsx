@@ -12,21 +12,23 @@ const App = ({ Component, pageProps, router }: AppProps) => {
 
   useEffect(() => {
     setMounted(true);
-  }, [mounted]);
+  }, [setMounted]);
 
-  return mounted && (
-    <Provider>
-      <Template>
-        <LazyMotion features={domAnimation}>
-          <AnimatePresence mode="wait" initial={false}>
-            <m.main key={router.route} {...appAnimation}>
-              <Component {...pageProps} />
-            </m.main>
-          </AnimatePresence>
-        </LazyMotion>
-      </Template>
-    </Provider>
-  ) 
+  return (
+    mounted && (
+      <Provider>
+        <Template>
+          <LazyMotion features={domAnimation}>
+            <AnimatePresence mode="wait" initial={false}>
+              <m.main key={router.route} {...appAnimation}>
+                <Component {...pageProps} />
+              </m.main>
+            </AnimatePresence>
+          </LazyMotion>
+        </Template>
+      </Provider>
+    )
+  );
 };
 
 export default App;
