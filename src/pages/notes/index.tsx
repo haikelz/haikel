@@ -1,15 +1,15 @@
+import { CustomSeo } from "@/components/atoms/CustomSeo";
 import { Heading } from "@/components/atoms/Heading";
 import { Paragraph } from "@/components/atoms/Paragraph";
 import { Underline } from "@/components/atoms/Underline";
 import ListNotes from "@/components/organisms/ListNotes";
 import Layout from "@/components/templates/Layout";
 import { getAllNotes } from "@/helpers/getAllNotes";
-import { NoteMeta, NotesProps } from "@/types";
+import { NoteMetaProps, NotesProps } from "@/types";
 import { GetStaticProps } from "next";
-import { NextSeo } from "next-seo";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const notes: NoteMeta[] = getAllNotes()
+  const notes: NoteMetaProps[] = getAllNotes()
     .slice(0, 9)
     .map((note) => note.meta);
 
@@ -23,7 +23,7 @@ export const getStaticProps: GetStaticProps = async () => {
 const Notes = ({ notes }: NotesProps) => {
   return (
     <>
-      <NextSeo
+      <CustomSeo
         title="Notes"
         description="Sometimes i write something, mostly about Linux, Web, and life. So yeah, i call this as Notes."
       />

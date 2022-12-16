@@ -1,4 +1,5 @@
 import { AboutImage } from "@/components/atoms/AboutImage";
+import { CustomSeo } from "@/components/atoms/CustomSeo";
 import { Heading } from "@/components/atoms/Heading";
 import { Paragraph } from "@/components/atoms/Paragraph";
 import { Underline } from "@/components/atoms/Underline";
@@ -19,7 +20,7 @@ const About = () => {
 
   return (
     <>
-      <NextSeo title="About" description="About Me" />
+      <CustomSeo title="About" description="About Me" />
       <Layout className="pt-6 md:pt-24">
         <div className="mb-10 flex w-full flex-wrap items-center justify-center">
           <div className="mb-1 flex flex-col items-center justify-center lg:mb-0">

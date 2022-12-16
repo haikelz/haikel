@@ -2,57 +2,31 @@ import Template from "@/components/templates";
 import { mountedAtom } from "@/store";
 import "@/styles/index.scss";
 import { appAnimation } from "@/utils/animation";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, domAnimation, LazyMotion, m } from "framer-motion";
 import { Provider, useAtom } from "jotai";
-import { DefaultSeo } from "next-seo";
-import SEO from "next-seo.config";
 import type { AppProps } from "next/app";
-import { NextRouter, useRouter } from "next/router";
-import NProgress from "nprogress";
 import { useEffect } from "react";
 
 const App = ({ Component, pageProps, router }: AppProps) => {
   const [mounted, setMounted] = useAtom(mountedAtom);
-  const Router: NextRouter = useRouter();
 
   useEffect(() => {
     setMounted(true);
+  }, [mounted]);
 
-    const handleStart = () => {
-      NProgress.start();
-    };
-
-    const handleStop = () => {
-      NProgress.done();
-    };
-
-    Router.events.on("routeChangeStart", handleStart);
-    Router.events.on("routeChangeComplete", handleStop);
-    Router.events.on("routeChangeError", handleStop);
-
-    return () => {
-      Router.events.off("routeChangeStart", handleStart);
-      Router.events.off("routeChangeComplete", handleStop);
-      Router.events.off("routeChangeError", handleStop);
-    };
-  }, [Router, setMounted]);
-
-  return (
-    mounted && (
-      <>
-        <DefaultSeo {...SEO} />
-        <Provider>
-          <Template>
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.main key={router.route} {...appAnimation}>
-                <Component {...pageProps} />
-              </motion.main>
-            </AnimatePresence>
-          </Template>
-        </Provider>
-      </>
-    )
-  );
+  return mounted && (
+    <Provider>
+      <Template>
+        <LazyMotion features={domAnimation}>
+          <AnimatePresence mode="wait" initial={false}>
+            <m.main key={router.route} {...appAnimation}>
+              <Component {...pageProps} />
+            </m.main>
+          </AnimatePresence>
+        </LazyMotion>
+      </Template>
+    </Provider>
+  ) 
 };
 
 export default App;

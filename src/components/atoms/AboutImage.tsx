@@ -1,7 +1,7 @@
 import { cn } from "@/helpers/cn";
-import { Loading } from "@/types";
+import { LoadingProps } from "@/types";
 
-export const AboutImage = ({ isLoading, loadingProcess }: Loading) => {
+export const AboutImage = ({ isLoading, loadingProcess }: LoadingProps) => {
   return (
     <div className="shadow-smooth flex items-center justify-center overflow-hidden rounded-full border-[6px] border-light dark:border-gray-800">
       <svg

@@ -5,44 +5,44 @@ type ChildrenProps = {
   children: ReactNode;
 };
 
-const Theme = z.object({
+const ThemeProps = z.object({
   theme: z.string(),
   changeTheme: z.function(),
 });
 
-const LinkIcon = z.object({
+const LinkIconProps = z.object({
   link: z.string().optional(),
   linkPreview: z.string().optional(),
   linkGithub: z.string().optional(),
 });
 
-const Stack = z.object({
+const StackProps = z.object({
   stack1: z.string().optional(),
   stack2: z.string().optional(),
 });
 
-const Keydown = z.object({
+const KeydownProps = z.object({
   isCtrlKey: z.boolean(),
   previousUrl: z.string(),
   nextUrl: z.string(),
 });
 
-const KeydownEvent = z.object({
+const KeydownEventProps = z.object({
   ctrlKey: z.boolean(),
   key: z.string(),
 });
 
-const List = z.object({
+const ListProps = z.object({
   setLoading: z.function().args(z.boolean()),
   isLoading: z.boolean(),
 });
 
-const Loading = z.object({
+const LoadingProps = z.object({
   isLoading: z.boolean(),
   loadingProcess: z.function(),
 });
 
-const ShowedModal = z.object({
+const ShowedModalProps = z.object({
   isShowed: z.boolean(),
   setIsShowed: z.function().args(z.boolean()),
 });
@@ -53,7 +53,7 @@ const LazyLoadImageProps = z.object({
 });
 
 // notes types
-const NoteMeta = z.object({
+const NoteMetaProps = z.object({
   author: z.string(),
   preview: z.string(),
   slug: z.string(),
@@ -62,9 +62,9 @@ const NoteMeta = z.object({
   date: z.string(),
 });
 
-const Note = z.object({
+const NoteProps = z.object({
   content: z.string(),
-  meta: NoteMeta,
+  meta: NoteMetaProps,
 });
 
 const VideoProps = z.object({
@@ -72,21 +72,21 @@ const VideoProps = z.object({
   src: z.string(),
 });
 
-const NotesArticles = z.object({
-  notes: z.array(NoteMeta),
+const NotesArticlesProps = z.object({
+  notes: z.array(NoteMetaProps),
 });
 
-const Tag = z.object({
+const TagProps = z.object({
   slug: z.string(),
-  notes: z.array(NoteMeta),
+  notes: z.array(NoteMetaProps),
 });
 
-const Paths = z.object({
+const PathsProps = z.object({
   params: z.array(z.object({ slug: z.string() })),
 });
 
 const NotesProps = z.object({
-  notes: z.array(NoteMeta),
+  notes: z.array(NoteMetaProps),
 });
 
 const ParagraphProps = z.object({
@@ -104,20 +104,20 @@ const LayoutProps = z.object({
   className: z.string(),
 });
 
-export type Theme = z.infer<typeof Theme>;
-export type LinkIcon = z.infer<typeof LinkIcon>;
-export type Stack = z.infer<typeof Stack>;
-export type Loading = z.infer<typeof Loading>;
-export type List = z.infer<typeof List>;
-export type Keydown = z.infer<typeof Keydown>;
-export type KeydownEvent = z.infer<typeof KeydownEvent>;
-export type ShowedModal = z.infer<typeof ShowedModal>;
+export type ThemeProps = z.infer<typeof ThemeProps>;
+export type LinkIconProps = z.infer<typeof LinkIconProps>;
+export type StackProps = z.infer<typeof StackProps>;
+export type LoadingProps = z.infer<typeof LoadingProps>;
+export type ListProps = z.infer<typeof ListProps>;
+export type KeydownProps = z.infer<typeof KeydownProps>;
+export type KeydownEventProps = z.infer<typeof KeydownEventProps>;
+export type ShowedModalProps = z.infer<typeof ShowedModalProps>;
 export type LazyLoadImageProps = z.infer<typeof LazyLoadImageProps>;
-export type NoteMeta = z.infer<typeof NoteMeta>;
-export type Note = z.infer<typeof Note>;
-export type NotesArticles = z.infer<typeof NotesArticles>;
-export type Tag = z.infer<typeof Tag>;
-export type Paths = z.infer<typeof Paths>;
+export type NoteMetaProps = z.infer<typeof NoteMetaProps>;
+export type NoteProps = z.infer<typeof NoteProps>;
+export type NotesArticlesProps = z.infer<typeof NotesArticlesProps>;
+export type TagProps = z.infer<typeof TagProps>;
+export type PathsProps = z.infer<typeof PathsProps>;
 export type VideoProps = z.infer<typeof VideoProps>;
 export type NotesProps = z.infer<typeof NotesProps>;
 export type ParagraphProps = ChildrenProps & z.infer<typeof ParagraphProps>;

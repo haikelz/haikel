@@ -1,9 +1,9 @@
-import { ShowedModal } from "@/types";
+import { ShowedModalProps } from "@/types";
 import { showedModalAnimation } from "@/utils/animation";
 import { AnimatePresence, motion } from "framer-motion";
 import { memo } from "react";
 
-const Modal = ({ isShowed, setIsShowed }: ShowedModal) => {
+const Modal = ({ isShowed, setIsShowed }: ShowedModalProps) => {
   return (
     <AnimatePresence mode="wait">
       {isShowed && (

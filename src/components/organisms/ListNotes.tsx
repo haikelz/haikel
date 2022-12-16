@@ -1,7 +1,7 @@
-import type { NotesArticles } from "@/types";
+import type { NotesArticlesProps } from "@/types";
 import Link from "next/link";
 
-const ListNotes = ({ notes }: NotesArticles) => {
+const ListNotes = ({ notes }: NotesArticlesProps) => {
   return (
     <div className="grid w-full grid-cols-1 grid-rows-1 gap-6 sm:grid-cols-2">
       {notes.map((note) => (

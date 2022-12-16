@@ -1,6 +1,6 @@
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { ReactNode } from "react";
-import { NoteMeta } from "./zod";
+import { NoteMetaProps } from "./zod";
 
 export type ChildrenProps = {
   children: ReactNode;
@@ -8,7 +8,7 @@ export type ChildrenProps = {
 
 export type MDXnote = {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
-  meta: NoteMeta;
+  meta: NoteMetaProps;
 };
 
 export type NotePageProps = {

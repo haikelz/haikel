@@ -3,12 +3,12 @@ import { Underline } from "@/components/atoms/Underline";
 import ListNotes from "@/components/organisms/ListNotes";
 import Layout from "@/components/templates/Layout";
 import { getAllNotes } from "@/helpers/getAllNotes";
-import { Note, Tag } from "@/types";
+import { NoteProps, TagProps } from "@/types";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const notes: Note[] = getAllNotes();
+  const notes: NoteProps[] = getAllNotes();
   const tags: Set<string> = new Set(notes.map((note) => note.meta.tags).flat());
   const paths = Array.from(tags).map((tag) => ({ params: { slug: tag } }));
 
@@ -30,7 +30,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-const Tags = ({ slug, notes }: Tag) => {
+const Tags = ({ slug, notes }: TagProps) => {
   return (
     <>
       <NextSeo title={`Tags #${slug}`} description="Tags" />
