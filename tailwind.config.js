@@ -26,7 +26,7 @@ module.exports = {
         texthover: "#2563EB",
       },
       fontFamily: {
-        logo: "Caveat",
+        japanese: "Noto Sans Japanese",
         body: "Rubik",
         code: "JetBrains Mono",
         arabic: "Noto Naskh Arabic",
