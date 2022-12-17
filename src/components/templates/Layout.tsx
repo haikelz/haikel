@@ -1,10 +1,14 @@
 import { LayoutProps } from "@/types";
+import { Seo } from "@/components/atoms/Seo";
 
-const Layout = ({ children, className }: LayoutProps) => {
+const Layout = ({ children, className, title, description }: LayoutProps) => {
   return (
-    <section className={`container mx-auto max-w-5xl px-4 tracking-wide ${className}`}>
-      {children}
-    </section>
+    <>
+      <Seo title={title} description={description} />
+      <section className={`container mx-auto max-w-5xl px-4 tracking-wide ${className}`}>
+        {children}
+      </section>
+    </>
   );
 };
 

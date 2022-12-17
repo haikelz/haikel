@@ -5,7 +5,6 @@ import Layout from "@/components/templates/Layout";
 import { getAllNotes } from "@/helpers/getAllNotes";
 import { NoteProps, TagProps } from "@/types";
 import { GetStaticPaths, GetStaticProps } from "next";
-import { NextSeo } from "next-seo";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const notes: NoteProps[] = getAllNotes();
@@ -32,20 +31,21 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 const Tags = ({ slug, notes }: TagProps) => {
   return (
-    <>
-      <NextSeo title={`Tags #${slug}`} description="Tags" />
-      <Layout className="flex min-h-screen flex-col items-center justify-start px-4 pt-6 pb-12 md:pt-24">
-        <div className="mb-10 flex w-full flex-wrap items-center justify-center">
-          <div className="flex flex-col items-center justify-center">
-            <Heading as="h2" className="title-font mb-1 text-center">
-              Tags #{slug}
-            </Heading>
-            <Underline />
-          </div>
+    <Layout
+      title={`Tags #${slug}`}
+      description="Tags"
+      className="flex min-h-screen flex-col items-center justify-start px-4 pt-6 pb-12 md:pt-24"
+    >
+      <div className="mb-10 flex w-full flex-wrap items-center justify-center">
+        <div className="flex flex-col items-center justify-center">
+          <Heading as="h2" className="title-font mb-1 text-center">
+            Tags #{slug}
+          </Heading>
+          <Underline />
         </div>
-        <ListNotes notes={notes} />
-      </Layout>
-    </>
+      </div>
+      <ListNotes notes={notes} />
+    </Layout>
   );
 };
 

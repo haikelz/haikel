@@ -127,5 +127,5 @@ export type VideoProps = z.infer<typeof VideoProps>;
 export type NotesProps = z.infer<typeof NotesProps>;
 export type ParagraphProps = ChildrenProps & z.infer<typeof ParagraphProps>;
 export type HeadingProps = ChildrenProps & z.infer<typeof HeadingProps>;
-export type LayoutProps = ChildrenProps & z.infer<typeof LayoutProps>;
+export type LayoutProps = ChildrenProps & SeoProps & z.infer<typeof LayoutProps>;
 export type SeoProps = z.infer<typeof SeoProps>;

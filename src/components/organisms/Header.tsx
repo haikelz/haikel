@@ -4,7 +4,6 @@ import HeaderListItem from "@/components/molecules/HeaderListItem";
 import { cn } from "@/helpers/cn";
 import { useScroll } from "@/hooks/useScroll";
 import { useTheme } from "@/hooks/useTheme";
-import { memo } from "react";
 
 type ChangeTheme = () => void;
 
@@ -38,4 +37,4 @@ const Header = () => {
   );
 };
 
-export default memo(Header);
+export default Header;

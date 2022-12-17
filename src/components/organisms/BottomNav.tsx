@@ -4,7 +4,6 @@ import { useTheme } from "@/hooks/useTheme";
 import { bottomNavList } from "@/utils/data";
 import Link from "next/link";
 import { NextRouter, useRouter } from "next/router";
-import { memo } from "react";
 import { IconType } from "react-icons/lib";
 
 const BottomNav = () => {
@@ -41,4 +40,4 @@ const BottomNav = () => {
   );
 };
 
-export default memo(BottomNav);
+export default BottomNav;

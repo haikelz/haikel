@@ -1,12 +1,11 @@
 import { ShowedModalProps } from "@/types";
 import { showedModalAnimation } from "@/utils/animation";
 import { AnimatePresence, motion } from "framer-motion";
-import { memo } from "react";
 
 const Modal = ({ isShowed, setIsShowed }: ShowedModalProps) => {
   return (
     <AnimatePresence mode="wait">
-      {isShowed && (
+      {isShowed ? (
         <motion.div
           {...showedModalAnimation}
           className="fixed inset-0 z-20 flex max-w-full items-center justify-center p-4 backdrop-blur-md"
@@ -32,9 +31,9 @@ const Modal = ({ isShowed, setIsShowed }: ShowedModalProps) => {
             </div>
           </div>
         </motion.div>
-      )}
+      ) : null}
     </AnimatePresence>
   );
 };
 
-export default memo(Modal);
+export default Modal;
