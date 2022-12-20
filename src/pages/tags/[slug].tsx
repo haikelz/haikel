@@ -1,8 +1,8 @@
-import { Heading } from "@/components/atoms/Heading";
-import { Underline } from "@/components/atoms/Underline";
-import ListNotes from "@/components/organisms/ListNotes";
-import Layout from "@/components/templates/Layout";
+import { Heading } from "@/atoms/Heading";
+import { Underline } from "@/atoms/Underline";
 import { getAllNotes } from "@/helpers/getAllNotes";
+import ListNotes from "@/organisms/ListNotes";
+import Layout from "@/templates/Layout";
 import { NoteProps, TagProps } from "@/types";
 import { GetStaticPaths, GetStaticProps } from "next";
 

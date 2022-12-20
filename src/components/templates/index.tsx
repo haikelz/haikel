@@ -1,7 +1,7 @@
-import { BackToTop } from "@/components/atoms/BackToTop";
-import BottomNav from "@/components/organisms/BottomNav";
-import Footer from "@/components/organisms/Footer";
-import Header from "@/components/organisms/Header";
+import { BackToTop } from "@/atoms/BackToTop";
+import BottomNav from "@/organisms/BottomNav";
+import Footer from "@/organisms/Footer";
+import Header from "@/organisms/Header";
 import { ChildrenProps } from "@/types";
 
 const Template = ({ children }: ChildrenProps) => {

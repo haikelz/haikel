@@ -1,5 +1,5 @@
 import { LayoutProps } from "@/types";
-import { Seo } from "@/components/atoms/Seo";
+import { Seo } from "@/atoms/Seo";
 
 const Layout = ({ children, className, title, description }: LayoutProps) => {
   return (

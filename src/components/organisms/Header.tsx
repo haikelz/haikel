@@ -1,6 +1,6 @@
-import { HeaderLogo } from "@/components/atoms/HeaderLogo";
-import { ToggleDarkModeHeader } from "@/components/atoms/ToggleDarkModeHeader";
-import HeaderListItem from "@/components/molecules/HeaderListItem";
+import { HeaderLogo } from "@/atoms/HeaderLogo";
+import { ToggleDarkModeHeader } from "@/atoms/ToggleDarkModeHeader";
+import HeaderListItem from "@/molecules/HeaderListItem";
 import { cn } from "@/helpers/cn";
 import { useScroll } from "@/hooks/useScroll";
 import { useTheme } from "@/hooks/useTheme";

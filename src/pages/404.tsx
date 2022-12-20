@@ -1,7 +1,7 @@
-import { Heading } from "@/components/atoms/Heading";
-import { NotFoundImage } from "@/components/atoms/NotFoundImage";
-import { Paragraph } from "@/components/atoms/Paragraph";
-import Layout from "@/components/templates/Layout";
+import { Heading } from "@/atoms/Heading";
+import { NotFoundImage } from "@/atoms/NotFoundImage";
+import { Paragraph } from "@/atoms/Paragraph";
+import Layout from "@/templates/Layout";
 
 const NotFoundPage = () => {
   return (

@@ -1,8 +1,8 @@
-import { Heading } from "@/components/atoms/Heading";
-import { Paragraph } from "@/components/atoms/Paragraph";
-import { Underline } from "@/components/atoms/Underline";
-import ListWorks from "@/components/organisms/ListWorks";
-import Layout from "@/components/templates/Layout";
+import { Heading } from "@/atoms/Heading";
+import { Paragraph } from "@/atoms/Paragraph";
+import { Underline } from "@/atoms/Underline";
+import ListWorks from "@/organisms/ListWorks";
+import Layout from "@/templates/Layout";
 
 const Works = () => {
   return (

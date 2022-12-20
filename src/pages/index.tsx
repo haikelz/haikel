@@ -1,6 +1,6 @@
-import { Heading } from "@/components/atoms/Heading";
-import { Paragraph } from "@/components/atoms/Paragraph";
-import Layout from "@/components/templates/Layout";
+import { Heading } from "@/atoms/Heading";
+import { Paragraph } from "@/atoms/Paragraph";
+import Layout from "@/templates/Layout";
 import { cn } from "@/helpers/cn";
 
 const Home = () => {

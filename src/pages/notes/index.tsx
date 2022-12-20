@@ -1,9 +1,9 @@
-import { Heading } from "@/components/atoms/Heading";
-import { Paragraph } from "@/components/atoms/Paragraph";
-import { Underline } from "@/components/atoms/Underline";
-import ListNotes from "@/components/organisms/ListNotes";
-import Layout from "@/components/templates/Layout";
+import { Heading } from "@/atoms/Heading";
+import { Paragraph } from "@/atoms/Paragraph";
+import { Underline } from "@/atoms/Underline";
 import { getAllNotes } from "@/helpers/getAllNotes";
+import ListNotes from "@/organisms/ListNotes";
+import Layout from "@/templates/Layout";
 import { NoteMetaProps, NotesProps } from "@/types";
 import { GetStaticProps } from "next";
 
