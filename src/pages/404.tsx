@@ -15,7 +15,9 @@ const NotFoundPage = () => {
         <Heading as="h4" className="text-xl sm:text-2xl">
           404 Not Found
         </Heading>
-        <Paragraph isCenter={false}>Halaman yang anda cari tidak ditemukan!</Paragraph>
+        <Paragraph className="" isCenter={false}>
+          Halaman yang anda cari tidak ditemukan!
+        </Paragraph>
       </div>
     </Layout>
   );

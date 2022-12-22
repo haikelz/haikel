@@ -3,17 +3,15 @@ import { Heading } from "@/atoms/Heading";
 import { Paragraph } from "@/atoms/Paragraph";
 import { Underline } from "@/atoms/Underline";
 import { UnderlineSpan } from "@/atoms/UnderlineSpan";
-import { setIsLoading } from "@/helpers/setIsLoading";
 import { setLanguage } from "@/helpers/setLanguage";
 import Steps from "@/molecules/Steps";
-import { languageAtom, loadingAtom } from "@/store";
+import { languageAtom } from "@/store";
 import Layout from "@/templates/Layout";
 import { socialMediaList } from "@/utils/data";
 import { useReducerAtom } from "jotai/utils";
 import Link from "next/link";
 
 const About = () => {
-  const [isLoading, loadingProcess] = useReducerAtom<boolean, unknown>(loadingAtom, setIsLoading);
   const [language, toggleLanguage] = useReducerAtom<boolean, unknown>(languageAtom, setLanguage);
 
   return (
@@ -27,7 +25,7 @@ const About = () => {
             <Underline />
           </div>
           <div className="mt-2 flex flex-col items-center justify-center sm:mt-4">
-            <AboutImage isLoading={isLoading} loadingProcess={loadingProcess} />
+            <AboutImage />
             {/**
              * Logic:
              * Jika language bernilai true, maka tampilkan bahasa Inggris dulu
@@ -87,7 +85,9 @@ const About = () => {
             <Underline />
           </div>
         </div>
-        <Paragraph isCenter>My Experience, and journey</Paragraph>
+        <Paragraph className="" isCenter>
+          My Experience, and journey
+        </Paragraph>
         <Steps />
       </div>
     </Layout>

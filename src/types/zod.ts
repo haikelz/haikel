@@ -90,7 +90,7 @@ const NotesProps = z.object({
 });
 
 const ParagraphProps = z.object({
-  className: z.optional(z.string()),
+  className: z.string(),
   isCenter: z.boolean(),
 });
 

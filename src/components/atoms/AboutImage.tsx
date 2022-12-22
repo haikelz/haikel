@@ -1,17 +1,8 @@
-import { cn } from "@/helpers/cn";
-import { LoadingProps } from "@/types";
-
-export const AboutImage = ({ isLoading, loadingProcess }: LoadingProps) => {
+export const AboutImage = () => {
   return (
     <div className="shadow-smooth flex items-center justify-center overflow-hidden rounded-full border-[6px] border-light dark:border-gray-800">
       <svg
-        className={cn(
-          "cursor-pointer rounded-full duration-700 ease-in-out",
-          isLoading
-            ? "scale-110 rounded-full blur-2xl grayscale"
-            : "scale-100 rounded-full blur-0 grayscale-0"
-        )}
-        onLoad={loadingProcess}
+        className="cursor-pointer rounded-full"
         width="270"
         height="270"
         viewBox="0 0 270 270"

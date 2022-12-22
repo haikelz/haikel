@@ -70,7 +70,7 @@ const NotePage = ({ note }: NotePageProps) => {
               priority
               alt="Github Profile Picture"
             />
-            <Paragraph isCenter={false}>
+            <Paragraph className="" isCenter={false}>
               <span className="font-semibold">{note.meta.author}</span>,{" "}
               <span className="font-semibold">{readingTime} Min read</span> / {note.meta.date}
             </Paragraph>
