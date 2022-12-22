@@ -34,7 +34,7 @@ const Notes = ({ notes }: NotesProps) => {
           <Underline />
         </div>
         <div className="w-full text-center leading-relaxed">
-          <Paragraph isCenter>
+          <Paragraph className="" isCenter>
             Sometimes i write something, mostly about Linux, Web, and life. So yeah, i call this as{" "}
             <b>Notes</b>.
           </Paragraph>
