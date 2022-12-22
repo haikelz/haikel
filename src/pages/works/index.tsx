@@ -19,7 +19,9 @@ const Works = () => {
           <Underline />
         </div>
         <div className="w-full text-center leading-relaxed">
-          <Paragraph isCenter>List some of my works</Paragraph>
+          <Paragraph className="" isCenter>
+            List some of my works
+          </Paragraph>
         </div>
       </div>
       <ListWorks />
