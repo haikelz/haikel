@@ -1,7 +1,5 @@
 import { Heading } from "@/atoms/Heading";
-import { LazyLoadImage } from "@/atoms/LazyLoadImage";
 import { Paragraph } from "@/atoms/Paragraph";
-import { Video } from "@/atoms/Video";
 import { getNoteFromSlug } from "@/helpers/getNoteFromSlug";
 import { getReadingTime } from "@/helpers/getReadingTime";
 import { getSlugs } from "@/helpers/getSlugs";
@@ -10,11 +8,17 @@ import { NotePageProps } from "@/types";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
-import Image from "next/image";
+import dynamic from "next/dynamic";
 import { useMemo } from "react";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
+
+const LazyLoadImage = dynamic(() =>
+  import("@/atoms/LazyLoadImage").then((item) => item.LazyLoadImage)
+);
+const AuthorImage = dynamic(() => import("@/atoms/AuthorImage").then((item) => item.AuthorImage));
+const Video = dynamic(() => import("@/atoms/Video").then((item) => item.Video));
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getSlugs().map((slug) => ({ params: { slug } }));
@@ -62,12 +66,8 @@ const NotePage = ({ note }: NotePageProps) => {
             {note.meta.title}
           </Heading>
           <div className="my-3 flex items-center">
-            <Image
+            <AuthorImage
               src="https://avatars.githubusercontent.com/u/77146709?v=4"
-              className="mr-2 rounded-full"
-              width={23}
-              height={23}
-              priority
               alt="Github Profile Picture"
             />
             <Paragraph className="" isCenter={false}>

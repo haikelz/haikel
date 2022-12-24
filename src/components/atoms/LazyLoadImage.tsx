@@ -12,7 +12,6 @@ export const LazyLoadImage = ({ src, alt }: LazyLoadImageProps) => {
       placeholder="blur"
       blurDataURL={src}
       loader={imageKitLoader}
-      loading="lazy"
     />
   );
 };
