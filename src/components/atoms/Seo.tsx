@@ -1,13 +1,9 @@
 import { SeoProps } from "@/types";
 import { NextSeo } from "next-seo";
-import { useRouter } from "next/router";
+import { NextRouter, useRouter } from "next/router";
 
-/**
- * TODO:
- * - Dynamic URL
- */
 export const Seo = ({ title, description }: SeoProps) => {
-  const router = useRouter();
+  const router: NextRouter = useRouter();
 
   return (
     <NextSeo
