@@ -1,4 +1,6 @@
-export const AboutImage = () => {
+import { memo } from "react";
+
+export const AboutImage = memo(() => {
   return (
     <div className="shadow-smooth flex items-center justify-center overflow-hidden rounded-full border-[6px] border-light dark:border-gray-800">
       <svg
@@ -25,4 +27,6 @@ export const AboutImage = () => {
       </svg>
     </div>
   );
-};
+});
+
+AboutImage.displayName = "AboutImage";

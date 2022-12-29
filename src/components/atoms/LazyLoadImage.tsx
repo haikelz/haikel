@@ -1,8 +1,9 @@
 import { imageKitLoader } from "@/helpers/imageKitLoader";
 import { LazyLoadImageProps } from "@/types";
 import Image from "next/image";
+import { memo } from "react";
 
-export const LazyLoadImage = ({ src, alt }: LazyLoadImageProps) => {
+export const LazyLoadImage = memo(({ src, alt }: LazyLoadImageProps) => {
   return (
     <Image
       src={src}
@@ -14,4 +15,6 @@ export const LazyLoadImage = ({ src, alt }: LazyLoadImageProps) => {
       loader={imageKitLoader}
     />
   );
-};
+});
+
+LazyLoadImage.displayName = "LazyLoadImage";

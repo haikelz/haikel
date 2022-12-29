@@ -1,10 +1,22 @@
 import Image from "next/image";
+import { memo } from "react";
 
 type AuthorImageProps = {
-  src: string;
+  username: string;
   alt: string;
 };
 
-export const AuthorImage = ({ src, alt }: AuthorImageProps) => {
-  return <Image src={src} className="mr-2 rounded-full" width={23} height={23} alt={alt} />;
-};
+export const AuthorImage = memo(({ username, alt }: AuthorImageProps) => {
+  return (
+    <Image
+      src={`https://github.com/${username}.png`}
+      className="mr-2 rounded-full"
+      width={23}
+      height={23}
+      alt={alt}
+      onError={(event) => (event.currentTarget.src = "/img/default-author.jpeg")}
+    />
+  );
+});
+
+AuthorImage.displayName = "AuthorImage";

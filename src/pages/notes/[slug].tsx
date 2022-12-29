@@ -35,6 +35,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const mdxSource = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: "wrap" }], rehypeHighlight],
+      development: false,
     },
   });
 
@@ -66,10 +67,7 @@ const NotePage = ({ note }: NotePageProps) => {
             {note.meta.title}
           </Heading>
           <div className="my-3 flex items-center">
-            <AuthorImage
-              src="https://avatars.githubusercontent.com/u/77146709?v=4"
-              alt="Github Profile Picture"
-            />
+            <AuthorImage username="haikelz" alt="Github Profile Picture" />
             <Paragraph className="" isCenter={false}>
               <span className="font-semibold">{note.meta.author}</span>,{" "}
               <span className="font-semibold">{readingTime} Min read</span> / {note.meta.date}

@@ -1,6 +1,7 @@
 import Image from "next/image";
+import { memo } from "react";
 
-export const ErrorImage = () => {
+export const ErrorImage = memo(() => {
   return (
     <Image
       width={200}
@@ -10,4 +11,6 @@ export const ErrorImage = () => {
       priority
     />
   );
-};
+});
+
+ErrorImage.displayName = "ErrorImage";
