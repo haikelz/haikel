@@ -1,19 +1,14 @@
 import Image from "next/image";
 import { memo } from "react";
 
-type AuthorImageProps = {
-  username: string;
-  alt: string;
-};
-
-export const AuthorImage = memo(({ username, alt }: AuthorImageProps) => {
+export const AuthorImage = memo(() => {
   return (
     <Image
-      src={`https://github.com/${username}.png`}
+      src="https://github.com/haikelz.png"
       className="mr-2 rounded-full"
       width={23}
       height={23}
-      alt={alt}
+      alt="Github Profile Picture"
       onError={(event) => (event.currentTarget.src = "/img/default-author.jpeg")}
     />
   );

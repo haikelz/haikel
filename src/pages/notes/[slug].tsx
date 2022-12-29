@@ -67,7 +67,7 @@ const NotePage = ({ note }: NotePageProps) => {
             {note.meta.title}
           </Heading>
           <div className="my-3 flex items-center">
-            <AuthorImage username="haikelz" alt="Github Profile Picture" />
+            <AuthorImage />
             <Paragraph className="" isCenter={false}>
               <span className="font-semibold">{note.meta.author}</span>,{" "}
               <span className="font-semibold">{readingTime} Min read</span> / {note.meta.date}
