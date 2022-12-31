@@ -3,7 +3,7 @@ import { LazyLoadImageProps } from "@/types";
 import Image from "next/image";
 import { memo } from "react";
 
-export const LazyLoadImage = memo(({ src, alt }: LazyLoadImageProps) => {
+const LazyLoadImage = ({ src, alt, ...props }: LazyLoadImageProps) => {
   return (
     <Image
       src={src}
@@ -12,9 +12,11 @@ export const LazyLoadImage = memo(({ src, alt }: LazyLoadImageProps) => {
       height={500}
       placeholder="blur"
       blurDataURL={src}
+      loading="lazy"
       loader={imageKitLoader}
+      {...props}
     />
   );
-});
+};
 
-LazyLoadImage.displayName = "LazyLoadImage";
+export default memo(LazyLoadImage);

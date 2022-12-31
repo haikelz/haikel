@@ -2,7 +2,7 @@ import { SeoProps } from "@/types";
 import { NextSeo } from "next-seo";
 import { NextRouter, useRouter } from "next/router";
 
-export const Seo = ({ title, description }: SeoProps) => {
+const Seo = ({ title, description }: SeoProps) => {
   const router: NextRouter = useRouter();
 
   return (
@@ -33,3 +33,5 @@ export const Seo = ({ title, description }: SeoProps) => {
     />
   );
 };
+
+export default Seo;

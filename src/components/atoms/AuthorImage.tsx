@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { memo } from "react";
 
-export const AuthorImage = memo(() => {
+const AuthorImage = () => {
   return (
     <Image
       src="https://avatars.githubusercontent.com/u/77146709?v=4"
@@ -12,6 +12,6 @@ export const AuthorImage = memo(() => {
       onError={(event) => (event.currentTarget.src = "/img/default-author.jpeg")}
     />
   );
-});
+};
 
-AuthorImage.displayName = "AuthorImage";
+export default memo(AuthorImage);

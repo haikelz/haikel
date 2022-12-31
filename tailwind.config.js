@@ -9,21 +9,14 @@ module.exports = {
         progress: "0 0 10px #29d, 0 0 5px #29d",
       },
       colors: {
-        light: "#ECEFF4",
-        dark: "#16161D",
-        card: {
-          light: "#F1F5F9",
-          dark: "#1F1F28",
-        },
-        underline: {
-          light: "#F05454",
-          dark: "#2563EB",
-        },
-        tag: {
-          light: "#247881",
-          dark: "#D1D9D0",
-        },
-        texthover: "#2563EB",
+        antiflashwhite: "#F1F5F9",
+        eerieblack: "#16161D",
+        raisinblack: "#1F1F28",
+        fireopal: "#F05454",
+        crayola: "#2563EB",
+        celedongreen: "#247881",
+        lightgray: "#D1D9D0",
+        brightgray: "#ECEFF4",
       },
       fontFamily: {
         japanese: "Noto Sans Japanese",

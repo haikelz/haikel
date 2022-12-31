@@ -7,7 +7,7 @@ const ListWorks = () => {
     <div className="grid w-full grid-cols-1 grid-rows-1 gap-6 sm:grid-cols-2">
       {projectsList.map((work, index) => (
         <div
-          className="cursor-pointer overflow-hidden border-[2.5px] border-black bg-card-light transition-all duration-200 hover:shadow-dark active:scale-95 dark:border-white dark:bg-card-dark dark:hover:shadow-light"
+          className="cursor-pointer overflow-hidden border-[2.5px] border-black bg-antiflashwhite transition-all duration-200 hover:shadow-light active:scale-95 dark:border-white dark:bg-raisinblack dark:hover:shadow-dark"
           key={index + 1}
         >
           <div className="px-6 pb-6 pt-3">
@@ -16,10 +16,10 @@ const ListWorks = () => {
               {work.p}
             </Paragraph>
             <div className="mt-3 flex gap-2 font-medium">
-              <span className="bg-tag-light px-1.5 text-sm text-white dark:bg-tag-dark dark:text-slate-900">
+              <span className="bg-celedongreen px-1.5 text-sm text-white dark:bg-lightgray dark:text-slate-900">
                 {work.stack1}
               </span>
-              <span className="bg-tag-light px-1.5 text-sm text-white dark:bg-tag-dark dark:text-slate-900">
+              <span className="bg-celedongreen px-1.5 text-sm text-white dark:bg-lightgray dark:text-slate-900">
                 {work.stack2}
               </span>
             </div>

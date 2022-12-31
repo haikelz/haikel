@@ -14,11 +14,9 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 
-const LazyLoadImage = dynamic(() =>
-  import("@/atoms/LazyLoadImage").then((item) => item.LazyLoadImage)
-);
-const AuthorImage = dynamic(() => import("@/atoms/AuthorImage").then((item) => item.AuthorImage));
-const Video = dynamic(() => import("@/atoms/Video").then((item) => item.Video));
+const LazyLoadImage = dynamic(() => import("@/atoms/LazyLoadImage"));
+const AuthorImage = dynamic(() => import("@/atoms/AuthorImage"));
+const Video = dynamic(() => import("@/atoms/Video"));
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getSlugs().map((slug) => ({ params: { slug } }));

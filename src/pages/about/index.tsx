@@ -11,7 +11,7 @@ import { useReducerAtom } from "jotai/utils";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 
-const AboutImage = dynamic(import("@/atoms/AboutImage").then((item) => item.AboutImage));
+const AboutImage = dynamic(import("@/atoms/AboutImage"));
 
 const About = () => {
   const [language, toggleLanguage] = useReducerAtom<boolean, unknown>(languageAtom, setLanguage);

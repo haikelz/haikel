@@ -1,7 +1,8 @@
 import { cn } from "@/helpers/cn";
 import { HeadingProps } from "@/types";
+import { memo } from "react";
 
-export const Heading = ({ children, as, className }: HeadingProps) => {
+export const Heading = memo(({ children, as, className }: HeadingProps) => {
   return (
     <>
       {as === "h1" ? (
@@ -19,4 +20,6 @@ export const Heading = ({ children, as, className }: HeadingProps) => {
       ) : null}
     </>
   );
-};
+});
+
+Heading.displayName = "Heading";

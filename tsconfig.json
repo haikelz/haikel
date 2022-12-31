@@ -18,46 +18,46 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
       "@/public/*": [
         "public/*"
       ],
       "@/components/*": [
-        "src/components/*"
+        "components/*"
       ],
       "@/atoms/*": [
-        "src/components/atoms/*"
+        "components/atoms/*"
       ],
       "@/molecules/*": [
-        "src/components/molecules/*"
+        "components/molecules/*"
       ],
       "@/organisms/*": [
-        "src/components/organisms/*"
+        "components/organisms/*"
       ],
       "@/templates/*": [
-        "src/components/templates/*"
+        "components/templates/*"
       ],
       "@/helpers/*": [
-        "src/helpers/*"
+        "helpers/*"
       ],
       "@/hooks/*": [
-        "src/hooks/*"
+        "hooks/*"
       ],
       "@/pages/*": [
-        "src/pages/*"
+        "pages/*"
       ],
       "@/store": [
-        "src/store"
+        "store"
       ],
       "@/styles/*": [
-        "src/styles/*"
+        "styles/*"
       ],
       "@/utils/*": [
-        "src/utils/*"
+        "utils/*"
       ],
       "@/types": [
-        "src/types"
+        "types"
       ]
     },
   },

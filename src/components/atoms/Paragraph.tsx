@@ -14,3 +14,5 @@ export const Paragraph = ({ className, children, isCenter }: ParagraphProps) => 
     </p>
   );
 };
+
+Paragraph.displayName = "Paragraph";

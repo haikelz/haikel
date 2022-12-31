@@ -1,8 +1,9 @@
 import { ThemeProps } from "@/types";
 import { darkModeIconAnimation, whileTap } from "@/utils/animation";
 import { domAnimation, LazyMotion, m } from "framer-motion";
+import { memo } from "react";
 
-export const ToggleDarkIcon = ({ theme, changeTheme }: ThemeProps) => {
+export const ToggleDarkIcon = memo(({ theme, changeTheme }: ThemeProps) => {
   return (
     <div className="flex items-center justify-center">
       <LazyMotion features={domAnimation}>
@@ -50,4 +51,6 @@ export const ToggleDarkIcon = ({ theme, changeTheme }: ThemeProps) => {
       </LazyMotion>
     </div>
   );
-};
+});
+
+ToggleDarkIcon.displayName = "ToggleDarkIcon";

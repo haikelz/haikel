@@ -1,6 +1,7 @@
 import { VideoProps } from "@/types";
+import { memo } from "react";
 
-export const Video = ({ title, src }: VideoProps) => {
+const Video = ({ title, src }: VideoProps) => {
   return (
     <div className="relative my-4 h-0 max-w-full overflow-hidden pb-[56.25%]">
       <iframe
@@ -12,3 +13,5 @@ export const Video = ({ title, src }: VideoProps) => {
     </div>
   );
 };
+
+export default memo(Video);

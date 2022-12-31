@@ -1,8 +1,8 @@
 import { memo } from "react";
 
-export const AboutImage = memo(() => {
+const AboutImage = () => {
   return (
-    <div className="shadow-smooth flex items-center justify-center overflow-hidden rounded-full border-[6px] border-light dark:border-gray-800">
+    <div className="shadow-smooth flex items-center justify-center overflow-hidden rounded-full border-[6px] border-brightgray dark:border-gray-800">
       <svg
         className="cursor-pointer rounded-full"
         width="270"
@@ -27,6 +27,6 @@ export const AboutImage = memo(() => {
       </svg>
     </div>
   );
-});
+};
 
-AboutImage.displayName = "AboutImage";
+export default memo(AboutImage);
