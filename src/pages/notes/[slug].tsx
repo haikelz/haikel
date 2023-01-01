@@ -1,8 +1,8 @@
-import { Heading } from "@/atoms/Heading";
-import { Paragraph } from "@/atoms/Paragraph";
+import { Heading, Paragraph } from "@/atoms";
 import { getNoteFromSlug } from "@/helpers/getNoteFromSlug";
 import { getReadingTime } from "@/helpers/getReadingTime";
 import { getSlugs } from "@/helpers/getSlugs";
+
 import Layout from "@/templates/Layout";
 import { NotePageProps } from "@/types";
 import type { GetStaticPaths, GetStaticProps } from "next";

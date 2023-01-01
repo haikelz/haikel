@@ -1,7 +1,6 @@
-import { Heading } from "@/atoms/Heading";
-import { Paragraph } from "@/atoms/Paragraph";
+import { Heading, Paragraph } from "@/atoms";
 import Layout from "@/templates/Layout";
-import { cn } from "@/helpers/cn";
+import clsx from "clsx";
 
 const Home = () => {
   return (
@@ -14,8 +13,10 @@ const Home = () => {
         <Heading as="h2" className="mb-1">
           Hello, I&#39;m{" "}
           <span
-            className={cn(
-              "text-3xl underline decoration-fireopal decoration-dashed underline-offset-[5px] dark:bg-gradient-to-r dark:from-[#0093E9] dark:to-[#80D0C7] dark:bg-clip-text dark:text-transparent dark:decoration-[#0093E9]"
+            className={clsx(
+              "text-3xl underline decoration-fireopal decoration-dashed underline-offset-[5px]",
+              "dark:bg-gradient-to-r dark:from-[#0093E9] dark:to-[#80D0C7]",
+              "dark:bg-clip-text dark:text-transparent dark:decoration-[#0093E9]"
             )}
           >
             Haikel

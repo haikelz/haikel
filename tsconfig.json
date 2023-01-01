@@ -23,8 +23,8 @@
       "@/public/*": [
         "public/*"
       ],
-      "@/components/*": [
-        "components/*"
+      "@/atoms": [
+        "components/atoms"
       ],
       "@/atoms/*": [
         "components/atoms/*"

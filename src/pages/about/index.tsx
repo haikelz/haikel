@@ -1,7 +1,4 @@
-import { Heading } from "@/atoms/Heading";
-import { Paragraph } from "@/atoms/Paragraph";
-import { Underline } from "@/atoms/Underline";
-import { UnderlineSpan } from "@/atoms/UnderlineSpan";
+import { Heading, Paragraph, Underline, UnderlineSpan } from "@/atoms";
 import { setLanguage } from "@/helpers/setLanguage";
 import Steps from "@/molecules/Steps";
 import { languageAtom } from "@/store";

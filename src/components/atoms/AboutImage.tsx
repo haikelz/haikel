@@ -1,8 +1,14 @@
+import clsx from "clsx";
 import { memo } from "react";
 
 const AboutImage = () => {
   return (
-    <div className="shadow-smooth flex items-center justify-center overflow-hidden rounded-full border-[6px] border-brightgray dark:border-gray-800">
+    <div
+      className={clsx(
+        "shadow-smooth flex items-center justify-center overflow-hidden rounded-full",
+        "border-[6px] border-brightgray dark:border-gray-800"
+      )}
+    >
       <svg
         className="cursor-pointer rounded-full"
         width="270"

@@ -1,6 +1,4 @@
-import { Heading } from "@/atoms/Heading";
-import { Paragraph } from "@/atoms/Paragraph";
-import { Underline } from "@/atoms/Underline";
+import { Heading, Paragraph, Underline } from "@/atoms";
 import { getAllNotes } from "@/helpers/getAllNotes";
 import ListNotes from "@/organisms/ListNotes";
 import Layout from "@/templates/Layout";

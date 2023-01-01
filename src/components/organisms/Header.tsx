@@ -1,5 +1,6 @@
 import { HeaderLogo } from "@/atoms/HeaderLogo";
 import { ToggleDarkModeHeader } from "@/atoms/ToggleDarkModeHeader";
+import clsx from "clsx";
 import { useTheme } from "@/hooks/useTheme";
 import HeaderListItem from "@/molecules/HeaderListItem";
 
@@ -12,7 +13,12 @@ const Header = () => {
   return (
     <header className="fixed top-3 z-10 hidden w-full dark:text-white md:block">
       <nav className="mx-auto w-full max-w-5xl rounded-md px-4 text-sm">
-        <div className="shadow-smooth onscroll flex h-12 w-full items-center justify-between rounded-md bg-white/80 px-4 dark:bg-[#252535]/70">
+        <div
+          className={clsx(
+            "shadow-smooth onscroll flex h-12 w-full items-center justify-between",
+            "rounded-md bg-white/80 px-4 dark:bg-[#252535]/70"
+          )}
+        >
           <HeaderLogo />
           <div className="flex items-center justify-center">
             <div className="hidden md:block">

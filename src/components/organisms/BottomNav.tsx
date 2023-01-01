@@ -1,5 +1,5 @@
-import { ToggleDarkIcon } from "@/atoms/ToggleDarkIcon";
-import { cn } from "@/helpers/cn";
+import { ToggleDarkIcon } from "@/atoms";
+import clsx from "clsx";
 import { useTheme } from "@/hooks/useTheme";
 import { bottomNavList } from "@/utils/data";
 import Link from "next/link";
@@ -13,16 +13,24 @@ const BottomNav = () => {
 
   return (
     <nav
-      className={`sticky bottom-0 left-0 right-0 flex w-full flex-col items-center justify-center md:hidden`}
+      className={clsx(
+        "sticky bottom-0 left-0 right-0",
+        "flex w-full flex-col items-center justify-center md:hidden"
+      )}
     >
-      <div className="grid w-full grid-cols-5 grid-rows-1 border-t border-slate-300 bg-antiflashwhite p-4 dark:border-slate-600 dark:bg-eerieblack">
+      <div
+        className={clsx(
+          "grid w-full grid-cols-5 grid-rows-1 border-t border-slate-300",
+          "bg-antiflashwhite p-4 dark:border-slate-600 dark:bg-eerieblack"
+        )}
+      >
         {bottomNavList.map((item, index) => {
           const Icon: IconType = item.icon;
           return (
             <div key={index + 1} className="flex items-center justify-center">
               <Link href={item.link} aria-label={item.name} passHref>
                 <Icon
-                  className={cn(
+                  className={clsx(
                     "transition-all duration-200",
                     router.asPath === `${item.link}`
                       ? "text-slate-600 dark:text-white"

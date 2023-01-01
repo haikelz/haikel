@@ -1,5 +1,4 @@
-import { Heading } from "@/atoms/Heading";
-import { Paragraph } from "@/atoms/Paragraph";
+import { Heading, Paragraph } from "@/atoms";
 import Layout from "@/templates/Layout";
 import dynamic from "next/dynamic";
 
