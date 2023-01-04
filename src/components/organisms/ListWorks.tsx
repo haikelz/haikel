@@ -1,12 +1,12 @@
 import { Paragraph } from "@/atoms/Paragraph";
 import Icons from "@/molecules/Icons";
+import { projectsList } from "@/utils/data";
 import clsx from "clsx";
-import { ListWorksProps } from "types/zod";
 
-const ListWorks = ({ filteredWorks }: ListWorksProps) => {
+const ListWorks = () => {
   return (
     <>
-      {filteredWorks.map((work, index) => (
+      {projectsList.map((work, index) => (
         <div
           className={clsx(
             "cursor-pointer overflow-hidden border-[2.5px] border-black",

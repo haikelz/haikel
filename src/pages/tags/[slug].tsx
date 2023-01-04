@@ -3,7 +3,7 @@ import { getAllNotes } from "@/helpers/getAllNotes";
 import ListNotes from "@/organisms/ListNotes";
 import Layout from "@/templates/Layout";
 import { NoteProps, TagProps } from "@/types";
-import { GetStaticPaths, GetStaticProps } from "next";
+import type { GetStaticPaths, GetStaticProps } from "next";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const notes: NoteProps[] = getAllNotes();
@@ -33,9 +33,9 @@ const Tags = ({ slug, notes }: TagProps) => {
     <Layout
       title={`Tags #${slug}`}
       description="Tags"
-      className="flex min-h-screen flex-col items-center justify-start px-4 pt-6 pb-12 md:pt-24"
+      className="flex min-h-screen flex-col items-center justify-start pt-6 pb-6 md:pb-12 md:pt-24"
     >
-      <div className="mb-10 flex w-full flex-wrap items-center justify-center">
+      <div className="mb-6 flex w-full flex-wrap items-center justify-center">
         <div className="flex flex-col items-center justify-center">
           <Heading as="h2" className="title-font mb-1 text-center">
             Tags #{slug}
@@ -43,7 +43,9 @@ const Tags = ({ slug, notes }: TagProps) => {
           <Underline />
         </div>
       </div>
-      <ListNotes filteredNotes={notes} />
+      <div className="grid w-full grid-cols-1 grid-rows-1 gap-6 sm:grid-cols-2">
+        <ListNotes filteredNotes={notes} />
+      </div>
     </Layout>
   );
 };

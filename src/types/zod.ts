@@ -92,19 +92,6 @@ const SeoProps = z.object({
   description: z.string(),
 });
 
-const ListWorksProps = z.object({
-  filteredWorks: z.array(
-    z.object({
-      h4: z.string(),
-      p: z.string(),
-      repo: z.string(),
-      stack1: z.string(),
-      stack2: z.string(),
-      preview: z.string(),
-    })
-  ),
-});
-
 export type ThemeProps = z.infer<typeof ThemeProps>;
 export type LinkIconProps = z.infer<typeof LinkIconProps>;
 export type StackProps = z.infer<typeof StackProps>;
@@ -122,4 +109,3 @@ export type ParagraphProps = ChildrenProps & z.infer<typeof ParagraphProps>;
 export type HeadingProps = ChildrenProps & z.infer<typeof HeadingProps>;
 export type LayoutProps = ChildrenProps & SeoProps & z.infer<typeof LayoutProps>;
 export type SeoProps = z.infer<typeof SeoProps>;
-export type ListWorksProps = z.infer<typeof ListWorksProps>;
