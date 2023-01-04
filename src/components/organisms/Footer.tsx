@@ -10,7 +10,7 @@ const Footer = () => {
           This Website is under{" "}
           <Link
             href="https://github.com/haikelz/website/blob/master/LICENSE"
-            className="hover:text-texthover font-bold"
+            className="font-bold hover:text-crayola"
             passHref
           >
             MIT License
