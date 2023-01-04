@@ -1,16 +1,16 @@
 import { Paragraph } from "@/atoms/Paragraph";
 import Icons from "@/molecules/Icons";
-import { projectsList } from "@/utils/data";
 import clsx from "clsx";
+import { ListWorksProps } from "types/zod";
 
-const ListWorks = () => {
+const ListWorks = ({ filteredWorks }: ListWorksProps) => {
   return (
-    <div className="grid w-full grid-cols-1 grid-rows-1 gap-6 sm:grid-cols-2">
-      {projectsList.map((work, index) => (
+    <>
+      {filteredWorks.map((work, index) => (
         <div
           className={clsx(
             "cursor-pointer overflow-hidden border-[2.5px] border-black",
-            "bg-antiflashwhite transition-all duration-200 hover:shadow-light active:scale-95",
+            "bg-antiflashwhite transition-all ease-in-out hover:shadow-light active:scale-95",
             "dark:border-white dark:bg-raisinblack dark:hover:shadow-dark"
           )}
           key={index + 1}
@@ -42,7 +42,7 @@ const ListWorks = () => {
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 

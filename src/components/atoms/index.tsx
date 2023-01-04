@@ -7,3 +7,4 @@ export * from "./ToggleDarkIcon";
 export * from "./ToggleDarkModeHeader";
 export * from "./Underline";
 export * from "./UnderlineSpan";
+export * from "./SearchBar";

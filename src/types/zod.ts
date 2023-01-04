@@ -21,17 +21,6 @@ const StackProps = z.object({
   stack2: z.string().optional(),
 });
 
-const KeydownProps = z.object({
-  isCtrlKey: z.boolean(),
-  previousUrl: z.string(),
-  nextUrl: z.string(),
-});
-
-const KeydownEventProps = z.object({
-  ctrlKey: z.boolean(),
-  key: z.string(),
-});
-
 const ListProps = z.object({
   setLoading: z.function().args(z.boolean()),
   isLoading: z.boolean(),
@@ -40,11 +29,6 @@ const ListProps = z.object({
 const LoadingProps = z.object({
   isLoading: z.boolean(),
   loadingProcess: z.function(),
-});
-
-const ShowedModalProps = z.object({
-  isShowed: z.boolean(),
-  setIsShowed: z.function().args(z.boolean()),
 });
 
 const LazyLoadImageProps = z.object({
@@ -73,7 +57,7 @@ const VideoProps = z.object({
 });
 
 const NotesArticlesProps = z.object({
-  notes: z.array(NoteMetaProps),
+  filteredNotes: z.array(NoteMetaProps),
 });
 
 const TagProps = z.object({
@@ -90,18 +74,17 @@ const NotesProps = z.object({
 });
 
 const ParagraphProps = z.object({
-  className: z.string(),
-  isCenter: z.boolean(),
+  className: z.optional(z.string()),
+  isCenter: z.optional(z.boolean()),
 });
 
 const HeadingProps = z.object({
-  // enum
   as: z.string(z.enum(["h1", "h2", "h3", "h4", "h5", "h6"])),
-  className: z.string(),
+  className: z.optional(z.string()),
 });
 
 const LayoutProps = z.object({
-  className: z.string(),
+  className: z.optional(z.string()),
 });
 
 const SeoProps = z.object({
@@ -109,14 +92,24 @@ const SeoProps = z.object({
   description: z.string(),
 });
 
+const ListWorksProps = z.object({
+  filteredWorks: z.array(
+    z.object({
+      h4: z.string(),
+      p: z.string(),
+      repo: z.string(),
+      stack1: z.string(),
+      stack2: z.string(),
+      preview: z.string(),
+    })
+  ),
+});
+
 export type ThemeProps = z.infer<typeof ThemeProps>;
 export type LinkIconProps = z.infer<typeof LinkIconProps>;
 export type StackProps = z.infer<typeof StackProps>;
 export type LoadingProps = z.infer<typeof LoadingProps>;
 export type ListProps = z.infer<typeof ListProps>;
-export type KeydownProps = z.infer<typeof KeydownProps>;
-export type KeydownEventProps = z.infer<typeof KeydownEventProps>;
-export type ShowedModalProps = z.infer<typeof ShowedModalProps>;
 export type LazyLoadImageProps = z.infer<typeof LazyLoadImageProps>;
 export type NoteMetaProps = z.infer<typeof NoteMetaProps>;
 export type NoteProps = z.infer<typeof NoteProps>;
@@ -129,3 +122,4 @@ export type ParagraphProps = ChildrenProps & z.infer<typeof ParagraphProps>;
 export type HeadingProps = ChildrenProps & z.infer<typeof HeadingProps>;
 export type LayoutProps = ChildrenProps & SeoProps & z.infer<typeof LayoutProps>;
 export type SeoProps = z.infer<typeof SeoProps>;
+export type ListWorksProps = z.infer<typeof ListWorksProps>;

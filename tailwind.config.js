@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       boxShadow: {
-        light: "10px 10px 0px -3px #000000",
-        dark: "10px 10px 0px -3px #FFFFFF",
+        light: "8px 8px 0px -3px #000000",
+        dark: "8px 8px 0px -3px #FFFFFF",
         progress: "0 0 10px #29d, 0 0 5px #29d",
       },
       colors: {

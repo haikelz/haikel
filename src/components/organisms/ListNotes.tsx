@@ -2,14 +2,14 @@ import type { NotesArticlesProps } from "@/types";
 import clsx from "clsx";
 import Link from "next/link";
 
-const ListNotes = ({ notes }: NotesArticlesProps) => {
+const ListNotes = ({ filteredNotes }: NotesArticlesProps) => {
   return (
-    <div className="grid w-full grid-cols-1 grid-rows-1 gap-6 sm:grid-cols-2">
-      {notes.map((note) => (
+    <>
+      {filteredNotes.map((note) => (
         <div
           className={clsx(
             "overflow-hidden border-[2.5px] border-black",
-            "bg-antiflashwhite transition-all duration-200 hover:shadow-light active:scale-95",
+            "bg-antiflashwhite transition-all ease-in-out hover:shadow-light active:scale-95",
             "dark:border-white dark:bg-raisinblack dark:hover:shadow-dark"
           )}
           key={note.slug}
@@ -37,7 +37,7 @@ const ListNotes = ({ notes }: NotesArticlesProps) => {
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 

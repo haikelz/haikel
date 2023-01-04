@@ -1,14 +1,12 @@
 import { Heading, Paragraph, Underline, UnderlineSpan } from "@/atoms";
+import AboutImage from "@/atoms/AboutImage";
 import { setLanguage } from "@/helpers/setLanguage";
 import Steps from "@/molecules/Steps";
 import { languageAtom } from "@/store";
 import Layout from "@/templates/Layout";
 import { socialMediaList } from "@/utils/data";
 import { useReducerAtom } from "jotai/utils";
-import dynamic from "next/dynamic";
 import Link from "next/link";
-
-const AboutImage = dynamic(import("@/atoms/AboutImage"));
 
 const About = () => {
   const [language, toggleLanguage] = useReducerAtom<boolean, unknown>(languageAtom, setLanguage);
