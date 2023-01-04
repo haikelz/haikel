@@ -43,7 +43,7 @@ const Tags = ({ slug, notes }: TagProps) => {
           <Underline />
         </div>
       </div>
-      <ListNotes notes={notes} />
+      <ListNotes filteredNotes={notes} />
     </Layout>
   );
 };

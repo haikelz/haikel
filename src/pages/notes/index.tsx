@@ -1,12 +1,10 @@
 import { Heading, Paragraph, SearchBar, Underline } from "@/atoms";
 import { getAllNotes } from "@/helpers/getAllNotes";
 import ListNotes from "@/organisms/ListNotes";
-import { searchAtom } from "@/store";
 import Layout from "@/templates/Layout";
 import { NoteMetaProps, NotesProps } from "@/types";
-import { useAtom } from "jotai";
 import { GetStaticProps } from "next";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
 export const getStaticProps: GetStaticProps = async () => {
   const notes: NoteMetaProps[] = getAllNotes()
@@ -21,7 +19,7 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Notes = ({ notes }: NotesProps) => {
-  const [search, setSearch] = useAtom(searchAtom);
+  const [search, setSearch] = useState("");
 
   const filteredNotes = useMemo(
     () =>
