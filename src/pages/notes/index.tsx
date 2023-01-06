@@ -1,5 +1,6 @@
 import { Heading, Paragraph, SearchBar, Underline } from "@/atoms";
 import { getAllNotes } from "@/helpers/getAllNotes";
+import { matchSearch } from "@/helpers/matchSearch";
 import ListNotes from "@/organisms/ListNotes";
 import Layout from "@/templates/Layout";
 import { NoteMetaProps, NotesProps } from "@/types";
@@ -20,14 +21,18 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Notes = ({ notes }: NotesProps) => {
   const [search, setSearch] = useState("");
+  const matchResult: string | undefined = matchSearch(search);
 
   const filteredNotes = useMemo(
     () =>
       notes.filter((note) => {
-        if (note.title === search) return note;
-        else if (note.title.toLowerCase().includes(search.toLowerCase())) return note;
+        if (note.title === matchResult) return note;
+        else if (
+          note.title.toLowerCase().includes(matchResult === undefined || null ? "" : matchResult)
+        )
+          return note;
       }),
-    [notes, search]
+    [notes, matchResult]
   );
 
   return (
