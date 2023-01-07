@@ -2,7 +2,7 @@ import { HeaderLogo } from "@/atoms/HeaderLogo";
 import { ToggleDarkModeHeader } from "@/atoms/ToggleDarkModeHeader";
 import { useTheme } from "@/hooks/useTheme";
 import HeaderListItem from "@/molecules/HeaderListItem";
-import clsx from "clsx";
+import { twJoin } from "tailwind-merge";
 
 type ChangeTheme = () => void;
 
@@ -14,9 +14,9 @@ const Header = () => {
     <header className="fixed top-3 z-10 hidden w-full dark:text-white md:block">
       <nav className="mx-auto w-full max-w-5xl px-4 text-sm">
         <div
-          className={clsx(
+          className={twJoin(
             "shadow-smooth onscroll flex h-12 w-full items-center justify-between",
-            "rounded-md bg-white/80 px-4 dark:bg-[#252535]/70"
+            "rounded-sm bg-white/80 px-4 dark:bg-[#252535]/70"
           )}
         >
           <HeaderLogo />

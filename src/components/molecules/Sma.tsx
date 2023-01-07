@@ -1,10 +1,10 @@
-import clsx from "clsx";
+import { twJoin } from "tailwind-merge";
 
 const SMA = () => {
   return (
     <div className="relative flex pb-12">
       <div
-        className={clsx(
+        className={twJoin(
           "relative inline-flex h-6 w-6 flex-shrink-0 items-center justify-center",
           "rounded-full bg-[#F05454] text-white dark:bg-[#2563EB]"
         )}

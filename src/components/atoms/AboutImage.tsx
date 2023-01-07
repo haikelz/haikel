@@ -1,10 +1,10 @@
-import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 import { memo } from "react";
 
 const AboutImage = () => {
   return (
     <div
-      className={clsx(
+      className={twMerge(
         "shadow-smooth flex items-center justify-center overflow-hidden rounded-full",
         "border-[6px] border-brightgray dark:border-gray-800"
       )}

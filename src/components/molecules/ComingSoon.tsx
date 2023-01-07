@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { twJoin } from "tailwind-merge";
 
 const ComingSoon = () => {
   return (
@@ -7,7 +7,7 @@ const ComingSoon = () => {
         <div className="pointer-events-none h-full w-1 bg-fireopal dark:bg-crayola"></div>
       </div>
       <div
-        className={clsx(
+        className={twJoin(
           "relative inline-flex h-6 w-6 flex-shrink-0 items-center justify-center",
           "rounded-full bg-fireopal text-white dark:bg-crayola"
         )}

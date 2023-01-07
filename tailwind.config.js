@@ -35,7 +35,7 @@ module.exports = {
                 },
               },
               code: {
-                borderRadius: theme("borderRadius.md"),
+                borderRadius: theme("borderRadius.sm"),
                 paddingTop: theme("spacing.1"),
                 paddingBottom: theme("spacing.1"),
                 paddingLeft: theme("spacing.1"),
@@ -46,6 +46,7 @@ module.exports = {
                 backgroundColor: theme("colors.slate.300"),
               },
               "pre, pre code": {
+                borderRadius: theme("borderRadius.sm"),
                 color: theme("colors.slate.200"),
                 backgroundColor: "#1F1F28",
               },
@@ -76,6 +77,11 @@ module.exports = {
                   textDecoration: "none",
                 },
               },
+              a: {
+                textUnderlineOffset: "3px",
+                textDecorationThickness: "2px",
+                textDecorationStyle: "dashed",
+              },
             },
           },
           sm: {
@@ -91,6 +97,9 @@ module.exports = {
             css: {
               h1: {
                 fontSize: theme("fontSize.4xl")[0],
+              },
+              "pre, pre code": {
+                borderRadius: theme("borderRadius.sm"),
               },
             },
           },

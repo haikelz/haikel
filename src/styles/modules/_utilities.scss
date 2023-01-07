@@ -5,10 +5,10 @@
   }
 
   .prose img {
-    @apply w-full rounded-md shadow-md dark:shadow-slate-900;
+    @apply w-full rounded-sm shadow-md dark:shadow-slate-900;
   }
 
   .prose video {
-    @apply rounded-md shadow-md dark:shadow-slate-900;
+    @apply rounded-sm shadow-md dark:shadow-slate-900;
   }
 }

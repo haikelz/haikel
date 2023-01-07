@@ -3,7 +3,7 @@ import { darkModeIconAnimation, whileTap } from "@/utils/animation";
 import { domAnimation, LazyMotion, m } from "framer-motion";
 import { memo } from "react";
 
-export const ToggleDarkModeHeader = memo(({ theme, changeTheme }: ThemeProps) => {
+export const ToggleDarkModeHeader = ({ theme, changeTheme }: ThemeProps) => {
   return (
     <LazyMotion features={domAnimation}>
       <m.button
@@ -52,6 +52,6 @@ export const ToggleDarkModeHeader = memo(({ theme, changeTheme }: ThemeProps) =>
       </m.button>
     </LazyMotion>
   );
-});
+};
 
-ToggleDarkModeHeader.displayName = "ToggleDarkModeHeader";
+memo(ToggleDarkModeHeader);

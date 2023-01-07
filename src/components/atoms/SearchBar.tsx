@@ -1,7 +1,7 @@
-import clsx from "clsx";
 import { SetStateAction } from "jotai";
 import { memo } from "react";
 import { MdSearch } from "react-icons/md";
+import { twJoin } from "tailwind-merge";
 
 type SearchBarProps = {
   search: string;
@@ -15,7 +15,7 @@ export const SearchBar = ({ search, setSearch }: SearchBarProps) => {
         <MdSearch className="h-7 w-7" />
       </div>
       <input
-        className={clsx(
+        className={twJoin(
           "block w-full border-[2.5px] border-black bg-antiflashwhite",
           "py-2.5 px-4 pl-12 font-medium transition-all ease-in-out",
           "hover:shadow-light dark:border-white dark:bg-raisinblack dark:hover:shadow-dark"

@@ -1,7 +1,7 @@
 import { headerList } from "@/utils/data";
-import clsx from "clsx";
 import Link from "next/link";
 import { NextRouter, useRouter } from "next/router";
+import { twJoin } from "tailwind-merge";
 
 const HeaderListItem = () => {
   const router: NextRouter = useRouter();
@@ -10,7 +10,7 @@ const HeaderListItem = () => {
     <>
       {headerList.map((nav) => (
         <Link
-          className={clsx(
+          className={twJoin(
             "undeline cursor-pointer rounded-sm px-3 py-1.5",
             "text-base font-semibold duration-200 active:bg-pink-100 active:dark:bg-slate-800",
             router.asPath === nav.href

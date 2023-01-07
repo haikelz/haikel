@@ -1,5 +1,5 @@
 import type { NotesArticlesProps } from "@/types";
-import clsx from "clsx";
+import { twJoin, twMerge } from "tailwind-merge";
 import Link from "next/link";
 
 const ListNotes = ({ filteredNotes }: NotesArticlesProps) => {
@@ -7,7 +7,7 @@ const ListNotes = ({ filteredNotes }: NotesArticlesProps) => {
     <>
       {filteredNotes.map((note) => (
         <div
-          className={clsx(
+          className={twJoin(
             "overflow-hidden border-[2.5px] border-black",
             "bg-antiflashwhite transition-all ease-in-out hover:shadow-light active:scale-95",
             "dark:border-white dark:bg-raisinblack dark:hover:shadow-dark"
@@ -22,7 +22,7 @@ const ListNotes = ({ filteredNotes }: NotesArticlesProps) => {
             <div className="mt-3 flex gap-2 font-medium">
               {note.tags.map((tag) => (
                 <Link
-                  className={clsx(
+                  className={twMerge(
                     "cursor-pointer bg-celedongreen px-1.5 text-sm text-white",
                     "dark:bg-lightgray dark:text-slate-900"
                   )}

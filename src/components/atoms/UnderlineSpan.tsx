@@ -1,11 +1,10 @@
-import clsx from "clsx";
 import { ChildrenProps } from "@/types";
-import { memo } from "react";
+import { twJoin } from "tailwind-merge";
 
-export const UnderlineSpan = memo(({ children }: ChildrenProps) => {
+export const UnderlineSpan = ({ children }: ChildrenProps) => {
   return (
     <span
-      className={clsx(
+      className={twJoin(
         "cursor-pointer font-bold",
         "underline decoration-2 underline-offset-[3px] hover:text-crayola"
       )}
@@ -13,6 +12,4 @@ export const UnderlineSpan = memo(({ children }: ChildrenProps) => {
       {children}
     </span>
   );
-});
-
-UnderlineSpan.displayName = "UnderlineSpan";
+};
