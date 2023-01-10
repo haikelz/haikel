@@ -87,3 +87,11 @@ export const bottomNavList = [
   { name: "Works", icon: MdWork, link: "/works" },
   { name: "Notes", icon: MdLibraryBooks, link: "/notes" },
 ];
+
+export const MetaData = {
+  url: "https://haikel.my.id",
+  type: "website",
+  title: "Haikel",
+  description: "Haikel's Website",
+  image: "https://avatars.githubusercontent.com/u/77146709?v=4",
+};

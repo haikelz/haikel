@@ -1,17 +1,22 @@
+import { MetaData } from "@/utils/data";
 import { Html, Head, Main, NextScript } from "next/document";
+
+const { url, type, title, description, image } = MetaData;
 
 const Document = () => {
   return (
     <Html lang="en">
       <Head>
-        <meta
-          property="og:image"
-          content={`${
-            process.env.NEXT_PUBLIC_URL_WEBSITE
-              ? "https://" + process.env.NEXT_PUBLIC_URL_WEBSITE
-              : ""
-          }/api/og`}
-        />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <meta property="og:url" content={url} />
+        <meta property="og:type" content={type} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={image} />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={url} />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
       </Head>
       <body>
         <Main />
