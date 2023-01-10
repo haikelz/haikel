@@ -4,7 +4,14 @@ const Document = () => {
   return (
     <Html lang="en">
       <Head>
-        <meta property="og:image" content="https://haikel.my.id/api/og" />
+        <meta
+          property="og:image"
+          content={`${
+            process.env.NEXT_PUBLIC_URL_WEBSITE
+              ? "https://" + process.env.NEXT_PUBLIC_URL_WEBSITE
+              : ""
+          }/api/og`}
+        />
       </Head>
       <body>
         <Main />
