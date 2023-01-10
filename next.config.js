@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  compress: true,
   images: {
     domains: ["avatars.githubusercontent.com", "cdn.statically.io", "ik.imagekit.io"],
     loader: "akamai",

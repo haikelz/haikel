@@ -11,6 +11,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/og": "^0.0.25",
     "framer-motion": "^8.0.2",
     "glob": "^8.0.3",
     "gray-matter": "^4.0.3",
