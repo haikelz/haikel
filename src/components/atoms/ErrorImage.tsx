@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { memo } from "react";
 
-export const ErrorImage = () => {
+const ErrorImage = () => {
   return (
     <Image
       width={200}
@@ -13,4 +13,4 @@ export const ErrorImage = () => {
   );
 };
 
-memo(ErrorImage);
+export default memo(ErrorImage);

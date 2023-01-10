@@ -3,9 +3,13 @@ import { getAllNotes } from "@/helpers/getAllNotes";
 import { matchSearch } from "@/helpers/matchSearch";
 import ListNotes from "@/organisms/ListNotes";
 import Layout from "@/templates/Layout";
-import { NoteMetaProps, NotesProps } from "@/types";
+import { NoteMetaProps } from "@/types";
 import { GetStaticProps } from "next";
 import { useMemo, useState } from "react";
+
+type NotesProps = {
+  notes: NoteMetaProps[];
+};
 
 export const getStaticProps: GetStaticProps = async () => {
   const notes: NoteMetaProps[] = getAllNotes()

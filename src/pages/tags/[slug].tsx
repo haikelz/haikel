@@ -2,8 +2,13 @@ import { Heading, Underline } from "@/atoms";
 import { getAllNotes } from "@/helpers/getAllNotes";
 import ListNotes from "@/organisms/ListNotes";
 import Layout from "@/templates/Layout";
-import { NoteProps, TagProps } from "@/types";
+import { NoteMetaProps, NoteProps } from "@/types";
 import type { GetStaticPaths, GetStaticProps } from "next";
+
+type TagProps = {
+  slug: string;
+  notes: NoteMetaProps[];
+};
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const notes: NoteProps[] = getAllNotes();

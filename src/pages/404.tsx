@@ -2,7 +2,7 @@ import { Heading, Paragraph } from "@/atoms";
 import Layout from "@/templates/Layout";
 import dynamic from "next/dynamic";
 
-const ErrorImage = dynamic(() => import("@/atoms/ErrorImage").then((item) => item.ErrorImage));
+const ErrorImage = dynamic(() => import("@/atoms/ErrorImage"));
 
 const NotFoundPage = () => {
   return (

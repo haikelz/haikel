@@ -1,5 +1,10 @@
+import { ChildrenProps } from "@/types";
 import { twMerge } from "tailwind-merge";
-import { ParagraphProps } from "@/types";
+
+type ParagraphProps = ChildrenProps & {
+  className?: string;
+  isCenter?: boolean;
+};
 
 export const Paragraph = ({ className, children, isCenter }: ParagraphProps) => {
   return (

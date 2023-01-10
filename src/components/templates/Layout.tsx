@@ -1,6 +1,11 @@
-import Seo from "@/atoms/Seo";
-import { LayoutProps } from "@/types";
+import Seo from "./Seo";
+import { ChildrenProps, SeoProps } from "@/types";
 import { twMerge } from "tailwind-merge";
+
+type LayoutProps = ChildrenProps &
+  SeoProps & {
+    className?: string;
+  };
 
 const Layout = ({ children, className, title, description }: LayoutProps) => {
   return (

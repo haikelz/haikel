@@ -1,6 +1,11 @@
 import { twMerge } from "tailwind-merge";
-import { HeadingProps } from "@/types";
 import { memo } from "react";
+import { ChildrenProps } from "@/types";
+
+type HeadingProps = ChildrenProps & {
+  as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  className?: string;
+};
 
 export const Heading = ({ children, as, className }: HeadingProps) => {
   return (

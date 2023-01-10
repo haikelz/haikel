@@ -1,6 +1,10 @@
-import type { NotesArticlesProps } from "@/types";
+import type { NoteMetaProps } from "@/types";
 import { twJoin, twMerge } from "tailwind-merge";
 import Link from "next/link";
+
+type NotesArticlesProps = {
+  filteredNotes: NoteMetaProps[];
+};
 
 const ListNotes = ({ filteredNotes }: NotesArticlesProps) => {
   return (

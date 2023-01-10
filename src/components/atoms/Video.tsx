@@ -1,5 +1,9 @@
-import { VideoProps } from "@/types";
 import { memo } from "react";
+
+type VideoProps = {
+  title: string;
+  src: string;
+};
 
 const Video = ({ title, src }: VideoProps) => {
   return (

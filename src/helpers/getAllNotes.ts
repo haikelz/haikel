@@ -1,6 +1,6 @@
-import { getSlugs } from "./getSlugs";
-import { getNoteFromSlug } from "./getNoteFromSlug";
 import { NoteProps } from "@/types";
+import { getNoteFromSlug } from "./getNoteFromSlug";
+import { getSlugs } from "./getSlugs";
 
 export const getAllNotes = () => {
   // sort notes based on date

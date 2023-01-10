@@ -1,6 +1,5 @@
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { ReactNode } from "react";
-import { NoteMetaProps } from "./zod";
 
 export type ChildrenProps = {
   children: ReactNode;
@@ -15,4 +14,32 @@ export type NotePageProps = {
   note: MDXnote;
 };
 
-export * from "./zod";
+export type LinkIconProps = {
+  link?: string;
+  linkPreview?: string;
+  linkGithub?: string;
+};
+
+export type SeoProps = {
+  title: string;
+  description: string;
+};
+
+export type ThemeProps = {
+  theme: string;
+  changeTheme: () => void;
+};
+
+export type NoteMetaProps = {
+  author: string;
+  preview: string;
+  slug: string;
+  title: string;
+  tags: string[];
+  date: string;
+};
+
+export type NoteProps = {
+  content: string;
+  meta: NoteMetaProps;
+};
