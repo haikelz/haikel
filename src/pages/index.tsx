@@ -1,4 +1,4 @@
-import { Heading, Paragraph } from "@/atoms";
+import { Heading, Paragraph } from "@/ui/typography";
 import Layout from "@/templates/Layout";
 import { twJoin } from "tailwind-merge";
 

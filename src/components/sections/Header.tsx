@@ -1,7 +1,6 @@
-import { HeaderLogo } from "@/atoms/HeaderLogo";
-import { ToggleDarkModeHeader } from "@/atoms/ToggleDarkModeHeader";
 import { useTheme } from "@/hooks/useTheme";
-import HeaderListItem from "@/molecules/HeaderListItem";
+import { ToggleDarkModeHeader, HeaderLogo } from "@/ui/icons";
+import HeaderListItem from "@/ui/list/HeaderListItem";
 import { twJoin } from "tailwind-merge";
 
 type ChangeTheme = () => void;

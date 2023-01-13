@@ -1,5 +1,5 @@
-import { Heading, Paragraph, Underline } from "@/atoms";
-import ListWorks from "@/organisms/ListWorks";
+import { Heading, Paragraph, Underline } from "@/ui/typography";
+import ListWorks from "@/ui/list/ListWorks";
 import Layout from "@/templates/Layout";
 
 const Works = () => {

@@ -1,7 +1,8 @@
-import { Paragraph } from "@/atoms/Paragraph";
-import Icons from "@/molecules/Icons";
 import { projectsList } from "@/utils/data";
-import { twJoin, twMerge } from "tailwind-merge";
+import { twJoin } from "tailwind-merge";
+import { GithubIcon } from "../icons/GithubIcon";
+import { PreviewIcon } from "../icons/PreviewIcon";
+import { Paragraph } from "../typography";
 
 const ListWorks = () => {
   return (
@@ -22,7 +23,7 @@ const ListWorks = () => {
             </Paragraph>
             <div className="mt-3 flex gap-2 font-medium">
               <span
-                className={twMerge(
+                className={twJoin(
                   "bg-celedongreen px-1.5 text-sm text-white",
                   "dark:bg-lightgray dark:text-slate-900"
                 )}
@@ -30,7 +31,7 @@ const ListWorks = () => {
                 {work.stack1}
               </span>
               <span
-                className={twMerge(
+                className={twJoin(
                   "bg-celedongreen px-1.5 text-sm text-white",
                   "dark:bg-lightgray dark:text-slate-900"
                 )}
@@ -38,7 +39,10 @@ const ListWorks = () => {
                 {work.stack2}
               </span>
             </div>
-            <Icons linkGithub={work.repo} linkPreview={work.preview} />
+            <div className="mt-3 flex justify-end">
+              <GithubIcon link={work.repo} />
+              <PreviewIcon link={work.preview} />
+            </div>
           </div>
         </div>
       ))}

@@ -1,8 +1,8 @@
-import { Heading, Paragraph } from "@/atoms";
+import { Heading, Paragraph } from "@/ui/typography";
 import Layout from "@/templates/Layout";
 import dynamic from "next/dynamic";
 
-const ErrorImage = dynamic(() => import("@/atoms/ErrorImage"));
+const ErrorImage = dynamic(() => import("@/ui/images/ErrorImage"));
 
 const ServerErrorPage = () => {
   return (

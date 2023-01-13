@@ -1,6 +1,6 @@
-import BottomNav from "@/organisms/BottomNav";
-import Footer from "@/organisms/Footer";
-import Header from "@/organisms/Header";
+import BottomNav from "@/sections/BottomNav";
+import Footer from "@/sections/Footer";
+import Header from "@/sections/Header";
 import { ChildrenProps } from "@/types";
 import { twJoin } from "tailwind-merge";
 

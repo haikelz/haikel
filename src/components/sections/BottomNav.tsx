@@ -1,4 +1,4 @@
-import { ToggleDarkIcon } from "@/atoms";
+import { ToggleDarkIcon } from "@/ui/icons";
 import { useTheme } from "@/hooks/useTheme";
 import { bottomNavList } from "@/utils/data";
 import Link from "next/link";

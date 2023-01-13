@@ -1,11 +1,11 @@
-import { twMerge } from "tailwind-merge";
-import { memo } from "react";
 import Image from "next/image";
+import { memo } from "react";
+import { twJoin } from "tailwind-merge";
 
 const AboutImage = () => {
   return (
     <div
-      className={twMerge(
+      className={twJoin(
         "shadow-smooth flex items-center justify-center overflow-hidden rounded-full",
         "border-[6px] border-brightgray dark:border-gray-800"
       )}

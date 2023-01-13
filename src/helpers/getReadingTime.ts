@@ -22,6 +22,5 @@ export const getReadingTime = (content: string) => {
     imageFactor -= 1;
   }
 
-  const minutes: number = Math.ceil(((words - imageAdjust) / wps + imageSecs) / 60);
-  return minutes;
+  return Math.ceil(((words - imageAdjust) / wps + imageSecs) / 60);
 };

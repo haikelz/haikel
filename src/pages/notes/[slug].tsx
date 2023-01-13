@@ -1,9 +1,9 @@
-import { Heading, Paragraph } from "@/atoms";
 import { getNoteFromSlug } from "@/helpers/getNoteFromSlug";
 import { getReadingTime } from "@/helpers/getReadingTime";
 import { getSlugs } from "@/helpers/getSlugs";
 import Layout from "@/templates/Layout";
 import { NotePageProps } from "@/types";
+import { Heading, Paragraph } from "@/ui/typography";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
@@ -13,9 +13,9 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 
-const LazyLoadImage = dynamic(() => import("@/atoms/LazyLoadImage"));
-const AuthorImage = dynamic(() => import("@/atoms/AuthorImage"));
-const Video = dynamic(() => import("@/atoms/Video"));
+const LazyLoadImage = dynamic(() => import("@/ui/images/LazyLoadImage"));
+const AuthorImage = dynamic(() => import("@/ui/images/AuthorImage"));
+const Video = dynamic(() => import("@/ui/mdx/Video"));
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getSlugs().map((slug) => ({ params: { slug } }));

@@ -1,6 +1,6 @@
 import type { NoteMetaProps } from "@/types";
-import { twJoin, twMerge } from "tailwind-merge";
 import Link from "next/link";
+import { twJoin } from "tailwind-merge";
 
 type NotesArticlesProps = {
   filteredNotes: NoteMetaProps[];
@@ -26,7 +26,7 @@ const ListNotes = ({ filteredNotes }: NotesArticlesProps) => {
             <div className="mt-3 flex gap-2 font-medium">
               {note.tags.map((tag) => (
                 <Link
-                  className={twMerge(
+                  className={twJoin(
                     "cursor-pointer bg-celedongreen px-1.5 text-sm text-white",
                     "dark:bg-lightgray dark:text-slate-900"
                   )}

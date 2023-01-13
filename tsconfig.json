@@ -23,17 +23,11 @@
       "@/public/*": [
         "public/*"
       ],
-      "@/atoms": [
-        "components/atoms"
+      "@/ui/*": [
+        "components/ui/*"
       ],
-      "@/atoms/*": [
-        "components/atoms/*"
-      ],
-      "@/molecules/*": [
-        "components/molecules/*"
-      ],
-      "@/organisms/*": [
-        "components/organisms/*"
+      "@/sections/*": [
+        "components/sections/*"
       ],
       "@/templates/*": [
         "components/templates/*"
