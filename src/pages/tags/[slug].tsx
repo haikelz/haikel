@@ -1,6 +1,6 @@
 import { Heading, Underline } from "@/ui/typography";
 import { getAllNotes } from "@/helpers/getAllNotes";
-import ListNotes from "@/ui/list/ListNotes";
+import ListNotes from "@/ui/lists/ListNotes";
 import Layout from "@/templates/Layout";
 import { NoteMetaProps, NoteProps } from "@/types";
 import type { GetStaticPaths, GetStaticProps } from "next";

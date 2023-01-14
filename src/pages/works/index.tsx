@@ -1,5 +1,5 @@
 import { Heading, Paragraph, Underline } from "@/ui/typography";
-import ListWorks from "@/ui/list/ListWorks";
+import ListWorks from "@/ui/lists/ListWorks";
 import Layout from "@/templates/Layout";
 
 const Works = () => {

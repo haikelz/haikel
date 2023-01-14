@@ -13,8 +13,8 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 
-const LazyLoadImage = dynamic(() => import("@/ui/images/LazyLoadImage"));
-const AuthorImage = dynamic(() => import("@/ui/images/AuthorImage"));
+const LazyLoadImage = dynamic(() => import("@/ui/mdx/LazyLoadImage"));
+const AuthorImage = dynamic(() => import("@/ui/mdx/AuthorImage"));
 const Video = dynamic(() => import("@/ui/mdx/Video"));
 
 export const getStaticPaths: GetStaticPaths = async () => {

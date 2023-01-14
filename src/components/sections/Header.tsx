@@ -1,6 +1,6 @@
 import { useTheme } from "@/hooks/useTheme";
 import { ToggleDarkModeHeader, HeaderLogo } from "@/ui/icons";
-import HeaderListItem from "@/ui/list/HeaderListItem";
+import HeaderListItem from "@/ui/lists/HeaderListItem";
 import { twJoin } from "tailwind-merge";
 
 type ChangeTheme = () => void;

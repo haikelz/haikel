@@ -3,7 +3,7 @@ import { matchSearch } from "@/helpers/matchSearch";
 import Layout from "@/templates/Layout";
 import { NoteMetaProps } from "@/types";
 import { SearchBar } from "@/ui/input";
-import ListNotes from "@/ui/list/ListNotes";
+import ListNotes from "@/ui/lists/ListNotes";
 import { Heading, Paragraph, Underline } from "@/ui/typography";
 import { GetStaticProps } from "next";
 import { useMemo, useState } from "react";
