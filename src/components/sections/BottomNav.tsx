@@ -1,6 +1,6 @@
 import { ToggleDarkIcon } from "@/ui/icons";
 import { useTheme } from "@/hooks/useTheme";
-import { bottomNavList } from "@/utils/data";
+import { bottomNavList } from "@/libs/utils/data";
 import Link from "next/link";
 import { NextRouter, useRouter } from "next/router";
 import { IconType } from "react-icons/lib";

@@ -1,4 +1,4 @@
-import { NOTES_PATH } from "@/utils/NOTES_PATH";
+import { NOTES_PATH } from "../utils/NOTES_PATH";
 import { NoteProps } from "@/types";
 import { date } from "./date";
 import path from "path";

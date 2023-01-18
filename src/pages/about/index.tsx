@@ -1,9 +1,9 @@
-import { setLanguage } from "@/helpers/setLanguage";
+import { setLanguage } from "@/libs/helpers/setLanguage";
 import { languageAtom } from "@/store";
 import Layout from "@/templates/Layout";
 import AboutImage from "@/ui/images/AboutImage";
 import { Heading, Paragraph, Underline, UnderlineSpan } from "@/ui/typography";
-import { socialMediaList } from "@/utils/data";
+import { socialMediaList } from "@/libs/utils/data";
 import { useReducerAtom } from "jotai/utils";
 import Link from "next/link";
 import { twJoin } from "tailwind-merge";

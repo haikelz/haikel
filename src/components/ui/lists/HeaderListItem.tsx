@@ -1,4 +1,4 @@
-import { headerList } from "@/utils/data";
+import { headerList } from "@/libs/utils/data";
 import Link from "next/link";
 import { NextRouter, useRouter } from "next/router";
 import { twJoin } from "tailwind-merge";

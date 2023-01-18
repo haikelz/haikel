@@ -1,4 +1,4 @@
-import { currentYear } from "@/helpers/date";
+import { currentYear } from "@/libs/helpers/date";
 import Link from "next/link";
 
 const Footer = () => {

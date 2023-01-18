@@ -1,4 +1,4 @@
-import { imageKitLoader } from "@/helpers/imageKitLoader";
+import { imageKitLoader } from "@/libs/helpers/imageKitLoader";
 import Image from "next/image";
 import { memo } from "react";
 

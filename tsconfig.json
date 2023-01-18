@@ -32,23 +32,20 @@
       "@/templates/*": [
         "components/templates/*"
       ],
-      "@/helpers/*": [
-        "helpers/*"
+      "@/libs/*": [
+        "libs/*"
       ],
       "@/hooks/*": [
         "hooks/*"
       ],
-      "@/pages/*": [
-        "pages/*"
-      ],
       "@/store": [
         "store"
       ],
+      "@/pages/*": [
+        "pages/*"
+      ],
       "@/styles/*": [
         "styles/*"
-      ],
-      "@/utils/*": [
-        "utils/*"
       ],
       "@/types": [
         "types"

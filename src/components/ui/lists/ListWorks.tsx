@@ -1,6 +1,6 @@
 import { GithubIcon, PreviewIcon } from "@/ui/icons";
 import { Paragraph } from "@/ui/typography";
-import { projectsList } from "@/utils/data";
+import { projectsList } from "@/libs/utils/data";
 import { twJoin } from "tailwind-merge";
 
 const ListWorks = () => {

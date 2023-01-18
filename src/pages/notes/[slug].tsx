@@ -1,6 +1,6 @@
-import { getNoteFromSlug } from "@/helpers/getNoteFromSlug";
-import { getReadingTime } from "@/helpers/getReadingTime";
-import { getSlugs } from "@/helpers/getSlugs";
+import { getNoteFromSlug } from "@/libs/helpers/getNoteFromSlug";
+import { getReadingTime } from "@/libs/helpers/getReadingTime";
+import { getSlugs } from "@/libs/helpers/getSlugs";
 import Layout from "@/templates/Layout";
 import { NotePageProps } from "@/types";
 import { Heading, Paragraph } from "@/ui/typography";
