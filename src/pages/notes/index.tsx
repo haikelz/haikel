@@ -5,7 +5,7 @@ import { NoteMetaProps } from "@/types";
 import { SearchBar } from "@/ui/input";
 import ListNotes from "@/ui/lists/ListNotes";
 import { Heading, Paragraph, Underline } from "@/ui/typography";
-import { GetStaticProps } from "next";
+import type { GetStaticProps } from "next";
 import { useMemo, useState } from "react";
 
 type NotesProps = {

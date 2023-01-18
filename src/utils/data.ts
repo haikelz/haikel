@@ -2,11 +2,8 @@ import { MdAccountCircle, MdHomeFilled, MdLibraryBooks, MdWork } from "react-ico
 
 const tailwind: string = "tailwindcss";
 const next: string = "nextjs";
-const chakra: string = "chakra-ui";
 const reactQuery: string = "react-query";
-const jotai: string = "jotai";
 const motion: string = "framer-motion";
-const swr: string = "swr";
 const svelte: string = "svelte";
 
 export const projectsList = [
