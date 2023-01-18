@@ -1,5 +1,5 @@
-import { Heading, Paragraph } from "@/ui/typography";
 import Layout from "@/templates/Layout";
+import { Heading, Paragraph } from "@/ui/typography";
 import { twJoin } from "tailwind-merge";
 
 const Home = () => {

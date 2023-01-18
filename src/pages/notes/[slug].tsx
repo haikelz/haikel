@@ -57,7 +57,7 @@ const NotePage = ({ note }: NotePageProps) => {
       description={note.meta.preview}
       className="flex min-h-screen flex-col items-center justify-center pt-6 pb-12 md:pt-24"
     >
-      <div className="flex w-full flex-col flex-wrap justify-center md:mb-10">
+      <article className="flex w-full flex-col flex-wrap justify-center md:mb-10">
         <div className="flex flex-col">
           <Heading as="h1" className="gradient">
             {note.meta.title}
@@ -76,7 +76,7 @@ const NotePage = ({ note }: NotePageProps) => {
           </p>
           <MDXRemote {...note.source} components={{ Video, LazyLoadImage }} />
         </div>
-      </div>
+      </article>
     </Layout>
   );
 };

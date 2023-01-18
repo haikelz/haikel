@@ -20,10 +20,10 @@ module.exports = {
         raisinblack: "#1F1F28",
       },
       fontFamily: {
-        japanese: "Noto Sans Japanese",
-        body: "Rubik",
-        code: "JetBrains Mono",
         arabic: "Noto Naskh Arabic",
+        japanese: "Noto Sans Japanese",
+        jetbrains: "JetBrains Mono",
+        rubik: "Rubik",
       },
       typography: ({ theme }) => {
         return {

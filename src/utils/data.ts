@@ -85,7 +85,7 @@ export const bottomNavList = [
   { name: "Notes", icon: MdLibraryBooks, link: "/notes" },
 ];
 
-export const MetaData = {
+export const metadata = {
   url: "https://haikel.my.id",
   type: "website",
   title: "Haikel",
