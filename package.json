@@ -8,7 +8,7 @@
     "export": "next export",
     "lint": "next lint",
     "prepare": "husky install",
-    "cmt": "cz",
+    "commit": "cz",
     "build": "next build"
   },
   "dependencies": {

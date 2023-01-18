@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Haikel's Website</h1>
+  <h1>haikel.my.id</h1>
   <p>Yup, just another Website that you found on internet</p>
 </div>
 
