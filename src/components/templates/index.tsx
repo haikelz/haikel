@@ -8,7 +8,7 @@ const Template = ({ children }: ChildrenProps) => {
   return (
     <div
       className={twJoin(
-        "min-h-screen w-full bg-brightgray bg-fixed bg-center",
+        "min-h-screen w-full bg-azure bg-fixed bg-center",
         "dark:bg-eerieblack dark:text-gray-100"
       )}
     >

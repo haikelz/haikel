@@ -35,14 +35,6 @@ export const projectsList = [
     stack2: motion,
   },
   {
-    h4: "Kumpulan Do'a",
-    p: "Kumpulan do'a sehari-hari",
-    repo: "https://github.com/haikelz/kumpulan-doa",
-    preview: "https://kumpulan-doa.pages.dev/",
-    stack1: next,
-    stack2: chakra,
-  },
-  {
     h4: "Animeow",
     p: "A website to search your favorite anime, and manga",
     repo: "https://github.com/haikelz/animeow",
@@ -51,12 +43,12 @@ export const projectsList = [
     stack2: reactQuery,
   },
   {
-    h4: "Reddit Posts",
-    p: "A website to get Posts from Reddit(mostly memes)",
-    repo: "https://github.com/haikelz/reddit-posts",
-    preview: "https://reddit-posts.netlify.app/",
+    h4: "Beritakan",
+    p: "A website to get news from various resources",
+    repo: "https://github.com/haikelz/beritakan",
+    preview: "https://beritakan.vercel.app/",
     stack1: next,
-    stack2: tailwind,
+    stack2: reactQuery,
   },
   {
     h4: "Wakaranai",
@@ -66,12 +58,20 @@ export const projectsList = [
     stack1: svelte,
     stack2: tailwind,
   },
+  {
+    h4: "Vite Starter",
+    p: "Another Vite Starter for React JS",
+    repo: "https://github.com/haikelz/vite-starter",
+    preview: "https://vite-starter-gamma.vercel.app/",
+    stack1: "React JS",
+    stack2: "Vite",
+  },
 ];
 
 export const headerList = [
-  { id: "a", text: "About", href: "/about" },
-  { id: "b", text: "Works", href: "/works" },
-  { id: "c", text: "Notes", href: "/notes" },
+  { id: "a", text: "/about", href: "/about" },
+  { id: "b", text: "/works", href: "/works" },
+  { id: "c", text: "/notes", href: "/notes" },
 ];
 
 export const socialMediaList = [

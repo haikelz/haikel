@@ -12,8 +12,9 @@ const ListNotes = ({ filteredNotes }: NotesArticlesProps) => {
       {filteredNotes.map((note) => (
         <div
           className={twJoin(
-            "overflow-hidden border-[2.5px] border-black",
-            "bg-antiflashwhite transition-all ease-in-out hover:shadow-light active:scale-95",
+            "overflow-hidden border-[2.5px]",
+            "border-black bg-azure transition-all ease-in-out",
+            "hover:shadow-light active:scale-95",
             "dark:border-white dark:bg-raisinblack dark:hover:shadow-dark"
           )}
           key={note.slug}

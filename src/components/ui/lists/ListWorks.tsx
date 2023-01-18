@@ -1,8 +1,7 @@
+import { GithubIcon, PreviewIcon } from "@/ui/icons";
+import { Paragraph } from "@/ui/typography";
 import { projectsList } from "@/utils/data";
 import { twJoin } from "tailwind-merge";
-import { GithubIcon } from "../icons/GithubIcon";
-import { PreviewIcon } from "../icons/PreviewIcon";
-import { Paragraph } from "../typography";
 
 const ListWorks = () => {
   return (
@@ -10,8 +9,9 @@ const ListWorks = () => {
       {projectsList.map((work, index) => (
         <div
           className={twJoin(
-            "cursor-pointer overflow-hidden border-[2.5px] border-black",
-            "bg-antiflashwhite transition-all ease-in-out hover:shadow-light active:scale-95",
+            "cursor-pointer overflow-hidden border-[2.5px]",
+            "border-black bg-azure transition-all ease-in-out",
+            "hover:shadow-light active:scale-95",
             "dark:border-white dark:bg-raisinblack dark:hover:shadow-dark"
           )}
           key={index + 1}

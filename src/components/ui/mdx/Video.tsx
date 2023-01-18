@@ -7,7 +7,7 @@ type VideoProps = {
 
 const Video = ({ title, src }: VideoProps) => {
   return (
-    <div className="relative my-4 h-0 max-w-full overflow-hidden pb-[56.25%]">
+    <div className="relative my-4 h-0 max-w-full overflow-hidden rounded-sm pb-[56.25%]">
       <iframe
         src={src}
         title={title}

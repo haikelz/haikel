@@ -21,7 +21,7 @@ const BottomNav = () => {
       <div
         className={twJoin(
           "grid w-full grid-cols-5 grid-rows-1 border-t border-slate-300",
-          "bg-antiflashwhite p-4 dark:border-slate-600 dark:bg-eerieblack"
+          "bg-azure p-4 dark:border-slate-600 dark:bg-eerieblack"
         )}
       >
         {bottomNavList.map((item, index) => {

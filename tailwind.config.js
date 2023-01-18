@@ -10,13 +10,14 @@ module.exports = {
       },
       colors: {
         antiflashwhite: "#F1F5F9",
-        eerieblack: "#16161D",
-        raisinblack: "#1F1F28",
-        fireopal: "#F05454",
+        azure: "#EFFFFD",
+        brightgray: "#ECEFF4",
         crayola: "#2563EB",
         celedongreen: "#247881",
+        eerieblack: "#16161D",
+        fireopal: "#F05454",
         lightgray: "#D1D9D0",
-        brightgray: "#ECEFF4",
+        raisinblack: "#1F1F28",
       },
       fontFamily: {
         japanese: "Noto Sans Japanese",

@@ -10,14 +10,16 @@ const Header = () => {
   const changeTheme: ChangeTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
   return (
-    <header className="fixed top-3 z-10 hidden w-full dark:text-white md:block">
-      <nav className="mx-auto w-full max-w-5xl px-4 text-sm">
-        <div
-          className={twJoin(
-            "shadow-smooth onscroll flex h-12 w-full items-center justify-between",
-            "rounded-sm bg-white/80 px-4 dark:bg-[#252535]/70"
-          )}
-        >
+    <header
+      className={twJoin(
+        "onscroll fixed z-10 hidden w-full border-b-2",
+        "border-b-gray-200 bg-azure/90 py-2",
+        "dark:border-b-gray-500 dark:bg-eerieblack/90 dark:text-white",
+        "md:block"
+      )}
+    >
+      <nav className="mx-auto w-full max-w-5xl px-4">
+        <div className="flex w-full items-center justify-between">
           <HeaderLogo />
           <div className="flex items-center justify-center">
             <div className="hidden md:block">
