@@ -23,7 +23,8 @@ module.exports = {
         arabic: "Noto Naskh Arabic",
         japanese: "Noto Sans Japanese",
         jetbrains: "JetBrains Mono",
-        rubik: "Rubik",
+        ibm: "IBM Plex Serif",
+        grotesk: "Space Grotesk",
       },
       typography: ({ theme }) => {
         return {

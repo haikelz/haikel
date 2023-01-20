@@ -1,6 +1,6 @@
 import { GithubIcon, PreviewIcon } from "@/ui/icons";
 import { Paragraph } from "@/ui/typography";
-import { projectsList } from "@/libs/utils/data";
+import { projectsList } from "@/lib/utils/data";
 import { twJoin } from "tailwind-merge";
 
 const ListWorks = () => {
@@ -21,7 +21,7 @@ const ListWorks = () => {
             <Paragraph className="mb-2" isCenter={false}>
               {work.p}
             </Paragraph>
-            <div className="mt-3 flex gap-2 font-medium">
+            <div className="mt-3 flex space-x-2 font-grotesk font-medium">
               <span
                 className={twJoin(
                   "bg-celedongreen px-1.5 text-sm text-white",

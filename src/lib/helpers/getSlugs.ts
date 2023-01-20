@@ -1,5 +1,5 @@
 import { sync } from "glob";
-import { NOTES_PATH } from "@/libs/utils/NOTES_PATH";
+import { NOTES_PATH } from "@/lib/utils/NOTES_PATH";
 
 export const getSlugs = (): string[] => {
   const paths: string[] = sync(`${NOTES_PATH}/*.mdx`);

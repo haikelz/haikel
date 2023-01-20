@@ -1,6 +1,6 @@
-import { getNoteFromSlug } from "@/libs/helpers/getNoteFromSlug";
-import { getReadingTime } from "@/libs/helpers/getReadingTime";
-import { getSlugs } from "@/libs/helpers/getSlugs";
+import { getNoteFromSlug } from "@/lib/helpers/getNoteFromSlug";
+import { getReadingTime } from "@/lib/helpers/getReadingTime";
+import { getSlugs } from "@/lib/helpers/getSlugs";
 import Layout from "@/templates/Layout";
 import { NotePageProps } from "@/types";
 import { Heading, Paragraph } from "@/ui/typography";
@@ -64,7 +64,7 @@ const NotePage = ({ note }: NotePageProps) => {
           </Heading>
           <div className="my-3 flex items-center">
             <AuthorImage />
-            <Paragraph className="" isCenter={false}>
+            <Paragraph className="font-grotesk" isCenter={false}>
               <span className="font-semibold">{note.meta.author}</span>,{" "}
               <span className="font-semibold">{readingTime} Min read</span> / {note.meta.date}
             </Paragraph>

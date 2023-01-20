@@ -32,8 +32,8 @@
       "@/templates/*": [
         "components/templates/*"
       ],
-      "@/libs/*": [
-        "libs/*"
+      "@/lib/*": [
+        "lib/*"
       ],
       "@/hooks/*": [
         "hooks/*"

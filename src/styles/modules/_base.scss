@@ -3,9 +3,19 @@
     @apply scroll-smooth;
 
     body {
-      @apply m-0 font-rubik;
+      margin: 0;
+      font-family: "IBM Plex Serif", sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Space Grotesk", sans-serif;
+      }
 
       button,
       input {

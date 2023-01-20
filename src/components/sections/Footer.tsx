@@ -1,9 +1,9 @@
-import { currentYear } from "@/libs/helpers/date";
+import { currentYear } from "@/lib/helpers/date";
 import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="pb-4 text-center tracking-widest md:mb-0">
+    <footer className="pb-4 text-center font-grotesk tracking-widest md:mb-0">
       <div>
         <p className="pb-1 text-sm font-semibold">2020-{currentYear} Haikel</p>
         <p className="text-sm font-semibold">

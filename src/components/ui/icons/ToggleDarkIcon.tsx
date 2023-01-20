@@ -1,5 +1,5 @@
+import { darkModeIconAnimation, whileTap } from "@/lib/utils/animation";
 import { ThemeProps } from "@/types";
-import { darkModeIconAnimation, whileTap } from "@/libs/utils/animation";
 import { domAnimation, LazyMotion, m } from "framer-motion";
 import { memo } from "react";
 
