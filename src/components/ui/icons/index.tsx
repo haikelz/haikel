@@ -1,5 +1,5 @@
 export * from "./GithubIcon";
-export * from "./HeaderLogo";
+export * from "./TopNavLogo";
 export * from "./PreviewIcon";
 export * from "./ToggleDarkIcon";
-export * from "./ToggleDarkModeHeader";
+export * from "./ToggleDarkModeTopNav";

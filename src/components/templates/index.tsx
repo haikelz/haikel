@@ -1,6 +1,6 @@
 import BottomNav from "@/sections/BottomNav";
 import Footer from "@/sections/Footer";
-import Header from "@/sections/Header";
+import TopNav from "@/sections/TopNav";
 import { ChildrenProps } from "@/types";
 import { twJoin } from "tailwind-merge";
 
@@ -12,7 +12,7 @@ const Template = ({ children }: ChildrenProps) => {
         "dark:bg-eerieblack dark:text-gray-100"
       )}
     >
-      <Header />
+      <TopNav />
       {children}
       <Footer />
       <BottomNav />

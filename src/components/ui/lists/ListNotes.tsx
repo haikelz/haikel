@@ -1,7 +1,7 @@
 import type { NoteMetaProps } from "@/types";
 import Link from "next/link";
 import { twJoin } from "tailwind-merge";
-import { Paragraph } from "../typography";
+import { Heading, Paragraph } from "../typography";
 
 type NotesArticlesProps = {
   filteredNotes: NoteMetaProps[];
@@ -22,7 +22,9 @@ const ListNotes = ({ filteredNotes }: NotesArticlesProps) => {
         >
           <div className="h-full px-6 pb-6 pt-3">
             <Link href={`/notes/${note.slug}`} passHref>
-              <h4 className="mt-2 mb-2 cursor-pointer text-xl font-bold">{note.title}</h4>
+              <Heading as="h4" className="mt-2 mb-2 cursor-pointer">
+                {note.title}
+              </Heading>
             </Link>
             <Paragraph className="mb-2 tracking-wide">{note.preview}</Paragraph>
             <div className="mt-3 flex space-x-2 font-grotesk font-medium">

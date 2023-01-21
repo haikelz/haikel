@@ -12,9 +12,9 @@ const HeaderListItem = () => {
         <Link
           className={twJoin(
             "undeline cursor-pointer rounded-sm",
-            "font-grotesk text-base font-semibold duration-200 active:bg-yellow-300 active:dark:bg-slate-800",
+            "px-1 font-grotesk text-base font-semibold active:bg-pink-100 active:dark:bg-slate-800",
             router.asPath === nav.href
-              ? "gradient underline decoration-[#0093E9] decoration-dashed underline-offset-[5px] duration-200 active:bg-yellow-300"
+              ? "gradient underline decoration-[#0093E9] decoration-dashed underline-offset-[5px]"
               : ""
           )}
           href={nav.href}

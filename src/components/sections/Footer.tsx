@@ -1,5 +1,6 @@
 import { currentYear } from "@/lib/helpers/date";
 import Link from "next/link";
+import { twJoin } from "tailwind-merge";
 
 const Footer = () => {
   return (
@@ -10,7 +11,10 @@ const Footer = () => {
           This Website is under{" "}
           <Link
             href="https://github.com/haikelz/website/blob/master/LICENSE"
-            className="font-bold hover:text-crayola"
+            className={twJoin(
+              "font-bold underline decoration-black decoration-dashed",
+              "underline-offset-[5px] hover:text-crayola hover:decoration-crayola"
+            )}
             passHref
           >
             MIT License

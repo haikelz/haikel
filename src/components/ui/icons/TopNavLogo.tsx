@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export const HeaderLogo = () => {
+export const TopNavLogo = () => {
   return (
     <div className="gradient -rotate-6">
       <Link

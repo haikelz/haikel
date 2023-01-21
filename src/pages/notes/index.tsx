@@ -7,6 +7,7 @@ import ListNotes from "@/ui/lists/ListNotes";
 import { Heading, Paragraph, Underline } from "@/ui/typography";
 import type { GetStaticProps } from "next";
 import { useMemo, useState } from "react";
+import { twJoin } from "tailwind-merge";
 
 type NotesProps = {
   notes: NoteMetaProps[];
@@ -14,7 +15,7 @@ type NotesProps = {
 
 export const getStaticProps: GetStaticProps = async () => {
   const notes: NoteMetaProps[] = getAllNotes()
-    .slice(0, 9)
+    .slice(0, getAllNotes().length)
     .map((note) => note.meta);
 
   return {
@@ -44,7 +45,11 @@ const Notes = ({ notes }: NotesProps) => {
     <Layout
       title="Notes"
       description="Sometimes i write something, mostly about Linux, Web, and life. So yeah, i call this as Notes."
-      className="flex min-h-screen flex-col items-center justify-start pt-6 pb-6 md:pb-12 md:pt-24"
+      className={twJoin(
+        "flex min-h-screen",
+        "flex-col items-center justify-start",
+        "pt-6 pb-6 md:pb-12 md:pt-24"
+      )}
     >
       <div className="flex w-full flex-wrap items-center justify-center">
         <div className="flex flex-col items-center justify-center">

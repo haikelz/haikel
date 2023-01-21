@@ -1,11 +1,11 @@
 import { useTheme } from "@/hooks/useTheme";
-import { HeaderLogo, ToggleDarkModeHeader } from "@/ui/icons";
+import { TopNavLogo, ToggleDarkModeTopNav } from "@/ui/icons";
 import HeaderListItem from "@/ui/lists/HeaderListItem";
 import { twJoin } from "tailwind-merge";
 
 type ChangeTheme = () => void;
 
-const Header = () => {
+const TopNav = () => {
   const [theme, setTheme] = useTheme();
   const changeTheme: ChangeTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
@@ -19,12 +19,12 @@ const Header = () => {
       )}
     >
       <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-4">
-        <HeaderLogo />
+        <TopNavLogo />
         <div className="flex items-center justify-center">
           <div className="hidden md:block">
             <div className="ml-8 flex space-x-10 tracking-widest">
               <HeaderListItem />
-              <ToggleDarkModeHeader theme={theme} changeTheme={changeTheme} />
+              <ToggleDarkModeTopNav theme={theme} changeTheme={changeTheme} />
             </div>
           </div>
         </div>
@@ -33,4 +33,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default TopNav;
