@@ -65,7 +65,7 @@ export const projectsList = [
   },
 ];
 
-export const headerList = [
+export const topNavList = [
   { id: "a", text: "/about", href: "/about" },
   { id: "b", text: "/works", href: "/works" },
   { id: "c", text: "/notes", href: "/notes" },

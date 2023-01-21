@@ -1,14 +1,14 @@
-import { headerList } from "@/lib/utils/data";
+import { topNavList } from "@/lib/utils/data";
 import Link from "next/link";
 import { NextRouter, useRouter } from "next/router";
 import { twJoin } from "tailwind-merge";
 
-const HeaderListItem = () => {
+const TopNavListItem = () => {
   const router: NextRouter = useRouter();
 
   return (
     <>
-      {headerList.map((nav) => (
+      {topNavList.map((nav) => (
         <Link
           className={twJoin(
             "undeline cursor-pointer rounded-sm",
@@ -28,4 +28,4 @@ const HeaderListItem = () => {
   );
 };
 
-export default HeaderListItem;
+export default TopNavListItem;

@@ -1,6 +1,6 @@
 import { useTheme } from "@/hooks/useTheme";
-import { TopNavLogo, ToggleDarkModeTopNav } from "@/ui/icons";
-import HeaderListItem from "@/ui/lists/HeaderListItem";
+import { ToggleDarkModeTopNav, TopNavLogo } from "@/ui/icons";
+import TopNavListItem from "@/ui/lists/TopNavListItem";
 import { twJoin } from "tailwind-merge";
 
 type ChangeTheme = () => void;
@@ -23,7 +23,7 @@ const TopNav = () => {
         <div className="flex items-center justify-center">
           <div className="hidden md:block">
             <div className="ml-8 flex space-x-10 tracking-widest">
-              <HeaderListItem />
+              <TopNavListItem />
               <ToggleDarkModeTopNav theme={theme} changeTheme={changeTheme} />
             </div>
           </div>
