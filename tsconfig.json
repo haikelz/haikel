@@ -29,9 +29,6 @@
       "@/sections/*": [
         "components/sections/*"
       ],
-      "@/templates/*": [
-        "components/templates/*"
-      ],
       "@/lib/*": [
         "lib/*"
       ],

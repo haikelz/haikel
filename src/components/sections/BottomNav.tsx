@@ -1,6 +1,6 @@
-import { ToggleDarkIcon } from "@/ui/icons";
 import { useTheme } from "@/hooks/useTheme";
 import { bottomNavList } from "@/lib/utils/data";
+import { ToggleDarkIcon } from "@/ui/icons";
 import Link from "next/link";
 import { NextRouter, useRouter } from "next/router";
 import { IconType } from "react-icons/lib";
@@ -9,7 +9,6 @@ import { twJoin } from "tailwind-merge";
 const BottomNav = () => {
   const [theme, setTheme] = useTheme();
   const router: NextRouter = useRouter();
-  const changeTheme: () => void = () => setTheme(theme === "dark" ? "light" : "dark");
 
   return (
     <nav
@@ -42,7 +41,10 @@ const BottomNav = () => {
             </div>
           );
         })}
-        <ToggleDarkIcon theme={theme} changeTheme={changeTheme} />
+        <ToggleDarkIcon
+          theme={theme}
+          changeTheme={() => setTheme(theme === "dark" ? "light" : "dark")}
+        />
       </div>
     </nav>
   );

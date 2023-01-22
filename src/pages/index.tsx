@@ -1,4 +1,4 @@
-import Layout from "@/templates/Layout";
+import Layout from "@/ui/templates/Layout";
 import { Heading, Paragraph } from "@/ui/typography";
 import { twJoin } from "tailwind-merge";
 

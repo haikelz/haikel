@@ -1,6 +1,6 @@
 import { setLanguage } from "@/lib/helpers/setLanguage";
 import { languageAtom } from "@/store";
-import Layout from "@/templates/Layout";
+import Layout from "@/ui/templates/Layout";
 import AboutImage from "@/ui/images/AboutImage";
 import { Heading, Paragraph, Underline, UnderlineSpan } from "@/ui/typography";
 import { socialMediaList } from "@/lib/utils/data";

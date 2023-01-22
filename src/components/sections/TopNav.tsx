@@ -3,11 +3,8 @@ import { ToggleDarkModeTopNav, TopNavLogo } from "@/ui/icons";
 import TopNavListItem from "@/ui/lists/TopNavListItem";
 import { twJoin } from "tailwind-merge";
 
-type ChangeTheme = () => void;
-
 const TopNav = () => {
   const [theme, setTheme] = useTheme();
-  const changeTheme: ChangeTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
   return (
     <nav
@@ -24,7 +21,10 @@ const TopNav = () => {
           <div className="hidden md:block">
             <div className="ml-8 flex space-x-10 tracking-widest">
               <TopNavListItem />
-              <ToggleDarkModeTopNav theme={theme} changeTheme={changeTheme} />
+              <ToggleDarkModeTopNav
+                theme={theme}
+                changeTheme={() => setTheme(theme === "dark" ? "light" : "dark")}
+              />
             </div>
           </div>
         </div>

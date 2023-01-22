@@ -80,8 +80,7 @@ module.exports = {
                 },
               },
               a: {
-                textUnderlineOffset: "3px",
-                textDecorationThickness: "2px",
+                textUnderlineOffset: "5px",
                 textDecorationStyle: "dashed",
               },
             },

@@ -13,7 +13,8 @@ const Footer = () => {
             href="https://github.com/haikelz/website/blob/master/LICENSE"
             className={twJoin(
               "font-bold underline decoration-black decoration-dashed",
-              "underline-offset-[5px] hover:text-crayola hover:decoration-crayola"
+              "underline-offset-[5px] hover:text-crayola hover:decoration-crayola",
+              "dark:decoration-white dark:hover:decoration-crayola"
             )}
             passHref
           >

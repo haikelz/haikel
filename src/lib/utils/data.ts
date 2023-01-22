@@ -60,8 +60,8 @@ export const projectsList = [
     p: "Another Vite Starter for React JS",
     repo: "https://github.com/haikelz/vite-starter",
     preview: "https://vite-starter-gamma.vercel.app/",
-    stack1: "React JS",
-    stack2: "Vite",
+    stack1: "reactjs",
+    stack2: "vite",
   },
 ];
 

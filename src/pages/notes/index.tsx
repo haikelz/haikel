@@ -1,6 +1,6 @@
 import { getAllNotes } from "@/lib/helpers/getAllNotes";
 import { matchSearch } from "@/lib/helpers/matchSearch";
-import Layout from "@/templates/Layout";
+import Layout from "@/ui/templates/Layout";
 import { NoteMetaProps } from "@/types";
 import { SearchBar } from "@/ui/input";
 import ListNotes from "@/ui/lists/ListNotes";
