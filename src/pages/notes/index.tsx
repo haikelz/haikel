@@ -1,9 +1,9 @@
 import { getAllNotes } from "@/lib/helpers/getAllNotes";
 import { matchSearch } from "@/lib/helpers/matchSearch";
-import Layout from "@/ui/templates/Layout";
 import { NoteMetaProps } from "@/types";
 import { SearchBar } from "@/ui/input";
 import ListNotes from "@/ui/lists/ListNotes";
+import Layout from "@/ui/templates/Layout";
 import { Heading, Paragraph, Underline } from "@/ui/typography";
 import type { GetStaticProps } from "next";
 import { useMemo, useState } from "react";

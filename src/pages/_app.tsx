@@ -1,7 +1,7 @@
+import { appAnimation } from "@/lib/utils/animation";
 import { mountedAtom } from "@/store";
 import "@/styles/index.scss";
 import Template from "@/ui/templates/index";
-import { appAnimation } from "@/lib/utils/animation";
 import { AnimatePresence, domAnimation, LazyMotion, m } from "framer-motion";
 import { Provider, useAtom } from "jotai";
 import type { AppProps } from "next/app";
