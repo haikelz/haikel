@@ -1,7 +1,8 @@
+import { spaceGrotesk } from "@/lib/helpers/fonts";
+import { projectsList } from "@/lib/utils/data";
 import { GithubIcon, PreviewIcon } from "@/ui/icons";
 import { Paragraph } from "@/ui/typography";
-import { projectsList } from "@/lib/utils/data";
-import { twJoin } from "tailwind-merge";
+import { twJoin, twMerge } from "tailwind-merge";
 
 const ListWorks = () => {
   return (
@@ -21,7 +22,7 @@ const ListWorks = () => {
             <Paragraph className="mb-2" isCenter={false}>
               {work.p}
             </Paragraph>
-            <div className="mt-3 flex space-x-2 font-grotesk font-medium">
+            <div className={twMerge("mt-3 flex space-x-2 font-medium", spaceGrotesk.className)}>
               <span
                 className={twJoin(
                   "bg-celedongreen px-1.5 text-sm text-white",

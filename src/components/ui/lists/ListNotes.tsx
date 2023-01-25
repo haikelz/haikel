@@ -1,6 +1,7 @@
+import { spaceGrotesk } from "@/lib/helpers/fonts";
 import type { NoteMetaProps } from "@/types";
 import Link from "next/link";
-import { twJoin } from "tailwind-merge";
+import { twJoin, twMerge } from "tailwind-merge";
 import { Heading, Paragraph } from "../typography";
 
 type NotesArticlesProps = {
@@ -27,7 +28,7 @@ const ListNotes = ({ filteredNotes }: NotesArticlesProps) => {
               </Heading>
             </Link>
             <Paragraph className="mb-2 tracking-wide">{note.preview}</Paragraph>
-            <div className="mt-3 flex space-x-2 font-grotesk font-medium">
+            <div className={twMerge("mt-3 flex space-x-2 font-medium", spaceGrotesk.className)}>
               {note.tags.map((tag) => (
                 <Link
                   className={twJoin(
@@ -41,7 +42,9 @@ const ListNotes = ({ filteredNotes }: NotesArticlesProps) => {
                 </Link>
               ))}
             </div>
-            <Paragraph className="mt-2 text-right font-grotesk font-medium">{note.date}</Paragraph>
+            <Paragraph className={twMerge("mt-2 text-right font-medium", spaceGrotesk.className)}>
+              {note.date}
+            </Paragraph>
           </div>
         </div>
       ))}

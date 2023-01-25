@@ -1,9 +1,4 @@
 @layer utilities {
-  .prose pre,
-  pre code {
-    @apply font-jetbrains;
-  }
-
   .prose img {
     @apply w-full rounded-sm;
   }

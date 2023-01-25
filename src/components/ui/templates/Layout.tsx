@@ -1,6 +1,6 @@
-import Seo from "./Seo";
 import { ChildrenProps, SeoProps } from "@/types";
 import { twMerge } from "tailwind-merge";
+import Seo from "./Seo";
 
 type LayoutProps = ChildrenProps &
   SeoProps & {

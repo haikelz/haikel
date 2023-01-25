@@ -1,8 +1,9 @@
+import { naskhArabic, spaceGrotesk } from "@/lib/helpers/fonts";
 import { getNoteFromSlug } from "@/lib/helpers/getNoteFromSlug";
 import { getReadingTime } from "@/lib/helpers/getReadingTime";
 import { getSlugs } from "@/lib/helpers/getSlugs";
-import Layout from "@/ui/templates/Layout";
 import { NotePageProps } from "@/types";
+import Layout from "@/ui/templates/Layout";
 import { Heading, Paragraph } from "@/ui/typography";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote } from "next-mdx-remote";
@@ -12,6 +13,7 @@ import { useMemo } from "react";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
+import { twMerge } from "tailwind-merge";
 
 const LazyLoadImage = dynamic(() => import("@/ui/mdx/LazyLoadImage"));
 const AuthorImage = dynamic(() => import("@/ui/mdx/AuthorImage"));
@@ -64,14 +66,14 @@ const NotePage = ({ note }: NotePageProps) => {
           </Heading>
           <div className="my-3 flex items-center">
             <AuthorImage />
-            <Paragraph className="font-grotesk" isCenter={false}>
+            <Paragraph className={spaceGrotesk.className} isCenter={false}>
               <span className="font-semibold">{note.meta.author}</span>,{" "}
               <span className="font-semibold">{readingTime} Min read</span> / {note.meta.date}
             </Paragraph>
           </div>
         </div>
         <div className="prose prose-slate mt-6 w-full max-w-full dark:prose-invert lg:prose-lg">
-          <p className="text-right font-arabic text-2xl font-bold">
+          <p className={twMerge("text-right text-2xl font-bold", naskhArabic.className)}>
             بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
           </p>
           <MDXRemote {...note.source} components={{ Video, LazyLoadImage }} />

@@ -1,3 +1,4 @@
+import { ibmPlexSerif, jetbrains, spaceGrotesk } from "@/lib/helpers/fonts";
 import BottomNav from "@/sections/BottomNav";
 import Footer from "@/sections/Footer";
 import TopNav from "@/sections/TopNav";
@@ -6,17 +7,38 @@ import { twJoin } from "tailwind-merge";
 
 const Template = ({ children }: ChildrenProps) => {
   return (
-    <div
-      className={twJoin(
-        "min-h-screen w-full bg-azure bg-fixed bg-center",
-        "dark:bg-eerieblack dark:text-gray-100"
-      )}
-    >
-      <TopNav />
-      {children}
-      <Footer />
-      <BottomNav />
-    </div>
+    <>
+      <style jsx global>{`
+        body {
+          font-family: ${ibmPlexSerif.style.fontFamily};
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-family: ${spaceGrotesk.style.fontFamily};
+        }
+
+        .prose pre,
+        pre code {
+          font-family: ${jetbrains.style.fontFamily};
+        }
+      `}</style>
+      <div
+        className={twJoin(
+          "min-h-screen w-full bg-azure bg-fixed bg-center",
+          "dark:bg-eerieblack dark:text-gray-100"
+        )}
+      >
+        <TopNav />
+        {children}
+        <Footer />
+        <BottomNav />
+      </div>
+    </>
   );
 };
 

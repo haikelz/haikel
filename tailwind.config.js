@@ -19,13 +19,6 @@ module.exports = {
         lightgray: "#D1D9D0",
         raisinblack: "#1F1F28",
       },
-      fontFamily: {
-        arabic: "Noto Naskh Arabic",
-        japanese: "Noto Sans Japanese",
-        jetbrains: "JetBrains Mono",
-        ibm: "IBM Plex Serif",
-        grotesk: "Space Grotesk",
-      },
       typography: ({ theme }) => {
         return {
           DEFAULT: {
