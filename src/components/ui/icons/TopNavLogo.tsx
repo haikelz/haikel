@@ -1,4 +1,4 @@
-import { japanese } from "@/lib/helpers/fonts";
+import { japanese } from "@/lib/utils/fonts";
 import Link from "next/link";
 import { twMerge } from "tailwind-merge";
 

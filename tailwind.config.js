@@ -75,6 +75,11 @@ module.exports = {
               a: {
                 textUnderlineOffset: "5px",
                 textDecorationStyle: "dashed",
+                "&:hover": {
+                  // hover:text-crayola hover:decoration-crayola
+                  color: "#2563EB",
+                  textDecorationColor: "#2563EB",
+                },
               },
             },
           },

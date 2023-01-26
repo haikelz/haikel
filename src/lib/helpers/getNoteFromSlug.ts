@@ -1,9 +1,9 @@
-import { NOTES_PATH } from "../utils/NOTES_PATH";
 import { NoteProps } from "@/types";
-import { date } from "./date";
-import path from "path";
-import matter from "gray-matter";
 import fs from "fs";
+import matter from "gray-matter";
+import path from "path";
+import { NOTES_PATH } from "../utils/NOTES_PATH";
+import { date } from "./date";
 
 export const getNoteFromSlug = (slug: string): NoteProps => {
   const notePath: string = path.join(NOTES_PATH, `${slug}.mdx`);

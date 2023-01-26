@@ -1,7 +1,7 @@
-import { naskhArabic, spaceGrotesk } from "@/lib/helpers/fonts";
 import { getNoteFromSlug } from "@/lib/helpers/getNoteFromSlug";
 import { getReadingTime } from "@/lib/helpers/getReadingTime";
 import { getSlugs } from "@/lib/helpers/getSlugs";
+import { naskhArabic, spaceGrotesk } from "@/lib/utils/fonts";
 import { NotePageProps } from "@/types";
 import Layout from "@/ui/templates/Layout";
 import { Heading, Paragraph } from "@/ui/typography";

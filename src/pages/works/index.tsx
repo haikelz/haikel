@@ -1,13 +1,17 @@
-import { Heading, Paragraph, Underline } from "@/ui/typography";
 import ListWorks from "@/ui/lists/ListWorks";
 import Layout from "@/ui/templates/Layout";
+import { Heading, Paragraph, Underline } from "@/ui/typography";
+import { twJoin } from "tailwind-merge";
 
 const Works = () => {
   return (
     <Layout
       title="Works"
       description="List some of my works"
-      className="flex min-h-screen flex-col items-center justify-start pt-6 pb-6 md:pb-12 md:pt-24"
+      className={twJoin(
+        "flex min-h-screen flex-col items-center justify-start",
+        "pt-6 pb-6 md:pb-12 md:pt-24"
+      )}
     >
       <div className="mb-6 flex w-full flex-wrap items-center justify-center">
         <div className="flex flex-col items-center justify-center">

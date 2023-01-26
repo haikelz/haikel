@@ -1,4 +1,4 @@
-import { spaceGrotesk } from "@/lib/helpers/fonts";
+import { spaceGrotesk } from "@/lib/utils/fonts";
 import { topNavList } from "@/lib/utils/data";
 import Link from "next/link";
 import { NextRouter, useRouter } from "next/router";

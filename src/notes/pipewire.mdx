@@ -1,0 +1,47 @@
+---
+author: Haikel
+title: Install Pipewire di Artix Linux
+tags:
+  - linux
+date: 2021-11-19
+preview: Mencoba Pipewire yang katanya lebih bagus ketimbang Pulseaudio di Artix Linux
+---
+
+Ini adalah dokumentasi tentang menginstall Pipewire di Artix Linux. Biar saya ga repot nyari lagi sih hehe. Jika dirasa bermanfaat bagi temen-temen, Alhamdulillah.
+
+Kalau kita lihat di [Arch Wiki](https://wiki.archlinux.org/title/PipeWire), Pipewire adalah sebuah low-level multimedia Framework baru. Sesuai definisinya tadi, Pipewire memang mengarah ke urusan peningkatan kualitas audio.
+Saya bukanlah orang yang terlalu peduli soal sound sebenarnya. Selama ga kresek-kresek audionya, It's fine.
+
+```bash
+yay -S pipewire-pulse wireplumber pipewire-alsa
+```
+
+Saya memilih menginstall `wireplumber` ketimbang `pipewire-media-session`, walau fungsi keduanya sama aja sih. Silahkan baca [disini](https://pipewire.pages.freedesktop.org/wireplumber/index.html) untuk lebih detailnya.
+
+Setelah kita menginstall beberapa package yang diperlukan, sekarang kita akan membuat script untuk autostart nya. Misal dalam hal ini saya beri nama `pipewire.sh`.
+
+```bash
+#!/bin/bash
+/usr/bin/pipewire
+/usr/bin/pipewire-pulse
+/usr/bin/wireplumber
+```
+
+Kemudian kita buat scriptnya jadi executable dengan:
+
+```bash
+chmod +x pipewire.sh
+```
+
+Setelah itu, autostart scriptnya ke `.xinitrc` . Tapi karena saya memakai bspwm, jadi saya taruh saja di `bspwmrc`.
+
+```bash
+~/.config/bspwm/pipewire/./pipewire.sh
+```
+
+Sesuaikan dengan tempat kalian menaruh `pipewire.sh` nya.
+
+Yang saya rasakan setelah menggunakan Pipewire:
+
+1. Suara yang dihasilkan terasa lebih jernih.
+2. Volume suara default lebih besar ketimbang hanya pakai pulseaudio.

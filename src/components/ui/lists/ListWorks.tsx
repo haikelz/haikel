@@ -1,4 +1,4 @@
-import { spaceGrotesk } from "@/lib/helpers/fonts";
+import { spaceGrotesk } from "@/lib/utils/fonts";
 import { projectsList } from "@/lib/utils/data";
 import { GithubIcon, PreviewIcon } from "@/ui/icons";
 import { Paragraph } from "@/ui/typography";

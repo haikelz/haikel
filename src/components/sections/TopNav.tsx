@@ -19,7 +19,7 @@ const TopNav = () => {
         <TopNavLogo />
         <div className="flex items-center justify-center">
           <div className="hidden md:block">
-            <div className="ml-8 flex space-x-10 tracking-widest">
+            <div className="ml-8 flex items-center justify-center space-x-10 tracking-widest">
               <TopNavListItem />
               <ToggleDarkModeTopNav
                 theme={theme}

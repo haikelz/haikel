@@ -1,4 +1,4 @@
-import { ibmPlexSerif, jetbrains, spaceGrotesk } from "@/lib/helpers/fonts";
+import { ibmPlexSerif, jetbrains, spaceGrotesk } from "@/lib/utils/fonts";
 import BottomNav from "@/sections/BottomNav";
 import Footer from "@/sections/Footer";
 import TopNav from "@/sections/TopNav";
