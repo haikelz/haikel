@@ -1,4 +1,3 @@
-import { japanese } from "@/lib/utils/fonts";
 import Link from "next/link";
 import { twMerge } from "tailwind-merge";
 
@@ -9,8 +8,7 @@ export const TopNavLogo = () => {
         className={twMerge(
           "cursor-pointer border-none text-xl font-bold",
           "tracking-widest outline-none",
-          "transition-all ease-in-out hover:text-blue-600",
-          japanese.className
+          "transition-all ease-in-out hover:text-blue-600"
         )}
         href="/"
         passHref
