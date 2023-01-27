@@ -5,6 +5,7 @@ import { naskhArabic, spaceGrotesk } from "@/lib/utils/fonts";
 import { NotePageProps } from "@/types";
 import Layout from "@/ui/templates/Layout";
 import { Heading, Paragraph } from "@/ui/typography";
+import "highlight.js/styles/github-dark.css";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
