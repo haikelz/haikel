@@ -14,7 +14,7 @@ preview: Try to implementing clsx
 
 Depending on what package manager you use. I'm using yarn, so i can type:
 
-```sh
+```bash
 yarn add clsx
 ```
 
@@ -36,7 +36,7 @@ Let's say we want set display to **flex** while `isActive` is true, and **hidden
 
 In this case, we can use `clsx`.
 
-```tsx
+```tsx /clsx/#v
 <div
   className={clsx(
     isActive ? "flex" : "hidden",
@@ -62,7 +62,7 @@ Another example, we want to create a button like this:
 
 Looks long, right? Well, we can use `clsx` to organize it.
 
-```tsx
+```tsx /clsx/#v
 <button
   className={clsx(
     "rounded-md bg-blue-500 px-4 py-2",

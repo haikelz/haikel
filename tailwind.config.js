@@ -43,7 +43,7 @@ module.exports = {
               "pre, pre code": {
                 borderRadius: theme("borderRadius.sm"),
                 color: theme("colors.slate.200"),
-                backgroundColor: "#0D1117",
+                backgroundColor: "#1F1F28",
               },
               "code::before": {
                 content: '""',

@@ -9,6 +9,7 @@
     "lint": "next lint",
     "prepare": "husky install",
     "commit": "cz",
+    "format": "prettier . --write",
     "build": "next build"
   },
   "dependencies": {
@@ -24,8 +25,9 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.3.1",
     "rehype-autolink-headings": "^6.1.1",
-    "rehype-highlight": "^6.0.0",
+    "rehype-pretty-code": "^0.9.2",
     "rehype-slug": "^5.1.0",
+    "shiki": "^0.13.0",
     "tailwind-merge": "^1.8.1"
   },
   "devDependencies": {
@@ -41,6 +43,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "husky": "^8.0.1",
+    "lint-staged": "^13.1.0",
     "postcss": "^8.4.20",
     "prettier": "2.8.1",
     "prettier-plugin-tailwindcss": "^0.2.1",
@@ -55,7 +58,16 @@
   },
   "husky": {
     "hooks": {
-      "prepare-commit-msg": "exec < /dev/tty && yarn cz --hook || true"
+      "prepare-commit-msg": "exec < /dev/tty && pnpm cz --hook || true"
     }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --config ./.prettierrc.json --write"
+    ],
+    "**/*.{css,scss,md,html,json}": [
+      "prettier --config ./.prettierrc.json --write"
+    ]
   }
 }

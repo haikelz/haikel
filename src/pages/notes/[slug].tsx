@@ -1,18 +1,18 @@
 import { getNoteFromSlug } from "@/lib/helpers/getNoteFromSlug";
 import { getReadingTime } from "@/lib/helpers/getReadingTime";
 import { getSlugs } from "@/lib/helpers/getSlugs";
+import { highlighterOptions } from "@/lib/helpers/highlighterOptions";
 import { naskhArabic, spaceGrotesk } from "@/lib/utils/fonts";
 import { NotePageProps } from "@/types";
 import Layout from "@/ui/templates/Layout";
 import { Heading, Paragraph } from "@/ui/typography";
-import "highlight.js/styles/github-dark.css";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
 import { useMemo } from "react";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypeHighlight from "rehype-highlight";
+import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import { twMerge } from "tailwind-merge";
 
@@ -34,7 +34,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { content, meta } = getNoteFromSlug(slug);
   const mdxSource = await serialize(content, {
     mdxOptions: {
-      rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: "wrap" }], rehypeHighlight],
+      rehypePlugins: [
+        rehypeSlug,
+        [rehypeAutolinkHeadings, { behavior: "wrap" }],
+        [rehypePrettyCode, highlighterOptions],
+      ],
     },
   });
 
