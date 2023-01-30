@@ -20,11 +20,11 @@ const ListWorks = () => {
           <div className="px-6 pb-6 pt-3">
             <div className="my-2">
               <span className={twMerge("text-xl font-bold", spaceGrotesk.className)}>
-                {work.h4}
+                {work.title}
               </span>
             </div>
             <Paragraph className="mb-2" isCenter={false}>
-              {work.p}
+              {work.description}
             </Paragraph>
             <div className={twMerge("mt-3 flex space-x-2 font-medium", spaceGrotesk.className)}>
               {work.stack.map((techstack, index) => (

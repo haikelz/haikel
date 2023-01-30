@@ -12,14 +12,12 @@ const NotFoundPage = () => {
       className="flex min-h-screen flex-col items-center justify-center text-center"
     >
       <ErrorImage />
-      <div className="mt-6 flex flex-col items-center">
+      <section className="mt-6 flex flex-col items-center">
         <Heading as="h4" className="text-xl sm:text-2xl">
           404 Not Found
         </Heading>
-        <Paragraph className="" isCenter={false}>
-          Halaman yang anda cari tidak ditemukan!
-        </Paragraph>
-      </div>
+        <Paragraph isCenter={false}>Halaman yang anda cari tidak ditemukan!</Paragraph>
+      </section>
     </Layout>
   );
 };
