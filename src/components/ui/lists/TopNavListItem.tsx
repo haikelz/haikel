@@ -11,6 +11,7 @@ const TopNavListItem = () => {
     <>
       {topNavList.map((nav) => (
         <Link
+          role="button"
           className={twMerge(
             "cursor-pointer rounded-sm",
             "px-1 text-base font-semibold active:bg-pink-100 active:dark:bg-slate-800",
@@ -21,7 +22,7 @@ const TopNavListItem = () => {
           )}
           href={nav.href}
           key={nav.id}
-          passHref
+          aria-label={nav.text}
         >
           {nav.text}
         </Link>

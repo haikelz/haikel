@@ -81,7 +81,7 @@ const Home = ({ notes }: NotesProps) => {
                     </Link>
                   ))}
                   .{" "}
-                  <button onClick={toggleLanguage}>
+                  <button type="button" onClick={toggleLanguage}>
                     <UnderlineSpan>See in Indonesia.</UnderlineSpan>
                   </button>
                 </Paragraph>
@@ -130,7 +130,11 @@ const Home = ({ notes }: NotesProps) => {
                 key={index + 1}
               >
                 <div className="px-6 pb-6 pt-3">
-                  <h4 className="mt-2 mb-2 text-xl font-bold">{work.h4}</h4>
+                  <div className="my-2">
+                    <span className={twMerge("text-xl font-bold", spaceGrotesk.className)}>
+                      {work.h4}
+                    </span>
+                  </div>
                   <Paragraph className="mb-2" isCenter={false}>
                     {work.p}
                   </Paragraph>
@@ -158,11 +162,9 @@ const Home = ({ notes }: NotesProps) => {
             ))}
           </div>
           <div className="mt-3 flex w-full items-end justify-end">
-            <button type="button">
-              <Link href="/works" className="w-fit text-right">
-                <UnderlineSpan>See more works</UnderlineSpan>
-              </Link>
-            </button>
+            <Link role="button" href="/works" className="w-fit text-right" aria-label="More Works">
+              <UnderlineSpan>See more works</UnderlineSpan>
+            </Link>
           </div>
         </div>
       </section>
@@ -179,11 +181,9 @@ const Home = ({ notes }: NotesProps) => {
             <ListNotes filteredNotes={notes} />
           </div>
           <div className="mt-3 flex w-full items-end justify-end">
-            <button type="button">
-              <Link href="/notes" className="w-fit text-right">
-                <UnderlineSpan>See more notes</UnderlineSpan>
-              </Link>
-            </button>
+            <Link role="button" href="/notes" className="w-fit text-right" aria-label="More Notes">
+              <UnderlineSpan>See more notes</UnderlineSpan>
+            </Link>
           </div>
         </div>
       </section>

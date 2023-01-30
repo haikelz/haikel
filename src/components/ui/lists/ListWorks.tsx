@@ -18,7 +18,11 @@ const ListWorks = () => {
           key={index + 1}
         >
           <div className="px-6 pb-6 pt-3">
-            <h4 className="mt-2 mb-2 text-xl font-bold">{work.h4}</h4>
+            <div className="my-2">
+              <span className={twMerge("text-xl font-bold", spaceGrotesk.className)}>
+                {work.h4}
+              </span>
+            </div>
             <Paragraph className="mb-2" isCenter={false}>
               {work.p}
             </Paragraph>

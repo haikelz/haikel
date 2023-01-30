@@ -2,7 +2,7 @@ import Link from "next/link";
 import { twJoin, twMerge } from "tailwind-merge";
 import { spaceGrotesk } from "~lib/utils/fonts";
 import type { NoteMetaProps } from "~types";
-import { Heading, Paragraph } from "~ui/typography";
+import { Paragraph } from "~ui/typography";
 
 type NotesArticlesProps = {
   filteredNotes: NoteMetaProps[];
@@ -22,11 +22,15 @@ const ListNotes = ({ filteredNotes }: NotesArticlesProps) => {
           key={note.slug}
         >
           <div className="h-full px-6 pb-6 pt-3">
-            <Link href={`/notes/${note.slug}`} passHref>
-              <Heading as="h4" className="mt-2 mb-2 cursor-pointer">
-                {note.title}
-              </Heading>
-            </Link>
+            <div className="my-2">
+              <Link href={`/notes/${note.slug}`} passHref aria-label={note.title}>
+                <span
+                  className={twMerge("cursor-pointer text-xl font-bold", spaceGrotesk.className)}
+                >
+                  {note.title}
+                </span>
+              </Link>
+            </div>
             <Paragraph className="mb-2 tracking-wide">{note.preview}</Paragraph>
             <div className={twMerge("mt-3 flex space-x-2 font-medium", spaceGrotesk.className)}>
               {note.tags.map((tag) => (
@@ -37,6 +41,7 @@ const ListNotes = ({ filteredNotes }: NotesArticlesProps) => {
                   )}
                   key={tag}
                   href={`/tags/${tag}`}
+                  aria-label={tag}
                 >
                   {tag}
                 </Link>
