@@ -1,7 +1,7 @@
-import { darkModeIconAnimation, whileTap } from "@/lib/utils/animation";
-import { ThemeProps } from "@/types";
 import { domAnimation, LazyMotion, m } from "framer-motion";
 import { memo } from "react";
+import { darkModeIconAnimation, whileTap } from "~lib/utils/animation";
+import { ThemeProps } from "~types";
 
 export const ToggleDarkIcon = ({ theme, changeTheme }: ThemeProps) => {
   return (

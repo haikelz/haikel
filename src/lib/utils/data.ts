@@ -12,61 +12,53 @@ export const projectsList = [
     p: "Website jadwal Sholat dan baca Al-Qur'an",
     repo: "https://github.com/haikelz/jadwal-sholat",
     preview: "https://info-jadwal-sholat.vercel.app",
-    stack1: next,
-    stack2: tailwind,
+    stack: [next, tailwind],
   },
   {
     h4: "Animeow",
     p: "A website to search your favorite anime, and manga",
     repo: "https://github.com/haikelz/animeow",
     preview: "https://animeow-red.vercel.app",
-    stack1: next,
-    stack2: reactQuery,
+    stack: [next, reactQuery],
   },
   {
     h4: "The Zeitplan",
     p: "Sebuah cara untuk mengatur kuliah kamu",
     repo: "https://github.com/haikelz/the-zeitplan",
     preview: "https://the-zeitplan.pages.dev",
-    stack1: next,
-    stack2: tailwind,
-  },
-  {
-    h4: "The Sugiharto",
-    p: "Slicing UI Design bang Nauval Array ID",
-    repo: "https://github.com/haikelz/the-sugiharto",
-    preview: "https://the-sugiharto.vercel.app",
-    stack1: next,
-    stack2: motion,
+    stack: [next, tailwind],
   },
   {
     h4: "Chat n' rechat",
     p: "Slicing UI Design: Chat n' rechat",
     repo: "https://github.com/haikelz/chat-n-rechat",
     preview: "https://chat-n-rechat-seven.vercel.app/",
-    stack1: next,
-    stack2: tailwind,
+    stack: [next, tailwind],
+  },
+  {
+    h4: "The Sugiharto",
+    p: "Slicing UI Design bang Nauval Array ID",
+    repo: "https://github.com/haikelz/the-sugiharto",
+    preview: "https://the-sugiharto.vercel.app",
+    stack: [next, motion],
   },
   {
     h4: "Wakaranai",
     p: "A website to convert Romaji to Hiragana/Katakana",
     repo: "https://github.com/haikelz/wakaranai",
     preview: "https://wakaranai.vercel.app",
-    stack1: svelte,
-    stack2: tailwind,
+    stack: [svelte, tailwind],
   },
   {
     h4: "Vite Starter",
     p: "Another Vite Starter for React JS",
     repo: "https://github.com/haikelz/vite-starter",
     preview: "https://vite-starter-gamma.vercel.app/",
-    stack1: "reactjs",
-    stack2: "vite",
+    stack: ["reactjs", "vite"],
   },
 ];
 
 export const topNavList = [
-  { id: "a", text: "/about", href: "/about" },
   { id: "b", text: "/works", href: "/works" },
   { id: "c", text: "/notes", href: "/notes" },
 ];
@@ -80,7 +72,6 @@ export const socialMediaList = [
 
 export const bottomNavList = [
   { name: "Home", icon: MdHomeFilled, link: "/" },
-  { name: "About", icon: MdAccountCircle, link: "/about" },
   { name: "Works", icon: MdWork, link: "/works" },
   { name: "Notes", icon: MdLibraryBooks, link: "/notes" },
 ];

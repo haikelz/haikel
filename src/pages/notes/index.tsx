@@ -1,17 +1,13 @@
-import { getAllNotes } from "@/lib/helpers/getAllNotes";
-import { matchSearch } from "@/lib/helpers/matchSearch";
-import { NoteMetaProps } from "@/types";
-import { SearchBar } from "@/ui/input";
-import ListNotes from "@/ui/lists/ListNotes";
-import Layout from "@/ui/templates/Layout";
-import { Heading, Paragraph, Underline } from "@/ui/typography";
 import type { GetStaticProps } from "next";
 import { useMemo, useState } from "react";
 import { twJoin } from "tailwind-merge";
-
-type NotesProps = {
-  notes: NoteMetaProps[];
-};
+import { getAllNotes } from "~lib/helpers/getAllNotes";
+import { matchSearch } from "~lib/helpers/matchSearch";
+import { NoteMetaProps, NotesProps } from "~types";
+import { SearchBar } from "~ui/input";
+import ListNotes from "~ui/lists/ListNotes";
+import Layout from "~ui/templates/Layout";
+import { Heading, Paragraph, Underline } from "~ui/typography";
 
 export const getStaticProps: GetStaticProps = async () => {
   const notes: NoteMetaProps[] = getAllNotes()
@@ -48,7 +44,7 @@ const Notes = ({ notes }: NotesProps) => {
       className={twJoin(
         "flex min-h-screen",
         "flex-col items-center justify-start",
-        "pt-6 pb-6 md:pb-12 md:pt-24"
+        "pt-6 pb-12 md:py-12"
       )}
     >
       <div className="flex w-full flex-wrap items-center justify-center">

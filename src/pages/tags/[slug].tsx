@@ -1,9 +1,9 @@
-import { Heading, Underline } from "@/ui/typography";
-import { getAllNotes } from "@/lib/helpers/getAllNotes";
-import ListNotes from "@/ui/lists/ListNotes";
-import Layout from "@/ui/templates/Layout";
-import { NoteMetaProps, NoteProps } from "@/types";
 import type { GetStaticPaths, GetStaticProps } from "next";
+import { getAllNotes } from "~lib/helpers/getAllNotes";
+import { NoteMetaProps, NoteProps } from "~types";
+import ListNotes from "~ui/lists/ListNotes";
+import Layout from "~ui/templates/Layout";
+import { Heading, Underline } from "~ui/typography";
 
 type TagProps = {
   slug: string;
@@ -38,7 +38,7 @@ const Tags = ({ slug, notes }: TagProps) => {
     <Layout
       title={`Tags #${slug}`}
       description="Tags"
-      className="flex min-h-screen flex-col items-center justify-start pt-6 pb-6 md:pb-12 md:pt-24"
+      className="flex min-h-screen flex-col items-center justify-start pt-6 pb-12 md:py-12"
     >
       <div className="mb-6 flex w-full flex-wrap items-center justify-center">
         <div className="flex flex-col items-center justify-center">

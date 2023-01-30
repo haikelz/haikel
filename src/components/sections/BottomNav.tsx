@@ -1,10 +1,10 @@
-import { useTheme } from "@/hooks/useTheme";
-import { bottomNavList } from "@/lib/utils/data";
-import { ToggleDarkIcon } from "@/ui/icons";
 import Link from "next/link";
 import { NextRouter, useRouter } from "next/router";
 import { IconType } from "react-icons/lib";
 import { twJoin } from "tailwind-merge";
+import { useTheme } from "~hooks/useTheme";
+import { bottomNavList } from "~lib/utils/data";
+import { ToggleDarkIcon } from "~ui/icons";
 
 const BottomNav = () => {
   const [theme, setTheme] = useTheme();
@@ -19,7 +19,7 @@ const BottomNav = () => {
     >
       <div
         className={twJoin(
-          "grid w-full grid-cols-5 grid-rows-1 border-t border-slate-300",
+          "grid w-full grid-cols-4 grid-rows-1 border-t border-slate-300",
           "bg-azure p-4 dark:border-slate-600 dark:bg-eerieblack"
         )}
       >

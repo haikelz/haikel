@@ -1,7 +1,7 @@
-import ListWorks from "@/ui/lists/ListWorks";
-import Layout from "@/ui/templates/Layout";
-import { Heading, Paragraph, Underline } from "@/ui/typography";
 import { twJoin } from "tailwind-merge";
+import ListWorks from "~ui/lists/ListWorks";
+import Layout from "~ui/templates/Layout";
+import { Heading, Paragraph, Underline } from "~ui/typography";
 
 const Works = () => {
   return (
@@ -10,7 +10,7 @@ const Works = () => {
       description="List some of my works"
       className={twJoin(
         "flex min-h-screen flex-col items-center justify-start",
-        "pt-6 pb-6 md:pb-12 md:pt-24"
+        "pt-6 pb-12 md:py-12"
       )}
     >
       <div className="mb-6 flex w-full flex-wrap items-center justify-center">

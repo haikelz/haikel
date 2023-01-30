@@ -1,8 +1,8 @@
-import { spaceGrotesk } from "@/lib/utils/fonts";
-import { topNavList } from "@/lib/utils/data";
 import Link from "next/link";
 import { NextRouter, useRouter } from "next/router";
 import { twMerge } from "tailwind-merge";
+import { topNavList } from "~lib/utils/data";
+import { spaceGrotesk } from "~lib/utils/fonts";
 
 const TopNavListItem = () => {
   const router: NextRouter = useRouter();

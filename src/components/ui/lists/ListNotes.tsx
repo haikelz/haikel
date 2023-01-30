@@ -1,8 +1,8 @@
-import { spaceGrotesk } from "@/lib/utils/fonts";
-import type { NoteMetaProps } from "@/types";
-import { Heading, Paragraph } from "@/ui/typography";
 import Link from "next/link";
 import { twJoin, twMerge } from "tailwind-merge";
+import { spaceGrotesk } from "~lib/utils/fonts";
+import type { NoteMetaProps } from "~types";
+import { Heading, Paragraph } from "~ui/typography";
 
 type NotesArticlesProps = {
   filteredNotes: NoteMetaProps[];

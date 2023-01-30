@@ -43,3 +43,7 @@ export type NoteProps = {
   content: string;
   meta: NoteMetaProps;
 };
+
+export type NotesProps = {
+  notes: NoteMetaProps[];
+};

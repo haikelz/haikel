@@ -1,4 +1,4 @@
-import { NoteProps } from "@/types";
+import { NoteProps } from "~types";
 import { getNoteFromSlug } from "./getNoteFromSlug";
 import { getSlugs } from "./getSlugs";
 

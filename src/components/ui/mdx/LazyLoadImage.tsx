@@ -1,6 +1,6 @@
-import { imageKitLoader } from "@/lib/helpers/imageKitLoader";
 import Image from "next/image";
 import { memo } from "react";
+import { imageKitLoader } from "~lib/helpers/imageKitLoader";
 
 type LazyLoadImageProps = {
   src: string;

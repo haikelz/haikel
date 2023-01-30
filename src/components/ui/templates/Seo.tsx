@@ -1,6 +1,6 @@
-import { SeoProps } from "@/types";
 import { NextSeo } from "next-seo";
 import { NextRouter, useRouter } from "next/router";
+import { SeoProps } from "~types";
 
 const Seo = ({ title, description }: SeoProps) => {
   const router: NextRouter = useRouter();

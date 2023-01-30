@@ -1,8 +1,8 @@
-import { spaceGrotesk } from "@/lib/utils/fonts";
-import { projectsList } from "@/lib/utils/data";
-import { GithubIcon, PreviewIcon } from "@/ui/icons";
-import { Paragraph } from "@/ui/typography";
 import { twJoin, twMerge } from "tailwind-merge";
+import { projectsList } from "~lib/utils/data";
+import { spaceGrotesk } from "~lib/utils/fonts";
+import { GithubIcon, PreviewIcon } from "~ui/icons";
+import { Paragraph } from "~ui/typography";
 
 const ListWorks = () => {
   return (
@@ -23,22 +23,17 @@ const ListWorks = () => {
               {work.p}
             </Paragraph>
             <div className={twMerge("mt-3 flex space-x-2 font-medium", spaceGrotesk.className)}>
-              <span
-                className={twJoin(
-                  "bg-celedongreen px-1.5 text-sm text-white",
-                  "dark:bg-lightgray dark:text-slate-900"
-                )}
-              >
-                {work.stack1}
-              </span>
-              <span
-                className={twJoin(
-                  "bg-celedongreen px-1.5 text-sm text-white",
-                  "dark:bg-lightgray dark:text-slate-900"
-                )}
-              >
-                {work.stack2}
-              </span>
+              {work.stack.map((techstack, index) => (
+                <span
+                  key={index + 1}
+                  className={twJoin(
+                    "bg-celedongreen px-1.5 text-sm text-white",
+                    "dark:bg-lightgray dark:text-slate-900"
+                  )}
+                >
+                  {techstack}
+                </span>
+              ))}
             </div>
             <div className="mt-3 flex justify-end">
               <GithubIcon link={work.repo} />

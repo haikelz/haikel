@@ -1,6 +1,6 @@
-import { LinkIconProps } from "@/types";
 import Link from "next/link";
 import { GrGithub } from "react-icons/gr";
+import { LinkIconProps } from "~types";
 
 export const GithubIcon = ({ link }: LinkIconProps) => {
   return (

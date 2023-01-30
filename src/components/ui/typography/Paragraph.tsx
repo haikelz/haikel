@@ -1,6 +1,6 @@
-import { ChildrenProps } from "@/types";
 import { memo } from "react";
 import { twMerge } from "tailwind-merge";
+import { ChildrenProps } from "~types";
 
 type ParagraphProps = ChildrenProps & {
   className?: string;

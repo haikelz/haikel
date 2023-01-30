@@ -1,11 +1,3 @@
-import { getNoteFromSlug } from "@/lib/helpers/getNoteFromSlug";
-import { getReadingTime } from "@/lib/helpers/getReadingTime";
-import { getSlugs } from "@/lib/helpers/getSlugs";
-import { highlighterOptions } from "@/lib/helpers/highlighterOptions";
-import { naskhArabic, spaceGrotesk } from "@/lib/utils/fonts";
-import { NotePageProps } from "@/types";
-import Layout from "@/ui/templates/Layout";
-import { Heading, Paragraph } from "@/ui/typography";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
@@ -15,10 +7,18 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import { twMerge } from "tailwind-merge";
+import { getNoteFromSlug } from "~lib/helpers/getNoteFromSlug";
+import { getReadingTime } from "~lib/helpers/getReadingTime";
+import { getSlugs } from "~lib/helpers/getSlugs";
+import { highlighterOptions } from "~lib/helpers/highlighterOptions";
+import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
+import { NotePageProps } from "~types";
+import Layout from "~ui/templates/Layout";
+import { Heading, Paragraph } from "~ui/typography";
 
-const LazyLoadImage = dynamic(() => import("@/ui/mdx/LazyLoadImage"));
-const AuthorImage = dynamic(() => import("@/ui/mdx/AuthorImage"));
-const Video = dynamic(() => import("@/ui/mdx/Video"));
+const LazyLoadImage = dynamic(() => import("~ui/mdx/LazyLoadImage"));
+const AuthorImage = dynamic(() => import("~ui/mdx/AuthorImage"));
+const Video = dynamic(() => import("~ui/mdx/Video"));
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getSlugs().map((slug) => ({ params: { slug } }));
@@ -62,7 +62,7 @@ const NotePage = ({ note }: NotePageProps) => {
     <Layout
       title={note.meta.title}
       description={note.meta.preview}
-      className="flex min-h-screen flex-col items-center justify-center pt-6 pb-12 md:pt-24"
+      className="flex min-h-screen flex-col items-center justify-center pt-6 pb-12 md:py-12"
     >
       <article className="flex w-full flex-col flex-wrap justify-center md:mb-10">
         <div className="flex flex-col">

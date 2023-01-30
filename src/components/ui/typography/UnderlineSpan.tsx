@@ -1,5 +1,5 @@
-import { ChildrenProps } from "@/types";
 import { twJoin } from "tailwind-merge";
+import { ChildrenProps } from "~types";
 
 export const UnderlineSpan = ({ children }: ChildrenProps) => {
   return (
