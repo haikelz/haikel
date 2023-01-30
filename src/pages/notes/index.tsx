@@ -44,7 +44,7 @@ const Notes = ({ notes }: NotesProps) => {
       className={twJoin(
         "flex min-h-screen",
         "flex-col items-center justify-start",
-        "pt-6 pb-12 md:py-12"
+        "pt-6 pb-12 md:pt-12"
       )}
     >
       <div className="flex w-full flex-wrap items-center justify-center">

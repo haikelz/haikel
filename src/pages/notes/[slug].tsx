@@ -62,7 +62,7 @@ const NotePage = ({ note }: NotePageProps) => {
     <Layout
       title={note.meta.title}
       description={note.meta.preview}
-      className="flex min-h-screen flex-col items-center justify-center pt-6 pb-12 md:py-12"
+      className="flex min-h-screen flex-col items-center justify-center pt-6 pb-12 md:pt-12"
     >
       <article className="flex w-full flex-col flex-wrap justify-center md:mb-10">
         <div className="flex flex-col">

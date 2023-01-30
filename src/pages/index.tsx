@@ -33,7 +33,7 @@ const Home = ({ notes }: NotesProps) => {
     <Layout
       title="Haikel"
       description="Frontend Enthusiast"
-      className="flex flex-col items-center justify-center pt-6 pb-12 md:py-12"
+      className="flex flex-col items-center justify-center pt-6 pb-12 md:pt-12"
     >
       {/** About */}
       <section className="mb-20 flex w-full flex-wrap items-center justify-center">

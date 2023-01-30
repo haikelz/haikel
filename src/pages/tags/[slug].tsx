@@ -38,7 +38,7 @@ const Tags = ({ slug, notes }: TagProps) => {
     <Layout
       title={`Tags #${slug}`}
       description="Tags"
-      className="flex min-h-screen flex-col items-center justify-start pt-6 pb-12 md:py-12"
+      className="flex min-h-screen flex-col items-center justify-start pt-6 pb-12 md:pt-12"
     >
       <div className="mb-6 flex w-full flex-wrap items-center justify-center">
         <div className="flex flex-col items-center justify-center">

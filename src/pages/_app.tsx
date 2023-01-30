@@ -19,9 +19,9 @@ const App = ({ Component, pageProps, router }: AppProps) => {
       <Template>
         <LazyMotion features={domAnimation}>
           <AnimatePresence mode="wait" initial={false}>
-            <m.main key={router.route} {...appAnimation}>
+            <m.div key={router.route} {...appAnimation}>
               <Component {...pageProps} />
-            </m.main>
+            </m.div>
           </AnimatePresence>
         </LazyMotion>
       </Template>
