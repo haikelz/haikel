@@ -1,20 +1,12 @@
 import { AnimatePresence, domAnimation, LazyMotion, m } from "framer-motion";
-import { Provider, useAtom } from "jotai";
+import { Provider } from "jotai";
 import type { AppProps } from "next/app";
-import { useEffect } from "react";
 import { appAnimation } from "~lib/utils/animation";
-import { mountedAtom } from "~store";
 import "~styles/index.scss";
 import Template from "~ui/templates/index";
 
 const App = ({ Component, pageProps, router }: AppProps) => {
-  const [mounted, setMounted] = useAtom(mountedAtom);
-
-  useEffect(() => {
-    setMounted(true);
-  }, [setMounted]);
-
-  return mounted ? (
+  return (
     <Provider>
       <Template>
         <LazyMotion features={domAnimation}>
@@ -26,7 +18,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
         </LazyMotion>
       </Template>
     </Provider>
-  ) : null;
+  );
 };
 
 export default App;

@@ -1,7 +1,13 @@
+import dynamic from "next/dynamic";
 import { twJoin } from "tailwind-merge";
 import { useTheme } from "~hooks/useTheme";
-import { ToggleDarkModeTopNav, TopNavLogo } from "~ui/icons";
+import { TopNavLogo } from "~ui/icons";
 import TopNavListItem from "~ui/lists/TopNavListItem";
+
+const ToggleDarkModeTopNav = dynamic(
+  () => import("~ui/icons").then((icon) => icon.ToggleDarkModeTopNav),
+  { ssr: false }
+);
 
 const TopNav = () => {
   const [theme, setTheme] = useTheme();

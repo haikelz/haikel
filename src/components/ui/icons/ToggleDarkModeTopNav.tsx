@@ -1,7 +1,7 @@
-import { ThemeProps } from "~types";
-import { darkModeIconAnimation, whileTap } from "~lib/utils/animation";
 import { domAnimation, LazyMotion, m } from "framer-motion";
 import { memo } from "react";
+import { darkModeIconAnimation, whileTap } from "~lib/utils/animation";
+import { ThemeProps } from "~types";
 
 export const ToggleDarkModeTopNav = ({ theme, changeTheme }: ThemeProps) => {
   return (

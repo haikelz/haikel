@@ -24,7 +24,7 @@ const Home = ({ notes }: NotesProps) => {
   return (
     <Layout
       title="Haikel"
-      description="Frontend Enthusiast"
+      description="A person who interested in Frontend stuff"
       className="flex flex-col items-center justify-center pt-6 pb-12 md:pt-12"
     >
       <About />

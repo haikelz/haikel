@@ -1,15 +1,9 @@
 <div align="center">
   <h1>haikel.my.id</h1>
-  <p>Yup, just another Website that you found on internet</p>
+  <p>Another website that made with Next JS + Tailwind CSS. Deployed at Cloudflare Pages</p>
 </div>
 
-## Stuff
-
-- Next JS
-- Tailwind CSS
-- Framer Motion
-- Jotai
-- MDX
+![Preview](/public/docs/preview.png)
 
 ## Credits
 

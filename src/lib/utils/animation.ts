@@ -22,8 +22,7 @@ export const darkModeIconAnimation = {
 };
 
 export const showedModalAnimation = {
-  transition: { duration: 0.2 },
   initial: { opacity: 0 },
-  animate: { opacity: 1 },
-  exit: { opacity: 0 },
+  animate: { opacity: 1, transition: { duration: 0.2, animation: "ease-out" } },
+  exit: { opacity: 0, transition: { duration: 0.2, animation: "ease-in" } },
 };

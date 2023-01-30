@@ -1,10 +1,14 @@
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { NextRouter, useRouter } from "next/router";
 import { IconType } from "react-icons/lib";
 import { twJoin } from "tailwind-merge";
 import { useTheme } from "~hooks/useTheme";
 import { bottomNavList } from "~lib/utils/data";
-import { ToggleDarkIcon } from "~ui/icons";
+
+const ToggleDarkIcon = dynamic(() => import("~ui/icons").then((icon) => icon.ToggleDarkIcon), {
+  ssr: false,
+});
 
 const BottomNav = () => {
   const [theme, setTheme] = useTheme();
@@ -13,7 +17,7 @@ const BottomNav = () => {
   return (
     <nav
       className={twJoin(
-        "sticky bottom-0 left-0 right-0",
+        "sticky inset-0",
         "flex w-full flex-col items-center justify-center md:hidden"
       )}
     >

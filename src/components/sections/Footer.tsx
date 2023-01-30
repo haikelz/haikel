@@ -11,7 +11,7 @@ const Footer = () => {
         <p className="pb-1 text-sm font-semibold">2020-{currentYear} Haikel</p>
         <p className="text-sm font-semibold">
           This Website is under{" "}
-          <Link href="https://github.com/haikelz/website/blob/master/LICENSE">
+          <Link href="https://github.com/haikelz/haikel.my.id/blob/master/LICENSE">
             <UnderlineSpan>MIT License</UnderlineSpan>
           </Link>
         </p>
