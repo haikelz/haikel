@@ -3,9 +3,7 @@
     @apply scroll-smooth;
 
     body {
-      margin: 0;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      @apply m-0 h-[50vh] scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-fireopal;
 
       button,
       input {
@@ -19,8 +17,6 @@
       code > .line::before {
         counter-increment: line;
         content: counter(line);
-
-        /* Other styling */
         display: inline-block;
         width: 1rem;
         margin-right: 2rem;

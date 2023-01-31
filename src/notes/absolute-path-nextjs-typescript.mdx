@@ -1,0 +1,59 @@
+---
+author: Haikel
+title: Absolute import di Next JS Typescript
+tags:
+  - nextjs
+  - typescript
+date: 2023-02-01
+preview: Mengkonfigurasi absolute import pada project Next JS Typescript
+---
+
+Setiap kali kita membuat project dengan NextJS, secara default dia memakai relative import.
+
+```tsx
+import { getSlugs } from "../../lib/helpers/getSlugs";
+```
+
+Kelihatannya simpel pada awalnya, Tapi lain cerita jika project yang kita buat itu sudah kompleks alias sudah bercabang-cabang. Tentu repot bukan. Makanya, untuk memudahkan, kita menggunakan absolute import.
+
+Sebelum menggunakan absolute import, kita perlu setting dulu di bagian `tsconfig.json` nya. Di `tsconfig.json`, lebih tepatnya di dalam `compilerOptions`, kita bisa tambahkan seperti ini:
+
+```json /"baseUrl"/#v
+{
+  "compilerOptions": {
+    "baseUrl": "./src"
+  }
+}
+```
+
+Saya menggunakan [src folder](https://nextjs.org/docs/advanced-features/src-directory). Jadi folder seperti `pages`, `styles` yang awalnya di root directory saya pindahin ke dalam `src`.
+
+Kita juga bisa mengatur path aliasnya agar lebih spesifik. Seperti ini:
+
+```json /"paths"/#v
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "~components/*": ["components/*"],
+      "~lib/*": ["lib/*"]
+    }
+  }
+}
+```
+
+Karena `baseUrl` sudah saya set ke `src`, maka saya tidak perlu lagi menulis seperti ini `src/components/*` di bagian paths nya.
+
+Untuk pathnya, silahkan sesuaikan saja dengan susunan folder dalam projectnya.
+
+Jadi untuk mengimport file, kita tinggal melakukannya seperti ini:
+
+```tsx /~lib/#v
+import { getSlugs } from "~lib/helpers/getSlugs";
+```
+
+## Referensi
+
+- [NextJS Official Website](https://nextjs.org/docs/advanced-features/module-path-aliases)
+- [Elianiva](https://elianiva.my.id/post/path-alias-in-javascript-and-typescript)
+- [LogRocket](https://blog.logrocket.com/understanding-relative-absolute-imports-next-js)
