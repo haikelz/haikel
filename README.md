@@ -3,7 +3,7 @@
   <p>Another website that made with Next JS + Tailwind CSS. Deployed at Cloudflare Pages</p>
 </div>
 
-![Preview](/public/docs/preview.png)
+![description](/public/docs/description.png)
 
 ## Credits
 

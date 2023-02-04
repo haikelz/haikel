@@ -1,9 +1,24 @@
+import { GetStaticProps } from "next";
 import { twJoin } from "tailwind-merge";
+import { getAllWorks } from "~lib/helpers/getAllWorks";
+import { WorkMetaProps, WorksProps } from "~types";
 import ListWorks from "~ui/lists/ListWorks";
 import Layout from "~ui/templates/Layout";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
-const Works = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  const works: WorkMetaProps[] = getAllWorks()
+    .slice(0, getAllWorks().length)
+    .map((work) => work.meta);
+
+  return {
+    props: {
+      works,
+    },
+  };
+};
+
+const Works = ({ works }: WorksProps) => {
   return (
     <Layout
       title="Works"
@@ -25,7 +40,7 @@ const Works = () => {
         </div>
       </div>
       <div className="grid w-full grid-cols-1 grid-rows-1 gap-6 sm:grid-cols-2">
-        <ListWorks />
+        <ListWorks works={works} />
       </div>
     </Layout>
   );

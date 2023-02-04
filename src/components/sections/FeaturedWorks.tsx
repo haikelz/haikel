@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { twJoin, twMerge } from "tailwind-merge";
-import { projectsList } from "~lib/utils/data";
 import { spaceGrotesk } from "~lib/utils/fonts";
+import { WorksProps } from "~types";
 import { GithubIcon, PreviewIcon } from "~ui/icons";
 import { Heading, Paragraph, Underline, UnderlineSpan } from "~ui/typography";
 
-const FeaturedWorks = () => {
+const FeaturedWorks = ({ works }: WorksProps) => {
   return (
     <section className="mb-20 flex w-full flex-wrap items-center justify-center">
       <div className="mt-2 flex w-full flex-col items-center justify-center sm:mt-4">
@@ -16,7 +16,7 @@ const FeaturedWorks = () => {
           <Underline />
         </div>
         <div className="mt-6 grid w-full grid-cols-1 grid-rows-1 gap-6 sm:grid-cols-2">
-          {projectsList.slice(0, 4).map((work, index) => (
+          {works.map((work, index) => (
             <div
               className={twJoin(
                 "cursor-pointer overflow-hidden border-[2.5px]",
@@ -28,14 +28,7 @@ const FeaturedWorks = () => {
             >
               <div className="px-6 pb-6 pt-3">
                 <div className="my-2">
-                  <Link
-                    href={`/works/${work.title
-                      .toLowerCase()
-                      .match(/[^'".]/gi)
-                      ?.join("")
-                      .split(" ")
-                      .join("-")}`}
-                  >
+                  <Link href={`/works/${work.slug}`} passHref aria-label={work.title}>
                     <span className={twMerge("text-xl font-bold", spaceGrotesk.className)}>
                       {work.title}
                     </span>
@@ -45,7 +38,7 @@ const FeaturedWorks = () => {
                   {work.description}
                 </Paragraph>
                 <div className={twMerge("mt-3 flex space-x-2 font-medium", spaceGrotesk.className)}>
-                  {work.stack.map((techstack, index) => (
+                  {work.tags.map((techstack, index) => (
                     <span
                       key={index + 1}
                       className={twJoin(
@@ -58,8 +51,8 @@ const FeaturedWorks = () => {
                   ))}
                 </div>
                 <div className="mt-3 flex justify-end">
-                  <GithubIcon link={work.repo} />
-                  <PreviewIcon link={work.preview} />
+                  {work.repo ? <GithubIcon link={work.repo} /> : null}
+                  {work.preview ? <PreviewIcon link={work.preview} /> : null}
                 </div>
               </div>
             </div>

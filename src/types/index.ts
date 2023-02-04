@@ -41,19 +41,15 @@ export type ThemeProps = {
 
 export type NoteMetaProps = {
   author: string;
-  preview: string;
+  description: string;
   slug: string;
   title: string;
   tags: string[];
   date: string;
 };
 
-export type WorkMetaProps = {
-  author: string;
-  preview: string;
-  slug: string;
-  title: string;
-  tags: string[];
+export type NotesProps = {
+  notes: NoteMetaProps[];
 };
 
 export type NoteProps = {
@@ -61,8 +57,20 @@ export type NoteProps = {
   meta: NoteMetaProps;
 };
 
-export type NotesProps = {
-  notes: NoteMetaProps[];
+export type WorkMetaProps = {
+  id: string;
+  author: string;
+  description: string;
+  slug: string;
+  title: string;
+  tags: string[];
+  preview: string;
+  repo: string;
+};
+
+export type WorkProps = {
+  content: string;
+  meta: WorkMetaProps;
 };
 
 export type WorksProps = {

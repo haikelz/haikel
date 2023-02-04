@@ -1,22 +1,31 @@
 ---
+id: 1
 author: Haikel
 title: Jadwal Sholat
 tags:
   - nextjs
-  - tailwindcss
-date: 2022-10-23
-preview: Website jadwal Sholat dan baca Al-Qur'an
+  - tailwind
+description: Website jadwal Sholat, baca Al-Qur'an dan Asma'ul Husna
+preview: https://info-jadwal-sholat.vercel.app/
+repo: https://github.com/haikelz/jadwal-sholat
 ---
+
+<LazyLoadImage
+  src="works/jadwal-sholat.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673863931274"
+  alt="Jadwal Sholat"
+/>
 
 ## Deskripsi
 
 Jadwal Sholat adalah sebuah Website untuk menampilkan Jadwal sholat, baca Al-Qur'an, juga daftar Asma'ul Husna. Website ini saya buat awalnya untuk membantu saya sendiri untuk melihat jadwal sholat yang akurat, tapi kemudian saya kembangkan lagi sehingga fungsinya tidak hanya untuk melihat jadwal sholat saja.
 
-Untuk datanya, mayoritas berasal dari API, kecuali untuk Asma'ul Husna. Saya dapetin dari salah satu repo di Github(big thanks buat mas [Rivki](https://github.com/mikqi). Website ini juga sudah PWA, jadi bisa diinstall di hp tanpa perlu bolak balik masuk browser.
+Awalnya, ada jadwal puasa sunnah yang saya tambahkan di Website ini, namun pada tahun 2023, jadwal puasa sunnahnya tidak valid lagi(dikarenakan datanya dikhususkan untuk tahun 2022 saja). Jadi saya pun menonaktifkan fitur ini. Terima kasih banyak buat mas [Bagas](https://github.com/granitebps) yang udah buat API puasa sunnah untuk tahun lalu :D
+
+Website ini saya buat dengan Next JS, Tailwind CSS untuk styling, Jotai untuk state management, Framer Motion untuk animasi, React Query untuk data fetching, dan Jest untuk unit testing.
+
+Untuk datanya, mayoritas berasal dari API, kecuali untuk Asma'ul Husna. Saya dapetin dari salah satu repo di Github(terima kasih banyak buat mas [Rivki](https://github.com/mikqi)). Website ini juga sudah PWA, jadi bisa diinstall di hp tanpa perlu bolak balik masuk browser.
 
 Pengerjaan website ini sebenarnya ga lama-lama banget, tapi yang bikin lama itu karena saya nyicil buat nambahin fitur-fitur baru. Saya belajar banyak dari project ini, terutama dalam meningkatkan kemampuan Next JS dan Typescript saya. Sampai sekarang, saya masih me-maintain website ini.
-
-Berikut [preview](https://info-jadwal-sholat.vercel.app/) dan [repo githubnya](https://github.com/haikelz/jadwal-sholat).
 
 ## Tech stack
 
@@ -26,7 +35,3 @@ Berikut [preview](https://info-jadwal-sholat.vercel.app/) dan [repo githubnya](h
 - React Query
 - Jotai
 - Framer Motion
-
-## Screenshots
-
-Soon

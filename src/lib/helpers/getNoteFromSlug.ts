@@ -15,7 +15,7 @@ export const getNoteFromSlug = (slug: string): NoteProps => {
     meta: {
       slug,
       author: data.author ?? slug,
-      preview: data.preview ?? "",
+      description: data.description ?? "",
       title: data.title ?? slug,
       tags: (data.tags ?? []).sort(),
       date: (data.date ?? date).toLocaleDateString("en-EN", {

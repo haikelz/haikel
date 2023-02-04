@@ -1,14 +1,14 @@
 import Link from "next/link";
 import { twJoin, twMerge } from "tailwind-merge";
-import { projectsList } from "~lib/utils/data";
 import { spaceGrotesk } from "~lib/utils/fonts";
+import { WorksProps } from "~types";
 import { GithubIcon, PreviewIcon } from "~ui/icons";
 import { Paragraph } from "~ui/typography";
 
-const ListWorks = () => {
+const ListWorks = ({ works }: WorksProps) => {
   return (
     <>
-      {projectsList.map((work, index) => (
+      {works.map((work, index) => (
         <div
           className={twJoin(
             "cursor-pointer overflow-hidden border-[2.5px]",
@@ -20,14 +20,7 @@ const ListWorks = () => {
         >
           <div className="px-6 pb-6 pt-3">
             <div className="my-2">
-              <Link
-                href={`/works/${work.title
-                  .toLowerCase()
-                  .match(/[^'".]/gi)
-                  ?.join("")
-                  .split(" ")
-                  .join("-")}`}
-              >
+              <Link href={`/works/${work.slug}`} passHref aria-label={work.title}>
                 <span className={twMerge("text-xl font-bold", spaceGrotesk.className)}>
                   {work.title}
                 </span>
@@ -37,7 +30,7 @@ const ListWorks = () => {
               {work.description}
             </Paragraph>
             <div className={twMerge("mt-3 flex space-x-2 font-medium", spaceGrotesk.className)}>
-              {work.stack.map((techstack, index) => (
+              {work.tags.map((techstack, index) => (
                 <span
                   key={index + 1}
                   className={twJoin(
@@ -50,8 +43,8 @@ const ListWorks = () => {
               ))}
             </div>
             <div className="mt-3 flex justify-end">
-              <GithubIcon link={work.repo} />
-              <PreviewIcon link={work.preview} />
+              {work.repo ? <GithubIcon link={work.repo} /> : null}
+              {work.preview ? <PreviewIcon link={work.preview} /> : null}
             </div>
           </div>
         </div>

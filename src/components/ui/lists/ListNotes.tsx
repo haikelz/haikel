@@ -31,7 +31,7 @@ const ListNotes = ({ filteredNotes }: NotesArticlesProps) => {
                 </span>
               </Link>
             </div>
-            <Paragraph className="mb-2 tracking-wide">{note.preview}</Paragraph>
+            <Paragraph className="mb-2 tracking-wide">{note.description}</Paragraph>
             <div className={twMerge("mt-3 flex space-x-2 font-medium", spaceGrotesk.className)}>
               {note.tags.map((tag) => (
                 <Link

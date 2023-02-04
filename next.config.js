@@ -4,12 +4,7 @@ const nextConfig = {
   swcMinify: true,
   compress: true,
   images: {
-    domains: [
-      "avatars.githubusercontent.com",
-      "raw.githubusercontent.com",
-      "cdn.statically.io",
-      "ik.imagekit.io",
-    ],
+    domains: ["avatars.githubusercontent.com", "cdn.statically.io", "ik.imagekit.io"],
     loader: "akamai",
     path:
       "https://avatars.githubusercontent.com/u/77146709?v=4" ||

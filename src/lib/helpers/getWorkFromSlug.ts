@@ -12,10 +12,13 @@ export const getWorkFromSlug = (slug: string) => {
     content,
     meta: {
       slug,
+      id: data.id ?? slug.length,
       author: data.author ?? slug,
-      preview: data.preview ?? "",
+      description: data.description ?? "",
       title: data.title ?? slug,
       tags: (data.tags ?? []).sort(),
+      repo: data.repo ?? null,
+      preview: data.preview ?? null,
     },
   };
 };
