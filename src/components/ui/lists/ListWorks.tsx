@@ -23,7 +23,7 @@ const ListWorks = () => {
               <Link
                 href={`/works/${work.title
                   .toLowerCase()
-                  .match(/[A-Za-z0-9 _.-]/gi)
+                  .match(/[^'".]/gi)
                   ?.join("")
                   .split(" ")
                   .join("-")}`}
