@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { twJoin, twMerge } from "tailwind-merge";
 import { projectsList } from "~lib/utils/data";
 import { spaceGrotesk } from "~lib/utils/fonts";
@@ -19,9 +20,18 @@ const ListWorks = () => {
         >
           <div className="px-6 pb-6 pt-3">
             <div className="my-2">
-              <span className={twMerge("text-xl font-bold", spaceGrotesk.className)}>
-                {work.title}
-              </span>
+              <Link
+                href={`/works/${work.title
+                  .toLowerCase()
+                  .match(/[A-Za-z0-9 _.-]/gi)
+                  ?.join("")
+                  .split(" ")
+                  .join("-")}`}
+              >
+                <span className={twMerge("text-xl font-bold", spaceGrotesk.className)}>
+                  {work.title}
+                </span>
+              </Link>
             </div>
             <Paragraph className="mb-2" isCenter={false}>
               {work.description}

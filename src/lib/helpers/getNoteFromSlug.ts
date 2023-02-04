@@ -2,7 +2,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
 import { NoteProps } from "~types";
-import { NOTES_PATH } from "../utils/NOTES_PATH";
+import { NOTES_PATH } from "~lib/utils/path";
 import { date } from "./date";
 
 export const getNoteFromSlug = (slug: string): NoteProps => {

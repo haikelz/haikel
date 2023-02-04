@@ -7,22 +7,22 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import { twMerge } from "tailwind-merge";
-import { getNoteFromSlug } from "~lib/helpers/getNoteFromSlug";
 import { getReadingTime } from "~lib/helpers/getReadingTime";
 import { getSlugs } from "~lib/helpers/getSlugs";
+import { getWorkFromSlug } from "~lib/helpers/getWorkFromSlug";
 import { highlighterOptions } from "~lib/helpers/highlighterOptions";
 import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
-import { NOTES_PATH } from "~lib/utils/path";
-import { NotePageProps } from "~types";
+import { WORKS_PATH } from "~lib/utils/path";
+import { WorkPageProps } from "~types";
 import Layout from "~ui/templates/Layout";
 import { Heading, Paragraph } from "~ui/typography";
 
-const LazyLoadImage = dynamic(() => import("~ui/mdx/LazyLoadImage"));
 const AuthorImage = dynamic(() => import("~ui/mdx/AuthorImage"));
 const Video = dynamic(() => import("~ui/mdx/Video"));
+const WorkImage = dynamic(() => import("~ui/mdx/WorkImage"));
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getSlugs(NOTES_PATH).map((slug) => ({ params: { slug } }));
+  const paths = getSlugs(WORKS_PATH).map((slug) => ({ params: { slug } }));
 
   return {
     paths,
@@ -32,7 +32,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params as { slug: string };
-  const { content, meta } = getNoteFromSlug(slug);
+  const { content, meta } = getWorkFromSlug(slug);
   const mdxSource = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [
@@ -45,7 +45,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
-      note: {
+      work: {
         source: mdxSource,
         meta,
       },
@@ -53,28 +53,28 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-const NotePage = ({ note }: NotePageProps) => {
+const DetailWorkPage = ({ work }: WorkPageProps) => {
   const readingTime: number = useMemo(
-    () => getReadingTime({ ...note.source }.compiledSource),
-    [note.source]
+    () => getReadingTime({ ...work.source }.compiledSource),
+    [work.source]
   );
 
   return (
     <Layout
-      title={note.meta.title}
-      description={note.meta.preview}
+      title={work.meta.title}
+      description={work.meta.preview}
       className="flex min-h-screen flex-col items-center justify-start pt-6 pb-12 md:pt-12"
     >
       <article className="flex w-full flex-col flex-wrap justify-center md:mb-10">
         <div className="flex flex-col">
           <Heading as="h1" className="gradient">
-            {note.meta.title}
+            {work.meta.title}
           </Heading>
           <div className="my-3 flex items-center">
             <AuthorImage />
             <Paragraph className={spaceGrotesk.className} isCenter={false}>
-              <span className="font-semibold">{note.meta.author}</span>,{" "}
-              <span className="font-semibold">{readingTime} Min read</span> / {note.meta.date}
+              <span className="font-semibold">{work.meta.author}</span>,{" "}
+              <span className="font-semibold">{readingTime} Min read</span>
             </Paragraph>
           </div>
         </div>
@@ -82,11 +82,11 @@ const NotePage = ({ note }: NotePageProps) => {
           <p className={twMerge("text-right text-2xl font-bold", naskhArabic.className)}>
             بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
           </p>
-          <MDXRemote {...note.source} components={{ Video, LazyLoadImage }} />
+          <MDXRemote {...work.source} components={{ Video, WorkImage }} />
         </div>
       </article>
     </Layout>
   );
 };
 
-export default NotePage;
+export default DetailWorkPage;

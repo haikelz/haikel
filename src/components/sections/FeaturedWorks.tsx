@@ -28,9 +28,11 @@ const FeaturedWorks = () => {
             >
               <div className="px-6 pb-6 pt-3">
                 <div className="my-2">
-                  <span className={twMerge("text-xl font-bold", spaceGrotesk.className)}>
-                    {work.title}
-                  </span>
+                  <Link href={`/works/${work.title.toLowerCase().split(" ").join("-")}`}>
+                    <span className={twMerge("text-xl font-bold", spaceGrotesk.className)}>
+                      {work.title}
+                    </span>
+                  </Link>
                 </div>
                 <Paragraph className="mb-2" isCenter={false}>
                   {work.description}

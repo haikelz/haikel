@@ -1,10 +1,11 @@
-import { MdAccountCircle, MdHomeFilled, MdLibraryBooks, MdWork } from "react-icons/md";
+import { MdHomeFilled, MdLibraryBooks, MdWork } from "react-icons/md";
 
 const tailwind: string = "tailwindcss";
 const next: string = "nextjs";
 const reactQuery: string = "react-query";
 const motion: string = "framer-motion";
 const svelte: string = "svelte";
+const react: string = "reactjs";
 
 export const projectsList = [
   {
@@ -26,7 +27,7 @@ export const projectsList = [
     description: "Sebuah cara untuk mengatur kuliah kamu",
     repo: "https://github.com/haikelz/the-zeitplan",
     preview: "https://the-zeitplan.pages.dev",
-    stack: [next, tailwind],
+    stack: [react, tailwind],
   },
   {
     title: "Chat n' rechat",
@@ -54,7 +55,7 @@ export const projectsList = [
     description: "Another Vite Starter for React JS",
     repo: "https://github.com/haikelz/vite-starter",
     preview: "https://vite-starter-gamma.vercel.app/",
-    stack: ["reactjs", "vite"],
+    stack: [react, "vite"],
   },
 ];
 

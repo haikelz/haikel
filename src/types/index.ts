@@ -10,8 +10,17 @@ export type MDXnote = {
   meta: NoteMetaProps;
 };
 
+export type MDXWork = {
+  source: MDXRemoteSerializeResult<Record<string, unknown>>;
+  meta: WorkMetaProps;
+};
+
 export type NotePageProps = {
   note: MDXnote;
+};
+
+export type WorkPageProps = {
+  work: MDXWork;
 };
 
 export type LinkIconProps = {
@@ -39,6 +48,14 @@ export type NoteMetaProps = {
   date: string;
 };
 
+export type WorkMetaProps = {
+  author: string;
+  preview: string;
+  slug: string;
+  title: string;
+  tags: string[];
+};
+
 export type NoteProps = {
   content: string;
   meta: NoteMetaProps;
@@ -46,4 +63,8 @@ export type NoteProps = {
 
 export type NotesProps = {
   notes: NoteMetaProps[];
+};
+
+export type WorksProps = {
+  works: WorkMetaProps[];
 };

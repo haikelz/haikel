@@ -1,8 +1,7 @@
 import { sync } from "glob";
-import { NOTES_PATH } from "~lib/utils/NOTES_PATH";
 
-export const getSlugs = (): string[] => {
-  const paths: string[] = sync(`${NOTES_PATH}/*.mdx`);
+export const getSlugs = (path: string): string[] => {
+  const paths: string[] = sync(`${path}/*.mdx`);
 
   return paths.map((path) => {
     const parts = path.split("/");
