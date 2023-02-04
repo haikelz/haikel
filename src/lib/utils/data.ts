@@ -22,6 +22,6 @@ export const metadata = {
   url: "https://haikel.my.id",
   type: "website",
   title: "Haikel",
-  description: "Haikel's Website",
+  description: "A person who interested in Frontend stuff",
   image: "https://avatars.githubusercontent.com/u/77146709?v=4",
 };

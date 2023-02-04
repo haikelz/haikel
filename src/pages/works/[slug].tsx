@@ -16,7 +16,7 @@ import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
 import { WORKS_PATH } from "~lib/utils/path";
 import { WorkPageProps } from "~types";
 import Layout from "~ui/templates/Layout";
-import { Heading, Paragraph, UnderlineSpan } from "~ui/typography";
+import { Heading, UnderlineSpan } from "~ui/typography";
 
 const AuthorImage = dynamic(() => import("~ui/mdx/AuthorImage"));
 const Video = dynamic(() => import("~ui/mdx/Video"));
@@ -84,7 +84,7 @@ const DetailWorkPage = ({ work }: WorkPageProps) => {
                   </Link>
                 </button>
               ) : null}
-              {" / "}
+              {work.meta.preview && work.meta.repo ? " / " : null}
               {work.meta.repo ? (
                 <button className="text-base font-normal leading-[1.75rem] tracking-wide">
                   <Link href={work.meta.repo}>

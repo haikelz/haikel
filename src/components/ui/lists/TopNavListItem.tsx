@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { NextRouter, useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import { twMerge } from "tailwind-merge";
 import { topNavList } from "~lib/utils/data";
 import { spaceGrotesk } from "~lib/utils/fonts";
 
 const TopNavListItem = () => {
-  const router: NextRouter = useRouter();
+  const path = usePathname();
 
   return (
     <>
@@ -15,7 +15,7 @@ const TopNavListItem = () => {
           className={twMerge(
             "cursor-pointer rounded-sm",
             "px-1 text-base font-semibold active:bg-pink-100 active:dark:bg-slate-800",
-            router.asPath === nav.href
+            path?.includes(nav.href)
               ? "gradient underline decoration-[#0093E9] decoration-dashed underline-offset-[5px]"
               : "",
             spaceGrotesk.className
