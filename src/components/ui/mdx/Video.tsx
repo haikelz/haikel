@@ -12,7 +12,7 @@ const Video = ({ title, src }: VideoProps) => {
         src={src}
         title={title}
         allow="autoplay"
-        className="absolute top-0 left-0 h-full w-full border-0"
+        className="absolute top-0 left-0 aspect-video h-full w-full border-0"
       />
     </div>
   );

@@ -16,7 +16,7 @@ export const getWorkFromSlug = (slug: string) => {
       author: data.author ?? slug,
       description: data.description ?? "",
       title: data.title ?? slug,
-      tags: (data.tags ?? []).sort(),
+      stack: (data.stack ?? []).sort(),
       repo: data.repo ?? null,
       preview: data.preview ?? null,
     },

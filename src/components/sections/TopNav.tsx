@@ -1,8 +1,11 @@
 import dynamic from "next/dynamic";
-import { twJoin } from "tailwind-merge";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { twJoin, twMerge } from "tailwind-merge";
 import { useTheme } from "~hooks/useTheme";
+import { topNavList } from "~lib/utils/data";
+import { spaceGrotesk } from "~lib/utils/fonts";
 import { TopNavLogo } from "~ui/icons";
-import TopNavListItem from "~ui/lists/TopNavListItem";
 
 const ToggleDarkModeTopNav = dynamic(
   () => import("~ui/icons").then((icon) => icon.ToggleDarkModeTopNav),
@@ -11,6 +14,7 @@ const ToggleDarkModeTopNav = dynamic(
 
 const TopNav = () => {
   const [theme, setTheme] = useTheme();
+  const path: string | null = usePathname();
 
   return (
     <nav
@@ -26,7 +30,24 @@ const TopNav = () => {
         <div className="flex items-center justify-center">
           <div className="hidden md:block">
             <div className="ml-8 flex items-center justify-center space-x-8 tracking-widest">
-              <TopNavListItem />
+              {topNavList.map((nav) => (
+                <Link
+                  role="button"
+                  className={twMerge(
+                    "cursor-pointer rounded-sm",
+                    "px-1 text-base font-semibold active:bg-pink-100 active:dark:bg-slate-800",
+                    path?.includes(nav.href)
+                      ? "gradient underline decoration-[#0093E9] decoration-dashed underline-offset-[5px]"
+                      : "",
+                    spaceGrotesk.className
+                  )}
+                  href={nav.href}
+                  key={nav.id}
+                  aria-label={nav.text}
+                >
+                  {nav.text}
+                </Link>
+              ))}
               <ToggleDarkModeTopNav
                 theme={theme}
                 changeTheme={() => setTheme(theme === "dark" ? "light" : "dark")}

@@ -63,7 +63,7 @@ export type WorkMetaProps = {
   description: string;
   slug: string;
   title: string;
-  tags: string[];
+  stack: string[];
   preview: string;
   repo: string;
 };

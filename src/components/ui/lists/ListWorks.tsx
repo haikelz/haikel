@@ -30,7 +30,7 @@ const ListWorks = ({ works }: WorksProps) => {
               {work.description}
             </Paragraph>
             <div className={twMerge("mt-3 flex space-x-2 font-medium", spaceGrotesk.className)}>
-              {work.tags.map((techstack, index) => (
+              {work.stack.map((techstack, index) => (
                 <span
                   key={index + 1}
                   className={twJoin(
