@@ -12,7 +12,7 @@ const ToggleDarkIcon = dynamic(() => import("~ui/icons").then((icon) => icon.Tog
 
 const BottomNav = () => {
   const [theme, setTheme] = useTheme();
-  const path = usePathname();
+  const path: string | null = usePathname();
 
   return (
     <nav
@@ -23,15 +23,22 @@ const BottomNav = () => {
     >
       <div
         className={twJoin(
-          "grid w-full grid-cols-4 grid-rows-1 border-t border-slate-300",
+          "w-full max-w-5xl border-t border-slate-300",
           "bg-azure p-4 dark:border-slate-600 dark:bg-eerieblack"
         )}
       >
-        {bottomNavList.map((item, index) => {
-          const Icon: IconType = item.icon;
-          return (
-            <button type="button" key={index + 1} className="flex items-center justify-center">
-              <Link href={item.link} aria-label={item.name} passHref>
+        <div className="flex w-full items-center justify-around">
+          {bottomNavList.map((item, index) => {
+            const Icon: IconType = item.icon;
+            return (
+              <Link
+                className="flex items-center justify-center"
+                role="button"
+                key={index + 1}
+                href={item.link}
+                aria-label={item.name}
+                passHref
+              >
                 <Icon
                   className={twJoin(
                     "transition-all duration-200",
@@ -46,13 +53,13 @@ const BottomNav = () => {
                   size={28}
                 />
               </Link>
-            </button>
-          );
-        })}
-        <ToggleDarkIcon
-          theme={theme}
-          changeTheme={() => setTheme(theme === "dark" ? "light" : "dark")}
-        />
+            );
+          })}
+          <ToggleDarkIcon
+            theme={theme}
+            changeTheme={() => setTheme(theme === "dark" ? "light" : "dark")}
+          />
+        </div>
       </div>
     </nav>
   );
