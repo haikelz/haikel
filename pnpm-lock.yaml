@@ -30,6 +30,7 @@ specifiers:
   react: 18.2.0
   react-dom: 18.2.0
   react-icons: ^4.3.1
+  reading-time: ^1.5.0
   rehype-autolink-headings: ^6.1.1
   rehype-pretty-code: ^0.9.2
   rehype-slug: ^5.1.0
@@ -54,6 +55,7 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.7.1_react@18.2.0
+  reading-time: 1.5.0
   rehype-autolink-headings: 6.1.1
   rehype-pretty-code: 0.9.2_shiki@0.13.0
   rehype-slug: 5.1.0
@@ -3989,6 +3991,10 @@ packages:
     engines: {node: '>=8.10.0'}
     dependencies:
       picomatch: 2.3.1
+
+  /reading-time/1.5.0:
+    resolution: {integrity: sha512-onYyVhBNr4CmAxFsKS7bz+uTLRakypIe4R+5A824vBSkQy/hB3fZepoVEf8OVAxzLvK+H/jm9TzpI3ETSm64Kg==}
+    dev: false
 
   /regenerator-runtime/0.13.11:
     resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}

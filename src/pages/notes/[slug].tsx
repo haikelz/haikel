@@ -3,12 +3,12 @@ import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
 import { useMemo } from "react";
+import readingTime, { ReadTimeResults } from "reading-time";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import { twMerge } from "tailwind-merge";
 import { getNoteFromSlug } from "~lib/helpers/getNoteFromSlug";
-import { getReadingTime } from "~lib/helpers/getReadingTime";
 import { getSlugs } from "~lib/helpers/getSlugs";
 import { highlighterOptions } from "~lib/helpers/highlighterOptions";
 import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
@@ -48,15 +48,16 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       note: {
         source: mdxSource,
         meta,
+        content,
       },
     },
   };
 };
 
 const NotePage = ({ note }: NotePageProps) => {
-  const readingTime: number = useMemo(
-    () => getReadingTime({ ...note.source }.compiledSource),
-    [note.source]
+  const memoizedReadingTime: ReadTimeResults = useMemo(
+    () => readingTime(note.content),
+    [note.content]
   );
 
   return (
@@ -74,7 +75,10 @@ const NotePage = ({ note }: NotePageProps) => {
             <AuthorImage />
             <Paragraph className={spaceGrotesk.className} isCenter={false}>
               <span className="font-semibold">{note.meta.author}</span>,{" "}
-              <span className="font-semibold">{readingTime} Min read</span> / {note.meta.date}
+              <span className="font-semibold">
+                {Math.round(memoizedReadingTime.minutes)} Min read
+              </span>{" "}
+              / {note.meta.date}
             </Paragraph>
           </div>
         </div>

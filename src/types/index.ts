@@ -8,11 +8,13 @@ export type ChildrenProps = {
 export type MDXnote = {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
   meta: NoteMetaProps;
+  content: string;
 };
 
 export type MDXWork = {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
   meta: WorkMetaProps;
+  content: string;
 };
 
 export type NotePageProps = {
