@@ -4,11 +4,11 @@ import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useMemo } from "react";
-import readingTime, { ReadTimeResults } from "reading-time";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import { twMerge } from "tailwind-merge";
+import { getReadingTime } from "~lib/helpers/getReadingTime";
 import { getSlugs } from "~lib/helpers/getSlugs";
 import { getWorkFromSlug } from "~lib/helpers/getWorkFromSlug";
 import { highlighterOptions } from "~lib/helpers/highlighterOptions";
@@ -56,10 +56,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 const DetailWorkPage = ({ work }: WorkPageProps) => {
-  const memoizedReadingTime: ReadTimeResults = useMemo(
-    () => readingTime(work.content),
-    [work.content]
-  );
+  const memoizedReadingTime: string = useMemo(() => getReadingTime(work.content), [work.content]);
 
   return (
     <Layout
@@ -76,7 +73,7 @@ const DetailWorkPage = ({ work }: WorkPageProps) => {
             <AuthorImage />
             <div className={spaceGrotesk.className}>
               <span className="text-base font-normal leading-[1.75rem] tracking-wide">
-                {work.meta.author}, {Math.round(memoizedReadingTime.minutes)} Min read.
+                {work.meta.author}, {memoizedReadingTime} read.
               </span>{" "}
               {work.meta.preview ? (
                 <button className="text-base font-normal leading-[1.75rem] tracking-wide">
