@@ -63,7 +63,7 @@ const Notes = ({ notes }: NotesProps) => {
       </div>
       <SearchBar search={search} setSearch={setSearch} />
       {filteredNotes.length ? (
-        <div className="grid w-full grid-cols-1 grid-rows-1 gap-6 sm:grid-cols-2">
+        <div className="grid w-full grid-cols-1 grid-rows-1 gap-5 sm:grid-cols-2">
           <ListNotes filteredNotes={filteredNotes} />
         </div>
       ) : (

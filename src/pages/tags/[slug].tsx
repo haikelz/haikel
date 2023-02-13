@@ -49,7 +49,7 @@ const Tags = ({ slug, notes }: TagProps) => {
           <Underline />
         </div>
       </div>
-      <div className="grid w-full grid-cols-1 grid-rows-1 gap-6 sm:grid-cols-2">
+      <div className="grid w-full grid-cols-1 grid-rows-1 gap-5 sm:grid-cols-2">
         <ListNotes filteredNotes={notes} />
       </div>
     </Layout>

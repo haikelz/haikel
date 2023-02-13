@@ -21,8 +21,8 @@ const ListNotes = ({ filteredNotes }: NotesArticlesProps) => {
           )}
           key={note.slug}
         >
-          <div className="h-full px-6 pb-6 pt-3">
-            <div className="my-2">
+          <div className="h-full px-6 py-4">
+            <div>
               <Link href={`/notes/${note.slug}`} passHref aria-label={note.title}>
                 <span
                   className={twMerge("cursor-pointer text-xl font-bold", spaceGrotesk.className)}
@@ -31,7 +31,7 @@ const ListNotes = ({ filteredNotes }: NotesArticlesProps) => {
                 </span>
               </Link>
             </div>
-            <Paragraph className="mb-2 tracking-wide">{note.description}</Paragraph>
+            <Paragraph className="mt-1 mb-2 tracking-wide">{note.description}</Paragraph>
             <div className={twMerge("mt-3 flex space-x-2 font-medium", spaceGrotesk.className)}>
               {note.tags.map((tag) => (
                 <Link
@@ -47,7 +47,7 @@ const ListNotes = ({ filteredNotes }: NotesArticlesProps) => {
                 </Link>
               ))}
             </div>
-            <Paragraph className={twMerge("mt-2 text-right font-medium", spaceGrotesk.className)}>
+            <Paragraph className={twMerge("mt-3 text-right font-medium", spaceGrotesk.className)}>
               {note.date}
             </Paragraph>
           </div>

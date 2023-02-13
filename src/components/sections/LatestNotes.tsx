@@ -13,7 +13,7 @@ const LatestNotes = ({ notes }: { notes: NoteMetaProps[] }) => {
           </Heading>
           <Underline />
         </div>
-        <div className="mt-6 grid w-full grid-cols-1 grid-rows-1 gap-6 sm:grid-cols-2">
+        <div className="mt-6 grid w-full grid-cols-1 grid-rows-1 gap-5 sm:grid-cols-2">
           <ListNotes filteredNotes={notes} />
         </div>
         <div className="mt-3 flex w-full items-end justify-end">

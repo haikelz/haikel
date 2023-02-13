@@ -24,7 +24,8 @@ const About = () => {
         <div
           className={twJoin(
             "mt-6 flex flex-col items-center justify-center text-center",
-            "sm:w-9/12 md:ml-8 md:mt-0 md:block md:text-start lg:w-[50%]"
+            "sm:w-9/12",
+            "md:ml-8 md:mt-0 md:block md:w-3/5 md:text-start"
           )}
         >
           <Heading as="h1">

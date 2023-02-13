@@ -18,7 +18,8 @@ export const SearchBar = ({ search, setSearch }: SearchBarProps) => {
         className={twJoin(
           "block w-full border-[2.5px] border-black bg-white",
           "py-2.5 px-4 pl-12 font-medium transition-all ease-in-out",
-          "hover:shadow-light dark:border-white dark:bg-raisinblack dark:hover:shadow-dark"
+          "hover:shadow-light",
+          "dark:border-white dark:bg-raisinblack dark:hover:shadow-dark"
         )}
         type="text"
         name="search"

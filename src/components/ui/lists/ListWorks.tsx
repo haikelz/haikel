@@ -11,22 +11,22 @@ const ListWorks = ({ works }: WorksProps) => {
       {works.map((work, index) => (
         <div
           className={twJoin(
-            "cursor-pointer overflow-hidden border-[2.5px]",
+            "overflow-hidden border-[2.5px]",
             "border-black bg-azure transition-all ease-in-out",
             "hover:shadow-light active:scale-95",
             "dark:border-white dark:bg-raisinblack dark:hover:shadow-dark"
           )}
           key={index + 1}
         >
-          <div className="px-6 pb-6 pt-3">
-            <div className="my-2">
+          <div className="h-full px-6 py-4">
+            <div>
               <Link href={`/works/${work.slug}`} passHref aria-label={work.title}>
                 <span className={twMerge("text-xl font-bold", spaceGrotesk.className)}>
                   {work.title}
                 </span>
               </Link>
             </div>
-            <Paragraph className="mb-2" isCenter={false}>
+            <Paragraph className="mt-1 mb-2 tracking-wide" isCenter={false}>
               {work.description}
             </Paragraph>
             <div className={twMerge("mt-3 flex space-x-2 font-medium", spaceGrotesk.className)}>

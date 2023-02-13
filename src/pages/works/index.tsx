@@ -39,7 +39,7 @@ const Works = ({ works }: WorksProps) => {
           <Paragraph isCenter>List some of my works</Paragraph>
         </div>
       </div>
-      <div className="grid w-full grid-cols-1 grid-rows-1 gap-6 sm:grid-cols-2">
+      <div className="grid w-full grid-cols-1 grid-rows-1 gap-5 sm:grid-cols-2">
         <ListWorks works={works} />
       </div>
     </Layout>
