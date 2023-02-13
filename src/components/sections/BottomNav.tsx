@@ -23,7 +23,7 @@ const BottomNav = () => {
     >
       <div
         className={twJoin(
-          "w-full max-w-5xl border-t border-slate-300",
+          "w-full max-w-4xl border-t border-slate-300",
           "bg-azure p-4 dark:border-slate-600 dark:bg-eerieblack"
         )}
       >

@@ -25,7 +25,7 @@ const TopNav = () => {
         "md:block"
       )}
     >
-      <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-4">
+      <div className="mx-auto flex w-full max-w-4xl items-center justify-between px-4">
         <TopNavLogo />
         <div className="flex items-center justify-center">
           <div className="hidden md:block">

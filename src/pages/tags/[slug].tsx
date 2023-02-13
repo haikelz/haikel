@@ -1,4 +1,5 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
+import { ParsedUrlQuery } from "querystring";
 import { getAllNotes } from "~lib/helpers/getAllNotes";
 import { NoteMetaProps, NoteProps } from "~types";
 import ListNotes from "~ui/lists/ListNotes";
@@ -10,7 +11,7 @@ type TagProps = {
   notes: NoteMetaProps[];
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths<ParsedUrlQuery> = async () => {
   const notes: NoteProps[] = getAllNotes();
   const tags: Set<string> = new Set(notes.map((note) => note.meta.tags).flat());
   const paths = Array.from(tags).map((tag) => ({ params: { slug: tag } }));

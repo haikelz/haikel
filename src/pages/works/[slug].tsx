@@ -3,6 +3,7 @@ import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import { ParsedUrlQuery } from "querystring";
 import { useMemo } from "react";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
@@ -12,8 +13,8 @@ import { getReadingTime } from "~lib/helpers/getReadingTime";
 import { getSlugs } from "~lib/helpers/getSlugs";
 import { getWorkFromSlug } from "~lib/helpers/getWorkFromSlug";
 import { highlighterOptions } from "~lib/helpers/highlighterOptions";
+import { WORKS_PATH } from "~lib/utils/contentsPath";
 import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
-import { WORKS_PATH } from "~lib/utils/path";
 import { WorkPageProps } from "~types";
 import Layout from "~ui/templates/Layout";
 import { Heading, UnderlineSpan } from "~ui/typography";
@@ -22,7 +23,7 @@ const AuthorImage = dynamic(() => import("~ui/mdx/AuthorImage"));
 const Video = dynamic(() => import("~ui/mdx/Video"));
 const LazyLoadImage = dynamic(() => import("~ui/mdx/LazyLoadImage"));
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths<ParsedUrlQuery> = async () => {
   const paths = getSlugs(WORKS_PATH).map((slug) => ({ params: { slug } }));
 
   return {
@@ -71,12 +72,16 @@ const DetailWorkPage = ({ work }: WorkPageProps) => {
           </Heading>
           <div className="my-3 flex items-center">
             <AuthorImage />
-            <div className={spaceGrotesk.className}>
-              <span className="text-base font-normal leading-[1.75rem] tracking-wide">
+            <div className={twMerge("tracking-[0.050em]", spaceGrotesk.className)}>
+              <span className="text-base font-normal leading-[1.75rem]">
                 {work.meta.author}, {memoizedReadingTime} read.
               </span>{" "}
               {work.meta.preview ? (
-                <button className="text-base font-normal leading-[1.75rem] tracking-wide">
+                <button
+                  type="button"
+                  aria-label="Preview"
+                  className="text-base font-normal leading-[1.75rem] tracking-[0.050em]"
+                >
                   <Link href={work.meta.preview}>
                     <UnderlineSpan>Preview</UnderlineSpan>
                   </Link>
@@ -84,7 +89,11 @@ const DetailWorkPage = ({ work }: WorkPageProps) => {
               ) : null}
               {work.meta.preview && work.meta.repo ? " / " : null}
               {work.meta.repo ? (
-                <button className="text-base font-normal leading-[1.75rem] tracking-wide">
+                <button
+                  type="button"
+                  aria-label="Source"
+                  className="text-base font-normal leading-[1.75rem] tracking-[0.050em]"
+                >
                   <Link href={work.meta.repo}>
                     <UnderlineSpan>Source</UnderlineSpan>
                   </Link>

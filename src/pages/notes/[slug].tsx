@@ -2,6 +2,7 @@ import type { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
+import { ParsedUrlQuery } from "querystring";
 import { useMemo } from "react";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
@@ -11,8 +12,8 @@ import { getNoteFromSlug } from "~lib/helpers/getNoteFromSlug";
 import { getReadingTime } from "~lib/helpers/getReadingTime";
 import { getSlugs } from "~lib/helpers/getSlugs";
 import { highlighterOptions } from "~lib/helpers/highlighterOptions";
+import { NOTES_PATH } from "~lib/utils/contentsPath";
 import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
-import { NOTES_PATH } from "~lib/utils/path";
 import { NotePageProps } from "~types";
 import Layout from "~ui/templates/Layout";
 import { Heading, Paragraph } from "~ui/typography";
@@ -21,7 +22,7 @@ const LazyLoadImage = dynamic(() => import("~ui/mdx/LazyLoadImage"));
 const AuthorImage = dynamic(() => import("~ui/mdx/AuthorImage"));
 const Video = dynamic(() => import("~ui/mdx/Video"));
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths<ParsedUrlQuery> = async () => {
   const paths = getSlugs(NOTES_PATH).map((slug) => ({ params: { slug } }));
 
   return {
@@ -70,7 +71,7 @@ const NotePage = ({ note }: NotePageProps) => {
           </Heading>
           <div className="my-3 flex items-center">
             <AuthorImage />
-            <Paragraph className={spaceGrotesk.className} isCenter={false}>
+            <Paragraph className={twMerge("tracking-[0.050em]", spaceGrotesk.className)}>
               <span className="font-semibold">{note.meta.author}</span>,{" "}
               <span className="font-semibold">{memoizedReadingTime} read</span> / {note.meta.date}
             </Paragraph>

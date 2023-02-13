@@ -16,7 +16,6 @@
   "dependencies": {
     "@next/env": "*",
     "@next/font": "^13.1.5",
-    "framer-motion": "^8.0.2",
     "glob": "^8.0.3",
     "gray-matter": "^4.0.3",
     "jotai": "^1.12.0",

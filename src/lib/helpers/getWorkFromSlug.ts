@@ -1,7 +1,7 @@
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
-import { WORKS_PATH } from "~lib/utils/path";
+import { WORKS_PATH } from "~lib/utils/contentsPath";
 
 export const getWorkFromSlug = (slug: string) => {
   const workPath: string = path.join(WORKS_PATH, `${slug}.mdx`);

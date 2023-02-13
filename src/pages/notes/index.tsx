@@ -22,7 +22,7 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Notes = ({ notes }: NotesProps) => {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState<string>("");
   const matchResult: string | undefined = matchSearch(search);
 
   const filteredNotes = useMemo(

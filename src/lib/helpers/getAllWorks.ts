@@ -1,4 +1,4 @@
-import { WORKS_PATH } from "~lib/utils/path";
+import { WORKS_PATH } from "~lib/utils/contentsPath";
 import { WorkProps } from "~types";
 import { getSlugs } from "./getSlugs";
 import { getWorkFromSlug } from "./getWorkFromSlug";

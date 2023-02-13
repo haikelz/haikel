@@ -7,6 +7,11 @@ import LatestNotes from "~sections/LatestNotes";
 import { NoteMetaProps, WorkMetaProps } from "~types";
 import Layout from "~ui/templates/Layout";
 
+type InitialDataProps = {
+  notes: NoteMetaProps[];
+  works: WorkMetaProps[];
+};
+
 export const getStaticProps: GetStaticProps = async () => {
   const notes: NoteMetaProps[] = getAllNotes()
     .slice(0, 4)
@@ -22,11 +27,6 @@ export const getStaticProps: GetStaticProps = async () => {
       works,
     },
   };
-};
-
-type InitialDataProps = {
-  notes: NoteMetaProps[];
-  works: WorkMetaProps[];
 };
 
 const Home = ({ notes, works }: InitialDataProps) => {

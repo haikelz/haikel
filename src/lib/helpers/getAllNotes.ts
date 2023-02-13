@@ -1,4 +1,4 @@
-import { NOTES_PATH } from "~lib/utils/path";
+import { NOTES_PATH } from "~lib/utils/contentsPath";
 import { NoteProps } from "~types";
 import { getNoteFromSlug } from "./getNoteFromSlug";
 import { getSlugs } from "./getSlugs";

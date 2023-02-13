@@ -18,6 +18,7 @@ module.exports = {
         fireopal: "#F05454",
         lightgray: "#D1D9D0",
         raisinblack: "#1F1F28",
+        richblack: "#0B0B22",
       },
       typography: ({ theme }) => {
         return {
