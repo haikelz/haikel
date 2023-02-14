@@ -14,8 +14,6 @@ const LazyLoadImage = ({ src, alt, ...props }: LazyLoadImageProps) => {
       alt={alt}
       width={500}
       height={500}
-      placeholder="blur"
-      blurDataURL={src}
       loading="lazy"
       loader={imageKitLoader}
       {...props}

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { memo } from "react";
 import { twJoin } from "tailwind-merge";
+import { imageKitLoader } from "~lib/helpers/imageKitLoader";
 
 const AboutImage = () => {
   return (
@@ -11,8 +12,9 @@ const AboutImage = () => {
       )}
     >
       <Image
+        loader={imageKitLoader}
         className="cursor-pointer rounded-full"
-        src="https://avatars.githubusercontent.com/u/77146709?v=4"
+        src="/others/profile.jpeg"
         alt="About Image"
         width={270}
         height={270}
