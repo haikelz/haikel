@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import Layout from "~ui/templates/Layout";
+import Layout from "~ui/layout";
 import { Heading, Paragraph } from "~ui/typography";
 
 const ErrorImage = dynamic(() => import("~ui/images/ErrorImage"));

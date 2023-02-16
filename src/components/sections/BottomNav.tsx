@@ -1,14 +1,19 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ComponentType } from "react";
 import { IconType } from "react-icons/lib";
 import { twJoin } from "tailwind-merge";
 import { useTheme } from "~hooks/useTheme";
 import { bottomNavList } from "~lib/utils/data";
+import { ThemeProps } from "~types";
 
-const ToggleDarkIcon = dynamic(() => import("~ui/icons").then((icon) => icon.ToggleDarkIcon), {
-  ssr: false,
-});
+const ToggleDarkIcon: ComponentType<ThemeProps> = dynamic(
+  () => import("~ui/icons").then((icon) => icon.ToggleDarkIcon),
+  {
+    ssr: false,
+  }
+);
 
 const BottomNav = () => {
   const [theme, setTheme] = useTheme();
@@ -23,7 +28,7 @@ const BottomNav = () => {
     >
       <div
         className={twJoin(
-          "w-full max-w-4xl border-t border-slate-300",
+          "w-full max-w-4xl border-t-[1.5px] border-slate-300",
           "bg-azure p-4 dark:border-slate-600 dark:bg-eerieblack"
         )}
       >

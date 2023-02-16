@@ -6,7 +6,7 @@ import { matchSearch } from "~lib/helpers/matchSearch";
 import { NoteMetaProps, NotesProps } from "~types";
 import { SearchBar } from "~ui/input";
 import ListNotes from "~ui/lists/ListNotes";
-import Layout from "~ui/templates/Layout";
+import Layout from "~ui/layout";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
 export const getStaticProps: GetStaticProps = async () => {

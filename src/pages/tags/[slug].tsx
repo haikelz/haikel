@@ -3,7 +3,7 @@ import { ParsedUrlQuery } from "querystring";
 import { getAllNotes } from "~lib/helpers/getAllNotes";
 import { NoteMetaProps, NoteProps } from "~types";
 import ListNotes from "~ui/lists/ListNotes";
-import Layout from "~ui/templates/Layout";
+import Layout from "~ui/layout";
 import { Heading, Underline } from "~ui/typography";
 
 type TagProps = {

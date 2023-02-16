@@ -42,26 +42,24 @@ const About = () => {
             🌸
           </Heading>
           {language ? (
-            <>
-              <Paragraph className="mt-3">
-                A person who interested in Frontend stuff, User Interface/Experience, Design
-                Systems, Open Source, and Linux. Feel free to reach me via{" "}
-                {socialMediaList.map((item, index) => (
-                  <Link className="link-contact" key={index + 1} href={item.link} passHref>
-                    {item.name}
-                    {item.name === "Telegram" || item.name === "Facebook"
-                      ? ", "
-                      : item.name === "Github"
-                      ? ", "
-                      : ""}
-                  </Link>
-                ))}
-                .{" "}
-                <button type="button" onClick={toggleLanguage}>
-                  <UnderlineSpan>See in Indonesia.</UnderlineSpan>
-                </button>
-              </Paragraph>
-            </>
+            <Paragraph className="mt-3">
+              A person who interested in Frontend stuff, User Interface/Experience, Design Systems,
+              Open Source, and Linux. Feel free to reach me via{" "}
+              {socialMediaList.map((item, index) => (
+                <Link className="link-contact" key={index + 1} href={item.link} passHref>
+                  {item.name}
+                  {item.name === "Telegram" || item.name === "Facebook"
+                    ? ", "
+                    : item.name === "Github"
+                    ? ", "
+                    : ""}
+                </Link>
+              ))}
+              .{" "}
+              <button type="button" onClick={toggleLanguage}>
+                <UnderlineSpan>See in Indonesia.</UnderlineSpan>
+              </button>
+            </Paragraph>
           ) : (
             <Paragraph className="mt-3">
               Seseorang yang tertarik dengan hal-hal terkait Frontend, User Interface/Experience,

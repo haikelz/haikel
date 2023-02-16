@@ -5,7 +5,7 @@ import About from "~sections/About";
 import FeaturedWorks from "~sections/FeaturedWorks";
 import LatestNotes from "~sections/LatestNotes";
 import { NoteMetaProps, WorkMetaProps } from "~types";
-import Layout from "~ui/templates/Layout";
+import Layout from "~ui/layout";
 
 type InitialDataProps = {
   notes: NoteMetaProps[];

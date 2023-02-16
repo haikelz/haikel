@@ -12,9 +12,10 @@ const AboutImage = () => {
       )}
     >
       <Image
+        draggable={false}
         loader={imageKitLoader}
         className="cursor-pointer rounded-full"
-        src="/others/profile.jpeg"
+        src="others/profile.jpeg"
         alt="About Image"
         width={270}
         height={270}

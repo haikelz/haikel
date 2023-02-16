@@ -3,7 +3,7 @@ import { twJoin } from "tailwind-merge";
 import { getAllWorks } from "~lib/helpers/getAllWorks";
 import { WorkMetaProps, WorksProps } from "~types";
 import ListWorks from "~ui/lists/ListWorks";
-import Layout from "~ui/templates/Layout";
+import Layout from "~ui/layout";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
 export const getStaticProps: GetStaticProps = async () => {

@@ -1,18 +1,18 @@
 export const highlighterOptions = {
   /**
    * Set theme from shiki
-   * See: https://github.com/shikijs/shiki/tree/main/packages/shiki/themes
+   * @see: https://github.com/shikijs/shiki/tree/main/packages/shiki/themes
    */
   theme: "github-dark",
 
   onVisitLine(node: { children: { length: number } }) {
-    if (node.children.length === 0) {
-      node.children = [{ type: "text", value: " " }];
-    }
+    if (node.children.length === 0) node.children = [{ type: "text", value: " " }];
   },
+
   onVisitHighlightedLine(node: any) {
     node.properties.className.push("highlighted");
   },
+
   onVisitHighlightedWord(node: any, id: string) {
     if (id) {
       const backgroundColor = {

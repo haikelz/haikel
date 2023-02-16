@@ -16,7 +16,7 @@ import { highlighterOptions } from "~lib/helpers/highlighterOptions";
 import { WORKS_PATH } from "~lib/utils/contentsPath";
 import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
 import { WorkPageProps } from "~types";
-import Layout from "~ui/templates/Layout";
+import Layout from "~ui/layout";
 import { Heading, UnderlineSpan } from "~ui/typography";
 
 const AuthorImage = dynamic(() => import("~ui/mdx/AuthorImage"));

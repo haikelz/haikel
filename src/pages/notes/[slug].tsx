@@ -15,7 +15,7 @@ import { highlighterOptions } from "~lib/helpers/highlighterOptions";
 import { NOTES_PATH } from "~lib/utils/contentsPath";
 import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
 import { NotePageProps } from "~types";
-import Layout from "~ui/templates/Layout";
+import Layout from "~ui/layout";
 import { Heading, Paragraph } from "~ui/typography";
 
 const LazyLoadImage = dynamic(() => import("~ui/mdx/LazyLoadImage"));

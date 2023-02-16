@@ -1,13 +1,15 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ComponentType } from "react";
 import { twJoin, twMerge } from "tailwind-merge";
 import { useTheme } from "~hooks/useTheme";
 import { topNavList } from "~lib/utils/data";
 import { spaceGrotesk } from "~lib/utils/fonts";
+import { ThemeProps } from "~types";
 import { TopNavLogo } from "~ui/icons";
 
-const ToggleDarkModeTopNav = dynamic(
+const ToggleDarkModeTopNav: ComponentType<ThemeProps> = dynamic(
   () => import("~ui/icons").then((icon) => icon.ToggleDarkModeTopNav),
   { ssr: false }
 );
@@ -19,7 +21,7 @@ const TopNav = () => {
   return (
     <nav
       className={twJoin(
-        "onscroll sticky top-0 z-10 hidden w-full border-b-2",
+        "onscroll sticky top-0 z-10 hidden w-full border-b-[1.5px]",
         "border-b-gray-200 bg-azure/90 py-2",
         "dark:border-b-gray-500 dark:bg-eerieblack/90 dark:text-white",
         "md:block"
@@ -35,7 +37,8 @@ const TopNav = () => {
                   role="button"
                   className={twMerge(
                     "cursor-pointer rounded-sm",
-                    "px-1 text-base font-semibold active:bg-pink-100 active:dark:bg-slate-800",
+                    "px-1 text-base font-semibold",
+                    "active:bg-pink-100 active:dark:bg-slate-800",
                     path?.includes(nav.href)
                       ? "gradient underline decoration-[#0093E9] decoration-dashed underline-offset-[5px]"
                       : "",

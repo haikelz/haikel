@@ -11,6 +11,7 @@ const AuthorImage = () => {
       className="mr-2 rounded-full"
       width={23}
       height={23}
+      draggable={false}
     />
   );
 };
