@@ -1,12 +1,12 @@
+import { Searcher } from "fast-fuzzy";
 import type { GetStaticProps } from "next";
 import { useMemo, useState } from "react";
 import { twJoin } from "tailwind-merge";
 import { getAllNotes } from "~lib/helpers/getAllNotes";
-import { matchSearch } from "~lib/helpers/matchSearch";
 import { NoteMetaProps, NotesProps } from "~types";
 import { SearchBar } from "~ui/input";
-import ListNotes from "~ui/lists/ListNotes";
 import Layout from "~ui/layout";
+import ListNotes from "~ui/lists/ListNotes";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -23,19 +23,18 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Notes = ({ notes }: NotesProps) => {
   const [search, setSearch] = useState<string>("");
-  const matchResult: string | undefined = matchSearch(search);
 
-  const filteredNotes = useMemo(
-    () =>
-      notes.filter((note) => {
-        if (note.title === matchResult) return note;
-        else if (
-          note.title.toLowerCase().includes(matchResult === undefined || null ? "" : matchResult)
-        )
-          return note;
-      }),
-    [notes, matchResult]
-  );
+  const searcher: Searcher<
+    NoteMetaProps,
+    {
+      keySelector: (obj: NoteMetaProps) => string;
+    }
+  > = new Searcher(notes, { keySelector: (obj) => obj.title.toLowerCase() });
+
+  const filteredNotes = useMemo(() => {
+    if (search.toLowerCase() === "") return notes;
+    return searcher.search(search.toLowerCase());
+  }, [search, notes]);
 
   return (
     <Layout
