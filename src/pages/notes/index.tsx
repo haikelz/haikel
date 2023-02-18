@@ -35,11 +35,12 @@ const Notes = ({ notes }: NotesProps) => {
    * Fuzzy search with fast-fuzzy
    * @see https://github.com/EthanRutherford/fast-fuzzy
    */
-  const searcher: SearcherProps = new Searcher(notes, {
-    keySelector: (obj) => obj.title.toLowerCase(),
-  });
 
   const filteredNotes = useMemo(() => {
+    const searcher: SearcherProps = new Searcher(notes, {
+      keySelector: (obj) => obj.title.toLowerCase(),
+    });
+
     // if user haven't input anything yet, than return all notes
     if (search.toLowerCase() === "") return notes;
 
