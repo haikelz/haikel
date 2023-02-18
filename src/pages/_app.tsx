@@ -5,7 +5,7 @@ import { ibmPlexSerif, jetbrains, spaceGrotesk } from "~lib/utils/fonts";
 import BottomNav from "~sections/BottomNav";
 import Footer from "~sections/Footer";
 import TopNav from "~sections/TopNav";
-import "~styles/index.scss";
+import "~styles/index.css";
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (

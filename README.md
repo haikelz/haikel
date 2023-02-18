@@ -1,9 +1,16 @@
 <div align="center">
   <h1>haikel.my.id</h1>
-  <p>Another website that made with Next JS + Tailwind CSS. Deployed at Cloudflare Pages</p>
+  <p>My Personal Website deployed at Cloudflare Pages</p>
 </div>
 
-![description](/public/docs/preview.png)
+## Stuff
+
+- Framework: [nextjs](https://nextjs.org/)
+- Styling: [tailwindcss](https://tailwindcss.com/)
+- Fonts: [@next/font](https://nextjs.org/docs/basic-features/font-optimization)
+- State Management: [jotai](https://jotai.org/)
+- Syntax Highlighting: [shiki](https://shiki.matsu.io/)
+- Contents: [mdx](https://mdxjs.com/)
 
 ## Credits
 

@@ -1,3 +1,5 @@
+@tailwind utilities;
+
 @layer utilities {
   .prose img {
     @apply w-full rounded-sm;

@@ -9,6 +9,13 @@ import Layout from "~ui/layout";
 import ListNotes from "~ui/lists/ListNotes";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
+type SearcherProps = Searcher<
+  NoteMetaProps,
+  {
+    keySelector: (obj: NoteMetaProps) => string;
+  }
+>;
+
 export const getStaticProps: GetStaticProps = async () => {
   const notes: NoteMetaProps[] = getAllNotes()
     .slice(0, getAllNotes().length)
@@ -24,15 +31,19 @@ export const getStaticProps: GetStaticProps = async () => {
 const Notes = ({ notes }: NotesProps) => {
   const [search, setSearch] = useState<string>("");
 
-  const searcher: Searcher<
-    NoteMetaProps,
-    {
-      keySelector: (obj: NoteMetaProps) => string;
-    }
-  > = new Searcher(notes, { keySelector: (obj) => obj.title.toLowerCase() });
+  /**
+   * Fuzzy search with fast-fuzzy
+   * @see https://github.com/EthanRutherford/fast-fuzzy
+   */
+  const searcher: SearcherProps = new Searcher(notes, {
+    keySelector: (obj) => obj.title.toLowerCase(),
+  });
 
   const filteredNotes = useMemo(() => {
+    // if user haven't input anything yet, than return all notes
     if (search.toLowerCase() === "") return notes;
+
+    // and if user already input something, then do fuzzy search
     return searcher.search(search.toLowerCase());
   }, [search, notes]);
 

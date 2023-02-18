@@ -74,7 +74,7 @@ const DetailWorkPage = ({ work }: WorkPageProps) => {
             <AuthorImage />
             <div className={twMerge("tracking-[0.050em]", spaceGrotesk.className)}>
               <span className="text-base font-normal leading-[1.75rem]">
-                {work.meta.author}, {memoizedReadingTime} read.
+                {work.meta.author}, {memoizedReadingTime}.
               </span>{" "}
               {work.meta.preview ? (
                 <button

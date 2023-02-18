@@ -73,7 +73,7 @@ const NotePage = ({ note }: NotePageProps) => {
             <AuthorImage />
             <Paragraph className={twMerge("tracking-[0.050em]", spaceGrotesk.className)}>
               <span className="font-semibold">{note.meta.author}</span>,{" "}
-              <span className="font-semibold">{memoizedReadingTime} read</span> / {note.meta.date}
+              <span className="font-semibold">{memoizedReadingTime}</span> / {note.meta.date}
             </Paragraph>
           </div>
         </div>
