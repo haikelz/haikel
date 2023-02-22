@@ -27,7 +27,7 @@ export const naskhArabic = Noto_Naskh_Arabic({
 });
 
 export const spaceGrotesk = Space_Grotesk({
-  weight: ["700"],
+  weight: ["500", "600", "700"],
   style: ["normal"],
   subsets: ["latin"],
   display: "swap",

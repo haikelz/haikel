@@ -12,44 +12,38 @@ const ListNotes = ({ filteredNotes }: NotesArticlesProps) => {
   return (
     <>
       {filteredNotes.map((note) => (
-        <div
-          className={twJoin(
-            "overflow-hidden border-[2.5px]",
-            "border-black bg-azure transition-all ease-in-out",
-            "hover:shadow-light active:scale-95",
-            "dark:border-white dark:bg-raisinblack dark:hover:shadow-dark"
-          )}
-          key={note.slug}
-        >
-          <div className="h-full px-6 py-4">
-            <div>
-              <Link href={`/notes/${note.slug}`} passHref aria-label={note.title}>
+        <div key={note.slug} className="h-full">
+          <Paragraph className={twMerge("text-left", spaceGrotesk.className)}>
+            {note.date}
+          </Paragraph>
+          <div className="mt-2">
+            <Link href={`/notes/${note.slug}`}>
+              <span
+                className={twMerge(
+                  "cursor-pointer text-xl font-bold",
+                  "hover:text-crayola",
+                  spaceGrotesk.className
+                )}
+              >
+                {note.title}
+              </span>
+            </Link>
+          </div>
+          <Paragraph className="my-2 tracking-wide">{note.description}</Paragraph>
+          <div className={twMerge("flex space-x-2 font-medium", spaceGrotesk.className)}>
+            {note.tags.map((tag) => (
+              <Link key={tag} href={`/tags/${tag}`} aria-label={tag}>
                 <span
-                  className={twMerge("cursor-pointer text-xl font-bold", spaceGrotesk.className)}
-                >
-                  {note.title}
-                </span>
-              </Link>
-            </div>
-            <Paragraph className="mt-1 mb-2 tracking-wide">{note.description}</Paragraph>
-            <div className={twMerge("mt-3 flex space-x-2 font-medium", spaceGrotesk.className)}>
-              {note.tags.map((tag) => (
-                <Link
                   className={twJoin(
-                    "cursor-pointer bg-celedongreen px-1.5 text-sm text-white",
-                    "dark:bg-lightgray dark:text-slate-900"
+                    "cursor-pointer rounded-sm border-2 border-gray-300 px-1 font-medium",
+                    "dark:border-gray-500",
+                    "hover:text-crayola hover:decoration-crayola"
                   )}
-                  key={tag}
-                  href={`/tags/${tag}`}
-                  aria-label={tag}
                 >
                   {tag}
-                </Link>
-              ))}
-            </div>
-            <Paragraph className={twMerge("mt-3 text-right font-medium", spaceGrotesk.className)}>
-              {note.date}
-            </Paragraph>
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
       ))}

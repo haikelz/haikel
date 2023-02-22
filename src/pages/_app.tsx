@@ -32,11 +32,13 @@ const App = ({ Component, pageProps }: AppProps) => {
       <div
         className={twJoin(
           "min-h-screen w-full bg-azure bg-fixed bg-center",
-          "dark:bg-eerieblack dark:text-gray-100"
+          " dark:bg-zinc-900 dark:text-gray-100"
         )}
       >
         <TopNav />
-        <Component {...pageProps} />
+        <div className="px-4">
+          <Component {...pageProps} />
+        </div>
         <Footer />
         <BottomNav />
       </div>

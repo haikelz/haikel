@@ -7,7 +7,7 @@ import { useMemo } from "react";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
-import { twMerge } from "tailwind-merge";
+import { twJoin, twMerge } from "tailwind-merge";
 import { getNoteFromSlug } from "~lib/helpers/getNoteFromSlug";
 import { getReadingTime } from "~lib/helpers/getReadingTime";
 import { getSlugs } from "~lib/helpers/getSlugs";
@@ -62,22 +62,33 @@ const NotePage = ({ note }: NotePageProps) => {
     <Layout
       title={note.meta.title}
       description={note.meta.description}
-      className="flex min-h-screen flex-col items-center justify-start pt-6 pb-12 md:pt-12"
+      className={twJoin(
+        "flex min-h-screen flex-col items-center justify-start",
+        "py-8",
+        "md:py-12"
+      )}
     >
-      <article className="flex w-full flex-col flex-wrap justify-center md:mb-10">
+      <article className="mb-3 flex w-full flex-col flex-wrap justify-center">
         <div className="flex flex-col">
           <Heading as="h1" className="gradient">
             {note.meta.title}
           </Heading>
           <div className="my-3 flex items-center">
             <AuthorImage />
-            <Paragraph className={twMerge("tracking-[0.050em]", spaceGrotesk.className)}>
-              <span className="font-semibold">{note.meta.author}</span>,{" "}
-              <span className="font-semibold">{memoizedReadingTime}</span> / {note.meta.date}
+            <Paragraph
+              className={twMerge("font-semibold tracking-[0.050em]", spaceGrotesk.className)}
+            >
+              <span>{note.meta.author}</span>, <span>{memoizedReadingTime}</span> / {note.meta.date}
             </Paragraph>
           </div>
         </div>
-        <div className="prose prose-slate mt-6 w-full max-w-full dark:prose-invert lg:prose-lg">
+        <div
+          className={twJoin(
+            "prose prose-slate mt-6 w-full max-w-full",
+            "dark:prose-invert",
+            "lg:prose-lg"
+          )}
+        >
           <p className={twMerge("text-right text-2xl font-bold", naskhArabic.className)}>
             بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
           </p>

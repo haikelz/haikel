@@ -22,12 +22,12 @@ const TopNav = () => {
     <nav
       className={twJoin(
         "onscroll sticky top-0 z-10 hidden w-full border-b-[1.5px]",
-        "border-b-gray-200 bg-azure/90 py-2",
-        "dark:border-b-gray-500 dark:bg-eerieblack/90 dark:text-white",
+        "border-b-gray-200 bg-azure/90 py-2 px-4",
+        "dark:border-b-gray-500 dark:bg-zinc-900/90 dark:text-white",
         "md:block"
       )}
     >
-      <div className="mx-auto flex w-full max-w-4xl items-center justify-between px-4">
+      <div className="mx-auto flex w-full max-w-2xl items-center justify-between">
         <TopNavLogo />
         <div className="flex items-center justify-center">
           <div className="hidden md:block">

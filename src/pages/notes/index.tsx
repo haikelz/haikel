@@ -31,12 +31,11 @@ export const getStaticProps: GetStaticProps = async () => {
 const Notes = ({ notes }: NotesProps) => {
   const [search, setSearch] = useState<string>("");
 
-  /**
-   * Fuzzy search with fast-fuzzy
-   * @see https://github.com/EthanRutherford/fast-fuzzy
-   */
-
   const filteredNotes = useMemo(() => {
+    /**
+     * Fuzzy search with fast-fuzzy
+     * @see https://github.com/EthanRutherford/fast-fuzzy
+     */
     const searcher: SearcherProps = new Searcher(notes, {
       keySelector: (obj) => obj.title.toLowerCase(),
     });
@@ -53,28 +52,27 @@ const Notes = ({ notes }: NotesProps) => {
       title="Notes"
       description="Sometimes i write something, mostly about Linux, Web, and life. So yeah, i call this as Notes."
       className={twJoin(
-        "flex min-h-screen",
-        "flex-col items-center justify-start",
-        "pt-6 pb-12 md:pt-12"
+        "flex min-h-screen flex-col items-center justify-start",
+        "py-8",
+        "md:py-12"
       )}
     >
-      <div className="flex w-full flex-wrap items-center justify-center">
-        <div className="flex flex-col items-center justify-center">
-          <Heading as="h2" className="title-font text-center">
+      <div className="flex w-full flex-wrap items-start justify-start">
+        <div>
+          <Heading as="h2" className="title-font text-left">
             Notes
           </Heading>
           <Underline />
         </div>
-        <div className="w-full text-center leading-relaxed">
-          <Paragraph isCenter>
-            Sometimes i write something, mostly about Linux, Web, and life. So yeah, i call this as{" "}
-            <b>Notes</b>.
+        <div className="w-full leading-relaxed">
+          <Paragraph>
+            Sometimes i write something. So yeah, i call this as <b>Notes</b>.
           </Paragraph>
         </div>
       </div>
       <SearchBar search={search} setSearch={setSearch} />
       {filteredNotes.length ? (
-        <div className="grid w-full grid-cols-1 grid-rows-1 gap-5 sm:grid-cols-2">
+        <div className="mb-10 flex w-full flex-col space-y-8">
           <ListNotes filteredNotes={filteredNotes} />
         </div>
       ) : (

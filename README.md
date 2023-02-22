@@ -11,6 +11,7 @@
 - State Management: [jotai](https://jotai.org/)
 - Syntax Highlighting: [shiki](https://shiki.matsu.io/)
 - Contents: [mdx](https://mdxjs.com/)
+- Fuzzy Search: [fast-fuzzy](https://github.com/EthanRutherford/fast-fuzzy)
 
 ## Credits
 

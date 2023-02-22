@@ -1,4 +1,5 @@
 import type { GetStaticProps } from "next";
+import { twJoin } from "tailwind-merge";
 import { getAllNotes } from "~lib/helpers/getAllNotes";
 import { getAllWorks } from "~lib/helpers/getAllWorks";
 import About from "~sections/About";
@@ -34,7 +35,7 @@ const Home = ({ notes, works }: InitialDataProps) => {
     <Layout
       title="Haikel"
       description="A person who interested in Frontend stuff"
-      className="flex flex-col items-center justify-center pt-6 pb-12 md:pt-12"
+      className={twJoin("flex flex-col items-center justify-center", "py-8", "md:py-12")}
     >
       <About />
       <FeaturedWorks works={works} />

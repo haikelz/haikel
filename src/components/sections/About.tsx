@@ -4,18 +4,14 @@ import { twJoin } from "tailwind-merge";
 import { setLanguage } from "~lib/helpers/setLanguage";
 import { socialMediaList } from "~lib/utils/data";
 import { languageAtom } from "~store";
-import AboutImage from "~ui/images/AboutImage";
 import { Heading, Paragraph, UnderlineSpan } from "~ui/typography";
 
 const About = () => {
   const [language, toggleLanguage] = useReducerAtom<boolean, unknown>(languageAtom, setLanguage);
 
   return (
-    <section className="mb-20 flex w-full flex-wrap items-center justify-center">
-      <div className="mt-2 flex w-full flex-col items-center justify-center sm:mt-4 md:flex-row">
-        <div className="flex items-center justify-center">
-          <AboutImage />
-        </div>
+    <section className="mb-12 flex w-full flex-wrap items-center justify-center">
+      <div className="flex w-full flex-col items-start justify-start md:flex-row">
         {/**
          * Logic:
          * Jika language bernilai true, maka tampilkan bahasa Inggris dulu
@@ -23,9 +19,8 @@ const About = () => {
          */}
         <div
           className={twJoin(
-            "mt-6 flex flex-col items-center justify-center text-center",
-            "sm:w-9/12",
-            "md:ml-8 md:mt-0 md:block md:w-3/5 md:text-start"
+            "flex flex-col items-start justify-start",
+            "md:mt-0 md:block md:text-start"
           )}
         >
           <Heading as="h1">
@@ -42,7 +37,7 @@ const About = () => {
             🌸
           </Heading>
           {language ? (
-            <Paragraph className="mt-3">
+            <Paragraph className="mt-4">
               A person who interested in Frontend stuff, User Interface/Experience, Design Systems,
               Open Source, and Linux. Feel free to reach me via{" "}
               {socialMediaList.map((item, index) => (
@@ -61,7 +56,7 @@ const About = () => {
               </button>
             </Paragraph>
           ) : (
-            <Paragraph className="mt-3">
+            <Paragraph className="mt-4">
               Seseorang yang tertarik dengan hal-hal terkait Frontend, User Interface/Experience,
               Design Systems, Open Source, dan Linux. Kamu dapat menghubungi saya via{" "}
               {socialMediaList.map((item, index) => (

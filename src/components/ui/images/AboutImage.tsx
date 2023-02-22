@@ -16,9 +16,9 @@ const AboutImage = () => {
         loader={imageKitLoader}
         className="cursor-pointer rounded-full"
         src="others/profile.jpeg"
-        alt="About Image"
-        width={270}
-        height={270}
+        alt="About"
+        width={100}
+        height={100}
         priority={true}
       />
     </div>
