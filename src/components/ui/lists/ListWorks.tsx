@@ -23,7 +23,7 @@ const ListWorks = ({ works }: WorksProps) => {
             </Link>
           </div>
           <Paragraph className="my-2 tracking-wide">{work.description}</Paragraph>
-          <div className={twMerge("flex space-x-2 font-medium", spaceGrotesk.className)}>
+          <div className={twMerge("flex space-x-2", spaceGrotesk.className)}>
             {work.stack.map((techstack, index) => (
               <span
                 key={index + 1}

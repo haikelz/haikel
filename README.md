@@ -20,3 +20,4 @@ Some people that inspire me when i build this website. Thanks guys!
 - https://rizkicitra.dev/
 - https://hendraaagil.dev/
 - https://elianiva.my.id/
+- https://omarelhawary.me/

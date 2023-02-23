@@ -77,14 +77,14 @@ const DetailWorkPage = ({ work }: WorkPageProps) => {
           <div className="my-3 flex items-center">
             <AuthorImage />
             <div className={twMerge("tracking-[0.050em]", spaceGrotesk.className)}>
-              <span className="text-base font-normal leading-[1.75rem]">
+              <span className="text-base font-semibold leading-[1.75rem]">
                 {work.meta.author}, {memoizedReadingTime}.
               </span>{" "}
               {work.meta.preview ? (
                 <button
                   type="button"
                   aria-label="Preview"
-                  className="text-base font-normal leading-[1.75rem] tracking-[0.050em]"
+                  className="text-base leading-[1.75rem] tracking-[0.050em]"
                 >
                   <Link href={work.meta.preview}>
                     <UnderlineSpan>Preview</UnderlineSpan>

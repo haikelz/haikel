@@ -1,0 +1,52 @@
+---
+author: Haikel
+title: Memperbaiki "initramfs decoding failed" di Linux Mint
+tags:
+  - linux
+  - tips
+date: 2022-06-09
+description: initramfs decoding failed
+---
+
+Kemarin, saya menginstall Linux Mint di HDD saya. Setelah saya matiin laptop dan hidupin lagi, sesuatu terjadi. Yep, `initramfs decoding failed.` Mentok ga bisa masuk Mintnya. Baru kali ini ngalamin kayak gini. Setelah beberapa pencarian, akhirnya saya menemukan solusinya.
+
+## Solving Problem
+
+Terlebih dahulu, mari kita cek dimana partisi rootnya berada.
+
+```sh
+sudo fdisk -l
+```
+
+```sh
+Disk /dev/sda: 465,78 GiB, 500107862016 bytes, 976773168 sectors
+Disk model: 30-1RK17D
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: EA402B18-1FE8-47F0-AE4A-92B3CFE50B59
+Device       Start       End   Sectors   Size Type
+/dev/sda1     2048   1050623   1048576   512M EFI System
+/dev/sda2  1050624 976771071 975720448 465,3G Linux filesystem
+```
+
+Kurang lebih outputnya seperti yang ada di atas.
+
+Tipe penyimpanan saya ext4 dan partisi rootnya berada di /dev/sdb2 (pas rusak, adanya di /sdb bukan /sda seperti di atas).
+
+Jadi untuk memperbaikinya, saya bisa masukkan perintah:
+
+```sh
+sudo fsck.ext4 -f /dev/sdb2
+```
+
+**Note:** Sesuaikan aja jenis partisi ama letak partisinya.
+
+Nanti bakal muncul dialog pertanyaan, tinggal jawab **y** untuk memperbaiki partisi.
+
+![fsck](https://i.ibb.co/L6kSGV7/Screenshot-2022-06-08-11-41-01.png)
+
+## Referensi
+
+- [Om Musa Amin](https://musaamin.web.id/cara-mengatasi-boot-error-initramfs-di-ubuntu/)

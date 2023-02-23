@@ -66,7 +66,8 @@ const Notes = ({ notes }: NotesProps) => {
         </div>
         <div className="w-full leading-relaxed">
           <Paragraph>
-            Sometimes i write something. So yeah, i call this as <b>Notes</b>.
+            Sometimes i write something, mostly about Linux, Web, and life. So yeah, i call this as{" "}
+            <b>Notes</b>.
           </Paragraph>
         </div>
       </div>
