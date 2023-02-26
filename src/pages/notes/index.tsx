@@ -40,7 +40,7 @@ const Notes = ({ notes }: NotesProps) => {
       keySelector: (obj) => obj.title.toLowerCase(),
     });
 
-    // if user haven't input anything yet, than return all notes
+    // if user haven't input anything yet, then return all notes
     if (search.toLowerCase() === "") return notes;
 
     // and if user already input something, then do fuzzy search

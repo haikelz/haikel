@@ -35,7 +35,7 @@ const Home = ({ notes, works }: InitialDataProps) => {
     <Layout
       title="Haikel"
       description="A person who interested in Frontend stuff"
-      className={twJoin("flex flex-col items-center justify-center", "py-8", "md:py-12")}
+      className={twJoin("flex flex-col items-start justify-start", "py-8", "md:py-12")}
     >
       <About />
       <FeaturedWorks works={works} />

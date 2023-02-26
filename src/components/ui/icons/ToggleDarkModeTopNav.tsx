@@ -3,12 +3,7 @@ import { ThemeProps } from "~types";
 
 export const ToggleDarkModeTopNav = ({ theme, changeTheme }: ThemeProps) => {
   return (
-    <button
-      aria-label="toggle Dark Mode"
-      type="button"
-      className="shadow-none hover:bg-transparent active:bg-transparent"
-      onClick={changeTheme}
-    >
+    <button aria-label="toggle dark mode" type="button" onClick={changeTheme}>
       {theme === "dark" ? (
         <svg
           key="sun icon"

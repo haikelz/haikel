@@ -23,11 +23,7 @@ const Works = ({ works }: WorksProps) => {
     <Layout
       title="Works"
       description="List some of my works"
-      className={twJoin(
-        "flex min-h-screen flex-col items-center justify-start",
-        "py-8",
-        "md:py-12"
-      )}
+      className={twJoin("flex min-h-screen flex-col items-start justify-start", "py-8", "md:py-12")}
     >
       <div className="flex w-full flex-wrap items-start justify-start">
         <div>
