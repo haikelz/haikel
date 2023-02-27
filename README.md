@@ -7,6 +7,7 @@
 
 - Framework: [nextjs](https://nextjs.org/)
 - Styling: [tailwindcss](https://tailwindcss.com/)
+- Page Transition: [framer-motion](https://www.framer.com/motion/)
 - Fonts: [@next/font](https://nextjs.org/docs/basic-features/font-optimization)
 - State Management: [jotai](https://jotai.org/)
 - Syntax Highlighting: [shiki](https://shiki.matsu.io/)

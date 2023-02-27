@@ -1,3 +1,4 @@
+import { AnimatePresence, domAnimation, LazyMotion, m } from "framer-motion";
 import { Provider } from "jotai";
 import type { AppProps } from "next/app";
 import { twJoin } from "tailwind-merge";
@@ -7,7 +8,14 @@ import Footer from "~sections/Footer";
 import TopNav from "~sections/TopNav";
 import "~styles/index.css";
 
-const App = ({ Component, pageProps }: AppProps) => {
+const appAnimation = {
+  transition: { duration: 0.27 },
+  initial: { opacity: 0, y: 30 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0 },
+};
+
+const App = ({ Component, pageProps, router }: AppProps) => {
   return (
     <Provider>
       <style jsx global>{`
@@ -36,9 +44,13 @@ const App = ({ Component, pageProps }: AppProps) => {
         )}
       >
         <TopNav />
-        <div className="px-4">
-          <Component {...pageProps} />
-        </div>
+        <LazyMotion features={domAnimation}>
+          <AnimatePresence mode="wait" initial={false}>
+            <m.div {...appAnimation} key={router.asPath} className="px-4">
+              <Component {...pageProps} />
+            </m.div>
+          </AnimatePresence>
+        </LazyMotion>
         <Footer />
         <BottomNav />
       </div>
