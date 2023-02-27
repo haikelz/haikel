@@ -7,4 +7,3 @@ module.exports = {
   },
   sitemapSize: 10000,
 };
-baas;
