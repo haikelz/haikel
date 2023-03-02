@@ -7,7 +7,7 @@ export const GithubIcon = ({ link }: LinkIconProps) => {
     <Link role="button" href={`${link}`} aria-label="Github">
       <GrGithub
         className="mr-2 cursor-pointer transition-all ease-in-out hover:text-blue-400"
-        size="20px"
+        size={20}
       />
     </Link>
   );

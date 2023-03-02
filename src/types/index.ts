@@ -1,28 +1,28 @@
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { ReactNode } from "react";
 
-export type ChildrenProps = {
-  children: ReactNode;
-};
-
-export type MDXnote = {
+type MDXNoteProps = {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
   meta: NoteMetaProps;
   content: string;
 };
 
-export type MDXWork = {
+type MDXWorkProps = {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
   meta: WorkMetaProps;
   content: string;
 };
 
+export type ChildrenProps = {
+  children: ReactNode;
+};
+
 export type NotePageProps = {
-  note: MDXnote;
+  note: MDXNoteProps;
 };
 
 export type WorkPageProps = {
-  work: MDXWork;
+  work: MDXWorkProps;
 };
 
 export type LinkIconProps = {

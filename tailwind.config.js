@@ -77,8 +77,8 @@ module.exports = {
                 textUnderlineOffset: "5px",
                 textDecorationStyle: "dashed",
                 "&:hover": {
-                  color: "#2563EB",
-                  textDecorationColor: "#2563EB",
+                  color: "#3B82F6",
+                  textDecorationColor: "#3B82F6",
                 },
               },
             },

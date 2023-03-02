@@ -28,8 +28,8 @@ const About = () => {
             <span
               className={twJoin(
                 "underline decoration-fireopal decoration-dashed underline-offset-[5px]",
-                "dark:bg-gradient-to-r dark:from-[#0093E9] dark:to-[#80D0C7]",
-                "dark:bg-clip-text dark:text-transparent dark:decoration-[#0093E9]"
+                "dark:bg-gradient-to-r dark:from-blue-500 dark:to-[#80D0C7]",
+                "dark:bg-clip-text dark:text-transparent dark:decoration-blue-500"
               )}
             >
               Haikel

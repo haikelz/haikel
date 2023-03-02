@@ -11,7 +11,7 @@ export const Heading = ({ children, as, className }: HeadingProps) => {
   return (
     <>
       {as === "h1" ? (
-        <h1 className={twMerge("text-3xl font-bold md:text-4xl", className)}>{children}</h1>
+        <h1 className={twMerge("text-4xl font-bold", className)}>{children}</h1>
       ) : as === "h2" ? (
         <h2 className={twMerge("text-3xl font-bold", className)}>{children}</h2>
       ) : as === "h3" ? (

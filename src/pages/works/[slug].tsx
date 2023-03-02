@@ -1,18 +1,14 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote } from "next-mdx-remote";
-import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { ParsedUrlQuery } from "querystring";
 import { useMemo } from "react";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypePrettyCode from "rehype-pretty-code";
-import rehypeSlug from "rehype-slug";
 import { twJoin, twMerge } from "tailwind-merge";
 import { getReadingTime } from "~lib/helpers/getReadingTime";
 import { getSlugs } from "~lib/helpers/getSlugs";
 import { getWorkFromSlug } from "~lib/helpers/getWorkFromSlug";
-import { highlighterOptions } from "~lib/helpers/highlighterOptions";
+import { mdxSource } from "~lib/helpers/mdxSource";
 import { WORKS_PATH } from "~lib/utils/contentsPath";
 import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
 import { WorkPageProps } from "~types";
@@ -35,20 +31,12 @@ export const getStaticPaths: GetStaticPaths<ParsedUrlQuery> = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params as { slug: string };
   const { content, meta } = getWorkFromSlug(slug);
-  const mdxSource = await serialize(content, {
-    mdxOptions: {
-      rehypePlugins: [
-        rehypeSlug,
-        [rehypeAutolinkHeadings, { behavior: "wrap" }],
-        [rehypePrettyCode, highlighterOptions],
-      ],
-    },
-  });
+  const source = await mdxSource(content);
 
   return {
     props: {
       work: {
-        source: mdxSource,
+        source,
         meta,
         content,
       },

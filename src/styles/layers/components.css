@@ -6,11 +6,11 @@
   }
 
   .link-contact {
-    @apply font-bold hover:text-crayola;
+    @apply font-bold hover:text-blue-500;
   }
 
   .gradient {
-    @apply bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent dark:from-[#0093E9] dark:to-[#80D0C7];
+    @apply bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent dark:from-[#0093E9] dark:to-[#80D0C7];
   }
 
   .shadow-smooth {

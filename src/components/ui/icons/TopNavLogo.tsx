@@ -8,10 +8,10 @@ export const TopNavLogo = () => {
         className={twMerge(
           "cursor-pointer border-none text-xl font-bold",
           "tracking-widest outline-none",
-          "transition-all ease-in-out hover:text-blue-600"
+          "transition-all ease-in-out",
+          "hover:text-blue-500"
         )}
         href="/"
-        passHref
       >
         ハキム
       </Link>

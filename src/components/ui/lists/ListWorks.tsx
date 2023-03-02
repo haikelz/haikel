@@ -14,7 +14,7 @@ const ListWorks = ({ works }: WorksProps) => {
               <span
                 className={twMerge(
                   "text-xl font-bold",
-                  "hover:text-crayola",
+                  "hover:text-blue-500",
                   spaceGrotesk.className
                 )}
               >
@@ -28,9 +28,11 @@ const ListWorks = ({ works }: WorksProps) => {
               <span
                 key={index + 1}
                 className={twJoin(
-                  "cursor-pointer rounded-sm border-2 border-gray-300 px-1 font-medium",
+                  "cursor-pointer rounded-sm",
+                  "border-2 border-gray-300",
+                  "px-1 font-medium",
                   "dark:border-gray-500",
-                  "hover:text-crayola hover:decoration-crayola"
+                  "hover:text-blue-500 hover:decoration-blue-500"
                 )}
               >
                 {techstack}

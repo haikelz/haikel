@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { NextRouter, useRouter } from "next/router";
 import { ComponentType } from "react";
 import { twJoin, twMerge } from "tailwind-merge";
 import { useTheme } from "~hooks/useTheme";
@@ -16,7 +16,7 @@ const ToggleDarkModeTopNav: ComponentType<ThemeProps> = dynamic(
 
 const TopNav = () => {
   const [theme, setTheme] = useTheme();
-  const path: string | null = usePathname();
+  const router: NextRouter = useRouter();
 
   return (
     <nav
@@ -39,7 +39,7 @@ const TopNav = () => {
                     "cursor-pointer rounded-sm",
                     "px-1 text-base font-semibold",
                     "active:bg-pink-100 active:dark:bg-slate-800",
-                    path?.includes(nav.href)
+                    router.pathname.includes(nav.href)
                       ? "gradient underline decoration-[#0093E9] decoration-dashed underline-offset-[5px]"
                       : "",
                     spaceGrotesk.className

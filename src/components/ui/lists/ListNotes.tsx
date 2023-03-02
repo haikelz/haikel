@@ -21,7 +21,7 @@ const ListNotes = ({ filteredNotes }: NotesArticlesProps) => {
               <span
                 className={twMerge(
                   "cursor-pointer text-xl font-bold",
-                  "hover:text-crayola",
+                  "hover:text-blue-500",
                   spaceGrotesk.className
                 )}
               >
@@ -35,9 +35,11 @@ const ListNotes = ({ filteredNotes }: NotesArticlesProps) => {
               <Link key={tag} href={`/tags/${tag}`} aria-label={tag}>
                 <span
                   className={twJoin(
-                    "cursor-pointer rounded-sm border-2 border-gray-300 px-1 font-medium",
+                    "cursor-pointer rounded-sm",
+                    "border-2 border-gray-300",
+                    "px-1 font-medium",
                     "dark:border-gray-500",
-                    "hover:text-crayola hover:decoration-crayola"
+                    "hover:text-blue-500 hover:decoration-blue-500"
                   )}
                 >
                   {tag}

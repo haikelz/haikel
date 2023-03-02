@@ -7,7 +7,7 @@ export const UnderlineSpan = ({ children }: ChildrenProps) => {
       className={twJoin(
         "cursor-pointer font-bold",
         "underline decoration-dashed underline-offset-[5px]",
-        "hover:text-crayola hover:decoration-crayola"
+        "hover:text-blue-500 hover:decoration-blue-500"
       )}
     >
       {children}

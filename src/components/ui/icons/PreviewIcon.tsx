@@ -7,7 +7,7 @@ export const PreviewIcon = ({ link }: LinkIconProps) => {
     <Link role="button" href={`${link}`} aria-label="description">
       <FiExternalLink
         className="cursor-pointer transition-all ease-in-out hover:text-blue-500"
-        size="20px"
+        size={20}
       />
     </Link>
   );

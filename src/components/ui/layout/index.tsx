@@ -1,5 +1,5 @@
 import { NextSeo } from "next-seo";
-import { usePathname } from "next/navigation";
+import { useRouter } from "next/router";
 import { twMerge } from "tailwind-merge";
 import { ChildrenProps, SeoProps } from "~types";
 
@@ -9,7 +9,7 @@ type LayoutProps = ChildrenProps &
   };
 
 const Layout = ({ children, className, title, description }: LayoutProps) => {
-  const path: string | null = usePathname();
+  const router = useRouter();
 
   return (
     <>
@@ -18,10 +18,10 @@ const Layout = ({ children, className, title, description }: LayoutProps) => {
         titleTemplate="%s"
         defaultTitle={title}
         description={description}
-        canonical={`https://haikel.my.id${path}`}
+        canonical={`https://haikel.my.id${router.pathname}`}
         openGraph={{
           type: "website",
-          url: `https://haikel.my.id${path}`,
+          url: `https://haikel.my.id${router.pathname}`,
           title: title,
           description: description,
           images: [

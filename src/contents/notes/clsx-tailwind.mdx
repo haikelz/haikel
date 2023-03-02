@@ -55,7 +55,7 @@ Another example, we want to create a button like this:
 />
 
 ```tsx
-<button className="rounded-md bg-blue-500 px-4 py-2 font-semibold text-white transition-all ease-in-out hover:bg-blue-600">
+<button className="rounded-md bg-blue-500 px-4 py-2 font-semibold text-white transition-all ease-in-out hover:bg-blue-500">
   Contoh
 </button>
 ```
@@ -67,7 +67,7 @@ Looks long, right? Well, we can use `clsx` to organize it.
   className={clsx(
     "rounded-md bg-blue-500 px-4 py-2",
     "font-semibold text-white transition-all ease-in-out",
-    "hover:bg-blue-600"
+    "hover:bg-blue-500"
   )}
 >
   Contoh

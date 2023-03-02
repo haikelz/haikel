@@ -12,8 +12,8 @@ export const ToggleDarkIcon = ({ theme, changeTheme }: ThemeProps) => {
           strokeWidth="0"
           viewBox="0 0 24 24"
           className="text-slate-400 transition-all duration-300 hover:text-white"
-          height="28"
-          width="28"
+          height={28}
+          width={28}
           xmlns="http://www.w3.org/2000/svg"
         >
           <path fill="none" d="M0 0h24v24H0z" />
@@ -27,8 +27,8 @@ export const ToggleDarkIcon = ({ theme, changeTheme }: ThemeProps) => {
           strokeWidth="0"
           viewBox="0 0 24 24"
           className="text-slate-500 transition-all duration-300 hover:text-slate-600"
-          height="28"
-          width="28"
+          height={28}
+          width={28}
           xmlns="http://www.w3.org/2000/svg"
         >
           <path fill="none" d="M0 0h24v24H0z" />
