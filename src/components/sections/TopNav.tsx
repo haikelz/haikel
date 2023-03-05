@@ -22,8 +22,8 @@ const TopNav = () => {
     <nav
       className={twJoin(
         "onscroll sticky top-0 z-10 hidden w-full border-b-[1.5px]",
-        "border-b-gray-200 bg-azure/80 py-2 px-4",
-        "dark:border-b-gray-500 dark:bg-zinc-900/80 dark:text-white",
+        "border-b-gray-200 bg-azure/90 py-2 px-4",
+        "dark:border-b-gray-500 dark:bg-zinc-900/90 dark:text-white",
         "md:block"
       )}
     >
