@@ -2,7 +2,6 @@ import type { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { ParsedUrlQuery } from "querystring";
 import { useMemo } from "react";
 import { twJoin, twMerge } from "tailwind-merge";
 import { getReadingTime } from "~lib/helpers/getReadingTime";
@@ -19,7 +18,7 @@ const AuthorImage = dynamic(() => import("~ui/mdx/AuthorImage"));
 const Video = dynamic(() => import("~ui/mdx/Video"));
 const LazyLoadImage = dynamic(() => import("~ui/mdx/LazyLoadImage"));
 
-export const getStaticPaths: GetStaticPaths<ParsedUrlQuery> = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getSlugs(WORKS_PATH).map((slug) => ({ params: { slug } }));
 
   return {

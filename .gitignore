@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# todo stuff
+/todo
+
 # testing
 /coverage
 /.swc/

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { twMerge } from "tailwind-merge";
+import { spaceGrotesk } from "~lib/utils/fonts";
 
 export const TopNavLogo = () => {
   return (
@@ -9,7 +10,8 @@ export const TopNavLogo = () => {
           "cursor-pointer border-none text-xl font-bold",
           "tracking-widest outline-none",
           "transition-all ease-in-out",
-          "hover:text-blue-500"
+          "hover:text-blue-500",
+          spaceGrotesk.className
         )}
         href="/"
       >

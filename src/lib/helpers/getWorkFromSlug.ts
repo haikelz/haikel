@@ -14,7 +14,7 @@ export const getWorkFromSlug = (slug: string) => {
       slug,
       id: data.id ?? slug.length,
       author: data.author ?? slug,
-      description: data.description ?? "",
+      description: data.description ?? "Tidak ada deskripsi",
       title: data.title ?? slug,
       stack: (data.stack ?? []).sort(),
       repo: data.repo ?? null,

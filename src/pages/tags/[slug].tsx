@@ -1,5 +1,4 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
-import { ParsedUrlQuery } from "querystring";
 import { twJoin } from "tailwind-merge";
 import { getAllNotes } from "~lib/helpers/getAllNotes";
 import { NoteMetaProps, NoteProps } from "~types";
@@ -12,7 +11,7 @@ type TagProps = {
   notes: NoteMetaProps[];
 };
 
-export const getStaticPaths: GetStaticPaths<ParsedUrlQuery> = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const notes: NoteProps[] = getAllNotes();
   const tags: Set<string> = new Set(notes.map((note) => note.meta.tags).flat());
   const paths = Array.from(tags).map((tag) => ({ params: { slug: tag } }));

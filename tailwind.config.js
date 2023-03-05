@@ -20,6 +20,21 @@ module.exports = {
         raisinblack: "#1F1F28",
         richblack: "#0B0B22",
       },
+      animation: {
+        text: "text 5s ease infinite",
+      },
+      keyframes: {
+        text: {
+          "0%, 100%": {
+            "background-size": "200% 200%",
+            "background-position": "left center",
+          },
+          "50%": {
+            "background-size": "200% 200%",
+            "background-position": "right center",
+          },
+        },
+      },
       typography: ({ theme }) => {
         return {
           DEFAULT: {

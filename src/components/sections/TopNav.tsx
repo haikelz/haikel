@@ -22,8 +22,8 @@ const TopNav = () => {
     <nav
       className={twJoin(
         "onscroll sticky top-0 z-10 hidden w-full border-b-[1.5px]",
-        "border-b-gray-200 bg-azure/90 py-2 px-4",
-        "dark:border-b-gray-500 dark:bg-zinc-900/90 dark:text-white",
+        "border-b-gray-200 bg-azure/80 py-2 px-4",
+        "dark:border-b-gray-500 dark:bg-zinc-900/80 dark:text-white",
         "md:block"
       )}
     >
@@ -38,7 +38,8 @@ const TopNav = () => {
                   className={twMerge(
                     "cursor-pointer rounded-sm",
                     "px-1 text-base font-semibold",
-                    "active:bg-pink-100 active:dark:bg-slate-800",
+                    "active:bg-pink-100",
+                    "active:dark:bg-slate-800",
                     router.pathname.includes(nav.href)
                       ? "gradient underline decoration-[#0093E9] decoration-dashed underline-offset-[5px]"
                       : "",
