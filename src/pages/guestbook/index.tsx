@@ -2,6 +2,7 @@ import { PostgrestError } from "@supabase/supabase-js";
 import { useAtom } from "jotai";
 import type { GetStaticProps } from "next";
 import { signIn, signOut, useSession } from "next-auth/react";
+import { NextRouter, useRouter } from "next/router";
 import { FaGithub } from "react-icons/fa";
 import { twJoin } from "tailwind-merge";
 import supabase from "~lib/utils/supabase";
@@ -28,7 +29,7 @@ type GuestbookProps = {
 
 export const getStaticProps: GetStaticProps = async () => {
   /**
-   * Order by "id" the data from guestbook and set ascending to false
+   * Order by "created_at" and set ascending to false
    */
   const { data, error } = await supabase
     .from("guestbook")
@@ -47,6 +48,8 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Guestbook = ({ guestbook }: GuestbookProps) => {
+  const router: NextRouter = useRouter();
+
   const { data: session } = useSession();
   const { data } = guestbook;
 
@@ -65,7 +68,7 @@ const Guestbook = ({ guestbook }: GuestbookProps) => {
       ]);
 
       if (error) throw error;
-      window.location.reload();
+      router.reload();
     } catch (err) {
       console.error(err);
     }
