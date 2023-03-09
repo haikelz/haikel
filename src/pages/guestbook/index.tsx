@@ -1,13 +1,13 @@
 import { PostgrestError } from "@supabase/supabase-js";
 import { useAtom } from "jotai";
-import type { GetStaticProps } from "next";
+import type { GetServerSideProps } from "next";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { NextRouter, useRouter } from "next/router";
 import { FaGithub } from "react-icons/fa";
 import { twJoin } from "tailwind-merge";
-import { MessageBar } from "~ui/input";
 import supabase from "~lib/utils/supabase";
 import { messageAtom } from "~store";
+import { MessageBar } from "~ui/input";
 import Layout from "~ui/layout";
 import ListGuests from "~ui/lists/ListGuests";
 import { Heading, Paragraph, Underline } from "~ui/typography";
@@ -27,7 +27,7 @@ type GuestbookProps = {
   };
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   /**
    * Order by "created_at" and set ascending to false
    */
