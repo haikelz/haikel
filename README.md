@@ -1,6 +1,6 @@
 <div align="center">
   <h1>haikel.my.id</h1>
-  <p>My Personal Website deployed at Cloudflare Pages</p>
+  <p>My Personal Website</p>
 </div>
 
 ## Stuff
