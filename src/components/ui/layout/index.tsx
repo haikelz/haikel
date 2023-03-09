@@ -38,7 +38,7 @@ const Layout = ({ children, className, title, description }: LayoutProps) => {
           cardType: "summary_large_image",
         }}
       />
-      <main className={twMerge("container mx-auto max-w-[44rem] tracking-wide", className)}>
+      <main className={twMerge("container mx-auto max-w-3xl tracking-wide", className)}>
         {children}
       </main>
     </>

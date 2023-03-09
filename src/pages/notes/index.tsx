@@ -51,11 +51,7 @@ const Notes = ({ notes }: NotesProps) => {
     <Layout
       title="Notes"
       description="Sometimes i write something, mostly about Linux, Web, and life. So yeah, i call this as Notes."
-      className={twJoin(
-        "flex min-h-screen flex-col items-center justify-start",
-        "py-8",
-        "md:py-12"
-      )}
+      className={twJoin("flex min-h-screen flex-col items-start justify-start", "py-8", "md:py-12")}
     >
       <div className="flex w-full flex-wrap items-start justify-start">
         <div>
