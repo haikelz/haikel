@@ -21,6 +21,7 @@ export const MessageBar = ({ message, setMessage }: MessageBarProps) => {
         name="message"
         placeholder="Add your message...."
         value={message}
+        required
         onChange={(event) => setMessage(event.target.value)}
       />
     </div>

@@ -1,9 +1,10 @@
 import { twMerge } from "tailwind-merge";
 import { spaceGrotesk } from "~lib/utils/fonts";
+import { GuestbookProps } from "~types";
 import { Paragraph } from "~ui/typography";
 
 type ListGuestsProps = {
-  guestbook: [{ id: string; created_at: string; email: string; username: string; message: string }];
+  guestbook: GuestbookProps;
 };
 
 const ListGuests = ({ guestbook }: ListGuestsProps) => {
@@ -19,7 +20,7 @@ const ListGuests = ({ guestbook }: ListGuestsProps) => {
 
   return (
     <>
-      {guestbook.map((guest) => (
+      {guestbook?.map((guest) => (
         <div key={guest.id} className="h-full">
           <div>
             <span
@@ -33,7 +34,8 @@ const ListGuests = ({ guestbook }: ListGuestsProps) => {
             </span>
           </div>
           <Paragraph className="mt-2 font-medium tracking-wide">
-            {guest.username}. {convertToLocalTime(guest.created_at)}
+            {guest.username}
+            {guest.created_at !== "" ? `. ${convertToLocalTime(guest.created_at)}` : null}
           </Paragraph>
         </div>
       ))}

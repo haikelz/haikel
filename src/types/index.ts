@@ -78,3 +78,9 @@ export type WorkProps = {
 export type WorksProps = {
   works: WorkMetaProps[];
 };
+
+export type GuestbookProps =
+  | {
+      [x: string]: any;
+    }[]
+  | null;

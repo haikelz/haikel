@@ -14,12 +14,11 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
-      "~*": ["src/*"],
-      "~public/*": ["public/*"],
-      "~ui/*": ["src/components/ui/*"],
-      "~sections/*": ["src/components/sections/*"]
+      "~*": ["*"],
+      "~ui/*": ["components/ui/*"],
+      "~sections/*": ["components/sections/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

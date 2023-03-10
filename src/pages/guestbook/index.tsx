@@ -1,58 +1,27 @@
-import { PostgrestError } from "@supabase/supabase-js";
-import { useAtom } from "jotai";
-import type { GetServerSideProps } from "next";
+import { atom, useAtom } from "jotai";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { NextRouter, useRouter } from "next/router";
+import { useEffect } from "react";
 import { FaGithub } from "react-icons/fa";
 import { twJoin } from "tailwind-merge";
 import supabase from "~lib/utils/supabase";
 import { messageAtom } from "~store";
+import { GuestbookProps } from "~types";
 import { MessageBar } from "~ui/input";
 import Layout from "~ui/layout";
 import ListGuests from "~ui/lists/ListGuests";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
-type GuestbookProps = {
-  guestbook: {
-    data: [
-      {
-        id: string;
-        created_at: string;
-        email: string;
-        username: string;
-        message: string;
-      }
-    ];
-    error: PostgrestError | null;
-  };
-};
+const guestbookAtom = atom<GuestbookProps>([
+  { id: "", created_at: "", email: "", username: "", message: "" },
+]);
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  /**
-   * Order by "created_at" and set ascending to false
-   */
-  const { data, error } = await supabase
-    .from("guestbook")
-    .select()
-    .order("id", { ascending: false });
-
-  if (error) throw error;
-
-  return {
-    props: {
-      guestbook: {
-        data,
-      },
-    },
-  };
-};
-
-const Guestbook = ({ guestbook }: GuestbookProps) => {
+const Guestbook = () => {
   const router: NextRouter = useRouter();
 
   const { data: session } = useSession();
-  const { data } = guestbook;
 
+  const [guestbook, setGuestbook] = useAtom(guestbookAtom);
   const [message, setMessage] = useAtom(messageAtom);
 
   const handleSubmit = async (event: { preventDefault: () => void }) => {
@@ -73,6 +42,27 @@ const Guestbook = ({ guestbook }: GuestbookProps) => {
       console.error(err);
     }
   };
+
+  useEffect(() => {
+    const getDataFromSupabase = async () => {
+      try {
+        /**
+         * Order by "created_at" and set ascending to false
+         */
+        const { data, error } = await supabase
+          .from("guestbook")
+          .select()
+          .order("created_at", { ascending: false });
+
+        if (error) throw error;
+        if (data) setGuestbook(data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    getDataFromSupabase();
+  }, [setGuestbook]);
 
   return (
     <Layout
@@ -136,9 +126,9 @@ const Guestbook = ({ guestbook }: GuestbookProps) => {
           </form>
         </div>
       )}
-      {data.length ? (
+      {guestbook?.length ? (
         <div className="mb-10 flex w-full flex-col space-y-8">
-          <ListGuests guestbook={data} />
+          <ListGuests guestbook={guestbook} />
         </div>
       ) : (
         <Paragraph className="font-semibold">There is no messages now!</Paragraph>
