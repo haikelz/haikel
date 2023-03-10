@@ -9,7 +9,7 @@ type LayoutProps = ChildrenProps &
   };
 
 const Layout = ({ children, className, title, description }: LayoutProps) => {
-  const router = useRouter();
+  const { asPath } = useRouter();
 
   return (
     <>
@@ -18,10 +18,10 @@ const Layout = ({ children, className, title, description }: LayoutProps) => {
         titleTemplate="%s"
         defaultTitle={title}
         description={description}
-        canonical={`https://haikel.my.id${router.pathname}`}
+        canonical={`https://haikel.my.id${asPath}`}
         openGraph={{
           type: "website",
-          url: `https://haikel.my.id${router.pathname}`,
+          url: `https://haikel.my.id${asPath}`,
           title: title,
           description: description,
           images: [

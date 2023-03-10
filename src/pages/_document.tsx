@@ -1,29 +1,29 @@
-import { Head, Html, Main, NextScript } from "next/document";
-import { metadata } from "~lib/utils/data";
+import Document, {
+  DocumentContext,
+  DocumentInitialProps,
+  Head,
+  Html,
+  Main,
+  NextScript,
+} from "next/document";
 
-const { url, type, title, description, image } = metadata;
+export default class RootDocument extends Document {
+  static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
+    return await Document.getInitialProps(ctx);
+  }
 
-const Document = () => {
-  return (
-    <Html lang="en">
-      <Head>
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <meta property="og:url" content={url} />
-        <meta property="og:type" content={type} />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content={image} />
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content={url} />
-        <meta property="twitter:title" content={title} />
-        <meta property="twitter:description" content={description} />
-      </Head>
-      <body>
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
-  );
-};
-
-export default Document;
+  render() {
+    return (
+      <Html lang="en">
+        <Head>
+          <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+          <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
+}

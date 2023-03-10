@@ -1,23 +1,18 @@
-import { atom, useAtom } from "jotai";
+import { useAtom } from "jotai";
 import { signIn, signOut, useSession } from "next-auth/react";
-import { NextRouter, useRouter } from "next/router";
+import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { FaGithub } from "react-icons/fa";
 import { twJoin } from "tailwind-merge";
 import supabase from "~lib/utils/supabase";
-import { messageAtom } from "~store";
-import { GuestbookProps } from "~types";
+import { guestbookAtom, messageAtom } from "~store";
 import { MessageBar } from "~ui/input";
 import Layout from "~ui/layout";
 import ListGuests from "~ui/lists/ListGuests";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
-const guestbookAtom = atom<GuestbookProps>([
-  { id: "", created_at: "", email: "", username: "", message: "" },
-]);
-
 const Guestbook = () => {
-  const router: NextRouter = useRouter();
+  const { reload } = useRouter();
 
   const { data: session } = useSession();
 
@@ -37,7 +32,7 @@ const Guestbook = () => {
       ]);
 
       if (error) throw error;
-      router.reload();
+      reload();
     } catch (err) {
       console.error(err);
     }

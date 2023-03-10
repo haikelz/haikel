@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { NextRouter, useRouter } from "next/router";
+import { useRouter } from "next/router";
 import { ComponentType } from "react";
 import { IconType } from "react-icons/lib";
 import { twJoin } from "tailwind-merge";
@@ -17,7 +17,7 @@ const ToggleDarkIcon: ComponentType<ThemeProps> = dynamic(
 
 const BottomNav = () => {
   const [theme, setTheme] = useTheme();
-  const router: NextRouter = useRouter();
+  const { asPath } = useRouter();
 
   return (
     <nav
@@ -48,10 +48,10 @@ const BottomNav = () => {
                   className={twJoin(
                     "transition-all duration-200",
                     item.name === "Home"
-                      ? router.pathname === item.link
+                      ? asPath === item.link
                         ? "text-slate-600 dark:text-white"
                         : "text-slate-500 dark:text-slate-400"
-                      : router.pathname.includes(item.link)
+                      : asPath.includes(item.link)
                       ? "text-slate-600 dark:text-white"
                       : "text-slate-500 dark:text-slate-400"
                   )}
