@@ -22,7 +22,7 @@ const BottomNav = () => {
   return (
     <nav
       className={twJoin(
-        "sticky bottom-0",
+        "fixed bottom-0",
         "flex w-full flex-col items-center justify-center md:hidden"
       )}
     >

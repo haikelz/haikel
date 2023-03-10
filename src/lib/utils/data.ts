@@ -25,5 +25,6 @@ export const metadata = {
   type: "website",
   title: "Haikel",
   description: "A person who interested in Frontend stuff",
-  image: "https://avatars.githubusercontent.com/u/77146709?v=4",
+  image:
+    "https://ik.imagekit.io/haikelz/blog/og-image/haikelz.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678430627569",
 };

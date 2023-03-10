@@ -6,7 +6,9 @@ import { UnderlineSpan } from "~ui/typography";
 
 const Footer = () => {
   return (
-    <footer className={twMerge("pb-4 text-center tracking-widest md:mb-0", spaceGrotesk.className)}>
+    <footer
+      className={twMerge("pb-[4.8rem] text-center tracking-widest md:pb-4", spaceGrotesk.className)}
+    >
       <div>
         <p className="pb-1 text-sm font-semibold">2020-{currentYear} Haikel</p>
         <p className="text-sm font-semibold">

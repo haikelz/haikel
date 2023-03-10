@@ -26,7 +26,7 @@ const Layout = ({ children, className, title, description }: LayoutProps) => {
           description: description,
           images: [
             {
-              url: "https://avatars.githubusercontent.com/u/77146709?v=4",
+              url: "https://ik.imagekit.io/haikelz/blog/og-image/haikelz.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678430627569",
               alt: "OG Image",
             },
           ],
