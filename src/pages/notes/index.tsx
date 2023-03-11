@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { twJoin } from "tailwind-merge";
 import { getAllNotes } from "~lib/helpers/getAllNotes";
 import { NoteMetaProps, NotesProps } from "~types";
-import { SearchBar } from "~ui/input";
+import { SearchInput } from "~components/ui/inputs";
 import Layout from "~ui/layout";
 import ListNotes from "~ui/lists/ListNotes";
 import { Heading, Paragraph, Underline } from "~ui/typography";
@@ -67,7 +67,7 @@ const Notes = ({ notes }: NotesProps) => {
           </Paragraph>
         </div>
       </div>
-      <SearchBar search={search} setSearch={setSearch} />
+      <SearchInput search={search} setSearch={setSearch} />
       {filteredNotes.length ? (
         <div className="mb-10 flex w-full flex-col space-y-8">
           <ListNotes filteredNotes={filteredNotes} />

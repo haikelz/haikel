@@ -1,10 +1,12 @@
+import { atom } from "jotai";
 import { useReducerAtom } from "jotai/utils";
 import Link from "next/link";
 import { twJoin } from "tailwind-merge";
 import { setLanguage } from "~lib/helpers/setLanguage";
 import { socialMediaList } from "~lib/utils/data";
-import { languageAtom } from "~store";
 import { Heading, Paragraph, UnderlineSpan } from "~ui/typography";
+
+const languageAtom = atom<boolean>(true);
 
 const About = () => {
   const [language, toggleLanguage] = useReducerAtom<boolean, unknown>(languageAtom, setLanguage);

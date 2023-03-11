@@ -2,12 +2,12 @@ import { SetStateAction } from "jotai";
 import { memo } from "react";
 import { twJoin } from "tailwind-merge";
 
-type MessageBarProps = {
+type MessageInputProps = {
   message: string;
   setMessage: (update: SetStateAction<string>) => void;
 };
 
-export const MessageBar = ({ message, setMessage }: MessageBarProps) => {
+export const MessageInput = ({ message, setMessage }: MessageInputProps) => {
   return (
     <div className="my-6 w-full">
       <input
@@ -28,4 +28,4 @@ export const MessageBar = ({ message, setMessage }: MessageBarProps) => {
   );
 };
 
-memo(MessageBar);
+memo(MessageInput);

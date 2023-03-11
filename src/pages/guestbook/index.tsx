@@ -1,25 +1,31 @@
-import { useAtom } from "jotai";
+import { atom, useAtom } from "jotai";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { SyntheticEvent, useEffect } from "react";
 import { FaGithub } from "react-icons/fa";
 import { twJoin } from "tailwind-merge";
+import { MessageInput } from "~components/ui/inputs";
 import supabase from "~lib/utils/supabase";
-import { guestbookAtom, messageAtom } from "~store";
-import { MessageBar } from "~ui/input";
+import { GuestbookProps } from "~types";
 import Layout from "~ui/layout";
 import ListGuests from "~ui/lists/ListGuests";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
+const isLoadingAtom = atom<boolean>(true);
+const messageAtom = atom<string>("");
+const guestbookAtom = atom<GuestbookProps>([
+  { id: "", created_at: "", email: "", username: "", message: "" },
+]);
+
 const Guestbook = () => {
   const { reload } = useRouter();
-
   const { data: session } = useSession();
 
   const [guestbook, setGuestbook] = useAtom(guestbookAtom);
+  const [isLoading, setIsLoading] = useAtom(isLoadingAtom);
   const [message, setMessage] = useAtom(messageAtom);
 
-  const handleSubmit = async (event: { preventDefault: () => void }) => {
+  const handleSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();
 
     try {
@@ -50,14 +56,18 @@ const Guestbook = () => {
           .order("created_at", { ascending: false });
 
         if (error) throw error;
-        if (data) setGuestbook(data);
+        if (!data && !error) setIsLoading(true);
+        if (data) {
+          setGuestbook(data);
+          setIsLoading(false);
+        }
       } catch (err) {
         console.error(err);
       }
     };
 
     getDataFromSupabase();
-  }, [setGuestbook]);
+  }, [setGuestbook, setIsLoading]);
 
   return (
     <Layout
@@ -117,14 +127,18 @@ const Guestbook = () => {
       ) : (
         <div className="w-full">
           <form onSubmit={handleSubmit}>
-            <MessageBar message={message} setMessage={setMessage} />
+            <MessageInput message={message} setMessage={setMessage} />
           </form>
         </div>
       )}
       {guestbook?.length ? (
-        <div className="mb-10 flex w-full flex-col space-y-8">
-          <ListGuests guestbook={guestbook} />
-        </div>
+        !isLoading ? (
+          <div className="mb-10 flex w-full flex-col space-y-8">
+            <ListGuests guestbook={guestbook} />
+          </div>
+        ) : (
+          <Paragraph className="font-semibold">Loading messages....</Paragraph>
+        )
       ) : (
         <Paragraph className="font-semibold">There is no messages now!</Paragraph>
       )}
