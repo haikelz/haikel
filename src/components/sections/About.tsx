@@ -41,7 +41,7 @@ const About = () => {
           {language ? (
             <Paragraph className="mt-4">
               A person who interested in Frontend stuff, User Interface/Experience, Design Systems,
-              Open Source, and Linux. Feel free to reach me via{" "}
+              and Linux. Feel free to reach me via{" "}
               {socialMediaList.map((item, index) => (
                 <Link className="link-contact" key={index + 1} href={item.link} passHref>
                   {item.name}
@@ -53,14 +53,14 @@ const About = () => {
                 </Link>
               ))}
               .{" "}
-              <button type="button" onClick={toggleLanguage}>
+              <button type="button" aria-label="toggle language" onClick={toggleLanguage}>
                 <UnderlineSpan>See in Indonesia.</UnderlineSpan>
               </button>
             </Paragraph>
           ) : (
             <Paragraph className="mt-4">
               Seseorang yang tertarik dengan hal-hal terkait Frontend, User Interface/Experience,
-              Design Systems, Open Source, dan Linux. Kamu dapat menghubungi saya via{" "}
+              Design Systems, dan Linux. Kamu dapat menghubungi saya via{" "}
               {socialMediaList.map((item, index) => (
                 <Link className="link-contact" key={index + 1} href={item.link} passHref>
                   {item.name}
@@ -72,7 +72,7 @@ const About = () => {
                 </Link>
               ))}
               .{" "}
-              <button type="button" onClick={toggleLanguage}>
+              <button type="button" aria-label="toggle language" onClick={toggleLanguage}>
                 <UnderlineSpan>Lihat di Bahasa Inggris.</UnderlineSpan>
               </button>
             </Paragraph>

@@ -23,13 +23,15 @@ const BottomNav = () => {
     <nav
       className={twJoin(
         "fixed bottom-0",
-        "flex w-full flex-col items-center justify-center md:hidden"
+        "flex w-full flex-col items-center justify-center",
+        "md:hidden"
       )}
     >
       <div
         className={twJoin(
           "w-full max-w-full border-t-[1.5px] border-slate-300",
-          "bg-azure p-4 dark:border-slate-600 dark:bg-zinc-900"
+          "bg-azure p-4",
+          "dark:border-slate-600 dark:bg-zinc-900"
         )}
       >
         <div className="flex w-full items-center justify-around">

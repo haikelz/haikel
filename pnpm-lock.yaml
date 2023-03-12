@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@next/env': ^13.2.4
   '@supabase/supabase-js': ^2.10.0
+  '@swc-jotai/react-refresh': ^0.0.5
   '@tailwindcss/typography': ^0.5.9
   '@types/node': 18.15.0
   '@types/react': 18.0.28
@@ -65,6 +66,7 @@ dependencies:
   tailwind-merge: 1.10.0
 
 devDependencies:
+  '@swc-jotai/react-refresh': 0.0.5
   '@tailwindcss/typography': 0.5.9_tailwindcss@3.2.7
   '@types/node': 18.15.0
   '@types/react': 18.0.28
@@ -516,6 +518,10 @@ packages:
       - encoding
       - supports-color
     dev: false
+
+  /@swc-jotai/react-refresh/0.0.5:
+    resolution: {integrity: sha512-JTWGDHb0hXLWZXR6XL/3REPpR0nlW0BRIrfiIcPUh6UD9XjbQPS/8/m5Uw7GxQ2TRlkG2ASWxHUaDg1Hr2Wgow==}
+    dev: true
 
   /@swc/helpers/0.4.14:
     resolution: {integrity: sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw==}
