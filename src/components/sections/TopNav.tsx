@@ -21,8 +21,9 @@ const TopNav = () => {
   return (
     <nav
       className={twJoin(
-        "onscroll sticky top-0 z-10 hidden w-full border-b-[1.5px]",
+        "sticky top-0 z-10 hidden w-full border-b-[1.5px]",
         "border-b-gray-200 bg-azure/90 py-2 px-4",
+        "backdrop-blur-lg backdrop-filter",
         "dark:border-b-gray-500 dark:bg-zinc-900/90 dark:text-white",
         "md:block"
       )}
@@ -41,7 +42,7 @@ const TopNav = () => {
                     "active:bg-pink-100",
                     "active:dark:bg-slate-800",
                     asPath.includes(nav.href)
-                      ? "gradient underline decoration-[#0093E9] decoration-dashed underline-offset-[5px]"
+                      ? "gradient dark:gradient-dark underline decoration-[#0093E9] decoration-dashed underline-offset-[5px]"
                       : "",
                     spaceGrotesk.className
                   )}

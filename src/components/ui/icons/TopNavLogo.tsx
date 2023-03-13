@@ -4,7 +4,7 @@ import { spaceGrotesk } from "~lib/utils/fonts";
 
 export const TopNavLogo = () => {
   return (
-    <div className="gradient -rotate-6">
+    <div className="gradient dark:gradient-dark -rotate-6">
       <Link
         className={twMerge(
           "cursor-pointer border-none text-xl font-bold",

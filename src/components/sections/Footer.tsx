@@ -12,9 +12,9 @@ const Footer = () => {
       <div>
         <p className="pb-1 text-sm font-semibold">2020-{currentYear} Haikel</p>
         <p className="text-sm font-semibold">
-          This Website is under{" "}
-          <Link href="https://github.com/haikelz/haikel.my.id/blob/master/LICENSE">
-            <UnderlineSpan>MIT License</UnderlineSpan>
+          Typed by me in{" "}
+          <Link href="https://id.wikipedia.org/wiki/Kepulauan_Bangka_Belitung">
+            <UnderlineSpan>Bangka Belitung</UnderlineSpan>
           </Link>
         </p>
       </div>

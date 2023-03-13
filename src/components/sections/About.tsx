@@ -10,6 +10,7 @@ const languageAtom = atom<boolean>(true);
 
 const About = () => {
   const [language, toggleLanguage] = useReducerAtom<boolean, unknown>(languageAtom, setLanguage);
+  const linkContact = "font-bold hover:text-blue-500";
 
   return (
     <section className="mb-12 flex w-full flex-wrap items-center justify-center">
@@ -30,8 +31,7 @@ const About = () => {
             <span
               className={twJoin(
                 "underline decoration-fireopal decoration-dashed underline-offset-[5px]",
-                "dark:bg-gradient-to-r dark:from-blue-500 dark:to-[#80D0C7]",
-                "dark:animate-text dark:bg-clip-text dark:text-transparent dark:decoration-blue-500"
+                "dark:gradient-dark dark:animate-text dark:bg-clip-text dark:text-transparent dark:decoration-blue-500"
               )}
             >
               Haikel
@@ -43,7 +43,7 @@ const About = () => {
               A person who interested in Frontend stuff, User Interface/Experience, Design Systems,
               and Linux. Feel free to reach me via{" "}
               {socialMediaList.map((item, index) => (
-                <Link className="link-contact" key={index + 1} href={item.link} passHref>
+                <Link className={linkContact} key={index + 1} href={item.link} passHref>
                   {item.name}
                   {item.name === "Telegram" || item.name === "Facebook"
                     ? ", "
@@ -62,7 +62,7 @@ const About = () => {
               Seseorang yang tertarik dengan hal-hal terkait Frontend, User Interface/Experience,
               Design Systems, dan Linux. Kamu dapat menghubungi saya via{" "}
               {socialMediaList.map((item, index) => (
-                <Link className="link-contact" key={index + 1} href={item.link} passHref>
+                <Link className={linkContact} key={index + 1} href={item.link} passHref>
                   {item.name}
                   {item.name === "Telegram" || item.name === "Facebook"
                     ? ", "

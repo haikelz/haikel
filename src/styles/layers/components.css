@@ -1,16 +1,19 @@
 @tailwind components;
 
 @layer components {
-  .onscroll {
-    @apply backdrop-blur-lg backdrop-filter;
-  }
+  /* 
+   * So, i divide the gradient styles for text into 2 parts, light mode and dark mode. 
+   * Why? Because i want to prevent issue "You cannot `@apply` the `dark:bg-green-700` utility here because it creates a circular dependency"
+  */
 
-  .link-contact {
-    @apply font-bold hover:text-blue-500;
-  }
-
+  /* light mode */
   .gradient {
-    @apply bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent dark:from-[#0093E9] dark:to-[#80D0C7];
+    @apply bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent;
+  }
+
+  /* dark mode */
+  .gradient-dark {
+    @apply bg-gradient-to-r from-blue-500 to-[#80D0C7] bg-clip-text text-transparent;
   }
 
   .shadow-smooth {
