@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: `https://${process.env.NEXT_PUBLIC_URL_WEBSITE}/`,
+  siteUrl: `https://haikel.my.id/`,
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [{ userAgent: "*", allow: "/" }],
