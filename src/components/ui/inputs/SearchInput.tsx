@@ -1,5 +1,4 @@
-import { SetStateAction } from "jotai";
-import { memo } from "react";
+import { memo, SetStateAction } from "react";
 import { MdSearch } from "react-icons/md";
 import { twJoin } from "tailwind-merge";
 
