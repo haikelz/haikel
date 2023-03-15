@@ -1,15 +1,11 @@
-import { memo, SetStateAction } from "react";
+import { forwardRef } from "react";
 import { twJoin } from "tailwind-merge";
 
-type MessageInputProps = {
-  message: string;
-  setMessage: (update: SetStateAction<string>) => void;
-};
-
-export const MessageInput = ({ message, setMessage }: MessageInputProps) => {
+export const MessageInput = forwardRef<HTMLInputElement>((props, ref) => {
   return (
     <div className="my-6 w-full">
       <input
+        ref={ref}
         className={twJoin(
           "block w-full border-[2.5px] border-black bg-white outline-none",
           "py-1.5 px-4 font-medium transition-all ease-in-out",
@@ -19,12 +15,11 @@ export const MessageInput = ({ message, setMessage }: MessageInputProps) => {
         type="text"
         name="message"
         placeholder="Add your message...."
-        value={message}
         required
-        onChange={(event) => setMessage(event.target.value)}
+        {...props}
       />
     </div>
   );
-};
+});
 
-memo(MessageInput);
+MessageInput.displayName = "MessageInput";

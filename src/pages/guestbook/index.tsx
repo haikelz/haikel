@@ -1,7 +1,7 @@
 import { atom, useAtom } from "jotai";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import { SyntheticEvent, useEffect } from "react";
+import { SyntheticEvent, useEffect, useRef } from "react";
 import { FaGithub } from "react-icons/fa";
 import { twJoin } from "tailwind-merge";
 import { MessageInput } from "~components/ui/inputs";
@@ -12,18 +12,18 @@ import ListGuests from "~ui/lists/ListGuests";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
 const isLoadingAtom = atom<boolean>(true);
-const messageAtom = atom<string>("");
 const guestbookAtom = atom<GuestbookProps>([
   { id: "", created_at: "", email: "", username: "", message: "" },
 ]);
 
 const Guestbook = () => {
+  const ref = useRef<HTMLInputElement>(null);
+
   const { reload } = useRouter();
   const { data: session } = useSession();
 
   const [guestbook, setGuestbook] = useAtom(guestbookAtom);
   const [isLoading, setIsLoading] = useAtom(isLoadingAtom);
-  const [message, setMessage] = useAtom(messageAtom);
 
   const handleSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();
@@ -31,7 +31,7 @@ const Guestbook = () => {
     try {
       const { error } = await supabase.from("guestbook").insert([
         {
-          message,
+          message: ref.current?.value,
           username: session?.user?.name,
           email: session?.user?.email,
         },
@@ -127,7 +127,7 @@ const Guestbook = () => {
       ) : (
         <div className="w-full">
           <form onSubmit={handleSubmit}>
-            <MessageInput message={message} setMessage={setMessage} />
+            <MessageInput ref={ref} />
           </form>
         </div>
       )}
