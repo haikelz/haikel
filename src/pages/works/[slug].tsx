@@ -16,7 +16,7 @@ import { Heading, UnderlineSpan } from "~ui/typography";
 
 const AuthorImage = dynamic(() => import("~ui/mdx/AuthorImage"));
 const Video = dynamic(() => import("~ui/mdx/Video"));
-const LazyLoadImage = dynamic(() => import("~ui/mdx/LazyLoadImage"));
+const LightboxImage = dynamic(() => import("~ui/mdx/LightboxImage"));
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getSlugs(WORKS_PATH).map((slug) => ({ params: { slug } }));
@@ -102,7 +102,7 @@ const DetailWorkPage = ({ work }: WorkPageProps) => {
           <p className={twMerge("text-right text-2xl font-bold", naskhArabic.className)}>
             بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
           </p>
-          <MDXRemote {...work.source} components={{ Video, LazyLoadImage }} />
+          <MDXRemote {...work.source} components={{ Video, LightboxImage }} />
         </div>
       </article>
     </Layout>

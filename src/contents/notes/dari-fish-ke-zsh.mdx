@@ -24,7 +24,7 @@ Seperti yang kita tahu, zsh(**z**-**sh**ell) adalah sebuah shell yang commandnya
 
 Disini saya pake distro ubuntu based.
 
-```bash
+```sh
 sudo apt-add-repository ppa:fish-shell/release-3
 sudo apt update
 sudo apt install fish
@@ -32,7 +32,7 @@ sudo apt install fish
 
 Untuk yang pake arch based, bisa install dengan perintah `sudo pacman -S fish`. Sebelum ngerubah default shellnya, mari kita cek si fish nya ada dimana:
 
-```bash
+```sh
 ~
 ❯ which fish
 /usr/bin/fish
@@ -42,7 +42,7 @@ Seperti yang tertera, fish saya berada di `/usr/bin/fish`(tiap orang beda-beda, 
 
 Ubah default shell ke fish:
 
-```bash
+```sh
 chsh -s /usr/bin/fish
 ```
 
@@ -50,7 +50,7 @@ Kalo udah, tinggal logout dan login lagi untuk melihat perubahannya.
 
 Oh ya soal konfigurasi, memang rada beda ama zsh. Untuk file confignya, bisa ditemukan di `~/.config/fish/config.fish`. Berikut contoh konfigurasi fish saya:
 
-```bash
+```sh
 set -Ua fish_user_paths ~/flutter/bin
 set -Ua fish_user_paths ~/Android/Sdk/cmdline-tools/latest/bin
 # export PATH=$ANDROID_SDK_ROOT/bin:$PATH
@@ -83,7 +83,7 @@ Untuk lebih detailnya, bisa lihat ke repositori [dotfiles saya](https://github.c
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 ```
 
-<LazyLoadImage
+<LightboxImage
   src="blog/dari-fish-ke-zsh/oh-my-fish.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669162175073"
   alt="oh-my-fish"
 />
@@ -109,7 +109,7 @@ Sebenarnya ini opsional, tapi karena default shellnya udah di fish, maka saya un
 sudo apt --purge remove zsh
 ```
 
-<LazyLoadImage
+<LightboxImage
   src="blog/dari-fish-ke-zsh/uninstall-zsh.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669162135308"
   alt="Uninstall zsh"
 />
@@ -121,7 +121,7 @@ Untuk uninstall oh-my-zsh, lakukan cara berikut:
 - Ubah filenya jadi executable dengan perintah `sudo chmod 777 uninstall.sh`
 - Kemudian uninstall oh-my-zsh dengan `./uninstall.sh`
 
-<LazyLoadImage
+<LightboxImage
   src="blog/dari-fish-ke-zsh/uninstall-oh-my-zsh.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669162160120"
   alt="Uninstall oh-my-zsh"
 />

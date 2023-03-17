@@ -13,7 +13,7 @@ import { NotePageProps } from "~types";
 import Layout from "~ui/layout";
 import { Heading, Paragraph } from "~ui/typography";
 
-const LazyLoadImage = dynamic(() => import("~ui/mdx/LazyLoadImage"));
+const LightboxImage = dynamic(() => import("~ui/mdx/LightboxImage"));
 const AuthorImage = dynamic(() => import("~ui/mdx/AuthorImage"));
 const Video = dynamic(() => import("~ui/mdx/Video"));
 
@@ -79,7 +79,7 @@ const NotePage = ({ note }: NotePageProps) => {
           <p className={twMerge("text-right text-2xl font-bold", naskhArabic.className)}>
             بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
           </p>
-          <MDXRemote {...note.source} components={{ Video, LazyLoadImage }} />
+          <MDXRemote {...note.source} components={{ Video, LightboxImage }} />
         </div>
       </article>
     </Layout>

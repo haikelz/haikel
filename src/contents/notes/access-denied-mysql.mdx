@@ -10,7 +10,7 @@ description: Fix access permission Mysql on Linux
 
 When i was working with Prisma, i got an error like this:
 
-<LazyLoadImage
+<LightboxImage
   src="blog/access-denied-mysql/access-denied-mysql.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669161184004"
   alt="access denied mysql"
 />
@@ -26,10 +26,11 @@ mysql> exit;
 sudo service mysql restart
 ```
 
-<LazyLoadImage
+<LightboxImage 
   src="blog/access-denied-mysql/access-denied-solution.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669161184014"
   alt="solution"
 />
+
 
 Btw, the syntax in Mysql isn't case sensitive, so if you type the syntax in lowercase or uppercase, it's fine.
 
@@ -39,7 +40,7 @@ If you want to check the port of your Mysql, you can check it like this(make sur
 SHOW GLOBAL VARIABLES LIKE 'PORT';
 ```
 
-<LazyLoadImage
+<LightboxImage
   src="blog/access-denied-mysql/Screenshot-2022-10-23-33-535x239.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669157528338"
   alt="check mysql port"
 />
