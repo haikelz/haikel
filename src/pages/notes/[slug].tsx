@@ -63,7 +63,11 @@ const NotePage = ({ note }: NotePageProps) => {
           <div className="my-3 flex items-center">
             <AuthorImage />
             <Paragraph
-              className={twMerge("font-semibold tracking-[0.050em]", spaceGrotesk.className)}
+              className={twMerge(
+                "text-base font-semibold tracking-[0.050em]",
+                "md:text-lg",
+                spaceGrotesk.className
+              )}
             >
               <span>{note.meta.author}</span>, <span>{memoizedReadingTime}</span> / {note.meta.date}
             </Paragraph>
@@ -73,7 +77,7 @@ const NotePage = ({ note }: NotePageProps) => {
           className={twJoin(
             "prose prose-slate mt-6 w-full max-w-full",
             "dark:prose-invert",
-            "lg:prose-lg"
+            "md:prose-lg"
           )}
         >
           <p className={twMerge("text-right text-2xl font-bold", naskhArabic.className)}>

@@ -1,15 +1,21 @@
-import { atom } from "jotai";
-import { useReducerAtom } from "jotai/utils";
+import { atom, useAtom } from "jotai";
 import Link from "next/link";
 import { twJoin } from "tailwind-merge";
-import { setLanguage } from "~lib/helpers/setLanguage";
 import { socialMediaList } from "~lib/utils/data";
 import { Heading, Paragraph, UnderlineSpan } from "~ui/typography";
 
-const languageAtom = atom<boolean>(true);
+const atomWithToggle = (initialValue?: boolean) => {
+  const anAtom = atom(initialValue, (get, set, nextValue?: boolean) => {
+    const update: boolean = nextValue ?? !get(anAtom);
+    set(anAtom, update);
+  });
+  return anAtom;
+};
+
+const languageAtom = atomWithToggle(true);
 
 const About = () => {
-  const [language, toggleLanguage] = useReducerAtom<boolean, unknown>(languageAtom, setLanguage);
+  const [language, setLanguage] = useAtom(languageAtom);
   const linkContact = "font-bold hover:text-blue-500";
 
   return (
@@ -53,7 +59,7 @@ const About = () => {
                 </Link>
               ))}
               .{" "}
-              <button type="button" aria-label="toggle language" onClick={toggleLanguage}>
+              <button type="button" aria-label="toggle language" onClick={() => setLanguage(false)}>
                 <UnderlineSpan>See in Indonesia.</UnderlineSpan>
               </button>
             </Paragraph>
@@ -72,7 +78,7 @@ const About = () => {
                 </Link>
               ))}
               .{" "}
-              <button type="button" aria-label="toggle language" onClick={toggleLanguage}>
+              <button type="button" aria-label="toggle language" onClick={() => setLanguage(true)}>
                 <UnderlineSpan>Lihat di Bahasa Inggris.</UnderlineSpan>
               </button>
             </Paragraph>

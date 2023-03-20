@@ -38,7 +38,8 @@ const TopNav = () => {
                   role="button"
                   className={twMerge(
                     "cursor-pointer rounded-sm",
-                    "px-1 text-base font-semibold",
+                    "px-1 font-semibold",
+                    "md:text-lg",
                     "active:bg-pink-100",
                     "active:dark:bg-slate-800",
                     asPath.includes(nav.href)

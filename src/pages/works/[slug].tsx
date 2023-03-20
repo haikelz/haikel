@@ -64,14 +64,14 @@ const DetailWorkPage = ({ work }: WorkPageProps) => {
           <div className="my-3 flex items-center">
             <AuthorImage />
             <div className={twMerge("tracking-[0.050em]", spaceGrotesk.className)}>
-              <span className="text-base font-semibold leading-[1.75rem]">
+              <span className={twJoin("text-base font-semibold leading-[1.75rem]", "md:text-lg")}>
                 {work.meta.author}, {memoizedReadingTime}.
               </span>{" "}
               {work.meta.preview ? (
                 <button
                   type="button"
                   aria-label="Preview"
-                  className="text-base leading-[1.75rem] tracking-[0.050em]"
+                  className={twJoin("text-base leading-[1.75rem] tracking-[0.050em]", "md:text-lg")}
                 >
                   <Link href={work.meta.preview}>
                     <UnderlineSpan>Preview</UnderlineSpan>
@@ -83,7 +83,10 @@ const DetailWorkPage = ({ work }: WorkPageProps) => {
                 <button
                   type="button"
                   aria-label="Source"
-                  className="text-base font-normal leading-[1.75rem] tracking-[0.050em]"
+                  className={twJoin(
+                    "text-base font-normal leading-[1.75rem] tracking-[0.050em]",
+                    "md:text-lg"
+                  )}
                 >
                   <Link href={work.meta.repo}>
                     <UnderlineSpan>Source</UnderlineSpan>
@@ -96,7 +99,8 @@ const DetailWorkPage = ({ work }: WorkPageProps) => {
         <div
           className={twJoin(
             "prose prose-slate mt-6 w-full max-w-full",
-            "dark:prose-invert lg:prose-lg"
+            "md:prose-lg",
+            "dark:prose-invert"
           )}
         >
           <p className={twMerge("text-right text-2xl font-bold", naskhArabic.className)}>
