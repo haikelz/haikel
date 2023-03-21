@@ -4,7 +4,7 @@ export const imageKitLoader = ({ src, width, quality }: ImageLoaderProps) => {
   const params: string[] = [`w-${width}`];
   const paramsString: string = params.join(",");
 
-  let urlEndpoint: string | any = process.env.NEXT_PUBLIC_URL_ENDPOINT;
+  let urlEndpoint = process.env.NEXT_PUBLIC_URL_ENDPOINT as string;
 
   if (src[0] === "/") src = src.slice(1);
   if (quality) params.push(`q-${quality}`);

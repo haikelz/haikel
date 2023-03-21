@@ -1,4 +1,4 @@
-import { MdBook, MdEventNote, MdHomeFilled, MdWork } from "react-icons/md";
+import { GuestbookIcon, HomeIcon, NotesIcon, WorkIcon } from "~ui/icons";
 
 export const topNavList = [
   { id: "b", text: "/works", href: "/works" },
@@ -14,10 +14,10 @@ export const socialMediaList = [
 ];
 
 export const bottomNavList = [
-  { name: "Home", icon: MdHomeFilled, link: "/" },
-  { name: "Works", icon: MdWork, link: "/works" },
-  { name: "Notes", icon: MdEventNote, link: "/notes" },
-  { name: "Guestbook", icon: MdBook, link: "/guestbook" },
+  { name: "Home", icon: HomeIcon, link: "/" },
+  { name: "Works", icon: WorkIcon, link: "/works" },
+  { name: "Notes", icon: NotesIcon, link: "/notes" },
+  { name: "Guestbook", icon: GuestbookIcon, link: "/guestbook" },
 ];
 
 export const metadata = {

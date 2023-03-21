@@ -1,18 +1,19 @@
 import Link from "next/link";
-import {
-  SiChakraui,
-  SiFramer,
-  SiNextdotjs,
-  SiReact,
-  SiSvelte,
-  SiTailwindcss,
-  SiTypescript,
-} from "react-icons/si";
 import { twMerge } from "tailwind-merge";
 import { spaceGrotesk } from "~lib/utils/fonts";
 import { WorksProps } from "~types";
+import {
+  ChakrauiIcon,
+  FramerIcon,
+  NextJsIcon,
+  ReactIcon,
+  ReactQueryIcon,
+  SupabaseIcon,
+  SvelteIcon,
+  TailwindcssIcon,
+  TypescriptIcon,
+} from "~ui/icons";
 import { Paragraph } from "~ui/typography";
-import { ReactQueryIcon, SupabaseIcon } from "../icons";
 
 const ListWorks = ({ works }: WorksProps) => {
   return (
@@ -37,23 +38,23 @@ const ListWorks = ({ works }: WorksProps) => {
             {work.stack.map((techstack, index) => (
               <div key={index + 1}>
                 {techstack === "nextjs" ? (
-                  <SiNextdotjs />
+                  <NextJsIcon />
                 ) : techstack === "tailwind" ? (
-                  <SiTailwindcss className="text-gray-400" />
+                  <TailwindcssIcon />
                 ) : techstack === "react-query" ? (
                   <ReactQueryIcon />
                 ) : techstack === "reactjs" ? (
-                  <SiReact className="text-blue-400" />
+                  <ReactIcon />
                 ) : techstack === "supabase" ? (
                   <SupabaseIcon />
                 ) : techstack === "typescript" ? (
-                  <SiTypescript className="text-sky-600" />
+                  <TypescriptIcon />
                 ) : techstack === "framer-motion" ? (
-                  <SiFramer />
+                  <FramerIcon />
                 ) : techstack === "svelte" ? (
-                  <SiSvelte className="text-orange-500" />
+                  <SvelteIcon />
                 ) : techstack === "chakra-ui" ? (
-                  <SiChakraui className="text-teal-500" />
+                  <ChakrauiIcon />
                 ) : null}
               </div>
             ))}

@@ -1,6 +1,6 @@
 import { memo, SetStateAction } from "react";
-import { MdSearch } from "react-icons/md";
 import { twJoin } from "tailwind-merge";
+import { SearchIcon } from "~ui/icons";
 
 type SearchInputProps = {
   search: string;
@@ -11,7 +11,7 @@ export const SearchInput = ({ search, setSearch }: SearchInputProps) => {
   return (
     <div className="relative my-6 w-full">
       <div className="absolute inset-y-0 left-0 flex items-center pl-3">
-        <MdSearch className="h-6 w-6" />
+        <SearchIcon />
       </div>
       <input
         className={twJoin(

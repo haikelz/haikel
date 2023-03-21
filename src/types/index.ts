@@ -84,3 +84,7 @@ export type GuestbookProps =
       [x: string]: any;
     }[]
   | null;
+
+export type IconClassNameProps = {
+  className: string;
+};

@@ -2,11 +2,11 @@ import { atom, useAtom } from "jotai";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { SyntheticEvent, useEffect, useRef } from "react";
-import { FaGithub } from "react-icons/fa";
 import { twJoin } from "tailwind-merge";
 import { MessageInput } from "~components/ui/inputs";
 import supabase from "~lib/utils/supabase";
 import { GuestbookProps } from "~types";
+import { GithubIcon } from "~ui/icons";
 import Layout from "~ui/layout";
 import ListGuests from "~ui/lists/ListGuests";
 import { Heading, Paragraph, Underline } from "~ui/typography";
@@ -120,8 +120,8 @@ const Guestbook = () => {
             )}
             onClick={() => signIn("github")}
           >
-            <FaGithub size={22} />
-            <span>Sign In with Github</span>
+            <GithubIcon />
+            <span className="text-base md:text-lg">Sign In with Github</span>
           </button>
         </div>
       ) : (

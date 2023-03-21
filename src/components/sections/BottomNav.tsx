@@ -2,7 +2,6 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { ComponentType } from "react";
-import { IconType } from "react-icons/lib";
 import { twJoin } from "tailwind-merge";
 import { useTheme } from "~hooks/useTheme";
 import { bottomNavList } from "~lib/utils/data";
@@ -36,7 +35,7 @@ const BottomNav = () => {
       >
         <div className="flex w-full items-center justify-around">
           {bottomNavList.map((item, index) => {
-            const Icon: IconType = item.icon;
+            const Icon = item.icon;
             return (
               <Link
                 className="flex items-center justify-center"
@@ -57,7 +56,6 @@ const BottomNav = () => {
                       ? "text-slate-600 dark:text-white"
                       : "text-slate-500 dark:text-slate-400"
                   )}
-                  size={28}
                 />
               </Link>
             );
