@@ -9,8 +9,8 @@ const Footer = () => {
       className={twJoin("pb-[4.8rem] text-center tracking-widest md:pb-4", spaceGrotesk.className)}
     >
       <div>
-        <p className="pb-1 text-sm font-semibold">2020-{currentYear} Haikel</p>
-        <p className="text-sm font-semibold">
+        <p className="pb-1 text-base font-semibold">2020-{currentYear} Haikel</p>
+        <p className="text-base font-semibold">
           This Website is under{" "}
           <Link href="https://github.com/haikelz/haikel.my.id/blob/master/LICENSE">
             <span

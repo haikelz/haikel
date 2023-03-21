@@ -98,15 +98,6 @@ module.exports = {
               },
             },
           },
-          sm: {
-            css: {
-              pre: {
-                code: {
-                  fontSize: theme("fontSize.base")[0],
-                },
-              },
-            },
-          },
           lg: {
             css: {
               h1: {
@@ -114,6 +105,11 @@ module.exports = {
               },
               "pre, pre code": {
                 borderRadius: theme("borderRadius.sm"),
+              },
+              pre: {
+                code: {
+                  fontSize: theme("fontSize.lg")[0],
+                },
               },
             },
           },
@@ -140,7 +136,4 @@ module.exports = {
     },
   },
   plugins: [require("@tailwindcss/typography"), require("tailwind-scrollbar")],
-  variants: {
-    scrollbar: ["dark"],
-  },
 };
