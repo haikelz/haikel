@@ -15,7 +15,13 @@ const LatestNotes = ({ notes }: { notes: NoteMetaProps[] }) => {
           <ListNotes filteredNotes={notes} />
         </div>
         <div className="flex w-full items-start justify-start">
-          <Link role="button" href="/notes" className="w-fit text-left" aria-label="Latest Notes">
+          <Link
+            role="button"
+            href="/notes"
+            className="w-fit text-left"
+            aria-label="Latest Notes"
+            passHref
+          >
             <UnderlineSpan>See more notes</UnderlineSpan>
           </Link>
         </div>

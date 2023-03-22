@@ -17,7 +17,7 @@ const ListNotes = ({ filteredNotes }: NotesArticlesProps) => {
             {note.date}
           </Paragraph>
           <div className="mt-2">
-            <Link href={`/notes/${note.slug}`}>
+            <Link href={`/notes/${note.slug}`} aria-label={note.title}>
               <span
                 className={twMerge(
                   "cursor-pointer text-xl font-bold",

@@ -15,7 +15,13 @@ const FeaturedWorks = ({ works }: WorksProps) => {
           <ListWorks works={works} />
         </div>
         <div className="flex w-full items-end justify-start">
-          <Link role="button" href="/works" className="w-fit text-left" aria-label="More Works">
+          <Link
+            role="button"
+            href="/works"
+            className="w-fit text-left"
+            aria-label="More Works"
+            passHref
+          >
             <UnderlineSpan>See more works</UnderlineSpan>
           </Link>
         </div>

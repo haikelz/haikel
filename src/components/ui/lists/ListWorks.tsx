@@ -12,6 +12,7 @@ import {
   SvelteIcon,
   TailwindcssIcon,
   TypescriptIcon,
+  WindiCssIcon,
 } from "~ui/icons";
 import { Paragraph } from "~ui/typography";
 
@@ -21,7 +22,7 @@ const ListWorks = ({ works }: WorksProps) => {
       {works.map((work, index) => (
         <div key={index + 1} className="h-full">
           <div>
-            <Link href={`/works/${work.slug}`} passHref aria-label={work.title}>
+            <Link href={`/works/${work.slug}`} aria-label={work.title}>
               <span
                 className={twMerge(
                   "text-xl font-bold",
@@ -55,6 +56,8 @@ const ListWorks = ({ works }: WorksProps) => {
                   <SvelteIcon />
                 ) : techstack === "chakra-ui" ? (
                   <ChakrauiIcon />
+                ) : techstack === "windi" ? (
+                  <WindiCssIcon />
                 ) : null}
               </div>
             ))}

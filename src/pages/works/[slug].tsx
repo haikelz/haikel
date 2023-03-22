@@ -73,7 +73,7 @@ const DetailWorkPage = ({ work }: WorkPageProps) => {
                   aria-label="Preview"
                   className={twJoin("text-base leading-[1.75rem] tracking-[0.050em]", "md:text-lg")}
                 >
-                  <Link href={work.meta.preview}>
+                  <Link href={work.meta.preview} passHref>
                     <UnderlineSpan>Preview</UnderlineSpan>
                   </Link>
                 </button>
@@ -88,7 +88,7 @@ const DetailWorkPage = ({ work }: WorkPageProps) => {
                     "md:text-lg"
                   )}
                 >
-                  <Link href={work.meta.repo}>
+                  <Link href={work.meta.repo} passHref>
                     <UnderlineSpan>Source</UnderlineSpan>
                   </Link>
                 </button>

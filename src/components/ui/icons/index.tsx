@@ -18,3 +18,4 @@ export * from "./TopNavLogo";
 export * from "./TypescriptIcon";
 export * from "./ViteIcon";
 export * from "./WorkIcon";
+export * from "./WindiCssIcon";
