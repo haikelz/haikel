@@ -1,7 +1,6 @@
-import Link from "next/link";
 import { NoteMetaProps } from "~types";
 import ListNotes from "~ui/lists/ListNotes";
-import { Heading, Underline, UnderlineSpan } from "~ui/typography";
+import { Heading, Underline, UnderlineLink } from "~ui/typography";
 
 const LatestNotes = ({ notes }: { notes: NoteMetaProps[] }) => {
   return (
@@ -15,15 +14,9 @@ const LatestNotes = ({ notes }: { notes: NoteMetaProps[] }) => {
           <ListNotes filteredNotes={notes} />
         </div>
         <div className="flex w-full items-start justify-start">
-          <Link
-            role="button"
-            href="/notes"
-            className="w-fit text-left"
-            aria-label="Latest Notes"
-            passHref
-          >
-            <UnderlineSpan>See more notes</UnderlineSpan>
-          </Link>
+          <UnderlineLink href="/notes" role="button" aria-label="latest notes">
+            See more notes
+          </UnderlineLink>
         </div>
       </div>
     </section>

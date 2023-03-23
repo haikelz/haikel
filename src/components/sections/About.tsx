@@ -49,7 +49,7 @@ const About = () => {
               A person who interested in Frontend stuff, User Interface/Experience, Design Systems,
               and Linux. Feel free to reach me via{" "}
               {socialMediaList.map((item, index) => (
-                <Link className={linkContact} key={index + 1} href={item.link} passHref>
+                <Link className={linkContact} key={index + 1} href={item.link}>
                   {item.name}
                   {item.name === "Telegram" || item.name === "Facebook"
                     ? ", "
@@ -68,7 +68,7 @@ const About = () => {
               Seseorang yang tertarik dengan hal-hal terkait Frontend, User Interface/Experience,
               Design Systems, dan Linux. Kamu dapat menghubungi saya via{" "}
               {socialMediaList.map((item, index) => (
-                <Link className={linkContact} key={index + 1} href={item.link} passHref>
+                <Link className={linkContact} key={index + 1} href={item.link}>
                   {item.name}
                   {item.name === "Telegram" || item.name === "Facebook"
                     ? ", "

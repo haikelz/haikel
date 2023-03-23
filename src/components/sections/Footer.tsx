@@ -12,16 +12,15 @@ const Footer = () => {
         <p className="pb-1 text-base font-semibold">2020-{currentYear} Haikel</p>
         <p className="text-base font-semibold">
           This Website is under{" "}
-          <Link href="https://github.com/haikelz/haikel.my.id/blob/master/LICENSE">
-            <span
-              className={twJoin(
-                "cursor-pointer font-bold",
-                "text-sm underline decoration-dashed underline-offset-[5px]",
-                "hover:text-blue-500 hover:decoration-blue-500"
-              )}
-            >
-              MIT License
-            </span>
+          <Link
+            className={twJoin(
+              "cursor-pointer font-bold",
+              "text-sm underline decoration-dashed underline-offset-[5px]",
+              "hover:text-blue-500 hover:decoration-blue-500"
+            )}
+            href="https://github.com/haikelz/haikel.my.id/blob/master/LICENSE"
+          >
+            MIT License
           </Link>
         </p>
       </div>

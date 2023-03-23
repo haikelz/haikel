@@ -19,13 +19,13 @@ Ada 2 cara menginstall Flutter di Ubuntu, yakni dengan Snapd dan manual. Tapi da
 
 3. Tambahin path Flutter ke `.bashrc`, atau `.zshrc` jika temen-temen pake shell **zsh**. Karena saya ngeletakin folder Flutternya di `home/user/`, jadi:
 
-```bash
+```sh
 export PATH=$PATH:~/flutter/bin
 ```
 
 4. Setelah itu, coba close terminal dan buka terminalnya lagi. Kemudian kita ingin memeriksa apa-apa saja yang belum kita siapkan:
 
-```bash
+```sh
 flutter doctor
 ```
 
@@ -46,10 +46,11 @@ Untuk install Android SDK:
   src="blog/flutter-ubuntu/Screenshot-20220403-144926.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669161855238"
   alt="Accept Terms and Conditions"
 />
- 
-2. Kemudian, tambahin path nya ke `.bashrc` atau `.zshrc`. Karena saya letakin si Android SDK ini di tempat yang sama dengan Flutter tadi, yakni `home/user/`, jadi:
 
-```bash
+2. Kemudian, tambahin path nya ke `.bashrc` atau `.zshrc`. Karena saya letakin si Android SDK ini di tempat
+yang sama dengan Flutter tadi, yakni `home/user/`, jadi:
+
+```sh
 export PATH=$PATH:~/Android/Sdk/cmdline-tools/latest/bin
 ```
 
@@ -57,13 +58,13 @@ Kalo udah, close terminalnya.
 
 3. Nah, kemudian kita perlu untuk menginstall cmdline-tools dengan `sdkmanager`. Buka terminalnya lagi, ketikkan:
 
-```bash
+```sh
 sdkmanager --install "cmdline-tools;latest"
 ```
 
 4. Setelah itu, kita akan Accept Android Licences nya:
 
-```bash
+```sh
 flutter doctor --android-licences
 ```
 

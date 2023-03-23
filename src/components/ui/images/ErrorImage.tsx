@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { memo } from "react";
 import { imageKitLoader } from "~lib/helpers/imageKitLoader";
 
 const ErrorImage = () => {
@@ -15,4 +14,4 @@ const ErrorImage = () => {
   );
 };
 
-export default memo(ErrorImage);
+export default ErrorImage;

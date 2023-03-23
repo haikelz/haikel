@@ -1,4 +1,3 @@
-import { memo } from "react";
 import { twMerge } from "tailwind-merge";
 import { ChildrenProps } from "~types";
 
@@ -26,5 +25,3 @@ export const Heading = ({ children, as, className }: HeadingProps) => {
     </>
   );
 };
-
-memo(Heading);

@@ -12,7 +12,7 @@ Ini adalah dokumentasi tentang menginstall Pipewire di Artix Linux. Biar saya ga
 Kalau kita lihat di [Arch Wiki](https://wiki.archlinux.org/title/PipeWire), Pipewire adalah sebuah low-level multimedia Framework baru. Sesuai definisinya tadi, Pipewire memang mengarah ke urusan peningkatan kualitas audio.
 Saya bukanlah orang yang terlalu peduli soal sound sebenarnya. Selama ga kresek-kresek audionya, It's fine.
 
-```bash
+```sh
 yay -S pipewire-pulse wireplumber pipewire-alsa
 ```
 
@@ -20,7 +20,7 @@ Saya memilih menginstall `wireplumber` ketimbang `pipewire-media-session`, walau
 
 Setelah kita menginstall beberapa package yang diperlukan, sekarang kita akan membuat script untuk autostart nya. Misal dalam hal ini saya beri nama `pipewire.sh`.
 
-```bash
+```sh
 #!/bin/bash
 /usr/bin/pipewire
 /usr/bin/pipewire-pulse
@@ -29,13 +29,13 @@ Setelah kita menginstall beberapa package yang diperlukan, sekarang kita akan me
 
 Kemudian kita buat scriptnya jadi executable dengan:
 
-```bash
+```sh
 chmod +x pipewire.sh
 ```
 
 Setelah itu, autostart scriptnya ke `.xinitrc` . Tapi karena saya memakai bspwm, jadi saya taruh saja di `bspwmrc`.
 
-```bash
+```sh
 ~/.config/bspwm/pipewire/./pipewire.sh
 ```
 

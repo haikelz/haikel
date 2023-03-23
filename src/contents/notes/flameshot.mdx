@@ -11,25 +11,25 @@ description: Jika bosan memakai Scrot, maka bisa mencoba Flameshot
 
 Jadi selama ini saya menggunakan scrot untuk screenshot. Memang simple, tapi jika ingin menghiasnya, saya mesti bolak balik ke [Screely](https://screely.com). Nah kebetulan saya ketemu tulisannya Om [Bandithijo](https://bandithijo.github.io) tentang bagaimana mengambil screenshot dan menghiasnya langsung tanpa bolak-balik ke Screely.
 
-Aslinya, scriptnya pake Ruby, cuma saya ngambil yang udah diporting ke Bash oleh [Om Berrabe](https://github.com/berabee). Terima kasih Om Bandithijo dan Om Berrabe udah berbagi tips dan triknya.
+Aslinya, scriptnya pake Ruby, cuma saya ngambil yang udah diporting ke sh oleh [Om Berrabe](https://github.com/berabee). Terima kasih Om Bandithijo dan Om Berrabe udah berbagi tips dan triknya.
 
 ## B. Proses
 
 1. Pertama-tama, install flameshotnya terlebih dahulu, sesuaikan dengan distro yang dipakai.
 
-```bash
+```sh
 sudo pacman -S flameshot
 ```
 
-2. Setelah terinstall, ada dua opsi dalam scriptnya, yakni memakai script original yang berbahasa ruby dari Om Bandithijo, atau yang sudah diporting ke bash. Disini saya pilih yang bash aja.
+2. Setelah terinstall, ada dua opsi dalam scriptnya, yakni memakai script original yang berbahasa ruby dari Om Bandithijo, atau yang sudah diporting ke sh. Disini saya pilih yang sh aja.
 
-```bash
+```sh
 wget https://raw.githubusercontent.com/berrabe/awesome-flameshot/master/awesome-flameshot
 ```
 
 3. Jangan lupa buat scriptnya jadi executable dengan:
 
-```bash
+```sh
 chmod +x awesome-flameshot
 ```
 

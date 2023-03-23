@@ -1,6 +1,8 @@
 import Image from "next/image";
-import { useState } from "react";
+import { memo, useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
+import Captions from "yet-another-react-lightbox/plugins/captions";
+import "yet-another-react-lightbox/plugins/captions.css";
 import "yet-another-react-lightbox/styles.css";
 import { imageKitLoader } from "~lib/helpers/imageKitLoader";
 
@@ -28,14 +30,15 @@ const LightboxImage = ({ src, alt }: LightboxImageProps) => {
         <Lightbox
           open={isOpen}
           close={() => setIsOpen(false)}
-          slides={[{ src: src, alt: alt }]}
+          slides={[{ src: src, alt: alt, title: alt }]}
+          plugins={[Captions]}
           render={{
             slide: () => {
               return (
                 <Image
                   alt={alt}
                   src={src}
-                  loading="eager"
+                  loading="lazy"
                   loader={imageKitLoader}
                   draggable={false}
                   width={1000}
@@ -50,4 +53,4 @@ const LightboxImage = ({ src, alt }: LightboxImageProps) => {
   );
 };
 
-export default LightboxImage;
+export default memo(LightboxImage);

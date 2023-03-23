@@ -1,6 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import { memo } from "react";
-
 const AuthorImage = () => {
   return (
     <img
@@ -15,4 +13,4 @@ const AuthorImage = () => {
   );
 };
 
-export default memo(AuthorImage);
+export default AuthorImage;

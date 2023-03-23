@@ -17,16 +17,16 @@ const ListNotes = ({ filteredNotes }: NotesArticlesProps) => {
             {note.date}
           </Paragraph>
           <div className="mt-2">
-            <Link href={`/notes/${note.slug}`} aria-label={note.title}>
-              <span
-                className={twMerge(
-                  "cursor-pointer text-xl font-bold",
-                  "hover:text-blue-500",
-                  spaceGrotesk.className
-                )}
-              >
-                {note.title}
-              </span>
+            <Link
+              className={twMerge(
+                "cursor-pointer text-xl font-bold",
+                "hover:text-blue-500",
+                spaceGrotesk.className
+              )}
+              href={`/notes/${note.slug}`}
+              aria-label={note.title}
+            >
+              {note.title}
             </Link>
           </div>
           <Paragraph className="my-2 tracking-wide">{note.description}</Paragraph>

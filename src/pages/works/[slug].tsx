@@ -1,7 +1,6 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import dynamic from "next/dynamic";
-import Link from "next/link";
 import { useMemo } from "react";
 import { twJoin, twMerge } from "tailwind-merge";
 import { getReadingTime } from "~lib/helpers/getReadingTime";
@@ -12,7 +11,7 @@ import { WORKS_PATH } from "~lib/utils/contentsPath";
 import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
 import { WorkPageProps } from "~types";
 import Layout from "~ui/layout";
-import { Heading, UnderlineSpan } from "~ui/typography";
+import { Heading, UnderlineLink } from "~ui/typography";
 
 const AuthorImage = dynamic(() => import("~ui/mdx/AuthorImage"));
 const Video = dynamic(() => import("~ui/mdx/Video"));
@@ -73,9 +72,7 @@ const DetailWorkPage = ({ work }: WorkPageProps) => {
                   aria-label="Preview"
                   className={twJoin("text-base leading-[1.75rem] tracking-[0.050em]", "md:text-lg")}
                 >
-                  <Link href={work.meta.preview} passHref>
-                    <UnderlineSpan>Preview</UnderlineSpan>
-                  </Link>
+                  <UnderlineLink href={work.meta.preview}>Preview</UnderlineLink>
                 </button>
               ) : null}
               {work.meta.preview && work.meta.repo ? " / " : null}
@@ -88,9 +85,7 @@ const DetailWorkPage = ({ work }: WorkPageProps) => {
                     "md:text-lg"
                   )}
                 >
-                  <Link href={work.meta.repo} passHref>
-                    <UnderlineSpan>Source</UnderlineSpan>
-                  </Link>
+                  <UnderlineLink href={work.meta.repo}>Source</UnderlineLink>
                 </button>
               ) : null}
             </div>

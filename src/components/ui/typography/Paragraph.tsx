@@ -1,4 +1,3 @@
-import { memo } from "react";
 import { twMerge } from "tailwind-merge";
 import { ChildrenProps } from "~types";
 
@@ -21,5 +20,3 @@ export const Paragraph = ({ className, children, isCenter }: ParagraphProps) => 
     </p>
   );
 };
-
-memo(Paragraph);

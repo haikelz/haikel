@@ -11,7 +11,7 @@ description: Catatan saya mengenai migrasi dari zsh ke fish dan bagaimana rasany
 
 ## A. Pendahuluan
 
-Seperti yang kita tahu, zsh(**z**-**sh**ell) adalah sebuah shell yang commandnya mirip-mirip dengan bash. Bisa dibilang ini bash versi improvement dengan berbagai macam kustomisasi. Belakangan ini, saya tertarik untuk pindah ke fish(**f**riendly **i**nteractive **sh**ell), yang katanya udah banyak fitur out of the box. Di zsh, kita tidak akan mendapatkan itu dan yeps, mesti konfigurasi sendiri buat dapetin fitur kayak autocomplete, dan lainnya.
+Seperti yang kita tahu, zsh(**z**-**sh**ell) adalah sebuah shell yang commandnya mirip-mirip dengan sh. Bisa dibilang ini sh versi improvement dengan berbagai macam kustomisasi. Belakangan ini, saya tertarik untuk pindah ke fish(**f**riendly **i**nteractive **sh**ell), yang katanya udah banyak fitur out of the box. Di zsh, kita tidak akan mendapatkan itu dan yeps, mesti konfigurasi sendiri buat dapetin fitur kayak autocomplete, dan lainnya.
 
 **Mengapa saya pindah ke fish?**
 
@@ -79,7 +79,7 @@ Untuk lebih detailnya, bisa lihat ke repositori [dotfiles saya](https://github.c
 
 **oh-my-fish** kurang lebih sama saja fungsinya dengan **oh-my-zsh di zsh.** Untuk menginstallnya, kita masukkan perintah:
 
-```bash
+```sh
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 ```
 
@@ -90,7 +90,7 @@ curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install 
 
 Jika temen-temen mau ganti tema, bisa lihat daftarnya [disini](https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md). Disini, saya akan mengganti tema defaultnya ke pure(yep pas di zsh, saya juga pake pure).
 
-```bash
+```sh
 curl git.io/pure-fish --output /tmp/pure_installer.fish --location --silent
 source /tmp/pure_installer.fish; and install_pure
 ```
@@ -105,7 +105,7 @@ Ganti directory `/tmp/` dengan directory yang temen-temen inginkan.
 
 Sebenarnya ini opsional, tapi karena default shellnya udah di fish, maka saya uninstall zsh beserta oh-my-zsh nya.
 
-```bash
+```sh
 sudo apt --purge remove zsh
 ```
 
@@ -126,13 +126,13 @@ Untuk uninstall oh-my-zsh, lakukan cara berikut:
   alt="Uninstall oh-my-zsh"
 />
 
-Dia bakal ngembaliin default shellnya ke bash. Dalam hal ini, kita rubah lagi ke fish dengan `chsh -s /usr/bin/fish`
+Dia bakal ngembaliin default shellnya ke sh. Dalam hal ini, kita rubah lagi ke fish dengan `chsh -s /usr/bin/fish`
 
 ## C. Penutup
 
 Yeps sekian aja catatan ini. So far aman, dan nyaman juga pake fish. Ga terlalu mikirin time execution juga sih seperti kata orang-orang, cuma murni pengen nyoba hal yang baru aja. **Terima kasih 🌸**
 
-### Referensi
+## D. Referensi
 
-- [Fish vs. Zsh vs. Bash and Why You Should Switch to Fish](https://betterprogramming.pub/fish-vs-zsh-vs-bash-reasons-why-you-need-to-switch-to-fish-4e63a66687eb)
+- [Fish vs. Zsh vs. Bash and Why You Should Switch to Fish](https://betterprogramming.pub/fish-vs-zsh-vs-sh-reasons-why-you-need-to-switch-to-fish-4e63a66687eb)
 - [fish official website](https://fishshell.com/)

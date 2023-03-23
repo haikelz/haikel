@@ -17,7 +17,7 @@ When i was working with Prisma, i got an error like this:
 
 So yeah, i just search the solution on google. And found the solution on [Stackoverflow](https://stackoverflow.com/questions/39281594/error-1698-28000-access-denied-for-user-rootlocalhost)
 
-```bash
+```sh
 sudo mysql -u root
 mysql> USE mysql;
 mysql> UPDATE user SET plugin='mysql_native_password' WHERE User='root';
@@ -26,17 +26,16 @@ mysql> exit;
 sudo service mysql restart
 ```
 
-<LightboxImage 
+<LightboxImage
   src="blog/access-denied-mysql/access-denied-solution.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669161184014"
   alt="solution"
 />
-
 
 Btw, the syntax in Mysql isn't case sensitive, so if you type the syntax in lowercase or uppercase, it's fine.
 
 If you want to check the port of your Mysql, you can check it like this(make sure that you've start your Mysql):
 
-```bash
+```sh
 SHOW GLOBAL VARIABLES LIKE 'PORT';
 ```
 

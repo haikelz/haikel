@@ -1,7 +1,6 @@
-import Link from "next/link";
 import { WorksProps } from "~types";
 import ListWorks from "~ui/lists/ListWorks";
-import { Heading, Underline, UnderlineSpan } from "~ui/typography";
+import { Heading, Underline, UnderlineLink } from "~ui/typography";
 
 const FeaturedWorks = ({ works }: WorksProps) => {
   return (
@@ -15,15 +14,9 @@ const FeaturedWorks = ({ works }: WorksProps) => {
           <ListWorks works={works} />
         </div>
         <div className="flex w-full items-end justify-start">
-          <Link
-            role="button"
-            href="/works"
-            className="w-fit text-left"
-            aria-label="More Works"
-            passHref
-          >
-            <UnderlineSpan>See more works</UnderlineSpan>
-          </Link>
+          <UnderlineLink href="/works" role="button" aria-label="More Works">
+            See more works
+          </UnderlineLink>
         </div>
       </div>
     </section>
