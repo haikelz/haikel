@@ -25,7 +25,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       guestbook: data,
     },
-    revalidate: 15,
+    revalidate: 5,
   };
 };
 

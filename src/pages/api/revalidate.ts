@@ -6,7 +6,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   try {
-    await res.revalidate(req.query.path as string);
+    await res.revalidate("/guestbook");
     return res.json({ revalidated: true });
   } catch (err) {
     return res.status(500).send("Error revalidating");
