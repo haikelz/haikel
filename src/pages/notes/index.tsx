@@ -53,7 +53,7 @@ const Notes = ({ notes }: NotesProps) => {
       description="Sometimes i write something, mostly about Linux, Web, and life. So yeah, i call this as Notes."
       className={twJoin("flex min-h-screen flex-col items-start justify-start", "py-8", "md:py-12")}
     >
-      <div className="flex w-full flex-wrap items-start justify-start">
+      <section className="flex w-full flex-wrap items-start justify-start">
         <div>
           <Heading as="h2" className="title-font text-left">
             Notes
@@ -66,12 +66,12 @@ const Notes = ({ notes }: NotesProps) => {
             <b>Notes</b>.
           </Paragraph>
         </div>
-      </div>
+      </section>
       <SearchInput search={search} setSearch={setSearch} />
       {filteredNotes.length ? (
-        <div className="mb-10 flex w-full flex-col space-y-8">
+        <section className="mb-10 flex w-full flex-col space-y-8">
           <ListNotes filteredNotes={filteredNotes} />
-        </div>
+        </section>
       ) : (
         <Paragraph className="font-semibold">The note that you search is not found!</Paragraph>
       )}

@@ -4,7 +4,6 @@ import Lightbox from "yet-another-react-lightbox";
 import Captions from "yet-another-react-lightbox/plugins/captions";
 import "yet-another-react-lightbox/plugins/captions.css";
 import "yet-another-react-lightbox/styles.css";
-import { imageKitLoader } from "~lib/helpers/imageKitLoader";
 
 type LightboxImageProps = {
   src: string;
@@ -17,14 +16,13 @@ const LightboxImage = ({ src, alt }: LightboxImageProps) => {
   return (
     <>
       <Image
-        className="cursor-pointer"
+        className="cursor-pointer object-cover"
         onClick={() => setIsOpen(true)}
         src={src}
         alt={alt}
         width={500}
         height={500}
         loading="lazy"
-        loader={imageKitLoader}
       />
       {isOpen ? (
         <Lightbox
@@ -38,8 +36,7 @@ const LightboxImage = ({ src, alt }: LightboxImageProps) => {
                 <Image
                   alt={alt}
                   src={src}
-                  loading="lazy"
-                  loader={imageKitLoader}
+                  loading="eager"
                   draggable={false}
                   width={1000}
                   height={1000}

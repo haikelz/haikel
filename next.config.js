@@ -5,7 +5,6 @@ const nextConfig = {
   compress: true,
   images: {
     domains: ["avatars.githubusercontent.com", "ik.imagekit.io"],
-    loader: "custom",
   },
 };
 

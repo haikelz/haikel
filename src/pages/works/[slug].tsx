@@ -56,7 +56,7 @@ const DetailWorkPage = ({ work }: WorkPageProps) => {
       )}
     >
       <article className="mb-3 flex w-full flex-col flex-wrap justify-center">
-        <div className="flex flex-col">
+        <section className="flex flex-col">
           <Heading as="h1" className="gradient dark:gradient-dark">
             {work.meta.title}
           </Heading>
@@ -90,8 +90,8 @@ const DetailWorkPage = ({ work }: WorkPageProps) => {
               ) : null}
             </div>
           </div>
-        </div>
-        <div
+        </section>
+        <article
           className={twJoin(
             "prose prose-slate mt-6 w-full max-w-full",
             "md:prose-lg",
@@ -102,7 +102,7 @@ const DetailWorkPage = ({ work }: WorkPageProps) => {
             بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
           </p>
           <MDXRemote {...work.source} components={{ Video, LightboxImage }} />
-        </div>
+        </article>
       </article>
     </Layout>
   );

@@ -1,9 +1,10 @@
-/* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
+
 const AuthorImage = () => {
   return (
-    <img
+    <Image
       src="https://avatars.githubusercontent.com/u/77146709?v=4"
-      alt="Profile"
+      alt="avatar"
       className="mr-2 rounded-full"
       width={26}
       height={26}

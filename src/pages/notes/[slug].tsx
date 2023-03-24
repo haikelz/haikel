@@ -56,7 +56,7 @@ const NotePage = ({ note }: NotePageProps) => {
       )}
     >
       <article className="mb-3 flex w-full flex-col flex-wrap justify-center">
-        <div className="flex flex-col">
+        <section className="flex flex-col">
           <Heading as="h1" className="gradient dark:gradient-dark">
             {note.meta.title}
           </Heading>
@@ -72,8 +72,8 @@ const NotePage = ({ note }: NotePageProps) => {
               <span>{note.meta.author}</span>, <span>{memoizedReadingTime}</span> / {note.meta.date}
             </Paragraph>
           </div>
-        </div>
-        <div
+        </section>
+        <article
           className={twJoin(
             "prose prose-slate mt-6 w-full max-w-full",
             "dark:prose-invert",
@@ -84,7 +84,7 @@ const NotePage = ({ note }: NotePageProps) => {
             بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
           </p>
           <MDXRemote {...note.source} components={{ Video, LightboxImage }} />
-        </div>
+        </article>
       </article>
     </Layout>
   );

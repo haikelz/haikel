@@ -1,4 +1,4 @@
-import { SetStateAction } from "react";
+import { SetStateAction, memo } from "react";
 import { twJoin } from "tailwind-merge";
 import { SearchIcon } from "~ui/icons";
 
@@ -29,3 +29,5 @@ export const SearchInput = ({ search, setSearch }: SearchInputProps) => {
     </div>
   );
 };
+
+memo(SearchInput);

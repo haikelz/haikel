@@ -20,7 +20,7 @@ const ListGuests = ({ guestbook }: ListGuestsProps) => {
 
   return (
     <>
-      {guestbook?.map((guest) => (
+      {guestbook.map((guest) => (
         <div key={guest.id} className="h-full">
           <div>
             <span

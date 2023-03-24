@@ -79,11 +79,13 @@ export type WorksProps = {
   works: WorkMetaProps[];
 };
 
-export type GuestbookProps =
-  | {
-      [x: string]: any;
-    }[]
-  | null;
+export type GuestbookProps = {
+  id: string;
+  created_at: string;
+  email: string;
+  username: string;
+  message: string;
+}[];
 
 export type IconClassNameProps = {
   className: string;

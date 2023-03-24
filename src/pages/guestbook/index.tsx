@@ -1,7 +1,7 @@
-import { atom, useAtom } from "jotai";
+import type { GetStaticProps } from "next";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import { SyntheticEvent, useEffect, useRef } from "react";
+import { SyntheticEvent, useRef } from "react";
 import { twJoin } from "tailwind-merge";
 import { MessageInput } from "~components/ui/inputs";
 import supabase from "~lib/utils/supabase";
@@ -11,19 +11,29 @@ import Layout from "~ui/layout";
 import ListGuests from "~ui/lists/ListGuests";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
-const isLoadingAtom = atom<boolean>(true);
-const guestbookAtom = atom<GuestbookProps>([
-  { id: "", created_at: "", email: "", username: "", message: "" },
-]);
+export const getStaticProps: GetStaticProps = async () => {
+  /**
+   * Order by "created_at" and set ascending to false
+   */
+  const { data, error } = await supabase
+    .from("guestbook")
+    .select()
+    .order("created_at", { ascending: false });
+  if (error) throw error;
 
-const Guestbook = () => {
+  return {
+    props: {
+      guestbook: data,
+    },
+    revalidate: 15,
+  };
+};
+
+const Guestbook = ({ guestbook }: { guestbook: GuestbookProps }) => {
   const ref = useRef<HTMLInputElement>(null);
 
   const { reload } = useRouter();
   const { data: session } = useSession();
-
-  const [guestbook, setGuestbook] = useAtom(guestbookAtom);
-  const [isLoading, setIsLoading] = useAtom(isLoadingAtom);
 
   const handleSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();
@@ -44,38 +54,13 @@ const Guestbook = () => {
     }
   };
 
-  useEffect(() => {
-    const getDataFromSupabase = async () => {
-      try {
-        /**
-         * Order by "created_at" and set ascending to false
-         */
-        const { data, error } = await supabase
-          .from("guestbook")
-          .select()
-          .order("created_at", { ascending: false });
-
-        if (error) throw error;
-        if (!data && !error) setIsLoading(true);
-        if (data) {
-          setGuestbook(data);
-          setIsLoading(false);
-        }
-      } catch (err) {
-        console.error(err);
-      }
-    };
-
-    getDataFromSupabase();
-  }, [setGuestbook, setIsLoading]);
-
   return (
     <Layout
       title="Guestbook"
       description="Write a message for me and others"
       className={twJoin("flex min-h-screen flex-col items-start justify-start", "py-8", "md:py-12")}
     >
-      <div className="flex w-full flex-wrap items-start justify-start">
+      <section className="flex w-full flex-wrap items-start justify-start">
         <div>
           <Heading as="h2" className="title-font text-left">
             Guestbook
@@ -105,7 +90,7 @@ const Guestbook = () => {
             ) : null}
           </Paragraph>
         </div>
-      </div>
+      </section>
       {!session ? (
         <div className="my-4">
           <button
@@ -132,13 +117,9 @@ const Guestbook = () => {
         </div>
       )}
       {guestbook?.length ? (
-        !isLoading ? (
-          <div className="mb-10 flex w-full flex-col space-y-8">
-            <ListGuests guestbook={guestbook} />
-          </div>
-        ) : (
-          <Paragraph className="font-semibold">Loading messages....</Paragraph>
-        )
+        <section className="mb-10 flex w-full flex-col space-y-8">
+          <ListGuests guestbook={guestbook} />
+        </section>
       ) : (
         <Paragraph className="font-semibold">There is no messages now!</Paragraph>
       )}

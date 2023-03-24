@@ -45,17 +45,17 @@ const Tags = ({ slug, notes }: TagProps) => {
         "md:py-12"
       )}
     >
-      <div className="flex w-full flex-wrap items-start justify-start">
+      <section className="flex w-full flex-wrap items-start justify-start">
         <div>
           <Heading as="h2" className="title-font text-left">
             Tags #{slug}
           </Heading>
           <Underline />
         </div>
-      </div>
-      <div className="mt-6 mb-10 flex w-full flex-col space-y-8">
+      </section>
+      <section className="mt-6 mb-10 flex w-full flex-col space-y-8">
         <ListNotes filteredNotes={notes} />
-      </div>
+      </section>
     </Layout>
   );
 };
