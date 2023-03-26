@@ -1,12 +1,8 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import dynamic from "next/dynamic";
-import { useMemo } from "react";
 import { twJoin, twMerge } from "tailwind-merge";
-import { getReadingTime } from "~lib/helpers/getReadingTime";
-import { getSlugs } from "~lib/helpers/getSlugs";
-import { getWorkFromSlug } from "~lib/helpers/getWorkFromSlug";
-import { mdxSource } from "~lib/helpers/mdxSource";
+import { getSlugs, getWorkFromSlug, mdxSource } from "~lib/helpers";
 import { WORKS_PATH } from "~lib/utils/contentsPath";
 import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
 import { WorkPageProps } from "~types";
@@ -14,8 +10,9 @@ import Layout from "~ui/layout";
 import { Heading, UnderlineLink } from "~ui/typography";
 
 const AuthorImage = dynamic(() => import("~ui/mdx/AuthorImage"));
-const Video = dynamic(() => import("~ui/mdx/Video"));
 const LightboxImage = dynamic(() => import("~ui/mdx/LightboxImage"));
+const Video = dynamic(() => import("~ui/mdx/Video"));
+const ReadingTime = dynamic(() => import("~ui/mdx/ReadingTime"));
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getSlugs(WORKS_PATH).map((slug) => ({ params: { slug } }));
@@ -43,8 +40,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 const DetailWorkPage = ({ work }: WorkPageProps) => {
-  const memoizedReadingTime: string = useMemo(() => getReadingTime(work.content), [work.content]);
-
   return (
     <Layout
       title={work.meta.title}
@@ -64,7 +59,7 @@ const DetailWorkPage = ({ work }: WorkPageProps) => {
             <AuthorImage />
             <div className={twMerge("tracking-[0.050em]", spaceGrotesk.className)}>
               <span className={twJoin("text-base font-semibold leading-[1.75rem]", "md:text-lg")}>
-                {work.meta.author}, {memoizedReadingTime}.
+                {work.meta.author}, <ReadingTime content={work.content} />.
               </span>{" "}
               {work.meta.preview ? (
                 <button

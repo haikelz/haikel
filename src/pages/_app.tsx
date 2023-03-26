@@ -4,9 +4,7 @@ import { SessionProvider } from "next-auth/react";
 import type { AppProps } from "next/app";
 import { twJoin } from "tailwind-merge";
 import { ibmPlexSerif, jetbrains, spaceGrotesk } from "~lib/utils/fonts";
-import BottomNav from "~sections/BottomNav";
-import Footer from "~sections/Footer";
-import TopNav from "~sections/TopNav";
+import { BottomNav, Footer, TopNav } from "~sections";
 import "~styles/index.css";
 
 const appAnimation = {

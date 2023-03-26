@@ -1,9 +1,9 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
 import { twJoin } from "tailwind-merge";
-import { getAllNotes } from "~lib/helpers/getAllNotes";
+import { ListNotes } from "~ui/lists";
+import { getAllNotes } from "~lib/helpers";
 import { NoteMetaProps, NoteProps } from "~types";
 import Layout from "~ui/layout";
-import ListNotes from "~ui/lists/ListNotes";
 import { Heading, Underline } from "~ui/typography";
 
 type TagProps = {

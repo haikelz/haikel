@@ -1,11 +1,8 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import dynamic from "next/dynamic";
-import { useMemo } from "react";
 import { twJoin, twMerge } from "tailwind-merge";
-import { getNoteFromSlug } from "~lib/helpers/getNoteFromSlug";
-import { getReadingTime } from "~lib/helpers/getReadingTime";
-import { getSlugs } from "~lib/helpers/getSlugs";
+import { getNoteFromSlug, getSlugs } from "~lib/helpers";
 import { mdxSource } from "~lib/helpers/mdxSource";
 import { NOTES_PATH } from "~lib/utils/contentsPath";
 import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
@@ -13,9 +10,10 @@ import { NotePageProps } from "~types";
 import Layout from "~ui/layout";
 import { Heading, Paragraph } from "~ui/typography";
 
-const LightboxImage = dynamic(() => import("~ui/mdx/LightboxImage"));
 const AuthorImage = dynamic(() => import("~ui/mdx/AuthorImage"));
+const LightboxImage = dynamic(() => import("~ui/mdx/LightboxImage"));
 const Video = dynamic(() => import("~ui/mdx/Video"));
+const ReadingTime = dynamic(() => import("~ui/mdx/ReadingTime"));
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getSlugs(NOTES_PATH).map((slug) => ({ params: { slug } }));
@@ -43,8 +41,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 const NotePage = ({ note }: NotePageProps) => {
-  const memoizedReadingTime: string = useMemo(() => getReadingTime(note.content), [note.content]);
-
   return (
     <Layout
       title={note.meta.title}
@@ -69,7 +65,8 @@ const NotePage = ({ note }: NotePageProps) => {
                 spaceGrotesk.className
               )}
             >
-              <span>{note.meta.author}</span>, <span>{memoizedReadingTime}</span> / {note.meta.date}
+              <span>{note.meta.author}</span>, <ReadingTime content={note.content} /> /{" "}
+              {note.meta.date}
             </Paragraph>
           </div>
         </section>

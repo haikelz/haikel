@@ -14,7 +14,7 @@ const ToggleDarkIcon: ComponentType<ThemeProps> = dynamic(
   }
 );
 
-const BottomNav = () => {
+export const BottomNav = () => {
   const [theme, setTheme] = useTheme();
   const { asPath } = useRouter();
 
@@ -69,5 +69,3 @@ const BottomNav = () => {
     </nav>
   );
 };
-
-export default BottomNav;

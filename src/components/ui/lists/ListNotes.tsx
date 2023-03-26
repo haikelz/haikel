@@ -8,7 +8,7 @@ type NotesArticlesProps = {
   filteredNotes: NoteMetaProps[];
 };
 
-const ListNotes = ({ filteredNotes }: NotesArticlesProps) => {
+export const ListNotes = ({ filteredNotes }: NotesArticlesProps) => {
   return (
     <>
       {filteredNotes.map((note) => (
@@ -52,5 +52,3 @@ const ListNotes = ({ filteredNotes }: NotesArticlesProps) => {
     </>
   );
 };
-
-export default ListNotes;

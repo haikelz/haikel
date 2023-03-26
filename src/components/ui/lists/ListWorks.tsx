@@ -15,8 +15,9 @@ import {
   WindiCssIcon,
 } from "~ui/icons";
 import { Paragraph } from "~ui/typography";
+import { SwrIcon } from "../icons/SwrIcon";
 
-const ListWorks = ({ works }: WorksProps) => {
+export const ListWorks = ({ works }: WorksProps) => {
   return (
     <>
       {works.map((work, index) => (
@@ -52,6 +53,8 @@ const ListWorks = ({ works }: WorksProps) => {
                   <TypescriptIcon />
                 ) : techstack === "framer-motion" ? (
                   <FramerIcon />
+                ) : techstack === "swr" ? (
+                  <SwrIcon />
                 ) : techstack === "svelte" ? (
                   <SvelteIcon />
                 ) : techstack === "chakra-ui" ? (
@@ -67,5 +70,3 @@ const ListWorks = ({ works }: WorksProps) => {
     </>
   );
 };
-
-export default ListWorks;

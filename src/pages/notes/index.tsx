@@ -2,11 +2,11 @@ import { Searcher } from "fast-fuzzy";
 import type { GetStaticProps } from "next";
 import { useMemo, useState } from "react";
 import { twJoin } from "tailwind-merge";
-import { getAllNotes } from "~lib/helpers/getAllNotes";
+import { getAllNotes } from "~lib/helpers";
 import { NoteMetaProps, NotesProps } from "~types";
-import { SearchInput } from "~components/ui/inputs";
+import { SearchInput } from "~ui/inputs";
 import Layout from "~ui/layout";
-import ListNotes from "~ui/lists/ListNotes";
+import { ListNotes } from "~ui/lists";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
 type SearcherProps = Searcher<

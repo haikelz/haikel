@@ -9,12 +9,13 @@ const atomWithToggle = (initialValue?: boolean) => {
     const update: boolean = nextValue ?? !get(anAtom);
     set(anAtom, update);
   });
+
   return anAtom;
 };
 
 const languageAtom = atomWithToggle(true);
 
-const About = () => {
+export const About = () => {
   const [language, setLanguage] = useAtom(languageAtom);
   const linkContact = "font-bold hover:text-blue-500";
 
@@ -88,5 +89,3 @@ const About = () => {
     </section>
   );
 };
-
-export default About;

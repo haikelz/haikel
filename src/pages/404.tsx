@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import Layout from "~ui/layout";
 import { Heading, Paragraph } from "~ui/typography";
 
-const ErrorImage = dynamic(() => import("~ui/images/ErrorImage"));
+const ErrorImage = dynamic(() => import("~ui/images").then((image) => image.ErrorImage));
 
 const NotFoundPage = () => {
   return (

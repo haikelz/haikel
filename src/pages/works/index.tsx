@@ -1,9 +1,9 @@
 import { GetStaticProps } from "next";
 import { twJoin } from "tailwind-merge";
-import { getAllWorks } from "~lib/helpers/getAllWorks";
+import { ListWorks } from "~ui/lists";
+import { getAllWorks } from "~lib/helpers";
 import { WorkMetaProps, WorksProps } from "~types";
 import Layout from "~ui/layout";
-import ListWorks from "~ui/lists/ListWorks";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
 export const getStaticProps: GetStaticProps = async () => {

@@ -7,7 +7,7 @@ type ListGuestsProps = {
   guestbook: GuestbookProps;
 };
 
-const ListGuests = ({ guestbook }: ListGuestsProps) => {
+export const ListGuests = ({ guestbook }: ListGuestsProps) => {
   const convertToLocalTime = (format: string) => {
     return new Date(format).toLocaleDateString("en-EN", {
       year: "numeric",
@@ -42,5 +42,3 @@ const ListGuests = ({ guestbook }: ListGuestsProps) => {
     </>
   );
 };
-
-export default ListGuests;

@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { twJoin } from "tailwind-merge";
-import { currentYear } from "~lib/helpers/date";
 import { spaceGrotesk } from "~lib/utils/fonts";
 
-const Footer = () => {
+const date: Date = new Date();
+const currentYear: number = date.getFullYear();
+
+export const Footer = () => {
   return (
     <footer
       className={twJoin("pb-[4.8rem] text-center tracking-widest md:pb-4", spaceGrotesk.className)}
@@ -27,5 +29,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

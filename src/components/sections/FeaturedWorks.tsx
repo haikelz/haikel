@@ -1,8 +1,8 @@
+import { ListWorks } from "~ui/lists";
 import { WorksProps } from "~types";
-import ListWorks from "~ui/lists/ListWorks";
 import { Heading, Underline, UnderlineLink } from "~ui/typography";
 
-const FeaturedWorks = ({ works }: WorksProps) => {
+export const FeaturedWorks = ({ works }: WorksProps) => {
   return (
     <section className="mb-12 flex w-full flex-wrap items-center justify-center">
       <div className="flex w-full flex-col items-start justify-start">
@@ -22,5 +22,3 @@ const FeaturedWorks = ({ works }: WorksProps) => {
     </section>
   );
 };
-
-export default FeaturedWorks;

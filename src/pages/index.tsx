@@ -1,10 +1,7 @@
 import type { GetStaticProps } from "next";
 import { twJoin } from "tailwind-merge";
-import { getAllNotes } from "~lib/helpers/getAllNotes";
-import { getAllWorks } from "~lib/helpers/getAllWorks";
-import About from "~sections/About";
-import FeaturedWorks from "~sections/FeaturedWorks";
-import LatestNotes from "~sections/LatestNotes";
+import { getAllNotes, getAllWorks } from "~lib/helpers";
+import { About, FeaturedWorks, LatestNotes } from "~sections";
 import { NoteMetaProps, WorkMetaProps } from "~types";
 import Layout from "~ui/layout";
 

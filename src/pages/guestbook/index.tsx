@@ -3,12 +3,12 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { SyntheticEvent, useRef } from "react";
 import { twJoin } from "tailwind-merge";
-import { MessageInput } from "~components/ui/inputs";
 import supabase from "~lib/utils/supabase";
 import { GuestbookProps } from "~types";
 import { GithubIcon } from "~ui/icons";
+import { MessageInput } from "~ui/inputs";
 import Layout from "~ui/layout";
-import ListGuests from "~ui/lists/ListGuests";
+import { ListGuests } from "~ui/lists";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -25,7 +25,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       guestbook: data,
     },
-    revalidate: 5,
+    revalidate: 60,
   };
 };
 
