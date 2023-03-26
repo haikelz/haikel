@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { ComponentType } from "react";
 import { twJoin } from "tailwind-merge";
-import { useTheme } from "~hooks/useTheme";
+import { useTheme } from "~hooks";
 import { bottomNavList } from "~lib/utils/data";
 import { ThemeProps } from "~types";
 
