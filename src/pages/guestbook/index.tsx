@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { SyntheticEvent, useRef } from "react";
 import { twJoin } from "tailwind-merge";
 import supabase from "~lib/utils/supabase";
-import { GuestbookProps } from "~types";
+import { GuestbookProps } from "~models";
 import { GithubIcon } from "~ui/icons";
 import { MessageInput } from "~ui/inputs";
 import Layout from "~ui/layout";
@@ -25,11 +25,11 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       guestbook: data,
     },
-    revalidate: 60,
+    revalidate: 25,
   };
 };
 
-const Guestbook = ({ guestbook }: { guestbook: GuestbookProps }) => {
+const Guestbook = ({ guestbook }: { guestbook: Array<GuestbookProps> }) => {
   const ref = useRef<HTMLInputElement>(null);
 
   const { reload } = useRouter();

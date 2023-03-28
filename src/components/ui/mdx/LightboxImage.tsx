@@ -5,10 +5,10 @@ import Captions from "yet-another-react-lightbox/plugins/captions";
 import "yet-another-react-lightbox/plugins/captions.css";
 import "yet-another-react-lightbox/styles.css";
 
-type LightboxImageProps = {
+interface LightboxImageProps {
   src: string;
   alt: string;
-};
+}
 
 const LightboxImage = ({ src, alt }: LightboxImageProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);

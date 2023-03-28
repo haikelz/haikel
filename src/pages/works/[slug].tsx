@@ -5,9 +5,13 @@ import { twJoin, twMerge } from "tailwind-merge";
 import { getSlugs, getWorkFromSlug, mdxSource } from "~lib/helpers";
 import { WORKS_PATH } from "~lib/utils/contentsPath";
 import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
-import { WorkPageProps } from "~types";
+import { BaseMDXProps, WorkMetaProps } from "~models";
 import Layout from "~ui/layout";
 import { Heading, UnderlineLink } from "~ui/typography";
+
+interface DetailWorkPageProps extends BaseMDXProps {
+  meta: WorkMetaProps;
+}
 
 const AuthorImage = dynamic(() => import("~ui/mdx/AuthorImage"));
 const LightboxImage = dynamic(() => import("~ui/mdx/LightboxImage"));
@@ -39,7 +43,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-const DetailWorkPage = ({ work }: WorkPageProps) => {
+const DetailWorkPage = ({ work }: { work: DetailWorkPageProps }) => {
   return (
     <Layout
       title={work.meta.title}

@@ -1,13 +1,13 @@
 import { GetStaticProps } from "next";
 import { twJoin } from "tailwind-merge";
-import { ListWorks } from "~ui/lists";
 import { getAllWorks } from "~lib/helpers";
-import { WorkMetaProps, WorksProps } from "~types";
+import { WorkMetaProps } from "~models";
 import Layout from "~ui/layout";
+import { ListWorks } from "~ui/lists";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const works: WorkMetaProps[] = getAllWorks()
+  const works: Array<WorkMetaProps> = getAllWorks()
     .slice(0, getAllWorks().length)
     .map((work) => work.meta);
 
@@ -18,7 +18,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const Works = ({ works }: WorksProps) => {
+const Works = ({ works }: { works: Array<WorkMetaProps> }) => {
   return (
     <Layout
       title="Works"

@@ -1,5 +1,5 @@
 import { twMerge } from "tailwind-merge";
-import { ChildrenProps } from "~types";
+import { ChildrenProps } from "~models";
 
 type HeadingProps = ChildrenProps & {
   as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";

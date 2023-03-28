@@ -1,14 +1,10 @@
 import Link from "next/link";
 import { twJoin, twMerge } from "tailwind-merge";
 import { spaceGrotesk } from "~lib/utils/fonts";
-import type { NoteMetaProps } from "~types";
+import { NoteMetaProps } from "~models";
 import { Paragraph } from "~ui/typography";
 
-type NotesArticlesProps = {
-  filteredNotes: NoteMetaProps[];
-};
-
-export const ListNotes = ({ filteredNotes }: NotesArticlesProps) => {
+export const ListNotes = ({ filteredNotes }: { filteredNotes: Array<NoteMetaProps> }) => {
   return (
     <>
       {filteredNotes.map((note) => (

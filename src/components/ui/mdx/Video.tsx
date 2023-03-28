@@ -1,9 +1,9 @@
 import { memo } from "react";
 
-type VideoProps = {
+interface VideoProps {
   title: string;
   src: string;
-};
+}
 
 const Video = ({ title, src }: VideoProps) => {
   return (

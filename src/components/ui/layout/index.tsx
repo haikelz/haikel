@@ -1,7 +1,7 @@
 import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
 import { twMerge } from "tailwind-merge";
-import { ChildrenProps, SeoProps } from "~types";
+import { ChildrenProps, SeoProps } from "~models";
 
 type LayoutProps = ChildrenProps &
   SeoProps & {

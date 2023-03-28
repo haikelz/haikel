@@ -1,21 +1,21 @@
 import type { GetStaticProps } from "next";
 import { twJoin } from "tailwind-merge";
 import { getAllNotes, getAllWorks } from "~lib/helpers";
+import { NoteMetaProps, WorkMetaProps } from "~models";
 import { About, FeaturedWorks, LatestNotes } from "~sections";
-import { NoteMetaProps, WorkMetaProps } from "~types";
 import Layout from "~ui/layout";
 
-type InitialDataProps = {
-  notes: NoteMetaProps[];
-  works: WorkMetaProps[];
-};
+interface InitialDataProps {
+  notes: Array<NoteMetaProps>;
+  works: Array<WorkMetaProps>;
+}
 
 export const getStaticProps: GetStaticProps = async () => {
-  const notes: NoteMetaProps[] = getAllNotes()
+  const notes: Array<NoteMetaProps> = getAllNotes()
     .slice(0, 4)
     .map((note) => note.meta);
 
-  const works: WorkMetaProps[] = getAllWorks()
+  const works: Array<WorkMetaProps> = getAllWorks()
     .slice(0, 4)
     .map((work) => work.meta);
 

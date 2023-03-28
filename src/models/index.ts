@@ -1,0 +1,59 @@
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
+import { ReactNode } from "react";
+
+export interface BaseMDXProps {
+  source: MDXRemoteSerializeResult<Record<string, unknown>>;
+  content: string;
+}
+
+export interface NoteMetaProps {
+  author: string;
+  description: string;
+  slug: string;
+  title: string;
+  tags: Array<string>;
+  date: string;
+}
+
+export interface WorkMetaProps {
+  id: string;
+  author: string;
+  description: string;
+  slug: string;
+  title: string;
+  stack: Array<string>;
+  preview: string;
+  repo: string;
+}
+
+export interface GuestbookProps {
+  id: string;
+  created_at: string;
+  email: string;
+  username: string;
+  message: string;
+}
+
+export interface IconClassNameProps {
+  className: string;
+}
+
+export interface ThemeProps {
+  theme: string;
+  changeTheme: () => void;
+}
+
+export interface ChildrenProps {
+  children: ReactNode;
+}
+
+export interface LinkIconProps {
+  link?: string;
+  linkPreview?: string;
+  linkGithub?: string;
+}
+
+export interface SeoProps {
+  title: string;
+  description: string;
+}

@@ -6,7 +6,7 @@ import { twJoin, twMerge } from "tailwind-merge";
 import { useTheme } from "~hooks";
 import { topNavList } from "~lib/utils/data";
 import { spaceGrotesk } from "~lib/utils/fonts";
-import { ThemeProps } from "~types";
+import { ThemeProps } from "~models";
 import { TopNavLogo } from "~ui/icons";
 
 const ToggleDarkModeTopNav: ComponentType<ThemeProps> = dynamic(

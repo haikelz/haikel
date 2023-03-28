@@ -3,13 +3,13 @@ import type { GetStaticProps } from "next";
 import { useMemo, useState } from "react";
 import { twJoin } from "tailwind-merge";
 import { getAllNotes } from "~lib/helpers";
-import { NoteMetaProps, NotesProps } from "~types";
+import { NoteMetaProps } from "~models";
 import { SearchInput } from "~ui/inputs";
 import Layout from "~ui/layout";
 import { ListNotes } from "~ui/lists";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
-type SearcherProps = Searcher<
+type SearcherType = Searcher<
   NoteMetaProps,
   {
     keySelector: (obj: NoteMetaProps) => string;
@@ -28,7 +28,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const Notes = ({ notes }: NotesProps) => {
+const Notes = ({ notes }: { notes: Array<NoteMetaProps> }) => {
   const [search, setSearch] = useState<string>("");
 
   const filteredNotes = useMemo(() => {
@@ -36,7 +36,7 @@ const Notes = ({ notes }: NotesProps) => {
      * Fuzzy search with fast-fuzzy
      * @see https://github.com/EthanRutherford/fast-fuzzy
      */
-    const searcher: SearcherProps = new Searcher(notes, {
+    const searcher: SearcherType = new Searcher(notes, {
       keySelector: (obj) => obj.title.toLowerCase(),
     });
 

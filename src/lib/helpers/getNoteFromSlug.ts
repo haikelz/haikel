@@ -2,11 +2,10 @@ import { readFileSync } from "fs";
 import matter from "gray-matter";
 import path from "path";
 import { NOTES_PATH } from "~lib/utils/contentsPath";
-import { NoteProps } from "~types";
 
 const date = new Date();
 
-export const getNoteFromSlug = (slug: string): NoteProps => {
+export const getNoteFromSlug = (slug: string) => {
   const notePath: string = path.join(NOTES_PATH, `${slug}.mdx`);
   const source: Buffer = readFileSync(notePath);
   const { content, data } = matter(source);

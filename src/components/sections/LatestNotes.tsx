@@ -1,8 +1,8 @@
-import { NoteMetaProps } from "~types";
+import { NoteMetaProps } from "~models";
 import { ListNotes } from "~ui/lists";
 import { Heading, Underline, UnderlineLink } from "~ui/typography";
 
-export const LatestNotes = ({ notes }: { notes: NoteMetaProps[] }) => {
+export const LatestNotes = ({ notes }: { notes: Array<NoteMetaProps> }) => {
   return (
     <section className="mb-12 flex w-full flex-wrap items-center justify-center">
       <div className="flex w-full flex-col items-start justify-start">

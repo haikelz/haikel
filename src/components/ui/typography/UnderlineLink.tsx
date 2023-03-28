@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { HTMLAttributes } from "react";
 import { twMerge } from "tailwind-merge";
-import { ChildrenProps } from "~types";
+import { ChildrenProps } from "~models";
 
 type UnderlineLinkProps = ChildrenProps &
   HTMLAttributes<HTMLAnchorElement> & {

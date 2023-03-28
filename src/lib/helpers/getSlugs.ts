@@ -1,7 +1,7 @@
 import { sync } from "fast-glob";
 
-export const getSlugs = (path: string): string[] => {
-  const paths: string[] = sync(`${path}/*.mdx`);
+export const getSlugs = (path: string) => {
+  const paths: Array<string> = sync(`${path}/*.mdx`);
 
   return paths.map((path) => {
     const parts = path.split("/");

@@ -1,4 +1,4 @@
-import { IconClassNameProps } from "~types";
+import { IconClassNameProps } from "~models";
 
 export const NotesIcon = ({ className }: IconClassNameProps) => {
   return (

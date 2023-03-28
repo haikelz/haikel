@@ -1,15 +1,20 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
 import { twJoin } from "tailwind-merge";
-import { ListNotes } from "~ui/lists";
 import { getAllNotes } from "~lib/helpers";
-import { NoteMetaProps, NoteProps } from "~types";
+import { NoteMetaProps } from "~models";
 import Layout from "~ui/layout";
+import { ListNotes } from "~ui/lists";
 import { Heading, Underline } from "~ui/typography";
 
-type TagProps = {
+interface TagProps {
   slug: string;
-  notes: NoteMetaProps[];
-};
+  notes: Array<NoteMetaProps>;
+}
+
+interface NoteProps {
+  content: string;
+  meta: NoteMetaProps;
+}
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const notes: NoteProps[] = getAllNotes();

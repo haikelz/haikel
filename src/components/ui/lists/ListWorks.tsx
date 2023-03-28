@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { twMerge } from "tailwind-merge";
 import { spaceGrotesk } from "~lib/utils/fonts";
-import { WorksProps } from "~types";
+import { WorkMetaProps } from "~models";
 import {
   ChakrauiIcon,
   FramerIcon,
@@ -17,7 +17,7 @@ import {
 import { Paragraph } from "~ui/typography";
 import { SwrIcon } from "../icons/SwrIcon";
 
-export const ListWorks = ({ works }: WorksProps) => {
+export const ListWorks = ({ works }: { works: Array<WorkMetaProps> }) => {
   return (
     <>
       {works.map((work, index) => (

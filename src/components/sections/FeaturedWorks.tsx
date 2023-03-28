@@ -1,8 +1,8 @@
+import { WorkMetaProps } from "~models";
 import { ListWorks } from "~ui/lists";
-import { WorksProps } from "~types";
 import { Heading, Underline, UnderlineLink } from "~ui/typography";
 
-export const FeaturedWorks = ({ works }: WorksProps) => {
+export const FeaturedWorks = ({ works }: { works: Array<WorkMetaProps> }) => {
   return (
     <section className="mb-12 flex w-full flex-wrap items-center justify-center">
       <div className="flex w-full flex-col items-start justify-start">

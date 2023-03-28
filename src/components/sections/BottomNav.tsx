@@ -5,7 +5,7 @@ import { ComponentType } from "react";
 import { twJoin } from "tailwind-merge";
 import { useTheme } from "~hooks";
 import { bottomNavList } from "~lib/utils/data";
-import { ThemeProps } from "~types";
+import { ThemeProps } from "~models";
 
 const ToggleDarkIcon: ComponentType<ThemeProps> = dynamic(
   () => import("~ui/icons").then((icon) => icon.ToggleDarkIcon),

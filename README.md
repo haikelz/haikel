@@ -12,6 +12,10 @@
 - [shiki](https://shiki.matsu.io/)
 - [mdx](https://mdxjs.com/)
 
+## Screenshot
+
+![new preview](/public/docs/new-preview.png)
+
 ## Credits
 
 Some people that inspire me when i build this website. Thanks guys!

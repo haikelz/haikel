@@ -1,13 +1,9 @@
 import { twMerge } from "tailwind-merge";
 import { spaceGrotesk } from "~lib/utils/fonts";
-import { GuestbookProps } from "~types";
+import { GuestbookProps } from "~models";
 import { Paragraph } from "~ui/typography";
 
-type ListGuestsProps = {
-  guestbook: GuestbookProps;
-};
-
-export const ListGuests = ({ guestbook }: ListGuestsProps) => {
+export const ListGuests = ({ guestbook }: { guestbook: Array<GuestbookProps> }) => {
   const convertToLocalTime = (format: string) => {
     return new Date(format).toLocaleDateString("en-EN", {
       year: "numeric",

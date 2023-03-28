@@ -6,9 +6,13 @@ import { getNoteFromSlug, getSlugs } from "~lib/helpers";
 import { mdxSource } from "~lib/helpers/mdxSource";
 import { NOTES_PATH } from "~lib/utils/contentsPath";
 import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
-import { NotePageProps } from "~types";
+import { BaseMDXProps, NoteMetaProps } from "~models";
 import Layout from "~ui/layout";
 import { Heading, Paragraph } from "~ui/typography";
+
+interface NotePageProps extends BaseMDXProps {
+  meta: NoteMetaProps;
+}
 
 const AuthorImage = dynamic(() => import("~ui/mdx/AuthorImage"));
 const LightboxImage = dynamic(() => import("~ui/mdx/LightboxImage"));
@@ -40,7 +44,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-const NotePage = ({ note }: NotePageProps) => {
+const NotePage = ({ note }: { note: NotePageProps }) => {
   return (
     <Layout
       title={note.meta.title}

@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { ThemeProps } from "~types";
+import { ThemeProps } from "~models";
 
 export const ToggleDarkIcon = ({ theme, changeTheme }: ThemeProps) => {
   return (
