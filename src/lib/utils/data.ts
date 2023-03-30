@@ -8,7 +8,6 @@ export const topNavList = [
 
 export const socialMediaList = [
   { name: "Email", link: "mailto:halo@haikel.my.id" },
-  { name: "Telegram", link: "https://t.me/pempek_kapal_selem" },
   { name: "Facebook", link: "https://facebook.com/kelgfx" },
   { name: "Github", link: "https://github.com/haikelz" },
   { name: "Linkedin", link: "https://www.linkedin.com/in/haikel" },

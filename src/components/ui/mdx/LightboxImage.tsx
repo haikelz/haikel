@@ -12,14 +12,14 @@ interface LightboxImageProps {
 }
 
 const LightboxImage = ({ src, alt }: LightboxImageProps) => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
     <>
       <Image
         className={cxm(
-          "h-full cursor-pointer object-cover duration-700",
+          "cursor-pointer object-cover duration-700",
           isLoading ? "blur-md" : "blur-none"
         )}
         onClick={() => setIsOpen(true)}

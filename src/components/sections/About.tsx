@@ -52,7 +52,7 @@ export const About = () => {
               {socialMediaList.map((item, index) => (
                 <Link className={linkContact} key={index + 1} href={item.link}>
                   {item.name}
-                  {item.name === "Telegram" || item.name === "Facebook" || item.name === "Email"
+                  {item.name === "Facebook" || item.name === "Email"
                     ? ", "
                     : item.name === "Github"
                     ? ", "
@@ -71,7 +71,7 @@ export const About = () => {
               {socialMediaList.map((item, index) => (
                 <Link className={linkContact} key={index + 1} href={item.link}>
                   {item.name}
-                  {item.name === "Telegram" || item.name === "Facebook" || item.name === "Email"
+                  {item.name === "Facebook" || item.name === "Email"
                     ? ", "
                     : item.name === "Github"
                     ? ", "
