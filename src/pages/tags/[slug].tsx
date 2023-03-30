@@ -1,6 +1,6 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
-import { twJoin } from "tailwind-merge";
-import { getAllNotes } from "~lib/helpers";
+import { cxm } from "~lib/helpers/cxm";
+import { getAllNotes } from "~lib/helpers/getAllNotes";
 import { NoteMetaProps } from "~models";
 import Layout from "~ui/layout";
 import { ListNotes } from "~ui/lists";
@@ -44,11 +44,7 @@ const Tags = ({ slug, notes }: TagProps) => {
     <Layout
       title={`Tags #${slug}`}
       description="Tags"
-      className={twJoin(
-        "flex min-h-screen flex-col items-center justify-start",
-        "py-8",
-        "md:py-12"
-      )}
+      className={cxm("flex min-h-screen flex-col items-center justify-start", "py-8", "md:py-12")}
     >
       <section className="flex w-full flex-wrap items-start justify-start">
         <div>

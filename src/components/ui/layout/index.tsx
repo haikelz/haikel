@@ -1,6 +1,6 @@
 import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
-import { twMerge } from "tailwind-merge";
+import { cxm } from "~lib/helpers/cxm";
 import { ChildrenProps, SeoProps } from "~models";
 
 type LayoutProps = ChildrenProps &
@@ -38,7 +38,7 @@ const Layout = ({ children, className, title, description }: LayoutProps) => {
           cardType: "summary_large_image",
         }}
       />
-      <main className={twMerge("container mx-auto max-w-3xl tracking-wide", className)}>
+      <main className={cxm("container mx-auto max-w-3xl tracking-wide", className)}>
         {children}
       </main>
     </>

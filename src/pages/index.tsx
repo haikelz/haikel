@@ -1,7 +1,8 @@
 import type { GetStaticProps } from "next";
-import { twJoin } from "tailwind-merge";
-import { getAllNotes, getAllWorks } from "~lib/helpers";
-import { NoteMetaProps, WorkMetaProps } from "~models";
+import { cxm } from "~lib/helpers/cxm";
+import { getAllNotes } from "~lib/helpers/getAllNotes";
+import { getAllWorks } from "~lib/helpers/getAllWorks";
+import type { NoteMetaProps, WorkMetaProps } from "~models";
 import { About, FeaturedWorks, LatestNotes } from "~sections";
 import Layout from "~ui/layout";
 
@@ -32,7 +33,7 @@ const Home = ({ notes, works }: InitialDataProps) => {
     <Layout
       title="Haikel"
       description="A person who interested in Frontend stuff"
-      className={twJoin("flex flex-col items-start justify-start", "py-8", "md:py-12")}
+      className={cxm("flex flex-col items-start justify-start", "py-8", "md:py-12")}
     >
       <About />
       <FeaturedWorks works={works} />

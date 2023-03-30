@@ -2,8 +2,8 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { ComponentType } from "react";
-import { twJoin, twMerge } from "tailwind-merge";
 import { useTheme } from "~hooks";
+import { cxm } from "~lib/helpers/cxm";
 import { topNavList } from "~lib/utils/data";
 import { spaceGrotesk } from "~lib/utils/fonts";
 import { ThemeProps } from "~models";
@@ -20,7 +20,7 @@ export const TopNav = () => {
 
   return (
     <nav
-      className={twJoin(
+      className={cxm(
         "sticky top-0 z-10 hidden w-full border-b-[1.5px]",
         "border-b-gray-200 bg-azure/90 py-2 px-4",
         "backdrop-blur-lg backdrop-filter",
@@ -36,7 +36,7 @@ export const TopNav = () => {
               {topNavList.map((nav) => (
                 <Link
                   role="button"
-                  className={twMerge(
+                  className={cxm(
                     "cursor-pointer rounded-sm",
                     "px-1 font-semibold",
                     "md:text-lg",

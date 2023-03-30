@@ -1,5 +1,5 @@
 import { SetStateAction, memo } from "react";
-import { twJoin } from "tailwind-merge";
+import { cxm } from "~lib/helpers/cxm";
 import { SearchIcon } from "~ui/icons";
 
 type SearchInputProps = {
@@ -14,7 +14,7 @@ export const SearchInput = ({ search, setSearch }: SearchInputProps) => {
         <SearchIcon />
       </div>
       <input
-        className={twJoin(
+        className={cxm(
           "block w-full border-[2.5px] border-black bg-white outline-none",
           "py-1.5 px-4 pl-12 font-medium transition-all ease-in-out",
           "hover:shadow-light",

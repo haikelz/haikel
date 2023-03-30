@@ -1,6 +1,6 @@
 import { atom, useAtom } from "jotai";
 import Link from "next/link";
-import { twJoin } from "tailwind-merge";
+import { cxm } from "~lib/helpers/cxm";
 import { socialMediaList } from "~lib/utils/data";
 import { Heading, Paragraph, UnderlineSpan } from "~ui/typography";
 
@@ -28,7 +28,7 @@ export const About = () => {
          * Jika language bernilai false, maka tampilkan bahasa Indonesia
          */}
         <div
-          className={twJoin(
+          className={cxm(
             "flex flex-col items-start justify-start",
             "md:mt-0 md:block md:text-start"
           )}
@@ -36,7 +36,7 @@ export const About = () => {
           <Heading as="h1">
             Hello, I&#39;m{" "}
             <span
-              className={twJoin(
+              className={cxm(
                 "underline decoration-fireopal decoration-dashed underline-offset-[5px]",
                 "dark:gradient-dark dark:animate-text dark:bg-clip-text dark:text-transparent dark:decoration-blue-500"
               )}
@@ -52,7 +52,7 @@ export const About = () => {
               {socialMediaList.map((item, index) => (
                 <Link className={linkContact} key={index + 1} href={item.link}>
                   {item.name}
-                  {item.name === "Telegram" || item.name === "Facebook"
+                  {item.name === "Telegram" || item.name === "Facebook" || item.name === "Email"
                     ? ", "
                     : item.name === "Github"
                     ? ", "
@@ -71,7 +71,7 @@ export const About = () => {
               {socialMediaList.map((item, index) => (
                 <Link className={linkContact} key={index + 1} href={item.link}>
                   {item.name}
-                  {item.name === "Telegram" || item.name === "Facebook"
+                  {item.name === "Telegram" || item.name === "Facebook" || item.name === "Email"
                     ? ", "
                     : item.name === "Github"
                     ? ", "

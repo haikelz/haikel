@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { twMerge } from "tailwind-merge";
+import { cxm } from "~lib/helpers/cxm";
 import { spaceGrotesk } from "~lib/utils/fonts";
 import { WorkMetaProps } from "~models";
 import {
@@ -25,18 +25,14 @@ export const ListWorks = ({ works }: { works: Array<WorkMetaProps> }) => {
           <div>
             <Link href={`/works/${work.slug}`} aria-label={work.title}>
               <span
-                className={twMerge(
-                  "text-xl font-bold",
-                  "hover:text-blue-500",
-                  spaceGrotesk.className
-                )}
+                className={cxm("text-xl font-bold", "hover:text-blue-500", spaceGrotesk.className)}
               >
                 {work.title}
               </span>
             </Link>
           </div>
           <Paragraph className="my-2 tracking-wide">{work.description}</Paragraph>
-          <div className={twMerge("flex space-x-2", spaceGrotesk.className)}>
+          <div className={cxm("flex space-x-2", spaceGrotesk.className)}>
             {work.stack.map((techstack, index) => (
               <div key={index + 1}>
                 {techstack === "nextjs" ? (

@@ -1,4 +1,4 @@
-import { twMerge } from "tailwind-merge";
+import { cxm } from "~lib/helpers/cxm";
 import { ChildrenProps } from "~models";
 
 interface ParagraphProps extends ChildrenProps {
@@ -9,7 +9,7 @@ interface ParagraphProps extends ChildrenProps {
 export const Paragraph = ({ className, children, isCenter }: ParagraphProps) => {
   return (
     <p
-      className={twMerge(
+      className={cxm(
         "text-base font-normal leading-[1.75] tracking-wide",
         "md:text-lg md:leading-[1.7777778]",
         isCenter ? "text-center" : "",

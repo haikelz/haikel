@@ -1,7 +1,7 @@
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { ReactNode } from "react";
 
-export interface BaseMDXProps {
+export interface MDXProps {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
   content: string;
 }

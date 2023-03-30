@@ -2,7 +2,7 @@ import type { GetStaticProps } from "next";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { SyntheticEvent, useRef } from "react";
-import { twJoin } from "tailwind-merge";
+import { cxm } from "~lib/helpers/cxm";
 import supabase from "~lib/utils/supabase";
 import { GuestbookProps } from "~models";
 import { GithubIcon } from "~ui/icons";
@@ -58,7 +58,7 @@ const Guestbook = ({ guestbook }: { guestbook: Array<GuestbookProps> }) => {
     <Layout
       title="Guestbook"
       description="Write a message for me and others"
-      className={twJoin("flex min-h-screen flex-col items-start justify-start", "py-8", "md:py-12")}
+      className={cxm("flex min-h-screen flex-col items-start justify-start", "py-8", "md:py-12")}
     >
       <section className="flex w-full flex-wrap items-start justify-start">
         <div>
@@ -75,7 +75,7 @@ const Guestbook = ({ guestbook }: { guestbook: Array<GuestbookProps> }) => {
                 {" "}
                 Want to Sign Out instead? Just click{" "}
                 <button
-                  className={twJoin(
+                  className={cxm(
                     "cursor-pointer font-bold",
                     "underline decoration-dashed underline-offset-[5px]",
                     "hover:text-blue-500 hover:decoration-blue-500"
@@ -96,7 +96,7 @@ const Guestbook = ({ guestbook }: { guestbook: Array<GuestbookProps> }) => {
           <button
             type="button"
             aria-label="sign in"
-            className={twJoin(
+            className={cxm(
               "flex items-center justify-center space-x-3 rounded-md",
               "bg-zinc-800",
               "py-2 px-3.5",

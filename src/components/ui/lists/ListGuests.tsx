@@ -1,4 +1,4 @@
-import { twMerge } from "tailwind-merge";
+import { cxm } from "~lib/helpers/cxm";
 import { spaceGrotesk } from "~lib/utils/fonts";
 import { GuestbookProps } from "~models";
 import { Paragraph } from "~ui/typography";
@@ -20,7 +20,7 @@ export const ListGuests = ({ guestbook }: { guestbook: Array<GuestbookProps> }) 
         <div key={guest.id} className="h-full">
           <div>
             <span
-              className={twMerge(
+              className={cxm(
                 "cursor-pointer text-xl font-bold",
                 "hover:text-blue-500",
                 spaceGrotesk.className

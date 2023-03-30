@@ -4,6 +4,7 @@ import Lightbox from "yet-another-react-lightbox";
 import Captions from "yet-another-react-lightbox/plugins/captions";
 import "yet-another-react-lightbox/plugins/captions.css";
 import "yet-another-react-lightbox/styles.css";
+import { cxm } from "~lib/helpers/cxm";
 
 interface LightboxImageProps {
   src: string;
@@ -11,13 +12,19 @@ interface LightboxImageProps {
 }
 
 const LightboxImage = ({ src, alt }: LightboxImageProps) => {
+  const [isLoading, setIsLoading] = useState(true);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
     <>
       <Image
-        className="cursor-pointer object-cover"
+        className={cxm(
+          "h-full cursor-pointer object-cover duration-700",
+          isLoading ? "blur-md" : "blur-none"
+        )}
         onClick={() => setIsOpen(true)}
+        onLoadingComplete={() => setIsLoading(false)}
+        decoding="async"
         src={src}
         alt={alt}
         width={500}

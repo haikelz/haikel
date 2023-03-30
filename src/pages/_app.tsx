@@ -2,7 +2,7 @@ import { AnimatePresence, domAnimation, LazyMotion, m } from "framer-motion";
 import { Provider } from "jotai";
 import { SessionProvider } from "next-auth/react";
 import type { AppProps } from "next/app";
-import { twJoin } from "tailwind-merge";
+import { cxm } from "~lib/helpers/cxm";
 import { ibmPlexSerif, jetbrains, spaceGrotesk } from "~lib/utils/fonts";
 import { BottomNav, Footer, TopNav } from "~sections";
 import "~styles/index.css";
@@ -38,7 +38,7 @@ const App = ({ Component, pageProps: { session, ...pageProps }, router }: AppPro
           }
         `}</style>
         <div
-          className={twJoin(
+          className={cxm(
             "min-h-screen w-full bg-azure bg-fixed bg-center",
             " dark:bg-zinc-900 dark:text-gray-100"
           )}

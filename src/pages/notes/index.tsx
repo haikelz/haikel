@@ -1,8 +1,8 @@
 import { Searcher } from "fast-fuzzy";
 import type { GetStaticProps } from "next";
 import { useMemo, useState } from "react";
-import { twJoin } from "tailwind-merge";
-import { getAllNotes } from "~lib/helpers";
+import { cxm } from "~lib/helpers/cxm";
+import { getAllNotes } from "~lib/helpers/getAllNotes";
 import { NoteMetaProps } from "~models";
 import { SearchInput } from "~ui/inputs";
 import Layout from "~ui/layout";
@@ -51,7 +51,7 @@ const Notes = ({ notes }: { notes: Array<NoteMetaProps> }) => {
     <Layout
       title="Notes"
       description="Sometimes i write something, mostly about Linux, Web, and life. So yeah, i call this as Notes."
-      className={twJoin("flex min-h-screen flex-col items-start justify-start", "py-8", "md:py-12")}
+      className={cxm("flex min-h-screen flex-col items-start justify-start", "py-8", "md:py-12")}
     >
       <section className="flex w-full flex-wrap items-start justify-start">
         <div>

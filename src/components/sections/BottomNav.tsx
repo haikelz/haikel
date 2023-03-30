@@ -2,8 +2,8 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { ComponentType } from "react";
-import { twJoin } from "tailwind-merge";
 import { useTheme } from "~hooks";
+import { cxm } from "~lib/helpers/cxm";
 import { bottomNavList } from "~lib/utils/data";
 import { ThemeProps } from "~models";
 
@@ -20,14 +20,14 @@ export const BottomNav = () => {
 
   return (
     <nav
-      className={twJoin(
+      className={cxm(
         "fixed bottom-0",
         "flex w-full flex-col items-center justify-center",
         "md:hidden"
       )}
     >
       <div
-        className={twJoin(
+        className={cxm(
           "w-full max-w-full border-t-[1.5px] border-slate-300",
           "bg-azure p-4",
           "dark:border-slate-600 dark:bg-zinc-900"
@@ -46,7 +46,7 @@ export const BottomNav = () => {
                 passHref
               >
                 <Icon
-                  className={twJoin(
+                  className={cxm(
                     "transition-all duration-200",
                     item.name === "Home"
                       ? asPath === item.link

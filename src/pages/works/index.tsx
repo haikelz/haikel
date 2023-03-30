@@ -1,6 +1,6 @@
 import { GetStaticProps } from "next";
-import { twJoin } from "tailwind-merge";
-import { getAllWorks } from "~lib/helpers";
+import { cxm } from "~lib/helpers/cxm";
+import { getAllWorks } from "~lib/helpers/getAllWorks";
 import { WorkMetaProps } from "~models";
 import Layout from "~ui/layout";
 import { ListWorks } from "~ui/lists";
@@ -23,7 +23,7 @@ const Works = ({ works }: { works: Array<WorkMetaProps> }) => {
     <Layout
       title="Works"
       description="List some of my works"
-      className={twJoin("flex min-h-screen flex-col items-start justify-start", "py-8", "md:py-12")}
+      className={cxm("flex min-h-screen flex-col items-start justify-start", "py-8", "md:py-12")}
     >
       <section className="flex w-full flex-wrap items-start justify-start">
         <div>

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export const ErrorImage = () => {
+const ErrorImage = () => {
   return (
     <Image
       width={200}
@@ -12,3 +12,5 @@ export const ErrorImage = () => {
     />
   );
 };
+
+export default ErrorImage;

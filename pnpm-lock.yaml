@@ -9,6 +9,7 @@ specifiers:
   '@types/node': 18.15.5
   '@types/react': 18.0.28
   autoprefixer: ^10.4.14
+  classix: ^2.1.24
   commitizen: ^4.3.0
   cz-conventional-changelog: ^3.3.0
   eslint: 8.36.0
@@ -46,6 +47,7 @@ specifiers:
 
 dependencies:
   '@supabase/supabase-js': 2.12.1
+  classix: 2.1.24
   fast-fuzzy: 1.12.0
   fast-glob: 3.2.12
   framer-motion: 10.8.5_biqbaboplfbrettd7655fr4n2y
@@ -1129,6 +1131,10 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
+
+  /classix/2.1.24:
+    resolution: {integrity: sha512-JisRdwL5G+MW7aJ5kfdutnoMIpd5VmBSeuCYXlikoWdIS9wO+QiorfvdEzLrD0zsDarV+aFGitpLYe3dRe7srA==}
+    dev: false
 
   /clean-stack/2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}

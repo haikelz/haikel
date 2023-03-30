@@ -1,10 +1,10 @@
-import { twJoin } from "tailwind-merge";
+import { cxm } from "~lib/helpers/cxm";
 import { ChildrenProps } from "~models";
 
 export const UnderlineSpan = ({ children }: ChildrenProps) => {
   return (
     <span
-      className={twJoin(
+      className={cxm(
         "cursor-pointer font-bold",
         "text-base leading-[1.75] underline decoration-dashed underline-offset-[5px]",
         "hover:text-blue-500 hover:decoration-blue-500",

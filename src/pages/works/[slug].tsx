@@ -1,15 +1,17 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import dynamic from "next/dynamic";
-import { twJoin, twMerge } from "tailwind-merge";
-import { getSlugs, getWorkFromSlug, mdxSource } from "~lib/helpers";
+import { cxm } from "~lib/helpers/cxm";
+import { getSlugs } from "~lib/helpers/getSlugs";
+import { getWorkFromSlug } from "~lib/helpers/getWorkFromSlug";
+import { mdxSource } from "~lib/helpers/mdxSource";
 import { WORKS_PATH } from "~lib/utils/contentsPath";
 import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
-import { BaseMDXProps, WorkMetaProps } from "~models";
+import { MDXProps, WorkMetaProps } from "~models";
 import Layout from "~ui/layout";
 import { Heading, UnderlineLink } from "~ui/typography";
 
-interface DetailWorkPageProps extends BaseMDXProps {
+interface DetailWorkPageProps extends MDXProps {
   meta: WorkMetaProps;
 }
 
@@ -48,11 +50,7 @@ const DetailWorkPage = ({ work }: { work: DetailWorkPageProps }) => {
     <Layout
       title={work.meta.title}
       description={work.meta.description}
-      className={twJoin(
-        "flex min-h-screen flex-col items-center justify-start",
-        "py-8",
-        "md:py-12"
-      )}
+      className={cxm("flex min-h-screen flex-col items-center justify-start", "py-8", "md:py-12")}
     >
       <article className="mb-3 flex w-full flex-col flex-wrap justify-center">
         <section className="flex flex-col">
@@ -61,15 +59,15 @@ const DetailWorkPage = ({ work }: { work: DetailWorkPageProps }) => {
           </Heading>
           <div className="my-3 flex items-center">
             <AuthorImage />
-            <div className={twMerge("tracking-[0.050em]", spaceGrotesk.className)}>
-              <span className={twJoin("text-base font-semibold leading-[1.75rem]", "md:text-lg")}>
+            <div className={cxm("tracking-[0.050em]", spaceGrotesk.className)}>
+              <span className={cxm("text-base font-semibold leading-[1.75rem]", "md:text-lg")}>
                 {work.meta.author}, <ReadingTime content={work.content} />.
               </span>{" "}
               {work.meta.preview ? (
                 <button
                   type="button"
                   aria-label="Preview"
-                  className={twJoin("text-base leading-[1.75rem] tracking-[0.050em]", "md:text-lg")}
+                  className={cxm("text-base leading-[1.75rem] tracking-[0.050em]", "md:text-lg")}
                 >
                   <UnderlineLink href={work.meta.preview}>Preview</UnderlineLink>
                 </button>
@@ -79,7 +77,7 @@ const DetailWorkPage = ({ work }: { work: DetailWorkPageProps }) => {
                 <button
                   type="button"
                   aria-label="Source"
-                  className={twJoin(
+                  className={cxm(
                     "text-base font-normal leading-[1.75rem] tracking-[0.050em]",
                     "md:text-lg"
                   )}
@@ -91,13 +89,13 @@ const DetailWorkPage = ({ work }: { work: DetailWorkPageProps }) => {
           </div>
         </section>
         <article
-          className={twJoin(
+          className={cxm(
             "prose prose-slate mt-6 w-full max-w-full",
             "md:prose-lg",
             "dark:prose-invert"
           )}
         >
-          <p className={twMerge("text-right text-2xl font-bold", naskhArabic.className)}>
+          <p className={cxm("text-right text-2xl font-bold", naskhArabic.className)}>
             بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
           </p>
           <MDXRemote {...work.source} components={{ Video, LightboxImage }} />
