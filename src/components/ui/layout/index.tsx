@@ -11,6 +11,10 @@ type LayoutProps = ChildrenProps &
 const Layout = ({ children, className, title, description }: LayoutProps) => {
   const { asPath } = useRouter();
 
+  const absoluteOgUrl = process.env.NEXT_PUBLIC_BASE_URL
+    ? "https://" + process.env.NEXT_PUBLIC_BASE_URL + "/api/og"
+    : "/api/og";
+
   return (
     <>
       <NextSeo
@@ -32,11 +36,11 @@ const Layout = ({ children, className, title, description }: LayoutProps) => {
                 asPath === "/notes" ||
                 asPath === "/guestbook"
                   ? "https://ik.imagekit.io/haikelz/blog/og-image/haikelz.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678430627569"
-                  : `https://${process.env.NEXT_PUBLIC_BASE_URL}/api/og?title=${title}`,
-              alt: "Default OG Image",
+                  : absoluteOgUrl + `?title=${title}`,
+              alt: "OG Image",
             },
           ],
-          site_name: "haikel",
+          site_name: "haikel.my.id",
         }}
         twitter={{
           handle: "@ginkgo_byte",
