@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState } from "react";
+import { memo, useState } from "react";
 import { cxm } from "~lib/helpers/cxm";
 
 const AuthorImage = () => {
@@ -23,4 +23,4 @@ const AuthorImage = () => {
   );
 };
 
-export default AuthorImage;
+export default memo(AuthorImage);
