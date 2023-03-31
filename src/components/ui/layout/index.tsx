@@ -32,7 +32,7 @@ const Layout = ({ children, className, title, description }: LayoutProps) => {
                 asPath === "/notes" ||
                 asPath === "/guestbook"
                   ? "https://ik.imagekit.io/haikelz/blog/og-image/haikelz.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678430627569"
-                  : `https://haikel.my.id/api/og?title=${title}`,
+                  : `https://${process.env.NEXT_PUBLIC_BASE_URL}/api/og?title=${title}`,
               alt: "Default OG Image",
             },
           ],

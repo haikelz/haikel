@@ -57,7 +57,7 @@ export default async function handler(req: NextRequest) {
           <div style={{ fontWeight: 600 }}>ハキム</div>
           <div
             style={{
-              marginTop: "10",
+              marginTop: 10,
               backgroundColor: "black",
               color: "white",
               padding: "3px 10px 3px 10px",
