@@ -2,7 +2,7 @@ import Link from "next/link";
 import { cxm } from "~lib/helpers/cxm";
 import { spaceGrotesk } from "~lib/utils/fonts";
 
-export const TopNavLogo = () => {
+export function TopNavLogo() {
   return (
     <div className="gradient dark:gradient-dark -rotate-6">
       <Link
@@ -19,4 +19,4 @@ export const TopNavLogo = () => {
       </Link>
     </div>
   );
-};
+}

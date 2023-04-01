@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const ErrorImage = () => {
+export default function ErrorImage() {
   return (
     <Image
       width={200}
@@ -11,6 +11,4 @@ const ErrorImage = () => {
       priority
     />
   );
-};
-
-export default ErrorImage;
+}

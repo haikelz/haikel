@@ -1,6 +1,6 @@
 import { sync } from "fast-glob";
 
-export const getSlugs = (path: string) => {
+export function getSlugs(path: string) {
   const paths: Array<string> = sync(`${path}/*.mdx`);
 
   return paths.map((path) => {
@@ -10,4 +10,4 @@ export const getSlugs = (path: string) => {
 
     return slug;
   });
-};
+}

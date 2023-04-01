@@ -1,4 +1,4 @@
-export const SwrIcon = () => {
+export function SwrIcon() {
   return (
     <svg
       className="dark:bg-gray-100"
@@ -19,4 +19,4 @@ export const SwrIcon = () => {
       </g>
     </svg>
   );
-};
+}

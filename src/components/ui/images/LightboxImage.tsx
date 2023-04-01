@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { memo, useState } from "react";
+import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import Captions from "yet-another-react-lightbox/plugins/captions";
 import "yet-another-react-lightbox/plugins/captions.css";
@@ -11,7 +11,7 @@ interface LightboxImageProps {
   alt: string;
 }
 
-const LightboxImage = ({ src, alt }: LightboxImageProps) => {
+export default function LightboxImage({ src, alt }: LightboxImageProps) {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -55,6 +55,4 @@ const LightboxImage = ({ src, alt }: LightboxImageProps) => {
       ) : null}
     </>
   );
-};
-
-export default memo(LightboxImage);
+}

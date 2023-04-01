@@ -8,10 +8,10 @@ interface NoteProps {
   meta: NoteMetaProps;
 }
 
-export const getAllNotes = () => {
+export function getAllNotes() {
   // sort notes based on date
   const notes: Array<NoteProps> = getSlugs(NOTES_PATH)
     .map((slug) => getNoteFromSlug(slug))
     .sort((a, b) => new Date(b.meta.date).getTime() - new Date(a.meta.date).getTime());
   return notes;
-};
+}

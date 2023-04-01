@@ -1,6 +1,6 @@
 import { IconClassNameProps } from "~models";
 
-export const HomeIcon = ({ className }: IconClassNameProps) => {
+export function HomeIcon({ className }: IconClassNameProps) {
   return (
     <svg
       stroke="currentColor"
@@ -16,4 +16,4 @@ export const HomeIcon = ({ className }: IconClassNameProps) => {
       <path d="M12 3L4 9v12h5v-7h6v7h5V9z"></path>
     </svg>
   );
-};
+}

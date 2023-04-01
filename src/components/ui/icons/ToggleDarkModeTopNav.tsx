@@ -1,7 +1,6 @@
-import { memo } from "react";
 import { ThemeProps } from "~models";
 
-export const ToggleDarkModeTopNav = ({ theme, changeTheme }: ThemeProps) => {
+export function ToggleDarkModeTopNav({ theme, changeTheme }: ThemeProps) {
   return (
     <button aria-label="toggle dark mode" type="button" onClick={changeTheme}>
       {theme === "dark" ? (
@@ -35,6 +34,4 @@ export const ToggleDarkModeTopNav = ({ theme, changeTheme }: ThemeProps) => {
       )}
     </button>
   );
-};
-
-memo(ToggleDarkModeTopNav);
+}

@@ -14,7 +14,7 @@ const appAnimation = {
   exit: { opacity: 0 },
 };
 
-const App = ({ Component, pageProps: { session, ...pageProps }, router }: AppProps) => {
+export default function App({ Component, pageProps: { session, ...pageProps }, router }: AppProps) {
   return (
     <SessionProvider session={session}>
       <Provider>
@@ -57,6 +57,4 @@ const App = ({ Component, pageProps: { session, ...pageProps }, router }: AppPro
       </Provider>
     </SessionProvider>
   );
-};
-
-export default App;
+}

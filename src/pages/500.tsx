@@ -4,7 +4,7 @@ import { Heading, Paragraph } from "~ui/typography";
 
 const ErrorImage = dynamic(() => import("~ui/images/ErrorImage"));
 
-const ServerErrorPage = () => {
+export default function ServerErrorPage() {
   return (
     <Layout
       title="500 Internal Server Error"
@@ -20,6 +20,4 @@ const ServerErrorPage = () => {
       </section>
     </Layout>
   );
-};
-
-export default ServerErrorPage;
+}

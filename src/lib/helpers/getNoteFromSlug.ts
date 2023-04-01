@@ -5,7 +5,7 @@ import { NOTES_PATH } from "~lib/utils/contentsPath";
 
 const date = new Date();
 
-export const getNoteFromSlug = (slug: string) => {
+export function getNoteFromSlug(slug: string) {
   const notePath: string = path.join(NOTES_PATH, `${slug}.mdx`);
   const source: Buffer = readFileSync(notePath);
   const { content, data } = matter(source);
@@ -25,4 +25,4 @@ export const getNoteFromSlug = (slug: string) => {
       }),
     },
   };
-};
+}

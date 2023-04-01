@@ -3,7 +3,7 @@ import matter from "gray-matter";
 import path from "path";
 import { WORKS_PATH } from "~lib/utils/contentsPath";
 
-export const getWorkFromSlug = (slug: string) => {
+export function getWorkFromSlug(slug: string) {
   const workPath: string = path.join(WORKS_PATH, `${slug}.mdx`);
   const source: Buffer = readFileSync(workPath);
   const { content, data } = matter(source);
@@ -21,4 +21,4 @@ export const getWorkFromSlug = (slug: string) => {
       preview: data.preview ?? null,
     },
   };
-};
+}

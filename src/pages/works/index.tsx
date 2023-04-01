@@ -18,7 +18,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const Works = ({ works }: { works: Array<WorkMetaProps> }) => {
+export default function Works({ works }: { works: Array<WorkMetaProps> }) {
   return (
     <Layout
       title="Works"
@@ -41,6 +41,4 @@ const Works = ({ works }: { works: Array<WorkMetaProps> }) => {
       </section>
     </Layout>
   );
-};
-
-export default Works;
+}

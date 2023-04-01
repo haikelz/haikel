@@ -15,10 +15,10 @@ interface DetailWorkPageProps extends MDXProps {
   meta: WorkMetaProps;
 }
 
-const AuthorImage = dynamic(() => import("~ui/mdx/AuthorImage"));
-const LightboxImage = dynamic(() => import("~ui/mdx/LightboxImage"));
-const Video = dynamic(() => import("~ui/mdx/Video"));
-const ReadingTime = dynamic(() => import("~ui/mdx/ReadingTime"));
+const AuthorImage = dynamic(() => import("~ui/images/AuthorImage"));
+const LightboxImage = dynamic(() => import("~ui/images/LightboxImage"));
+const Video = dynamic(() => import("~ui/Video"));
+const ReadingTime = dynamic(() => import("~ui/ReadingTime"));
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getSlugs(WORKS_PATH).map((slug) => ({ params: { slug } }));
@@ -45,7 +45,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-const DetailWorkPage = ({ work }: { work: DetailWorkPageProps }) => {
+export default function DetailWorkPage({ work }: { work: DetailWorkPageProps }) {
   return (
     <Layout
       title={work.meta.title}
@@ -103,6 +103,4 @@ const DetailWorkPage = ({ work }: { work: DetailWorkPageProps }) => {
       </article>
     </Layout>
   );
-};
-
-export default DetailWorkPage;
+}

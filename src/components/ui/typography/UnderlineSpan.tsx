@@ -1,7 +1,7 @@
 import { cxm } from "~lib/helpers/cxm";
 import { ChildrenProps } from "~models";
 
-export const UnderlineSpan = ({ children }: ChildrenProps) => {
+export function UnderlineSpan({ children }: ChildrenProps) {
   return (
     <span
       className={cxm(
@@ -14,4 +14,4 @@ export const UnderlineSpan = ({ children }: ChildrenProps) => {
       {children}
     </span>
   );
-};
+}

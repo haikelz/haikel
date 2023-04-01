@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.query.secret !== process.env.NEXT_PUBLIC_SECRET_TOKEN) {
     return res.status(401).json({ message: "Invalid token" });
   }
@@ -11,6 +11,4 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   } catch (err) {
     return res.status(500).send("Error revalidating");
   }
-};
-
-export default handler;
+}

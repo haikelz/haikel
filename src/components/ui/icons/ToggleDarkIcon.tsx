@@ -1,7 +1,6 @@
-import { memo } from "react";
 import { ThemeProps } from "~models";
 
-export const ToggleDarkIcon = ({ theme, changeTheme }: ThemeProps) => {
+export function ToggleDarkIcon({ theme, changeTheme }: ThemeProps) {
   return (
     <button aria-label="toggle Dark Mode" type="button" onClick={changeTheme}>
       {theme === "dark" ? (
@@ -37,6 +36,4 @@ export const ToggleDarkIcon = ({ theme, changeTheme }: ThemeProps) => {
       )}
     </button>
   );
-};
-
-memo(ToggleDarkIcon);
+}

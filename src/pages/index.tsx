@@ -28,7 +28,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const Home = ({ notes, works }: InitialDataProps) => {
+export default function Home({ notes, works }: InitialDataProps) {
   return (
     <Layout
       title="Haikel"
@@ -40,6 +40,4 @@ const Home = ({ notes, works }: InitialDataProps) => {
       <LatestNotes notes={notes} />
     </Layout>
   );
-};
-
-export default Home;
+}

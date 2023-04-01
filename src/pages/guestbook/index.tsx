@@ -29,7 +29,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const Guestbook = ({ guestbook }: { guestbook: Array<GuestbookProps> }) => {
+export default function Guestbook({ guestbook }: { guestbook: Array<GuestbookProps> }) {
   const ref = useRef<HTMLInputElement>(null);
 
   const { reload } = useRouter();
@@ -125,6 +125,4 @@ const Guestbook = ({ guestbook }: { guestbook: Array<GuestbookProps> }) => {
       )}
     </Layout>
   );
-};
-
-export default Guestbook;
+}

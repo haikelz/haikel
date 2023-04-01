@@ -1,4 +1,4 @@
-export const FramerIcon = () => {
+export function FramerIcon() {
   return (
     <svg
       stroke="currentColor"
@@ -14,4 +14,4 @@ export const FramerIcon = () => {
       <path d="M4 0h16v8h-8zM4 8h8l8 8H4zM4 16h8v8z"></path>
     </svg>
   );
-};
+}

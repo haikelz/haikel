@@ -2,7 +2,7 @@ import Image from "next/image";
 import { memo, useState } from "react";
 import { cxm } from "~lib/helpers/cxm";
 
-const AuthorImage = () => {
+export default function AuthorImage() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   return (
@@ -21,6 +21,4 @@ const AuthorImage = () => {
       draggable={false}
     />
   );
-};
-
-export default memo(AuthorImage);
+}

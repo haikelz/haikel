@@ -1,4 +1,4 @@
-export const ReactQueryIcon = () => {
+export function ReactQueryIcon() {
   return (
     <svg
       width="16px"
@@ -29,4 +29,4 @@ export const ReactQueryIcon = () => {
       </g>
     </svg>
   );
-};
+}

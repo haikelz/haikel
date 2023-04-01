@@ -1,4 +1,4 @@
-export const WindiCssIcon = () => {
+export function WindiCssIcon() {
   return (
     <svg
       width="1em"
@@ -75,4 +75,4 @@ export const WindiCssIcon = () => {
       </g>
     </svg>
   );
-};
+}

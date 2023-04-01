@@ -35,4 +35,12 @@
   code[data-line-numbers-max-digits="3"] > .line::before {
     width: 3rem;
   }
+
+  [data-rehype-pretty-code-title] {
+    @apply border border-[#333333] bg-gray-800 px-4 py-3 font-medium text-slate-300;
+  }
+
+  [data-rehype-pretty-code-title] + pre {
+    @apply mt-0 rounded-t-none border-t-0;
+  }
 }

@@ -6,7 +6,7 @@ type HeadingProps = ChildrenProps & {
   className?: string;
 };
 
-export const Heading = ({ children, as, className }: HeadingProps) => {
+export function Heading({ children, as, className }: HeadingProps) {
   return (
     <>
       {as === "h1" ? (
@@ -24,4 +24,4 @@ export const Heading = ({ children, as, className }: HeadingProps) => {
       ) : null}
     </>
   );
-};
+}

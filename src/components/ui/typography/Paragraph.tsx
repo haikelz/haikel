@@ -6,7 +6,7 @@ interface ParagraphProps extends ChildrenProps {
   isCenter?: boolean;
 }
 
-export const Paragraph = ({ className, children, isCenter }: ParagraphProps) => {
+export function Paragraph({ className, children, isCenter }: ParagraphProps) {
   return (
     <p
       className={cxm(
@@ -19,4 +19,4 @@ export const Paragraph = ({ className, children, isCenter }: ParagraphProps) => 
       {children}
     </p>
   );
-};
+}

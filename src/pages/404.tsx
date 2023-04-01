@@ -4,7 +4,7 @@ import { Heading, Paragraph } from "~ui/typography";
 
 const ErrorImage = dynamic(() => import("~ui/images/ErrorImage"));
 
-const NotFoundPage = () => {
+export default function NotFoundPage() {
   return (
     <Layout
       title="404 Not Found!"
@@ -20,6 +20,4 @@ const NotFoundPage = () => {
       </section>
     </Layout>
   );
-};
-
-export default NotFoundPage;
+}

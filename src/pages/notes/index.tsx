@@ -28,7 +28,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const Notes = ({ notes }: { notes: Array<NoteMetaProps> }) => {
+export default function Notes({ notes }: { notes: Array<NoteMetaProps> }) {
   const [search, setSearch] = useState<string>("");
 
   const filteredNotes = useMemo(() => {
@@ -77,6 +77,4 @@ const Notes = ({ notes }: { notes: Array<NoteMetaProps> }) => {
       )}
     </Layout>
   );
-};
-
-export default Notes;
+}

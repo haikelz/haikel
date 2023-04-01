@@ -9,7 +9,7 @@ type UnderlineLinkProps = ChildrenProps &
     className?: string;
   };
 
-export const UnderlineLink = ({ children, href, className, ...props }: UnderlineLinkProps) => {
+export function UnderlineLink({ children, href, className, ...props }: UnderlineLinkProps) {
   return (
     <Link
       href={href}
@@ -25,4 +25,4 @@ export const UnderlineLink = ({ children, href, className, ...props }: Underline
       {children}
     </Link>
   );
-};
+}

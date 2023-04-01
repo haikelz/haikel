@@ -8,10 +8,10 @@ interface WorkProps {
   meta: WorkMetaProps;
 }
 
-export const getAllWorks = () => {
+export function getAllWorks() {
   // sort works based on id
   const works: Array<WorkProps> = getSlugs(WORKS_PATH)
     .map((slug) => getWorkFromSlug(slug))
     .sort((a, b) => a.meta.id - b.meta.id);
   return works;
-};
+}

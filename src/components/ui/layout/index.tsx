@@ -8,7 +8,7 @@ type LayoutProps = ChildrenProps &
     className?: string;
   };
 
-const Layout = ({ children, className, title, description }: LayoutProps) => {
+export default function Layout({ children, className, title, description }: LayoutProps) {
   const { asPath } = useRouter();
 
   const absoluteOgUrl = process.env.NEXT_PUBLIC_BASE_URL
@@ -53,6 +53,4 @@ const Layout = ({ children, className, title, description }: LayoutProps) => {
       </main>
     </>
   );
-};
-
-export default Layout;
+}

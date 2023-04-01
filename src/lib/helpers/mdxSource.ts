@@ -4,7 +4,7 @@ import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import { highlighterOptions } from "./highlighterOptions";
 
-export const mdxSource = (content: string) => {
+export function mdxSource(content: string) {
   return serialize(content, {
     mdxOptions: {
       rehypePlugins: [
@@ -14,4 +14,4 @@ export const mdxSource = (content: string) => {
       ],
     },
   });
-};
+}

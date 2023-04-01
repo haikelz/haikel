@@ -14,7 +14,7 @@ const ToggleDarkModeTopNav: ComponentType<ThemeProps> = dynamic(
   { ssr: false }
 );
 
-export const TopNav = () => {
+export function TopNav() {
   const [theme, setTheme] = useTheme();
   const { asPath } = useRouter();
 
@@ -64,4 +64,4 @@ export const TopNav = () => {
       </div>
     </nav>
   );
-};
+}

@@ -1,4 +1,4 @@
-export const SupabaseIcon = () => {
+export function SupabaseIcon() {
   return (
     <svg
       width="16px"
@@ -49,4 +49,4 @@ export const SupabaseIcon = () => {
       </g>
     </svg>
   );
-};
+}

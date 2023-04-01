@@ -39,7 +39,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-const Tags = ({ slug, notes }: TagProps) => {
+export default function Tags({ slug, notes }: TagProps) {
   return (
     <Layout
       title={`Tags #${slug}`}
@@ -59,6 +59,4 @@ const Tags = ({ slug, notes }: TagProps) => {
       </section>
     </Layout>
   );
-};
-
-export default Tags;
+}

@@ -17,7 +17,7 @@ import {
 import { Paragraph } from "~ui/typography";
 import { SwrIcon } from "../icons/SwrIcon";
 
-export const ListWorks = ({ works }: { works: Array<WorkMetaProps> }) => {
+export function ListWorks({ works }: { works: Array<WorkMetaProps> }) {
   return (
     <>
       {works.map((work, index) => (
@@ -65,4 +65,4 @@ export const ListWorks = ({ works }: { works: Array<WorkMetaProps> }) => {
       ))}
     </>
   );
-};
+}

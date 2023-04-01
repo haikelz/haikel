@@ -15,10 +15,10 @@ interface NotePageProps extends MDXProps {
   meta: NoteMetaProps;
 }
 
-const AuthorImage = dynamic(() => import("~ui/mdx/AuthorImage"));
-const LightboxImage = dynamic(() => import("~ui/mdx/LightboxImage"));
-const Video = dynamic(() => import("~ui/mdx/Video"));
-const ReadingTime = dynamic(() => import("~ui/mdx/ReadingTime"));
+const AuthorImage = dynamic(() => import("~ui/images/AuthorImage"));
+const LightboxImage = dynamic(() => import("~ui/images/LightboxImage"));
+const Video = dynamic(() => import("~ui/Video"));
+const ReadingTime = dynamic(() => import("~ui/ReadingTime"));
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getSlugs(NOTES_PATH).map((slug) => ({ params: { slug } }));
@@ -45,7 +45,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-const NotePage = ({ note }: { note: NotePageProps }) => {
+export default function NotePage({ note }: { note: NotePageProps }) {
   return (
     <Layout
       title={note.meta.title}
@@ -86,6 +86,4 @@ const NotePage = ({ note }: { note: NotePageProps }) => {
       </article>
     </Layout>
   );
-};
-
-export default NotePage;
+}

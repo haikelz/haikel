@@ -3,7 +3,7 @@ import { spaceGrotesk } from "~lib/utils/fonts";
 import { GuestbookProps } from "~models";
 import { Paragraph } from "~ui/typography";
 
-export const ListGuests = ({ guestbook }: { guestbook: Array<GuestbookProps> }) => {
+export function ListGuests({ guestbook }: { guestbook: Array<GuestbookProps> }) {
   const convertToLocalTime = (format: string) => {
     return new Date(format).toLocaleDateString("en-EN", {
       year: "numeric",
@@ -37,4 +37,4 @@ export const ListGuests = ({ guestbook }: { guestbook: Array<GuestbookProps> }) 
       ))}
     </>
   );
-};
+}

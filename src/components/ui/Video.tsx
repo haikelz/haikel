@@ -1,11 +1,9 @@
-import { memo } from "react";
-
 interface VideoProps {
   title: string;
   src: string;
 }
 
-const Video = ({ title, src }: VideoProps) => {
+export default function Video({ title, src }: VideoProps) {
   return (
     <div className="relative my-4 h-0 max-w-full overflow-hidden rounded-sm pb-[56.25%]">
       <iframe
@@ -16,6 +14,4 @@ const Video = ({ title, src }: VideoProps) => {
       />
     </div>
   );
-};
-
-export default memo(Video);
+}

@@ -1,4 +1,4 @@
-export const ViteIcon = () => {
+export function ViteIcon() {
   return (
     <svg
       width="16px"
@@ -44,4 +44,4 @@ export const ViteIcon = () => {
       </g>
     </svg>
   );
-};
+}

@@ -8,7 +8,7 @@ const themeAtom = atomWithStorage(
   browser && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
 );
 
-export const useTheme = () => {
+export function useTheme() {
   const [theme, setTheme] = useAtom(themeAtom);
 
   useEffect(() => {
@@ -18,4 +18,4 @@ export const useTheme = () => {
   }, [theme]);
 
   return [theme, setTheme] as const;
-};
+}
