@@ -17,7 +17,7 @@ import {
 import { Paragraph } from "~ui/typography";
 import { SwrIcon } from "../icons/SwrIcon";
 
-export function ListWorks({ works }: { works: Array<WorkMetaProps> }) {
+export function ListWorks({ works }: { works: WorkMetaProps[] }) {
   return (
     <>
       {works.map((work, index) => (

@@ -1,39 +1,25 @@
-import type { GetStaticProps } from "next";
+"use client";
+
+/**
+ * TODO: fetch data from supabase in server components
+ */
+import { atom, useAtom } from "jotai";
 import { signIn, signOut, useSession } from "next-auth/react";
-import { useRouter } from "next/router";
-import { SyntheticEvent, useRef } from "react";
+import { SyntheticEvent, useEffect, useRef } from "react";
 import { cxm } from "~lib/helpers/cxm";
 import supabase from "~lib/utils/supabase";
-import { GuestbookProps } from "~models";
 import { GithubIcon } from "~ui/icons";
 import { MessageInput } from "~ui/inputs";
-import Layout from "~ui/layout";
 import { ListGuests } from "~ui/lists";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
-export const getStaticProps: GetStaticProps = async () => {
-  /**
-   * Order by "created_at" and set ascending to false
-   */
-  const { data, error } = await supabase
-    .from("guestbook")
-    .select()
-    .order("created_at", { ascending: false });
-  if (error) throw error;
+const guestbookAtom = atom<Array<{}>>([{}]);
 
-  return {
-    props: {
-      guestbook: data,
-    },
-    revalidate: 25,
-  };
-};
-
-export default function Guestbook({ guestbook }: { guestbook: Array<GuestbookProps> }) {
-  const ref = useRef<HTMLInputElement>(null);
-
-  const { reload } = useRouter();
+export default function GuestbookClient() {
+  const [guestbook, setGuestbook] = useAtom(guestbookAtom);
   const { data: session } = useSession();
+
+  const ref = useRef<HTMLInputElement>(null);
 
   const handleSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();
@@ -48,21 +34,31 @@ export default function Guestbook({ guestbook }: { guestbook: Array<GuestbookPro
       ]);
 
       if (error) throw error;
-      reload();
+      window.location.reload();
     } catch (err) {
       console.error(err);
     }
   };
 
+  useEffect(() => {
+    async function getDataFromSupabase() {
+      const { data, error } = await supabase
+        .from("guestbook")
+        .select()
+        .order("created_at", { ascending: false });
+
+      if (error) throw error;
+      setGuestbook(data);
+    }
+
+    getDataFromSupabase();
+  }, []);
+
   return (
-    <Layout
-      title="Guestbook"
-      description="Write a message for me and others"
-      className={cxm("flex min-h-screen flex-col items-start justify-start", "py-8", "md:py-12")}
-    >
+    <>
       <section className="flex w-full flex-wrap items-start justify-start">
         <div>
-          <Heading as="h2" className="title-font text-left">
+          <Heading as="h2" className="text-left">
             Guestbook
           </Heading>
           <Underline />
@@ -99,7 +95,7 @@ export default function Guestbook({ guestbook }: { guestbook: Array<GuestbookPro
             className={cxm(
               "flex items-center justify-center space-x-3 rounded-md",
               "bg-zinc-800",
-              "py-2 px-3.5",
+              "px-3.5 py-2",
               "font-semibold text-white",
               "hover:bg-zinc-700"
             )}
@@ -123,6 +119,6 @@ export default function Guestbook({ guestbook }: { guestbook: Array<GuestbookPro
       ) : (
         <Paragraph className="font-semibold">There is no messages now!</Paragraph>
       )}
-    </Layout>
+    </>
   );
 }

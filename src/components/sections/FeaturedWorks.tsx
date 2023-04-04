@@ -2,7 +2,7 @@ import { WorkMetaProps } from "~models";
 import { ListWorks } from "~ui/lists";
 import { Heading, Underline, UnderlineLink } from "~ui/typography";
 
-export function FeaturedWorks({ works }: { works: Array<WorkMetaProps> }) {
+export default function FeaturedWorks({ works }: { works: WorkMetaProps[] }) {
   return (
     <section className="mb-12 flex w-full flex-wrap items-center justify-center">
       <div className="flex w-full flex-col items-start justify-start">
@@ -10,7 +10,7 @@ export function FeaturedWorks({ works }: { works: Array<WorkMetaProps> }) {
           <Heading as="h2">Featured Works</Heading>
           <Underline />
         </div>
-        <div className="mt-6 mb-8 flex w-full flex-col space-y-8">
+        <div className="mb-8 mt-6 flex w-full flex-col space-y-8">
           <ListWorks works={works} />
         </div>
         <div className="flex w-full items-end justify-start">

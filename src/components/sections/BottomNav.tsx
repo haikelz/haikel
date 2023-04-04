@@ -1,6 +1,8 @@
+"use client";
+
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import { ComponentType } from "react";
 import { useTheme } from "~hooks";
 import { cxm } from "~lib/helpers/cxm";
@@ -14,9 +16,9 @@ const ToggleDarkIcon: ComponentType<ThemeProps> = dynamic(
   }
 );
 
-export function BottomNav() {
+export default function BottomNav() {
   const [theme, setTheme] = useTheme();
-  const { asPath } = useRouter();
+  const pathname = usePathname();
 
   return (
     <nav
@@ -49,10 +51,10 @@ export function BottomNav() {
                   className={cxm(
                     "transition-all duration-200",
                     item.name === "Home"
-                      ? asPath === item.link
+                      ? pathname === item.link
                         ? "text-slate-600 dark:text-white"
                         : "text-slate-500 dark:text-slate-400"
-                      : asPath.includes(item.link)
+                      : pathname?.includes(item.link)
                       ? "text-slate-600 dark:text-white"
                       : "text-slate-500 dark:text-slate-400"
                   )}

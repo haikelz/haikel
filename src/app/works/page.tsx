@@ -1,26 +1,17 @@
-import { GetStaticProps } from "next";
 import { cxm } from "~lib/helpers/cxm";
 import { getAllWorks } from "~lib/helpers/getAllWorks";
 import { WorkMetaProps } from "~models";
-import Layout from "~ui/layout";
+import Seo from "~ui/Seo";
 import { ListWorks } from "~ui/lists";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
-export const getStaticProps: GetStaticProps = async () => {
-  const works: Array<WorkMetaProps> = getAllWorks()
+export default function Works() {
+  const works: WorkMetaProps[] = getAllWorks()
     .slice(0, getAllWorks().length)
     .map((work) => work.meta);
 
-  return {
-    props: {
-      works,
-    },
-  };
-};
-
-export default function Works({ works }: { works: Array<WorkMetaProps> }) {
   return (
-    <Layout
+    <Seo
       title="Works"
       description="List some of my works"
       className={cxm("flex min-h-screen flex-col items-start justify-start", "py-8", "md:py-12")}
@@ -36,9 +27,9 @@ export default function Works({ works }: { works: Array<WorkMetaProps> }) {
           <Paragraph>List some of my works</Paragraph>
         </div>
       </section>
-      <section className="mt-6 mb-10 flex w-full flex-col space-y-8">
+      <section className="mb-10 mt-6 flex w-full flex-col space-y-8">
         <ListWorks works={works} />
       </section>
-    </Layout>
+    </Seo>
   );
 }

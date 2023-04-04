@@ -11,7 +11,7 @@ export interface NoteMetaProps {
   description: string;
   slug: string;
   title: string;
-  tags: Array<string>;
+  tags: string[];
   date: string;
 }
 
@@ -21,7 +21,7 @@ export interface WorkMetaProps {
   description: string;
   slug: string;
   title: string;
-  stack: Array<string>;
+  stack: string[];
   preview: string;
   repo: string;
 }

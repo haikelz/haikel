@@ -1,9 +1,14 @@
 import { cxm } from "~lib/helpers/cxm";
 import { spaceGrotesk } from "~lib/utils/fonts";
-import { GuestbookProps } from "~models";
 import { Paragraph } from "~ui/typography";
 
-export function ListGuests({ guestbook }: { guestbook: Array<GuestbookProps> }) {
+export function ListGuests({
+  guestbook,
+}: {
+  guestbook: {
+    [x: string]: any;
+  }[];
+}) {
   const convertToLocalTime = (format: string) => {
     return new Date(format).toLocaleDateString("en-EN", {
       year: "numeric",

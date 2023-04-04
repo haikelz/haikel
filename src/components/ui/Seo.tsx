@@ -1,5 +1,7 @@
+"use client";
+
 import { NextSeo } from "next-seo";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import { cxm } from "~lib/helpers/cxm";
 import { ChildrenProps, SeoProps } from "~models";
 
@@ -8,8 +10,8 @@ type LayoutProps = ChildrenProps &
     className?: string;
   };
 
-export default function Layout({ children, className, title, description }: LayoutProps) {
-  const { asPath } = useRouter();
+export default function Seo({ children, className, title, description }: LayoutProps) {
+  const pathname = usePathname();
 
   const absoluteOgUrl = process.env.NEXT_PUBLIC_BASE_URL
     ? "https://" + process.env.NEXT_PUBLIC_BASE_URL + "/api/og"
@@ -18,23 +20,24 @@ export default function Layout({ children, className, title, description }: Layo
   return (
     <>
       <NextSeo
+        useAppDir={true}
         title={title}
         titleTemplate="%s"
         defaultTitle={title}
         description={description}
-        canonical={`https://haikel.my.id${asPath}`}
+        canonical={`https://haikel.my.id${pathname}`}
         openGraph={{
           type: "website",
-          url: `https://haikel.my.id${asPath}`,
+          url: `https://haikel.my.id${pathname}`,
           title: title,
           description: description,
           images: [
             {
               url:
-                asPath === "/" ||
-                asPath === "/works" ||
-                asPath === "/notes" ||
-                asPath === "/guestbook"
+                pathname === "/" ||
+                pathname === "/works" ||
+                pathname === "/notes" ||
+                pathname === "/guestbook"
                   ? "https://ik.imagekit.io/haikelz/blog/og-image/haikelz.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678430627569"
                   : absoluteOgUrl + `?title=${title}`,
               alt: "OG Image",
