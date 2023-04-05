@@ -11,15 +11,6 @@
 - [shiki](https://shiki.matsu.io/)
 - [mdx](https://mdxjs.com/)
 
-## TODO
-
-Recently, i try to migrate from pages to `appDir`. But yeah, as you know, not all the features can be implemented in `appDir`(for now). Will PR this to master if `appDir` already in stable release.
-
-- Replace `next-seo` with metadata from nextjs.
-- Using `framer-motion` for page transitions(for now, i'm facing high memory usage issue when using `framer-motion` for transitions in dynamic page).
-- Fetching data from supabase in server components, not client.
-- Authentication in /guestbook page.
-
 ## Screenshot
 
 ![new preview](/public/docs/new-preview.png)

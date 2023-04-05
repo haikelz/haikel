@@ -1,4 +1,3 @@
-import { cx } from "classix";
 import { cxm } from "~lib/helpers/cxm";
 import { ibmPlexSerif, jetbrains, naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
 import { ChildrenProps } from "~models";
@@ -12,7 +11,7 @@ export default function RootLayout({ children }: ChildrenProps) {
   return (
     <html
       lang="en"
-      className={cx(
+      className={cxm(
         jetbrains.variable,
         spaceGrotesk.variable,
         naskhArabic.variable,
