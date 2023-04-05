@@ -2,13 +2,13 @@ import { cxm } from "~lib/helpers/cxm";
 import { spaceGrotesk } from "~lib/utils/fonts";
 import { Paragraph } from "~ui/typography";
 
-export function ListGuests({
-  guestbook,
-}: {
-  guestbook: {
-    [x: string]: any;
-  }[];
-}) {
+type ListGuestsProps =
+  | {
+      [x: string]: any;
+    }[]
+  | undefined;
+
+export function ListGuests({ guestbook }: { guestbook: ListGuestsProps }) {
   const convertToLocalTime = (format: string) => {
     return new Date(format).toLocaleDateString("en-EN", {
       year: "numeric",
@@ -21,7 +21,7 @@ export function ListGuests({
 
   return (
     <>
-      {guestbook.map((guest) => (
+      {guestbook?.map((guest) => (
         <div key={guest.id} className="h-full">
           <div>
             <span

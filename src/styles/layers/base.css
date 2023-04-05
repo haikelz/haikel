@@ -53,6 +53,7 @@
 
   [data-rehype-pretty-code-title] {
     @apply border border-[#333333] bg-gray-800 px-4 py-3 font-medium text-slate-300;
+    font-family: var(--font-jetbrains);
   }
 
   [data-rehype-pretty-code-title] + pre {

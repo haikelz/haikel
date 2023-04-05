@@ -1,22 +1,14 @@
 "use client";
 
-/**
- * TODO: fetch data from supabase in server components
- */
-import { atom, useAtom } from "jotai";
 import { signIn, signOut, useSession } from "next-auth/react";
-import { SyntheticEvent, useEffect, useRef } from "react";
+import { SyntheticEvent, useRef } from "react";
 import { cxm } from "~lib/helpers/cxm";
 import supabase from "~lib/utils/supabase";
 import { GithubIcon } from "~ui/icons";
 import { MessageInput } from "~ui/inputs";
-import { ListGuests } from "~ui/lists";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
-const guestbookAtom = atom<Array<{}>>([{}]);
-
 export default function GuestbookClient() {
-  const [guestbook, setGuestbook] = useAtom(guestbookAtom);
   const { data: session } = useSession();
 
   const ref = useRef<HTMLInputElement>(null);
@@ -39,20 +31,6 @@ export default function GuestbookClient() {
       console.error(err);
     }
   };
-
-  useEffect(() => {
-    async function getDataFromSupabase() {
-      const { data, error } = await supabase
-        .from("guestbook")
-        .select()
-        .order("created_at", { ascending: false });
-
-      if (error) throw error;
-      setGuestbook(data);
-    }
-
-    getDataFromSupabase();
-  }, []);
 
   return (
     <>
@@ -111,13 +89,6 @@ export default function GuestbookClient() {
             <MessageInput ref={ref} />
           </form>
         </div>
-      )}
-      {guestbook?.length ? (
-        <section className="mb-10 flex w-full flex-col space-y-8">
-          <ListGuests guestbook={guestbook} />
-        </section>
-      ) : (
-        <Paragraph className="font-semibold">There is no messages now!</Paragraph>
       )}
     </>
   );
