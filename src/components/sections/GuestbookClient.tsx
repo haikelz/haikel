@@ -1,6 +1,7 @@
 "use client";
 
 import { signIn, signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import { SyntheticEvent, useRef } from "react";
 import { cxm } from "~lib/helpers/cxm";
 import supabase from "~lib/utils/supabase";
@@ -11,6 +12,7 @@ import { Heading, Paragraph, Underline } from "~ui/typography";
 export default function GuestbookClient() {
   const { data: session } = useSession();
 
+  const router = useRouter();
   const ref = useRef<HTMLInputElement>(null);
 
   const handleSubmit = async (event: SyntheticEvent) => {
@@ -26,7 +28,7 @@ export default function GuestbookClient() {
       ]);
 
       if (error) throw error;
-      window.location.reload();
+      router.refresh();
     } catch (err) {
       console.error(err);
     }
