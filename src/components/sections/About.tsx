@@ -1,3 +1,5 @@
+"use client";
+
 import { atom, useAtom } from "jotai";
 import Link from "next/link";
 import { cxm } from "~lib/helpers/cxm";
@@ -15,7 +17,7 @@ const atomWithToggle = (initialValue?: boolean) => {
 
 const languageAtom = atomWithToggle(true);
 
-export function About() {
+export default function About() {
   const [language, setLanguage] = useAtom(languageAtom);
   const linkContact = "font-bold hover:text-blue-500";
 

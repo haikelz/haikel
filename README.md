@@ -7,7 +7,6 @@
 
 - [nextjs](https://nextjs.org/)
 - [tailwindcss](https://tailwindcss.com/)
-- [framer-motion](https://www.framer.com/motion/)
 - [jotai](https://jotai.org/)
 - [shiki](https://shiki.matsu.io/)
 - [mdx](https://mdxjs.com/)
@@ -24,3 +23,4 @@ Some people that inspire me when i build this website. Thanks guys!
 - https://hendraaagil.dev/
 - https://elianiva.my.id/
 - https://omarelhawary.me/
+- https://leerob.io/

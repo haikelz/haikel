@@ -2,7 +2,7 @@ import { NoteMetaProps } from "~models";
 import { ListNotes } from "~ui/lists";
 import { Heading, Underline, UnderlineLink } from "~ui/typography";
 
-export function LatestNotes({ notes }: { notes: Array<NoteMetaProps> }) {
+export default function LatestNotes({ notes }: { notes: NoteMetaProps[] }) {
   return (
     <section className="mb-12 flex w-full flex-wrap items-center justify-center">
       <div className="flex w-full flex-col items-start justify-start">
@@ -10,7 +10,7 @@ export function LatestNotes({ notes }: { notes: Array<NoteMetaProps> }) {
           <Heading as="h2">Latest Notes</Heading>
           <Underline />
         </div>
-        <div className="mt-6 mb-8 flex w-full flex-col space-y-8">
+        <div className="mb-8 mt-6 flex w-full flex-col space-y-8">
           <ListNotes filteredNotes={notes} />
         </div>
         <div className="flex w-full items-start justify-start">

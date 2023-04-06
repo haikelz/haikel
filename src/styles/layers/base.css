@@ -7,6 +7,21 @@
 
   body {
     @apply m-0 h-[50vh] scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-fireopal;
+    font-family: var(--font-ibm);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-grotesk);
+  }
+
+  .prose pre,
+  pre code {
+    font-family: var(--font-jetbrains);
   }
 
   button {
@@ -38,6 +53,7 @@
 
   [data-rehype-pretty-code-title] {
     @apply border border-[#333333] bg-gray-800 px-4 py-3 font-medium text-slate-300;
+    font-family: var(--font-jetbrains);
   }
 
   [data-rehype-pretty-code-title] + pre {

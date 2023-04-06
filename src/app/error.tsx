@@ -1,23 +1,25 @@
+"use client";
+
 import dynamic from "next/dynamic";
-import Layout from "~ui/layout";
+import Seo from "~ui/Seo";
 import { Heading, Paragraph } from "~ui/typography";
 
 const ErrorImage = dynamic(() => import("~ui/images/ErrorImage"));
 
-export default function NotFoundPage() {
+export default function ErrorPage() {
   return (
-    <Layout
-      title="404 Not Found!"
-      description="Halaman yang anda cari tidak ditemukan!"
+    <Seo
+      title="Error"
+      description="Sepertinya terjadi kesalahan, coba lagi nanti!"
       className="flex min-h-screen flex-col items-center justify-center text-center"
     >
       <ErrorImage />
       <section className="mt-6 flex flex-col items-center">
-        <Heading as="h4" className="text-xl sm:text-2xl">
-          404 Not Found
+        <Heading as="h3" className="text-xl sm:text-2xl">
+          Error!
         </Heading>
-        <Paragraph isCenter={false}>Halaman yang anda cari tidak ditemukan!</Paragraph>
+        <Paragraph>Sepertinya terjadi kesalahan, coba lagi nanti!</Paragraph>
       </section>
-    </Layout>
+    </Seo>
   );
 }

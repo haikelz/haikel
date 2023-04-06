@@ -1,5 +1,7 @@
+"use client";
+
 import Image from "next/image";
-import { memo, useState } from "react";
+import { useState } from "react";
 import { cxm } from "~lib/helpers/cxm";
 
 export default function AuthorImage() {

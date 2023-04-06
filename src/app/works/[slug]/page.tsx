@@ -1,79 +1,52 @@
-import type { GetStaticPaths, GetStaticProps } from "next";
-import { MDXRemote } from "next-mdx-remote";
 import dynamic from "next/dynamic";
 import { cxm } from "~lib/helpers/cxm";
-import { getSlugs } from "~lib/helpers/getSlugs";
-import { getWorkFromSlug } from "~lib/helpers/getWorkFromSlug";
-import { mdxSource } from "~lib/helpers/mdxSource";
+import { getSlugs, getWorkFromSlug, mdxSource } from "~lib/services";
 import { WORKS_PATH } from "~lib/utils/contentsPath";
 import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
-import { MDXProps, WorkMetaProps } from "~models";
-import Layout from "~ui/layout";
+import MDXComponents from "~ui/MDXComponents";
+import Seo from "~ui/Seo";
 import { Heading, UnderlineLink } from "~ui/typography";
 
-interface DetailWorkPageProps extends MDXProps {
-  meta: WorkMetaProps;
-}
-
 const AuthorImage = dynamic(() => import("~ui/images/AuthorImage"));
-const LightboxImage = dynamic(() => import("~ui/images/LightboxImage"));
-const Video = dynamic(() => import("~ui/Video"));
 const ReadingTime = dynamic(() => import("~ui/ReadingTime"));
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getSlugs(WORKS_PATH).map((slug) => ({ params: { slug } }));
+export async function generateStaticParams() {
+  return getSlugs(WORKS_PATH).map((slug) => ({ slug }));
+}
 
-  return {
-    paths,
-    fallback: false,
-  };
-};
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { slug } = params as { slug: string };
+export default async function DetailWorkPage({ params }: { params: { slug: string } }) {
+  const { slug } = params;
   const { content, meta } = getWorkFromSlug(slug);
   const source = await mdxSource(content);
 
-  return {
-    props: {
-      work: {
-        source,
-        meta,
-        content,
-      },
-    },
-  };
-};
-
-export default function DetailWorkPage({ work }: { work: DetailWorkPageProps }) {
   return (
-    <Layout
-      title={work.meta.title}
-      description={work.meta.description}
+    <Seo
+      title={meta.title}
+      description={meta.description}
       className={cxm("flex min-h-screen flex-col items-center justify-start", "py-8", "md:py-12")}
     >
       <article className="mb-3 flex w-full flex-col flex-wrap justify-center">
         <section className="flex flex-col">
           <Heading as="h1" className="gradient dark:gradient-dark">
-            {work.meta.title}
+            {meta.title}
           </Heading>
           <div className="my-3 flex items-center">
             <AuthorImage />
             <div className={cxm("tracking-[0.050em]", spaceGrotesk.className)}>
               <span className={cxm("text-base font-semibold leading-[1.75rem]", "md:text-lg")}>
-                {work.meta.author}, <ReadingTime content={work.content} />.
+                {meta.author}, <ReadingTime content={content} />.
               </span>{" "}
-              {work.meta.preview ? (
+              {meta.preview ? (
                 <button
                   type="button"
                   aria-label="Preview"
                   className={cxm("text-base leading-[1.75rem] tracking-[0.050em]", "md:text-lg")}
                 >
-                  <UnderlineLink href={work.meta.preview}>Preview</UnderlineLink>
+                  <UnderlineLink href={meta.preview}>Preview</UnderlineLink>
                 </button>
               ) : null}
-              {work.meta.preview && work.meta.repo ? " / " : null}
-              {work.meta.repo ? (
+              {meta.preview && meta.repo ? " / " : null}
+              {meta.repo ? (
                 <button
                   type="button"
                   aria-label="Source"
@@ -82,7 +55,7 @@ export default function DetailWorkPage({ work }: { work: DetailWorkPageProps }) 
                     "md:text-lg"
                   )}
                 >
-                  <UnderlineLink href={work.meta.repo}>Source</UnderlineLink>
+                  <UnderlineLink href={meta.repo}>Source</UnderlineLink>
                 </button>
               ) : null}
             </div>
@@ -98,9 +71,9 @@ export default function DetailWorkPage({ work }: { work: DetailWorkPageProps }) 
           <p className={cxm("text-right text-2xl font-bold", naskhArabic.className)}>
             بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
           </p>
-          <MDXRemote {...work.source} components={{ Video, LightboxImage }} />
+          <MDXComponents source={source} />
         </article>
       </article>
-    </Layout>
+    </Seo>
   );
 }

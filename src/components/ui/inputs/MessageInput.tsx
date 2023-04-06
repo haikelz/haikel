@@ -1,3 +1,5 @@
+"use client";
+
 import { forwardRef } from "react";
 import { cxm } from "~lib/helpers/cxm";
 
@@ -8,7 +10,7 @@ export const MessageInput = forwardRef<HTMLInputElement>((props, ref) => {
         ref={ref}
         className={cxm(
           "block w-full border-[2.5px] border-black bg-white outline-none",
-          "py-1.5 px-4 font-medium transition-all ease-in-out",
+          "px-4 py-1.5 font-medium transition-all ease-in-out",
           "hover:shadow-light",
           "dark:border-white dark:bg-raisinblack dark:hover:shadow-dark"
         )}

@@ -4,7 +4,7 @@ import { spaceGrotesk } from "~lib/utils/fonts";
 import { NoteMetaProps } from "~models";
 import { Paragraph } from "~ui/typography";
 
-export function ListNotes({ filteredNotes }: { filteredNotes: Array<NoteMetaProps> }) {
+export function ListNotes({ filteredNotes }: { filteredNotes: NoteMetaProps[] }) {
   return (
     <>
       {filteredNotes.map((note) => (

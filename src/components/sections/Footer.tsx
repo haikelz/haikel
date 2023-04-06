@@ -5,7 +5,7 @@ import { spaceGrotesk } from "~lib/utils/fonts";
 const date: Date = new Date();
 const currentYear: number = date.getFullYear();
 
-export function Footer() {
+export default function Footer() {
   return (
     <footer
       className={cxm("pb-[4.8rem] text-center tracking-widest md:pb-4", spaceGrotesk.className)}

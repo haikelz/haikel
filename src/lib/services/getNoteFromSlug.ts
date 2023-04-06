@@ -1,7 +1,7 @@
 import { readFileSync } from "fs";
 import matter from "gray-matter";
 import path from "path";
-import { NOTES_PATH } from "~lib/utils/contentsPath";
+import { NOTES_PATH } from "../utils/contentsPath";
 
 const date = new Date();
 
