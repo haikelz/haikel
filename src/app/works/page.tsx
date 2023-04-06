@@ -1,5 +1,5 @@
 import { cxm } from "~lib/helpers/cxm";
-import { getAllWorks } from "~lib/helpers/getAllWorks";
+import { getAllWorks } from "~lib/services";
 import { WorkMetaProps } from "~models";
 import Seo from "~ui/Seo";
 import { ListWorks } from "~ui/lists";
@@ -18,7 +18,7 @@ export default function Works() {
     >
       <section className="flex w-full flex-wrap items-start justify-start">
         <div>
-          <Heading as="h2" className="title-font text-left">
+          <Heading as="h2" className="text-left">
             Works
           </Heading>
           <Underline />

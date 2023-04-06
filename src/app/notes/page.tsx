@@ -1,7 +1,7 @@
-import NotesClient from "~sections/NotesClient";
 import { cxm } from "~lib/helpers/cxm";
-import { getAllNotes } from "~lib/helpers/getAllNotes";
+import { getAllNotes } from "~lib/services";
 import type { NoteMetaProps } from "~models";
+import NotesClient from "~sections/NotesClient";
 import Seo from "~ui/Seo";
 
 export default function Notes() {

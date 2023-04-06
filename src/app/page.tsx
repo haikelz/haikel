@@ -1,6 +1,5 @@
 import { cxm } from "~lib/helpers/cxm";
-import { getAllNotes } from "~lib/helpers/getAllNotes";
-import { getAllWorks } from "~lib/helpers/getAllWorks";
+import { getAllNotes, getAllWorks } from "~lib/services";
 import { NoteMetaProps, WorkMetaProps } from "~models";
 import About from "~sections/About";
 import FeaturedWorks from "~sections/FeaturedWorks";

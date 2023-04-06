@@ -25,7 +25,7 @@ export default function Loading() {
             fill="currentFill"
           />
         </svg>
-        <span className={cxm("font-bold", spaceGrotesk.className)}>Loading....</span>
+        <span className={cxm("text-lg font-bold", spaceGrotesk.className)}>Loading....</span>
       </div>
     </section>
   );

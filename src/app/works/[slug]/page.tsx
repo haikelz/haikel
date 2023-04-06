@@ -1,8 +1,6 @@
 import dynamic from "next/dynamic";
 import { cxm } from "~lib/helpers/cxm";
-import { getSlugs } from "~lib/helpers/getSlugs";
-import { getWorkFromSlug } from "~lib/helpers/getWorkFromSlug";
-import { mdxSource } from "~lib/helpers/mdxSource";
+import { getSlugs, getWorkFromSlug, mdxSource } from "~lib/services";
 import { WORKS_PATH } from "~lib/utils/contentsPath";
 import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
 import MDXComponents from "~ui/MDXComponents";

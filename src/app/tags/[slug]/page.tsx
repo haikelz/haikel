@@ -1,9 +1,9 @@
+import { cxm } from "~lib/helpers/cxm";
+import { getAllNotes } from "~lib/services";
+import { NoteMetaProps } from "~models";
 import Seo from "~ui/Seo";
 import { ListNotes } from "~ui/lists";
 import { Heading, Underline } from "~ui/typography";
-import { cxm } from "~lib/helpers/cxm";
-import { getAllNotes } from "~lib/helpers/getAllNotes";
-import { NoteMetaProps } from "~models";
 
 interface NoteProps {
   content: string;
@@ -31,7 +31,7 @@ export default function Tags({ params }: { params: { slug: string } }) {
     >
       <section className="flex w-full flex-wrap items-start justify-start">
         <div>
-          <Heading as="h2" className="title-font text-left">
+          <Heading as="h2" className="text-left">
             Tags #{slug}
           </Heading>
           <Underline />

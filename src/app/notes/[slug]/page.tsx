@@ -1,13 +1,11 @@
 import dynamic from "next/dynamic";
+import { cxm } from "~lib/helpers/cxm";
+import { getNoteFromSlug, getSlugs, mdxSource } from "~lib/services";
+import { NOTES_PATH } from "~lib/utils/contentsPath";
+import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
 import MDXComponents from "~ui/MDXComponents";
 import Seo from "~ui/Seo";
 import { Heading, Paragraph } from "~ui/typography";
-import { cxm } from "~lib/helpers/cxm";
-import { getNoteFromSlug } from "~lib/helpers/getNoteFromSlug";
-import { getSlugs } from "~lib/helpers/getSlugs";
-import { mdxSource } from "~lib/helpers/mdxSource";
-import { NOTES_PATH } from "~lib/utils/contentsPath";
-import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
 
 const AuthorImage = dynamic(() => import("~ui/images/AuthorImage"));
 const ReadingTime = dynamic(() => import("~ui/ReadingTime"));
