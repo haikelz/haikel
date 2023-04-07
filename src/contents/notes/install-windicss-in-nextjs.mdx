@@ -17,7 +17,7 @@ description: Tahapan instalasi dan setup Windi CSS di Next JS
 
 Saya asumsikan temen-temen sudah punya project Next JS nya, agar kita langsung ke tahapan instalasi Windi CSS.
 
-1. Karena Next JS menggunakan webpack sebagai build tool, maka install `windicss-webpack-plugin`. Sesuaikan perintah instalasi dengan package manager yang temen-temen gunakan, disini saya menggunakan **pnpm**.
+1. Karena Next JS menggunakan Webpack sebagai build tool, maka install `windicss-webpack-plugin`. Sesuaikan perintah instalasi dengan package manager yang temen-temen gunakan, disini saya menggunakan **pnpm**.
 
 ```sh
 pnpm add windicss-webpack-plugin -D
@@ -25,7 +25,7 @@ pnpm add windicss-webpack-plugin -D
 
 Jika sebelumnya menggunakan `prettier-plugin-tailwindcss` untuk sort class Tailwind, temen-temen bisa gunakan juga di Windi, karena memang class-class di Windi kebanyakan sama saja dengan yang ada di Tailwind. **See:** [https://github.com/windicss/windicss/issues/659](https://github.com/windicss/windicss/issues/659)
 
-2. Edit file `next.config.js`
+2. Edit file `next.config.js` di root directory.
 
 ```js title="next.config.js"
 /** @type {import('next').NextConfig} */
@@ -43,7 +43,20 @@ const nextConfig = {
 module.exports = nextConfig;
 ```
 
-3. Tambahkan import `windi.css` di file `_app.js` atau `_app.tsx`
+3. Buat file `windi.config.js` di root directory.
+
+```tsx title="windi.config.js"
+import { defineConfig } from "windicss/helpers";
+
+export default defineConfig({
+  extract: {
+    include: ["**/*.{jsx,tsx,css}"],
+    exclude: ["node_modules", ".git", ".next"],
+  },
+});
+```
+
+4. Tambahkan `import "windi.css"` di file `_app.js` atau `_app.tsx`
 
 ```tsx title="pages/_app.tsx"
 import "~/styles/globals.css";
@@ -55,18 +68,27 @@ export default function App({ Component, pageProps }: AppProps) {
 }
 ```
 
-Yep, hanya seperti itu. Dan sekarang, kita bisa test apakah Windi CSS sudah bisa digunakan. Disini saya coba buat contoh sederhana.
+Yep, hanya seperti itu. Kalau pengen nyoba hal lain yang ditawarin Windi, kunjungi [Dokumentasinya](https://windicss.org/guide/).
+
+Sekarang, kita bisa test apakah Windi CSS sudah bisa digunakan. Disini saya coba buat contoh sederhana.
 
 ```tsx title="pages/index.tsx"
+import Head from "next/head";
+
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen w-full items-center justify-center">
-      <section className="flex w-full max-w-5xl items-center justify-center">
-        <div className="hover:border-6 cursor-pointer border-4 border-black p-4">
-          <h1 className="heading">Hello from Windi CSS</h1>
-        </div>
-      </section>
-    </main>
+    <>
+      <Head>
+        <title>Hello from Windi CSS</title>
+      </Head>
+      <main className="flex min-h-screen w-full items-center justify-center">
+        <section className="flex w-full max-w-5xl items-center justify-center">
+          <div className="hover:border-6 cursor-pointer border-4 border-black p-4">
+            <h1 className="heading">Hello from Windi CSS</h1>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
 ```
@@ -84,4 +106,14 @@ Hasil:
   alt="Hello from Windi CSS"
 />
 
-**Sebagai catatan**: Saya tidak terlalu menyarankan untuk migrasiin existing Next JS project yang udah dalam skala besar, dan pake Tailwind untuk stylingnya, ke Windi, walaupun memang cara ini sudah saya coba di project yang memakai `appDir`, dan Alhamdulillah work. Windi CSS sendiri tidak memprioritaskan Next JS dalam pengembangannya, jadi kita mesti expect bakal adanya beberapa class yang tidak work. Seperti di salah satu project saya, dimana untuk class `blur`, serta `scale` nya tidak work, jadi saya mesti membuat style sendiri biar bisa nambahin blur dan scale.
+Btw, berikut [link reponya](https://github.com/kelz-labs/next-windicss). Udah dicoba di `appDir` nya Next JS dan Alhamdulillah work juga.
+
+## C. Penutup
+
+Windi CSS adalah sebuah framework CSS yang menurut saya menarik untuk dicoba. Tapi, Windi CSS sendiri tidak memprioritaskan Next JS dalam pengembangannya, alias second support. Jadi kita mesti bersiap jika nanti ada beberapa class yang tidak work. Seperti di salah satu project saya, dimana untuk class `blur`, serta `scale` nya tidak work, jadi saya mesti membuat style sendiri biar bisa nambahin blur dan scale. Makanya, saya tidak terlalu menyarankan untuk migrasiin existing Next JS project yang udah dalam skala besar, dan pake Tailwind untuk stylingnya, ke Windi. Ya kalo projectnya kecil dan buat coba-coba, boleh-boleh saja.
+
+## D. Referensi
+
+- [Windi CSS Official Website](https://windicss.org/)
+- [Medium Article](https://medium.com/frontendweb/how-to-install-windi-css-in-nextjs-54ba43bd83ba)
+- [windicss-webpack-plugin](https://github.com/windicss/windicss-webpack-plugin)
