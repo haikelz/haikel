@@ -1,0 +1,47 @@
+---
+author: Haikel
+title: Setup Laravel dengan Composer di Windows
+tags:
+  - php
+  - windows
+  - laravel
+date: 2022-02-27
+description: Menyiapkan Laravel project dengan Composer di Windows
+---
+
+Karena beberapa alasan, saya mesti balik pakai Windows lagi. Linuxnya? Nanti saya install, pengen pindah dari Artix ke Just Works distro(alias sebuah distro yang ga usah mikirin ini-itu lagi, jadi tinggal pake).
+
+Laravel adalah sebuah framework php yang banyak dipakai orang saat ini, disamping codeigniter, symfony, dan yii. Dan dalam hal ini, saya ingin setup laravel dengan composer.
+
+1. Download dulu [Composer](https://getcomposer.org/Composer-Setup.exe) Installer nya.
+2. Install composer:
+
+![composer1](https://i.ibb.co/X4p21q9/composer1.png)
+
+Kalo muncul gini pas pertama kali, tinggal lanjut aja ga usah nyentang dev mode.
+
+![composer2](https://i.ibb.co/6tGSgsj/composer2.png)
+
+Kalo muncul opsi masukin proxy server, kalian bisa skip.
+
+![composer3](https://i.ibb.co/NpfPVLQ/composer3.png)
+
+Kalo udah selesai semua, pilih install.
+
+3. Untuk membuat project laravel baru, tinggal ketik perintah
+
+```sh
+composer create-project --prefer-dist laravel/laravel nama-project
+```
+
+**Tambahan:** Kalo ga dispesifikin versinya, dia bakal memakai laravel versi terbaru. Saat saya menulis ini, Laravel udah versi 9.2. Jika tidak mau memakai versi baru, bisa tambahin `:^version`. Jadi kurang lebih begini:
+
+```sh
+composer create-project --prefer-dist laravel/laravel:^7.0 nama-project
+```
+
+![create-project](https://i.ibb.co/9G1xw3H/create-project.png)
+
+4. Untuk melihat hasilnya, jika kalian udah menginstall php di computernya, masukkan perintah `php artisan serve`, kemudian pergi ke `localhost:8000` di browser.
+
+![laravel](https://i.ibb.co/SQ0518k/laravel.png)

@@ -13,8 +13,8 @@ type LayoutProps = ChildrenProps &
 export default function Seo({ children, className, title, description }: LayoutProps) {
   const pathname = usePathname();
 
-  const absoluteOgUrl = process.env.NEXT_PUBLIC_BASE_URL
-    ? "https://" + process.env.NEXT_PUBLIC_BASE_URL + "/api/og"
+  const absoluteOgUrl = process.env.NEXT_PUBLIC_VERCEL_URL
+    ? "https://" + process.env.NEXT_PUBLIC_VERCEL_URL + "/api/og"
     : "/api/og";
 
   return (
