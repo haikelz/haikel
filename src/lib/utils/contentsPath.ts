@@ -1,4 +1,4 @@
-import path from "path";
+import { join } from "path";
 
-export const NOTES_PATH: string = path.join(process.cwd(), "src/contents/notes");
-export const WORKS_PATH: string = path.join(process.cwd(), "src/contents/works");
+export const NOTES_PATH: string = join(process.cwd(), "src/contents/notes");
+export const WORKS_PATH: string = join(process.cwd(), "src/contents/works");

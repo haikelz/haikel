@@ -16,6 +16,7 @@ export function ListGuests({ guestbook }: { guestbook: ListGuestsProps }) {
       day: "numeric",
       hour: "numeric",
       minute: "numeric",
+      second: "numeric",
     });
   };
 
