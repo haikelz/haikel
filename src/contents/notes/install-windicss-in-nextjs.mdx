@@ -23,7 +23,7 @@ Saya asumsikan temen-temen sudah punya project Next JS nya, agar kita langsung k
 pnpm add windicss-webpack-plugin -D
 ```
 
-Jika sebelumnya menggunakan `prettier-plugin-tailwindcss` untuk sort class Tailwind, temen-temen bisa gunakan juga di Windi, karena memang class-class di Windi kebanyakan sama saja dengan yang ada di Tailwind. **See:** [https://github.com/windicss/windicss/issues/659](https://github.com/windicss/windicss/issues/659)
+Jika sebelumnya menggunakan `prettier-plugin-tailwindcss` untuk sort class Tailwind, temen-temen bisa gunakan juga di Windi, karena memang class-class di Windi kebanyakan sama saja dengan yang ada di Tailwind.
 
 2. Edit file `next.config.js` di root directory.
 
@@ -45,7 +45,7 @@ module.exports = nextConfig;
 
 3. Buat file `windi.config.js` di root directory.
 
-```tsx title="windi.config.js"
+```js title="windi.config.js"
 import { defineConfig } from "windicss/helpers";
 
 export default defineConfig({
