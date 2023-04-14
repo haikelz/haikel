@@ -1,7 +1,7 @@
 import { readFileSync } from "fs";
 import matter from "gray-matter";
 import { join } from "path";
-import { WORKS_PATH } from "../utils/contentsPath";
+import { WORKS_PATH } from "../utils/constants";
 
 export function getWorkFromSlug(slug: string) {
   const workPath: string = join(WORKS_PATH, `${slug}.mdx`);

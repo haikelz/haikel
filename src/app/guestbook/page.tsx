@@ -1,9 +1,41 @@
-import { ListGuests } from "~ui/lists";
-import { Paragraph } from "~ui/typography";
 import { cxm } from "~lib/helpers/cxm";
 import supabase from "~lib/utils/supabase";
 import GuestbookClient from "~sections/GuestbookClient";
-import Seo from "~ui/Seo";
+import Main from "~ui/Main";
+import { ListGuests } from "~ui/lists";
+import { Paragraph } from "~ui/typography";
+
+const baseMetadata = {
+  title: "Guestbook",
+  description: "Write a message for me and others",
+  url: "https://haikel.my.id/guestbook",
+};
+
+const { title, description, url } = baseMetadata;
+
+export const metadata = {
+  title,
+  description,
+  openGraph: {
+    type: "website",
+    url,
+    title,
+    description,
+    siteName: "haikel.my.id",
+    images: [
+      {
+        url: "https://ik.imagekit.io/haikelz/blog/og-image/haikelz.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678430627569",
+        alt: "OG Image",
+      },
+    ],
+  },
+  twitter: {
+    title,
+    description,
+    site: url,
+    card: "summary_large_image",
+  },
+};
 
 /**
  * Implement ISR(Incremental Static Regeneration)
@@ -29,9 +61,7 @@ export default async function Guestbook() {
   const guestbook = await getDataFromSupabase();
 
   return (
-    <Seo
-      title="Guestbook"
-      description="Write a message for me and others"
+    <Main
       className={cxm("flex min-h-screen flex-col items-start justify-start", "py-8", "md:py-12")}
     >
       <GuestbookClient />
@@ -42,6 +72,6 @@ export default async function Guestbook() {
       ) : (
         <Paragraph className="font-semibold">There is no messages now!</Paragraph>
       )}
-    </Seo>
+    </Main>
   );
 }

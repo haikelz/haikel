@@ -1,5 +1,5 @@
-import { NOTES_PATH } from "../utils/contentsPath";
 import { NoteMetaProps } from "~models";
+import { NOTES_PATH } from "../utils/constants";
 import { getNoteFromSlug } from "./getNoteFromSlug";
 import { getSlugs } from "./getSlugs";
 

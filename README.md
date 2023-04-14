@@ -1,6 +1,6 @@
 <div align="center">
   <h1>haikel.my.id</h1>
-  <p>My Personal Website</p>
+  <p>My Personal Website</p> 
 </div>
 
 ## Stuff
@@ -9,7 +9,7 @@
 - [tailwindcss](https://tailwindcss.com/)
 - [jotai](https://jotai.org/)
 - [shiki](https://shiki.matsu.io/)
-- [mdx](https://mdxjs.com/)
+- [mdx](https://mdxjs.co
 
 ## Screenshot
 

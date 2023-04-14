@@ -2,7 +2,40 @@ import { cxm } from "~lib/helpers/cxm";
 import { getAllNotes } from "~lib/services";
 import { NoteMetaProps } from "~models";
 import NotesClient from "~sections/NotesClient";
-import Seo from "~ui/Seo";
+import Main from "~ui/Main";
+
+const baseMetadata = {
+  title: "Notes",
+  description:
+    "Sometimes i write something, mostly about Linux, Web, and life. So yeah, i call this as Notes.",
+  url: "https://haikel.my.id/notes",
+};
+
+const { title, description, url } = baseMetadata;
+
+export const metadata = {
+  title,
+  description,
+  openGraph: {
+    type: "website",
+    url,
+    title,
+    description,
+    siteName: "haikel.my.id",
+    images: [
+      {
+        url: "https://ik.imagekit.io/haikelz/blog/og-image/haikelz.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678430627569",
+        alt: "OG Image",
+      },
+    ],
+  },
+  twitter: {
+    title,
+    description,
+    site: url,
+    card: "summary_large_image",
+  },
+};
 
 export default function Notes() {
   const notes: NoteMetaProps[] = getAllNotes()
@@ -10,12 +43,10 @@ export default function Notes() {
     .map((note) => note.meta);
 
   return (
-    <Seo
-      title="Notes"
-      description="Sometimes i write something, mostly about Linux, Web, and life. So yeah, i call this as Notes."
+    <Main
       className={cxm("flex min-h-screen flex-col items-start justify-start", "py-8", "md:py-12")}
     >
       <NotesClient notes={notes} />
-    </Seo>
+    </Main>
   );
 }

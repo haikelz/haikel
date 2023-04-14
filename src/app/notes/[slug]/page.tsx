@@ -1,10 +1,11 @@
+import { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { cxm } from "~lib/helpers/cxm";
 import { getNoteFromSlug, getSlugs, mdxSource } from "~lib/services";
-import { NOTES_PATH } from "~lib/utils/contentsPath";
+import { NOTES_PATH, absoluteOgUrl } from "~lib/utils/constants";
 import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
 import MDXComponents from "~ui/MDXComponents";
-import Seo from "~ui/Seo";
+import Main from "~ui/Main";
 import { Heading, Paragraph } from "~ui/typography";
 
 const AuthorImage = dynamic(() => import("~ui/images/AuthorImage"));
@@ -14,15 +15,49 @@ export async function generateStaticParams() {
   return getSlugs(NOTES_PATH).map((slug) => ({ slug }));
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata | undefined> {
+  const { slug } = params;
+  const { meta } = getNoteFromSlug(slug);
+  const { title, description, date, author } = meta;
+
+  return {
+    title,
+    description,
+    authors: author,
+    openGraph: {
+      type: "article",
+      url: `https://haikel.my.id/notes/${slug}`,
+      title,
+      description,
+      publishedTime: date,
+      siteName: "haikel.my.id",
+      images: [
+        {
+          url: absoluteOgUrl,
+          alt: "OG Image",
+        },
+      ],
+    },
+    twitter: {
+      title,
+      description,
+      site: `https://haikel.my.id/notes/${slug}`,
+      card: "summary_large_image",
+    },
+  };
+}
+
 export default async function NotePage({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const { content, meta } = getNoteFromSlug(slug);
   const source = await mdxSource(content);
 
   return (
-    <Seo
-      title={meta.title}
-      description={meta.description}
+    <Main
       className={cxm("flex min-h-screen flex-col items-center justify-start", "py-8", "md:py-12")}
     >
       <article className="mb-3 flex w-full flex-col flex-wrap justify-center">
@@ -56,6 +91,6 @@ export default async function NotePage({ params }: { params: { slug: string } })
           <MDXComponents source={source} />
         </article>
       </article>
-    </Seo>
+    </Main>
   );
 }

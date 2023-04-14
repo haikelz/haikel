@@ -9,11 +9,18 @@ date: 2023-04-08
 description: Tahapan instalasi dan setup Windi CSS di Next JS
 ---
 
-## A. Pendahuluan
+## Table of Contents
+
+- [Pendahuluan](#pendahuluan)
+- [Instalasi](#instalasi)
+- [Penutup](#penutup)
+- [Referensi](#referensi)
+
+## Pendahuluan
 
 [Windi CSS](https://windicss.org/) adalah sebuah Utility-First CSS Framework, yang menurut saya menarik karena dia menawarkan load time yang lebih cepat ketimbang Tailwind. Selain itu, di Website resminya juga menyebutkan bahwa Windi ini kompatibel dengan Tailwind V2. Bisa dibilang Windi CSS adalah alternatifnya Tailwind, dengan beberapa fitur tambahan. Jika sebelumnya projectnya memakai Tailwind untuk styling dan ingin migrasi ke windi, maka harusnya ga terlalu banyak perubahan, hanya butuh penyesuaian sedikit.
 
-## B. Instalasi
+## Instalasi
 
 Saya asumsikan temen-temen sudah punya project Next JS nya, agar kita langsung ke tahapan instalasi Windi CSS.
 
@@ -108,11 +115,11 @@ Hasil:
 
 Btw, berikut [link reponya](https://github.com/kelz-labs/next-windicss). Udah dicoba di `appDir` nya Next JS dan Alhamdulillah work juga.
 
-## C. Penutup
+## Penutup
 
 Windi CSS adalah sebuah framework CSS yang menurut saya menarik untuk dicoba. Tapi, Windi CSS sendiri tidak memprioritaskan Next JS dalam pengembangannya, alias second support. Jadi kita mesti bersiap jika nanti ada beberapa class yang tidak work. Seperti di salah satu project saya, dimana untuk class `blur`, serta `scale` nya tidak work, jadi saya mesti membuat style sendiri biar bisa nambahin blur dan scale. Makanya, saya tidak terlalu menyarankan untuk migrasiin existing Next JS project yang udah dalam skala besar, dan pake Tailwind untuk stylingnya, ke Windi. Ya kalo projectnya kecil dan buat coba-coba, boleh-boleh saja.
 
-## D. Referensi
+## Referensi
 
 - [Windi CSS Official Website](https://windicss.org/)
 - [Medium Article](https://medium.com/frontendweb/how-to-install-windi-css-in-nextjs-54ba43bd83ba)

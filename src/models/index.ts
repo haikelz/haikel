@@ -52,8 +52,3 @@ export interface LinkIconProps {
   linkPreview?: string;
   linkGithub?: string;
 }
-
-export interface SeoProps {
-  title: string;
-  description: string;
-}
