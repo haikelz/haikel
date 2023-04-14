@@ -9,7 +9,7 @@
 - [tailwindcss](https://tailwindcss.com/)
 - [jotai](https://jotai.org/)
 - [shiki](https://shiki.matsu.io/)
-- [mdx](https://mdxjs.co)
+- [mdx](https://mdxjs.co/)
 
 ## Screenshot
 

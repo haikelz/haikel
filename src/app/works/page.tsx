@@ -1,5 +1,6 @@
 import { cxm } from "~lib/helpers/cxm";
 import { getAllWorks } from "~lib/services";
+import { defaultOgUrl } from "~lib/utils/constants";
 import { WorkMetaProps } from "~models";
 import Main from "~ui/Main";
 import { ListWorks } from "~ui/lists";
@@ -24,7 +25,7 @@ export const metadata = {
     siteName: "haikel.my.id",
     images: [
       {
-        url: "https://ik.imagekit.io/haikelz/blog/og-image/haikelz.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678430627569",
+        url: defaultOgUrl,
         alt: "OG Image",
       },
     ],

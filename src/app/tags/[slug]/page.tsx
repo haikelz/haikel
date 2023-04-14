@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { cxm } from "~lib/helpers/cxm";
 import { getAllNotes } from "~lib/services";
-import { absoluteOgUrl } from "~lib/utils/constants";
+import { defaultOgUrl } from "~lib/utils/constants";
 import { NoteMetaProps } from "~models";
 import Main from "~ui/Main";
 import { ListNotes } from "~ui/lists";
@@ -38,7 +38,7 @@ export async function generateMetadata({
       siteName: "haikel.my.id",
       images: [
         {
-          url: absoluteOgUrl,
+          url: defaultOgUrl,
           alt: "OG Image",
         },
       ],

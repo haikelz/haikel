@@ -1,4 +1,5 @@
 import { cxm } from "~lib/helpers/cxm";
+import { defaultOgUrl } from "~lib/utils/constants";
 import supabase from "~lib/utils/supabase";
 import GuestbookClient from "~sections/GuestbookClient";
 import Main from "~ui/Main";
@@ -24,7 +25,7 @@ export const metadata = {
     siteName: "haikel.my.id",
     images: [
       {
-        url: "https://ik.imagekit.io/haikelz/blog/og-image/haikelz.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678430627569",
+        url: defaultOgUrl,
         alt: "OG Image",
       },
     ],
