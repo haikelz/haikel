@@ -37,7 +37,7 @@ export async function generateMetadata({
       siteName: "haikel.my.id",
       images: [
         {
-          url: absoluteOgUrl,
+          url: `${absoluteOgUrl}?title=${title}`,
           alt: "OG Image",
         },
       ],
