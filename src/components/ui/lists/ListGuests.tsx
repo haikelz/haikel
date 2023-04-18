@@ -1,3 +1,4 @@
+import format from "date-fns/format";
 import { cxm } from "~lib/helpers/cxm";
 import { spaceGrotesk } from "~lib/utils/fonts";
 import { Paragraph } from "~ui/typography";
@@ -9,16 +10,9 @@ type ListGuestsProps =
   | undefined;
 
 export function ListGuests({ guestbook }: { guestbook: ListGuestsProps }) {
-  const convertToLocalTime = (format: string) => {
-    return new Date(format).toLocaleDateString("en-EN", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-      hour: "numeric",
-      minute: "numeric",
-      second: "numeric",
-    });
-  };
+  function convertToLocalTime(time: string) {
+    return format(new Date(time), "LLLL d, yyyy");
+  }
 
   return (
     <>

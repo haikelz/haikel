@@ -30,9 +30,9 @@ export default function BottomNav() {
     >
       <div
         className={cxm(
-          "w-full max-w-full border-t-[1.5px] border-slate-300",
+          "w-full max-w-full border-t-[1.5px] border-gray-300",
           "bg-azure p-4",
-          "dark:border-slate-600 dark:bg-zinc-900"
+          "dark:border-gray-600 dark:bg-zinc-900"
         )}
       >
         <div className="flex w-full items-center justify-around">
@@ -52,11 +52,11 @@ export default function BottomNav() {
                     "transition-all duration-200",
                     item.name === "Home"
                       ? pathname === item.link
-                        ? "text-slate-600 dark:text-white"
-                        : "text-slate-500 dark:text-slate-400"
+                        ? "text-gray-600 dark:text-white"
+                        : "text-gray-500 dark:text-gray-400"
                       : pathname?.includes(item.link)
-                      ? "text-slate-600 dark:text-white"
-                      : "text-slate-500 dark:text-slate-400"
+                      ? "text-gray-600 dark:text-white"
+                      : "text-gray-500 dark:text-gray-400"
                   )}
                 />
               </Link>

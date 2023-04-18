@@ -2,10 +2,10 @@
 
 import { Searcher } from "fast-fuzzy";
 import { useMemo, useState } from "react";
+import { NoteMetaProps } from "~models";
 import { SearchInput } from "~ui/inputs";
 import { ListNotes } from "~ui/lists";
 import { Heading, Paragraph, Underline } from "~ui/typography";
-import { NoteMetaProps } from "~models";
 
 type SearcherType = Searcher<
   NoteMetaProps,

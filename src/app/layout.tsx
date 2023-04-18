@@ -22,8 +22,8 @@ export default function RootLayout({ children }: ChildrenProps) {
         <ClientWrapper>
           <div
             className={cxm(
-              "min-h-screen w-full bg-azure bg-fixed bg-center",
-              " dark:bg-zinc-900 dark:text-gray-100"
+              "min-h-screen w-full bg-azure bg-fixed bg-center text-base0",
+              "dark:bg-base0 dark:text-gray-100"
             )}
           >
             <TopNav />

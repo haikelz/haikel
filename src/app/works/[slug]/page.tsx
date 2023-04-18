@@ -97,7 +97,7 @@ export default async function DetailWorkPage({ params }: { params: { slug: strin
         </section>
         <article
           className={cxm(
-            "prose prose-slate mt-6 w-full max-w-full",
+            "prose prose-gray mt-6 w-full max-w-full",
             "md:prose-lg",
             "dark:prose-invert"
           )}

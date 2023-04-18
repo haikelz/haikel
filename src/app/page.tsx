@@ -1,10 +1,11 @@
-import Main from "~ui/Main";
 import { cxm } from "~lib/helpers/cxm";
 import { getAllNotes, getAllWorks } from "~lib/services";
+import { defaultOgUrl } from "~lib/utils/constants";
 import { NoteMetaProps, WorkMetaProps } from "~models";
 import About from "~sections/About";
 import FeaturedWorks from "~sections/FeaturedWorks";
 import LatestNotes from "~sections/LatestNotes";
+import Main from "~ui/Main";
 
 const baseMetadata = {
   title: "Haikel",
@@ -24,7 +25,7 @@ export const metadata = {
     description,
     images: [
       {
-        url: "https://ik.imagekit.io/haikelz/blog/og-image/haikelz.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678430627569",
+        url: defaultOgUrl,
         alt: "OG Image",
       },
     ],

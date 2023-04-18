@@ -26,7 +26,7 @@ export default function TopNav() {
         "sticky top-0 z-10 hidden w-full border-b-[1.5px]",
         "border-b-gray-200 bg-azure/90 px-4 py-2",
         "backdrop-blur-lg backdrop-filter",
-        "dark:border-b-gray-500 dark:bg-zinc-900/90 dark:text-white",
+        "dark:border-b-gray-500 dark:bg-base0/90 dark:text-white",
         "md:block"
       )}
     >
@@ -43,7 +43,7 @@ export default function TopNav() {
                     "px-1 font-semibold",
                     "md:text-lg",
                     "active:bg-pink-100",
-                    "active:dark:bg-slate-800",
+                    "active:dark:bg-gray-800",
                     pathname?.includes(nav.href)
                       ? "gradient dark:gradient-dark underline decoration-[#0093E9] decoration-dashed underline-offset-[5px]"
                       : "",

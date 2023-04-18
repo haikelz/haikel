@@ -39,7 +39,7 @@ export default function About() {
             Hello, I&#39;m{" "}
             <span
               className={cxm(
-                "underline decoration-fireopal decoration-dashed underline-offset-[5px]",
+                "underline decoration-red decoration-dashed underline-offset-[5px]",
                 "dark:gradient-dark dark:animate-text dark:bg-clip-text dark:text-transparent dark:decoration-blue-500"
               )}
             >
@@ -50,7 +50,7 @@ export default function About() {
           {language ? (
             <Paragraph className="mt-4">
               A person who interested in Frontend stuff, User Interface/Experience, Design Systems,
-              and Linux. Feel free to reach me via{" "}
+              Linux, and Photography. Feel free to reach me via{" "}
               {socialMediaList.map((item, index) => (
                 <Link className={linkContact} key={index + 1} href={item.link}>
                   {item.name}
@@ -69,7 +69,7 @@ export default function About() {
           ) : (
             <Paragraph className="mt-4">
               Seseorang yang tertarik dengan hal-hal terkait Frontend, User Interface/Experience,
-              Design Systems, dan Linux. Kamu dapat menghubungi saya via{" "}
+              Design Systems, Linux, dan Fotografi. Kamu dapat menghubungi saya via{" "}
               {socialMediaList.map((item, index) => (
                 <Link className={linkContact} key={index + 1} href={item.link}>
                   {item.name}

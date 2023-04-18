@@ -1,11 +1,11 @@
+import { format } from "date-fns";
 import Link from "next/link";
 import { cxm } from "~lib/helpers/cxm";
 import { spaceGrotesk } from "~lib/utils/fonts";
 
-const date: Date = new Date();
-const currentYear: number = date.getFullYear();
-
 export default function Footer() {
+  const currentYear = format(new Date(), "yyyy");
+
   return (
     <footer
       className={cxm("pb-[4.8rem] text-center tracking-widest md:pb-4", spaceGrotesk.className)}

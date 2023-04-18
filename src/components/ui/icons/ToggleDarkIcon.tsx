@@ -10,7 +10,7 @@ export function ToggleDarkIcon({ theme, changeTheme }: ThemeProps) {
           fill="currentColor"
           strokeWidth="0"
           viewBox="0 0 24 24"
-          className="text-slate-400 transition-all duration-300 hover:text-white"
+          className="text-gray-400 transition-all duration-300 hover:text-white"
           height={28}
           width={28}
           xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +25,7 @@ export function ToggleDarkIcon({ theme, changeTheme }: ThemeProps) {
           fill="currentColor"
           strokeWidth="0"
           viewBox="0 0 24 24"
-          className="text-slate-500 transition-all duration-300 hover:text-slate-600"
+          className="text-gray-500 transition-all duration-300 hover:text-gray-600"
           height={28}
           width={28}
           xmlns="http://www.w3.org/2000/svg"

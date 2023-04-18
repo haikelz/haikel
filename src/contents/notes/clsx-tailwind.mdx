@@ -55,7 +55,7 @@ Another example, we want to create a button like this:
 />
 
 ```tsx
-<button className="rounded-md bg-blue-500 px-4 py-2 font-semibold text-white transition-all ease-in-out hover:bg-blue-500">
+<button className="bg-blue-500 hover:bg-blue-500 rounded-md px-4 py-2 font-semibold text-white transition-all ease-in-out">
   Contoh
 </button>
 ```
@@ -65,7 +65,7 @@ Looks long, right? Well, we can use `clsx` to organize it.
 ```tsx /clsx/#v
 <button
   className={clsx(
-    "rounded-md bg-blue-500 px-4 py-2",
+    "bg-blue-500 rounded-md px-4 py-2",
     "font-semibold text-white transition-all ease-in-out",
     "hover:bg-blue-500"
   )}

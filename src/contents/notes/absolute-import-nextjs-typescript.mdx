@@ -5,10 +5,10 @@ tags:
   - nextjs
   - typescript
 date: 2023-02-01
-description: Configure absolute import for Next JS Typescript Project 
+description: Configure absolute import for Next JS Typescript Project
 ---
 
-Every time we create a new Next JS Project, by default it uses relative import. 
+Every time we create a new Next JS Project, by default it uses relative import.
 
 ```tsx
 import { getSlugs } from "../../lib/helpers/getSlugs";
@@ -28,14 +28,14 @@ Before using absolute import, we must configure our `tsconfig.json` file. In `ts
 
 I use [src folder](https://nextjs.org/docs/advanced-features/src-directory). So, the folder like `pages`, `styles` which was originally in root directory, i can move it to `src` folder.
 
-We also can configure path aliases, like this: 
+We also can configure path aliases, like this:
 
 ```json /"paths"/#v
 {
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "~/*": ["*"],
+      "~/*": ["*"]
     }
   }
 }
@@ -45,7 +45,7 @@ Because i've already set `baseUrl` to `src`, then i dont need to import componen
 
 For the `paths`, you can adjust it with your project structure.
 
-So, for importing file, we can do that like this: 
+So, for importing file, we can do that like this:
 
 ```tsx /~lib/#v
 import { getSlugs } from "~/lib/helpers/getSlugs";

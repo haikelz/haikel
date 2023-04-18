@@ -80,7 +80,7 @@ export default async function NotePage({ params }: { params: { slug: string } })
         </section>
         <article
           className={cxm(
-            "prose prose-slate mt-6 w-full max-w-full",
+            "prose prose-gray mt-6 w-full max-w-full",
             "dark:prose-invert",
             "md:prose-lg"
           )}

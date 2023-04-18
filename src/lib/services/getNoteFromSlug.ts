@@ -1,3 +1,4 @@
+import format from "date-fns/format";
 import { readFileSync } from "fs";
 import matter from "gray-matter";
 import { join } from "path";
@@ -18,11 +19,7 @@ export function getNoteFromSlug(slug: string) {
       description: data.description ?? "",
       title: data.title ?? slug,
       tags: (data.tags ?? []).sort(),
-      date: (data.date ?? date).toLocaleDateString("en-EN", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      }),
+      date: format(data.date ?? date, "LLLL d, yyyy"),
     },
   };
 }

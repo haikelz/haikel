@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply m-0 h-[50vh] scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-fireopal;
+    @apply m-0 h-[50vh] scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-red;
     font-family: var(--font-ibm);
   }
 
@@ -50,7 +50,7 @@
   }
 
   [data-rehype-pretty-code-title] {
-    @apply rounded-t-sm border border-[#333333] bg-gray-800 px-4 py-2.5 font-medium text-slate-300;
+    @apply rounded-t-sm bg-[#21262D] px-4 py-2.5 font-medium text-gray-300;
     font-family: var(--font-jetbrains);
   }
 
@@ -88,6 +88,6 @@
   }
 
   .prose video {
-    @apply rounded-sm shadow-md dark:shadow-slate-900;
+    @apply rounded-sm shadow-md dark:shadow-gray-900;
   }
 }
