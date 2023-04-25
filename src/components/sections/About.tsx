@@ -40,8 +40,7 @@ export default function About() {
             <span
               className={cxm(
                 "underline decoration-red decoration-dashed underline-offset-[5px]",
-                "dark:gradient-dark dark:animate-text dark:bg-clip-text",
-                "dark:text-transparent dark:decoration-blue-500"
+                "dark:gradient-dark dark:animate-text dark:bg-clip-text dark:text-transparent dark:decoration-blue-500"
               )}
             >
               Haikel

@@ -14,5 +14,5 @@ export * from "./SvelteIcon";
 export * from "./TailwindcssIcon";
 export * from "./TypescriptIcon";
 export * from "./ViteIcon";
-export * from "./WindiCssIcon";
 export * from "./WorkIcon";
+export * from "./WindiCssIcon";
