@@ -3,21 +3,12 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ComponentType } from "react";
-import { useTheme } from "~hooks";
 import { cxm } from "~lib/helpers/cxm";
 import { bottomNavList } from "~lib/utils/data";
-import { ThemeProps } from "~models";
 
-const ToggleDarkIcon: ComponentType<ThemeProps> = dynamic(
-  () => import("~ui/icons").then((icon) => icon.ToggleDarkIcon),
-  {
-    ssr: false,
-  }
-);
+const SwitchThemeButton = dynamic(() => import("~ui/SwitchThemeButton"));
 
 export default function BottomNav() {
-  const [theme, setTheme] = useTheme();
   const pathname = usePathname();
 
   return (
@@ -32,7 +23,7 @@ export default function BottomNav() {
         className={cxm(
           "w-full max-w-full border-t-[1.5px] border-gray-300",
           "bg-azure p-4",
-          "dark:border-gray-600 dark:bg-zinc-900"
+          "dark:border-gray-600 dark:bg-base0"
         )}
       >
         <div className="flex w-full items-center justify-around">
@@ -62,10 +53,7 @@ export default function BottomNav() {
               </Link>
             );
           })}
-          <ToggleDarkIcon
-            theme={theme}
-            changeTheme={() => setTheme(theme === "dark" ? "light" : "dark")}
-          />
+          <SwitchThemeButton navPosition="bottom" />
         </div>
       </div>
     </nav>

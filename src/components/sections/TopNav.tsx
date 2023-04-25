@@ -3,21 +3,13 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ComponentType } from "react";
-import { useTheme } from "~hooks";
 import { cxm } from "~lib/helpers/cxm";
 import { topNavList } from "~lib/utils/data";
 import { spaceGrotesk } from "~lib/utils/fonts";
-import { ThemeProps } from "~models";
-import { TopNavLogo } from "~ui/icons";
 
-const ToggleDarkModeTopNav: ComponentType<ThemeProps> = dynamic(
-  () => import("~ui/icons").then((icon) => icon.ToggleDarkModeTopNav),
-  { ssr: false }
-);
+const SwitchThemeButton = dynamic(() => import("~ui/SwitchThemeButton"));
 
 export default function TopNav() {
-  const [theme, setTheme] = useTheme();
   const pathname = usePathname();
 
   return (
@@ -31,7 +23,20 @@ export default function TopNav() {
       )}
     >
       <div className="mx-auto flex w-full max-w-3xl items-center justify-between">
-        <TopNavLogo />
+        <div className="gradient dark:gradient-dark -rotate-6">
+          <Link
+            className={cxm(
+              "cursor-pointer border-none text-xl font-bold",
+              "tracking-widest outline-none",
+              "transition-all ease-in-out",
+              "hover:text-blue-500",
+              spaceGrotesk.className
+            )}
+            href="/"
+          >
+            ハキム
+          </Link>
+        </div>
         <div className="flex items-center justify-center">
           <div className="hidden md:block">
             <div className="flex items-center justify-center space-x-6 tracking-widest">
@@ -56,10 +61,7 @@ export default function TopNav() {
                   {nav.text}
                 </Link>
               ))}
-              <ToggleDarkModeTopNav
-                theme={theme}
-                changeTheme={() => setTheme(theme === "dark" ? "light" : "dark")}
-              />
+              <SwitchThemeButton navPosition="top" />
             </div>
           </div>
         </div>

@@ -8,21 +8,30 @@ export default function Footer() {
 
   return (
     <footer
-      className={cxm("pb-[4.8rem] text-center tracking-widest md:pb-4", spaceGrotesk.className)}
+      className={cxm(
+        "flex w-full flex-col items-center justify-center",
+        "px-4 pb-[4.5rem] text-center tracking-widest",
+        "md:py-0",
+        spaceGrotesk.className
+      )}
     >
-      <div>
-        <p className="pb-1 text-base font-semibold">2020-{currentYear} Haikel</p>
-        <p className="text-base font-semibold">
-          This Website is under{" "}
+      <div
+        className={cxm(
+          "w-full max-w-3xl md:border-t md:border-t-gray-300",
+          "md:py-3 md:dark:border-t-gray-500"
+        )}
+      >
+        <p className="text-center text-base font-semibold md:text-left">
+          2020-{currentYear} Haikel. <br className="block md:hidden" /> See the source code on{" "}
           <Link
             className={cxm(
               "cursor-pointer font-bold",
               "text-sm underline decoration-dashed underline-offset-[5px]",
               "hover:text-blue-500 hover:decoration-blue-500"
             )}
-            href="https://github.com/haikelz/haikel.my.id/blob/master/LICENSE"
+            href="https://github.com/haikelz/haikel.my.id/"
           >
-            MIT License
+            Github
           </Link>
         </p>
       </div>
