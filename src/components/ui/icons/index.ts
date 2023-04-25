@@ -12,7 +12,6 @@ export * from "./SearchIcon";
 export * from "./SupabaseIcon";
 export * from "./SvelteIcon";
 export * from "./TailwindcssIcon";
-export * from "./TopNavLogo";
 export * from "./TypescriptIcon";
 export * from "./ViteIcon";
 export * from "./WindiCssIcon";
