@@ -19,6 +19,7 @@ const languageAtom = atomWithToggle(true);
 
 export default function About() {
   const [language, setLanguage] = useAtom(languageAtom);
+
   const linkContact = "font-bold hover:text-blue-500";
 
   return (

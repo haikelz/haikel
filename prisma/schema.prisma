@@ -14,7 +14,7 @@ datasource db {
 // @see https://github.com/supabase/supabase/discussions/619
 model guestbook {
   id         Int      @id @default(autoincrement())
-  created_at DateTime @default(now()) @db.Timestamptz(3)
+  created_at DateTime @default(now()) @db.Date
   email      String
   username   String
   message    String

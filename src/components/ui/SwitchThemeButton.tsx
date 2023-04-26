@@ -12,7 +12,6 @@ export default function SwitchThemeButton({ navPosition }: { navPosition: "top" 
         <button
           type="button"
           aria-label="switch theme"
-          className="overflow-hidden"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         >
           {theme === "dark" ? (
@@ -52,7 +51,6 @@ export default function SwitchThemeButton({ navPosition }: { navPosition: "top" 
         <button
           type="button"
           aria-label="toggle dark mode"
-          className="overflow-hidden"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         >
           {theme === "dark" ? (

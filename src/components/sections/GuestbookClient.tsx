@@ -1,7 +1,7 @@
 "use client";
 
 import { signIn, signOut, useSession } from "next-auth/react";
-import { SyntheticEvent, useRef } from "react";
+import { ChangeEvent, useRef } from "react";
 import { cxm } from "~lib/helpers/cxm";
 import supabase from "~lib/utils/supabase";
 import { GithubIcon } from "~ui/icons";
@@ -13,7 +13,7 @@ export default function GuestbookClient() {
 
   const ref = useRef<HTMLInputElement>(null);
 
-  const handleSubmit = async (event: SyntheticEvent) => {
+  async function handleSubmit(event: ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
 
     try {
@@ -30,7 +30,7 @@ export default function GuestbookClient() {
     } catch (err) {
       console.error(err);
     }
-  };
+  }
 
   return (
     <>

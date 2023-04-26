@@ -1,5 +1,4 @@
 export * from "./ChakrauiIcon";
-export * from "./ExternalLinkIcon";
 export * from "./FramerIcon";
 export * from "./GithubIcon";
 export * from "./GuestbookIcon";
