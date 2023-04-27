@@ -50,7 +50,7 @@
   }
 
   [data-rehype-pretty-code-title] {
-    @apply rounded-t-sm bg-base2 px-4 py-2.5 font-medium text-gray-300;
+    @apply rounded-t-sm bg-base-2 px-4 py-2.5 font-medium text-gray-300;
     font-family: var(--font-jetbrains);
   }
 

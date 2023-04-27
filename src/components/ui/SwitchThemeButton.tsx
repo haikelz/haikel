@@ -10,12 +10,14 @@ export default function SwitchThemeButton({ navPosition }: { navPosition: "top" 
     case "top":
       return (
         <button
+          className="overflow-hidden"
           type="button"
           aria-label="switch theme"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         >
           {theme === "dark" ? (
             <svg
+              className="animate-switch-theme-top-nav"
               key="sun icon"
               stroke="currentColor"
               fill="currentColor"
@@ -30,6 +32,7 @@ export default function SwitchThemeButton({ navPosition }: { navPosition: "top" 
             </svg>
           ) : (
             <svg
+              className="animate-switch-theme-top-nav"
               key="moon icon"
               stroke="currentColor"
               fill="currentColor"
@@ -49,6 +52,7 @@ export default function SwitchThemeButton({ navPosition }: { navPosition: "top" 
     case "bottom":
       return (
         <button
+          className="overflow-hidden"
           type="button"
           aria-label="toggle dark mode"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -60,7 +64,12 @@ export default function SwitchThemeButton({ navPosition }: { navPosition: "top" 
               fill="currentColor"
               strokeWidth="0"
               viewBox="0 0 24 24"
-              className={cxm("text-gray-400", "transition-all ease-in-out", "hover:text-white")}
+              className={cxm(
+                "animate-switch-theme-bottom-nav",
+                "text-gray-400",
+                "transition-all ease-in-out",
+                "hover:text-white"
+              )}
               height={28}
               width={28}
               xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +84,12 @@ export default function SwitchThemeButton({ navPosition }: { navPosition: "top" 
               fill="currentColor"
               strokeWidth="0"
               viewBox="0 0 24 24"
-              className={cxm("text-gray-500", "transition-all ease-in-out", "hover:text-gray-600")}
+              className={cxm(
+                "animate-switch-theme-bottom-nav",
+                "text-gray-500",
+                "transition-all ease-in-out",
+                "hover:text-gray-600"
+              )}
               height={28}
               width={28}
               xmlns="http://www.w3.org/2000/svg"

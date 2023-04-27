@@ -12,25 +12,43 @@ module.exports = {
         azure: "#EFFFFD",
         red: "#F84B3E",
         lightgray: "#D1D9D0",
-        base0: "#0D1117",
-        base1: "#161B22",
-        base2: "#21262D",
-        base3: "#89929B",
-        base4: "#C6CDD5",
-        base5: "#ECF2F8",
+        "base-0": "#0D1117",
+        "base-1": "#161B22",
+        "base-2": "#21262D",
+        "base-3": "#89929B",
+        "base-4": "#C6CDD5",
+        "base-5": "#ECF2F8",
       },
       animation: {
         text: "text 5s ease infinite",
+        "switch-theme-top-nav": "top-nav 0.3s ease",
+        "switch-theme-bottom-nav": "bottom-nav 0.3s ease",
       },
       keyframes: {
         text: {
           "0%, 100%": {
-            "background-size": "200% 200%",
-            "background-position": "left center",
+            backgroundSize: "200% 200%",
+            backgroundPosition: "left center",
           },
           "50%": {
-            "background-size": "200% 200%",
-            "background-position": "right center",
+            backgroundSize: "200% 200%",
+            backgroundPosition: "right center",
+          },
+        },
+        "top-nav": {
+          "0%": {
+            transform: "translateY(-20px)",
+          },
+          "100%": {
+            transform: "translateY(0px)",
+          },
+        },
+        "bottom-nav": {
+          "0%": {
+            transform: "translateY(20px)",
+          },
+          "100%": {
+            transform: "translateY(0px)",
           },
         },
       },

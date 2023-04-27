@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { cxm } from "~lib/helpers/cxm";
 import { bottomNavList } from "~lib/utils/data";
 
-const SwitchThemeButton = dynamic(() => import("~ui/SwitchThemeButton"));
+const SwitchThemeButton = dynamic(() => import("~ui/SwitchThemeButton"), { ssr: false });
 
 export default function BottomNav() {
   const pathname = usePathname();
@@ -23,7 +23,7 @@ export default function BottomNav() {
         className={cxm(
           "w-full max-w-full border-t-[1.5px] border-gray-300",
           "bg-azure p-4",
-          "dark:border-gray-600 dark:bg-base0"
+          "dark:border-gray-600 dark:bg-base-0"
         )}
       >
         <div className="flex w-full items-center justify-around">

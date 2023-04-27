@@ -7,7 +7,7 @@ import { cxm } from "~lib/helpers/cxm";
 import { topNavList } from "~lib/utils/data";
 import { spaceGrotesk } from "~lib/utils/fonts";
 
-const SwitchThemeButton = dynamic(() => import("~ui/SwitchThemeButton"));
+const SwitchThemeButton = dynamic(() => import("~ui/SwitchThemeButton"), { ssr: false });
 
 export default function TopNav() {
   const pathname = usePathname();
@@ -18,7 +18,7 @@ export default function TopNav() {
         "sticky top-0 z-10 hidden w-full border-b-[1.5px]",
         "border-b-gray-200 bg-azure/90 px-4 py-2",
         "backdrop-blur-lg backdrop-filter",
-        "dark:border-b-gray-500 dark:bg-base0/90 dark:text-white",
+        "dark:border-b-gray-500 dark:bg-base-0/90 dark:text-white",
         "md:block"
       )}
     >

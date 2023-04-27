@@ -72,7 +72,7 @@ export default function GuestbookClient() {
             aria-label="sign in"
             className={cxm(
               "flex items-center justify-center space-x-3 rounded-md",
-              "bg-base2",
+              "bg-base-2",
               "px-3.5 py-2",
               "font-semibold text-white"
             )}
