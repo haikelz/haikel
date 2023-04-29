@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    @apply scroll-smooth;
+  }
+
   body {
     @apply m-0 h-[50vh] scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-red;
     font-family: var(--font-ibm);
@@ -90,4 +94,74 @@
   .prose video {
     @apply rounded-sm shadow-md dark:shadow-gray-900;
   }
+
+  .prose h1 > a::before,
+  .prose h2 > a::before,
+  .prose h3 > a::before,
+  .prose h4 > a::before,
+  .prose h5 > a::before,
+  .prose h6 > a::before {
+    @apply mr-2 text-[#3B82F6];
+  }
+
+  .prose h1 > a::before {
+    @apply hover:content-['#'];
+  }
+
+  .prose h2 > a::before {
+    @apply hover:content-['##'];
+  }
+
+  .prose h3 > a::before {
+    @apply hover:content-['###'];
+  }
+
+  .prose h4 > a::before {
+    @apply hover:content-['####'];
+  }
+
+  .prose h5 > a::before {
+    @apply hover:content-['#####'];
+  }
+
+  .prose h6 > a::before {
+    @apply hover:content-['######'];
+  }
+}
+
+/* Switch Theme Button animation configuration */
+@keyframes top-nav {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 100;
+  }
+}
+
+@keyframes bottom-nav {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 100;
+  }
+}
+
+.switch-theme-top-nav {
+  animation-name: top-nav;
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
+}
+
+.switch-theme-bottom-nav {
+  animation-name: bottom-nav;
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
 }

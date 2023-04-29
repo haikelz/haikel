@@ -21,8 +21,6 @@ module.exports = {
       },
       animation: {
         text: "text 5s ease infinite",
-        "switch-theme-top-nav": "top-nav 0.3s ease",
-        "switch-theme-bottom-nav": "bottom-nav 0.3s ease",
       },
       keyframes: {
         text: {
@@ -33,22 +31,6 @@ module.exports = {
           "50%": {
             backgroundSize: "200% 200%",
             backgroundPosition: "right center",
-          },
-        },
-        "top-nav": {
-          "0%": {
-            transform: "translateY(-20px)",
-          },
-          "100%": {
-            transform: "translateY(0px)",
-          },
-        },
-        "bottom-nav": {
-          "0%": {
-            transform: "translateY(20px)",
-          },
-          "100%": {
-            transform: "translateY(0px)",
           },
         },
       },
@@ -100,6 +82,7 @@ module.exports = {
                 marginRight: "auto",
               },
               "h1,h2,h3,h4,h5,h6": {
+                width: "fit-content",
                 a: {
                   color: "inherit",
                   textDecoration: "none",

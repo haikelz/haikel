@@ -9,7 +9,7 @@ export default function Loading() {
           aria-hidden="true"
           className={cxm(
             "mr-2 h-8 w-8",
-            "fill-blue-500-600 animate-spin text-gray-200",
+            "animate-spin fill-blue-600 text-gray-200",
             "dark:text-gray-600"
           )}
           viewBox="0 0 100 101"

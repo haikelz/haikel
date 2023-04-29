@@ -1,6 +1,6 @@
 import { cxm } from "~lib/helpers/cxm";
 import { getAllWorks } from "~lib/services";
-import { defaultOgUrl } from "~lib/utils/constants";
+import { DEFAULT_OG_URL } from "~lib/utils/constants";
 import { WorkMetaProps } from "~models";
 import Main from "~ui/Main";
 import { ListWorks } from "~ui/lists";
@@ -25,7 +25,7 @@ export const metadata = {
     siteName: "haikel.my.id",
     images: [
       {
-        url: defaultOgUrl,
+        url: DEFAULT_OG_URL,
         alt: "OG Image",
       },
     ],

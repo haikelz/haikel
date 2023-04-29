@@ -1,6 +1,6 @@
 import { cxm } from "~lib/helpers/cxm";
 import { getAllNotes, getAllWorks } from "~lib/services";
-import { defaultOgUrl } from "~lib/utils/constants";
+import { DEFAULT_OG_URL } from "~lib/utils/constants";
 import { NoteMetaProps, WorkMetaProps } from "~models";
 import About from "~sections/About";
 import FeaturedWorks from "~sections/FeaturedWorks";
@@ -25,7 +25,7 @@ export const metadata = {
     description,
     images: [
       {
-        url: defaultOgUrl,
+        url: DEFAULT_OG_URL,
         alt: "OG Image",
       },
     ],

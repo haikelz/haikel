@@ -1,5 +1,5 @@
 import { cxm } from "~lib/helpers/cxm";
-import { defaultOgUrl } from "~lib/utils/constants";
+import { DEFAULT_OG_URL } from "~lib/utils/constants";
 import supabase from "~lib/utils/supabase";
 import GuestbookClient from "~sections/GuestbookClient";
 import Main from "~ui/Main";
@@ -25,7 +25,7 @@ export const metadata = {
     siteName: "haikel.my.id",
     images: [
       {
-        url: defaultOgUrl,
+        url: DEFAULT_OG_URL,
         alt: "OG Image",
       },
     ],

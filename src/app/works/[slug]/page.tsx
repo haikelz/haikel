@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { cxm } from "~lib/helpers/cxm";
 import { getSlugs, getWorkFromSlug, mdxSource } from "~lib/services";
-import { WORKS_PATH, absoluteOgUrl } from "~lib/utils/constants";
+import { WORKS_PATH, ABSOLUTE_OG_URL } from "~lib/utils/constants";
 import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
 import MDXComponents from "~ui/MDXComponents";
 import Main from "~ui/Main";
@@ -36,7 +36,7 @@ export async function generateMetadata({
       siteName: "haikel.my.id",
       images: [
         {
-          url: `${absoluteOgUrl}?title=${title}`,
+          url: `${ABSOLUTE_OG_URL}?title=${title}`,
           alt: "OG Image",
         },
       ],

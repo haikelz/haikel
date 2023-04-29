@@ -1,6 +1,6 @@
 import { cxm } from "~lib/helpers/cxm";
 import { getAllNotes } from "~lib/services";
-import { defaultOgUrl } from "~lib/utils/constants";
+import { DEFAULT_OG_URL } from "~lib/utils/constants";
 import { NoteMetaProps } from "~models";
 import NotesClient from "~sections/NotesClient";
 import Main from "~ui/Main";
@@ -25,7 +25,7 @@ export const metadata = {
     siteName: "haikel.my.id",
     images: [
       {
-        url: defaultOgUrl,
+        url: DEFAULT_OG_URL,
         alt: "OG Image",
       },
     ],
