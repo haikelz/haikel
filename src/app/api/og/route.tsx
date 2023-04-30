@@ -1,11 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import { ImageResponse, NextRequest } from "next/server";
 
-export const config = {
-  runtime: "edge",
-};
+export const runtime = "edge";
 
-export default async function handler(req: NextRequest) {
+export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.nextUrl);
 
@@ -40,7 +38,9 @@ export default async function handler(req: NextRequest) {
             }}
           >
             <img
-              style={{ width: 24, height: 24, borderRadius: "100%" }}
+              style={{ borderRadius: "100%" }}
+              width={24}
+              height={24}
               src="https://avatars.githubusercontent.com/u/77146709?v=4"
               alt="Github Profile"
             />

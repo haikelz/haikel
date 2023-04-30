@@ -4,8 +4,8 @@ import { ChildrenProps } from "~models";
 import BottomNav from "~sections/BottomNav";
 import Footer from "~sections/Footer";
 import TopNav from "~sections/TopNav";
-import "~styles/index.css";
 import ClientWrapper from "./clientWrapper";
+import "./globals.css";
 
 export default function RootLayout({ children }: ChildrenProps) {
   return (
@@ -22,7 +22,8 @@ export default function RootLayout({ children }: ChildrenProps) {
         <ClientWrapper>
           <div
             className={cxm(
-              "min-h-screen w-full bg-azure bg-fixed bg-center text-base-0",
+              "min-h-screen w-full",
+              "bg-azure bg-fixed bg-center text-base-0",
               "dark:bg-base-0 dark:text-gray-100"
             )}
           >

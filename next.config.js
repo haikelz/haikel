@@ -5,6 +5,7 @@ const nextConfig = {
   compress: true,
   experimental: {
     appDir: true,
+    serverComponentsExternalPackages: ["@prisma/client"],
   },
   images: {
     domains: ["avatars.githubusercontent.com", "ik.imagekit.io", "i.ibb.co"],

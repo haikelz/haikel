@@ -40,7 +40,7 @@ export default function BottomNav() {
               >
                 <Icon
                   className={cxm(
-                    "transition-all duration-200",
+                    "transition-all ease-in-out",
                     item.name === "Home"
                       ? pathname === item.link
                         ? "text-gray-600 dark:text-white"

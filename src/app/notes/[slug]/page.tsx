@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { cxm } from "~lib/helpers/cxm";
 import { getNoteFromSlug, getSlugs, mdxSource } from "~lib/services";
-import { NOTES_PATH, ABSOLUTE_OG_URL } from "~lib/utils/constants";
+import { ABSOLUTE_OG_URL, NOTES_PATH } from "~lib/utils/constants";
 import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
 import MDXComponents from "~ui/MDXComponents";
 import Main from "~ui/Main";
@@ -11,7 +11,7 @@ import { Heading, Paragraph } from "~ui/typography";
 const AuthorImage = dynamic(() => import("~ui/images/AuthorImage"));
 const ReadingTime = dynamic(() => import("~ui/ReadingTime"));
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return getSlugs(NOTES_PATH).map((slug) => ({ slug }));
 }
 
