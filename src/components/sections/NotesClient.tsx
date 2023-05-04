@@ -5,7 +5,7 @@ import { useMemo, useState } from "react";
 import { NoteMetaProps } from "~models";
 import { SearchInput } from "~ui/inputs";
 import { ListNotes } from "~ui/lists";
-import { Heading, Paragraph, Underline } from "~ui/typography";
+import { Paragraph } from "~ui/typography";
 
 type SearcherType = Searcher<
   NoteMetaProps,
@@ -35,20 +35,6 @@ export default function NotesClient({ notes }: { notes: NoteMetaProps[] }) {
 
   return (
     <>
-      <section className="flex w-full flex-wrap items-start justify-start">
-        <div>
-          <Heading as="h2" className="text-left">
-            Notes
-          </Heading>
-          <Underline />
-        </div>
-        <div className="w-full leading-relaxed">
-          <Paragraph>
-            Sometimes i write something, mostly about Linux, Web, and life. So yeah, i call this as{" "}
-            <b>Notes</b>.
-          </Paragraph>
-        </div>
-      </section>
       <SearchInput search={search} setSearch={setSearch} />
       {filteredNotes.length ? (
         <section className="mb-10 flex w-full flex-col space-y-8">

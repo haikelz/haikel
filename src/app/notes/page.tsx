@@ -1,3 +1,4 @@
+import { Heading, Paragraph, Underline } from "~ui/typography";
 import { cxm } from "~lib/helpers/cxm";
 import { getAllNotes } from "~lib/services";
 import { DEFAULT_OG_URL } from "~lib/utils/constants";
@@ -8,7 +9,7 @@ import Main from "~ui/Main";
 const baseMetadata = {
   title: "Notes",
   description:
-    "Sometimes i write something, mostly about Linux, Web, and life. So yeah, i call this as Notes.",
+    "Sometimes i write something. Mostly about techical stuff. So yeah, i call this as Notes.",
   url: "https://haikel.my.id/notes",
 };
 
@@ -47,6 +48,20 @@ export default function Notes() {
     <Main
       className={cxm("flex min-h-screen flex-col items-start justify-start", "py-8", "md:py-12")}
     >
+      <section className="flex w-full flex-wrap items-start justify-start">
+        <div>
+          <Heading as="h2" className="text-left">
+            Notes
+          </Heading>
+          <Underline />
+        </div>
+        <div className="w-full leading-relaxed">
+          <Paragraph>
+            Sometimes, i write something. Mostly about techical stuff. So yeah, i call this as{" "}
+            <b>Notes</b>.
+          </Paragraph>
+        </div>
+      </section>
       <NotesClient notes={notes} />
     </Main>
   );

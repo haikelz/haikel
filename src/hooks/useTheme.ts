@@ -14,9 +14,11 @@ export function useTheme() {
   const [theme, setTheme] = useAtom(themeAtom);
 
   useEffect(() => {
+    const body = document.body;
+
     if (!browser) return;
-    document.body.classList.remove("light", "dark");
-    document.body.classList.add(theme);
+    body.classList.remove("light", "dark");
+    body.classList.add(theme);
   }, [theme]);
 
   return [theme, setTheme] as const;

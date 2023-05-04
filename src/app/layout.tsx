@@ -28,7 +28,7 @@ export default function RootLayout({ children }: ChildrenProps) {
             )}
           >
             <TopNav />
-            <div className="page-transitions px-4">{children}</div>
+            <div className="px-4">{children}</div>
             <Footer />
             <BottomNav />
           </div>

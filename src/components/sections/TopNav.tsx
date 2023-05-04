@@ -16,7 +16,7 @@ export default function TopNav() {
     <nav
       className={cxm(
         "sticky top-0 z-10 hidden w-full border-b-[1.5px]",
-        "border-b-gray-200 bg-azure/90 px-4 py-2",
+        "border-b-gray-300 bg-azure/90 px-4 py-2",
         "backdrop-blur-lg backdrop-filter",
         "dark:border-b-gray-500 dark:bg-base-0/90 dark:text-white",
         "md:block"
