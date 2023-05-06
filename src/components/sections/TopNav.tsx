@@ -4,10 +4,15 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cxm } from "~lib/helpers/cxm";
-import { topNavList } from "~lib/utils/data";
 import { spaceGrotesk } from "~lib/utils/fonts";
 
 const SwitchThemeButton = dynamic(() => import("~ui/SwitchThemeButton"), { ssr: false });
+
+export const topNavList = [
+  { id: "b", text: "/works", href: "/works" },
+  { id: "c", text: "/notes", href: "/notes" },
+  { id: 3, text: "/guestbook", href: "/guestbook" },
+];
 
 export default function TopNav() {
   const pathname = usePathname();

@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { cxm } from "~lib/helpers/cxm";
-import { getSlugs, getWorkFromSlug, mdxSource } from "~lib/services";
+import { getSlugs, getWorkFromSlug } from "~lib/services";
 import { ABSOLUTE_OG_URL, WORKS_PATH } from "~lib/utils/constants";
 import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
 import MDXComponents from "~ui/MDXComponents";
@@ -53,7 +53,6 @@ export async function generateMetadata({
 export default async function DetailWorkPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const { content, meta } = getWorkFromSlug(slug);
-  const source = await mdxSource(content);
 
   return (
     <Main
@@ -105,7 +104,7 @@ export default async function DetailWorkPage({ params }: { params: { slug: strin
           <p className={cxm("text-right text-2xl font-bold", naskhArabic.className)}>
             بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
           </p>
-          <MDXComponents source={source} />
+          {MDXComponents(content)}
         </article>
       </article>
     </Main>

@@ -4,9 +4,16 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cxm } from "~lib/helpers/cxm";
-import { bottomNavList } from "~lib/utils/data";
+import { GuestbookIcon, HomeIcon, NotesIcon, WorkIcon } from "~ui/icons";
 
 const SwitchThemeButton = dynamic(() => import("~ui/SwitchThemeButton"), { ssr: false });
+
+const bottomNavList = [
+  { name: "Home", icon: HomeIcon, link: "/" },
+  { name: "Works", icon: WorkIcon, link: "/works" },
+  { name: "Notes", icon: NotesIcon, link: "/notes" },
+  { name: "Guestbook", icon: GuestbookIcon, link: "/guestbook" },
+];
 
 export default function BottomNav() {
   const pathname = usePathname();

@@ -9,7 +9,7 @@ import Main from "~ui/Main";
 const baseMetadata = {
   title: "Notes",
   description:
-    "Sometimes i write something. Mostly about techical stuff. So yeah, i call this as Notes.",
+    "Sometimes i write something. Mostly about technical stuff. So yeah, i call this as Notes.",
   url: "https://haikel.my.id/notes",
 };
 
@@ -57,7 +57,7 @@ export default function Notes() {
         </div>
         <div className="w-full leading-relaxed">
           <Paragraph>
-            Sometimes, i write something. Mostly about techical stuff. So yeah, i call this as{" "}
+            Sometimes, i write something. Mostly about technical stuff. So yeah, i call this as{" "}
             <b>Notes</b>.
           </Paragraph>
         </div>

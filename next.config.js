@@ -4,7 +4,6 @@ const nextConfig = {
   swcMinify: true,
   compress: true,
   experimental: {
-    appDir: true,
     serverComponentsExternalPackages: ["@prisma/client"],
   },
   images: {

@@ -3,8 +3,14 @@
 import { atom, useAtom } from "jotai";
 import Link from "next/link";
 import { cxm } from "~lib/helpers/cxm";
-import { socialMediaList } from "~lib/utils/data";
 import { Heading, Paragraph, UnderlineSpan } from "~ui/typography";
+
+const socialMediaList = [
+  { name: "Email", link: "mailto:halo@haikel.my.id" },
+  { name: "Facebook", link: "https://facebook.com/kelgfx" },
+  { name: "Github", link: "https://github.com/haikelz" },
+  { name: "Linkedin", link: "https://www.linkedin.com/in/haikel" },
+];
 
 const atomWithToggle = (initialValue?: boolean) => {
   const anAtom = atom(initialValue, (get, set, nextValue?: boolean) => {
