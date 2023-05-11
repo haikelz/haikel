@@ -31,11 +31,6 @@ export default function About() {
   return (
     <section className="mb-12 flex w-full flex-wrap items-center justify-center">
       <div className="flex w-full flex-col items-start justify-start md:flex-row">
-        {/**
-         * Logic:
-         * Jika language bernilai true, maka tampilkan bahasa Inggris dulu
-         * Jika language bernilai false, maka tampilkan bahasa Indonesia
-         */}
         <div
           className={cxm(
             "flex flex-col items-start justify-start",

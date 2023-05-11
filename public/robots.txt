@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://haikel.my.id/
-
-# Sitemaps
-Sitemap: https://haikel.my.id/sitemap.xml
