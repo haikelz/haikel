@@ -6,10 +6,10 @@ import { cxm } from "~lib/helpers/cxm";
 import { Heading, Paragraph, UnderlineSpan } from "~ui/typography";
 
 const socialMediaList = [
-  { name: "Email", link: "mailto:halo@haikel.my.id" },
-  { name: "Facebook", link: "https://facebook.com/kelgfx" },
-  { name: "Github", link: "https://github.com/haikelz" },
-  { name: "Linkedin", link: "https://www.linkedin.com/in/haikel" },
+  { id: 1, name: "Email", link: "mailto:halo@haikel.my.id" },
+  { id: 2, name: "Facebook", link: "https://facebook.com/kelgfx" },
+  { id: 3, name: "Github", link: "https://github.com/haikelz" },
+  { id: 4, name: "Linkedin", link: "https://www.linkedin.com/in/haikel" },
 ];
 
 const atomWithToggle = (initialValue?: boolean) => {
@@ -30,7 +30,7 @@ export default function About() {
 
   return (
     <section className="mb-12 flex w-full flex-wrap items-center justify-center">
-      <div className="flex w-full flex-col items-start justify-start md:flex-row">
+      <div className={cxm("flex w-full flex-col items-start justify-start", "md:flex-row")}>
         <div
           className={cxm(
             "flex flex-col items-start justify-start",
@@ -54,8 +54,8 @@ export default function About() {
             <Paragraph className="mt-4">
               A person who interested in Frontend stuff, User Interface/Experience, Design Systems,
               Linux, and Photography. Feel free to reach me via{" "}
-              {socialMediaList.map((item, index) => (
-                <Link className={linkContact} key={index + 1} href={item.link}>
+              {socialMediaList.map((item) => (
+                <Link className={linkContact} key={item.id} href={item.link}>
                   {item.name}
                   {item.name === "Facebook" || item.name === "Email"
                     ? ", "
@@ -73,8 +73,8 @@ export default function About() {
             <Paragraph className="mt-4">
               Seseorang yang tertarik dengan hal-hal terkait Frontend, User Interface/Experience,
               Design Systems, Linux, dan Fotografi. Kamu dapat menghubungi saya via{" "}
-              {socialMediaList.map((item, index) => (
-                <Link className={linkContact} key={index + 1} href={item.link}>
+              {socialMediaList.map((item) => (
+                <Link className={linkContact} key={item.id} href={item.link}>
                   {item.name}
                   {item.name === "Facebook" || item.name === "Email"
                     ? ", "

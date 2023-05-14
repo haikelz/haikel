@@ -2,10 +2,10 @@ import { SetStateAction, memo } from "react";
 import { cxm } from "~lib/helpers/cxm";
 import { SearchIcon } from "~ui/icons";
 
-type SearchInputProps = {
+interface SearchInputProps {
   search: string;
   setSearch: (update: SetStateAction<string>) => void;
-};
+}
 
 export const SearchInput = ({ search, setSearch }: SearchInputProps) => {
   return (
@@ -17,14 +17,14 @@ export const SearchInput = ({ search, setSearch }: SearchInputProps) => {
         className={cxm(
           "block w-full border-[2.5px] border-base-1 bg-white outline-none",
           "px-4 py-1.5 pl-12 font-medium transition-all ease-in-out",
-          "hover:shadow-light",
-          "dark:border-white dark:bg-base-1 dark:hover:shadow-dark"
+          "focus:shadow-light",
+          "dark:border-white dark:bg-base-1 dark:focus:shadow-dark"
         )}
         type="text"
         name="search"
         placeholder="Search Here...."
         value={search}
-        onChange={(event) => setSearch(event.target.value)}
+        onChange={(e) => setSearch(e.target.value)}
       />
     </div>
   );

@@ -13,8 +13,8 @@ export default function GuestbookClient() {
 
   const ref = useRef<HTMLInputElement>(null);
 
-  async function handleSubmit(event: ChangeEvent<HTMLFormElement>) {
-    event.preventDefault();
+  async function handleSubmit(e: ChangeEvent<HTMLFormElement>) {
+    e.preventDefault();
 
     try {
       const { error } = await supabase.from("guestbook").insert([

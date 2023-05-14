@@ -35,7 +35,7 @@ export interface GuestbookProps {
 }
 
 export interface IconClassNameProps {
-  className: string;
+  className?: string;
 }
 
 export interface ThemeProps {
@@ -45,10 +45,4 @@ export interface ThemeProps {
 
 export interface ChildrenProps {
   children: ReactNode;
-}
-
-export interface LinkIconProps {
-  link?: string;
-  linkPreview?: string;
-  linkGithub?: string;
 }

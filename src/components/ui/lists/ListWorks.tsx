@@ -10,12 +10,12 @@ import {
   ReactQueryIcon,
   SupabaseIcon,
   SvelteIcon,
+  SwrIcon,
   TailwindcssIcon,
   TypescriptIcon,
   WindiCssIcon,
 } from "~ui/icons";
 import { Paragraph } from "~ui/typography";
-import { SwrIcon } from "../icons/SwrIcon";
 
 export function ListWorks({ works }: { works: WorkMetaProps[] }) {
   return (

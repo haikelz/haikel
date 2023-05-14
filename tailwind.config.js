@@ -11,7 +11,6 @@ module.exports = {
       colors: {
         azure: "#EFFFFD",
         red: "#F84B3E",
-        lightgray: "#D1D9D0",
         "base-0": "#0D1117",
         "base-1": "#161B22",
         "base-2": "#21262D",

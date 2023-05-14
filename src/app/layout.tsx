@@ -1,11 +1,12 @@
+import NextTopLoader from "nextjs-toploader";
 import { cxm } from "~lib/helpers/cxm";
 import { ibmPlexSerif, jetbrains, naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
 import { ChildrenProps } from "~models";
 import BottomNav from "~sections/BottomNav";
 import Footer from "~sections/Footer";
 import TopNav from "~sections/TopNav";
-import ClientWrapper from "./clientWrapper";
 import "./globals.css";
+import ProviderWrapper from "./providerWrapper";
 
 export default function RootLayout({ children }: ChildrenProps) {
   return (
@@ -19,7 +20,8 @@ export default function RootLayout({ children }: ChildrenProps) {
       )}
     >
       <body>
-        <ClientWrapper>
+        <NextTopLoader color="#F84B3E" showSpinner={false} />
+        <ProviderWrapper>
           <div
             className={cxm(
               "min-h-screen w-full",
@@ -32,7 +34,7 @@ export default function RootLayout({ children }: ChildrenProps) {
             <Footer />
             <BottomNav />
           </div>
-        </ClientWrapper>
+        </ProviderWrapper>
       </body>
     </html>
   );

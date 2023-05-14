@@ -1,9 +1,9 @@
 import { cxm } from "~lib/helpers/cxm";
 import { ChildrenProps } from "~models";
 
-type MainProps = ChildrenProps & {
+interface MainProps extends ChildrenProps {
   className: string;
-};
+}
 
 export default function Main({ children, className }: MainProps) {
   return (

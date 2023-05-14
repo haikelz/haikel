@@ -1,10 +1,10 @@
 import { cxm } from "~lib/helpers/cxm";
 import { ChildrenProps } from "~models";
 
-type HeadingProps = ChildrenProps & {
+interface HeadingProps extends ChildrenProps {
   as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   className?: string;
-};
+}
 
 export function Heading({ children, as, className }: HeadingProps) {
   return (

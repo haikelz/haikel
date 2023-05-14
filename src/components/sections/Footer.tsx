@@ -1,4 +1,4 @@
-import { format } from "date-fns";
+import { format } from "date-fns/esm";
 import Link from "next/link";
 import { cxm } from "~lib/helpers/cxm";
 import { spaceGrotesk } from "~lib/utils/fonts";
