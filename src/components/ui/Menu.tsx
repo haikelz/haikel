@@ -50,9 +50,8 @@ export default function Menu() {
       <DropdownMenuPortal>
         <DropdownMenuContent
           className={cxm(
-            "z-20 mt-2 hidden rounded-md bg-white md:-translate-x-16",
+            "z-50 mt-2 -translate-x-16 rounded-md bg-white",
             "space-y-3 p-2 drop-shadow-md",
-            "md:block",
             "dark:bg-base-2 dark:text-gray-100"
           )}
         >

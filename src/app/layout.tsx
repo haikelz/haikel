@@ -1,10 +1,9 @@
 import NextTopLoader from "nextjs-toploader";
+import Navbar from "~sections/navbar";
 import { cxm } from "~lib/helpers/cxm";
 import { ibmPlexSerif, jetbrains, naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
 import { ChildrenProps } from "~models";
-import BottomNav from "~sections/BottomNav";
 import Footer from "~sections/Footer";
-import TopNav from "~sections/TopNav";
 import "./globals.css";
 import ProviderWrapper from "./providerWrapper";
 
@@ -29,10 +28,9 @@ export default function RootLayout({ children }: ChildrenProps) {
               "dark:bg-base-0 dark:text-gray-100"
             )}
           >
-            <TopNav />
+            <Navbar />
             <div className="px-4">{children}</div>
             <Footer />
-            <BottomNav />
           </div>
         </ProviderWrapper>
       </body>

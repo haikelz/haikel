@@ -10,7 +10,7 @@ export default function Footer() {
     <footer
       className={cxm(
         "flex w-full flex-col items-center justify-center",
-        "px-4 pb-[4.5rem] text-center tracking-widest",
+        "p-4 text-center tracking-widest",
         "md:py-0",
         spaceGrotesk.className
       )}

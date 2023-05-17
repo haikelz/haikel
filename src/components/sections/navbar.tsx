@@ -8,15 +8,14 @@ import { spaceGrotesk } from "~lib/utils/fonts";
 const SwitchThemeButton = dynamic(() => import("~ui/SwitchThemeButton"), { ssr: false });
 const Menu = dynamic(() => import("~ui/Menu"), { ssr: false });
 
-export default function TopNav() {
+export default function Navbar() {
   return (
     <nav
       className={cxm(
-        "sticky top-0 z-10 hidden w-full",
-        "border-b-gray-300 bg-azure/80 px-4 py-2",
+        "sticky top-0 z-10 w-full",
+        "bg-azure/80 px-4 py-2.5",
         "backdrop-blur-lg backdrop-filter",
-        "dark:border-b-gray-500 dark:bg-base-0/80 dark:text-white",
-        "md:block"
+        "dark:bg-base-0/80 dark:text-gray-100"
       )}
     >
       <div className="mx-auto flex w-full max-w-3xl items-center justify-between">
@@ -34,9 +33,9 @@ export default function TopNav() {
             ハキム
           </Link>
         </div>
-        <div className="flex items-center justify-center space-x-6 tracking-widest">
+        <div className="flex items-center justify-center space-x-6">
           <Menu />
-          <SwitchThemeButton navPosition="top" />
+          <SwitchThemeButton />
         </div>
       </div>
     </nav>
