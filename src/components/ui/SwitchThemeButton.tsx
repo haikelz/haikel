@@ -16,7 +16,7 @@ export default function SwitchThemeButton() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           key="sun icon"
-          className="icon switch-theme-top-nav icon-tabler icon-tabler-sun-high"
+          className="icon switch-theme-nav icon-tabler icon-tabler-sun-high"
           width="22"
           height="22"
           viewBox="0 0 24 24"
@@ -41,7 +41,7 @@ export default function SwitchThemeButton() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           key="moon icon"
-          className="icon switch-theme-top-nav icon-tabler icon-tabler-moon"
+          className="icon switch-theme-nav icon-tabler icon-tabler-moon"
           width="22"
           height="22"
           viewBox="0 0 24 24"

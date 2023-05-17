@@ -126,7 +126,7 @@
 }
 
 /* Switch Theme Button animation configuration */
-@keyframes top-nav {
+@keyframes nav {
   from {
     transform: translateY(-50px);
     opacity: 0;
@@ -138,20 +138,8 @@
   }
 }
 
-@keyframes bottom-nav {
-  from {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0px);
-    opacity: 100;
-  }
-}
-
-.switch-theme-top-nav {
-  animation-name: top-nav;
+.switch-theme-nav {
+  animation-name: nav;
   animation-duration: 0.3s;
   animation-timing-function: ease;
 }
