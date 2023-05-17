@@ -6,10 +6,10 @@ import { cxm } from "~lib/helpers/cxm";
 import { Heading, Paragraph, UnderlineSpan } from "~ui/typography";
 
 const socialMediaList = [
-  { id: 1, name: "Email", link: "mailto:halo@haikel.my.id" },
-  { id: 2, name: "Facebook", link: "https://facebook.com/kelgfx" },
-  { id: 3, name: "Github", link: "https://github.com/haikelz" },
-  { id: 4, name: "Linkedin", link: "https://www.linkedin.com/in/haikel" },
+  { id: 1, name: "Email", route: "mailto:halo@haikel.my.id" },
+  { id: 2, name: "Facebook", route: "https://facebook.com/kelgfx" },
+  { id: 3, name: "Github", route: "https://github.com/haikelz" },
+  { id: 4, name: "Linkedin", route: "https://www.linkedin.com/in/haikel" },
 ];
 
 const atomWithToggle = (initialValue?: boolean) => {
@@ -55,7 +55,7 @@ export default function About() {
               A person who interested in Frontend stuff, User Interface/Experience, Design Systems,
               Linux, and Photography. Feel free to reach me via{" "}
               {socialMediaList.map((item) => (
-                <Link className={linkContact} key={item.id} href={item.link}>
+                <Link className={linkContact} key={item.id} href={item.route}>
                   {item.name}
                   {item.name === "Facebook" || item.name === "Email"
                     ? ", "
@@ -74,7 +74,7 @@ export default function About() {
               Seseorang yang tertarik dengan hal-hal terkait Frontend, User Interface/Experience,
               Design Systems, Linux, dan Fotografi. Kamu dapat menghubungi saya via{" "}
               {socialMediaList.map((item) => (
-                <Link className={linkContact} key={item.id} href={item.link}>
+                <Link className={linkContact} key={item.id} href={item.route}>
                   {item.name}
                   {item.name === "Facebook" || item.name === "Email"
                     ? ", "

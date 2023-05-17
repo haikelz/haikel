@@ -1,19 +1,27 @@
+import { cxm } from "~lib/helpers/cxm";
 import { IconClassNameProps } from "~models";
 
 export function WorkIcon({ className }: IconClassNameProps) {
   return (
     <svg
-      stroke="currentColor"
-      fill="currentColor"
-      strokeWidth="0"
-      viewBox="0 0 24 24"
-      className={className}
-      height="28"
-      width="28"
       xmlns="http://www.w3.org/2000/svg"
+      className={cxm("icon icon-tabler icon-tabler-list-details", className)}
+      width="28"
+      height="28"
+      viewBox="0 0 24 24"
+      strokeWidth="2"
+      stroke="currentColor"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
-      <path fill="none" d="M0 0h24v24H0z"></path>
-      <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"></path>
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M13 5h8"></path>
+      <path d="M13 9h5"></path>
+      <path d="M13 15h8"></path>
+      <path d="M13 19h5"></path>
+      <path d="M3 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+      <path d="M3 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
     </svg>
   );
 }

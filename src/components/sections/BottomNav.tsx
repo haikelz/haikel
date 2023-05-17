@@ -4,15 +4,15 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cxm } from "~lib/helpers/cxm";
-import { GuestbookIcon, HomeIcon, NotesIcon, WorkIcon } from "~ui/icons";
+import { GuestbookIcon, HomeIcon, NoteIcon, WorkIcon } from "~ui/icons";
 
 const SwitchThemeButton = dynamic(() => import("~ui/SwitchThemeButton"), { ssr: false });
 
 const bottomNavList = [
-  { name: "Home", icon: HomeIcon, link: "/" },
-  { name: "Works", icon: WorkIcon, link: "/works" },
-  { name: "Notes", icon: NotesIcon, link: "/notes" },
-  { name: "Guestbook", icon: GuestbookIcon, link: "/guestbook" },
+  { name: "Home", icon: HomeIcon, route: "/" },
+  { name: "Works", icon: WorkIcon, route: "/works" },
+  { name: "Notes", icon: NoteIcon, route: "/notes" },
+  { name: "Guestbook", icon: GuestbookIcon, route: "/guestbook" },
 ];
 
 export default function BottomNav() {
@@ -41,7 +41,7 @@ export default function BottomNav() {
                 className="flex items-center justify-center"
                 role="button"
                 key={index + 1}
-                href={item.link}
+                href={item.route}
                 aria-label={item.name}
                 passHref
               >
@@ -49,10 +49,10 @@ export default function BottomNav() {
                   className={cxm(
                     "transition-all ease-in-out",
                     item.name === "Home"
-                      ? pathname === item.link
+                      ? pathname === item.route
                         ? "text-gray-600 dark:text-white"
                         : "text-gray-500 dark:text-gray-400"
-                      : pathname?.includes(item.link)
+                      : pathname?.includes(item.route)
                       ? "text-gray-600 dark:text-white"
                       : "text-gray-500 dark:text-gray-400"
                   )}

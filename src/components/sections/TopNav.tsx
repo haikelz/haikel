@@ -2,21 +2,13 @@
 
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { cxm } from "~lib/helpers/cxm";
 import { spaceGrotesk } from "~lib/utils/fonts";
 
 const SwitchThemeButton = dynamic(() => import("~ui/SwitchThemeButton"), { ssr: false });
-
-export const topNavList = [
-  { id: "b", text: "/works", href: "/works" },
-  { id: "c", text: "/notes", href: "/notes" },
-  { id: 3, text: "/guestbook", href: "/guestbook" },
-];
+const Menu = dynamic(() => import("~ui/Menu"), { ssr: false });
 
 export default function TopNav() {
-  const pathname = usePathname();
-
   return (
     <nav
       className={cxm(
@@ -42,33 +34,9 @@ export default function TopNav() {
             ハキム
           </Link>
         </div>
-        <div className="flex items-center justify-center">
-          <div className="hidden md:block">
-            <div className="flex items-center justify-center space-x-6 tracking-widest">
-              {topNavList.map((nav) => (
-                <Link
-                  role="button"
-                  className={cxm(
-                    "cursor-pointer rounded-sm",
-                    "px-1 font-semibold",
-                    "md:text-lg",
-                    "active:bg-pink-100",
-                    "active:dark:bg-gray-800",
-                    pathname?.includes(nav.href)
-                      ? "gradient dark:gradient-dark underline decoration-[#0093E9] decoration-dashed underline-offset-[5px]"
-                      : "",
-                    spaceGrotesk.className
-                  )}
-                  href={nav.href}
-                  key={nav.id}
-                  aria-label={nav.text}
-                >
-                  {nav.text}
-                </Link>
-              ))}
-              <SwitchThemeButton navPosition="top" />
-            </div>
-          </div>
+        <div className="flex items-center justify-center space-x-6 tracking-widest">
+          <Menu />
+          <SwitchThemeButton navPosition="top" />
         </div>
       </div>
     </nav>

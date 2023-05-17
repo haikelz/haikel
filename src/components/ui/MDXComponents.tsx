@@ -45,6 +45,7 @@ const highlighterOptions = {
 };
 
 /**
+ * MDX Remote server component
  * @see https://github.com/hashicorp/next-mdx-remote#react-server-components-rsc--nextjs-app-directory-support
  */
 export default function MDXComponents(content: string) {

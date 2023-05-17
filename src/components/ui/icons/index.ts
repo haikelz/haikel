@@ -4,7 +4,7 @@ export * from "./GithubIcon";
 export * from "./GuestbookIcon";
 export * from "./HomeIcon";
 export * from "./NextJsIcon";
-export * from "./NotesIcon";
+export * from "./NoteIcon";
 export * from "./ReactIcon";
 export * from "./ReactQueryIcon";
 export * from "./SearchIcon";
