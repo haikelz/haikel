@@ -1,5 +1,5 @@
 import NextTopLoader from "nextjs-toploader";
-import Navbar from "~sections/navbar";
+import Navbar from "~sections/Navbar";
 import { cxm } from "~lib/helpers/cxm";
 import { ibmPlexSerif, jetbrains, naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
 import { ChildrenProps } from "~models";

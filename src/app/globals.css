@@ -155,9 +155,3 @@
   animation-duration: 0.3s;
   animation-timing-function: ease;
 }
-
-.switch-theme-bottom-nav {
-  animation-name: bottom-nav;
-  animation-duration: 0.3s;
-  animation-timing-function: ease;
-}
