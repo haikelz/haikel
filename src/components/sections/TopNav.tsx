@@ -25,7 +25,7 @@ export default function TopNav() {
             className={cxm(
               "cursor-pointer border-none text-xl font-bold",
               "tracking-widest outline-none",
-              "transition-all ease-in-out",
+              "transition-all",
               "hover:text-blue-500",
               spaceGrotesk.className
             )}

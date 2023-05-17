@@ -65,7 +65,7 @@ export default function SwitchThemeButton({ navPosition }: { navPosition: "top" 
             className={cxm(
               "icon icon-tabler icon-tabler-sun-high switch-theme-bottom-nav",
               "text-gray-500 dark:text-gray-400",
-              "transition-all ease-in-out",
+              "transition-all",
               "hover:text-gray-600",
               "dark:hover:text-white"
             )}
@@ -96,7 +96,7 @@ export default function SwitchThemeButton({ navPosition }: { navPosition: "top" 
             className={cxm(
               "icon icon-tabler icon-tabler-moon switch-theme-bottom-nav",
               "text-gray-500 dark:text-gray-400",
-              "transition-all ease-in-out",
+              "transition-all",
               "hover:text-gray-600",
               "dark:hover:text-white"
             )}
