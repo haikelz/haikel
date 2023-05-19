@@ -42,8 +42,8 @@ export default function SwitchThemeButton() {
           xmlns="http://www.w3.org/2000/svg"
           key="moon icon"
           className="icon switch-theme-nav icon-tabler icon-tabler-moon"
-          width="22"
-          height="22"
+          width={24}
+          height={24}
           viewBox="0 0 24 24"
           strokeWidth="2"
           stroke="currentColor"
