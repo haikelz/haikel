@@ -9,10 +9,7 @@ export default function AuthorImage() {
 
   return (
     <Image
-      className={cxm(
-        "mr-2 cursor-pointer rounded-full duration-700",
-        isLoading ? "blur-md" : "blur-none"
-      )}
+      className={cxm("mr-2 rounded-full duration-700", isLoading ? "blur-md" : "blur-none")}
       onLoadingComplete={() => setIsLoading(false)}
       decoding="async"
       src="https://avatars.githubusercontent.com/u/77146709?v=4"

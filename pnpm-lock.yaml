@@ -2,12 +2,12 @@ lockfileVersion: 5.4
 
 specifiers:
   '@next-auth/prisma-adapter': ^1.0.6
-  '@prisma/client': ^4.14.0
+  '@prisma/client': ^4.14.1
   '@radix-ui/react-dropdown-menu': ^2.0.4
   '@supabase/supabase-js': ^2.22.0
   '@swc-jotai/react-refresh': ^0.0.8
   '@tailwindcss/typography': ^0.5.9
-  '@types/node': 20.1.7
+  '@types/node': 20.2.0
   '@types/react': 18.2.6
   autoprefixer: ^10.4.14
   classix: ^2.1.32
@@ -32,7 +32,7 @@ specifiers:
   postcss: ^8.4.23
   prettier: 2.8.8
   prettier-plugin-tailwindcss: ^0.3.0
-  prisma: ^4.14.0
+  prisma: ^4.14.1
   react: 18.2.0
   react-dom: 18.2.0
   reading-time: ^1.5.0
@@ -42,10 +42,9 @@ specifiers:
   remark-gfm: ^3.0.1
   shiki: ^0.14.2
   tailwind-merge: ^1.12.0
-  tailwind-scrollbar: ^3.0.4
   tailwindcss: ^3.3.2
   typescript: 5.0.4
-  yet-another-react-lightbox: ^3.8.2
+  yet-another-react-lightbox: ^3.8.3
 
 dependencies:
   '@radix-ui/react-dropdown-menu': 2.0.4_tqcjxml4rosq5qpg5cznikfcd4
@@ -69,14 +68,14 @@ dependencies:
   remark-gfm: 3.0.1
   shiki: 0.14.2
   tailwind-merge: 1.12.0
-  yet-another-react-lightbox: 3.8.2_biqbaboplfbrettd7655fr4n2y
+  yet-another-react-lightbox: 3.8.3_biqbaboplfbrettd7655fr4n2y
 
 devDependencies:
-  '@next-auth/prisma-adapter': 1.0.6_frn5qpxffbyvohns2s2fks3bke
-  '@prisma/client': 4.14.0_prisma@4.14.0
+  '@next-auth/prisma-adapter': 1.0.6_afrt2cjoubnivixcsmhfowwetm
+  '@prisma/client': 4.14.1_prisma@4.14.1
   '@swc-jotai/react-refresh': 0.0.8
   '@tailwindcss/typography': 0.5.9_tailwindcss@3.3.2
-  '@types/node': 20.1.7
+  '@types/node': 20.2.0
   '@types/react': 18.2.6
   autoprefixer: 10.4.14_postcss@8.4.23
   commitizen: 4.3.0
@@ -91,8 +90,7 @@ devDependencies:
   postcss: 8.4.23
   prettier: 2.8.8
   prettier-plugin-tailwindcss: 0.3.0_prettier@2.8.8
-  prisma: 4.14.0
-  tailwind-scrollbar: 3.0.4_tailwindcss@3.3.2
+  prisma: 4.14.1
   tailwindcss: 3.3.2
   typescript: 5.0.4
 
@@ -157,15 +155,15 @@ packages:
       '@commitlint/execute-rule': 17.4.0
       '@commitlint/resolve-extends': 17.4.4
       '@commitlint/types': 17.4.4
-      '@types/node': 20.1.7
+      '@types/node': 20.2.0
       chalk: 4.1.2
       cosmiconfig: 8.1.3
-      cosmiconfig-typescript-loader: 4.3.0_d2nkart2ycbg2u4d7pgiqf2ytm
+      cosmiconfig-typescript-loader: 4.3.0_3zoro5pv532qrpjgog76s2vy6i
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
       resolve-from: 5.0.0
-      ts-node: 10.9.1_vyxhtn3gmap2whkbnrz2avj22a
+      ts-node: 10.9.1_tydl7nmgpnnj7p7e7qusgld26m
       typescript: 5.0.4
     transitivePeerDependencies:
       - '@swc/core'
@@ -365,13 +363,13 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@next-auth/prisma-adapter/1.0.6_frn5qpxffbyvohns2s2fks3bke:
+  /@next-auth/prisma-adapter/1.0.6_afrt2cjoubnivixcsmhfowwetm:
     resolution: {integrity: sha512-Z7agwfSZEeEcqKqrnisBun7VndRPshd6vyDsoRU68MXbkui8storkHgvN2hnNDrqr/hSCF9aRn56a1qpihaB4A==}
     peerDependencies:
       '@prisma/client': '>=2.26.0 || >=3'
       next-auth: ^4
     dependencies:
-      '@prisma/client': 4.14.0_prisma@4.14.0
+      '@prisma/client': 4.14.1_prisma@4.14.1
       next-auth: 4.22.1_cmp7sjki5xcmfyvhcokzzink7a
     dev: true
 
@@ -486,11 +484,11 @@ packages:
       is-glob: 4.0.3
       open: 9.1.0
       picocolors: 1.0.0
-      tslib: 2.5.0
+      tslib: 2.5.1
     dev: true
 
-  /@prisma/client/4.14.0_prisma@4.14.0:
-    resolution: {integrity: sha512-MK/XaA2sFdfaOa7I9MjNKz6dxeIEdeZlnpNRoF2w3JuRLlFJLkpp6cD3yaqw2nUUhbrn3Iqe3ZpVV+VuGGil7Q==}
+  /@prisma/client/4.14.1_prisma@4.14.1:
+    resolution: {integrity: sha512-TZIswkeX1ccsHG/eN2kICzg/csXll0osK3EHu1QKd8VJ3XLcXozbNELKkCNfsCUvKJAwPdDtFCzF+O+raIVldw==}
     engines: {node: '>=14.17'}
     requiresBuild: true
     peerDependencies:
@@ -500,15 +498,15 @@ packages:
         optional: true
     dependencies:
       '@prisma/engines-version': 4.14.0-67.d9a4c5988f480fa576d43970d5a23641aa77bc9c
-      prisma: 4.14.0
+      prisma: 4.14.1
     dev: true
 
   /@prisma/engines-version/4.14.0-67.d9a4c5988f480fa576d43970d5a23641aa77bc9c:
     resolution: {integrity: sha512-3jum8/YSudeSN0zGW5qkpz+wAN2V/NYCQ+BPjvHYDfWatLWlQkqy99toX0GysDeaUoBIJg1vaz2yKqiA3CFcQw==}
     dev: true
 
-  /@prisma/engines/4.14.0:
-    resolution: {integrity: sha512-PDNlhP/1vyTgmNyiucGqGCdXIp7HIkkvKO50si3y3PcceeHvqtiKPaH1iJdz63jCWMVMbj2MElSxXPOeBvEVIQ==}
+  /@prisma/engines/4.14.1:
+    resolution: {integrity: sha512-APqFddPVHYmWNKqc+5J5SqrLFfOghKOLZxobmguDUacxOwdEutLsbXPVhNnpFDmuQWQFbXmrTTPoRrrF6B1MWA==}
     requiresBuild: true
     dev: true
 
@@ -893,7 +891,7 @@ packages:
   /@swc/helpers/0.5.1:
     resolution: {integrity: sha512-sJ902EfIzn1Fa+qYmjdQqh8tPsoxyBz+8yBKC2HKUxyezKJFwPGOn7pv4WY6QuQW//ySQi5lJjA/ZT9sNWWNTg==}
     dependencies:
-      tslib: 2.5.0
+      tslib: 2.5.1
 
   /@tailwindcss/typography/0.5.9_tailwindcss@3.3.2:
     resolution: {integrity: sha512-t8Sg3DyynFysV9f4JDOVISGsjazNb48AeIYQwcL+Bsq5uf4RYL75C1giZ43KISjeDGBaTN3Kxh7Xj/vRSMJUUg==}
@@ -977,8 +975,8 @@ packages:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
     dev: false
 
-  /@types/node/20.1.7:
-    resolution: {integrity: sha512-WCuw/o4GSwDGMoonES8rcvwsig77dGCMbZDrZr2x4ZZiNW4P/gcoZXe/0twgtobcTkmg9TuKflxYL/DuwDyJzg==}
+  /@types/node/20.2.0:
+    resolution: {integrity: sha512-3iD2jaCCziTx04uudpJKwe39QxXgSUnpxXSvRQjRvHPxFQfmfP4NXIm/NURVeNlTCc+ru4WqjYGTmpXrW9uMlw==}
 
   /@types/nprogress/0.2.0:
     resolution: {integrity: sha512-1cYJrqq9GezNFPsWTZpFut/d4CjpZqA0vhqDUPFWYKF1oIyBz5qnoYMzR+0C/T96t3ebLAC1SSnwrVOm5/j74A==}
@@ -1008,7 +1006,7 @@ packages:
   /@types/websocket/1.0.5:
     resolution: {integrity: sha512-NbsqiNX9CnEfC1Z0Vf4mE1SgAJ07JnRYcNex7AJ9zAVzmiGHmjKFEk7O4TJIsgv2B1sLEb6owKFZrACwdYngsQ==}
     dependencies:
-      '@types/node': 20.1.7
+      '@types/node': 20.2.0
     dev: false
 
   /@typescript-eslint/parser/5.59.6_3qfatcekpgbllh6uk5ivyhkbxq:
@@ -1192,7 +1190,7 @@ packages:
     resolution: {integrity: sha512-xcLxITLe2HYa1cnYnwCjkOO1PqUHQpozB8x9AR0OgWN2woOBi5kSDVxKfd0b7sb1hw5qFeJhXm9H1nu3xSfLeQ==}
     engines: {node: '>=10'}
     dependencies:
-      tslib: 2.5.0
+      tslib: 2.5.1
     dev: false
 
   /aria-query/5.1.3:
@@ -1281,7 +1279,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.5
-      caniuse-lite: 1.0.30001487
+      caniuse-lite: 1.0.30001488
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -1360,8 +1358,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001487
-      electron-to-chromium: 1.4.397
+      caniuse-lite: 1.0.30001488
+      electron-to-chromium: 1.4.399
       node-releases: 2.0.10
       update-browserslist-db: 1.0.11_browserslist@4.21.5
     dev: true
@@ -1416,8 +1414,8 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  /caniuse-lite/1.0.30001487:
-    resolution: {integrity: sha512-83564Z3yWGqXsh2vaH/mhXfEM0wX+NlBCm1jYHOb97TrTWJEmPTccZgeLTPBUUb0PNVo+oomb7wkimZBIERClA==}
+  /caniuse-lite/1.0.30001488:
+    resolution: {integrity: sha512-NORIQuuL4xGpIy6iCCQGN4iFjlBXtfKWIenlUuyZJumLRIindLb7wXM+GO8erEhb7vXfcnf4BAg2PrSDN5TNLQ==}
 
   /ccount/2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
@@ -1605,7 +1603,7 @@ packages:
     resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
     engines: {node: '>= 0.6'}
 
-  /cosmiconfig-typescript-loader/4.3.0_d2nkart2ycbg2u4d7pgiqf2ytm:
+  /cosmiconfig-typescript-loader/4.3.0_3zoro5pv532qrpjgog76s2vy6i:
     resolution: {integrity: sha512-NTxV1MFfZDLPiBMjxbHRwSh5LaLcPMwNdCutmnHJCKoVnlvldPWlllonKwrsRJ5pYZBIBGRWWU2tfvzxgeSW5Q==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
@@ -1614,9 +1612,9 @@ packages:
       ts-node: '>=10'
       typescript: '>=3'
     dependencies:
-      '@types/node': 20.1.7
+      '@types/node': 20.2.0
       cosmiconfig: 8.1.3
-      ts-node: 10.9.1_vyxhtn3gmap2whkbnrz2avj22a
+      ts-node: 10.9.1_tydl7nmgpnnj7p7e7qusgld26m
       typescript: 5.0.4
     dev: true
     optional: true
@@ -1868,8 +1866,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: true
 
-  /electron-to-chromium/1.4.397:
-    resolution: {integrity: sha512-jwnPxhh350Q/aMatQia31KAIQdhEsYS0fFZ0BQQlN9tfvOEwShu6ZNwI4kL/xBabjcB/nTy6lSt17kNIluJZ8Q==}
+  /electron-to-chromium/1.4.399:
+    resolution: {integrity: sha512-+V1aNvVgoWNWYIbMOiQ1n5fRIaY4SlQ/uRlrsCjLrUwr/3OvQgiX2f5vdav4oArVT9TnttJKcPCqjwPNyZqw/A==}
     dev: true
 
   /emoji-regex/8.0.0:
@@ -4160,7 +4158,7 @@ packages:
       '@next/env': 13.4.2
       '@swc/helpers': 0.5.1
       busboy: 1.6.0
-      caniuse-lite: 1.0.30001487
+      caniuse-lite: 1.0.30001488
       postcss: 8.4.14
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -4687,13 +4685,13 @@ packages:
   /pretty-format/3.8.0:
     resolution: {integrity: sha512-WuxUnVtlWL1OfZFQFuqvnvs6MiAGk9UNsBostyBOB0Is9wb5uRESevA6rnl/rkksXaGX3GzZhPup5d6Vp1nFew==}
 
-  /prisma/4.14.0:
-    resolution: {integrity: sha512-+5dMl1uxMQb4RepndY6AwR9xi1cDcaGFICu+ws6/Nmgt93mFPNj8tYxSfTdmfg+rkNrUId9rk/Ac2vTgLe/oXA==}
+  /prisma/4.14.1:
+    resolution: {integrity: sha512-z6hxzTMYqT9SIKlzD08dhzsLUpxjFKKsLpp5/kBDnSqiOjtUyyl/dC5tzxLcOa3jkEHQ8+RpB/fE3w8bgNP51g==}
     engines: {node: '>=14.17'}
     hasBin: true
     requiresBuild: true
     dependencies:
-      '@prisma/engines': 4.14.0
+      '@prisma/engines': 4.14.1
     dev: true
 
   /prop-types/15.8.1:
@@ -4740,7 +4738,7 @@ packages:
       '@types/react': 18.2.6
       react: 18.2.0
       react-style-singleton: 2.2.1_s3k22s5ab4eu26xuel7hiaraxy
-      tslib: 2.5.0
+      tslib: 2.5.1
     dev: false
 
   /react-remove-scroll/2.5.5_s3k22s5ab4eu26xuel7hiaraxy:
@@ -4757,7 +4755,7 @@ packages:
       react: 18.2.0
       react-remove-scroll-bar: 2.3.4_s3k22s5ab4eu26xuel7hiaraxy
       react-style-singleton: 2.2.1_s3k22s5ab4eu26xuel7hiaraxy
-      tslib: 2.5.0
+      tslib: 2.5.1
       use-callback-ref: 1.3.0_s3k22s5ab4eu26xuel7hiaraxy
       use-sidecar: 1.1.2_s3k22s5ab4eu26xuel7hiaraxy
     dev: false
@@ -4776,7 +4774,7 @@ packages:
       get-nonce: 1.0.1
       invariant: 2.2.4
       react: 18.2.0
-      tslib: 2.5.0
+      tslib: 2.5.1
     dev: false
 
   /react/18.2.0:
@@ -4991,7 +4989,7 @@ packages:
   /rxjs/7.8.1:
     resolution: {integrity: sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==}
     dependencies:
-      tslib: 2.5.0
+      tslib: 2.5.1
     dev: true
 
   /sade/1.8.1:
@@ -5324,21 +5322,12 @@ packages:
     engines: {node: ^14.18.0 || >=16.0.0}
     dependencies:
       '@pkgr/utils': 2.4.0
-      tslib: 2.5.0
+      tslib: 2.5.1
     dev: true
 
   /tailwind-merge/1.12.0:
     resolution: {integrity: sha512-Y17eDp7FtN1+JJ4OY0Bqv9OA41O+MS8c1Iyr3T6JFLnOgLg3EvcyMKZAnQ8AGyvB5Nxm3t9Xb5Mhe139m8QT/g==}
     dev: false
-
-  /tailwind-scrollbar/3.0.4_tailwindcss@3.3.2:
-    resolution: {integrity: sha512-X/QBsn/C5u9x6/YvTc1Zo7b09Gqs5BfDe0UK/8LDQUv8IEBKF+p2ISTRwvAr50MH0hn/wTyCEOann7uXoa1/2Q==}
-    engines: {node: '>=12.13.0'}
-    peerDependencies:
-      tailwindcss: 3.x
-    dependencies:
-      tailwindcss: 3.3.2
-    dev: true
 
   /tailwindcss/3.3.2:
     resolution: {integrity: sha512-9jPkMiIBXvPc2KywkraqsUfbfj+dHDb+JPWtSJa9MLFdrPyazI7q6WX2sUrm7R9eVR7qqv3Pas7EvQFzxKnI6w==}
@@ -5436,7 +5425,7 @@ packages:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
     dev: true
 
-  /ts-node/10.9.1_vyxhtn3gmap2whkbnrz2avj22a:
+  /ts-node/10.9.1_tydl7nmgpnnj7p7e7qusgld26m:
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -5455,7 +5444,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.1.7
+      '@types/node': 20.2.0
       acorn: 8.8.2
       acorn-walk: 8.2.0
       arg: 4.1.3
@@ -5481,8 +5470,8 @@ packages:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: true
 
-  /tslib/2.5.0:
-    resolution: {integrity: sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==}
+  /tslib/2.5.1:
+    resolution: {integrity: sha512-KaI6gPil5m9vF7DKaoXxx1ia9fxS4qG5YveErRRVknPDXXriu5M8h48YRjB6h5ZUOKuAKlSJYb0GaDe8I39fRw==}
 
   /tsutils/3.21.0_typescript@5.0.4:
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
@@ -5661,7 +5650,7 @@ packages:
     dependencies:
       '@types/react': 18.2.6
       react: 18.2.0
-      tslib: 2.5.0
+      tslib: 2.5.1
     dev: false
 
   /use-isomorphic-layout-effect/1.1.2_s3k22s5ab4eu26xuel7hiaraxy:
@@ -5690,7 +5679,7 @@ packages:
       '@types/react': 18.2.6
       detect-node-es: 1.1.0
       react: 18.2.0
-      tslib: 2.5.0
+      tslib: 2.5.1
     dev: false
 
   /utf-8-validate/5.0.10:
@@ -5874,8 +5863,8 @@ packages:
     engines: {node: '>= 14'}
     dev: true
 
-  /yet-another-react-lightbox/3.8.2_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-k/LaOzwYw0hNC3MJJdmlWVFyDYKIu3bCQ1u7dUpnxL713uBtOPRlLGlT4lCMAkhC/Cpd551p3hzoVResQpIL+g==}
+  /yet-another-react-lightbox/3.8.3_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-6Vz9+twwzxSCsYySwfE8E9Uu46OnIIu3tqhPQNsfpJOiVEqsp7UtqMnQCthQGTaD2aSBHc5uDR0d4jrya6eFsQ==}
     engines: {node: '>=14'}
     peerDependencies:
       react: '>=16.8.0'

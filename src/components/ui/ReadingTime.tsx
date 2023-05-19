@@ -1,11 +1,7 @@
 import { useMemo } from "react";
 import word from "reading-time";
 
-function getReadingTime(content: string) {
-  return word(content).text;
-}
-
 export default function ReadingTime({ content }: { content: string }) {
-  const memoizedReadingTime: string = useMemo(() => getReadingTime(content), [content]);
+  const memoizedReadingTime: string = useMemo(() => word(content).text, [content]);
   return <span>{memoizedReadingTime}</span>;
 }

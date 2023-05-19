@@ -30,8 +30,8 @@ export default function Menu() {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="icon icon-tabler icon-tabler-category"
-            width={22}
-            height={22}
+            width={24}
+            height={24}
             viewBox="0 0 24 24"
             strokeWidth={2}
             stroke="currentColor"
@@ -68,7 +68,7 @@ export default function Menu() {
                     "dark:data-[highlighted]:bg-blue-500"
                   )}
                 >
-                  <Icon className="h-[22px] w-[22px]" />
+                  <Icon className="h-[24px] w-[24px]" />
                   <span
                     className={cxm(
                       pathname?.includes(item.route)

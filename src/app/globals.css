@@ -4,8 +4,26 @@
 
 @layer base {
   body {
-    @apply m-0 h-[50vh] scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-red;
+    @apply m-0 h-[50vh];
     font-family: var(--font-ibm);
+    scrollbar-width: thin;
+    scrollbar-color: #f84b3e #d1d5db;
+  }
+
+  body::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  body::-webkit-scrollbar-track {
+    @apply bg-gray-300;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    @apply bg-red;
+  }
+
+  body.dark::-webkit-scrollbar-thumb {
+    @apply bg-blue-500;
   }
 
   h1,
