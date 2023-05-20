@@ -48,6 +48,7 @@ export async function generateMetadata({
       site: `https://haikel.my.id/notes/${slug}`,
       card: "summary_large_image",
     },
+    metadataBase: new URL(`https://haikel.my.id/notes/${slug}`),
   };
 }
 

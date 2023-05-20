@@ -10,7 +10,7 @@ import { Heading, Underline, UnderlineLink } from "~ui/typography";
 const baseMetadata = {
   title: "Haikel",
   description: "A person who interested in Frontend stuff",
-  url: "https://haikel.my.id/",
+  url: "https://haikel.my.id",
 };
 
 const { title, description, url } = baseMetadata;
@@ -37,6 +37,7 @@ export const metadata = {
     site: url,
     card: "summary_large_image",
   },
+  metadataBase: new URL(url),
 };
 
 export default function HomePage() {

@@ -1,0 +1,142 @@
+---
+author: Haikel
+title: Fix "Hydration failed because the initial UI does not match what was rendered on the server" in NextJS  
+tags:
+  - nextjs
+  - typescript
+date: 2022-06-05
+description: Ok cool, my first post in Foreign Language 
+---
+
+**Note: if you found some bad grammar in this post, i'm sorry. This is my first post in english, so yeah, let me improve my English skill.**
+
+So, recently i work on personal project with NextJS. And in development, i got an error like this: 
+
+```
+Hydration failed because the initial UI does not match what was rendered on the server
+```
+
+At first, i search the solution in StackOverflow, someone say that `<div></div>` tag in `<p></p>` tag is the problem. Like this: 
+
+```html
+<p>
+    <div>Something</div>
+</p>
+```
+
+But when i check my code, there is nothing wrong, Although if i open my console, there was an error like that. 
+
+<LightboxImage src="https://i.ibb.co/wc55kkg/problem.png" alt="Error div" />
+
+And finally, after a while, i found the solution. I write this because if i'm facing same issue like this, i just open my blog and see this post. For more detail, see the discussion [here](https://github.com/vercel/next.js/discussions/17443)
+
+## Solving Problem
+
+This problem appear when i add progress bar, so i check my `_app.tsx`.
+
+```ts
+import { ThemeProvider } from "next-themes";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { DefaultSeo } from "next-seo";
+import type { AppProps } from "next/app";
+import "@/src/styles/globals.css";
+import "@/src/styles/progress.css";
+import Layout from "@/src/components/layout";
+import NProgress from "nprogress";
+import SEO from "next-seo.config";
+
+function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleStart = () => {
+      NProgress.start();
+    };
+
+    const handleStop = () => {
+      NProgress.done();
+    };
+
+    router.events.on("routeChangeStart", handleStart);
+    router.events.on("routeChangeComplete", handleStop);
+    router.events.on("routeChangeError", handleStop);
+
+    return () => {
+      router.events.off("routeChangeStart", handleStart);
+      router.events.off("routeChangeComplete", handleStop);
+      router.events.off("routeChangeError", handleStop);
+    };
+  }, [router]);
+
+  return (
+      <ThemeProvider attribute="class">
+        <DefaultSeo {...SEO} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
+  );
+}
+
+export default MyApp;
+```
+
+<LightboxImage src="https://i.ibb.co/s9r6fyf/fix-problem.jpg" alt="snippet" />
+
+Based on the picture above, in `myApp` function, i can add code like this: 
+
+```ts
+function MyApp({ Component, pageProps }: AppProps) {
+  const [mounted, setMounted] = useState(false); // set to false
+  const router = useRouter();
+
+  useEffect(() => {
+    setMounted(true); // set to true
+
+    const handleStart = () => {
+      NProgress.start();
+    };
+
+    const handleStop = () => {
+      NProgress.done();
+    };
+
+    router.events.on("routeChangeStart", handleStart);
+    router.events.on("routeChangeComplete", handleStop);
+    router.events.on("routeChangeError", handleStop);
+
+    return () => {
+      router.events.off("routeChangeStart", handleStart);
+      router.events.off("routeChangeComplete", handleStop);
+      router.events.off("routeChangeError", handleStop);
+    };
+  }, [router]);
+
+  return (
+    mounted && (
+      <ThemeProvider attribute="class">
+        <DefaultSeo {...SEO} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
+    )
+  );
+}
+```
+
+Done. but new problem appears
+
+Not really important(i think). Because i use my Github profile for icon, i dont add favicon. 
+
+<LightboxImage src="https://i.ibb.co/ZWghbrC/missing-favicon.png" alt="Missing favicon" />
+
+Yup, missing favicon. 
+
+The solution is: **Just create your favicon.ico, and place it in `public` folder.**
+
+## Reference 
+
+- [StackOverflow](https://stackoverflow.com/questions/71706064/react-18-hydration-failed-because-the-initial-ui-does-not-match-what-was-render)
+- [NextJs Github discussions](https://github.com/vercel/next.js/discussions/17443)

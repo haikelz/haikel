@@ -36,6 +36,7 @@ export const metadata = {
     site: url,
     card: "summary_large_image",
   },
+  metadataBase: new URL(url),
 };
 
 /**
