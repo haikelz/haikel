@@ -1,11 +1,11 @@
 "use client";
 
-import { useAtom } from "jotai";
+import { SetStateAction, WritableAtom, useAtom } from "jotai";
 import { atomWithStorage } from "jotai/utils";
 import { useEffect } from "react";
 
 const browser: boolean = typeof window !== "undefined";
-const themeAtom = atomWithStorage(
+const themeAtom: WritableAtom<string, [SetStateAction<"dark" | "light">], void> = atomWithStorage(
   "theme",
   browser && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
 );

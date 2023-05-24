@@ -10,10 +10,6 @@ type ListGuestsProps =
   | undefined;
 
 export function ListGuests({ guestbook }: { guestbook: ListGuestsProps }) {
-  function convertToLocalTime(time: string) {
-    return format(new Date(time), "LLLL d, yyyy");
-  }
-
   return (
     <>
       {guestbook?.map((guest) => (
@@ -31,7 +27,9 @@ export function ListGuests({ guestbook }: { guestbook: ListGuestsProps }) {
           </div>
           <Paragraph className="mt-2 font-medium tracking-wide">
             {guest.username}
-            {guest.created_at !== "" ? `. ${convertToLocalTime(guest.created_at)}` : null}
+            {guest.created_at !== ""
+              ? `. ${format(new Date(guest.created_at), "LLLL d, yyyy")}`
+              : null}
           </Paragraph>
         </div>
       ))}

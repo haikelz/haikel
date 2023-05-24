@@ -50,7 +50,7 @@ async function getDataFromSupabase() {
     const { data, error } = await supabase
       .from("guestbook")
       .select()
-      .order("created_at", { ascending: false });
+      .order("id", { ascending: false });
 
     if (error) throw error;
     return data;

@@ -6,6 +6,7 @@
 ## Stuff
 
 - [nextjs](https://nextjs.org/)
+- [typescript](https://www.typescriptlang.org/)
 - [tailwindcss](https://tailwindcss.com/)
 - [jotai](https://jotai.org/)
 - [shiki](https://shiki.matsu.io/)
