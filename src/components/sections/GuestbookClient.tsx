@@ -4,7 +4,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { ChangeEvent, useRef } from "react";
 import { cxm } from "~lib/helpers/cxm";
 import supabase from "~lib/utils/supabase";
-import { GithubIcon } from "~ui/icons";
+import { GithubIcon, GoogleIcon } from "~ui/icons";
 import { MessageInput } from "~ui/inputs";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
@@ -66,10 +66,10 @@ export default function GuestbookClient() {
         </div>
       </section>
       {!session ? (
-        <div className="my-4">
+        <div className="my-4 flex items-center justify-center space-x-3">
           <button
             type="button"
-            aria-label="sign in"
+            aria-label="sign in with github"
             className={cxm(
               "flex items-center justify-center space-x-3 rounded-md",
               "bg-base-2",
@@ -79,7 +79,22 @@ export default function GuestbookClient() {
             onClick={() => signIn("github")}
           >
             <GithubIcon />
-            <span className="text-base md:text-lg">Sign In with Github</span>
+            <span className="text-base md:text-lg">Github</span>
+          </button>
+          <span className="text-base">or</span>
+          <button
+            className={cxm(
+              "flex items-center justify-center space-x-3 rounded-md",
+              "bg-gray-200",
+              "px-3.5 py-2",
+              "font-semibold text-black"
+            )}
+            type="button"
+            aria-label="sign in with google"
+            onClick={() => signIn("google")}
+          >
+            <GoogleIcon />
+            <span className="text-base md:text-lg">Google</span>
           </button>
         </div>
       ) : (

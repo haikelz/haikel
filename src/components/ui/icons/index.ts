@@ -1,6 +1,7 @@
 export * from "./ChakrauiIcon";
 export * from "./FramerIcon";
 export * from "./GithubIcon";
+export * from "./GoogleIcon";
 export * from "./GuestbookIcon";
 export * from "./HomeIcon";
 export * from "./NextJsIcon";
