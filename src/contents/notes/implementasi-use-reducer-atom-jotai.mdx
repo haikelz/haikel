@@ -37,7 +37,7 @@ import { Button, Container, Flex, Text } from "@chakra-ui/react";
 import { atom } from "jotai";
 import { useReducerAtom } from "jotai/utils";
 
-function reducer(state: { value: number }, action: { operation: string }) {
+function reducer(state: { value: number }, action: { operation: "TAMBAH" | "KURANG" }) {
   switch (action.operation) {
     case "TAMBAH":
       return {
@@ -67,7 +67,7 @@ Saya juga menginisialisasi `reducerAtom` sebagai initialAtom.
 
 Oke mari kita lanjut
 
-```tsx
+```tsx title="App.tsx"
 export default function App() {
   const [state, dispatch] = useReducerAtom(reducerAtom, reducer);
 
@@ -85,7 +85,7 @@ export default function App() {
 }
 ```
 
-Seperti yang sudah saya singgung di awal, `useReducerAtom` agak berbeda dengan `useReducer` biasa. Di dalam `useReducerAtom`, kita memasukkan nilai `reducerAtom` dan fungsi `reducer`. Saya juga membuat fungsi `penjumlahan` dan `pengurangan` yang akan dijalankan saat onClick.
+Seperti yang sudah saya singgung di awal, `useReducerAtom` agak berbeda dengan `useReducer` biasa. Di dalam `useReducerAtom`, kita memasukkan nilai `reducerAtom` dan fungsi `reducer`.
 
 Keseluruhan code:
 
@@ -94,7 +94,7 @@ import { Button, Container, Flex, Text } from "@chakra-ui/react";
 import { atom } from "jotai";
 import { useReducerAtom } from "jotai/utils";
 
-function reducer(state: { value: number }, action: { operation: string }) {
+function reducer(state: { value: number }, action: { operation: "TAMBAH" | "KURANG" }) {
   switch (action.operation) {
     case "TAMBAH":
       return {
