@@ -85,7 +85,7 @@ export default function GuestbookClient() {
           <button
             className={cxm(
               "flex items-center justify-center space-x-3 rounded-md",
-              "bg-gray-200",
+              "bg-base-5",
               "px-3.5 py-2",
               "font-semibold text-black"
             )}

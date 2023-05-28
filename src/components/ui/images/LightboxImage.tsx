@@ -21,7 +21,7 @@ export default function LightboxImage({ src, alt }: LightboxImageProps) {
     <>
       <Image
         className={cxm(
-          "cursor-pointer object-cover duration-700",
+          "aspect-auto cursor-pointer rounded-sm object-cover duration-700",
           isLoading ? "blur-md" : "blur-none"
         )}
         onClick={() => setIsOpen(true)}
@@ -43,6 +43,7 @@ export default function LightboxImage({ src, alt }: LightboxImageProps) {
             slide: () => {
               return (
                 <Image
+                  className="aspect-auto rounded-sm"
                   alt={alt}
                   src={src}
                   loading="eager"

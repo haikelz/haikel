@@ -1,0 +1,145 @@
+---
+author: Haikel
+title: Implementasi useReducerAtom Jotai
+tags:
+  - jotai
+  - react
+date: 2023-05-29
+description: Mencoba mengimplementasikan useReducerAtom hook Jotai
+---
+
+## Pendahuluan
+
+`useReducer` adalah sebuah React Hook yang fungsinya serupa dengan `useState`, tapi biasa digunakan untuk kasus yang lebih kompleks, juga cara penggunaannya yang berbeda.
+
+Di jotai juga, punya hal serupa yang bernama `useReducerAtom`. Konsepnya sama saja dengan `useReducer` biasa, hanya saja initialState ama reducernya dibalik.
+
+Jadi kurang lebih begini gambarannya:
+
+```tsx
+const [state, dispatch] = useReducerAtom(initialAtom, reducer);
+```
+
+Nah jadi si **initialState** nya(dalam hal ini **initialAtom**) berada di depan, kemudian diikuti dengan fungsi **reducer** nya. **initialState** mesti bernilai atom yang disediakan jotai. Kalau temen-temen pake typescript, pasti bakal ngedetect Error jika tidak pakai atom. Contoh:
+
+<LightboxImage src="https://i.ibb.co/W288YqJ/2022-07-31-20-17.png" alt="Error initialState" />
+
+Padahal jika saya pakai `useReducer` biasa, dia ga bakal error
+
+<LightboxImage src="https://i.ibb.co/1sZ0xjg/2022-07-31-20-23.png" alt="useReducer" />
+
+## Implementasi
+
+Disini saya coba implementasi ke operasi matematika sederhana(tambah, kurang). **Sebagai catatan,** di project saya sudah terinstall `chakra-ui` untuk styling. Emang Overkill sih hehe, tapi kalo buat keperluan ngetest doang mah gapapa.
+
+```tsx title="App.tsx"
+import { Button, Container, Flex, Text } from "@chakra-ui/react";
+import { atom } from "jotai";
+import { useReducerAtom } from "jotai/utils";
+
+function reducer(state: { value: number }, action: { operation: string }) {
+  switch (action.operation) {
+    case "TAMBAH":
+      return {
+        value: state.value + 1,
+      };
+
+    case "KURANG":
+      return {
+        value: state.value - 1,
+      };
+
+    default:
+      throw new Error();
+  }
+}
+
+const reducerAtom = atom<{ value: number }>({ value: 0 });
+```
+
+Fokus di bagian fungsi `reducer`, saya pakai switch case untuk pengkondisian. Pake if else juga bisa.
+
+- Jika `operation` nya bernilai "TAMBAH", maka nilai akan bertambah 1.
+- Jika `operation` nya bernilai "KURANG", maka nilai akan berkurang 1.
+- Jika nilainya selain itu, maka akan mencetak pesan Error.
+
+Saya juga menginisialisasi `reducerAtom` sebagai initialAtom.
+
+Oke mari kita lanjut
+
+```tsx
+export default function App() {
+  const [state, dispatch] = useReducerAtom(reducerAtom, reducer);
+
+  return (
+    <Container>
+      <Flex justify="center" h="100vh" alignItems="center" flexDir="column">
+        <Flex gap={3}>
+          <Button onClick={() => dispatch({ operation: "TAMBAH" })}>+</Button>
+          <Text>{state.value}</Text>
+          <Button onClick={() => dispatch({ operation: "KURANG" })}>-</Button>
+        </Flex>
+      </Flex>
+    </Container>
+  );
+}
+```
+
+Seperti yang sudah saya singgung di awal, `useReducerAtom` agak berbeda dengan `useReducer` biasa. Di dalam `useReducerAtom`, kita memasukkan nilai `reducerAtom` dan fungsi `reducer`. Saya juga membuat fungsi `penjumlahan` dan `pengurangan` yang akan dijalankan saat onClick.
+
+Keseluruhan code:
+
+```ts title="App.tsx"
+import { Button, Container, Flex, Text } from "@chakra-ui/react";
+import { atom } from "jotai";
+import { useReducerAtom } from "jotai/utils";
+
+function reducer(state: { value: number }, action: { operation: string }) {
+  switch (action.operation) {
+    case "TAMBAH":
+      return {
+        value: state.value + 1,
+      };
+
+    case "KURANG":
+      return {
+        value: state.value - 1,
+      };
+
+    default:
+      throw new Error();
+  }
+}
+
+const reducerAtom = atom<{ value: number }>({ value: 0 });
+
+export default function App() {
+  const [state, dispatch] = useReducerAtom(reducerAtom, reducer);
+
+  return (
+    <Container>
+      <Flex justify="center" h="100vh" alignItems="center" flexDir="column">
+        <Flex gap={3}>
+          <Button onClick={() => dispatch({ operation: "TAMBAH" })}>+</Button>
+          <Text>{state.value}</Text>
+          <Button onClick={() => dispatch({ operation: "KURANG" })}>-</Button>
+        </Flex>
+      </Flex>
+    </Container>
+  );
+}
+```
+
+Jika dijalankan, maka akan seperti ini:
+
+<Video src="https://streamable.com/e/utltqe" title="Demo Implementation" />
+
+## Penutup
+
+Yep, mungkin sekian untuk tulisan kali ini. Semoga bermanfaat :)
+
+## Referensi
+
+- [Jotai Docs](https://jotai.org/docs/utilities/reducer#usereduceratom)
+- [Dave Gray](https://www.youtube.com/watch?v=26ogBZXeBwc)
+- [Webdev Simplified](https://www.youtube.com/watch?v=kK_Wqx3RnHk)
