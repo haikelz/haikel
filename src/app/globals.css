@@ -161,3 +161,20 @@
   animation-duration: 0.3s;
   animation-timing-function: ease;
 }
+
+@keyframes sakura {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-sakura {
+  animation-name: sakura;
+  animation-duration: 13000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
