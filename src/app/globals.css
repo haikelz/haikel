@@ -175,6 +175,6 @@
 .spin-sakura {
   animation-name: sakura;
   animation-duration: 13000ms;
-  animation-timing-function: linear;
+  animation-timing-function: cubic-bezier(1, 1, 1, 1);
   animation-iteration-count: infinite;
 }

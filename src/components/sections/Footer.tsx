@@ -17,7 +17,8 @@ export default function Footer() {
     >
       <div
         className={cxm(
-          "w-full max-w-3xl md:border-t-[1.5px] md:border-t-gray-300",
+          "w-full max-w-3xl",
+          "md:border-t-[1.5px] md:border-t-gray-300",
           "md:py-3 md:dark:border-t-gray-500"
         )}
       >

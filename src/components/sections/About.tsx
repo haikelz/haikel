@@ -17,7 +17,6 @@ function atomWithToggle(initialValue?: boolean) {
     const update: boolean = nextValue ?? !get(anAtom);
     set(anAtom, update);
   });
-
   return anAtom;
 }
 
@@ -30,21 +29,19 @@ export default function About() {
     <section className="mb-12 flex w-full flex-wrap items-center justify-center">
       <div className={cxm("flex w-full flex-col items-start justify-start", "md:flex-row")}>
         <div className={cxm("flex flex-col items-start justify-start", "md:mt-0 md:text-start")}>
-          <div className="flex items-center justify-center space-x-4">
-            <Heading as="h1">
-              Hello, I&#39;m{" "}
-              <span
-                className={cxm(
-                  "underline decoration-red decoration-dashed underline-offset-[5px]",
-                  "dark:gradient-dark dark:animate-text dark:bg-clip-text",
-                  "dark:text-transparent dark:decoration-blue-500"
-                )}
-              >
-                Haikel
-              </span>{" "}
-            </Heading>
-            <span className="spin-sakura mx-3 text-4xl">🌸</span>
-          </div>
+          <Heading as="h1">
+            Hello, I&#39;m{" "}
+            <span
+              className={cxm(
+                "underline decoration-red decoration-dashed underline-offset-[5px]",
+                "dark:gradient-dark dark:animate-text dark:bg-clip-text",
+                "dark:text-transparent dark:decoration-blue-500"
+              )}
+            >
+              Haikel
+            </span>{" "}
+            🌸
+          </Heading>
           {language ? (
             <Paragraph className="mt-4">
               A person who interested in Frontend stuff, User Interface/Experience, Design Systems,
