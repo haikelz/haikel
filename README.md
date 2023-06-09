@@ -12,6 +12,13 @@
 - [shiki](https://shiki.matsu.io/)
 - [mdx](https://mdxjs.com/)
 
+## Features
+
+- Notes
+- Works
+- Tags
+- Guestbook
+
 See `package.json` file for more information.
 
 ## Screenshot

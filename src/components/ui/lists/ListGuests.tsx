@@ -1,5 +1,5 @@
 import format from "date-fns/format";
-import { cxm } from "~lib/helpers/cxm";
+import { cxm } from "~lib/helpers";
 import { spaceGrotesk } from "~lib/utils/fonts";
 import { Paragraph } from "~ui/typography";
 

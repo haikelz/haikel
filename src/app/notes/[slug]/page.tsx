@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
-import { cxm } from "~lib/helpers/cxm";
+import { cxm } from "~lib/helpers";
 import { getNoteFromSlug, getSlugs } from "~lib/services";
 import { ABSOLUTE_OG_URL, NOTES_PATH } from "~lib/utils/constants";
 import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";

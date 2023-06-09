@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { cxm } from "~lib/helpers/cxm";
+import { cxm } from "~lib/helpers";
 
 export default function AuthorImage() {
   const [isLoading, setIsLoading] = useState<boolean>(true);

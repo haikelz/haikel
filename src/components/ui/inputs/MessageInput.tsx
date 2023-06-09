@@ -1,7 +1,7 @@
 "use client";
 
 import { forwardRef } from "react";
-import { cxm } from "~lib/helpers/cxm";
+import { cxm } from "~lib/helpers";
 
 export const MessageInput = forwardRef<HTMLInputElement>((props, ref) => {
   return (

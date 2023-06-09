@@ -1,4 +1,4 @@
-import { cxm } from "~lib/helpers/cxm";
+import { cxm } from "~lib/helpers";
 import { ChildrenProps } from "~models";
 
 interface HeadingProps extends ChildrenProps {

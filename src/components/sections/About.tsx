@@ -2,7 +2,7 @@
 
 import { atom, useAtom } from "jotai";
 import Link from "next/link";
-import { cxm } from "~lib/helpers/cxm";
+import { cxm } from "~lib/helpers";
 import { Heading, Paragraph, UnderlineSpan } from "~ui/typography";
 
 const socialMediaList = [

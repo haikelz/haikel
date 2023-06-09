@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { cxm } from "~lib/helpers/cxm";
+import { cxm } from "~lib/helpers";
 import { spaceGrotesk } from "~lib/utils/fonts";
 import { NoteMetaProps } from "~models";
 import { Paragraph } from "~ui/typography";

@@ -1,4 +1,4 @@
-import { cxm } from "~lib/helpers/cxm";
+import { cxm } from "~lib/helpers";
 import { getAllWorks } from "~lib/services";
 import { DEFAULT_OG_URL } from "~lib/utils/constants";
 import { WorkMetaProps } from "~models";

@@ -22,9 +22,9 @@
     @apply bg-red;
   }
 
-  body.dark::-webkit-scrollbar-thumb {
+  /*body.dark::-webkit-scrollbar-thumb {
     @apply bg-blue-500;
-  }
+  }*/
 
   h1,
   h2,

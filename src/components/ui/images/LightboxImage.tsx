@@ -6,7 +6,7 @@ import Lightbox from "yet-another-react-lightbox";
 import Captions from "yet-another-react-lightbox/plugins/captions";
 import "yet-another-react-lightbox/plugins/captions.css";
 import "yet-another-react-lightbox/styles.css";
-import { cxm } from "~lib/helpers/cxm";
+import { cxm } from "~lib/helpers";
 
 interface LightboxImageProps {
   src: string;

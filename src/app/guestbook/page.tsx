@@ -1,4 +1,4 @@
-import { cxm } from "~lib/helpers/cxm";
+import { cxm } from "~lib/helpers";
 import { DEFAULT_OG_URL } from "~lib/utils/constants";
 import supabase from "~lib/utils/supabase";
 import GuestbookClient from "~sections/GuestbookClient";

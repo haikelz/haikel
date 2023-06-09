@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { cxm } from "~lib/helpers/cxm";
+import { cxm } from "~lib/helpers";
 import { spaceGrotesk } from "~lib/utils/fonts";
 import { WorkMetaProps } from "~models";
 import {
@@ -14,7 +14,7 @@ import {
   TailwindcssIcon,
   TypescriptIcon,
   WindiCssIcon,
-} from "~ui/icons";
+} from "~ui/svg";
 import { Paragraph } from "~ui/typography";
 
 export function ListWorks({ works }: { works: WorkMetaProps[] }) {

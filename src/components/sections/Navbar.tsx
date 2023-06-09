@@ -1,12 +1,10 @@
-"use client";
-
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { cxm } from "~lib/helpers/cxm";
+import { cxm } from "~lib/helpers";
 import { spaceGrotesk } from "~lib/utils/fonts";
 
-const SwitchThemeButton = dynamic(() => import("~ui/SwitchThemeButton"), { ssr: false });
-const Menu = dynamic(() => import("~ui/Menu"), { ssr: false });
+const SwitchThemeMenu = dynamic(() => import("~ui/menus/SwitchThemeMenu"), { ssr: false });
+const NavigationMenu = dynamic(() => import("~ui/menus/NavigationMenu"), { ssr: false });
 
 export default function Navbar() {
   return (
@@ -34,8 +32,8 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="flex items-center justify-center space-x-6">
-          <Menu />
-          <SwitchThemeButton />
+          <NavigationMenu />
+          <SwitchThemeMenu />
         </div>
       </div>
     </nav>

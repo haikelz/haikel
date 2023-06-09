@@ -1,6 +1,6 @@
 import { format } from "date-fns/esm";
 import Link from "next/link";
-import { cxm } from "~lib/helpers/cxm";
+import { cxm } from "~lib/helpers";
 import { spaceGrotesk } from "~lib/utils/fonts";
 
 export default function Footer() {

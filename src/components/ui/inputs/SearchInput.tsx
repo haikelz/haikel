@@ -1,6 +1,6 @@
 import { SetStateAction, memo } from "react";
-import { cxm } from "~lib/helpers/cxm";
-import { SearchIcon } from "~ui/icons";
+import { cxm } from "~lib/helpers";
+import { SearchIcon } from "~ui/svg";
 
 interface SearchInputProps {
   search: string;

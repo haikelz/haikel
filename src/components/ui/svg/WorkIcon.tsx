@@ -1,4 +1,4 @@
-import { cxm } from "~lib/helpers/cxm";
+import { cxm } from "~lib/helpers";
 import { IconClassNameProps } from "~models";
 
 export function WorkIcon({ className }: IconClassNameProps) {

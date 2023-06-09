@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { cxm } from "~lib/helpers/cxm";
+import { cxm } from "~lib/helpers";
 import { getAllNotes } from "~lib/services";
 import { DEFAULT_OG_URL } from "~lib/utils/constants";
 import { NoteMetaProps } from "~models";
