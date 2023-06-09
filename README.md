@@ -1,6 +1,6 @@
 <div align="center">
   <h1>haikel.my.id</h1>
-  <p>My Personal Website</p> 
+  <p>My Personal Website. Always WIP</p>
 </div>
 
 ## Stuff
@@ -8,18 +8,11 @@
 - [nextjs](https://nextjs.org/)
 - [typescript](https://www.typescriptlang.org/)
 - [tailwindcss](https://tailwindcss.com/)
-- [jotai](https://jotai.org/)
 - [shiki](https://shiki.matsu.io/)
 - [mdx](https://mdxjs.com/)
+- [supabase](https://supabase.com/)
 
-## Features
-
-- Notes
-- Works
-- Tags
-- Guestbook
-
-See `package.json` file for more information.
+See [`package.json`](https://github.com/haikelz/haikel.my.id/blob/master/package.json) file for more information.
 
 ## Screenshot
 
@@ -34,3 +27,7 @@ Some people that inspire me when i build this website. Thanks guys!
 - https://elianiva.my.id/
 - https://omarelhawary.me/
 - https://leerob.io/
+
+## License
+
+This Website is under [MIT License](https://github.com/haikelz/haikel.my.id/blob/master/LICENSE)
