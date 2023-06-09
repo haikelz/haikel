@@ -1,8 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import Main from "~ui/Main";
-import { Heading, Paragraph } from "~ui/typography";
+import { Heading, Paragraph, UnderlineLink } from "~ui/typography";
 
 export default function ErrorPage() {
   return (
@@ -11,9 +10,7 @@ export default function ErrorPage() {
         <Heading as="h1">500 🤖</Heading>
         <Paragraph className="mt-2 font-semibold">
           Looks like there is a problem with the server. Try again!{" "}
-          <Link href="/" className="font-bold underline decoration-dashed underline-offset-4">
-            Back to Home
-          </Link>
+          <UnderlineLink href="/">Back to Home</UnderlineLink>
         </Paragraph>
       </section>
     </Main>
