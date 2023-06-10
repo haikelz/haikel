@@ -3,13 +3,13 @@ import { cxm } from "~lib/helpers";
 import { spaceGrotesk } from "~lib/utils/fonts";
 import { Paragraph } from "~ui/typography";
 
-type ListGuestsProps =
+type GuestsListProps =
   | {
       [x: string]: any;
     }[]
   | undefined;
 
-export function ListGuests({ guestbook }: { guestbook: ListGuestsProps }) {
+export function GuestsList({ guestbook }: { guestbook: GuestsListProps }) {
   return (
     <>
       {guestbook?.map((guest) => (

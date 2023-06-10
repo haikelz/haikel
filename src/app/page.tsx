@@ -4,7 +4,7 @@ import { DEFAULT_OG_URL } from "~lib/utils/constants";
 import { NoteMetaProps, WorkMetaProps } from "~models";
 import About from "~sections/About";
 import Main from "~ui/Main";
-import { ListNotes, ListWorks } from "~ui/lists";
+import { NotesList, WorksList } from "~ui/lists";
 import { Heading, Underline, UnderlineLink } from "~ui/typography";
 
 const baseMetadata = {
@@ -59,7 +59,7 @@ export default function HomePage() {
             <Underline />
           </div>
           <div className="mb-8 mt-6 flex w-full flex-col space-y-8">
-            <ListWorks works={works} />
+            <WorksList works={works} />
           </div>
           <div className="flex w-full items-end justify-start">
             <UnderlineLink href="/works" role="button" aria-label="More Works">
@@ -75,7 +75,7 @@ export default function HomePage() {
             <Underline />
           </div>
           <div className="mb-8 mt-6 flex w-full flex-col space-y-8">
-            <ListNotes filteredNotes={notes} />
+            <NotesList filteredNotes={notes} />
           </div>
           <div className="flex w-full items-start justify-start">
             <UnderlineLink href="/notes" role="button" aria-label="latest notes">

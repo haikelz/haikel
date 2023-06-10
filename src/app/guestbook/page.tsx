@@ -3,7 +3,7 @@ import { DEFAULT_OG_URL } from "~lib/utils/constants";
 import supabase from "~lib/utils/supabase";
 import GuestbookClient from "~sections/GuestbookClient";
 import Main from "~ui/Main";
-import { ListGuests } from "~ui/lists";
+import { GuestsList } from "~ui/lists";
 import { Paragraph } from "~ui/typography";
 
 const baseMetadata = {
@@ -69,7 +69,7 @@ export default async function Guestbook() {
       <GuestbookClient />
       {guestbook?.length ? (
         <section className="mb-10 flex w-full flex-col space-y-8">
-          <ListGuests guestbook={guestbook} />
+          <GuestsList guestbook={guestbook} />
         </section>
       ) : (
         <Paragraph className="font-semibold">There is no messages now!</Paragraph>

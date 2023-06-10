@@ -17,7 +17,7 @@ import {
 } from "~ui/svg";
 import { Paragraph } from "~ui/typography";
 
-export function ListWorks({ works }: { works: WorkMetaProps[] }) {
+export function WorksList({ works }: { works: WorkMetaProps[] }) {
   return (
     <>
       {works.map((work, index) => (

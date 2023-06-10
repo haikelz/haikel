@@ -3,7 +3,7 @@ import { getAllWorks } from "~lib/services";
 import { DEFAULT_OG_URL } from "~lib/utils/constants";
 import { WorkMetaProps } from "~models";
 import Main from "~ui/Main";
-import { ListWorks } from "~ui/lists";
+import { WorksList } from "~ui/lists";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
 const baseMetadata = {
@@ -60,7 +60,7 @@ export default function Works() {
         </div>
       </section>
       <section className="mb-10 mt-6 flex w-full flex-col space-y-8">
-        <ListWorks works={works} />
+        <WorksList works={works} />
       </section>
     </Main>
   );

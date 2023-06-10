@@ -4,7 +4,7 @@ import { getAllNotes } from "~lib/services";
 import { DEFAULT_OG_URL } from "~lib/utils/constants";
 import { NoteMetaProps } from "~models";
 import Main from "~ui/Main";
-import { ListNotes } from "~ui/lists";
+import { NotesList } from "~ui/lists";
 import { Heading, Underline } from "~ui/typography";
 
 interface NoteProps {
@@ -73,7 +73,7 @@ export default function Tags({ params }: { params: { slug: string } }) {
         </div>
       </section>
       <section className="mb-10 mt-6 flex w-full flex-col space-y-8">
-        <ListNotes filteredNotes={notes} />
+        <NotesList filteredNotes={notes} />
       </section>
     </Main>
   );

@@ -1,3 +1,3 @@
-export * from "./ListGuests";
-export * from "./ListNotes";
-export * from "./ListWorks";
+export * from "./GuestsList";
+export * from "./NotesList";
+export * from "./WorksList";
