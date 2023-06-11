@@ -8,7 +8,7 @@ import { NotesList, WorksList } from "~ui/lists";
 import { Heading, Underline, UnderlineLink } from "~ui/typography";
 
 const baseMetadata = {
-  title: "Haikel",
+  title: "Haikel Ilham Hakim",
   description:
     "A person who interested in Frontend stuff, User Interface/Experience, Design Systems, Linux, and Photography",
   url: "https://haikel.my.id",

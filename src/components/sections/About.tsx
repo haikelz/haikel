@@ -1,22 +1,15 @@
 "use client";
 
 import { atom, useAtom } from "jotai";
-import Link from "next/link";
 import { cxm } from "~lib/helpers";
 import { Heading, Paragraph, UnderlineSpan } from "~ui/typography";
-
-const socialMediaList = [
-  { id: 1, name: "Email", route: "mailto:halo@haikel.my.id" },
-  { id: 2, name: "Facebook", route: "https://facebook.com/kelgfx" },
-  { id: 3, name: "Github", route: "https://github.com/haikelz" },
-  { id: 4, name: "Linkedin", route: "https://www.linkedin.com/in/haikel" },
-];
 
 function atomWithToggle(initialValue?: boolean) {
   const anAtom = atom(initialValue, (get, set, nextValue?: boolean) => {
     const update: boolean = nextValue ?? !get(anAtom);
     set(anAtom, update);
   });
+
   return anAtom;
 }
 
@@ -44,38 +37,20 @@ export default function About() {
           </Heading>
           {language ? (
             <Paragraph className="mt-4">
-              A person who interested in Frontend stuff, User Interface/Experience, Design Systems,
-              Linux, and Photography. Feel free to reach me via{" "}
-              {socialMediaList.map((item) => (
-                <Link className="font-bold hover:text-blue-500" key={item.id} href={item.route}>
-                  {item.name}
-                  {item.name === "Facebook" || item.name === "Email"
-                    ? ", "
-                    : item.name === "Github"
-                    ? ", "
-                    : ""}
-                </Link>
-              ))}
-              .{" "}
+              A person who loves writing code for Front End side. Crafting simple, interactive,
+              responsive, and accessible Websites. Familiar with Javascript/Typescript, React
+              Ecosystem, and Linux(for daily use). Try to follow best practices as much as i can. I
+              can work in a team or solo.{" "}
               <button type="button" aria-label="toggle language" onClick={() => setLanguage(false)}>
                 <UnderlineSpan>See in Indonesia.</UnderlineSpan>
               </button>
             </Paragraph>
           ) : (
             <Paragraph className="mt-4">
-              Seseorang yang tertarik dengan hal-hal terkait Frontend, User Interface/Experience,
-              Design Systems, Linux, dan Fotografi. Kamu dapat menghubungi saya via{" "}
-              {socialMediaList.map((item) => (
-                <Link className="font-bold hover:text-blue-500" key={item.id} href={item.route}>
-                  {item.name}
-                  {item.name === "Facebook" || item.name === "Email"
-                    ? ", "
-                    : item.name === "Github"
-                    ? ", "
-                    : ""}
-                </Link>
-              ))}
-              .{" "}
+              Seseorang yang suka menulis kode untuk sisi Front End. Membuat Website yang sederhana,
+              interaktif, responsif, dan accessible. Familiar dengan Javascript/Typescript, React
+              Ecosystem, dan Linux (untuk penggunaan sehari-hari). Mencoba mengikuti best practices
+              semampu saya. Saya bisa bekerja dalam tim ataupun sendiri.{" "}
               <button type="button" aria-label="toggle language" onClick={() => setLanguage(true)}>
                 <UnderlineSpan>Lihat di Bahasa Inggris.</UnderlineSpan>
               </button>
