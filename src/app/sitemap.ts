@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { getAllNotes, getAllWorks } from "~lib/services";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default function Sitemap(): MetadataRoute.Sitemap {
   const tags = getAllNotes()
     .map(({ meta }) =>
       meta.tags.map((tag) => ({ url: `https://haikel.my.id/tags/${tag}`, lastModified: meta.date }))

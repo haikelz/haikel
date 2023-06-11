@@ -1,7 +1,7 @@
 import { format } from "date-fns/esm";
-import { UnderlineLink } from "~components/ui/typography";
 import { cxm } from "~lib/helpers";
 import { spaceGrotesk } from "~lib/utils/fonts";
+import { UnderlineLink } from "~ui/typography";
 
 const socialMediaList = [
   { id: 1, name: "Email", route: "mailto:halo@haikel.my.id" },
@@ -29,11 +29,13 @@ export default function Footer() {
           "md:py-3 md:dark:border-t-gray-500"
         )}
       >
-        <p className="text-center text-base font-bold md:text-left">2020-{currentYear} Haikel</p>
+        <p className="text-center text-sm font-bold md:text-left md:text-base">
+          2020-{currentYear} Haikel
+        </p>
         <ul className="mt-0.5 flex items-center justify-center space-x-3 md:mt-0">
           {socialMediaList.map((item) => (
             <li key={item.id}>
-              <UnderlineLink className="md:text-base" href={item.route}>
+              <UnderlineLink className="text-sm md:text-base" href={item.route}>
                 {item.name}
               </UnderlineLink>
             </li>
