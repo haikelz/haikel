@@ -51,9 +51,16 @@ export async function generateMetadata({
   };
 }
 
-export default async function DetailWorkPage({ params }: { params: { slug: string } }) {
+interface ParamsProps {
+  params: {
+    slug: string;
+  };
+}
+
+export default async function DetailWorkPage({ params }: ParamsProps) {
   const { slug } = params;
   const { content, meta } = getWorkFromSlug(slug);
+  const components = await MDXComponents(content);
 
   return (
     <Main
@@ -105,7 +112,7 @@ export default async function DetailWorkPage({ params }: { params: { slug: strin
           <p className={cxm("text-right text-2xl font-bold", naskhArabic.className)}>
             بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
           </p>
-          {MDXComponents(content)}
+          {components}
         </article>
       </article>
     </Main>
