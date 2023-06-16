@@ -11,7 +11,7 @@ import { Heading, Paragraph, Underline } from "~ui/typography";
 export default function GuestbookClient() {
   const { data: session } = useSession();
 
-  const ref = useRef<HTMLInputElement>(null);
+  const messageRef = useRef<HTMLInputElement>(null);
 
   async function handleSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -19,13 +19,15 @@ export default function GuestbookClient() {
     try {
       const { error } = await supabase.from("guestbook").insert([
         {
-          message: ref.current?.value,
+          message: messageRef.current?.value,
           username: session?.user?.name,
           email: session?.user?.email,
         },
       ]);
 
       if (error) throw error;
+
+      messageRef.current!.value = "";
       window.location.reload();
     } catch (err) {
       console.error(err);
@@ -100,7 +102,7 @@ export default function GuestbookClient() {
       ) : (
         <div className="w-full">
           <form onSubmit={handleSubmit}>
-            <MessageInput ref={ref} />
+            <MessageInput ref={messageRef} />
           </form>
         </div>
       )}

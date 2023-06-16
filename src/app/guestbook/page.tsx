@@ -43,7 +43,7 @@ export const metadata = {
  * Implement ISR(Incremental Static Regeneration)
  * @see https://beta.nextjs.org/docs/data-fetching/revalidating
  */
-export const revalidate = 25;
+export const revalidate = 0;
 
 async function getDataFromSupabase() {
   try {
