@@ -11,9 +11,9 @@ export default function Navbar() {
     <nav
       className={cxm(
         "sticky top-0 z-10 w-full",
-        "bg-azure/80 px-4 py-2.5",
+        "border-b-[1.5px] border-b-gray-300 bg-azure/80 px-4 py-2.5 dark:border-gray-700",
         "backdrop-blur-lg backdrop-filter",
-        "dark:bg-base-0/80 dark:text-gray-100"
+        "dark:bg-black/80 dark:text-gray-100"
       )}
     >
       <div className="mx-auto flex w-full max-w-3xl items-center justify-between">

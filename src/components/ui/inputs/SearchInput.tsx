@@ -18,7 +18,7 @@ export const SearchInput = ({ search, setSearch }: SearchInputProps) => {
           "block w-full border-[2.5px] border-base-1 bg-white outline-none",
           "px-4 py-1.5 pl-12 font-medium transition-all",
           "focus:shadow-light",
-          "dark:border-white dark:bg-base-1 dark:focus:shadow-dark"
+          "dark:border-white dark:bg-base-0 dark:focus:shadow-dark"
         )}
         type="text"
         name="search"

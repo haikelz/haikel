@@ -26,7 +26,7 @@ export default function Footer() {
         className={cxm(
           "mx-auto flex w-full max-w-3xl flex-col items-center justify-between",
           "md:flex-row md:border-t-[1.5px] md:border-t-gray-300",
-          "md:py-3 md:dark:border-t-gray-500"
+          "md:py-3 md:dark:border-t-gray-700"
         )}
       >
         <p className="text-center text-sm font-bold md:text-left md:text-base">

@@ -27,7 +27,7 @@ export default function RootLayout({ children }: ChildrenProps) {
             className={cxm(
               "min-h-screen w-full",
               "bg-azure bg-fixed bg-center text-base-0",
-              "dark:bg-base-0 dark:text-gray-100"
+              "dark:bg-black dark:text-gray-100"
             )}
           >
             <Navbar />

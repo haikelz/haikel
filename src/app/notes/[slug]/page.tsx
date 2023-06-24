@@ -4,6 +4,7 @@ import { cxm } from "~lib/helpers";
 import { getNoteFromSlug, getSlugs } from "~lib/services";
 import { ABSOLUTE_OG_URL, NOTES_PATH } from "~lib/utils/constants";
 import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
+import ClapsClient from "~ui/ClapsClient";
 import MDXComponents from "~ui/MDXComponents";
 import Main from "~ui/Main";
 import { Heading, Paragraph } from "~ui/typography";
@@ -96,6 +97,7 @@ export default async function NotePage({ params }: ParamsProps) {
             بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
           </p>
           {components}
+          <ClapsClient />
         </article>
       </article>
     </Main>

@@ -1,12 +1,10 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
-import dynamic from "next/dynamic";
 import rehypeAutolinkHeadings from "rehype-autolink-headings/lib";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
-
-const LightboxImage = dynamic(() => import("~ui/images/LightboxImage"));
-const Video = dynamic(() => import("~ui/Video"));
+import LightboxImage from "~ui/images/LightboxImage";
+import Video from "./Video";
 
 const highlighterOptions = {
   /**
@@ -19,7 +17,7 @@ const highlighterOptions = {
     if (node.children.length === 0) node.children = [{ type: "text", value: " " }];
   },
 
-  onVisitHighlightedLine(node: any) {
+  onVisitHighlightedLine(node: { properties: { className: Array<string> } }) {
     node.properties.className.push("highlighted");
   },
 

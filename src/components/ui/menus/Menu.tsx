@@ -24,7 +24,7 @@ export default function Menu({ menuIcon, list, contentClassName }: MenuProps) {
           className={cxm(
             "right-0 z-50 mt-2 -translate-x-16 rounded-md bg-white",
             "p-2 drop-shadow-md",
-            "dark:bg-base-2 dark:text-gray-100",
+            "dark:bg-base-1 dark:text-gray-100",
             contentClassName
           )}
         >

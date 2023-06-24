@@ -1,13 +1,11 @@
 import Link from "next/link";
 import { HTMLAttributes } from "react";
 import { cxm } from "~lib/helpers";
-import { ChildrenProps } from "~models";
 
-type UnderlineLinkProps = ChildrenProps &
-  HTMLAttributes<HTMLAnchorElement> & {
-    href: string;
-    className?: string;
-  };
+type UnderlineLinkProps = HTMLAttributes<HTMLAnchorElement> & {
+  href: string;
+  className?: string;
+};
 
 export function UnderlineLink({ children, href, className, ...props }: UnderlineLinkProps) {
   return (
