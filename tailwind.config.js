@@ -119,14 +119,14 @@ module.exports = {
               },
               code: {
                 color: theme("colors.gray.300"),
-                backgroundColor: "#21262D",
+                backgroundColor: "#161B22",
               },
               "a code": {
                 color: theme("colors.white"),
               },
               "pre, pre code": {
                 color: theme("colors.gray.200"),
-                backgroundColor: "#161B22",
+                backgroundColor: "#0D1117",
               },
             },
           },

@@ -68,7 +68,7 @@
   }
 
   [data-rehype-pretty-code-title] {
-    @apply rounded-t-sm bg-base-2 px-4 py-2.5 font-medium text-gray-300;
+    @apply rounded-t-sm bg-base-2 px-4 py-2.5 font-medium text-gray-300 dark:bg-base-1;
     font-family: var(--font-jetbrains);
   }
 
@@ -81,7 +81,7 @@
   /* 
    * So, i divide the gradient styles for text into 2 parts, light mode and dark mode. 
    * Why? Because i want to prevent issue "You cannot `@apply` the `dark:bg-green-700` utility here because it creates a circular dependency"
-  */
+   */
 
   /* light mode */
   .gradient {
@@ -179,7 +179,16 @@
   animation-iteration-count: infinite;
 }
 
+.claps-share-button > span {
+  font-family: var(--font-ibm);
+}
+
+.claps-button-text {
+  font-family: var(--font-ibm);
+}
+
 .claps-share-header > h3,
+.claps-button,
 .claps-share-button > span,
 .claps-share-close {
   @apply text-base-0;
