@@ -1,4 +1,3 @@
-import { Analytics } from "@vercel/analytics/react";
 import NextTopLoader from "nextjs-toploader";
 import { cxm } from "~lib/helpers";
 import { ibmPlexSerif, jetbrains, naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
@@ -34,7 +33,6 @@ export default function RootLayout({ children }: ChildrenProps) {
             <div className="px-4">{children}</div>
             <Footer />
           </div>
-          <Analytics />
         </ProviderWrapper>
       </body>
     </html>

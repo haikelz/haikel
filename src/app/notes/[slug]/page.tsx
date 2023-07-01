@@ -4,13 +4,13 @@ import { cxm } from "~lib/helpers";
 import { getNoteFromSlug, getSlugs } from "~lib/services";
 import { ABSOLUTE_OG_URL, NOTES_PATH } from "~lib/utils/constants";
 import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
-import ClapsClient from "~ui/ClapsClient";
 import MDXComponents from "~ui/MDXComponents";
 import Main from "~ui/Main";
 import { Heading, Paragraph } from "~ui/typography";
 
 const AuthorImage = dynamic(() => import("~ui/images/AuthorImage"));
 const ReadingTime = dynamic(() => import("~ui/ReadingTime"));
+const ClapsClient = dynamic(() => import("~ui/ClapsClient"));
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return getSlugs(NOTES_PATH).map((slug) => ({ slug }));
