@@ -6,27 +6,6 @@ import remarkGfm from "remark-gfm";
 import LightboxImage from "~ui/images/LightboxImage";
 import Video from "./Video";
 
-/**
- * MDX Remote server component
- * @see https://github.com/hashicorp/next-mdx-remote#react-server-components-rsc--nextjs-app-directory-support
- */
-export default function MDXComponents(content: string) {
-  return MDXRemote({
-    source: content,
-    options: {
-      mdxOptions: {
-        rehypePlugins: [
-          rehypeSlug,
-          [rehypeAutolinkHeadings, { behavior: "wrap" }],
-          [rehypePrettyCode, highlighterOptions],
-        ],
-        remarkPlugins: [remarkGfm],
-      },
-    },
-    components: { Video, LightboxImage },
-  });
-}
-
 const highlighterOptions = {
   /**
    * Set theme from shiki
@@ -62,3 +41,24 @@ const highlighterOptions = {
     node.properties.className = ["word"];
   },
 };
+
+/**
+ * MDX Remote server component
+ * @see https://github.com/hashicorp/next-mdx-remote#react-server-components-rsc--nextjs-app-directory-support
+ */
+export default function MDXComponents(content: string) {
+  return MDXRemote({
+    source: content,
+    options: {
+      mdxOptions: {
+        rehypePlugins: [
+          rehypeSlug,
+          [rehypeAutolinkHeadings, { behavior: "wrap" }],
+          [rehypePrettyCode, highlighterOptions],
+        ],
+        remarkPlugins: [remarkGfm],
+      },
+    },
+    components: { Video, LightboxImage },
+  });
+}

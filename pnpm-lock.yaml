@@ -38,7 +38,7 @@ specifiers:
   react-dom: 18.2.0
   reading-time: ^1.5.0
   rehype-autolink-headings: ^6.1.1
-  rehype-pretty-code: ^0.10.0
+  rehype-pretty-code: ^0.9.11
   rehype-slug: ^5.1.0
   remark-gfm: ^3.0.1
   shiki: ^0.14.3
@@ -67,7 +67,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   reading-time: 1.5.0
   rehype-autolink-headings: 6.1.1
-  rehype-pretty-code: 0.10.0_shiki@0.14.3
+  rehype-pretty-code: 0.9.11_shiki@0.14.3
   rehype-slug: 5.1.0
   remark-gfm: 3.0.1
   shiki: 0.14.3
@@ -5869,11 +5869,11 @@ packages:
       unist-util-visit: 4.1.2
     dev: false
 
-  /rehype-pretty-code/0.10.0_shiki@0.14.3:
-    resolution: {integrity: sha512-qCD071Y+vUxEy9yyrATPk2+W9q7qCbzZgtc9suZhu75bmRQvOlBhJt4d3WvqSMTamkKoFkvqtCjyAk+ggH+aXQ==}
+  /rehype-pretty-code/0.9.11_shiki@0.14.3:
+    resolution: {integrity: sha512-Eq90eCYXQJISktfRZ8PPtwc5SUyH6fJcxS8XOMnHPUQZBtC6RYo67gGlley9X2nR8vlniPj0/7oCDEYHKQa/oA==}
     engines: {node: '>=16'}
     peerDependencies:
-      shiki: 0.x
+      shiki: '*'
     dependencies:
       '@types/hast': 2.3.4
       hash-obj: 4.0.0
