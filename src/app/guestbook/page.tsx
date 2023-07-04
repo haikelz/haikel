@@ -1,6 +1,6 @@
 import { cxm } from "~lib/helpers";
 import { DEFAULT_OG_URL } from "~lib/utils/constants";
-import supabase from "~lib/utils/supabase";
+import db from "~lib/utils/db";
 import GuestbookClient from "~sections/GuestbookClient";
 import Main from "~ui/Main";
 import { GuestsList } from "~ui/lists";
@@ -45,12 +45,9 @@ export const metadata = {
  */
 export const revalidate = 0;
 
-async function getDataFromSupabase() {
+async function getData() {
   try {
-    const { data, error } = await supabase
-      .from("guestbook")
-      .select()
-      .order("id", { ascending: false });
+    const { data, error } = await db.from("guestbook").select().order("id", { ascending: false });
 
     if (error) throw error;
     return data;
@@ -60,7 +57,7 @@ async function getDataFromSupabase() {
 }
 
 export default async function Guestbook() {
-  const guestbook = await getDataFromSupabase();
+  const guestbook = await getData();
 
   return (
     <Main

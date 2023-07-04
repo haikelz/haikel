@@ -9,7 +9,7 @@ import Video from "./Video";
 const highlighterOptions = {
   /**
    * Set theme from shiki
-   * @see: https://github.com/shikijs/shiki/tree/main/packages/shiki/themes
+   * @see https://github.com/shikijs/shiki/tree/main/packages/shiki/themes
    */
   theme: "github-dark",
 

@@ -3,7 +3,7 @@
 import { signIn, signOut, useSession } from "next-auth/react";
 import { ChangeEvent, useRef } from "react";
 import { cxm } from "~lib/helpers";
-import supabase from "~lib/utils/supabase";
+import db from "~lib/utils/db";
 import { MessageInput } from "~ui/inputs";
 import { GithubIcon, GoogleIcon } from "~ui/svg";
 import { Heading, Paragraph, Underline } from "~ui/typography";
@@ -17,7 +17,7 @@ export default function GuestbookClient() {
     e.preventDefault();
 
     try {
-      const { error } = await supabase.from("guestbook").insert([
+      const { error } = await db.from("guestbook").insert([
         {
           message: messageRef.current?.value,
           username: session?.user?.name,

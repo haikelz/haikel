@@ -10,7 +10,7 @@ import { Heading, Underline, UnderlineLink } from "~ui/typography";
 const baseMetadata = {
   title: "Haikel Ilham Hakim",
   description:
-    "A person who interested in Frontend stuff, User Interface/Experience, Design Systems, Linux, and Photography",
+    "A person who loves writing code for Front End side. Crafting simple, interactive, responsive, and accessible Websites.",
   url: "https://haikel.my.id",
 };
 

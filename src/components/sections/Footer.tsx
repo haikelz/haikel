@@ -1,13 +1,15 @@
 import { format } from "date-fns/esm";
+import Link from "next/link";
 import { cxm } from "~lib/helpers";
 import { spaceGrotesk } from "~lib/utils/fonts";
-import { UnderlineLink } from "~ui/typography";
+import { FacebookIcon, GithubIcon, InstagramIcon, LinkedinIcon, MailIcon } from "~ui/svg";
 
 const socialMediaList = [
-  { id: 1, name: "Email", route: "mailto:halo@haikel.my.id" },
-  { id: 2, name: "Facebook", route: "https://facebook.com/kelgfx" },
-  { id: 3, name: "Github", route: "https://github.com/haikelz" },
-  { id: 4, name: "Linkedin", route: "https://www.linkedin.com/in/haikel" },
+  { id: 1, icon: MailIcon, route: "mailto:halo@haikel.my.id" },
+  { id: 2, icon: FacebookIcon, route: "https://facebook.com/kelgfx" },
+  { id: 3, icon: InstagramIcon, route: "https://instagram.com/whykelz_" },
+  { id: 4, icon: GithubIcon, route: "https://github.com/haikelz" },
+  { id: 5, icon: LinkedinIcon, route: "https://www.linkedin.com/in/haikel" },
 ];
 
 export default function Footer() {
@@ -32,14 +34,17 @@ export default function Footer() {
         <p className="text-center text-sm font-bold md:text-left md:text-base">
           2020-{currentYear} Haikel
         </p>
-        <ul className="mt-0.5 flex items-center justify-center space-x-3 md:mt-0">
-          {socialMediaList.map((item) => (
-            <li key={item.id}>
-              <UnderlineLink className="text-sm md:text-base" href={item.route}>
-                {item.name}
-              </UnderlineLink>
-            </li>
-          ))}
+        <ul className="mt-3 flex items-center justify-center space-x-4 md:mt-0">
+          {socialMediaList.map((item) => {
+            const Icon = item.icon;
+            return (
+              <Link href={item.route} key={item.id}>
+                <li className="transition-all hover:-translate-y-0.5">
+                  <Icon />
+                </li>
+              </Link>
+            );
+          })}
         </ul>
       </div>
     </footer>
