@@ -1,10 +1,11 @@
 "use client";
 
+import { block } from "million/react";
 import Image from "next/image";
 import { useState } from "react";
 import { cxm } from "~lib/helpers";
 
-export default function AuthorImage() {
+const AuthorImage = block(function AuthorImage() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   return (
@@ -20,4 +21,6 @@ export default function AuthorImage() {
       draggable={false}
     />
   );
-}
+});
+
+export default AuthorImage;

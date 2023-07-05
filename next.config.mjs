@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+import million from "million/compiler";
+
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
@@ -11,4 +13,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default million.next(nextConfig);
