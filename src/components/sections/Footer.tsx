@@ -38,11 +38,13 @@ export default function Footer() {
           {socialMediaList.map((item) => {
             const Icon = item.icon;
             return (
-              <Link href={item.route} key={item.id}>
-                <li className="transition-all hover:-translate-y-0.5">
-                  <Icon />
-                </li>
-              </Link>
+              <li className="transition-all hover:-translate-y-0.5" key={item.id}>
+                <Link href={item.route}>
+                  <button type="button" aria-label={`Icon ${item.id.toString()}`}>
+                    <Icon />
+                  </button>
+                </Link>
+              </li>
             );
           })}
         </ul>
