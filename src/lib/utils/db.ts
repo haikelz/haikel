@@ -1,6 +1,10 @@
 import { createClient } from "@supabase/supabase-js";
-import { SUPABASE_KEY, SUPABASE_URL } from "./constants";
+import { env } from "~env.mjs";
 
-const db = createClient(SUPABASE_URL, SUPABASE_KEY, { auth: { persistSession: false } });
+const { NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_KEY } = env;
+
+const db = createClient(NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_KEY, {
+  auth: { persistSession: false },
+});
 
 export default db;

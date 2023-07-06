@@ -6,6 +6,7 @@ specifiers:
   '@radix-ui/react-dropdown-menu': ^2.0.5
   '@supabase/supabase-js': ^2.26.0
   '@swc-jotai/react-refresh': ^0.0.8
+  '@t3-oss/env-nextjs': ^0.6.0
   '@tailwindcss/typography': ^0.5.9
   '@types/node': 20.3.2
   '@types/react': 18.2.14
@@ -48,10 +49,12 @@ specifiers:
   taze: ^0.11.2
   typescript: 5.1.6
   yet-another-react-lightbox: ^3.11.3
+  zod: ^3.21.4
 
 dependencies:
   '@radix-ui/react-dropdown-menu': 2.0.5_qzycrpzqvmvb7wd2jdibmpq2cy
   '@supabase/supabase-js': 2.26.0
+  '@t3-oss/env-nextjs': 0.6.0_zno6rcmvi3mruj4xg7lanqhjom
   '@upstash/claps': 1.0.0-beta.4
   classix: 2.1.33
   date-fns: 2.30.0
@@ -75,6 +78,7 @@ dependencies:
   shiki: 0.14.3
   tailwind-merge: 1.13.2
   yet-another-react-lightbox: 3.11.3_biqbaboplfbrettd7655fr4n2y
+  zod: 3.21.4
 
 devDependencies:
   '@next-auth/prisma-adapter': 1.0.7_arcl7aimwkiosoj4hoyzp3g5om
@@ -1498,6 +1502,27 @@ packages:
     resolution: {integrity: sha512-sJ902EfIzn1Fa+qYmjdQqh8tPsoxyBz+8yBKC2HKUxyezKJFwPGOn7pv4WY6QuQW//ySQi5lJjA/ZT9sNWWNTg==}
     dependencies:
       tslib: 2.6.0
+
+  /@t3-oss/env-core/0.6.0_zno6rcmvi3mruj4xg7lanqhjom:
+    resolution: {integrity: sha512-3FkPAba069WRZVVab/sB1m3eSGn/rZeypx5k+sWEu1d+k0OQdRDnvFS+7MtxYgqVrwaRk3b7yVnX2dgSPVmWPQ==}
+    peerDependencies:
+      typescript: '>=4.7.2'
+      zod: ^3.0.0
+    dependencies:
+      typescript: 5.1.6
+      zod: 3.21.4
+    dev: false
+
+  /@t3-oss/env-nextjs/0.6.0_zno6rcmvi3mruj4xg7lanqhjom:
+    resolution: {integrity: sha512-SpzcGNIbUYcQw4zPPFeRJqCC1560zL7QmB0puIqOnuCsmykPkqHPX+n9CNZLXVQerboHzfvb7Kd+jAdouk72Vw==}
+    peerDependencies:
+      typescript: '>=4.7.2'
+      zod: ^3.0.0
+    dependencies:
+      '@t3-oss/env-core': 0.6.0_zno6rcmvi3mruj4xg7lanqhjom
+      typescript: 5.1.6
+      zod: 3.21.4
+    dev: false
 
   /@tailwindcss/typography/0.5.9_tailwindcss@3.3.2:
     resolution: {integrity: sha512-t8Sg3DyynFysV9f4JDOVISGsjazNb48AeIYQwcL+Bsq5uf4RYL75C1giZ43KISjeDGBaTN3Kxh7Xj/vRSMJUUg==}
@@ -6944,7 +6969,6 @@ packages:
     resolution: {integrity: sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA==}
     engines: {node: '>=14.17'}
     hasBin: true
-    dev: true
 
   /unbox-primitive/1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}

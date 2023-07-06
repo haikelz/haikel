@@ -16,6 +16,7 @@
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.0.5",
     "@supabase/supabase-js": "^2.26.0",
+    "@t3-oss/env-nextjs": "^0.6.0",
     "@upstash/claps": "1.0.0-beta.4",
     "classix": "^2.1.33",
     "date-fns": "^2.30.0",
@@ -38,7 +39,8 @@
     "remark-gfm": "^3.0.1",
     "shiki": "^0.14.3",
     "tailwind-merge": "^1.13.2",
-    "yet-another-react-lightbox": "^3.11.3"
+    "yet-another-react-lightbox": "^3.11.3",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@next-auth/prisma-adapter": "^1.0.7",

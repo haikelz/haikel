@@ -1,6 +1,7 @@
-/** @type {import('next').NextConfig} */
 import million from "million/compiler";
+import "./src/env.mjs";
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
