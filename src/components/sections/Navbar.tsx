@@ -31,7 +31,7 @@ export default function Navbar() {
             ハキム
           </Link>
         </div>
-        <div className="flex items-center justify-center space-x-6">
+        <div className="flex items-center justify-center">
           <NavigationMenu />
           <SwitchThemeMenu />
         </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { DropdownMenuItem } from "@radix-ui/react-dropdown-menu";
-import { For, block } from "million/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cxm } from "~lib/helpers";
@@ -15,13 +14,13 @@ const topNavList = [
   { id: 3, route: "/guestbook", icon: GuestbookIcon },
 ];
 
-const NavigationMenu = block(function NavigationMenu() {
+export default function NavigationMenu() {
   const pathname = usePathname();
 
   return (
     <Menu
       menuIcon={
-        <button type="button" aria-label="menu">
+        <button className="mr-6" type="button" aria-label="menu">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="icon icon-tabler icon-tabler-category"
@@ -42,40 +41,34 @@ const NavigationMenu = block(function NavigationMenu() {
           </svg>
         </button>
       }
-      list={
-        <For each={topNavList}>
-          {(item) => {
-            const Icon = item.icon;
-            return (
-              <Link key={item.id} href={item.route}>
-                <DropdownMenuItem
-                  className={cxm(
-                    "flex items-center justify-start",
-                    "space-x-2 rounded-md p-2",
-                    "font-semibold outline-none transition-all",
-                    "data-[highlighted]:bg-red data-[highlighted]:text-gray-100",
-                    "dark:data-[highlighted]:bg-blue-500"
-                  )}
-                >
-                  <Icon className="h-6 w-6" />
-                  <span
-                    className={cxm(
-                      pathname?.includes(item.route)
-                        ? "font-bold underline decoration-dashed underline-offset-[5px]"
-                        : "",
-                      spaceGrotesk.className
-                    )}
-                  >
-                    {item.route}
-                  </span>
-                </DropdownMenuItem>
-              </Link>
-            );
-          }}
-        </For>
-      }
+      list={topNavList.map((item) => {
+        const Icon = item.icon;
+        return (
+          <Link key={item.id} href={item.route}>
+            <DropdownMenuItem
+              className={cxm(
+                "flex items-center justify-start",
+                "space-x-2 rounded-md p-2",
+                "font-semibold outline-none transition-all",
+                "data-[highlighted]:bg-red data-[highlighted]:text-gray-100",
+                "dark:data-[highlighted]:bg-blue-500"
+              )}
+            >
+              <Icon className="h-6 w-6" />
+              <span
+                className={cxm(
+                  pathname?.includes(item.route)
+                    ? "font-bold underline decoration-dashed underline-offset-[5px]"
+                    : "",
+                  spaceGrotesk.className
+                )}
+              >
+                {item.route}
+              </span>
+            </DropdownMenuItem>
+          </Link>
+        );
+      })}
     />
   );
-});
-
-export default NavigationMenu;
+}

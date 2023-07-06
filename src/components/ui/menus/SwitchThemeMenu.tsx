@@ -1,6 +1,7 @@
 "use client";
 
 import { DropdownMenuItem } from "@radix-ui/react-dropdown-menu";
+import { For, block } from "million/react";
 import { useTheme } from "next-themes";
 import { cxm } from "~lib/helpers";
 import { spaceGrotesk } from "~lib/utils/fonts";
@@ -25,7 +26,7 @@ const themeOptionsList = [
   },
 ];
 
-export default function SwitchThemeMenu() {
+const SwitchThemeMenu = block(function SwitchThemeMenu() {
   const { theme, setTheme, systemTheme } = useTheme();
 
   return (
@@ -77,36 +78,42 @@ export default function SwitchThemeMenu() {
           )}
         </button>
       }
-      list={themeOptionsList.map((item) => {
-        const Icon = item.icon;
-        return (
-          <DropdownMenuItem
-            key={item.id}
-            className={cxm(
-              "flex items-center justify-start",
-              "space-x-2 rounded-md p-2",
-              "cursor-pointer font-semibold outline-none transition-all",
-              "data-[highlighted]:bg-red data-[highlighted]:text-gray-100",
-              "dark:data-[highlighted]:bg-blue-500"
-            )}
-            onClick={() =>
-              setTheme(
-                item.name === "Dark"
-                  ? "dark"
-                  : item.name === "Light"
-                  ? "light"
-                  : systemTheme === "dark"
-                  ? "dark"
-                  : "light"
-              )
-            }
-          >
-            <Icon className="h-6 w-6" />
-            <span className={spaceGrotesk.className}>{item.name}</span>
-          </DropdownMenuItem>
-        );
-      })}
+      list={
+        <For each={themeOptionsList}>
+          {(item) => {
+            const Icon = item.icon;
+            return (
+              <DropdownMenuItem
+                key={item.id}
+                className={cxm(
+                  "flex items-center justify-start",
+                  "space-x-2 rounded-md p-2",
+                  "cursor-pointer font-semibold outline-none transition-all",
+                  "data-[highlighted]:bg-red data-[highlighted]:text-gray-100",
+                  "dark:data-[highlighted]:bg-blue-500"
+                )}
+                onClick={() =>
+                  setTheme(
+                    item.name === "Dark"
+                      ? "dark"
+                      : item.name === "Light"
+                      ? "light"
+                      : systemTheme === "dark"
+                      ? "dark"
+                      : "light"
+                  )
+                }
+              >
+                <Icon className="h-6 w-6" />
+                <span className={spaceGrotesk.className}>{item.name}</span>
+              </DropdownMenuItem>
+            );
+          }}
+        </For>
+      }
       contentClassName="lg:-translate-x-20 -translate-x-5"
     />
   );
-}
+});
+
+export default SwitchThemeMenu;
