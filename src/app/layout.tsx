@@ -5,7 +5,7 @@ import { ChildrenProps } from "~models";
 import Footer from "~sections/Footer";
 import Navbar from "~sections/Navbar";
 import "./globals.css";
-import ProviderWrapper from "./providerWrapper";
+import Wrapper from "./wrapper";
 
 export default function RootLayout({ children }: ChildrenProps) {
   return (
@@ -20,7 +20,7 @@ export default function RootLayout({ children }: ChildrenProps) {
       suppressHydrationWarning
     >
       <body>
-        <ProviderWrapper>
+        <Wrapper>
           <NextTopLoader color="#F84B3E" showSpinner={false} />
           <div
             className={cxm(
@@ -33,7 +33,7 @@ export default function RootLayout({ children }: ChildrenProps) {
             <div className="px-4">{children}</div>
             <Footer />
           </div>
-        </ProviderWrapper>
+        </Wrapper>
       </body>
     </html>
   );

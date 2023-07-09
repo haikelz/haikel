@@ -53,13 +53,7 @@ export async function generateMetadata({
   };
 }
 
-interface ParamsProps {
-  params: {
-    slug: string;
-  };
-}
-
-export default function Tags({ params }: ParamsProps) {
+export default function Tags({ params }: { params: { slug: string } }) {
   const { slug } = params;
 
   const notes = getAllNotes()

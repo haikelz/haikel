@@ -5,7 +5,7 @@ import { SessionProvider } from "next-auth/react";
 import { ThemeProvider } from "next-themes";
 import { ChildrenProps } from "~models";
 
-export default function ProviderWrapper({ children }: ChildrenProps) {
+export default function Wrapper({ children }: ChildrenProps) {
   return (
     <SessionProvider>
       <Provider>

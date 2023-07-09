@@ -53,13 +53,7 @@ export async function generateMetadata({
   };
 }
 
-interface ParamsProps {
-  params: {
-    slug: string;
-  };
-}
-
-export default async function NotePage({ params }: ParamsProps) {
+export default async function NotePage({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const { content, meta } = getNoteFromSlug(slug);
   const components = await MDXComponents(content);

@@ -51,13 +51,7 @@ export async function generateMetadata({
   };
 }
 
-interface ParamsProps {
-  params: {
-    slug: string;
-  };
-}
-
-export default async function DetailWorkPage({ params }: ParamsProps) {
+export default async function DetailWorkPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const { content, meta } = getWorkFromSlug(slug);
   const components = await MDXComponents(content);

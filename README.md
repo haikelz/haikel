@@ -1,5 +1,7 @@
+![thumbnail](public/img/haikelz.png)
+
 <div align="center">
-  <h1>haikel.my.id</h1>
+  <h1>haikel</h1>
   <p>My Personal Website. Always WIP</p>
 </div>
 
@@ -13,10 +15,6 @@
 - [supabase](https://supabase.com/)
 
 See [`package.json`](https://github.com/haikelz/haikel.my.id/blob/master/package.json) file for more information.
-
-## Screenshot
-
-![new preview](/public/docs/new-preview.png)
 
 ## Credits
 
