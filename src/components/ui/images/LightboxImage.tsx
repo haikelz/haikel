@@ -29,8 +29,8 @@ export default function LightboxImage({ src, alt }: LightboxImageProps) {
         decoding="async"
         src={src}
         alt={alt}
-        width={500}
-        height={500}
+        width={1000}
+        height={1000}
         loading="lazy"
       />
       {isOpen ? (

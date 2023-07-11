@@ -4,8 +4,8 @@ import Claps from "@upstash/claps";
 import "@upstash/claps/style.css";
 import { block } from "million/react";
 
-const ClapsClient = block(function ClapsClient() {
+const ClapsButton = block(function ClapsButton() {
   return <Claps fixed="center" apiPath="/api/claps" />;
 });
 
-export default ClapsClient;
+export default ClapsButton;

@@ -10,7 +10,7 @@ import { Heading, Paragraph } from "~ui/typography";
 
 const AuthorImage = dynamic(() => import("~ui/images/AuthorImage"));
 const ReadingTime = dynamic(() => import("~ui/ReadingTime"));
-const ClapsClient = dynamic(() => import("~ui/ClapsClient"));
+const ClapsButton = dynamic(() => import("~ui/ClapsButton"));
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return getSlugs(NOTES_PATH).map((slug) => ({ slug }));
@@ -91,7 +91,7 @@ export default async function NotePage({ params }: { params: { slug: string } })
             بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
           </p>
           {components}
-          <ClapsClient />
+          <ClapsButton />
         </article>
       </article>
     </Main>

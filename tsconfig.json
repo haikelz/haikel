@@ -17,8 +17,7 @@
     "baseUrl": "./src",
     "paths": {
       "~*": ["*"],
-      "~ui/*": ["components/ui/*"],
-      "~sections/*": ["components/sections/*"]
+      "~ui/*": ["components/ui/*"]
     },
     "plugins": [
       {

@@ -2,7 +2,7 @@ import { cxm } from "~lib/helpers";
 import { getAllNotes, getAllWorks } from "~lib/services";
 import { DEFAULT_OG_URL } from "~lib/utils/constants";
 import { NoteMetaProps, WorkMetaProps } from "~models";
-import About from "~sections/About";
+import About from "~ui/About";
 import Main from "~ui/Main";
 import { NotesList, WorksList } from "~ui/lists";
 import { Heading, Underline, UnderlineLink } from "~ui/typography";

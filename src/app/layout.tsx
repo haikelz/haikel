@@ -2,8 +2,8 @@ import NextTopLoader from "nextjs-toploader";
 import { cxm } from "~lib/helpers";
 import { ibmPlexSerif, jetbrains, naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
 import { ChildrenProps } from "~models";
-import Footer from "~sections/Footer";
-import Navbar from "~sections/Navbar";
+import Footer from "~ui/Footer";
+import Navbar from "~ui/Navbar";
 import "./globals.css";
 import Wrapper from "./wrapper";
 

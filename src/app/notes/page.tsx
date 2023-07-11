@@ -1,10 +1,10 @@
-import { Heading, Paragraph, Underline } from "~ui/typography";
 import { cxm } from "~lib/helpers";
 import { getAllNotes } from "~lib/services";
 import { DEFAULT_OG_URL } from "~lib/utils/constants";
 import { NoteMetaProps } from "~models";
-import NotesClient from "~sections/NotesClient";
 import Main from "~ui/Main";
+import { Heading, Paragraph, Underline } from "~ui/typography";
+import NotesClient from "./client";
 
 const baseMetadata = {
   title: "Notes",
