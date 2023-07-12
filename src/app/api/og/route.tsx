@@ -51,7 +51,7 @@ export async function GET(req: NextRequest) {
                 textAlign: "center",
               }}
             >
-              haikel.my.id
+              haikel.app
             </span>
           </div>
           <div style={{ fontWeight: 600 }}>ハキム</div>

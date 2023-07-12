@@ -30,10 +30,10 @@ export async function generateMetadata({
     authors: author,
     openGraph: {
       type: "article",
-      url: `https://haikel.my.id/works/${slug}`,
+      url: `https://haikel.app/works/${slug}`,
       title,
       description,
-      siteName: "haikel.my.id",
+      siteName: "haikel.app",
       images: [
         {
           url: `${ABSOLUTE_OG_URL}?title=${title}`,
@@ -44,10 +44,10 @@ export async function generateMetadata({
     twitter: {
       title,
       description,
-      site: `https://haikel.my.id/works/${slug}`,
+      site: `https://haikel.app/works/${slug}`,
       card: "summary_large_image",
     },
-    metadataBase: new URL(`https://haikel.my.id/works/${slug}`),
+    metadataBase: new URL(`https://haikel.app/works/${slug}`),
   };
 }
 

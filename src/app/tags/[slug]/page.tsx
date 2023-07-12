@@ -32,10 +32,10 @@ export async function generateMetadata({
     description: tagSlug,
     openGraph: {
       type: "website",
-      url: `https://haikel.my.id/tags/${slug}`,
+      url: `https://haikel.app/tags/${slug}`,
       title: tagSlug,
       description: tagSlug,
-      siteName: "haikel.my.id",
+      siteName: "haikel.app",
       images: [
         {
           url: DEFAULT_OG_URL,
@@ -46,10 +46,10 @@ export async function generateMetadata({
     twitter: {
       title: tagSlug,
       description: tagSlug,
-      site: `https://haikel.my.id/tags/${slug}`,
+      site: `https://haikel.app/tags/${slug}`,
       card: "summary_large_image",
     },
-    metadataBase: new URL(`https://haikel.my.id/tags/${slug}`),
+    metadataBase: new URL(`https://haikel.app/tags/${slug}`),
   };
 }
 

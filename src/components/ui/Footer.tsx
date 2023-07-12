@@ -11,7 +11,7 @@ import { cxm } from "~lib/helpers";
 import { spaceGrotesk } from "~lib/utils/fonts";
 
 const socialMediaList = [
-  { id: 1, icon: IconMail, route: "mailto:halo@haikel.my.id" },
+  { id: 1, icon: IconMail, route: "mailto:halo@haikel.app" },
   { id: 2, icon: IconBrandFacebook, route: "https://facebook.com/kelgfx" },
   { id: 3, icon: IconBrandInstagram, route: "https://instagram.com/whykelz_" },
   { id: 4, icon: IconBrandGithub, route: "https://github.com/haikelz" },

@@ -9,7 +9,7 @@ import GuestbookClient from "./client";
 const baseMetadata = {
   title: "Guestbook",
   description: "Write a message for me and others",
-  url: "https://haikel.my.id/guestbook",
+  url: "https://haikel.app/guestbook",
 };
 
 const { title, description, url } = baseMetadata;
@@ -22,7 +22,7 @@ export const metadata = {
     url,
     title,
     description,
-    siteName: "haikel.my.id",
+    siteName: "haikel.app",
     images: [
       {
         url: DEFAULT_OG_URL,

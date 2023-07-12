@@ -9,7 +9,7 @@ import { Heading, Paragraph, Underline } from "~ui/typography";
 const baseMetadata = {
   title: "Works",
   description: "List some of my works",
-  url: "https://haikel.my.id/works",
+  url: "https://haikel.app/works",
 };
 
 const { title, description, url } = baseMetadata;
@@ -22,7 +22,7 @@ export const metadata = {
     url,
     title,
     description,
-    siteName: "haikel.my.id",
+    siteName: "haikel.app",
     images: [
       {
         url: DEFAULT_OG_URL,

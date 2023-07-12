@@ -31,11 +31,11 @@ export async function generateMetadata({
     authors: author,
     openGraph: {
       type: "article",
-      url: `https://haikel.my.id/notes/${slug}`,
+      url: `https://haikel.app/notes/${slug}`,
       title,
       description,
       publishedTime: date,
-      siteName: "haikel.my.id",
+      siteName: "haikel.app",
       images: [
         {
           url: `${ABSOLUTE_OG_URL}?title=${title}`,
@@ -46,10 +46,10 @@ export async function generateMetadata({
     twitter: {
       title,
       description,
-      site: `https://haikel.my.id/notes/${slug}`,
+      site: `https://haikel.app/notes/${slug}`,
       card: "summary_large_image",
     },
-    metadataBase: new URL(`https://haikel.my.id/notes/${slug}`),
+    metadataBase: new URL(`https://haikel.app/notes/${slug}`),
   };
 }
 

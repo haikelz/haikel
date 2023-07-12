@@ -1,9 +1,4 @@
-interface VideoProps {
-  src: string;
-  title: string;
-}
-
-export default function Video({ src, title }: VideoProps) {
+export default function Video({ src, title }: { src: string; title: string }) {
   return (
     <div className="relative my-4 h-0 max-w-full overflow-hidden rounded-sm pb-[56.25%]">
       <iframe

@@ -10,7 +10,7 @@ const baseMetadata = {
   title: "Notes",
   description:
     "Sometimes i write something. Mostly about technical stuff. So yeah, i call this as Notes.",
-  url: "https://haikel.my.id/notes",
+  url: "https://haikel.app/notes",
 };
 
 const { title, description, url } = baseMetadata;
@@ -23,7 +23,7 @@ export const metadata = {
     url,
     title,
     description,
-    siteName: "haikel.my.id",
+    siteName: "haikel.app",
     images: [
       {
         url: DEFAULT_OG_URL,
