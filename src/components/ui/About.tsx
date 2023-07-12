@@ -5,10 +5,13 @@ import { cxm } from "~lib/helpers";
 import { Heading, Paragraph, UnderlineSpan } from "~ui/typography";
 
 function atomWithToggle(initialValue?: boolean) {
-  const anAtom = atom(initialValue, (get, set, nextValue?: boolean) => {
-    const update: boolean = nextValue ?? !get(anAtom);
-    set(anAtom, update);
-  });
+  const anAtom = atom<boolean | undefined, [nextValue?: boolean | undefined], void>(
+    initialValue,
+    (get, set, nextValue?: boolean) => {
+      const update: boolean = nextValue ?? !get(anAtom);
+      set(anAtom, update);
+    }
+  );
 
   return anAtom;
 }

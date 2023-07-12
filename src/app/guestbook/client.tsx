@@ -1,11 +1,12 @@
 "use client";
 
+import { IconBrandGithub } from "@tabler/icons-react";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { ChangeEvent, useRef } from "react";
 import { cxm } from "~lib/helpers";
 import db from "~lib/utils/db";
 import { MessageInput } from "~ui/inputs";
-import { GithubIcon, GoogleIcon } from "~ui/svg";
+import { GoogleIcon } from "~ui/svg";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
 export default function GuestbookClient() {
@@ -80,7 +81,7 @@ export default function GuestbookClient() {
             )}
             onClick={() => signIn("github")}
           >
-            <GithubIcon />
+            <IconBrandGithub size={22} />
             <span className="text-base md:text-lg">Github</span>
           </button>
           <span className="text-base">or</span>

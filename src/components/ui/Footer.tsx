@@ -1,15 +1,21 @@
+import {
+  IconBrandFacebook,
+  IconBrandGithub,
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconMail,
+} from "@tabler/icons-react";
 import { format } from "date-fns/esm";
 import Link from "next/link";
 import { cxm } from "~lib/helpers";
 import { spaceGrotesk } from "~lib/utils/fonts";
-import { FacebookIcon, GithubIcon, InstagramIcon, LinkedinIcon, MailIcon } from "~ui/svg";
 
 const socialMediaList = [
-  { id: 1, icon: MailIcon, route: "mailto:halo@haikel.my.id" },
-  { id: 2, icon: FacebookIcon, route: "https://facebook.com/kelgfx" },
-  { id: 3, icon: InstagramIcon, route: "https://instagram.com/whykelz_" },
-  { id: 4, icon: GithubIcon, route: "https://github.com/haikelz" },
-  { id: 5, icon: LinkedinIcon, route: "https://www.linkedin.com/in/haikel" },
+  { id: 1, icon: IconMail, route: "mailto:halo@haikel.my.id" },
+  { id: 2, icon: IconBrandFacebook, route: "https://facebook.com/kelgfx" },
+  { id: 3, icon: IconBrandInstagram, route: "https://instagram.com/whykelz_" },
+  { id: 4, icon: IconBrandGithub, route: "https://github.com/haikelz" },
+  { id: 5, icon: IconBrandLinkedin, route: "https://www.linkedin.com/in/haikel" },
 ];
 
 export default function Footer() {
@@ -39,9 +45,9 @@ export default function Footer() {
             const Icon = item.icon;
             return (
               <li className="transition-all hover:-translate-y-0.5" key={item.id}>
-                <Link href={item.route}>
+                <Link href={item.route} target="_blank">
                   <button type="button" aria-label={`Icon ${item.id.toString()}`}>
-                    <Icon />
+                    <Icon size={22} />
                   </button>
                 </Link>
               </li>
