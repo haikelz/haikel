@@ -38,7 +38,7 @@ export default function Footer() {
         )}
       >
         <p className="text-center text-sm font-bold md:text-left md:text-base">
-          2020-{currentYear} Haikel
+          2020-{currentYear} Haikel Ilham Hakim
         </p>
         <ul className="mt-3 flex items-center justify-center space-x-4 md:mt-0">
           {socialMediaList.map((item) => {
