@@ -50,6 +50,24 @@ const nextConfig = {
 module.exports = nextConfig;
 ```
 
+Atau jika menggunakan js module:
+
+```js title="next.config.mjs" /import WindiCSSWebpackPlugin from "windicss-webpack-plugin";/#v /export default nextConfig;/#v
+/** @type {import('next').NextConfig} */
+import WindiCSSWebpackPlugin from "windicss-webpack-plugin";
+
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+  webpack(config) {
+    config.plugins.push(new WindiCSSWebpackPlugin());
+    return config;
+  },
+};
+
+export default nextConfig;
+```
+
 3. Buat file `windi.config.js` di root directory.
 
 ```js title="windi.config.js"

@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+/* line number highlgiht code */
+code {
+  counter-reset: line;
+}
+
+code > .line::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 1rem;
+  margin-right: 2rem;
+  text-align: right;
+  color: gray;
+}
+
+code[data-line-numbers-max-digits="2"] > .line::before {
+  width: 2rem;
+}
+
+code[data-line-numbers-max-digits="3"] > .line::before {
+  width: 3rem;
+}
+
 @layer base {
   body {
     @apply m-0 h-[50vh];
@@ -42,29 +65,6 @@
 
   button {
     @apply outline-none;
-  }
-
-  /* Shiki highlight code */
-  code {
-    counter-reset: line;
-  }
-
-  code > .line::before {
-    counter-increment: line;
-    content: counter(line);
-    display: inline-block;
-    width: 1rem;
-    margin-right: 2rem;
-    text-align: right;
-    color: gray;
-  }
-
-  code[data-line-numbers-max-digits="2"] > .line::before {
-    width: 2rem;
-  }
-
-  code[data-line-numbers-max-digits="3"] > .line::before {
-    width: 3rem;
   }
 
   [data-rehype-pretty-code-title] {
