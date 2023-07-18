@@ -1,7 +1,13 @@
 "use client";
 
 import { DropdownMenuItem } from "@radix-ui/react-dropdown-menu";
-import { IconAddressBook, IconCategory, IconListDetails, IconNotes } from "@tabler/icons-react";
+import {
+  IconAddressBook,
+  IconCategory,
+  IconListDetails,
+  IconNotes,
+  IconTags,
+} from "@tabler/icons-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cxm } from "~lib/helpers";
@@ -11,7 +17,8 @@ import Menu from "./Menu";
 const topNavList = [
   { id: 1, route: "/works", icon: IconListDetails },
   { id: 2, route: "/notes", icon: IconNotes },
-  { id: 3, route: "/guestbook", icon: IconAddressBook },
+  { id: 3, route: "/tags", icon: IconTags },
+  { id: 4, route: "/guestbook", icon: IconAddressBook },
 ];
 
 export default function NavigationMenu() {
