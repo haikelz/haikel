@@ -62,7 +62,7 @@ export default async function NotePage({ params }: { params: { slug: string } })
     <Main
       className={cxm("flex min-h-screen flex-col items-center justify-start", "py-8", "md:py-12")}
     >
-      <article className="mb-3 flex w-full flex-col flex-wrap justify-center">
+      <article className="flex w-full flex-col flex-wrap justify-center md:mb-3">
         <section className="flex flex-col">
           <Heading as="h1" className="gradient dark:gradient-dark">
             {meta.title}
@@ -91,8 +91,8 @@ export default async function NotePage({ params }: { params: { slug: string } })
             بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
           </p>
           {components}
-          <Comments />
         </article>
+        <Comments />
       </article>
     </Main>
   );

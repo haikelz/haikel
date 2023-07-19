@@ -155,18 +155,3 @@
   animation-timing-function: cubic-bezier(1, 1, 1, 1);
   animation-iteration-count: infinite;
 }
-
-.claps-share-button > span {
-  font-family: var(--font-ibm);
-}
-
-.claps-button-text {
-  font-family: var(--font-ibm);
-}
-
-.claps-share-header > h3,
-.claps-button,
-.claps-share-button > span,
-.claps-share-close {
-  @apply text-base-0;
-}

@@ -25,7 +25,7 @@ export default function RootLayout({ children }: ChildrenProps) {
           <div
             className={cxm(
               "min-h-screen w-full",
-              "bg-azure bg-fixed bg-center text-base-0",
+              "bg-azure text-base-0",
               "dark:bg-black dark:text-gray-100"
             )}
           >
