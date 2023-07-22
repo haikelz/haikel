@@ -5,7 +5,7 @@ import { DEFAULT_OG_URL } from "~lib/utils/constants";
 import { NoteMetaProps } from "~models";
 import Main from "~ui/Main";
 import { NotesList } from "~ui/lists";
-import { Heading, Underline } from "~ui/typography";
+import { Heading, Paragraph, Underline } from "~ui/typography";
 
 interface NoteProps {
   content: string;
@@ -73,7 +73,11 @@ export default function Tags({ params }: { params: { slug: string } }) {
         </div>
       </section>
       <section className="mb-10 mt-6 flex w-full flex-col space-y-8">
-        <NotesList filteredNotes={notes} />
+        {notes.length ? (
+          <NotesList filteredNotes={notes} />
+        ) : (
+          <Paragraph>No notes matching with the tags!</Paragraph>
+        )}
       </section>
     </Main>
   );

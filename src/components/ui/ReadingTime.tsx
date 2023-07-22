@@ -1,5 +1,3 @@
-"use client";
-
 import { useMemo } from "react";
 import word from "reading-time";
 

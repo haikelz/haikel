@@ -41,14 +41,19 @@ export const metadata = {
 
 export default function Tags() {
   const tagsList = useMemo(
-    () => [
-      ...new Set(
-        getAllNotes()
-          .map((item) => [...new Set(item.meta.tags)].join(" "))
-          .join(" ")
-          .split(" ")
-      ),
-    ],
+    () =>
+      [
+        ...new Set(
+          getAllNotes()
+            .map((item) => [...new Set(item.meta.tags)].join(" "))
+            .join(" ")
+            .split(" ")
+        ),
+      ].sort((a, b) => {
+        if (a < b) return -1;
+        if (a > b) return 1;
+        return 0;
+      }),
     [getAllNotes]
   );
 
@@ -70,14 +75,16 @@ export default function Tags() {
       <section className="mt-6 flex flex-wrap gap-4">
         {tagsList.map((item) => (
           <Link key={item} href={`/tags/${item}`}>
-            <div
+            <button
+              type="button"
+              aria-label={`tag ${item}`}
               className={cxm(
                 "bg-base-5 px-4 py-1 transition-all",
                 "hover:scale-110 dark:bg-base-1"
               )}
             >
               <Paragraph className="text-center font-medium">{item}</Paragraph>
-            </div>
+            </button>
           </Link>
         ))}
       </section>

@@ -4,6 +4,7 @@ import {
   IconBrandInstagram,
   IconBrandLinkedin,
   IconMail,
+  IconRss,
 } from "@tabler/icons-react";
 import { format } from "date-fns/esm";
 import Link from "next/link";
@@ -12,10 +13,11 @@ import { spaceGrotesk } from "~lib/utils/fonts";
 
 const socialMediaList = [
   { id: 1, icon: IconMail, route: "mailto:halo@haikel.app" },
-  { id: 2, icon: IconBrandFacebook, route: "https://facebook.com/kelgfx" },
-  { id: 3, icon: IconBrandInstagram, route: "https://instagram.com/whykelz_" },
-  { id: 4, icon: IconBrandGithub, route: "https://github.com/haikelz" },
-  { id: 5, icon: IconBrandLinkedin, route: "https://www.linkedin.com/in/haikel" },
+  { id: 2, icon: IconRss, route: "https://haikel.app/sitemap.xml" },
+  { id: 3, icon: IconBrandFacebook, route: "https://facebook.com/kelgfx" },
+  { id: 4, icon: IconBrandInstagram, route: "https://instagram.com/whykelz_" },
+  { id: 5, icon: IconBrandGithub, route: "https://github.com/haikelz" },
+  { id: 6, icon: IconBrandLinkedin, route: "https://www.linkedin.com/in/haikel" },
 ];
 
 export default function Footer() {
