@@ -1,5 +1,5 @@
 import { cxm } from "~lib/helpers";
-import { getAllNotes, getAllWorks } from "~lib/services";
+import { generateRssFeed, getAllNotes, getAllWorks } from "~lib/services";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { NoteMetaProps, WorkMetaProps } from "~models";
 import About from "~ui/about";
@@ -40,7 +40,9 @@ export const metadata = {
   metadataBase: new URL(url),
 };
 
-export default function HomePage() {
+export default async function HomePage() {
+  generateRssFeed();
+
   const notes: NoteMetaProps[] = getAllNotes()
     .slice(0, 4)
     .map((note) => note.meta);
