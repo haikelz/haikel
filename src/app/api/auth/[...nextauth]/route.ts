@@ -2,14 +2,16 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import NextAuth from "next-auth/next";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
-import {
-  NEXTAUTH_SECRET,
+import { env } from "~env.mjs";
+import prisma from "~lib/utils/prisma";
+
+const {
   NEXT_PUBLIC_GITHUB_ID,
   NEXT_PUBLIC_GITHUB_SECRET,
   NEXT_PUBLIC_GOOGLE_ID,
   NEXT_PUBLIC_GOOGLE_SECRET,
-} from "~lib/utils/constants";
-import prisma from "~lib/utils/prisma";
+  NEXTAUTH_SECRET,
+} = env;
 
 const authOptions = NextAuth({
   providers: [

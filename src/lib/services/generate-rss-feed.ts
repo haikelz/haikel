@@ -1,7 +1,7 @@
 import { format } from "date-fns/esm";
 import { writeFileSync } from "fs";
 import RSS, { FeedOptions } from "rss";
-import { SITE_URL } from "~lib/utils/constants";
+
 import { getAllNotes } from "./get-all-notes";
 
 /**
@@ -13,9 +13,9 @@ export async function generateRssFeed() {
   const feedOptions: FeedOptions = {
     title: "haikel.app",
     description: `RSS Feed for haikel.app`,
-    site_url: SITE_URL,
-    feed_url: `${SITE_URL}/rss.xml`,
-    image_url: `${SITE_URL}/img/logo.png`,
+    site_url: "https://haikel.app",
+    feed_url: `https://haikel.app/rss.xml`,
+    image_url: `https://haikel.app/img/logo.png`,
     pubDate: new Date(),
     copyright: `2020-${currentYear} Haikel Ilham Hakim`,
   };
@@ -27,7 +27,7 @@ export async function generateRssFeed() {
       author: meta.author,
       title: meta.title,
       description: meta.description,
-      url: `${SITE_URL}/notes/${meta.slug}`,
+      url: `https://haikel.app/notes/${meta.slug}`,
       date: meta.date,
     });
   });

@@ -5,6 +5,7 @@ import { IconDeviceDesktop, IconMoon, IconSunHigh } from "@tabler/icons-react";
 import { useTheme } from "next-themes";
 import { cxm } from "~lib/helpers";
 import { spaceGrotesk } from "~lib/utils/fonts";
+
 import Menu from "./menu";
 
 const themeOptionsList = [

@@ -1,4 +1,5 @@
 import { NoteMetaProps } from "~models";
+
 import { NOTES_PATH } from "../utils/constants";
 import { getNoteFromSlug } from "./get-note-from-slug";
 import { getSlugs } from "./get-slugs";

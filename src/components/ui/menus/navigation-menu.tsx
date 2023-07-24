@@ -12,6 +12,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cxm } from "~lib/helpers";
 import { spaceGrotesk } from "~lib/utils/fonts";
+
 import Menu from "./menu";
 
 const topNavList = [

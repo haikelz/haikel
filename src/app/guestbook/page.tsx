@@ -1,9 +1,10 @@
 import { cxm } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import db from "~lib/utils/db";
-import Main from "~ui/main";
 import { GuestsList } from "~ui/lists";
+import Main from "~ui/main";
 import { Paragraph } from "~ui/typography";
+
 import GuestbookClient from "./client";
 
 const baseMetadata = {

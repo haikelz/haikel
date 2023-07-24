@@ -2,6 +2,7 @@ import format from "date-fns/format";
 import { readFileSync } from "fs";
 import matter from "gray-matter";
 import { join } from "path";
+
 import { NOTES_PATH } from "../utils/constants";
 
 const date = new Date();

@@ -4,6 +4,7 @@ import { ibmPlexSerif, jetbrains, naskhArabic, spaceGrotesk } from "~lib/utils/f
 import { ChildrenProps } from "~models";
 import Footer from "~ui/footer";
 import Navbar from "~ui/navbar";
+
 import "./globals.css";
 import Wrapper from "./wrapper";
 
