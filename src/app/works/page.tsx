@@ -1,15 +1,15 @@
 import { cxm } from "~lib/helpers";
 import { getAllWorks } from "~lib/services";
-import { DEFAULT_OG_URL } from "~lib/utils/constants";
+import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { WorkMetaProps } from "~models";
-import Main from "~ui/Main";
 import { WorksList } from "~ui/lists";
+import Main from "~ui/main";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
 const baseMetadata = {
   title: "Works",
   description: "List some of my works",
-  url: "https://haikel.app/works",
+  url: `${SITE_URL}/works`,
 };
 
 const { title, description, url } = baseMetadata;

@@ -1,10 +1,10 @@
 import { Metadata } from "next";
 import { cxm } from "~lib/helpers";
 import { getAllNotes } from "~lib/services";
-import { DEFAULT_OG_URL } from "~lib/utils/constants";
+import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { NoteMetaProps } from "~models";
-import Main from "~ui/Main";
 import { NotesList } from "~ui/lists";
+import Main from "~ui/main";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
 interface NoteProps {
@@ -32,7 +32,7 @@ export async function generateMetadata({
     description: tagSlug,
     openGraph: {
       type: "website",
-      url: `https://haikel.app/tags/${slug}`,
+      url: `${SITE_URL}/tags/${slug}`,
       title: tagSlug,
       description: tagSlug,
       siteName: "haikel.app",
@@ -49,7 +49,7 @@ export async function generateMetadata({
       site: `https://haikel.app/tags/${slug}`,
       card: "summary_large_image",
     },
-    metadataBase: new URL(`https://haikel.app/tags/${slug}`),
+    metadataBase: new URL(`${SITE_URL}/tags/${slug}`),
   };
 }
 

@@ -14,8 +14,8 @@ import {
   TailwindcssIcon,
   TypescriptIcon,
   WindiCssIcon,
-} from "~ui/svg";
-import { Paragraph } from "~ui/typography";
+} from "~ui/svgs";
+import { Paragraph } from "../typography/paragraph";
 
 export function WorksList({ works }: { works: WorkMetaProps[] }) {
   return (

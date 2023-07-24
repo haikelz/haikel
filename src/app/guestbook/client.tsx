@@ -6,7 +6,7 @@ import { ChangeEvent, useRef } from "react";
 import { cxm } from "~lib/helpers";
 import db from "~lib/utils/db";
 import { MessageInput } from "~ui/inputs";
-import { GoogleIcon } from "~ui/svg";
+import { GoogleIcon } from "~ui/svgs";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
 export default function GuestbookClient() {

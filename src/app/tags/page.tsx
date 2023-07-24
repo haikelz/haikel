@@ -2,14 +2,14 @@ import Link from "next/link";
 import { useMemo } from "react";
 import { cxm } from "~lib/helpers";
 import { getAllNotes } from "~lib/services";
-import { DEFAULT_OG_URL } from "~lib/utils/constants";
-import Main from "~ui/Main";
+import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
+import Main from "~ui/main";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
 const baseMetadata = {
   title: "Tags",
   description: "Select spesific notes based on the list of tags below.",
-  url: "https://haikel.app/tags",
+  url: `${SITE_URL}/tags`,
 };
 
 const { title, description, url } = baseMetadata;
@@ -40,6 +40,7 @@ export const metadata = {
 };
 
 export default function Tags() {
+  // Merge all tags in the notes into one array and sort it alphabetically
   const tagsList = useMemo(
     () =>
       [
@@ -54,7 +55,7 @@ export default function Tags() {
         if (a > b) return 1;
         return 0;
       }),
-    [getAllNotes]
+    []
   );
 
   return (

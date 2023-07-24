@@ -1,8 +1,8 @@
 import { cxm } from "~lib/helpers";
 import { getAllNotes } from "~lib/services";
-import { DEFAULT_OG_URL } from "~lib/utils/constants";
+import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { NoteMetaProps } from "~models";
-import Main from "~ui/Main";
+import Main from "~ui/main";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 import NotesClient from "./client";
 
@@ -10,7 +10,7 @@ const baseMetadata = {
   title: "Notes",
   description:
     "Sometimes i write something. Mostly about technical stuff. So yeah, i call this as Notes.",
-  url: "https://haikel.app/notes",
+  url: `${SITE_URL}/notes`,
 };
 
 const { title, description, url } = baseMetadata;

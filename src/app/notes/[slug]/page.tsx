@@ -2,15 +2,15 @@ import { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { cxm } from "~lib/helpers";
 import { getNoteFromSlug, getSlugs } from "~lib/services";
-import { ABSOLUTE_OG_URL, NOTES_PATH } from "~lib/utils/constants";
+import { ABSOLUTE_OG_URL, NOTES_PATH, SITE_URL } from "~lib/utils/constants";
 import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
-import MDXComponents from "~ui/MDXComponents";
-import Main from "~ui/Main";
+import Main from "~ui/main";
+import MDXComponents from "~ui/mdx-components";
 import { Heading, Paragraph } from "~ui/typography";
 
-const AuthorImage = dynamic(() => import("~ui/images/AuthorImage"));
-const ReadingTime = dynamic(() => import("~ui/ReadingTime"));
-const Comments = dynamic(() => import("~ui/Comments"));
+const AuthorImage = dynamic(() => import("~ui/images/author-image"));
+const ReadingTime = dynamic(() => import("~ui/reading-time"));
+const Comments = dynamic(() => import("~ui/comments"));
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return getSlugs(NOTES_PATH).map((slug) => ({ slug }));
@@ -31,7 +31,7 @@ export async function generateMetadata({
     authors: author,
     openGraph: {
       type: "article",
-      url: `https://haikel.app/notes/${slug}`,
+      url: `${SITE_URL}/notes/${slug}`,
       title,
       description,
       publishedTime: date,
@@ -46,7 +46,7 @@ export async function generateMetadata({
     twitter: {
       title,
       description,
-      site: `https://haikel.app/notes/${slug}`,
+      site: `${SITE_URL}/notes/${slug}`,
       card: "summary_large_image",
     },
     metadataBase: new URL(`https://haikel.app/notes/${slug}`),

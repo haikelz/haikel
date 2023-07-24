@@ -1,4 +1,4 @@
-import Main from "~ui/Main";
+import Main from "~ui/main";
 import { Heading, Paragraph, UnderlineLink } from "~ui/typography";
 
 export default function NotFoundPage() {

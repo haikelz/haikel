@@ -1,7 +1,7 @@
 import { WORKS_PATH } from "../utils/constants";
 import { WorkMetaProps } from "~models";
-import { getSlugs } from "./getSlugs";
-import { getWorkFromSlug } from "./getWorkFromSlug";
+import { getSlugs } from "./get-slugs";
+import { getWorkFromSlug } from "./get-work-from-slug";
 
 interface WorkProps {
   content: string;

@@ -13,7 +13,7 @@ import { spaceGrotesk } from "~lib/utils/fonts";
 
 const socialMediaList = [
   { id: 1, icon: IconMail, route: "mailto:halo@haikel.app" },
-  { id: 2, icon: IconRss, route: "https://haikel.app/sitemap.xml" },
+  { id: 2, icon: IconRss, route: "https://haikel.app/rss.xml" },
   { id: 3, icon: IconBrandFacebook, route: "https://facebook.com/kelgfx" },
   { id: 4, icon: IconBrandInstagram, route: "https://instagram.com/whykelz_" },
   { id: 5, icon: IconBrandGithub, route: "https://github.com/haikelz" },

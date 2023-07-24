@@ -1,17 +1,16 @@
 import { cxm } from "~lib/helpers";
 import { getAllNotes, getAllWorks } from "~lib/services";
-import { DEFAULT_OG_URL } from "~lib/utils/constants";
+import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { NoteMetaProps, WorkMetaProps } from "~models";
-import About from "~ui/About";
-import Main from "~ui/Main";
+import About from "~ui/about";
 import { NotesList, WorksList } from "~ui/lists";
+import Main from "~ui/main";
 import { Heading, Underline, UnderlineLink } from "~ui/typography";
 
 const baseMetadata = {
   title: "Haikel Ilham Hakim",
-  description:
-    "A person who loves writing code for Front End side. Crafting simple, interactive, responsive, and accessible Websites. Familiar with Javascript/Typescript, React Ecosystem, and Linux(for daily use). Try to follow best practices as much as i can. I can work in a team or solo.",
-  url: "https://haikel.app",
+  description: "Frontend Developer",
+  url: SITE_URL,
 };
 
 const { title, description, url } = baseMetadata;

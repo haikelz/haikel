@@ -3,8 +3,8 @@ import Link from "next/link";
 import { cxm } from "~lib/helpers";
 import { spaceGrotesk } from "~lib/utils/fonts";
 
-const SwitchThemeMenu = dynamic(() => import("~ui/menus/SwitchThemeMenu"), { ssr: false });
-const NavigationMenu = dynamic(() => import("~ui/menus/NavigationMenu"), { ssr: false });
+const SwitchThemeMenu = dynamic(() => import("~ui/menus/switch-theme-menu"), { ssr: false });
+const NavigationMenu = dynamic(() => import("~ui/menus/navigation-menu"), { ssr: false });
 
 export default function Navbar() {
   return (

@@ -2,14 +2,14 @@ import { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { cxm } from "~lib/helpers";
 import { getSlugs, getWorkFromSlug } from "~lib/services";
-import { ABSOLUTE_OG_URL, WORKS_PATH } from "~lib/utils/constants";
+import { ABSOLUTE_OG_URL, SITE_URL, WORKS_PATH } from "~lib/utils/constants";
 import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
-import MDXComponents from "~ui/MDXComponents";
-import Main from "~ui/Main";
+import Main from "~ui/main";
+import MDXComponents from "~ui/mdx-components";
 import { Heading, UnderlineLink } from "~ui/typography";
 
-const AuthorImage = dynamic(() => import("~ui/images/AuthorImage"));
-const ReadingTime = dynamic(() => import("~ui/ReadingTime"));
+const AuthorImage = dynamic(() => import("~ui/images/author-image"));
+const ReadingTime = dynamic(() => import("~ui/reading-time"));
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return getSlugs(WORKS_PATH).map((slug) => ({ slug }));
@@ -30,7 +30,7 @@ export async function generateMetadata({
     authors: author,
     openGraph: {
       type: "article",
-      url: `https://haikel.app/works/${slug}`,
+      url: `${SITE_URL}/works/${slug}`,
       title,
       description,
       siteName: "haikel.app",
@@ -44,16 +44,17 @@ export async function generateMetadata({
     twitter: {
       title,
       description,
-      site: `https://haikel.app/works/${slug}`,
+      site: `${SITE_URL}/works/${slug}`,
       card: "summary_large_image",
     },
-    metadataBase: new URL(`https://haikel.app/works/${slug}`),
+    metadataBase: new URL(`${SITE_URL}/works/${slug}`),
   };
 }
 
 export default async function DetailWorkPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const { content, meta } = getWorkFromSlug(slug);
+
   const components = await MDXComponents(content);
 
   return (

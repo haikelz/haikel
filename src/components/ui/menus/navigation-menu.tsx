@@ -12,7 +12,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cxm } from "~lib/helpers";
 import { spaceGrotesk } from "~lib/utils/fonts";
-import Menu from "./Menu";
+import Menu from "./menu";
 
 const topNavList = [
   { id: 1, route: "/works", icon: IconListDetails },

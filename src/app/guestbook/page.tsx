@@ -1,7 +1,7 @@
 import { cxm } from "~lib/helpers";
-import { DEFAULT_OG_URL } from "~lib/utils/constants";
+import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import db from "~lib/utils/db";
-import Main from "~ui/Main";
+import Main from "~ui/main";
 import { GuestsList } from "~ui/lists";
 import { Paragraph } from "~ui/typography";
 import GuestbookClient from "./client";
@@ -9,7 +9,7 @@ import GuestbookClient from "./client";
 const baseMetadata = {
   title: "Guestbook",
   description: "Write a message for me and others",
-  url: "https://haikel.app/guestbook",
+  url: `${SITE_URL}/guestbook`,
 };
 
 const { title, description, url } = baseMetadata;
