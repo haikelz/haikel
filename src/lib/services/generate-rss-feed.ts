@@ -24,6 +24,7 @@ export async function generateRssFeed() {
 
   getAllNotes().map(({ meta }) => {
     feed.item({
+      author: meta.author,
       title: meta.title,
       description: meta.description,
       url: `${SITE_URL}/notes/${meta.slug}`,
