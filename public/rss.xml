@@ -9,10 +9,18 @@
             <link>https://haikel.app</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 24 Jul 2023 16:54:36 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 25 Jul 2023 14:56:59 GMT</lastBuildDate>
         <atom:link href="https://haikel.app/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Mon, 24 Jul 2023 16:54:36 GMT</pubDate>
+        <pubDate>Tue, 25 Jul 2023 14:56:59 GMT</pubDate>
         <copyright><![CDATA[2020-2023 Haikel Ilham Hakim]]></copyright>
+        <item>
+            <title><![CDATA[Deploy Nest JS Project ke Vercel]]></title>
+            <description><![CDATA[Catatan saya mengenai proses deploy Nest JS project ke Vercel]]></description>
+            <link>https://haikel.app/notes/deploy-nestjs-to-vercel</link>
+            <guid isPermaLink="true">https://haikel.app/notes/deploy-nestjs-to-vercel</guid>
+            <dc:creator><![CDATA[Haikel]]></dc:creator>
+            <pubDate>Mon, 24 Jul 2023 17:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Implementasi useReducerAtom Jotai]]></title>
             <description><![CDATA[Mencoba mengimplementasikan useReducerAtom hook Jotai]]></description>
