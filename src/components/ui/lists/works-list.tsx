@@ -8,6 +8,7 @@ import {
   NextJsIcon,
   ReactIcon,
   ReactQueryIcon,
+  RemixIcon,
   SupabaseIcon,
   SvelteIcon,
   SwrIcon,
@@ -38,6 +39,8 @@ export function WorksList({ works }: { works: WorkMetaProps[] }) {
               <div key={index + 1}>
                 {techstack === "nextjs" ? (
                   <NextJsIcon />
+                ) : techstack === "remix" ? (
+                  <RemixIcon />
                 ) : techstack === "tailwind" ? (
                   <TailwindcssIcon />
                 ) : techstack === "react-query" ? (

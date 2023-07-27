@@ -5,6 +5,7 @@ export * from "./google-icon";
 export * from "./next-js-icon";
 export * from "./react-icon";
 export * from "./react-query-icon";
+export * from "./remix-icon";
 export * from "./supabase-icon";
 export * from "./svelte-icon";
 export * from "./swr-icon";

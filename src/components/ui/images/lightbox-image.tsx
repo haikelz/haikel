@@ -35,10 +35,10 @@ export default function LightboxImage({ src, alt }: LightboxImageProps) {
       />
       {isOpen ? (
         <Lightbox
+          plugins={[Captions]}
           open={isOpen}
           close={() => setIsOpen(false)}
           slides={[{ src: src, alt: alt, title: alt }]}
-          plugins={[Captions]}
           render={{
             slide: () => {
               return (
