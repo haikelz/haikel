@@ -14,18 +14,13 @@ interface LightboxImageProps {
 }
 
 export default function LightboxImage({ src, alt }: LightboxImageProps) {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
     <>
       <Image
-        className={cxm(
-          "aspect-auto cursor-pointer rounded-sm object-cover duration-700",
-          isLoading ? "blur-md" : "blur-none"
-        )}
+        className={cxm("aspect-auto cursor-pointer rounded-sm object-cover")}
         onClick={() => setIsOpen(true)}
-        onLoadingComplete={() => setIsLoading(false)}
         decoding="async"
         src={src}
         alt={alt}

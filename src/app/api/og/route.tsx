@@ -8,7 +8,7 @@ export async function GET(req: NextRequest) {
     const { searchParams } = new URL(req.nextUrl);
 
     const hasTitle = searchParams.has("title");
-    const title = hasTitle ? searchParams.get("title")?.slice(0, 100) : "Haikel Ilham Hakim";
+    const title = hasTitle ? searchParams.get("title")?.slice(0, 100) : "Frontend Developer";
 
     return new ImageResponse(
       (
@@ -20,27 +20,25 @@ export async function GET(req: NextRequest) {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            backgroundColor: "#fff",
-            fontSize: 32,
-            fontWeight: 600,
-            backgroundImage:
-              "radial-gradient(circle at 25px 25px, lightgray 2%, transparent 0%), radial-gradient(circle at 75px 75px, lightgray 2%, transparent 0%)",
-            backgroundSize: "100px 100px",
+            backgroundColor: "#000000",
           }}
         >
           <div
             style={{
-              left: 42,
-              top: 42,
-              position: "absolute",
               display: "flex",
+              justifyContent: "center",
               alignItems: "center",
+              top: 35,
+              color: "white",
+              fontWeight: "700",
+              left: 35,
+              position: "absolute",
             }}
           >
             <img
               style={{ borderRadius: "100%" }}
-              width={24}
-              height={24}
+              width={28}
+              height={28}
               src="https://avatars.githubusercontent.com/u/77146709?v=4"
               alt="Github Profile"
             />
@@ -54,14 +52,25 @@ export async function GET(req: NextRequest) {
               haikel.app
             </span>
           </div>
-          <div style={{ fontWeight: 600 }}>ハキム</div>
           <div
             style={{
-              marginTop: 10,
-              backgroundColor: "black",
+              fontWeight: 700,
+              color: "#000000",
+              fontSize: 30,
+              padding: "0px 5px",
+              fontFamily: "sans-serif",
+              background: "#FFFFFF",
+            }}
+          >
+            ハキム
+          </div>
+          <div
+            style={{
+              marginTop: 15,
+              fontSize: 20,
               color: "white",
-              padding: "3px 10px 3px 10px",
               textAlign: "center",
+              fontWeight: "500",
             }}
           >
             {title}

@@ -9,7 +9,6 @@ import "yet-another-react-lightbox/styles.css";
 import { cxm } from "~lib/helpers";
 
 export default function AuthorImage() {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const src = "https://avatars.githubusercontent.com/u/77146709?v=4";
@@ -18,12 +17,8 @@ export default function AuthorImage() {
   return (
     <>
       <Image
-        className={cxm(
-          "mr-2 cursor-pointer rounded-full duration-700",
-          isLoading ? "blur-md" : "blur-none"
-        )}
+        className={cxm("mr-2 cursor-pointer rounded-full")}
         onClick={() => setIsOpen(true)}
-        onLoadingComplete={() => setIsLoading(false)}
         decoding="async"
         src={src}
         alt={alt}

@@ -5,6 +5,7 @@ import { WorkMetaProps } from "~models";
 import {
   ChakrauiIcon,
   FramerIcon,
+  NestJsIcon,
   NextJsIcon,
   ReactIcon,
   ReactQueryIcon,
@@ -55,6 +56,8 @@ export function WorksList({ works }: { works: WorkMetaProps[] }) {
                   <FramerIcon />
                 ) : techstack === "swr" ? (
                   <SwrIcon />
+                ) : techstack === "nestjs" ? (
+                  <NestJsIcon />
                 ) : techstack === "svelte" ? (
                   <SvelteIcon />
                 ) : techstack === "chakra-ui" ? (
