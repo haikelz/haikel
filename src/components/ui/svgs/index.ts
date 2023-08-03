@@ -2,7 +2,7 @@ export * from "./chakra-ui-icon";
 export * from "./facebook-icon";
 export * from "./framer-icon";
 export * from "./google-icon";
-export * from "./nestjs-icon";
+export * from "./nest-js-icon";
 export * from "./next-js-icon";
 export * from "./react-icon";
 export * from "./react-query-icon";

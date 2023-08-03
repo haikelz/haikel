@@ -8,7 +8,7 @@ export async function GET(req: NextRequest) {
     const { searchParams } = new URL(req.nextUrl);
 
     const hasTitle = searchParams.has("title");
-    const title = hasTitle ? searchParams.get("title")?.slice(0, 100) : "Frontend Developer";
+    const title = hasTitle ? searchParams.get("title")?.slice(0, 100) : "Frontend Crafter";
 
     return new ImageResponse(
       (
@@ -23,50 +23,23 @@ export async function GET(req: NextRequest) {
             backgroundColor: "#000000",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              top: 35,
-              color: "white",
-              fontWeight: "700",
-              left: 35,
-              position: "absolute",
-            }}
-          >
-            <img
-              style={{ borderRadius: "100%" }}
-              width={28}
-              height={28}
-              src="https://avatars.githubusercontent.com/u/77146709?v=4"
-              alt="Github Profile"
-            />
-            <span
-              style={{
-                marginLeft: 8,
-                fontSize: 20,
-                textAlign: "center",
-              }}
-            >
-              haikel.app
-            </span>
-          </div>
-          <div
+          <span
             style={{
               fontWeight: 700,
               color: "#000000",
               fontSize: 30,
               padding: "0px 5px",
               fontFamily: "sans-serif",
+              marginLeft: 8,
+              textAlign: "center",
               background: "#FFFFFF",
             }}
           >
-            ハキム
-          </div>
+            haikel.app
+          </span>
           <div
             style={{
-              marginTop: 15,
+              marginTop: 10,
               fontSize: 20,
               color: "white",
               textAlign: "center",

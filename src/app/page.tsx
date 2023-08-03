@@ -1,5 +1,5 @@
 import { cxm } from "~lib/helpers";
-import { generateRssFeed, getAllNotes, getAllWorks } from "~lib/services";
+import { getAllNotes, getAllWorks } from "~lib/services";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { NoteMetaProps, WorkMetaProps } from "~models";
 import About from "~ui/about";
@@ -9,7 +9,7 @@ import { Heading, Underline, UnderlineLink } from "~ui/typography";
 
 const baseMetadata = {
   title: "Haikel Ilham Hakim",
-  description: "Frontend Developer",
+  description: "Frontend Crafter",
   url: SITE_URL,
 };
 
@@ -41,8 +41,6 @@ export const metadata = {
 };
 
 export default async function HomePage() {
-  generateRssFeed();
-
   const notes: NoteMetaProps[] = getAllNotes()
     .slice(0, 4)
     .map((note) => note.meta);

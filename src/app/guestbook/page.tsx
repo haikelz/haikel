@@ -1,7 +1,8 @@
+import { format } from "date-fns/esm";
 import { cxm } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import db from "~lib/utils/db";
-import { GuestsList } from "~ui/lists";
+import { spaceGrotesk } from "~lib/utils/fonts";
 import Main from "~ui/main";
 import { Paragraph } from "~ui/typography";
 
@@ -67,7 +68,27 @@ export default async function Guestbook() {
       <GuestbookClient />
       {guestbook?.length ? (
         <section className="mb-10 flex w-full flex-col space-y-8">
-          <GuestsList guestbook={guestbook} />
+          {guestbook?.map((guest) => (
+            <div key={guest.id} className="h-full">
+              <div>
+                <span
+                  className={cxm(
+                    "cursor-pointer text-xl font-bold",
+                    "hover:text-blue-500",
+                    spaceGrotesk.className
+                  )}
+                >
+                  {guest.message}
+                </span>
+              </div>
+              <Paragraph className="mt-2 font-medium tracking-wide">
+                {guest.username}
+                {guest.created_at !== ""
+                  ? `. ${format(new Date(guest.created_at), "LLLL d, yyyy")}`
+                  : null}
+              </Paragraph>
+            </div>
+          ))}
         </section>
       ) : (
         <Paragraph className="font-semibold">There is no messages now!</Paragraph>

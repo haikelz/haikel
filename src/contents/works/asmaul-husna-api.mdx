@@ -1,0 +1,73 @@
+---
+id: 2
+author: Haikel
+title: Asmaul Husna API
+stack:
+  - nestjs
+  - typescript
+preview: https://asmaul-husna-api.vercel.app/
+repo: https://github.com/haikelz/asmaul-husna-api
+description: Asmaul Husna API is an API to get the list of Asma'ul Husna
+---
+
+<LightboxImage
+  src="https://ik.imagekit.io/haikelz/works/asmaul-husna-api.png?updatedAt=1691043581589"
+  alt="opengraph"
+/>
+
+Asmaul Husna API adalah sebuah API untuk mendapatkan list Asma'ul Husna. Untuk datanya sendiri sama seperti project jadwal-sholat, saya dapatkan dari salah satu repo di Github (terima kasih banyak buat mas [Rivki](https://github.com/mikqi)). Hanya saja saya jadikan API yang bisa diakses semua orang.
+
+Ini pertama kalinya saya membuat API, dan saya memilih [Nest JS](https://nestjs.com/) sebagai frameworknya dikarenakan sudah benar-benar terintegrasi dengan Typescript. Saya benar-benar belajar banyak pada saat pembuatan project ini, seperti memperdalam konsep OOP, juga memikirkan optimisasi.
+
+Soal optimisasi, saya melakukan beberapa hal seperti yang disarankan di docsnya, seperti Caching, juga Compression. By default, Nest JS menggunakan Express JS, tapi kemudian saya ganti dengan [Fastify](https://fastify.dev/) untuk meningkatkan performa. Untuk validation, saya menggunakan [Nestia](https://nestia.io/), sebagai alternative dari `class-validator`.
+
+Untuk methodnya hanya ada **GET**, karena jumlah Asma'ul Husna itu tetap, yakni 99. Berikut contoh operasinya:
+
+**Get all Asma'ul Husna**
+
+Request:
+
+```ts
+fetch("https://asmaul-husna-api.vercel.app/api/all")
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+Response:
+
+```ts
+{
+  "statusCode": 200,
+  "total": 99,
+  "data": [
+    {
+      "urutan": 1,
+      "latin": "Ar Rahman",
+      "arab": "الرحمن",
+      "arti": "Yang Maha Pengasih"
+    },
+    {
+      "urutan": 2,
+      "latin": "Ar Rahiim",
+      "arab": "الرحيم",
+      "arti": "Yang Maha Penyayang"
+    },
+    {
+      "urutan": 3,
+      "latin": "Al Malik",
+      "arab": "الملك",
+      "arti": "Yang Maha Merajai / Memerintah"
+    },
+    ....
+  ]
+}
+```
+
+Selengkapnya bisa langsung kunjungi [reponya](https://github.com/haikelz/asmaul-husna-api).
+
+## Tech Stack
+
+- Nest JS
+- Typescript
+- Fastify
+- Nestia for runtime validator

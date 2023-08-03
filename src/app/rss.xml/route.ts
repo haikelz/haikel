@@ -1,15 +1,10 @@
-import { format } from "date-fns/esm";
-import { writeFileSync } from "fs";
 import RSS, { FeedOptions } from "rss";
-
-import { getAllNotes } from "./get-all-notes";
+import { getAllNotes } from "~lib/services";
 
 /**
- * @see https://blog.logrocket.com/adding-rss-feed-next-js-app/
+ * @see https://www.jovertical.dev/articles/rss-feed-in-next-js-13-app-router
  */
-export async function generateRssFeed() {
-  const currentYear = format(new Date(), "yyyy");
-
+export async function GET() {
   const feedOptions: FeedOptions = {
     title: "haikel.app",
     description: `RSS Feed for haikel.app`,
@@ -17,12 +12,12 @@ export async function generateRssFeed() {
     feed_url: `https://haikel.app/rss.xml`,
     image_url: `https://haikel.app/img/logo.png`,
     pubDate: new Date(),
-    copyright: `2020-${currentYear} Haikel Ilham Hakim`,
+    copyright: `Crafted by Haikel`,
   };
 
   const feed = new RSS(feedOptions);
 
-  getAllNotes().map(({ meta }) => {
+  getAllNotes().forEach(({ meta }) => {
     feed.item({
       author: meta.author,
       title: meta.title,
@@ -32,5 +27,10 @@ export async function generateRssFeed() {
     });
   });
 
-  writeFileSync("./public/rss.xml", feed.xml({ indent: true }));
+  return new Response(feed.xml({ indent: true }), {
+    status: 200,
+    headers: {
+      "Content-Type": "application/xml",
+    },
+  });
 }

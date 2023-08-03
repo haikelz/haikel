@@ -18,7 +18,7 @@ import {
   WindiCssIcon,
 } from "~ui/svgs";
 
-import { Paragraph } from "../typography/paragraph";
+import { Paragraph } from "../typography";
 
 export function WorksList({ works }: { works: WorkMetaProps[] }) {
   return (

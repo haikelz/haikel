@@ -15,7 +15,7 @@ const socialMediaList = [
   { id: 1, icon: IconMail, route: "mailto:halo@haikel.app" },
   { id: 2, icon: IconRss, route: "https://haikel.app/rss.xml" },
   { id: 3, icon: IconBrandFacebook, route: "https://facebook.com/kelgfx" },
-  { id: 4, icon: IconBrandInstagram, route: "https://instagram.com/whykelz_" },
+  { id: 4, icon: IconBrandInstagram, route: "https://instagram.com/ekel.tsx" },
   { id: 5, icon: IconBrandGithub, route: "https://github.com/haikelz" },
   { id: 6, icon: IconBrandLinkedin, route: "https://www.linkedin.com/in/haikel" },
 ];
@@ -39,9 +39,7 @@ export default function Footer() {
           "md:py-3 md:dark:border-t-gray-700"
         )}
       >
-        <p className="text-center text-sm font-bold md:text-left md:text-base">
-          2020-{currentYear} Haikel Ilham Hakim
-        </p>
+        <p className="text-center text-sm font-bold md:text-left md:text-base">Crafted by Haikel</p>
         <ul className="mt-3 flex items-center justify-center space-x-4 md:mt-0">
           {socialMediaList.map((item) => {
             const Icon = item.icon;
