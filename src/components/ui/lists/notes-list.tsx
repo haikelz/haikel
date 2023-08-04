@@ -1,7 +1,7 @@
 import Link from "next/link";
+import { NoteMetaProps } from "~interfaces";
 import { cxm } from "~lib/helpers";
-import { spaceGrotesk } from "~lib/utils/fonts";
-import { NoteMetaProps } from "~models";
+import { ibmPlexSans } from "~lib/utils/fonts";
 import { Paragraph } from "~ui/typography";
 
 export function NotesList({ filteredNotes }: { filteredNotes: NoteMetaProps[] }) {
@@ -9,13 +9,15 @@ export function NotesList({ filteredNotes }: { filteredNotes: NoteMetaProps[] })
     <>
       {filteredNotes.map((note) => (
         <div key={note.slug} className="h-full">
-          <Paragraph className={cxm("text-left", spaceGrotesk.className)}>{note.date}</Paragraph>
+          <Paragraph className={cxm("text-left font-medium", ibmPlexSans.className)}>
+            {note.date}
+          </Paragraph>
           <div className="mt-2">
             <Link
               className={cxm(
                 "cursor-pointer text-xl font-bold",
                 "hover:text-blue-500",
-                spaceGrotesk.className
+                ibmPlexSans.className
               )}
               href={`/notes/${note.slug}`}
               aria-label={note.title}
@@ -24,7 +26,7 @@ export function NotesList({ filteredNotes }: { filteredNotes: NoteMetaProps[] })
             </Link>
           </div>
           <Paragraph className="my-2 tracking-wide">{note.description}</Paragraph>
-          <div className={cxm("flex space-x-2", spaceGrotesk.className)}>
+          <div className={cxm("flex space-x-2", ibmPlexSans.className)}>
             {note.tags.map((tag) => (
               <Link key={tag} href={`/tags/${tag}`} aria-label={tag}>
                 <span

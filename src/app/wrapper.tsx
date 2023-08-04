@@ -3,7 +3,7 @@
 import { Provider } from "jotai";
 import { SessionProvider } from "next-auth/react";
 import { ThemeProvider } from "next-themes";
-import { ChildrenProps } from "~models";
+import { ChildrenProps } from "~interfaces";
 
 export default function Wrapper({ children }: ChildrenProps) {
   return (

@@ -1,7 +1,7 @@
 import Link from "next/link";
+import { WorkMetaProps } from "~interfaces";
 import { cxm } from "~lib/helpers";
-import { spaceGrotesk } from "~lib/utils/fonts";
-import { WorkMetaProps } from "~models";
+import { ibmPlexSans } from "~lib/utils/fonts";
 import {
   ChakrauiIcon,
   FramerIcon,
@@ -28,14 +28,14 @@ export function WorksList({ works }: { works: WorkMetaProps[] }) {
           <div>
             <Link href={`/works/${work.slug}`} aria-label={work.title}>
               <span
-                className={cxm("text-xl font-bold", "hover:text-blue-500", spaceGrotesk.className)}
+                className={cxm("text-xl font-bold", "hover:text-blue-500", ibmPlexSans.className)}
               >
                 {work.title}
               </span>
             </Link>
           </div>
           <Paragraph className="my-2 tracking-wide">{work.description}</Paragraph>
-          <div className={cxm("flex space-x-2", spaceGrotesk.className)}>
+          <div className={cxm("flex space-x-2", ibmPlexSans.className)}>
             {work.stack.map((techstack, index) => (
               <div key={index + 1}>
                 {techstack === "nextjs" ? (

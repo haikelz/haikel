@@ -1,12 +1,12 @@
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
-import ReadingProgress from "~components/ui/reading-progress";
 import { cxm } from "~lib/helpers";
 import { getSlugs, getWorkFromSlug } from "~lib/services";
 import { ABSOLUTE_OG_URL, SITE_URL, WORKS_PATH } from "~lib/utils/constants";
-import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
+import { ibmPlexSans, naskhArabic } from "~lib/utils/fonts";
 import Main from "~ui/main";
 import MDXComponents from "~ui/mdx-components";
+import ReadingProgress from "~ui/reading-progress";
 import { Heading, UnderlineLink } from "~ui/typography";
 
 const AuthorImage = dynamic(() => import("~ui/images/author-image"));
@@ -70,7 +70,7 @@ export default async function DetailWorkPage({ params }: { params: { slug: strin
           </Heading>
           <div className="my-3 flex items-center">
             <AuthorImage />
-            <div className={cxm("tracking-[0.050em]", spaceGrotesk.className)}>
+            <div className={cxm("tracking-[0.050em]", ibmPlexSans.className)}>
               <span className={cxm("text-base font-semibold leading-[1.75rem]", "md:text-lg")}>
                 {meta.author}, <ReadingTime content={content} />.
               </span>{" "}

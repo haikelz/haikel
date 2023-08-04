@@ -1,10 +1,10 @@
-import { IBM_Plex_Serif, JetBrains_Mono, Noto_Naskh_Arabic, Space_Grotesk } from "next/font/google";
+import { IBM_Plex_Sans, IBM_Plex_Serif, JetBrains_Mono, Noto_Naskh_Arabic } from "next/font/google";
 
 export const ibmPlexSerif = IBM_Plex_Serif({
   weight: ["400", "500", "600", "700"],
   style: ["normal"],
   subsets: ["latin"],
-  variable: "--font-ibm",
+  variable: "--font-ibm-serif",
   display: "swap",
 });
 
@@ -24,10 +24,10 @@ export const naskhArabic = Noto_Naskh_Arabic({
   display: "swap",
 });
 
-export const spaceGrotesk = Space_Grotesk({
-  weight: ["500", "600", "700"],
+export const ibmPlexSans = IBM_Plex_Sans({
+  weight: ["400", "500", "600", "700"],
   style: ["normal"],
   subsets: ["latin"],
-  variable: "--font-grotesk",
+  variable: "--font-ibm-sans",
   display: "swap",
 });

@@ -1,7 +1,7 @@
+import { WorkMetaProps } from "~interfaces";
 import { cxm } from "~lib/helpers";
 import { getAllWorks } from "~lib/services";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
-import { WorkMetaProps } from "~models";
 import { WorksList } from "~ui/lists";
 import Main from "~ui/main";
 import { Heading, Paragraph, Underline } from "~ui/typography";

@@ -1,6 +1,6 @@
+import Typography from "@tailwindcss/typography";
 import { Config } from "tailwindcss";
 import { ThemeConfig } from "tailwindcss/types/config";
-import Typography from "@tailwindcss/typography";
 
 export default {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
@@ -89,6 +89,7 @@ export default {
                 a: {
                   color: "inherit",
                   textDecoration: "none",
+                  fontWeight: 700,
                 },
               },
               a: {

@@ -1,5 +1,5 @@
+import { ChildrenProps } from "~interfaces";
 import { cxm } from "~lib/helpers";
-import { ChildrenProps } from "~models";
 
 export function UnderlineSpan({ children }: ChildrenProps) {
   return (

@@ -1,7 +1,7 @@
+import { NoteMetaProps, WorkMetaProps } from "~interfaces";
 import { cxm } from "~lib/helpers";
 import { getAllNotes, getAllWorks } from "~lib/services";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
-import { NoteMetaProps, WorkMetaProps } from "~models";
 import About from "~ui/about";
 import { NotesList, WorksList } from "~ui/lists";
 import Main from "~ui/main";

@@ -27,7 +27,7 @@ export async function GET(req: NextRequest) {
             style={{
               fontWeight: 700,
               color: "#000000",
-              fontSize: 30,
+              fontSize: 50,
               padding: "0px 5px",
               fontFamily: "sans-serif",
               marginLeft: 8,
@@ -40,7 +40,7 @@ export async function GET(req: NextRequest) {
           <div
             style={{
               marginTop: 10,
-              fontSize: 20,
+              fontSize: 30,
               color: "white",
               textAlign: "center",
               fontWeight: "500",

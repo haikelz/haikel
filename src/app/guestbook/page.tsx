@@ -2,7 +2,7 @@ import { format } from "date-fns/esm";
 import { cxm } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import db from "~lib/utils/db";
-import { spaceGrotesk } from "~lib/utils/fonts";
+import { ibmPlexSans } from "~lib/utils/fonts";
 import Main from "~ui/main";
 import { Paragraph } from "~ui/typography";
 
@@ -75,7 +75,7 @@ export default async function Guestbook() {
                   className={cxm(
                     "cursor-pointer text-xl font-bold",
                     "hover:text-blue-500",
-                    spaceGrotesk.className
+                    ibmPlexSans.className
                   )}
                 >
                   {guest.message}

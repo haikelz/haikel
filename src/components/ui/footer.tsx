@@ -9,7 +9,7 @@ import {
 import { format } from "date-fns/esm";
 import Link from "next/link";
 import { cxm } from "~lib/helpers";
-import { spaceGrotesk } from "~lib/utils/fonts";
+import { ibmPlexSans } from "~lib/utils/fonts";
 
 const socialMediaList = [
   { id: 1, icon: IconMail, route: "mailto:halo@haikel.app" },
@@ -29,7 +29,7 @@ export default function Footer() {
         "flex w-full flex-col items-center justify-center",
         "p-3 text-center tracking-widest",
         "md:px-4 md:py-0",
-        spaceGrotesk.className
+        ibmPlexSans.className
       )}
     >
       <div
@@ -46,7 +46,17 @@ export default function Footer() {
             return (
               <li className="transition-all hover:-translate-y-0.5" key={item.id}>
                 <Link href={item.route} target="_blank">
-                  <button type="button" aria-label={`Icon ${item.id.toString()}`}>
+                  <button
+                    type="button"
+                    className={cxm(
+                      "rounded-sm",
+                      "transition-all p-1",
+                      "hover:bg-gray-200",
+                      "active:bg-gray-300",
+                      "dark:bg-base-2"
+                    )}
+                    aria-label={`Icon ${item.id.toString()}`}
+                  >
                     <Icon size={22} />
                   </button>
                 </Link>

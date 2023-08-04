@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import { cxm } from "~lib/helpers";
 import { getNoteFromSlug, getSlugs } from "~lib/services";
 import { ABSOLUTE_OG_URL, NOTES_PATH, SITE_URL } from "~lib/utils/constants";
-import { naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
+import { ibmPlexSans, naskhArabic } from "~lib/utils/fonts";
 import Main from "~ui/main";
 import MDXComponents from "~ui/mdx-components";
 import { Heading, Paragraph } from "~ui/typography";
@@ -75,7 +75,7 @@ export default async function NotePage({ params }: { params: { slug: string } })
               className={cxm(
                 "text-base font-semibold tracking-[0.050em]",
                 "md:text-lg",
-                spaceGrotesk.className
+                ibmPlexSans.className
               )}
             >
               <span>{meta.author}</span>, <ReadingTime content={content} /> / {meta.date}

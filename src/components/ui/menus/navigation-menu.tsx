@@ -11,7 +11,7 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cxm } from "~lib/helpers";
-import { spaceGrotesk } from "~lib/utils/fonts";
+import { ibmPlexSans } from "~lib/utils/fonts";
 
 import Menu from "./menu";
 
@@ -28,7 +28,17 @@ export default function NavigationMenu() {
   return (
     <Menu
       menuIcon={
-        <button className="mr-6" type="button" aria-label="menu">
+        <button
+          className={cxm(
+            "mr-3 rounded-sm",
+            "transition-all p-1",
+            "hover:bg-gray-200",
+            "active:bg-gray-300",
+            "dark:bg-base-2"
+          )}
+          type="button"
+          aria-label="menu"
+        >
           <IconCategory size={22} />
         </button>
       }
@@ -51,7 +61,7 @@ export default function NavigationMenu() {
                   pathname?.includes(item.route)
                     ? "font-bold underline decoration-dashed underline-offset-[5px]"
                     : "",
-                  spaceGrotesk.className
+                  ibmPlexSans.className
                 )}
               >
                 {item.route}

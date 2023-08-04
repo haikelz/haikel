@@ -4,7 +4,7 @@ import { DropdownMenuItem } from "@radix-ui/react-dropdown-menu";
 import { IconDeviceDesktop, IconMoon, IconSunHigh } from "@tabler/icons-react";
 import { useTheme } from "next-themes";
 import { cxm } from "~lib/helpers";
-import { spaceGrotesk } from "~lib/utils/fonts";
+import { ibmPlexSans } from "~lib/utils/fonts";
 
 import Menu from "./menu";
 
@@ -32,7 +32,17 @@ export default function SwitchThemeMenu() {
   return (
     <Menu
       menuIcon={
-        <button className="overflow-hidden" type="button" aria-label="switch theme">
+        <button
+          className={cxm(
+            "overflow-hidden rounded-sm",
+            "transition-all p-1",
+            "hover:bg-gray-200",
+            "active:bg-gray-300",
+            "dark:bg-base-2"
+          )}
+          type="button"
+          aria-label="switch theme"
+        >
           {theme === "dark" ? <IconSunHigh size={22} /> : <IconMoon size={22} />}
         </button>
       }
@@ -61,7 +71,7 @@ export default function SwitchThemeMenu() {
             }
           >
             <Icon size={22} />
-            <span className={spaceGrotesk.className}>{item.name}</span>
+            <span className={ibmPlexSans.className}>{item.name}</span>
           </DropdownMenuItem>
         );
       })}

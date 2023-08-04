@@ -1,6 +1,6 @@
+import { ChildrenProps } from "~interfaces";
 import { cxm } from "~lib/helpers";
-import { ibmPlexSerif, jetbrains, naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
-import { ChildrenProps } from "~models";
+import { ibmPlexSans, ibmPlexSerif, jetbrains, naskhArabic } from "~lib/utils/fonts";
 import Footer from "~ui/footer";
 import Navbar from "~ui/navbar";
 
@@ -12,10 +12,10 @@ export default function RootLayout({ children }: ChildrenProps) {
     <html
       lang="en"
       className={cxm(
-        jetbrains.variable,
-        spaceGrotesk.variable,
         naskhArabic.variable,
-        ibmPlexSerif.variable
+        ibmPlexSerif.variable,
+        ibmPlexSans.variable,
+        jetbrains.variable
       )}
     >
       <body>

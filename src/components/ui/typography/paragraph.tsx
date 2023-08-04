@@ -1,5 +1,5 @@
+import { ChildrenProps } from "~interfaces";
 import { cxm } from "~lib/helpers";
-import { ChildrenProps } from "~models";
 
 interface ParagraphProps extends ChildrenProps {
   className?: string;

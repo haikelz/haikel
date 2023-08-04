@@ -1,12 +1,12 @@
 import { cxm } from "~lib/helpers";
-import { spaceGrotesk } from "~lib/utils/fonts";
+import { ibmPlexSans } from "~lib/utils/fonts";
 
 export default function Loading() {
   return (
     <section className="flex min-h-screen items-center justify-center">
       <div role="status" className="flex items-center justify-center">
         <LoadingSvg />
-        <span className={cxm("text-lg font-bold", spaceGrotesk.className)}>Loading....</span>
+        <span className={cxm("text-lg font-bold", ibmPlexSans.className)}>Loading....</span>
       </div>
     </section>
   );

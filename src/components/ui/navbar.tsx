@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { cxm } from "~lib/helpers";
-import { spaceGrotesk } from "~lib/utils/fonts";
+import { ibmPlexSans } from "~lib/utils/fonts";
 
 const SwitchThemeMenu = dynamic(() => import("~ui/menus/switch-theme-menu"), { ssr: false });
 const NavigationMenu = dynamic(() => import("~ui/menus/navigation-menu"), { ssr: false });
@@ -24,7 +24,7 @@ export default function Navbar() {
               "tracking-widest outline-none",
               "transition-all",
               "hover:text-blue-500",
-              spaceGrotesk.className
+              ibmPlexSans.className
             )}
             href="/"
           >

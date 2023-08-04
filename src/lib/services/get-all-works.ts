@@ -1,4 +1,4 @@
-import { WorkMetaProps } from "~models";
+import { WorkMetaProps } from "~interfaces";
 
 import { WORKS_PATH } from "../utils/constants";
 import { getSlugs } from "./get-slugs";

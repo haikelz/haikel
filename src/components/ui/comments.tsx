@@ -21,6 +21,7 @@ export default function Comments() {
         theme={theme === "dark" ? "dark" : "light"}
         lang="en"
         loading="lazy"
+        host="https://giscus.app"
       />
     </div>
   );
