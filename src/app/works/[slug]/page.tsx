@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
+import ReadingProgress from "~components/ui/reading-progress";
 import { cxm } from "~lib/helpers";
 import { getSlugs, getWorkFromSlug } from "~lib/services";
 import { ABSOLUTE_OG_URL, SITE_URL, WORKS_PATH } from "~lib/utils/constants";
@@ -58,10 +59,11 @@ export default async function DetailWorkPage({ params }: { params: { slug: strin
   const components = await MDXComponents(content);
 
   return (
-    <Main
-      className={cxm("flex min-h-screen flex-col items-center justify-start", "py-8", "md:py-12")}
-    >
-      <article className="mb-3 flex w-full flex-col flex-wrap justify-center">
+    <Main className={cxm("flex min-h-screen flex-col items-center justify-start")}>
+      <ReadingProgress />
+      <article
+        className={cxm("flex w-full flex-col flex-wrap justify-center py-8", "md:py-12 md:mb-3")}
+      >
         <section className="flex flex-col">
           <Heading as="h1" className="gradient dark:gradient-dark">
             {meta.title}

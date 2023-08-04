@@ -1,4 +1,3 @@
-import NextTopLoader from "nextjs-toploader";
 import { cxm } from "~lib/helpers";
 import { ibmPlexSerif, jetbrains, naskhArabic, spaceGrotesk } from "~lib/utils/fonts";
 import { ChildrenProps } from "~models";
@@ -18,11 +17,9 @@ export default function RootLayout({ children }: ChildrenProps) {
         naskhArabic.variable,
         ibmPlexSerif.variable
       )}
-      suppressHydrationWarning
     >
       <body>
         <Wrapper>
-          <NextTopLoader color="#F84B3E" showSpinner={false} />
           <div
             className={cxm(
               "min-h-screen w-full",

@@ -33,7 +33,6 @@ specifiers:
   next-auth: ^4.22.3
   next-mdx-remote: ^4.4.1
   next-themes: ^0.2.1
-  nextjs-toploader: ^1.4.2
   postcss: ^8.4.27
   prettier: 2.8.8
   prettier-plugin-tailwindcss: ^0.4.1
@@ -69,7 +68,6 @@ dependencies:
   next-auth: 4.22.3_54ux7fu2vrztxgcjbkegvwjefy
   next-mdx-remote: 4.4.1_biqbaboplfbrettd7655fr4n2y
   next-themes: 0.2.1_54ux7fu2vrztxgcjbkegvwjefy
-  nextjs-toploader: 1.4.2_54ux7fu2vrztxgcjbkegvwjefy
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   reading-time: 1.5.0
@@ -1297,10 +1295,6 @@ packages:
 
   /@types/node/20.4.4:
     resolution: {integrity: sha512-CukZhumInROvLq3+b5gLev+vgpsIqC2D0deQr/yS1WnxvmYLlJXZpaQrQiseMY+6xusl79E04UjWoqyr+t1/Ew==}
-
-  /@types/nprogress/0.2.0:
-    resolution: {integrity: sha512-1cYJrqq9GezNFPsWTZpFut/d4CjpZqA0vhqDUPFWYKF1oIyBz5qnoYMzR+0C/T96t3ebLAC1SSnwrVOm5/j74A==}
-    dev: false
 
   /@types/phoenix/1.6.0:
     resolution: {integrity: sha512-qwfpsHmFuhAS/dVd4uBIraMxRd56vwBUYQGZ6GpXnFuM2XMRFJbIyruFKKlW2daQliuYZwe0qfn/UjFCDKic5g==}
@@ -4520,21 +4514,6 @@ packages:
       - '@babel/core'
       - babel-plugin-macros
 
-  /nextjs-toploader/1.4.2_54ux7fu2vrztxgcjbkegvwjefy:
-    resolution: {integrity: sha512-FS5+zCdNHLq0YA+SijkbDifOMFNayKfxkCLTiM6TIrvSaf6kAzCGlNjwgVpoG3zpampVMQSVf5L/jrWFJgs23g==}
-    peerDependencies:
-      next: '>= 6.0.0'
-      react: '>= 16.0.0'
-      react-dom: '>= 16.0.0'
-    dependencies:
-      '@types/nprogress': 0.2.0
-      next: 13.4.12_biqbaboplfbrettd7655fr4n2y
-      nprogress: 0.2.0
-      prop-types: 15.8.1
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-    dev: false
-
   /node-fetch/2.6.12_encoding@0.1.13:
     resolution: {integrity: sha512-C/fGU2E8ToujUivIO0H+tpQ6HWo4eEmchoPIoXtxCrVghxdKq+QOHqEZW7tuP3KlV3bC8FRMO5nMCC7Zm1VP6g==}
     engines: {node: 4.x || >=6.0.0}
@@ -4580,10 +4559,6 @@ packages:
     dependencies:
       path-key: 4.0.0
     dev: true
-
-  /nprogress/0.2.0:
-    resolution: {integrity: sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA==}
-    dev: false
 
   /oauth/0.9.15:
     resolution: {integrity: sha512-a5ERWK1kh38ExDEfoO6qUHJb32rd7aYmPHuyCu3Fta/cnICvYmgd2uhuKXvPD+PXB+gCEYYEaQdIRAjCOwAKNA==}

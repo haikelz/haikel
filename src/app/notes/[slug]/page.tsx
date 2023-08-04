@@ -11,6 +11,7 @@ import { Heading, Paragraph } from "~ui/typography";
 const AuthorImage = dynamic(() => import("~ui/images/author-image"));
 const ReadingTime = dynamic(() => import("~ui/reading-time"));
 const Comments = dynamic(() => import("~ui/comments"));
+const ReadingProgress = dynamic(() => import("~ui/reading-progress"));
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return getSlugs(NOTES_PATH).map((slug) => ({ slug }));
@@ -59,10 +60,11 @@ export default async function NotePage({ params }: { params: { slug: string } })
   const components = await MDXComponents(content);
 
   return (
-    <Main
-      className={cxm("flex min-h-screen flex-col items-center justify-start", "py-8", "md:py-12")}
-    >
-      <article className="flex w-full flex-col flex-wrap justify-center md:mb-3">
+    <Main className={cxm("flex min-h-screen flex-col items-center justify-start")}>
+      <ReadingProgress />
+      <article
+        className={cxm("flex w-full flex-col flex-wrap justify-center py-8", "md:py-12 md:mb-3")}
+      >
         <section className="flex flex-col">
           <Heading as="h1" className="gradient dark:gradient-dark">
             {meta.title}

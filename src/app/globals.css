@@ -19,12 +19,8 @@
   }
 
   body::-webkit-scrollbar-thumb {
-    @apply bg-red;
+    @apply bg-red dark:bg-blue-500;
   }
-
-  /*body.dark::-webkit-scrollbar-thumb {
-    @apply bg-blue-500;
-  }*/
 
   h1,
   h2,
