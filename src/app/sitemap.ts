@@ -17,7 +17,7 @@ export default function Sitemap(): MetadataRoute.Sitemap {
     url: `https://haikel.app/works/${meta.slug}`,
   }));
 
-  const routes = ["", "/works", "/notes", "/guestbook"].map((route) => ({
+  const routes = ["", "/works", "/notes", "/tags", "/guestbook"].map((route) => ({
     url: `https://haikel.app${route}`,
     lastModified: new Date().toISOString(),
   }));

@@ -3,6 +3,7 @@ import { useMemo } from "react";
 import { cxm } from "~lib/helpers";
 import { getAllNotes } from "~lib/services";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
+import { TagsList } from "~ui/lists";
 import Main from "~ui/main";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
@@ -74,20 +75,7 @@ export default function Tags() {
         </div>
       </section>
       <section className="mt-6 flex flex-wrap gap-4">
-        {tagsList.map((item) => (
-          <Link key={item} href={`/tags/${item}`}>
-            <button
-              type="button"
-              aria-label={`tag ${item}`}
-              className={cxm(
-                "bg-base-5 px-4 py-1 transition-all",
-                "hover:scale-110 dark:bg-base-1"
-              )}
-            >
-              <Paragraph className="text-center font-medium">{item}</Paragraph>
-            </button>
-          </Link>
-        ))}
+        <TagsList tagsList={tagsList} />
       </section>
     </Main>
   );

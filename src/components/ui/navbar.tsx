@@ -17,10 +17,10 @@ export default function Navbar() {
       )}
     >
       <div className="mx-auto flex w-full max-w-3xl items-center justify-between">
-        <div className="gradient dark:gradient-dark -rotate-6">
+        <div className="gradient dark:gradient-dark">
           <Link
             className={cxm(
-              "cursor-pointer border-none text-xl font-bold",
+              "cursor-pointer border-none text-2xl font-bold",
               "tracking-widest outline-none",
               "transition-all",
               "hover:text-blue-500",
@@ -28,7 +28,7 @@ export default function Navbar() {
             )}
             href="/"
           >
-            ハキム
+            は
           </Link>
         </div>
         <div className="flex items-center justify-center">
