@@ -21,8 +21,6 @@ const socialMediaList = [
 ];
 
 export default function Footer() {
-  const currentYear = format(new Date(), "yyyy");
-
   return (
     <footer
       className={cxm(
@@ -50,10 +48,10 @@ export default function Footer() {
                     type="button"
                     className={cxm(
                       "rounded-sm",
-                      "transition-all p-1",
+                      "p-1",
                       "hover:bg-gray-200",
                       "active:bg-gray-300",
-                      "dark:bg-base-2"
+                      "dark:hover:bg-base-2 dark:active:bg-base-1"
                     )}
                     aria-label={`Icon ${item.id.toString()}`}
                   >

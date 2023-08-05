@@ -31,10 +31,10 @@ export default function NavigationMenu() {
         <button
           className={cxm(
             "mr-3 rounded-sm",
-            "transition-all p-1",
+            "p-1",
             "hover:bg-gray-200",
             "active:bg-gray-300",
-            "dark:bg-base-2"
+            "dark:hover:bg-base-2 dark:active:bg-base-1"
           )}
           type="button"
           aria-label="menu"

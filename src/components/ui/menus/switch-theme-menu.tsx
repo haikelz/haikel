@@ -35,10 +35,10 @@ export default function SwitchThemeMenu() {
         <button
           className={cxm(
             "overflow-hidden rounded-sm",
-            "transition-all p-1",
+            "p-1",
             "hover:bg-gray-200",
             "active:bg-gray-300",
-            "dark:bg-base-2"
+            "dark:hover:bg-base-2 dark:active:bg-base-1"
           )}
           type="button"
           aria-label="switch theme"
