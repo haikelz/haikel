@@ -15,10 +15,12 @@ export function SearchInput({ search, setSearch }: SearchInputProps) {
       </div>
       <input
         className={cxm(
-          "block w-full border-[2.5px] border-base-1 bg-white outline-none",
-          "px-4 py-1.5 pl-12 font-medium transition-all",
-          "focus:shadow-light",
-          "dark:border-white dark:bg-base-0 dark:focus:shadow-dark"
+          "block w-full border-2 border-base-0",
+          "focus:border-blue-500 focus:ring-blue-500 focus:ring-1",
+          "dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:focus:ring-1",
+          "dark:border-base-5 bg-white dark:bg-base-0",
+          "rounded-md",
+          "px-4 py-1.5 pl-12 font-medium outline-none"
         )}
         type="text"
         name="search"

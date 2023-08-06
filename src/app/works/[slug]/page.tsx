@@ -61,9 +61,7 @@ export default async function DetailWorkPage({ params }: { params: { slug: strin
   return (
     <Main className={cxm("flex min-h-screen flex-col items-center justify-start")}>
       <ReadingProgress />
-      <article
-        className={cxm("flex w-full flex-col flex-wrap justify-center py-8", "md:py-12 md:mb-3")}
-      >
+      <article className={cxm("flex w-full flex-col flex-wrap justify-center py-8", "md:mb-3")}>
         <section className="flex flex-col">
           <Heading as="h1" className="gradient dark:gradient-dark">
             {meta.title}

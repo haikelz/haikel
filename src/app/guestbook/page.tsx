@@ -62,9 +62,7 @@ export default async function Guestbook() {
   const guestbook = await getData();
 
   return (
-    <Main
-      className={cxm("flex min-h-screen flex-col items-start justify-start", "py-8", "md:py-12")}
-    >
+    <Main className={cxm("flex min-h-screen flex-col items-start justify-start", "py-8")}>
       <GuestbookClient />
       {guestbook?.length ? (
         <section className="mb-10 flex w-full flex-col space-y-8">

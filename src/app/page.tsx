@@ -49,7 +49,7 @@ export default async function HomePage() {
     .map((work) => work.meta);
 
   return (
-    <Main className={cxm("flex flex-col items-start justify-start", "py-8", "md:py-12")}>
+    <Main className={cxm("flex flex-col items-start justify-start", "py-8")}>
       <About />
       <section className="mb-12 flex w-full flex-wrap items-center justify-center">
         <div className="flex w-full flex-col items-start justify-start">

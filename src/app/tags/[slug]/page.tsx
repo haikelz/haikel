@@ -61,9 +61,7 @@ export default function Tags({ params }: { params: { slug: string } }) {
     .map((note) => note.meta);
 
   return (
-    <Main
-      className={cxm("flex min-h-screen flex-col items-center justify-start", "py-8", "md:py-12")}
-    >
+    <Main className={cxm("flex min-h-screen flex-col items-center justify-start", "py-8")}>
       <section className="flex w-full flex-wrap items-start justify-start">
         <div>
           <Heading as="h2" className="text-left">

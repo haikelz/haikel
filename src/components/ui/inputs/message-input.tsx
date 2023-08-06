@@ -1,18 +1,20 @@
 "use client";
 
-import { cx } from "classix";
 import { forwardRef } from "react";
 import { cxm } from "~lib/helpers";
 
 export const MessageInput = forwardRef<HTMLInputElement>((props, ref) => {
   return (
-    <div className="my-6 flex w-full items-center">
+    <div className="my-6 w-full relative">
       <input
         ref={ref}
         className={cxm(
-          "block w-full border-[2.5px] border-base-1 bg-white outline-none",
-          "px-4 py-1.5 font-medium",
-          "dark:border-base-5 dark:bg-base-0"
+          "block w-full border-2 border-base-0",
+          "focus:border-blue-500 focus:ring-blue-500 focus:ring-1",
+          "dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:focus:ring-1",
+          "dark:border-base-5 bg-white dark:bg-base-0",
+          "rounded-md",
+          "px-4 py-1.5 font-medium outline-none"
         )}
         type="text"
         name="message"
@@ -20,17 +22,6 @@ export const MessageInput = forwardRef<HTMLInputElement>((props, ref) => {
         placeholder="Add your message...."
         {...props}
       />
-      <button
-        type="submit"
-        aria-label="submit"
-        className={cx(
-          "border-[2.5px] border-base-1 bg-base-0 outline-none",
-          "px-4 py-1.5 font-semibold text-white",
-          "dark:border-base-5 dark:bg-base-5 dark:text-base-1"
-        )}
-      >
-        Submit
-      </button>
     </div>
   );
 });
