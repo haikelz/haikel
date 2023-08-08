@@ -4,7 +4,7 @@
   "version": "1.5.0",
   "private": true,
   "license": "MIT",
-  "description": "Haikel's Website",
+  "description": "My personal Website",
   "scripts": {
     "dev": "next dev",
     "lint": "next lint",

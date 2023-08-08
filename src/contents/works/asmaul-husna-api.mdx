@@ -63,6 +63,58 @@ Response:
 }
 ```
 
+**Get spesific Asma'ul Husna based on urutan**
+
+Request:
+
+```ts
+fetch("https://asmaul-husna-api.vercel.app/api/1")
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+Response:
+
+```json
+{
+  "statusCode": 200,
+  "total": 1,
+  "data": {
+    "urutan": 1,
+    "latin": "Ar Rahman",
+    "arab": "الرحمن",
+    "arti": "Yang Maha Pengasih"
+  }
+}
+```
+
+**Get spesific Asma'ul Husna based on latin**
+
+Note: the latin can be lowercase or uppercase.
+
+Request:
+
+```ts
+fetch("https://asmaul-husna-api.vercel.app/api/latin/ar-rahman")
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+Response:
+
+```json
+{
+  "statusCode": 200,
+  "total": 1,
+  "data": {
+    "urutan": 1,
+    "latin": "Ar Rahman",
+    "arab": "الرحمن",
+    "arti": "Yang Maha Pengasih"
+  }
+}
+```
+
 Selengkapnya bisa langsung kunjungi [reponya](https://github.com/haikelz/asmaul-husna-api).
 
 ## Tech Stack
