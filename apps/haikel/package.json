@@ -8,8 +8,6 @@
   "scripts": {
     "dev": "next dev",
     "lint": "next lint",
-    "prepare": "husky install",
-    "commit": "cz",
     "format": "prettier . --write",
     "build": "next build"
   },
