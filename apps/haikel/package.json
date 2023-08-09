@@ -9,7 +9,7 @@
     "dev": "next dev",
     "lint": "next lint",
     "format": "prettier . --write",
-    "build": "next build"
+    "build": "pnpm prisma generate && next build"
   },
   "dependencies": {
     "@giscus/react": "^2.3.0",
