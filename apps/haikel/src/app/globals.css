@@ -41,7 +41,7 @@
   }
 
   [data-rehype-pretty-code-title] {
-    @apply rounded-t-sm bg-base-2 px-4 py-2.5 font-medium text-gray-300 dark:bg-base-1;
+    @apply bg-base-2 dark:bg-base-1 rounded-t-sm px-4 py-2.5 font-medium text-gray-300;
     font-family: var(--font-jetbrains);
   }
 

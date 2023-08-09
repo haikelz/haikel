@@ -1,4 +1,4 @@
 <div align="center">
   <h1>haikel</h1>
-  <p>Monorepo for my Website</p>
+  <p>My Personal Website. Always WIP.</p>
 </div>

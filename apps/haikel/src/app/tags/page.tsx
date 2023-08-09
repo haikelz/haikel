@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useMemo } from "react";
 import { cxm } from "~lib/helpers";
 import { getAllNotes } from "~lib/services";
@@ -72,7 +71,7 @@ export default function Tags() {
           <Paragraph>Select spesific notes based on the list of tags below.</Paragraph>
         </div>
       </section>
-      <section className="mt-6 flex flex-wrap gap-4">
+      <section className="mt-6 flex flex-wrap gap-3">
         <TagsList tagsList={tagsList} />
       </section>
     </Main>

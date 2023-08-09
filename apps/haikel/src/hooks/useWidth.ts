@@ -3,11 +3,13 @@
 import { atom, useAtom } from "jotai";
 import { useAtomCallback } from "jotai/utils";
 import { useCallback, useEffect } from "react";
-import { cxm } from "~lib/helpers";
 
 const widthAtom = atom<number>(0);
 
-export default function ReadingProgress() {
+/**
+ * A custom hook that get width in percent, based on user's scroll height
+ */
+export function useWidth(): number {
   const [width, setWidth] = useAtom(widthAtom);
 
   const handleScroll = useAtomCallback(
@@ -28,10 +30,5 @@ export default function ReadingProgress() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
 
-  return (
-    <div
-      style={{ width: width + "%" }}
-      className={cxm("fixed z-10 h-0.5 bg-rose-400", "dark:bg-blue-500")}
-    ></div>
-  );
+  return width;
 }
