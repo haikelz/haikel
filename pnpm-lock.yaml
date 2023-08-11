@@ -17,7 +17,7 @@ importers:
       turbo: ^1.10.12
     devDependencies:
       '@trivago/prettier-plugin-sort-imports': 4.2.0_prettier@2.8.8
-      '@turbo/gen': 1.10.12_gkfa7xkxhqhrp4jxnigj6g6dy4
+      '@turbo/gen': 1.10.12_vjdgkrlpvzy57ywk3l7oo5hswi
       commitizen: 4.3.0
       cz-conventional-changelog: 3.3.0
       eslint: 8.46.0
@@ -63,6 +63,7 @@ importers:
       prisma: ^5.1.1
       react: 18.2.0
       react-dom: 18.2.0
+      react-string-replace: ^1.1.1
       reading-time: ^1.5.0
       rehype-autolink-headings: ^6.1.1
       rehype-pretty-code: ^0.9.11
@@ -94,6 +95,7 @@ importers:
       next-themes: 0.2.1_54ux7fu2vrztxgcjbkegvwjefy
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+      react-string-replace: 1.1.1
       reading-time: 1.5.0
       rehype-autolink-headings: 6.1.1
       rehype-pretty-code: 0.9.11_shiki@0.14.3
@@ -1268,7 +1270,7 @@ packages:
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
     dev: true
 
-  /@turbo/gen/1.10.12_gkfa7xkxhqhrp4jxnigj6g6dy4:
+  /@turbo/gen/1.10.12_vjdgkrlpvzy57ywk3l7oo5hswi:
     resolution: {integrity: sha512-noop5+3MBFsgPQ7O2vQpS6YYiah+ZrOioa4cDDpZceUVsKVXvUHFmC2nEVyKSJZhO/8SLvbDE/esB/MGw5b2tw==}
     hasBin: true
     dependencies:
@@ -1280,7 +1282,7 @@ packages:
       node-plop: 0.26.3
       proxy-agent: 6.3.0
       semver: 7.5.4
-      ts-node: 10.9.1_gkfa7xkxhqhrp4jxnigj6g6dy4
+      ts-node: 10.9.1_vjdgkrlpvzy57ywk3l7oo5hswi
       update-check: 1.5.4
       validate-npm-package-name: 5.0.0
     transitivePeerDependencies:
@@ -5636,6 +5638,11 @@ packages:
       use-sidecar: 1.1.2_fzrd6ivowi4azn3madm57eamia
     dev: false
 
+  /react-string-replace/1.1.1:
+    resolution: {integrity: sha512-26TUbLzLfHQ5jO5N7y3Mx88eeKo0Ml0UjCQuX4BMfOd/JX+enQqlKpL1CZnmjeBRvQE8TR+ds9j1rqx9CxhKHQ==}
+    engines: {node: '>=0.12.0'}
+    dev: false
+
   /react-style-singleton/2.2.1_fzrd6ivowi4azn3madm57eamia:
     resolution: {integrity: sha512-ZWj0fHEMyWkHzKYUr2Bs/4zU6XLmq9HsgBURm7g5pAVfyn49DgUiNgY2d4lXRlYSiCif9YBGpQleewkcqddc7g==}
     engines: {node: '>=10'}
@@ -6436,6 +6443,7 @@ packages:
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
     dev: true
+    optional: true
 
   /ts-node/10.9.1_vjdgkrlpvzy57ywk3l7oo5hswi:
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}

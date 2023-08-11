@@ -38,7 +38,7 @@ export default function NotesClient({ notes }: { notes: NoteMetaProps[] }) {
       <SearchInput search={search} setSearch={setSearch} />
       {filteredNotes.length ? (
         <section className="mb-10 flex w-full flex-col space-y-8">
-          <NotesList filteredNotes={filteredNotes} />
+          <NotesList filteredNotes={filteredNotes} search={search} />
         </section>
       ) : (
         <Paragraph className="font-semibold">The note that you search is not found!</Paragraph>

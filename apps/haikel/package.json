@@ -9,7 +9,8 @@
     "dev": "next dev",
     "lint": "next lint",
     "format": "prettier . --write",
-    "build": "pnpm prisma generate && next build"
+    "build": "next build",
+    "prisma:generate": "pnpm prisma generate"
   },
   "dependencies": {
     "@giscus/react": "^2.3.0",
@@ -29,6 +30,7 @@
     "next-themes": "^0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-string-replace": "^1.1.1",
     "reading-time": "^1.5.0",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-pretty-code": "^0.9.11",
