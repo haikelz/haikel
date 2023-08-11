@@ -10,7 +10,7 @@ export function NotesList({
   search,
 }: {
   filteredNotes: NoteMetaProps[];
-  search: string;
+  search?: string;
 }) {
   return (
     <>
