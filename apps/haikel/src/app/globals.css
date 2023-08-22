@@ -6,20 +6,6 @@
   body {
     @apply m-0 h-[50vh];
     font-family: var(--font-ibm-serif);
-    scrollbar-width: thin;
-    scrollbar-color: #f84b3e #d1d5db;
-  }
-
-  body::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  body::-webkit-scrollbar-track {
-    @apply bg-gray-300;
-  }
-
-  body::-webkit-scrollbar-thumb {
-    @apply bg-red dark:bg-blue-500;
   }
 
   h1,
@@ -33,7 +19,7 @@
 
   .prose pre,
   pre code {
-    font-family: var(--font-jetbrains);
+    font-family: var(--font-ibm-mono);
   }
 
   button {
@@ -42,7 +28,7 @@
 
   [data-rehype-pretty-code-title] {
     @apply bg-base-2 dark:bg-base-1 rounded-t-sm px-4 py-2.5 font-medium text-gray-300;
-    font-family: var(--font-jetbrains);
+    font-family: var(--font-ibm-mono);
   }
 
   [data-rehype-pretty-code-title] + pre {

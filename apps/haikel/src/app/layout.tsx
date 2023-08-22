@@ -1,6 +1,6 @@
 import { ChildrenProps } from "~interfaces";
 import { cxm } from "~lib/helpers";
-import { ibmPlexSans, ibmPlexSerif, jetbrains, naskhArabic } from "~lib/utils/fonts";
+import { ibmPlexMono, ibmPlexSans, ibmPlexSerif, naskhArabic } from "~lib/utils/fonts";
 import Footer from "~ui/footer";
 import Navbar from "~ui/navbar";
 
@@ -15,7 +15,7 @@ export default function RootLayout({ children }: ChildrenProps) {
         naskhArabic.variable,
         ibmPlexSerif.variable,
         ibmPlexSans.variable,
-        jetbrains.variable
+        ibmPlexMono.variable
       )}
     >
       <body>

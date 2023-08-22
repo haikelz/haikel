@@ -1,4 +1,4 @@
-import { IBM_Plex_Sans, IBM_Plex_Serif, JetBrains_Mono, Noto_Naskh_Arabic } from "next/font/google";
+import { IBM_Plex_Mono, IBM_Plex_Sans, IBM_Plex_Serif, Noto_Naskh_Arabic } from "next/font/google";
 
 export const ibmPlexSerif = IBM_Plex_Serif({
   weight: ["400", "500", "600", "700"],
@@ -8,11 +8,11 @@ export const ibmPlexSerif = IBM_Plex_Serif({
   display: "swap",
 });
 
-export const jetbrains = JetBrains_Mono({
-  weight: ["400"],
+export const ibmPlexMono = IBM_Plex_Mono({
+  weight: ["400", "500", "600", "700"],
   style: ["normal"],
   subsets: ["latin"],
-  variable: "--font-jetbrains",
+  variable: "--font-ibm-mono",
   display: "swap",
 });
 
