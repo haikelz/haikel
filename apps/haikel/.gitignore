@@ -49,4 +49,4 @@ yarn-error.log*
 .turbo
 
 # contentlayer
-/.contentlayer/
+.contentlayer/
