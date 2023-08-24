@@ -1,5 +1,6 @@
 import { Notes, allNotes } from "contentlayer/generated";
 import { tw } from "~lib/helpers";
+import { sortedAllNotes } from "~lib/services";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import Main from "~ui/main";
 import { Heading, Paragraph, Underline } from "~ui/typography";
@@ -41,7 +42,7 @@ export const metadata = {
 };
 
 export default function NotesPage() {
-  const notes: Notes[] = allNotes.slice(0, allNotes.length);
+  const notes: Notes[] = sortedAllNotes.slice(0, allNotes.length);
 
   return (
     <Main className={tw("flex min-h-screen flex-col items-start justify-start", "py-8")}>

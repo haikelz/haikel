@@ -1,5 +1,6 @@
 import { Works, allWorks } from "contentlayer/generated";
 import { tw } from "~lib/helpers";
+import { sortedAllWorks } from "~lib/services";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { WorksList } from "~ui/lists";
 import Main from "~ui/main";
@@ -39,7 +40,7 @@ export const metadata = {
 };
 
 export default function WorksPage() {
-  const works: Works[] = allWorks.slice(0, allWorks.length);
+  const works: Works[] = sortedAllWorks.slice(0, allWorks.length);
 
   return (
     <Main className={tw("flex min-h-screen flex-col items-start justify-start", "py-8")}>

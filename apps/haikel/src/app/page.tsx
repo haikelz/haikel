@@ -1,5 +1,6 @@
-import { Notes, Works, allNotes, allWorks } from "contentlayer/generated";
+import { Notes, Works } from "contentlayer/generated";
 import { tw } from "~lib/helpers";
+import { sortedAllNotes, sortedAllWorks } from "~lib/services";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import About from "~ui/about";
 import { NotesList, WorksList } from "~ui/lists";
@@ -40,11 +41,8 @@ export const metadata = {
 };
 
 export default async function HomePage() {
-  const notes: Notes[] = allNotes
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, 4);
-
-  const works: Works[] = allWorks.sort((a, b) => a.id - b.id).slice(0, 4);
+  const notes: Notes[] = sortedAllNotes.slice(0, 4);
+  const works: Works[] = sortedAllWorks.slice(0, 4);
 
   return (
     <Main className={tw("flex flex-col items-start justify-start", "py-8")}>
