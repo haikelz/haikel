@@ -1,6 +1,6 @@
+import { allNotes } from "contentlayer/generated";
 import { useMemo } from "react";
-import { cxm } from "~lib/helpers";
-import { getAllNotes } from "~lib/services";
+import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { TagsList } from "~ui/lists";
 import Main from "~ui/main";
@@ -45,8 +45,8 @@ export default function Tags() {
     () =>
       [
         ...new Set(
-          getAllNotes()
-            .map((item) => [...new Set(item.meta.tags)].join(" "))
+          allNotes
+            .map((item) => [...new Set(item.tags)].join(" "))
             .join(" ")
             .split(" ")
         ),
@@ -59,7 +59,7 @@ export default function Tags() {
   );
 
   return (
-    <Main className={cxm("flex min-h-screen flex-col items-start justify-start", "py-8")}>
+    <Main className={tw("flex min-h-screen flex-col items-start justify-start", "py-8")}>
       <section className="flex w-full flex-wrap items-start justify-start">
         <div>
           <Heading as="h2" className="text-left">

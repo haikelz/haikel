@@ -6,7 +6,7 @@ import Lightbox from "yet-another-react-lightbox";
 import Captions from "yet-another-react-lightbox/plugins/captions";
 import "yet-another-react-lightbox/plugins/captions.css";
 import "yet-another-react-lightbox/styles.css";
-import { cxm } from "~lib/helpers";
+import { tw } from "~lib/helpers";
 
 export default function AuthorImage() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -17,7 +17,7 @@ export default function AuthorImage() {
   return (
     <>
       <Image
-        className={cxm("mr-2 cursor-pointer rounded-full")}
+        className={tw("mr-2 cursor-pointer rounded-full")}
         onClick={() => setIsOpen(true)}
         decoding="async"
         src={src}

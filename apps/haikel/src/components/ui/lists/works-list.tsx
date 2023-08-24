@@ -1,6 +1,6 @@
+import { Works } from "contentlayer/generated";
 import Link from "next/link";
-import { WorkMetaProps } from "~interfaces";
-import { cxm } from "~lib/helpers";
+import { tw } from "~lib/helpers";
 import { ibmPlexSans } from "~lib/utils/fonts";
 import {
   ChakrauiIcon,
@@ -20,22 +20,22 @@ import {
 
 import { Paragraph } from "../typography";
 
-export function WorksList({ works }: { works: WorkMetaProps[] }) {
+export function WorksList({ works }: { works: Works[] }) {
   return (
     <>
       {works.map((work, index) => (
         <div key={index + 1} className="h-full">
           <div>
-            <Link href={`/works/${work.slug}`} aria-label={work.title}>
+            <Link href={`/${work.slug}`} aria-label={work.title}>
               <span
-                className={cxm("text-xl font-bold", "hover:text-blue-500", ibmPlexSans.className)}
+                className={tw("text-xl font-bold", "hover:text-blue-500", ibmPlexSans.className)}
               >
                 {work.title}
               </span>
             </Link>
           </div>
           <Paragraph className="my-2 tracking-wide">{work.description}</Paragraph>
-          <div className={cxm("flex space-x-2", ibmPlexSans.className)}>
+          <div className={tw("flex space-x-2", ibmPlexSans.className)}>
             {work.stack.map((techstack, index) => (
               <div key={index + 1}>
                 {techstack === "nextjs" ? (

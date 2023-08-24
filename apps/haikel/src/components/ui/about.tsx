@@ -1,15 +1,15 @@
-import { cxm } from "~lib/helpers";
+import { tw } from "~lib/helpers";
 import { Heading, Paragraph } from "~ui/typography";
 
 export default function About() {
   return (
     <section className="mb-12 flex w-full flex-wrap items-center justify-center">
-      <div className={cxm("flex w-full flex-col items-start justify-start", "md:flex-row")}>
-        <div className={cxm("flex flex-col items-start justify-start", "md:mt-0 md:text-start")}>
+      <div className={tw("flex w-full flex-col items-start justify-start", "md:flex-row")}>
+        <div className={tw("flex flex-col items-start justify-start", "md:mt-0 md:text-start")}>
           <Heading as="h1">
             Hello, I&#39;m{" "}
             <span
-              className={cxm(
+              className={tw(
                 "underline decoration-red decoration-dashed underline-offset-[5px]",
                 "dark:gradient-dark dark:animate-text dark:bg-clip-text",
                 "dark:text-transparent dark:decoration-blue-500"

@@ -1,5 +1,5 @@
 import { format } from "date-fns/esm";
-import { cxm } from "~lib/helpers";
+import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import db from "~lib/utils/db";
 import { ibmPlexSans } from "~lib/utils/fonts";
@@ -62,7 +62,7 @@ export default async function Guestbook() {
   const guestbook = await getData();
 
   return (
-    <Main className={cxm("flex min-h-screen flex-col items-start justify-start", "py-8")}>
+    <Main className={tw("flex min-h-screen flex-col items-start justify-start", "py-8")}>
       <GuestbookClient />
       {guestbook?.length ? (
         <section className="mb-10 flex w-full flex-col space-y-8">
@@ -70,7 +70,7 @@ export default async function Guestbook() {
             <div key={guest.id} className="h-full">
               <div>
                 <span
-                  className={cxm(
+                  className={tw(
                     "cursor-pointer text-xl font-bold",
                     "hover:text-blue-500",
                     ibmPlexSans.className

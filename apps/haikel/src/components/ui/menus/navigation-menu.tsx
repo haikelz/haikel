@@ -10,7 +10,7 @@ import {
 } from "@tabler/icons-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { cxm } from "~lib/helpers";
+import { tw } from "~lib/helpers";
 import { ibmPlexSans } from "~lib/utils/fonts";
 
 import Menu from "./menu";
@@ -29,7 +29,7 @@ export default function NavigationMenu() {
     <Menu
       menuIcon={
         <button
-          className={cxm(
+          className={tw(
             "mr-3 rounded-sm",
             "p-1",
             "hover:bg-gray-200",
@@ -47,7 +47,7 @@ export default function NavigationMenu() {
         return (
           <Link key={item.id} href={item.route}>
             <DropdownMenuItem
-              className={cxm(
+              className={tw(
                 "flex items-center justify-start",
                 "space-x-2 rounded-md p-2",
                 "font-semibold outline-none transition-all",
@@ -57,7 +57,7 @@ export default function NavigationMenu() {
             >
               <Icon size={22} />
               <span
-                className={cxm(
+                className={tw(
                   pathname?.includes(item.route)
                     ? "font-bold underline decoration-dashed underline-offset-[5px]"
                     : "",

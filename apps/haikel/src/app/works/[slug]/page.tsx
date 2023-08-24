@@ -1,19 +1,21 @@
+import { Works, allWorks } from "contentlayer/generated";
 import { Metadata } from "next";
+import { getMDXComponent } from "next-contentlayer/hooks";
 import dynamic from "next/dynamic";
-import { cxm } from "~lib/helpers";
-import { getSlugs, getWorkFromSlug } from "~lib/services";
-import { ABSOLUTE_OG_URL, SITE_URL, WORKS_PATH } from "~lib/utils/constants";
+import { tw } from "~lib/helpers";
+import { ABSOLUTE_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { ibmPlexSans, naskhArabic } from "~lib/utils/fonts";
 import Main from "~ui/main";
-import MDXComponents from "~ui/mdx-components";
 import ReadingProgress from "~ui/reading-progress";
 import { Heading, UnderlineLink } from "~ui/typography";
 
+const LightboxImage = dynamic(() => import("~ui/images/lightbox-image"));
+const Video = dynamic(() => import("~ui/video"));
 const AuthorImage = dynamic(() => import("~ui/images/author-image"));
 const ReadingTime = dynamic(() => import("~ui/reading-time"));
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
-  return getSlugs(WORKS_PATH).map((slug) => ({ slug }));
+  return allWorks.map((item) => ({ slug: item.slug.replace("works/", "") }));
 }
 
 export async function generateMetadata({
@@ -22,13 +24,14 @@ export async function generateMetadata({
   params: { slug: string };
 }): Promise<Metadata | undefined> {
   const { slug } = params;
-  const { meta } = getWorkFromSlug(slug);
-  const { title, description, author } = meta;
+  const { title, description, author } = allWorks.find(
+    (item) => item._raw.flattenedPath.replace("works/", "") === slug
+  ) as Works;
 
   return {
     title,
     description,
-    authors: author,
+    creator: author,
     openGraph: {
       type: "article",
       url: `${SITE_URL}/works/${slug}`,
@@ -54,60 +57,64 @@ export async function generateMetadata({
 
 export default async function DetailWorkPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
-  const { content, meta } = getWorkFromSlug(slug);
+  // const { content, meta } = getWorkFromSlug(slug);
+  const { body, title, description, author, preview, repo } = allWorks.find(
+    (item) => item._raw.flattenedPath.replace("works/", "") === slug
+  ) as Works;
 
-  const components = await MDXComponents(content);
+  // const components = await MDXComponents(content);
+  const Content = getMDXComponent(body.code);
 
   return (
-    <Main className={cxm("flex min-h-screen flex-col items-center justify-start")}>
+    <Main className={tw("flex min-h-screen flex-col items-center justify-start")}>
       <ReadingProgress />
-      <article className={cxm("flex w-full flex-col flex-wrap justify-center py-8", "md:mb-3")}>
+      <article className={tw("flex w-full flex-col flex-wrap justify-center py-8", "md:mb-3")}>
         <section className="flex flex-col">
           <Heading as="h1" className="gradient dark:gradient-dark">
-            {meta.title}
+            {title}
           </Heading>
           <div className="my-3 flex items-center">
             <AuthorImage />
-            <div className={cxm("tracking-[0.050em]", ibmPlexSans.className)}>
-              <span className={cxm("text-base font-semibold leading-[1.75rem]", "md:text-lg")}>
-                {meta.author}, <ReadingTime content={content} />.
+            <div className={tw("tracking-[0.050em]", ibmPlexSans.className)}>
+              <span className={tw("text-base font-semibold leading-[1.75rem]", "md:text-lg")}>
+                {author}, <ReadingTime content={body.raw} />.
               </span>{" "}
-              {meta.preview ? (
+              {preview ? (
                 <button
                   type="button"
                   aria-label="Preview"
-                  className={cxm("text-base leading-[1.75rem] tracking-[0.050em]", "md:text-lg")}
+                  className={tw("text-base leading-[1.75rem] tracking-[0.050em]", "md:text-lg")}
                 >
-                  <UnderlineLink href={meta.preview}>Preview</UnderlineLink>
+                  <UnderlineLink href={preview}>Preview</UnderlineLink>
                 </button>
               ) : null}
-              {meta.preview && meta.repo ? " / " : null}
-              {meta.repo ? (
+              {preview && repo ? " / " : null}
+              {repo ? (
                 <button
                   type="button"
                   aria-label="Source"
-                  className={cxm(
+                  className={tw(
                     "text-base font-normal leading-[1.75rem] tracking-[0.050em]",
                     "md:text-lg"
                   )}
                 >
-                  <UnderlineLink href={meta.repo}>Source</UnderlineLink>
+                  <UnderlineLink href={repo}>Source</UnderlineLink>
                 </button>
               ) : null}
             </div>
           </div>
         </section>
         <article
-          className={cxm(
+          className={tw(
             "prose prose-gray mt-6 w-full max-w-full",
             "md:prose-lg",
             "dark:prose-invert"
           )}
         >
-          <p className={cxm("text-right text-2xl font-bold", naskhArabic.className)}>
+          <p className={tw("text-right text-2xl font-bold", naskhArabic.className)}>
             بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
           </p>
-          {components}
+          <Content components={{ LightboxImage, Video }} />
         </article>
       </article>
     </Main>

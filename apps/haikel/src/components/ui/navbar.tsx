@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { cxm } from "~lib/helpers";
+import { tw } from "~lib/helpers";
 import { ibmPlexSans } from "~lib/utils/fonts";
 
 const SwitchThemeMenu = dynamic(() => import("~ui/menus/switch-theme-menu"), { ssr: false });
@@ -9,7 +9,7 @@ const NavigationMenu = dynamic(() => import("~ui/menus/navigation-menu"), { ssr:
 export default function Navbar() {
   return (
     <nav
-      className={cxm(
+      className={tw(
         "sticky top-0 z-10 w-full",
         "bg-azure/80 px-4 py-2.5",
         "backdrop-blur-lg backdrop-filter",
@@ -19,7 +19,7 @@ export default function Navbar() {
       <div className="mx-auto flex w-full max-w-3xl items-center justify-between">
         <div className="gradient dark:gradient-dark">
           <Link
-            className={cxm(
+            className={tw(
               "cursor-pointer border-none text-2xl font-bold",
               "tracking-widest outline-none",
               "transition-all",

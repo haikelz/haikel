@@ -1,6 +1,5 @@
-import { WorkMetaProps } from "~interfaces";
-import { cxm } from "~lib/helpers";
-import { getAllWorks } from "~lib/services";
+import { Works, allWorks } from "contentlayer/generated";
+import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { WorksList } from "~ui/lists";
 import Main from "~ui/main";
@@ -39,13 +38,11 @@ export const metadata = {
   metadataBase: new URL(url),
 };
 
-export default function Works() {
-  const works: WorkMetaProps[] = getAllWorks()
-    .slice(0, getAllWorks().length)
-    .map((work) => work.meta);
+export default function WorksPage() {
+  const works: Works[] = allWorks.slice(0, allWorks.length);
 
   return (
-    <Main className={cxm("flex min-h-screen flex-col items-start justify-start", "py-8")}>
+    <Main className={tw("flex min-h-screen flex-col items-start justify-start", "py-8")}>
       <section className="flex w-full flex-wrap items-start justify-start">
         <div>
           <Heading as="h2" className="text-left">

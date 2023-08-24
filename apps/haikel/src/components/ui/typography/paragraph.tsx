@@ -1,5 +1,5 @@
 import { ChildrenProps } from "~interfaces";
-import { cxm } from "~lib/helpers";
+import { tw } from "~lib/helpers";
 
 interface ParagraphProps extends ChildrenProps {
   className?: string;
@@ -8,7 +8,7 @@ interface ParagraphProps extends ChildrenProps {
 export function Paragraph({ className, children }: ParagraphProps) {
   return (
     <p
-      className={cxm(
+      className={tw(
         "text-base font-normal leading-[1.75] tracking-wide",
         "md:text-lg md:leading-[1.7777778]",
         className

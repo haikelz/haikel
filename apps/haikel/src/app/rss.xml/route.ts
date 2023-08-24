@@ -1,5 +1,5 @@
+import { allNotes } from "contentlayer/generated";
 import RSS, { FeedOptions } from "rss";
-import { getAllNotes } from "~lib/services";
 
 /**
  * @see https://www.jovertical.dev/articles/rss-feed-in-next-js-13-app-router
@@ -17,13 +17,13 @@ export async function GET() {
 
   const feed = new RSS(feedOptions);
 
-  getAllNotes().forEach(({ meta }) => {
+  allNotes.forEach((item) => {
     feed.item({
-      author: meta.author,
-      title: meta.title,
-      description: meta.description,
-      url: `https://haikel.app/notes/${meta.slug}`,
-      date: meta.date,
+      author: item.author,
+      title: item.title,
+      description: item.description,
+      url: `https://haikel.app/notes/${item.slug}`,
+      date: item.date,
     });
   });
 

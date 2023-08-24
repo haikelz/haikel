@@ -3,7 +3,7 @@
 import { IconBrandGithub } from "@tabler/icons-react";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { ChangeEvent, useRef } from "react";
-import { cxm } from "~lib/helpers";
+import { tw } from "~lib/helpers";
 import db from "~lib/utils/db";
 import { MessageInput } from "~ui/inputs";
 import { GoogleIcon } from "~ui/svgs";
@@ -52,7 +52,7 @@ export default function GuestbookClient() {
                 {" "}
                 Want to Sign Out instead? Just click{" "}
                 <button
-                  className={cxm(
+                  className={tw(
                     "cursor-pointer font-bold",
                     "underline decoration-dashed underline-offset-[5px]",
                     "hover:text-blue-500 hover:decoration-blue-500"
@@ -73,7 +73,7 @@ export default function GuestbookClient() {
           <button
             type="button"
             aria-label="sign in with github"
-            className={cxm(
+            className={tw(
               "flex items-center justify-center space-x-3 rounded-md",
               "bg-base-1",
               "px-3.5 py-2",
@@ -86,7 +86,7 @@ export default function GuestbookClient() {
           </button>
           <span className="text-base">or</span>
           <button
-            className={cxm(
+            className={tw(
               "flex items-center justify-center space-x-3 rounded-md",
               "bg-base-5",
               "px-3.5 py-2",

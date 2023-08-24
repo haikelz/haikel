@@ -3,7 +3,7 @@
 import { DropdownMenuItem } from "@radix-ui/react-dropdown-menu";
 import { IconDeviceDesktop, IconMoon, IconSunHigh } from "@tabler/icons-react";
 import { useTheme } from "next-themes";
-import { cxm } from "~lib/helpers";
+import { tw } from "~lib/helpers";
 import { ibmPlexSans } from "~lib/utils/fonts";
 
 import Menu from "./menu";
@@ -33,7 +33,7 @@ export default function SwitchThemeMenu() {
     <Menu
       menuIcon={
         <button
-          className={cxm(
+          className={tw(
             "overflow-hidden rounded-sm",
             "p-1",
             "hover:bg-gray-200",
@@ -51,7 +51,7 @@ export default function SwitchThemeMenu() {
         return (
           <DropdownMenuItem
             key={item.id}
-            className={cxm(
+            className={tw(
               "flex items-center justify-start",
               "space-x-2 rounded-md p-2",
               "cursor-pointer font-semibold outline-none transition-all",

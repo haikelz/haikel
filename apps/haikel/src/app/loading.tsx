@@ -1,4 +1,4 @@
-import { cxm } from "~lib/helpers";
+import { tw } from "~lib/helpers";
 import { ibmPlexSans } from "~lib/utils/fonts";
 
 export default function Loading() {
@@ -6,7 +6,7 @@ export default function Loading() {
     <section className="flex min-h-screen items-center justify-center">
       <div role="status" className="flex items-center justify-center">
         <LoadingSvg />
-        <span className={cxm("text-lg font-bold", ibmPlexSans.className)}>Loading....</span>
+        <span className={tw("text-lg font-bold", ibmPlexSans.className)}>Loading....</span>
       </div>
     </section>
   );
@@ -16,7 +16,7 @@ function LoadingSvg() {
   return (
     <svg
       aria-hidden="true"
-      className={cxm(
+      className={tw(
         "mr-2 h-8 w-8",
         "animate-spin fill-blue-600 text-gray-200",
         "dark:text-gray-600"

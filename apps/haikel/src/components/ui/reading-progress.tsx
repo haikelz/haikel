@@ -1,7 +1,7 @@
 "use client";
 
 import { useWidth } from "~hooks";
-import { cxm } from "~lib/helpers";
+import { tw } from "~lib/helpers";
 
 export default function ReadingProgress() {
   const width = useWidth();
@@ -9,7 +9,7 @@ export default function ReadingProgress() {
   return (
     <div
       style={{ width: width + "%" }}
-      className={cxm("fixed z-10 h-0.5 bg-rose-400", "dark:bg-blue-500")}
+      className={tw("fixed z-10 h-0.5 bg-rose-400", "dark:bg-blue-500")}
     ></div>
   );
 }

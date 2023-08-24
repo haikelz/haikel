@@ -7,7 +7,7 @@ import {
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
 import { ReactNode } from "react";
-import { cxm } from "~lib/helpers";
+import { tw } from "~lib/helpers";
 
 interface MenuProps {
   menuIcon: ReactNode;
@@ -21,7 +21,7 @@ export default function Menu({ menuIcon, list, contentClassName }: MenuProps) {
       <DropdownMenuTrigger asChild>{menuIcon}</DropdownMenuTrigger>
       <DropdownMenuPortal>
         <DropdownMenuContent
-          className={cxm(
+          className={tw(
             "right-0 z-50 mt-2 -translate-x-16 rounded-md bg-white",
             "p-2 drop-shadow-md",
             "dark:bg-base-1 dark:text-gray-100",

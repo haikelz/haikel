@@ -7,7 +7,7 @@ import {
   IconRss,
 } from "@tabler/icons-react";
 import Link from "next/link";
-import { cxm } from "~lib/helpers";
+import { tw } from "~lib/helpers";
 import { ibmPlexSans } from "~lib/utils/fonts";
 
 const socialMediaList = [
@@ -22,7 +22,7 @@ const socialMediaList = [
 export default function Footer() {
   return (
     <footer
-      className={cxm(
+      className={tw(
         "flex w-full flex-col items-center justify-center",
         "p-3 text-center tracking-widest",
         "md:px-4 md:py-0",
@@ -30,7 +30,7 @@ export default function Footer() {
       )}
     >
       <div
-        className={cxm(
+        className={tw(
           "mx-auto flex w-full max-w-3xl flex-col items-center justify-between",
           "md:flex-row md:border-t-[1.5px] md:border-t-gray-300",
           "md:py-3 md:dark:border-t-gray-700"
@@ -45,7 +45,7 @@ export default function Footer() {
                 <Link href={item.route} target="_blank">
                   <button
                     type="button"
-                    className={cxm(
+                    className={tw(
                       "rounded-sm",
                       "p-1",
                       "hover:bg-gray-200",

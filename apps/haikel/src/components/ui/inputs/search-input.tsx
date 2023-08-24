@@ -1,6 +1,6 @@
 import { IconSearch } from "@tabler/icons-react";
 import { SetStateAction } from "react";
-import { cxm } from "~lib/helpers";
+import { tw } from "~lib/helpers";
 
 interface SearchInputProps {
   search: string;
@@ -14,7 +14,7 @@ export function SearchInput({ search, setSearch }: SearchInputProps) {
         <IconSearch size={20} />
       </div>
       <input
-        className={cxm(
+        className={tw(
           "block w-full border-2 border-base-0",
           "focus:border-blue-500 focus:ring-blue-500 focus:ring-1",
           "dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:focus:ring-1",

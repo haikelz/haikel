@@ -1,20 +1,14 @@
+import { Notes, allNotes } from "contentlayer/generated";
 import { Metadata } from "next";
-import { NoteMetaProps } from "~interfaces";
-import { cxm } from "~lib/helpers";
-import { getAllNotes } from "~lib/services";
+import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { NotesList } from "~ui/lists";
 import Main from "~ui/main";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
-interface NoteProps {
-  content: string;
-  meta: NoteMetaProps;
-}
-
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
-  const notes: NoteProps[] = getAllNotes();
-  const tags: Set<string> = new Set(notes.map((note) => note.meta.tags).flat());
+  const notes: Notes[] = allNotes;
+  const tags: Set<string> = new Set(notes.map((note) => note.tags).flat());
 
   return Array.from(tags).map((tag) => ({ slug: tag }));
 }
@@ -56,12 +50,10 @@ export async function generateMetadata({
 export default function Tags({ params }: { params: { slug: string } }) {
   const { slug } = params;
 
-  const notes = getAllNotes()
-    .filter((note) => note.meta.tags.includes(slug))
-    .map((note) => note.meta);
+  const notes = allNotes.filter((note) => note.tags.includes(slug)).map((note) => note);
 
   return (
-    <Main className={cxm("flex min-h-screen flex-col items-center justify-start", "py-8")}>
+    <Main className={tw("flex min-h-screen flex-col items-center justify-start", "py-8")}>
       <section className="flex w-full flex-wrap items-start justify-start">
         <div>
           <Heading as="h2" className="text-left">

@@ -1,5 +1,5 @@
 import { ChildrenProps } from "~interfaces";
-import { cxm } from "~lib/helpers";
+import { tw } from "~lib/helpers";
 
 interface MainProps extends ChildrenProps {
   className: string;
@@ -7,6 +7,6 @@ interface MainProps extends ChildrenProps {
 
 export default function Main({ children, className }: MainProps) {
   return (
-    <main className={cxm("container mx-auto max-w-3xl tracking-wide", className)}>{children}</main>
+    <main className={tw("container mx-auto max-w-3xl tracking-wide", className)}>{children}</main>
   );
 }

@@ -1,20 +1,20 @@
 "use client";
 
+import { Notes } from "contentlayer/generated";
 import { Searcher } from "fast-fuzzy";
 import { useMemo, useState } from "react";
-import { NoteMetaProps } from "~interfaces";
 import { SearchInput } from "~ui/inputs";
 import { NotesList } from "~ui/lists";
 import { Paragraph } from "~ui/typography";
 
 type SearcherType = Searcher<
-  NoteMetaProps,
+  Notes,
   {
-    keySelector: (obj: NoteMetaProps) => string;
+    keySelector: (obj: Notes) => string;
   }
 >;
 
-export default function NotesClient({ notes }: { notes: NoteMetaProps[] }) {
+export default function NotesClient({ notes }: { notes: Notes[] }) {
   const [search, setSearch] = useState<string>("");
 
   const filteredNotes = useMemo(() => {

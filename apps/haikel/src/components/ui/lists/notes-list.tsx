@@ -1,32 +1,27 @@
+import { Notes } from "contentlayer/generated";
+import format from "date-fns/format";
 import Link from "next/link";
 import reactStringReplace from "react-string-replace";
-import { NoteMetaProps } from "~interfaces";
-import { cxm } from "~lib/helpers";
+import { tw } from "~lib/helpers";
 import { ibmPlexSans } from "~lib/utils/fonts";
 import { Paragraph } from "~ui/typography";
 
-export function NotesList({
-  filteredNotes,
-  search,
-}: {
-  filteredNotes: NoteMetaProps[];
-  search?: string;
-}) {
+export function NotesList({ filteredNotes, search }: { filteredNotes: Notes[]; search?: string }) {
   return (
     <>
       {filteredNotes.map((note) => (
         <div key={note.slug} className="h-full">
-          <Paragraph className={cxm("text-left font-medium", ibmPlexSans.className)}>
-            {note.date}
+          <Paragraph className={tw("text-left font-medium", ibmPlexSans.className)}>
+            {format(new Date(note.date) ?? new Date(), "LLLL d, yyyy")}
           </Paragraph>
           <div className="mt-2">
             <Link
-              className={cxm(
+              className={tw(
                 "cursor-pointer text-xl font-bold",
                 "hover:text-blue-500",
                 ibmPlexSans.className
               )}
-              href={`/notes/${note.slug}`}
+              href={`/${note.slug}`}
               aria-label={note.title}
             >
               {search
@@ -39,11 +34,11 @@ export function NotesList({
             </Link>
           </div>
           <Paragraph className="my-2 tracking-wide">{note.description}</Paragraph>
-          <div className={cxm("flex space-x-2", ibmPlexSans.className)}>
+          <div className={tw("flex space-x-2", ibmPlexSans.className)}>
             {note.tags.map((tag) => (
               <Link key={tag} href={`/tags/${tag}`} aria-label={tag}>
                 <span
-                  className={cxm(
+                  className={tw(
                     "cursor-pointer rounded-sm",
                     "border-2 border-gray-300",
                     "px-1 font-medium",
