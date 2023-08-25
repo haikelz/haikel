@@ -22,7 +22,6 @@
     "contentlayer": "^0.3.4",
     "date-fns": "^2.30.0",
     "fast-fuzzy": "^1.12.0",
-    "gray-matter": "^4.0.3",
     "jotai": "^2.3.1",
     "next": "13.4.19",
     "next-auth": "^4.23.1",
@@ -32,11 +31,9 @@
     "react-dom": "18.2.0",
     "react-string-replace": "^1.1.1",
     "reading-time": "^1.5.0",
-    "rehype-pretty-code": "^0.9.11",
     "rehype-slug": "^5.1.0",
     "remark-gfm": "^3.0.1",
     "rss": "^1.2.2",
-    "shiki": "^0.14.3",
     "tailwind-merge": "^1.14.0",
     "yet-another-react-lightbox": "^3.12.1",
     "zod": "^3.22.2"
@@ -58,6 +55,7 @@
     "lint-staged": "^14.0.1",
     "postcss": "^8.4.28",
     "prisma": "^5.1.1",
+    "rehype-shikiji": "^0.6.1",
     "tailwindcss": "^3.3.3",
     "tsconfig": "workspace:*",
     "typescript": "5.1.6"

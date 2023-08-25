@@ -25,15 +25,6 @@
   button {
     @apply outline-none;
   }
-
-  [data-rehype-pretty-code-title] {
-    @apply bg-base-2 dark:bg-base-1 rounded-t-sm px-4 py-2.5 font-medium text-gray-300;
-    font-family: var(--font-ibm-mono);
-  }
-
-  [data-rehype-pretty-code-title] + pre {
-    @apply mt-0 rounded-t-none border-t-0;
-  }
 }
 
 @layer components {

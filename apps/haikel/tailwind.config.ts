@@ -58,11 +58,6 @@ export default {
                 color: "#0D1117",
                 backgroundColor: theme("colors.gray.300"),
               },
-              "pre, pre code": {
-                borderRadius: theme("borderRadius.sm"),
-                color: theme("colors.gray.200"),
-                backgroundColor: "#161B22",
-              },
               "code::before": {
                 content: '""',
               },
@@ -124,14 +119,10 @@ export default {
               },
               code: {
                 color: theme("colors.gray.300"),
-                backgroundColor: "#161B22",
+                backgroundColor: "#1B1E28",
               },
               "a code": {
                 color: theme("colors.white"),
-              },
-              "pre, pre code": {
-                color: theme("colors.gray.200"),
-                backgroundColor: "#0D1117",
               },
             },
           },
