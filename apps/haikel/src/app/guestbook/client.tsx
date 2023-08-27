@@ -1,34 +1,36 @@
 "use client";
 
+import { zodResolver } from "@hookform/resolvers/zod";
 import { IconBrandGithub } from "@tabler/icons-react";
 import { signIn, signOut, useSession } from "next-auth/react";
-import { ChangeEvent, useRef } from "react";
+import { useForm } from "react-hook-form";
 import { tw } from "~lib/helpers";
 import db from "~lib/utils/db";
-import { MessageInput } from "~ui/inputs";
+import { messageSchema } from "~lib/utils/schema";
 import { GoogleIcon } from "~ui/svgs";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
 export default function GuestbookClient() {
   const { data: session } = useSession();
 
-  const messageRef = useRef<HTMLInputElement>(null);
+  const {
+    getValues,
+    formState: { errors },
+    register,
+    handleSubmit,
+  } = useForm({ defaultValues: { message: "" }, resolver: zodResolver(messageSchema) });
 
-  async function handleSubmit(e: ChangeEvent<HTMLFormElement>) {
-    e.preventDefault();
-
+  async function onSubmit() {
     try {
       const { error } = await db.from("guestbook").insert([
         {
-          message: messageRef.current?.value,
+          message: getValues("message"),
           username: session?.user?.name,
           email: session?.user?.email,
         },
       ]);
 
       if (error) throw error;
-
-      messageRef.current!.value = "";
       window.location.reload();
     } catch (err) {
       console.error(err);
@@ -102,8 +104,27 @@ export default function GuestbookClient() {
         </div>
       ) : (
         <div className="w-full">
-          <form onSubmit={handleSubmit}>
-            <MessageInput ref={messageRef} />
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="my-6 w-full relative">
+              <input
+                {...register("message")}
+                className={tw(
+                  "block w-full border-2 border-base-0",
+                  "focus:border-blue-500 focus:ring-blue-500 focus:ring-1",
+                  "dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:focus:ring-1",
+                  "dark:border-base-5 bg-white dark:bg-base-0",
+                  "rounded-md",
+                  "px-4 py-1.5 font-medium outline-none"
+                )}
+                type="text"
+                name="message"
+                required
+                placeholder="Add your message...."
+              />
+              {errors.message ? (
+                <Paragraph className="mt-1">{errors.message.message}</Paragraph>
+              ) : null}
+            </div>
           </form>
         </div>
       )}

@@ -13,7 +13,7 @@
     "@turbo/gen": "^1.10.13",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.47.0",
+    "eslint": "^8.48.0",
     "eslint-config-custom": "workspace:*",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",

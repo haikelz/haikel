@@ -92,39 +92,3 @@
     @apply hover:content-['######'];
   }
 }
-
-/* Switch Theme Button animation configuration */
-@keyframes nav {
-  from {
-    transform: translateY(-50px);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0px);
-    opacity: 100;
-  }
-}
-
-.switch-theme-nav {
-  animation-name: nav;
-  animation-duration: 0.3s;
-  animation-timing-function: ease;
-}
-
-@keyframes sakura {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.spin-sakura {
-  animation-name: sakura;
-  animation-duration: 13000ms;
-  animation-timing-function: cubic-bezier(1, 1, 1, 1);
-  animation-iteration-count: infinite;
-}

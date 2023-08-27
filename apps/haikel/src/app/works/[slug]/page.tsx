@@ -57,12 +57,11 @@ export async function generateMetadata({
 
 export default async function DetailWorkPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
-  // const { content, meta } = getWorkFromSlug(slug);
-  const { body, title, description, author, preview, repo } = allWorks.find(
+
+  const { body, title, author, preview, repo } = allWorks.find(
     (item) => item._raw.flattenedPath.replace("works/", "") === slug
   ) as Works;
 
-  // const components = await MDXComponents(content);
   const Content = getMDXComponent(body.code);
 
   return (
