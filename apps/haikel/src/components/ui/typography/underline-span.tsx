@@ -1,5 +1,5 @@
-import { ChildrenProps } from "~interfaces";
 import { tw } from "~lib/helpers";
+import type { ChildrenProps } from "~types";
 
 export function UnderlineSpan({ children }: ChildrenProps) {
   return (

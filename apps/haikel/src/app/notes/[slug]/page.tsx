@@ -3,18 +3,18 @@ import format from "date-fns/format";
 import { Metadata } from "next";
 import { getMDXComponent } from "next-contentlayer/hooks";
 import dynamic from "next/dynamic";
+import Main from "~components/main";
 import { tw } from "~lib/helpers";
 import { ABSOLUTE_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { ibmPlexSans, naskhArabic } from "~lib/utils/fonts";
-import Main from "~ui/main";
 import { Heading, Paragraph } from "~ui/typography";
 
-const Video = dynamic(() => import("~ui/video"));
+const Video = dynamic(() => import("~components/video"));
+const Comments = dynamic(() => import("~components/comments"));
+const ReadingTime = dynamic(() => import("~components/reading-time"));
+const ReadingProgress = dynamic(() => import("~components/reading-progress"));
 const LightboxImage = dynamic(() => import("~ui/images/lightbox-image"));
 const AuthorImage = dynamic(() => import("~ui/images/author-image"));
-const ReadingTime = dynamic(() => import("~ui/reading-time"));
-const Comments = dynamic(() => import("~ui/comments"));
-const ReadingProgress = dynamic(() => import("~ui/reading-progress"));
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return allNotes.map((item) => ({ slug: item.slug.replace("notes/", "") }));

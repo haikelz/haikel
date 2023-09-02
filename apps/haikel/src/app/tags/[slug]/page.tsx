@@ -1,9 +1,9 @@
 import { Notes, allNotes } from "contentlayer/generated";
 import { Metadata } from "next";
+import Main from "~components/main";
 import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { NotesList } from "~ui/lists";
-import Main from "~ui/main";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {

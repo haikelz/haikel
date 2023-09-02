@@ -1,9 +1,9 @@
 import { Works, allWorks } from "contentlayer/generated";
+import Main from "~components/main";
 import { tw } from "~lib/helpers";
 import { sortedAllWorks } from "~lib/services";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { WorksList } from "~ui/lists";
-import Main from "~ui/main";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
 const baseMetadata = {

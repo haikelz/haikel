@@ -1,22 +1,22 @@
 import { ReactNode } from "react";
 
-export interface GuestbookProps {
+export type GuestbookProps = {
   id: string;
   created_at: string;
   email: string;
   username: string;
   message: string;
-}
+};
 
-export interface IconClassNameProps {
+export type IconClassNameProps = {
   className?: string;
-}
+};
 
-export interface ThemeProps {
+export type ThemeProps = {
   theme: string;
   changeTheme: () => void;
-}
+};
 
-export interface ChildrenProps {
+export type ChildrenProps = {
   children: ReactNode;
-}
+};

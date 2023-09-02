@@ -1,9 +1,9 @@
 import { allNotes } from "contentlayer/generated";
 import { useMemo } from "react";
+import Main from "~components/main";
 import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { TagsList } from "~ui/lists";
-import Main from "~ui/main";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
 const baseMetadata = {

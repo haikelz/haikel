@@ -16,7 +16,11 @@ const socialMediaList = [
   { id: 3, icon: IconBrandFacebook, route: "https://facebook.com/kelgfx" },
   { id: 4, icon: IconBrandInstagram, route: "https://instagram.com/ekel.tsx" },
   { id: 5, icon: IconBrandGithub, route: "https://github.com/haikelz" },
-  { id: 6, icon: IconBrandLinkedin, route: "https://www.linkedin.com/in/haikel" },
+  {
+    id: 6,
+    icon: IconBrandLinkedin,
+    route: "https://www.linkedin.com/in/haikel",
+  },
 ];
 
 export default function Footer() {

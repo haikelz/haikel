@@ -1,10 +1,10 @@
 import { Notes, Works } from "contentlayer/generated";
+import About from "~components/about";
+import Main from "~components/main";
 import { tw } from "~lib/helpers";
 import { sortedAllNotes, sortedAllWorks } from "~lib/services";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
-import About from "~ui/about";
 import { NotesList, WorksList } from "~ui/lists";
-import Main from "~ui/main";
 import { Heading, Underline, UnderlineLink } from "~ui/typography";
 
 const baseMetadata = {
@@ -57,7 +57,7 @@ export default async function HomePage() {
             <WorksList works={works} />
           </div>
           <div className="flex w-full items-end justify-start">
-            <UnderlineLink href="/works" role="button" aria-label="More Works">
+            <UnderlineLink href="/works" role="button" aria-label="See more works">
               See more works
             </UnderlineLink>
           </div>
@@ -73,7 +73,7 @@ export default async function HomePage() {
             <NotesList filteredNotes={notes} />
           </div>
           <div className="flex w-full items-start justify-start">
-            <UnderlineLink href="/notes" role="button" aria-label="latest notes">
+            <UnderlineLink href="/notes" role="button" aria-label="See more notes">
               See more notes
             </UnderlineLink>
           </div>

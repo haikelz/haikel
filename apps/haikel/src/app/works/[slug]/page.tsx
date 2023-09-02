@@ -2,17 +2,17 @@ import { Works, allWorks } from "contentlayer/generated";
 import { Metadata } from "next";
 import { getMDXComponent } from "next-contentlayer/hooks";
 import dynamic from "next/dynamic";
+import Main from "~components/main";
+import ReadingProgress from "~components/reading-progress";
 import { tw } from "~lib/helpers";
 import { ABSOLUTE_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { ibmPlexSans, naskhArabic } from "~lib/utils/fonts";
-import Main from "~ui/main";
-import ReadingProgress from "~ui/reading-progress";
 import { Heading, UnderlineLink } from "~ui/typography";
 
 const LightboxImage = dynamic(() => import("~ui/images/lightbox-image"));
-const Video = dynamic(() => import("~ui/video"));
+const Video = dynamic(() => import("~components/video"));
 const AuthorImage = dynamic(() => import("~ui/images/author-image"));
-const ReadingTime = dynamic(() => import("~ui/reading-time"));
+const ReadingTime = dynamic(() => import("~components/reading-time"));
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return allWorks.map((item) => ({ slug: item.slug.replace("works/", "") }));

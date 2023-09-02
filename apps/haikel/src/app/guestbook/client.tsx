@@ -4,11 +4,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { IconBrandGithub } from "@tabler/icons-react";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useForm } from "react-hook-form";
+import Main from "~components/main";
+import { GuestsList } from "~components/ui/lists";
 import { tw } from "~lib/helpers";
-import db from "~lib/utils/db";
 import { messageSchema } from "~lib/utils/schema";
+import { trpc } from "~lib/utils/trpc/client";
 import { GoogleIcon } from "~ui/svgs";
-import { Heading, Paragraph, Underline } from "~ui/typography";
+import { Heading, Paragraph, Underline, UnderlineLink } from "~ui/typography";
 
 export default function GuestbookClient() {
   const { data: session } = useSession();
@@ -20,22 +22,27 @@ export default function GuestbookClient() {
     handleSubmit,
   } = useForm({ defaultValues: { message: "" }, resolver: zodResolver(messageSchema) });
 
-  async function onSubmit() {
-    try {
-      const { error } = await db.from("guestbook").insert([
-        {
-          message: getValues("message"),
-          username: session?.user?.name,
-          email: session?.user?.email,
-        },
-      ]);
+  const mutation = trpc.post.useMutation({ mutationKey: ["guestbook"] });
 
-      if (error) throw error;
-      window.location.reload();
-    } catch (err) {
-      console.error(err);
-    }
+  const { data, isLoading, isError } = trpc.get.useQuery(
+    { key: "guestbook" },
+    { keepPreviousData: true, refetchOnWindowFocus: false, refetchOnReconnect: false }
+  );
+
+  const guestbook = data;
+
+  function onSubmit() {
+    mutation.mutate({
+      message: getValues("message"),
+      username: session?.user?.name as string,
+      email: session?.user?.email as string,
+    });
+
+    window.location.reload();
   }
+
+  if (isLoading) return <LoadingClient />;
+  if (isError) return <ErrorClient />;
 
   return (
     <>
@@ -122,12 +129,51 @@ export default function GuestbookClient() {
                 placeholder="Add your message...."
               />
               {errors.message ? (
-                <Paragraph className="mt-1">{errors.message.message}</Paragraph>
+                <Paragraph className="mt-2">{errors.message.message}</Paragraph>
               ) : null}
             </div>
           </form>
         </div>
       )}
+      {guestbook?.length ? (
+        <section className="mb-10 flex w-full flex-col space-y-8">
+          <GuestsList guestbook={guestbook} />
+        </section>
+      ) : (
+        <Paragraph className="font-semibold">There is no messages now!</Paragraph>
+      )}
     </>
+  );
+}
+
+function LoadingClient() {
+  const array = [1, 2, 3, 4, 5];
+
+  return (
+    <Main className={tw("flex flex-col items-start justify-start", "py-8")}>
+      <div className="w-44 h-10 animate-pulse bg-gray-200 dark:bg-base-1"></div>
+      <div className="h-6 w-80 animate-pulse bg-gray-200 dark:bg-base-1 mt-4"></div>
+      <div className="my-4 h-14 animate-pulse bg-gray-200 dark:bg-base-1 w-72"></div>
+      {array.map((item) => (
+        <div key={item} className={tw(item === 1 ? "" : "mt-10")}>
+          <div className="h-6 w-64 animate-pulse bg-gray-200 dark:bg-base-1"></div>
+          <div className="h-6 w-64 animate-pulse bg-gray-200 dark:bg-base-1 mt-4"></div>
+        </div>
+      ))}
+    </Main>
+  );
+}
+
+function ErrorClient() {
+  return (
+    <Main className="flex min-h-screen flex-col items-center justify-center text-center">
+      <section className="flex flex-col items-center">
+        <Heading as="h1">Error!</Heading>
+        <Paragraph className="mt-2 font-semibold">
+          Error while fetching data
+          <UnderlineLink href="/">Back to Home</UnderlineLink>
+        </Paragraph>
+      </section>
+    </Main>
   );
 }

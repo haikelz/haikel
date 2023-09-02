@@ -1,5 +1,5 @@
-import { ChildrenProps } from "~interfaces";
 import { tw } from "~lib/helpers";
+import type { ChildrenProps } from "~types";
 
 interface HeadingProps extends ChildrenProps {
   as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";

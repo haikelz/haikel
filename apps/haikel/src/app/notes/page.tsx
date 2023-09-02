@@ -1,8 +1,8 @@
 import { Notes, allNotes } from "contentlayer/generated";
+import Main from "~components/main";
 import { tw } from "~lib/helpers";
 import { sortedAllNotes } from "~lib/services";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
-import Main from "~ui/main";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
 import NotesClient from "./client";

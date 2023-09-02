@@ -1,8 +1,8 @@
-import { ChildrenProps } from "~interfaces";
+import Footer from "~components/footer";
+import Navbar from "~components/navbar";
 import { tw } from "~lib/helpers";
 import { ibmPlexMono, ibmPlexSans, ibmPlexSerif, naskhArabic } from "~lib/utils/fonts";
-import Footer from "~ui/footer";
-import Navbar from "~ui/navbar";
+import type { ChildrenProps } from "~types";
 
 import "./globals.css";
 import Wrapper from "./wrapper";
