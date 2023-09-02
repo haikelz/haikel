@@ -5,10 +5,10 @@ import { IconBrandGithub } from "@tabler/icons-react";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useForm } from "react-hook-form";
 import Main from "~components/main";
-import { GuestsList } from "~components/ui/lists";
 import { tw } from "~lib/helpers";
 import { messageSchema } from "~lib/utils/schema";
 import { trpc } from "~lib/utils/trpc/client";
+import { GuestsList } from "~ui/lists";
 import { GoogleIcon } from "~ui/svgs";
 import { Heading, Paragraph, Underline, UnderlineLink } from "~ui/typography";
 
