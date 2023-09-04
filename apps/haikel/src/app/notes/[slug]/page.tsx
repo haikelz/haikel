@@ -1,9 +1,11 @@
+import { Redis } from "@upstash/redis/nodejs";
 import { Notes, allNotes } from "contentlayer/generated";
 import format from "date-fns/format";
 import { Metadata } from "next";
 import { getMDXComponent } from "next-contentlayer/hooks";
 import dynamic from "next/dynamic";
 import Main from "~components/main";
+import NoteViews from "~components/note-views";
 import { tw } from "~lib/helpers";
 import { ABSOLUTE_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { ibmPlexSans, naskhArabic } from "~lib/utils/fonts";
@@ -15,6 +17,10 @@ const ReadingTime = dynamic(() => import("~components/reading-time"));
 const ReadingProgress = dynamic(() => import("~components/reading-progress"));
 const LightboxImage = dynamic(() => import("~ui/images/lightbox-image"));
 const AuthorImage = dynamic(() => import("~ui/images/author-image"));
+
+const redis = Redis.fromEnv();
+
+export const revalidate = 60;
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return allNotes.map((item) => ({ slug: item.slug.replace("notes/", "") }));
@@ -65,44 +71,50 @@ export default async function NotePage({ params }: { params: { slug: string } })
     (item) => item._raw.flattenedPath.replace("notes/", "") === slug
   ) as Notes;
 
+  // pageviews
+  const views = (await redis.get<number>(["pageviews", "notes", slug].join(":"))) ?? 0;
+
   const Content = getMDXComponent(body.code);
 
   return (
-    <Main className={tw("flex min-h-screen flex-col items-center justify-start")}>
-      <ReadingProgress />
-      <article className={tw("flex w-full flex-col flex-wrap justify-center py-8", "md:mb-3")}>
-        <section className="flex flex-col">
-          <Heading as="h1" className="gradient dark:gradient-dark">
-            {title}
-          </Heading>
-          <div className="my-3 flex items-center">
-            <AuthorImage />
-            <Paragraph
-              className={tw(
-                "text-base font-semibold tracking-[0.050em]",
-                "md:text-lg",
-                ibmPlexSans.className
-              )}
-            >
-              <span>{author}</span>, <ReadingTime content={body.raw} /> /{" "}
-              {format(new Date(date) ?? new Date(), "LLLL d, yyyy")}
-            </Paragraph>
-          </div>
-        </section>
-        <article
-          className={tw(
-            "prose prose-gray mt-6 w-full max-w-full",
-            "dark:prose-invert",
-            "md:prose-lg"
-          )}
-        >
-          <p className={tw("text-right text-2xl font-bold", naskhArabic.className)}>
-            بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
-          </p>
-          <Content components={{ Video, LightboxImage }} />
+    <>
+      <NoteViews slug={slug} />
+      <Main className={tw("flex min-h-screen flex-col items-center justify-start")}>
+        <ReadingProgress />
+        <article className={tw("flex w-full flex-col flex-wrap justify-center py-8", "md:mb-3")}>
+          <section className="flex flex-col">
+            <Heading as="h1" className="gradient dark:gradient-dark">
+              {title}
+            </Heading>
+            <div className="my-3 flex items-center">
+              <AuthorImage />
+              <Paragraph
+                className={tw(
+                  "text-base font-semibold tracking-[0.050em]",
+                  "md:text-lg",
+                  ibmPlexSans.className
+                )}
+              >
+                <span>{author}</span>, <ReadingTime content={body.raw} /> /{" "}
+                {format(new Date(date) ?? new Date(), "LLLL d, yyyy")} / {views} views
+              </Paragraph>
+            </div>
+          </section>
+          <article
+            className={tw(
+              "prose prose-gray mt-6 w-full max-w-full",
+              "dark:prose-invert",
+              "md:prose-lg"
+            )}
+          >
+            <p className={tw("text-right text-2xl font-bold", naskhArabic.className)}>
+              بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+            </p>
+            <Content components={{ Video, LightboxImage }} />
+          </article>
+          <Comments />
         </article>
-        <Comments />
-      </article>
-    </Main>
+      </Main>
+    </>
   );
 }

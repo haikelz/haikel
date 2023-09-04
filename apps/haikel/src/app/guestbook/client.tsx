@@ -2,13 +2,14 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { IconBrandGithub } from "@tabler/icons-react";
+import { format } from "date-fns/esm";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useForm } from "react-hook-form";
 import Main from "~components/main";
 import { tw } from "~lib/helpers";
+import { ibmPlexSans } from "~lib/utils/fonts";
 import { messageSchema } from "~lib/utils/schema";
 import { trpc } from "~lib/utils/trpc/client";
-import { GuestsList } from "~ui/lists";
 import { GoogleIcon } from "~ui/svgs";
 import { Heading, Paragraph, Underline, UnderlineLink } from "~ui/typography";
 
@@ -22,7 +23,7 @@ export default function GuestbookClient() {
     handleSubmit,
   } = useForm({ defaultValues: { message: "" }, resolver: zodResolver(messageSchema) });
 
-  const mutation = trpc.post.useMutation({ mutationKey: ["guestbook"] });
+  const postMutation = trpc.post.useMutation({ mutationKey: ["guestbook"] });
 
   const { data, isLoading, isError } = trpc.get.useQuery(
     { key: "guestbook" },
@@ -32,7 +33,7 @@ export default function GuestbookClient() {
   const guestbook = data;
 
   function onSubmit() {
-    mutation.mutate({
+    postMutation.mutate({
       message: getValues("message"),
       username: session?.user?.name as string,
       email: session?.user?.email as string,
@@ -137,7 +138,29 @@ export default function GuestbookClient() {
       )}
       {guestbook?.length ? (
         <section className="mb-10 flex w-full flex-col space-y-8">
-          <GuestsList guestbook={guestbook} />
+          <>
+            {guestbook?.map((guest) => (
+              <div key={guest.id} className="h-full">
+                <div>
+                  <span
+                    className={tw(
+                      "cursor-pointer text-xl font-bold",
+                      "hover:text-blue-500",
+                      ibmPlexSans.className
+                    )}
+                  >
+                    {guest.message}
+                  </span>
+                </div>
+                <Paragraph className="mt-2 font-medium tracking-wide">
+                  {guest.username}
+                  {guest.created_at !== ""
+                    ? `. ${format(new Date(guest.created_at), "LLLL d, yyyy")}`
+                    : null}
+                </Paragraph>
+              </div>
+            ))}
+          </>
         </section>
       ) : (
         <Paragraph className="font-semibold">There is no messages now!</Paragraph>

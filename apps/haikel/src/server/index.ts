@@ -26,6 +26,11 @@ async function getGuestbook(key: string) {
   return data;
 }
 
+async function getViews(api: string) {
+  const response = await fetch(api);
+  return response;
+}
+
 export const appRouter = router({
   get: publicProcedure.input(z.object({ key: z.string() })).query(async ({ input }) => {
     const guestbook = await getGuestbook(input.key);
