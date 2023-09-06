@@ -6,15 +6,16 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
+  relationMode = "prisma"
 }
 
 // about naming model for table supabase
 // @see https://github.com/supabase/supabase/discussions/619
 model guestbook {
   id         Int      @id @default(autoincrement())
-  created_at DateTime @default(now()) @db.Date
+  created_at DateTime @default(now()) 
   email      String
   username   String
   message    String

@@ -67,7 +67,7 @@ export async function generateMetadata({
 export default async function NotePage({ params }: { params: { slug: string } }) {
   const { slug } = params;
 
-  const { title, date, author, body } = allNotes.find(
+  const { title, date, body } = allNotes.find(
     (item) => item._raw.flattenedPath.replace("notes/", "") === slug
   ) as Notes;
 
@@ -87,7 +87,6 @@ export default async function NotePage({ params }: { params: { slug: string } })
               {title}
             </Heading>
             <div className="my-3 flex items-center">
-              <AuthorImage />
               <Paragraph
                 className={tw(
                   "text-base font-semibold tracking-[0.050em]",
@@ -95,8 +94,8 @@ export default async function NotePage({ params }: { params: { slug: string } })
                   ibmPlexSans.className
                 )}
               >
-                <span>{author}</span>, <ReadingTime content={body.raw} /> /{" "}
-                {format(new Date(date) ?? new Date(), "LLLL d, yyyy")} / {views} views
+                {format(new Date(date) ?? new Date(), "LLLL d, yyyy")} /{" "}
+                <ReadingTime content={body.raw} /> / {views} views
               </Paragraph>
             </div>
           </section>

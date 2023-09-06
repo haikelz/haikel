@@ -26,6 +26,12 @@ const authOptions = NextAuth({
   ],
   adapter: PrismaAdapter(prisma),
   secret: NEXTAUTH_SECRET,
+  session: {
+    strategy: "jwt",
+  },
+  jwt: {
+    maxAge: 60 * 60 * 24 * 30,
+  },
 });
 
 export { authOptions as GET, authOptions as POST };

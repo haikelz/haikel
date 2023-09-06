@@ -1,17 +1,19 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { IconBrandGithub } from "@tabler/icons-react";
+import { IconBrandGithub, IconTrash } from "@tabler/icons-react";
 import { format } from "date-fns/esm";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useForm } from "react-hook-form";
-import Main from "~components/main";
 import { tw } from "~lib/helpers";
 import { ibmPlexSans } from "~lib/utils/fonts";
 import { messageSchema } from "~lib/utils/schema";
 import { trpc } from "~lib/utils/trpc/client";
 import { GoogleIcon } from "~ui/svgs";
-import { Heading, Paragraph, Underline, UnderlineLink } from "~ui/typography";
+import { Heading, Paragraph, Underline } from "~ui/typography";
+
+import ErrorClient from "./error-client";
+import LoadingClient from "./loading-client";
 
 export default function GuestbookClient() {
   const { data: session } = useSession();
@@ -23,7 +25,10 @@ export default function GuestbookClient() {
     handleSubmit,
   } = useForm({ defaultValues: { message: "" }, resolver: zodResolver(messageSchema) });
 
-  const postMutation = trpc.post.useMutation({ mutationKey: ["guestbook"] });
+  const postMutation = trpc.post.useMutation({ mutationKey: ["post-message"] });
+  const deleteMutation = trpc.delete.useMutation({
+    mutationKey: ["delete-message"],
+  });
 
   const { data, isLoading, isError } = trpc.get.useQuery(
     { key: "guestbook" },
@@ -38,7 +43,11 @@ export default function GuestbookClient() {
       username: session?.user?.name as string,
       email: session?.user?.email as string,
     });
+    window.location.reload();
+  }
 
+  function handleDelete(id: number) {
+    deleteMutation.mutate({ id: id });
     window.location.reload();
   }
 
@@ -138,65 +147,40 @@ export default function GuestbookClient() {
       )}
       {guestbook?.length ? (
         <section className="mb-10 flex w-full flex-col space-y-8">
-          <>
-            {guestbook?.map((guest) => (
-              <div key={guest.id} className="h-full">
-                <div>
-                  <span
-                    className={tw(
-                      "cursor-pointer text-xl font-bold",
-                      "hover:text-blue-500",
-                      ibmPlexSans.className
-                    )}
+          {guestbook?.map((guest) => (
+            <div key={guest.id} className="h-full">
+              <div className={session ? "flex space-x-3 justify-start items-center" : ""}>
+                <span
+                  className={tw(
+                    "cursor-pointer text-xl font-bold",
+                    "hover:text-blue-500",
+                    ibmPlexSans.className
+                  )}
+                >
+                  {guest.message}
+                </span>
+                {session && guest.email === session?.user?.email ? (
+                  <button
+                    type="button"
+                    aria-label="delete message"
+                    onClick={() => handleDelete(guest.id)}
                   >
-                    {guest.message}
-                  </span>
-                </div>
-                <Paragraph className="mt-2 font-medium tracking-wide">
-                  {guest.username}
-                  {guest.created_at !== ""
-                    ? `. ${format(new Date(guest.created_at), "LLLL d, yyyy")}`
-                    : null}
-                </Paragraph>
+                    <IconTrash />
+                  </button>
+                ) : null}
               </div>
-            ))}
-          </>
+              <Paragraph className="mt-2 font-medium tracking-wide">
+                {guest.username}
+                {guest.created_at !== ""
+                  ? `. ${format(new Date(guest.created_at), "LLLL d, yyyy")}`
+                  : null}
+              </Paragraph>
+            </div>
+          ))}
         </section>
       ) : (
         <Paragraph className="font-semibold">There is no messages now!</Paragraph>
       )}
     </>
-  );
-}
-
-function LoadingClient() {
-  const array = [1, 2, 3, 4, 5];
-
-  return (
-    <Main className={tw("flex flex-col items-start justify-start", "py-8")}>
-      <div className="w-44 h-10 animate-pulse bg-gray-200 dark:bg-base-1"></div>
-      <div className="h-6 w-80 animate-pulse bg-gray-200 dark:bg-base-1 mt-4"></div>
-      <div className="my-4 h-14 animate-pulse bg-gray-200 dark:bg-base-1 w-72"></div>
-      {array.map((item) => (
-        <div key={item} className={tw(item === 1 ? "" : "mt-10")}>
-          <div className="h-6 w-64 animate-pulse bg-gray-200 dark:bg-base-1"></div>
-          <div className="h-6 w-64 animate-pulse bg-gray-200 dark:bg-base-1 mt-4"></div>
-        </div>
-      ))}
-    </Main>
-  );
-}
-
-function ErrorClient() {
-  return (
-    <Main className="flex min-h-screen flex-col items-center justify-center text-center">
-      <section className="flex flex-col items-center">
-        <Heading as="h1">Error!</Heading>
-        <Paragraph className="mt-2 font-semibold">
-          Error while fetching data
-          <UnderlineLink href="/">Back to Home</UnderlineLink>
-        </Paragraph>
-      </section>
-    </Main>
   );
 }

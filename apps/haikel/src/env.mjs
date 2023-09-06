@@ -16,14 +16,10 @@ export const env = createEnv({
     UPSTASH_REDIS_REST_TOKEN: z.string().min(1),
   },
   client: {
-    NEXT_PUBLIC_SUPABASE_KEY: z.string().min(1),
-    NEXT_PUBLIC_SUPABASE_URL: z.string().url().min(1),
     NEXT_PUBLIC_PRODUCTION_URL: z.string().min(1).url(),
     NEXT_PUBLIC_DEVELOPMENT_URL: z.string().min(1).url(),
   },
   experimental__runtimeEnv: {
-    NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
-    NEXT_PUBLIC_SUPABASE_KEY: process.env.NEXT_PUBLIC_SUPABASE_KEY,
     NEXT_PUBLIC_PRODUCTION_URL: process.env.NEXT_PUBLIC_PRODUCTION_URL,
     NEXT_PUBLIC_DEVELOPMENT_URL: process.env.NEXT_PUBLIC_DEVELOPMENT_URL,
   },
