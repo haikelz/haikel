@@ -20,6 +20,10 @@ async function deleteMessage(id: number) {
   await prisma.guestbook.delete({ where: { id: id } });
 }
 
+async function updateMessage(id: number, message: string) {
+  await prisma.guestbook.update({ where: { id: id }, data: { message: message } });
+}
+
 export const appRouter = router({
   get: publicProcedure.input(z.object({ key: z.string() })).query(async ({ input }) => {
     const guestbook = await getGuestbook(input.key);
@@ -35,6 +39,12 @@ export const appRouter = router({
   delete: publicProcedure.input(z.object({ id: z.number() })).mutation(async ({ input }) => {
     await deleteMessage(input.id);
   }),
+
+  update: publicProcedure
+    .input(z.object({ id: z.number(), message: z.string() }))
+    .mutation(async ({ input }) => {
+      await updateMessage(input.id, input.message);
+    }),
 });
 
 export type AppRouter = typeof appRouter;

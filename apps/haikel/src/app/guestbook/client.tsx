@@ -1,8 +1,9 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { IconBrandGithub, IconTrash } from "@tabler/icons-react";
+import { IconBrandGithub, IconPencil, IconTrash } from "@tabler/icons-react";
 import { format } from "date-fns/esm";
+import { atom, useAtom } from "jotai";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useForm } from "react-hook-form";
 import { tw } from "~lib/helpers";
@@ -15,12 +16,17 @@ import { Heading, Paragraph, Underline } from "~ui/typography";
 import ErrorClient from "./error-client";
 import LoadingClient from "./loading-client";
 
+const idAtom = atom<number>(0);
+
 export default function GuestbookClient() {
   const { data: session } = useSession();
 
+  const [id, setId] = useAtom(idAtom);
+
   const {
     getValues,
-    formState: { errors },
+    setValue,
+    formState: { errors, isDirty },
     register,
     handleSubmit,
   } = useForm({ defaultValues: { message: "" }, resolver: zodResolver(messageSchema) });
@@ -28,6 +34,9 @@ export default function GuestbookClient() {
   const postMutation = trpc.post.useMutation({ mutationKey: ["post-message"] });
   const deleteMutation = trpc.delete.useMutation({
     mutationKey: ["delete-message"],
+  });
+  const updateMutation = trpc.update.useMutation({
+    mutationKey: ["update-message"],
   });
 
   const { data, isLoading, isError } = trpc.get.useQuery(
@@ -38,17 +47,30 @@ export default function GuestbookClient() {
   const guestbook = data;
 
   function onSubmit() {
-    postMutation.mutate({
-      message: getValues("message"),
-      username: session?.user?.name as string,
-      email: session?.user?.email as string,
-    });
+    // detect if value are edited with `isDirty`
+    if (isDirty) {
+      updateMutation.mutate({
+        id: id,
+        message: getValues("message"),
+      });
+    } else {
+      postMutation.mutate({
+        message: getValues("message"),
+        username: session?.user?.name as string,
+        email: session?.user?.email as string,
+      });
+    }
     window.location.reload();
   }
 
   function handleDelete(id: number) {
     deleteMutation.mutate({ id: id });
     window.location.reload();
+  }
+
+  function handleEdit(id: number, message: string) {
+    setValue("message", message);
+    setId(id);
   }
 
   if (isLoading) return <LoadingClient />;
@@ -160,13 +182,30 @@ export default function GuestbookClient() {
                   {guest.message}
                 </span>
                 {session && guest.email === session?.user?.email ? (
-                  <button
-                    type="button"
-                    aria-label="delete message"
-                    onClick={() => handleDelete(guest.id)}
-                  >
-                    <IconTrash />
-                  </button>
+                  <>
+                    <button
+                      type="button"
+                      aria-label="delete message"
+                      className={tw(
+                        "dark:bg-base-1 bg-base-5",
+                        "hover:bg-gray-200 dark:hover:bg-base-2 p-1 rounded-md"
+                      )}
+                      onClick={() => handleDelete(guest.id)}
+                    >
+                      <IconTrash />
+                    </button>
+                    <button
+                      type="button"
+                      aria-label="edit message"
+                      className={tw(
+                        "dark:bg-base-1 bg-base-5",
+                        "hover:bg-gray-200 dark:hover:bg-base-2 p-1 rounded-md"
+                      )}
+                      onClick={() => handleEdit(guest.id, guest.message)}
+                    >
+                      <IconPencil />
+                    </button>
+                  </>
                 ) : null}
               </div>
               <Paragraph className="mt-2 font-medium tracking-wide">
