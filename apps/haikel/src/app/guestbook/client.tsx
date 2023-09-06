@@ -17,16 +17,18 @@ import ErrorClient from "./error-client";
 import LoadingClient from "./loading-client";
 
 const idAtom = atom<number>(0);
+const isEditedAtom = atom<boolean>(false);
 
 export default function GuestbookClient() {
   const { data: session } = useSession();
 
   const [id, setId] = useAtom(idAtom);
+  const [isEdited, setIsEdited] = useAtom(isEditedAtom);
 
   const {
     getValues,
     setValue,
-    formState: { errors, isDirty },
+    formState: { errors },
     register,
     handleSubmit,
   } = useForm({ defaultValues: { message: "" }, resolver: zodResolver(messageSchema) });
@@ -47,8 +49,8 @@ export default function GuestbookClient() {
   const guestbook = data;
 
   function onSubmit() {
-    // detect if value are edited with `isDirty`
-    if (isDirty) {
+    // detect if value are edited
+    if (isEdited) {
       updateMutation.mutate({
         id: id,
         message: getValues("message"),
@@ -70,6 +72,7 @@ export default function GuestbookClient() {
 
   function handleEdit(id: number, message: string) {
     setValue("message", message);
+    setIsEdited(true);
     setId(id);
   }
 
