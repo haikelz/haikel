@@ -12,7 +12,11 @@ async function submitMessage<T extends string>(message: T, email: T, username: T
 }
 
 async function getGuestbook(key: string) {
-  const data = await prisma.guestbook.findMany({ where: {}, orderBy: { id: "desc" } });
+  const data = await prisma.guestbook.findMany({
+    where: {},
+    orderBy: { id: "desc" },
+    select: { id: true, username: true, message: true, email: true, created_at: true },
+  });
   return data;
 }
 

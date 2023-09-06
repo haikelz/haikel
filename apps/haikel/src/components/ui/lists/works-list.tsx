@@ -14,6 +14,7 @@ import {
   SvelteIcon,
   SwrIcon,
   TailwindcssIcon,
+  TrpcIcon,
   TypescriptIcon,
   WindiCssIcon,
 } from "~ui/svgs";
@@ -64,6 +65,8 @@ export function WorksList({ works }: { works: Works[] }) {
                   <ChakrauiIcon />
                 ) : techstack === "windi" ? (
                   <WindiCssIcon />
+                ) : techstack === "trpc" ? (
+                  <TrpcIcon />
                 ) : null}
               </div>
             ))}

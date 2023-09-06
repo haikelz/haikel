@@ -3,42 +3,8 @@ import About from "~components/about";
 import Main from "~components/main";
 import { tw } from "~lib/helpers";
 import { sortedAllNotes, sortedAllWorks } from "~lib/services";
-import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { NotesList, WorksList } from "~ui/lists";
 import { Heading, Underline, UnderlineLink } from "~ui/typography";
-
-const baseMetadata = {
-  title: "Haikel Ilham Hakim",
-  description: "Frontend Crafter",
-  url: SITE_URL,
-};
-
-const { title, description, url } = baseMetadata;
-
-export const metadata = {
-  title,
-  description,
-  openGraph: {
-    type: "website",
-    url,
-    title,
-    description,
-    images: [
-      {
-        url: DEFAULT_OG_URL,
-        alt: "OG Image",
-      },
-    ],
-    siteName: "haikel.app",
-  },
-  twitter: {
-    title,
-    description,
-    site: url,
-    card: "summary_large_image",
-  },
-  metadataBase: new URL(url),
-};
 
 export default async function HomePage() {
   const notes: Notes[] = sortedAllNotes.slice(0, 4);

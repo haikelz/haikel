@@ -11,6 +11,7 @@ export * from "./supabase-icon";
 export * from "./svelte-icon";
 export * from "./swr-icon";
 export * from "./tailwindcss-icon";
+export * from "./trpc-icon";
 export * from "./typescript-icon";
 export * from "./vite-icon";
 export * from "./windi-css-icon";

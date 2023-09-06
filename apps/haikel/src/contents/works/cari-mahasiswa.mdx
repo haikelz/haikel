@@ -1,0 +1,34 @@
+---
+id: 2
+author: Haikel
+title: Cari Mahasiswa
+stack:
+  - nextjs
+  - typescript
+  - tailwind
+  - react-query
+  - trpc
+  - jotai
+preview: https://cari-mahasiswa.vercel.app/
+repo: https://github.com/haikelz/cari-mahasiswa/
+description: Cari Mahasiswa is a Website to search students data from various Universities in Indonesia
+---
+
+Cari Mahasiswa adalah sebuah Website untuk mencari data mahasiswa dari berbagai perguruan tinggi di Indonesia. Datanya berupa nama, NIM, dan perguruan tinggi. Cara kerjanya sama saja dengan Website PDDikti, hanya saja result yang tampil nantinya hanya data mahasiswa saja dan langsung **to the point**.
+
+Tantangan dalam membuat ini adalah mengakali gimana caranya agar tidak kena CORS saat sudah di production. Karena ketika di development, aman-aman saja, dan ketika sudah dideploy ke production malah kena CORS. Jadi dalam hal ini saya akali dengan menggunakan **tRPC(Typescript Remote Procedure Call)**. Juga tantangan lainnya adalah response dari API nya sendiri yang tidak rapi. Data seperti nama, NIM, dan perguruan tingginya ada dalam satu string.
+
+## Fitur
+
+- Mendapatkan data mahasiswa berdasarkan nama, NIM, atau perguruan tinggi.
+- Highlight result untuk nama yang sama dengan inputan user.
+- Melakukan validasi input jika si user memasukkan karakter selain alphabet atau number, atau jika user mencari data dengan inputan kosong.
+
+## Tech Stack
+
+- Next JS 13
+- Typescript
+- Tailwind CSS with shadcn/ui
+- React Query
+- Jotai
+- tRPC

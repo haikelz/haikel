@@ -16,7 +16,6 @@ const Comments = dynamic(() => import("~components/comments"));
 const ReadingTime = dynamic(() => import("~components/reading-time"));
 const ReadingProgress = dynamic(() => import("~components/reading-progress"));
 const LightboxImage = dynamic(() => import("~ui/images/lightbox-image"));
-const AuthorImage = dynamic(() => import("~ui/images/author-image"));
 
 const redis = Redis.fromEnv();
 
