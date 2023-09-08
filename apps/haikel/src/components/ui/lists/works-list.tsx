@@ -5,6 +5,7 @@ import { ibmPlexSans } from "~lib/utils/fonts";
 import {
   ChakrauiIcon,
   FramerIcon,
+  JotaiIcon,
   NestJsIcon,
   NextJsIcon,
   ReactIcon,
@@ -67,6 +68,8 @@ export function WorksList({ works }: { works: Works[] }) {
                   <WindiCssIcon />
                 ) : techstack === "trpc" ? (
                   <TrpcIcon />
+                ) : techstack === "jotai" ? (
+                  <JotaiIcon />
                 ) : null}
               </div>
             ))}

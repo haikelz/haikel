@@ -22,7 +22,7 @@ export default function About() {
           <Paragraph className="mt-4">
             A Frontend Crafter based in Indonesia. Familiar with Javascript/Typescript, React
             Ecosystem, and Linux(for daily use). Try to follow best practices as much as i can. I
-            can work in a team or solo. In my spare time, i crafted something, go out take some
+            can work in a team or solo. In my spare time, i crafted something, go out to take some
             photos, learn new things, or just improve my English.
           </Paragraph>
         </div>
