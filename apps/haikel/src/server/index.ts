@@ -1,6 +1,8 @@
 import { initTRPC } from "@trpc/server";
+import { eq, sql } from "drizzle-orm";
 import { z } from "zod";
-import prisma from "~lib/utils/prisma";
+import db from "~lib/utils/db";
+import { guestbook } from "~lib/utils/db/schema";
 
 const t = initTRPC.create();
 
@@ -8,24 +10,29 @@ export const router = t.router;
 export const publicProcedure = t.procedure;
 
 async function submitMessage<T extends string>(message: T, email: T, username: T) {
-  await prisma.guestbook.create({ data: { message, email, username } });
+  await db.insert(guestbook).values({ message: message, email: email, username: username });
 }
 
 async function getGuestbook(key: string) {
-  const data = await prisma.guestbook.findMany({
-    where: {},
-    orderBy: { id: "desc" },
-    select: { id: true, username: true, message: true, email: true, created_at: true },
-  });
+  const data = await db
+    .select({
+      id: guestbook.id,
+      message: guestbook.message,
+      email: guestbook.email,
+      username: guestbook.username,
+      created_at: guestbook.created_at,
+    })
+    .from(guestbook)
+    .orderBy(sql`${guestbook.id} desc`);
   return data;
 }
 
 async function deleteMessage(id: number) {
-  await prisma.guestbook.delete({ where: { id: id } });
+  await db.delete(guestbook).where(eq(guestbook.id, id));
 }
 
-async function updateMessage(id: number, message: string) {
-  await prisma.guestbook.update({ where: { id: id }, data: { message: message } });
+async function patchMessage(id: number, message: string) {
+  await db.update(guestbook).set({ message: message }).where(eq(guestbook.id, id));
 }
 
 export const appRouter = router({
@@ -44,10 +51,10 @@ export const appRouter = router({
     await deleteMessage(input.id);
   }),
 
-  update: publicProcedure
+  patch: publicProcedure
     .input(z.object({ id: z.number(), message: z.string() }))
     .mutation(async ({ input }) => {
-      await updateMessage(input.id, input.message);
+      await patchMessage(input.id, input.message);
     }),
 });
 

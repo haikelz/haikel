@@ -5,10 +5,11 @@ import { IconBrandGithub, IconPencil, IconTrash } from "@tabler/icons-react";
 import { format } from "date-fns/esm";
 import { atom, useAtom } from "jotai";
 import { signIn, signOut, useSession } from "next-auth/react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { tw } from "~lib/helpers";
 import { ibmPlexSans } from "~lib/utils/fonts";
-import { messageSchema } from "~lib/utils/schema";
+import { messageSchema } from "~lib/utils/form-schema";
 import { trpc } from "~lib/utils/trpc/client";
 import { GoogleIcon } from "~ui/svgs";
 import { Heading, Paragraph, Underline } from "~ui/typography";
@@ -37,7 +38,7 @@ export default function GuestbookClient() {
   const deleteMutation = trpc.delete.useMutation({
     mutationKey: ["delete-message"],
   });
-  const updateMutation = trpc.update.useMutation({
+  const updateMutation = trpc.patch.useMutation({
     mutationKey: ["update-message"],
   });
 
@@ -62,6 +63,7 @@ export default function GuestbookClient() {
         email: session?.user?.email as string,
       });
     }
+
     window.location.reload();
   }
 
@@ -204,7 +206,7 @@ export default function GuestbookClient() {
                         "dark:bg-base-1 bg-base-5",
                         "hover:bg-gray-200 dark:hover:bg-base-2 p-1 rounded-md"
                       )}
-                      onClick={() => handleEdit(guest.id, guest.message)}
+                      onClick={() => handleEdit(guest.id, guest.message as string)}
                     >
                       <IconPencil />
                     </button>
@@ -214,7 +216,7 @@ export default function GuestbookClient() {
               <Paragraph className="mt-2 font-medium tracking-wide">
                 {guest.username}
                 {guest.created_at !== ""
-                  ? `. ${format(new Date(guest.created_at), "LLLL d, yyyy")}`
+                  ? `. ${format(new Date(guest.created_at as string), "LLLL d, yyyy")}`
                   : null}
               </Paragraph>
             </div>
