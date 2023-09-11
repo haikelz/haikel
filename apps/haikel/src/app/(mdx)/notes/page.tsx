@@ -54,7 +54,7 @@ export default function NotesPage() {
           <Underline />
         </div>
         <div className="w-full leading-relaxed">
-          <Paragraph>
+          <Paragraph id="description">
             Sometimes, i write something. Mostly about technical stuff. So yeah, i call this as{" "}
             <b>Notes</b>.
           </Paragraph>

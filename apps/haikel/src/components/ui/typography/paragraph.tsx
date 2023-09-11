@@ -1,11 +1,10 @@
+import { HTMLAttributes } from "react";
 import { tw } from "~lib/helpers";
 import type { ChildrenProps } from "~types";
 
-interface ParagraphProps extends ChildrenProps {
-  className?: string;
-}
+type ParagraphProps = HTMLAttributes<HTMLParagraphElement> & ChildrenProps;
 
-export function Paragraph({ className, children }: ParagraphProps) {
+export function Paragraph({ className, children, ...props }: ParagraphProps) {
   return (
     <p
       className={tw(
@@ -13,6 +12,7 @@ export function Paragraph({ className, children }: ParagraphProps) {
         "md:text-lg md:leading-[1.7777778]",
         className
       )}
+      {...props}
     >
       {children}
     </p>

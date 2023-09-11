@@ -1,7 +1,5 @@
-import { Redis } from "@upstash/redis/nodejs";
+import { kv } from "@vercel/kv";
 import { NextRequest, NextResponse } from "next/server";
-
-const redis = Redis.fromEnv();
 
 async function handler(req: NextRequest): Promise<NextResponse> {
   if (req.method !== "POST") {
@@ -32,7 +30,7 @@ async function handler(req: NextRequest): Promise<NextResponse> {
       .map((item) => item.toString(16).padStart(2, "0"))
       .join("");
 
-    const isNew = await redis.set(["deduplicate", hash, slug].join(":"), true, {
+    const isNew = await kv.set(["deduplicate", hash, slug].join(":"), true, {
       nx: true,
       ex: 24 * 3600,
     });
@@ -42,7 +40,7 @@ async function handler(req: NextRequest): Promise<NextResponse> {
     }
   }
 
-  await redis.incr(["pageviews", "notes", slug].join(":"));
+  await kv.incr(["pageviews", "notes", slug].join(":"));
   return new NextResponse(null, { status: 202 });
 }
 

@@ -18,7 +18,9 @@ interface MenuProps {
 export default function Menu({ menuIcon, list, contentClassName }: MenuProps) {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>{menuIcon}</DropdownMenuTrigger>
+      <DropdownMenuTrigger id="menu" asChild>
+        {menuIcon}
+      </DropdownMenuTrigger>
       <DropdownMenuPortal>
         <DropdownMenuContent
           className={tw(

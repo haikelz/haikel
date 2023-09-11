@@ -7,7 +7,7 @@ export function TagsList({ tagsList }: { tagsList: string[] }) {
   return (
     <>
       {tagsList.map((item) => (
-        <Link key={item} href={`/tags/${item}`}>
+        <Link id="tag-item" key={item} href={`/tags/${item}`}>
           <button
             type="button"
             aria-label={`tag ${item}`}

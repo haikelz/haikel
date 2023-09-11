@@ -41,7 +41,9 @@ export default function NotesClient({ notes }: { notes: Notes[] }) {
           <NotesList filteredNotes={filteredNotes} search={search} />
         </section>
       ) : (
-        <Paragraph className="font-semibold">The note that you search is not found!</Paragraph>
+        <Paragraph id="not-found-note" className="font-semibold">
+          The note that you search is not found!
+        </Paragraph>
       )}
     </>
   );

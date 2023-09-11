@@ -26,7 +26,7 @@ export function WorksList({ works }: { works: Works[] }) {
   return (
     <>
       {works.map((work, index) => (
-        <div key={index + 1} className="h-full">
+        <div id="work-item" key={index + 1} className="h-full">
           <div>
             <Link href={`/${work.slug}`} aria-label={work.title}>
               <span

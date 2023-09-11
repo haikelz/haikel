@@ -10,7 +10,7 @@ export function NotesList({ filteredNotes, search }: { filteredNotes: Notes[]; s
   return (
     <>
       {filteredNotes.map((note) => (
-        <div key={note.slug} className="h-full">
+        <div id="note-item" key={note.slug} className="h-full">
           <Paragraph className={tw("text-left font-medium", ibmPlexSans.className)}>
             {format(new Date(note.date) ?? new Date(), "LLLL d, yyyy")}
           </Paragraph>

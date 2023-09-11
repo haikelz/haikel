@@ -2,12 +2,10 @@ import { connect } from "@planetscale/database";
 import { drizzle } from "drizzle-orm/planetscale-serverless";
 import { env } from "~env.mjs";
 
-const { DATABASE_HOST, DATABASE_USERNAME, DATABASE_PASSWORD } = env;
+const { DATABASE_URL } = env;
 
 const connection = connect({
-  host: DATABASE_HOST,
-  username: DATABASE_USERNAME,
-  password: DATABASE_PASSWORD,
+  url: DATABASE_URL,
 });
 
 const db = drizzle(connection);

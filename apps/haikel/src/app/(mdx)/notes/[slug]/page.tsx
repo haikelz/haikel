@@ -1,4 +1,4 @@
-import { Redis } from "@upstash/redis/nodejs";
+import { kv } from "@vercel/kv";
 import { Notes, allNotes } from "contentlayer/generated";
 import format from "date-fns/format";
 import { Metadata } from "next";
@@ -16,8 +16,6 @@ const Comments = dynamic(() => import("~components/comments"));
 const ReadingTime = dynamic(() => import("~components/reading-time"));
 const ReadingProgress = dynamic(() => import("~components/reading-progress"));
 const LightboxImage = dynamic(() => import("~ui/images/lightbox-image"));
-
-const redis = Redis.fromEnv();
 
 export const revalidate = 60;
 
@@ -71,7 +69,7 @@ export default async function NotePage({ params }: { params: { slug: string } })
   ) as Notes;
 
   // pageviews
-  const views = (await redis.get<number>(["pageviews", "notes", slug].join(":"))) ?? 0;
+  const views = (await kv.get<number>(["pageviews", "notes", slug].join(":"))) ?? 0;
 
   const Content = getMDXComponent(body.code);
 

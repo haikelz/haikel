@@ -68,7 +68,9 @@ export default function Tags() {
           <Underline />
         </div>
         <div className="w-full leading-relaxed">
-          <Paragraph>Select spesific notes based on the list of tags below.</Paragraph>
+          <Paragraph id="description">
+            Select spesific notes based on the list of tags below.
+          </Paragraph>
         </div>
       </section>
       <section className="mt-6 flex flex-wrap gap-3">

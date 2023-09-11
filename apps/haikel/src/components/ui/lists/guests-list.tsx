@@ -17,8 +17,8 @@ type GuestsListProps = {
 export function GuestsList({ guestbook }: GuestsListProps) {
   return (
     <>
-      {guestbook?.map((guest) => (
-        <div key={guest.id} className="h-full">
+      {guestbook.map((guest) => (
+        <div id="guest-item" key={guest.id} className="h-full">
           <div>
             <span
               className={tw(

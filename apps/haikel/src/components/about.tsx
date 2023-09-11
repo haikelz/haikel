@@ -19,7 +19,7 @@ export default function About() {
             </span>{" "}
             🌸
           </Heading>
-          <Paragraph className="mt-4">
+          <Paragraph id="description" className="mt-4">
             A Frontend Crafter based in Indonesia. Familiar with Javascript/Typescript, React
             Ecosystem, and Linux(for daily use). Try to follow best practices as much as i can. I
             can work in a team or solo. In my spare time, i crafted something, go out to take some
