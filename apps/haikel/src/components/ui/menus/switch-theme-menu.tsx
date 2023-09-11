@@ -33,7 +33,6 @@ export default function SwitchThemeMenu() {
     <Menu
       menuIcon={
         <button
-          id="switch-theme"
           className={tw(
             "overflow-hidden rounded-sm",
             "p-1",

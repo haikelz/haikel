@@ -14,8 +14,8 @@ describe("Homapage", () => {
 
     // test navbar
     cy.get("nav").should("be.visible").get("a").should("be.visible").contains("は");
-    cy.get("#switch-theme").should("be.visible");
-    cy.get("#menu").should("be.visible");
+    cy.get(`[aria-label="switch theme"]`).should("be.visible");
+    cy.get(`[data-cy="menu"]`).should("be.visible");
 
     // test footer
     cy.get("footer")
@@ -25,9 +25,9 @@ describe("Homapage", () => {
       .contains("Crafted by Haikel");
 
     // test note item
-    cy.get("#note-item").should("be.visible");
+    cy.get(`[data-cy="note-item"]`).should("be.visible");
 
     // test work item
-    cy.get("#work-item").should("be.visible");
+    cy.get(`[data-cy="work-item"]`).should("be.visible");
   });
 });

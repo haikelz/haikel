@@ -51,8 +51,8 @@ export default function Tags() {
             .split(" ")
         ),
       ].sort((a, b) => {
-        if (a < b) return -1;
         if (a > b) return 1;
+        if (a < b) return -1;
         return 0;
       }),
     []
@@ -68,7 +68,7 @@ export default function Tags() {
           <Underline />
         </div>
         <div className="w-full leading-relaxed">
-          <Paragraph id="description">
+          <Paragraph data-cy="description">
             Select spesific notes based on the list of tags below.
           </Paragraph>
         </div>

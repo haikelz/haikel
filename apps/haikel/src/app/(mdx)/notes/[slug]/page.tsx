@@ -76,7 +76,11 @@ export default async function NotePage({ params }: { params: { slug: string } })
   return (
     <>
       <NoteViews slug={slug} />
-      <Main className={tw("flex min-h-screen flex-col items-center justify-start")}>
+      <Main
+        className={tw(
+          "flex dark:bg-grid-dark bg-center bg-grid-light min-h-screen flex-col items-center justify-start"
+        )}
+      >
         <ReadingProgress />
         <article className={tw("flex w-full flex-col flex-wrap justify-center py-8", "md:mb-3")}>
           <section className="flex flex-col">

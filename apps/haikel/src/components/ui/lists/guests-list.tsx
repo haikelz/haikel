@@ -18,7 +18,7 @@ export function GuestsList({ guestbook }: GuestsListProps) {
   return (
     <>
       {guestbook.map((guest) => (
-        <div id="guest-item" key={guest.id} className="h-full">
+        <div data-cy="guest-item" key={guest.id} className="h-full">
           <div>
             <span
               className={tw(

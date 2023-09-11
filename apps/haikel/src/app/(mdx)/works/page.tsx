@@ -52,7 +52,7 @@ export default function WorksPage() {
           <Underline />
         </div>
         <div className="w-full leading-relaxed">
-          <Paragraph id="description">List some of my works</Paragraph>
+          <Paragraph data-cy="description">List some of my works</Paragraph>
         </div>
       </section>
       <section className="mb-10 mt-6 flex w-full flex-col space-y-8">

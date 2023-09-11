@@ -91,7 +91,7 @@ export default function GuestbookClient() {
           <Underline />
         </div>
         <div className="w-full leading-relaxed">
-          <Paragraph id="description">
+          <Paragraph data-cy="description">
             Write a message for me and others.
             {session ? (
               <span>
@@ -175,7 +175,7 @@ export default function GuestbookClient() {
       {guestbook?.length ? (
         <section className="mb-10 flex w-full flex-col space-y-8">
           {guestbook.map((guest) => (
-            <div id="guest-item" key={guest.id} className="h-full">
+            <div data-cy="guest-item" key={guest.id} className="h-full">
               <div className={session ? "flex space-x-3 justify-start items-center" : ""}>
                 <span
                   className={tw(

@@ -18,7 +18,7 @@ interface MenuProps {
 export default function Menu({ menuIcon, list, contentClassName }: MenuProps) {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger id="menu" asChild>
+      <DropdownMenuTrigger data-cy="menu" asChild>
         {menuIcon}
       </DropdownMenuTrigger>
       <DropdownMenuPortal>

@@ -12,6 +12,10 @@ export default {
         dark: "8px 8px 0px -3px #FFFFFF",
         progress: "0 0 10px #29d, 0 0 5px #29d",
       },
+      backgroundImage: {
+        "grid-dark": "url('/img/grid-dark.svg')",
+        "grid-light": "url('/img/grid-light.svg')",
+      },
       colors: {
         azure: "#EFFFFD",
         red: "#F84B3E",
