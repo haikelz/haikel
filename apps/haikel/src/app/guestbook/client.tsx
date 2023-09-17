@@ -5,7 +5,6 @@ import { IconBrandGithub, IconPencil, IconTrash } from "@tabler/icons-react";
 import { format } from "date-fns/esm";
 import { atom, useAtom } from "jotai";
 import { signIn, signOut, useSession } from "next-auth/react";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { tw } from "~lib/helpers";
 import { ibmPlexSans } from "~lib/utils/fonts";

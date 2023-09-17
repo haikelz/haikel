@@ -1,2 +1,2 @@
-export * from "./sorted-all-notes";
-export * from "./sorted-all-works";
+export { sortedAllNotes } from "./sorted-all-notes";
+export { sortedAllWorks } from "./sorted-all-works";

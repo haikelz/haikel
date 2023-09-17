@@ -3,17 +3,13 @@
   "globalDependencies": ["**/.env.*local"],
   "pipeline": {
     "build": {
-      "dependsOn": ["^build", "prisma:generate"],
+      "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "lint": {},
     "dev": {
-      "cache": false,
-      "dependsOn": ["prisma:generate"],
+      "cache": true,
       "persistent": true
-    },
-    "prisma:generate": {
-      "cache": false
     }
   },
   "globalEnv": [
@@ -28,9 +24,6 @@
     "NEXTAUTH_URL",
     "DATABASE_URL",
     "NEXT_PUBLIC_PRODUCTION_URL",
-    "NEXT_PUBLIC_DEVELOPMENT_URL",
-    "UPSTASH_REDIS_REST_URL",
-    "UPSTASH_REDIS_REST_TOKEN",
-    "UPSTASH_DISABLE_TELEMETRY"
+    "NEXT_PUBLIC_DEVELOPMENT_URL"
   ]
 }

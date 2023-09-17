@@ -2,10 +2,10 @@ import { IconSearch } from "@tabler/icons-react";
 import { SetStateAction } from "react";
 import { tw } from "~lib/helpers";
 
-interface SearchInputProps {
+type SearchInputProps = {
   search: string;
   setSearch: (update: SetStateAction<string>) => void;
-}
+};
 
 export function SearchInput({ search, setSearch }: SearchInputProps) {
   return (

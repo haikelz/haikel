@@ -24,6 +24,7 @@ async function getGuestbook(key: string) {
     })
     .from(guestbook)
     .orderBy(sql`${guestbook.id} desc`);
+
   return data;
 }
 

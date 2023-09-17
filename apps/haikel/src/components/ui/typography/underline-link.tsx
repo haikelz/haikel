@@ -4,7 +4,6 @@ import { tw } from "~lib/helpers";
 
 type UnderlineLinkProps = HTMLAttributes<HTMLAnchorElement> & {
   href: string;
-  className?: string;
 };
 
 export function UnderlineLink({ children, href, className, ...props }: UnderlineLinkProps) {

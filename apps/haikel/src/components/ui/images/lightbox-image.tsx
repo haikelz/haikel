@@ -8,10 +8,10 @@ import "yet-another-react-lightbox/plugins/captions.css";
 import "yet-another-react-lightbox/styles.css";
 import { tw } from "~lib/helpers";
 
-interface LightboxImageProps {
+type LightboxImageProps = {
   src: string;
   alt: string;
-}
+};
 
 export default function LightboxImage({ src, alt }: LightboxImageProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -27,6 +27,7 @@ export default function LightboxImage({ src, alt }: LightboxImageProps) {
         width={1000}
         height={1000}
         loading="lazy"
+        data-cy="lightbox-image"
       />
       {isOpen ? (
         <Lightbox

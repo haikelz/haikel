@@ -9,11 +9,11 @@ import {
 import { ReactNode } from "react";
 import { tw } from "~lib/helpers";
 
-interface MenuProps {
+type MenuProps = {
   menuIcon: ReactNode;
   list: ReactNode;
   contentClassName?: string;
-}
+};
 
 export default function Menu({ menuIcon, list, contentClassName }: MenuProps) {
   return (

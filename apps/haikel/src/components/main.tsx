@@ -1,9 +1,9 @@
 import { tw } from "~lib/helpers";
 import type { ChildrenProps } from "~types";
 
-interface MainProps extends ChildrenProps {
+type MainProps = ChildrenProps & {
   className: string;
-}
+};
 
 export default function Main({ children, className }: MainProps) {
   return (

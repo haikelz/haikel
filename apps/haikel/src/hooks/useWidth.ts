@@ -7,7 +7,8 @@ import { useCallback, useEffect } from "react";
 const widthAtom = atom<number>(0);
 
 /**
- * A custom hook that get width in percent, based on user's scroll height
+ * A custom hook to get width in percent, based on user's scroll height
+ * @returns {number} width
  */
 export function useWidth(): number {
   const [width, setWidth] = useAtom(widthAtom);

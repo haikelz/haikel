@@ -13,6 +13,7 @@ export async function GET(req: NextRequest) {
     return new ImageResponse(
       (
         <div
+          data-cy="opengraph"
           style={{
             height: "100%",
             width: "100%",

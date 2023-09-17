@@ -26,6 +26,7 @@ export default function AuthorImage() {
         height={25}
         loading="lazy"
         draggable={false}
+        data-cy="author-image"
       />
       {isOpen ? (
         <Lightbox
