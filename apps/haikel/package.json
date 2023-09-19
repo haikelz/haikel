@@ -7,7 +7,8 @@
   "description": "My personal Website",
   "homepage": "https://haikel.app/",
   "repository": {
-    "url": "https://github.com/haikelz/haikel"
+    "type": "git",
+    "url": "https://github.com/haikelz/haikel/"
   },
   "scripts": {
     "dev": "next dev",
@@ -15,6 +16,8 @@
     "format": "prettier . --write",
     "build": "next build",
     "db:push": "drizzle-kit push:mysql --config=drizzle.config.ts",
+    "db:introspect": "drizzle-kit introspect:mysql",
+    "db:generate": "drizzle-kit generate:mysql --schema=./src/lib/utils/db/schema.ts",
     "open": "cypress open",
     "test": "cypress run"
   },
@@ -61,6 +64,7 @@
     "@types/rss": "^0.0.30",
     "autoprefixer": "^10.4.15",
     "cypress": "^13.1.0",
+    "dotenv": "^16.3.1",
     "drizzle-kit": "^0.19.13",
     "eslint-config-custom": "workspace:*",
     "postcss": "^8.4.28",

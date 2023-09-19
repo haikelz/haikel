@@ -1,5 +1,5 @@
 import Main from "~components/main";
-import { Heading, Paragraph, UnderlineLink } from "~components/ui/typography";
+import { Heading, Paragraph, UnderlineLink } from "~ui/typography";
 
 export default function ErrorClient() {
   return (

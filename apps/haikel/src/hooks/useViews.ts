@@ -10,7 +10,7 @@ const { NEXT_PUBLIC_PRODUCTION_URL, NEXT_PUBLIC_DEVELOPMENT_URL } = env;
 
 /**
  * A custom hook that will do a POST operation to `/api/pageviews`
- * @param slug
+ * @param {String} slug
  */
 export function useViews(slug: string): void {
   useEffect(() => {

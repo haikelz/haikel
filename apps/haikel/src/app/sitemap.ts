@@ -10,7 +10,6 @@ export default function Sitemap(): MetadataRoute.Sitemap {
 
   const notes = allNotes.map((item) => ({
     url: `https://haikel.app/notes/${item.slug}`,
-
     lastModified: item.date,
   }));
 
