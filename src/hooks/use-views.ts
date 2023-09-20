@@ -14,7 +14,7 @@ const { NEXT_PUBLIC_PRODUCTION_URL, NEXT_PUBLIC_DEVELOPMENT_URL } = env;
  */
 export function useViews(slug: string): void {
   useEffect(() => {
-    async function postViews() {
+    async function noteViews() {
       await ofetch(
         `${
           condition === "development" ? NEXT_PUBLIC_DEVELOPMENT_URL : NEXT_PUBLIC_PRODUCTION_URL
@@ -29,6 +29,6 @@ export function useViews(slug: string): void {
       );
     }
 
-    postViews();
+    noteViews();
   }, [slug]);
 }

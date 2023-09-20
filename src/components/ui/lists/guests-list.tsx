@@ -11,6 +11,7 @@ type GuestsListProps = {
     email: string;
     username: string;
     created_at: string;
+    userId: string;
   }[];
 };
 

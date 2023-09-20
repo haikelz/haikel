@@ -10,30 +10,46 @@ export const router = t.router;
 export const publicProcedure = t.procedure;
 
 async function submitMessage<T extends string>(message: T, email: T, username: T) {
-  await db.insert(guestbook).values({ message: message, email: email, username: username });
+  try {
+    await db.insert(guestbook).values({ message: message, email: email, username: username });
+  } catch (err) {
+    console.error(err);
+  }
 }
 
 async function getGuestbook(key: string) {
-  const data = await db
-    .select({
-      id: guestbook.id,
-      message: guestbook.message,
-      email: guestbook.email,
-      username: guestbook.username,
-      created_at: guestbook.created_at,
-    })
-    .from(guestbook)
-    .orderBy(sql`${guestbook.id} desc`);
+  try {
+    const data = await db
+      .select({
+        id: guestbook.id,
+        message: guestbook.message,
+        email: guestbook.email,
+        username: guestbook.username,
+        created_at: guestbook.created_at,
+      })
+      .from(guestbook)
+      .orderBy(sql`${guestbook.id} desc`);
 
-  return data;
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
 }
 
 async function deleteMessage(id: number) {
-  await db.delete(guestbook).where(eq(guestbook.id, id));
+  try {
+    await db.delete(guestbook).where(eq(guestbook.id, id));
+  } catch (err) {
+    console.error(err);
+  }
 }
 
 async function patchMessage(id: number, message: string) {
-  await db.update(guestbook).set({ message: message }).where(eq(guestbook.id, id));
+  try {
+    await db.update(guestbook).set({ message: message }).where(eq(guestbook.id, id));
+  } catch (err) {
+    console.error(err);
+  }
 }
 
 export const appRouter = router({
