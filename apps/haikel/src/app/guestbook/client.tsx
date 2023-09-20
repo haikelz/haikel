@@ -77,7 +77,6 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
   if (isLoading) return <LoadingClient />;
   if (isError) return <ErrorClient />;
 
-  console.log(session?.user);
   return (
     <>
       {!session ? (

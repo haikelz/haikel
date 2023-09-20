@@ -1,2 +1,2 @@
-export { useWidth } from "./useWidth";
-export { useViews } from "./useViews";
+export { useViews } from "./use-views";
+export { useWidth } from "./use-width";

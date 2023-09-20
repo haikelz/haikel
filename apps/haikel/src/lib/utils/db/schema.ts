@@ -8,7 +8,6 @@ export const guestbook = mysqlTable("guestbook", {
   username: varchar("username", { length: 191 }),
   message: varchar("message", { length: 191 }),
   userId: varchar("userId", { length: 191 }),
-  picture: varchar("picture", { length: 191 }),
 });
 
 export const accounts = mysqlTable(

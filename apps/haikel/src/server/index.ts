@@ -19,7 +19,6 @@ async function getGuestbook(key: string) {
       id: guestbook.id,
       message: guestbook.message,
       email: guestbook.email,
-      picture: guestbook.picture,
       username: guestbook.username,
       created_at: guestbook.created_at,
     })

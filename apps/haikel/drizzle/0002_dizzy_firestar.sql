@@ -1,1 +1,0 @@
-ALTER TABLE `guestbook` ADD `picture` varchar(191);
