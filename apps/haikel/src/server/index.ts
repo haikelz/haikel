@@ -19,6 +19,7 @@ async function getGuestbook(key: string) {
       id: guestbook.id,
       message: guestbook.message,
       email: guestbook.email,
+      picture: guestbook.picture,
       username: guestbook.username,
       created_at: guestbook.created_at,
     })
@@ -43,7 +44,13 @@ export const appRouter = router({
   }),
 
   post: publicProcedure
-    .input(z.object({ message: z.string(), username: z.string(), email: z.string() }))
+    .input(
+      z.object({
+        message: z.string(),
+        email: z.string(),
+        username: z.string(),
+      })
+    )
     .mutation(async ({ input }) => {
       await submitMessage(input.message, input.email, input.username);
     }),

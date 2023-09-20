@@ -12,6 +12,8 @@ export const env = createEnv({
     NEXT_PUBLIC_GOOGLE_SECRET: z.string().min(1),
     NEXTAUTH_SECRET: z.string().min(1),
     NEXTAUTH_URL: z.string().url().min(1),
+    GITHUB_USERNAME: z.string().min(1),
+    EMAIL_NAME: z.string().min(1),
   },
   client: {
     NEXT_PUBLIC_PRODUCTION_URL: z.string().min(1).url(),

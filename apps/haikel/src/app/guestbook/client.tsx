@@ -77,6 +77,7 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
   if (isLoading) return <LoadingClient />;
   if (isError) return <ErrorClient />;
 
+  console.log(session?.user);
   return (
     <>
       {!session ? (
@@ -125,7 +126,8 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
                 >
                   {guest.message}
                 </span>
-                {session && guest.email === session?.user?.email ? (
+                {(session && guest.email === session?.user?.email) ||
+                session?.user?.role === "admin" ? (
                   <>
                     <button
                       type="button"
