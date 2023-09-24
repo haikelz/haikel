@@ -1,3 +1,4 @@
+import "@unocss/reset/tailwind.css";
 import Footer from "~components/footer";
 import Navbar from "~components/navbar";
 import { tw } from "~lib/helpers";
@@ -10,7 +11,7 @@ import Wrapper from "./wrapper";
 
 const baseMetadata = {
   title: "Haikel Ilham Hakim",
-  description: "Frontend Crafter",
+  description: "Frontend Web Developer",
   url: SITE_URL,
 };
 

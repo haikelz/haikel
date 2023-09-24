@@ -1,10 +1,10 @@
 import { Notes, Works } from "contentlayer/generated";
-import About from "~components/about";
+import Greeting from "~components/greeting";
 import Main from "~components/main";
 import { tw } from "~lib/helpers";
 import { sortedAllNotes, sortedAllWorks } from "~lib/services";
 import { NotesList, WorksList } from "~ui/lists";
-import { Heading, Underline, UnderlineLink } from "~ui/typography";
+import { Heading, Paragraph, Underline, UnderlineLink } from "~ui/typography";
 
 export default async function HomePage() {
   const notes: Notes[] = sortedAllNotes.slice(0, 4);
@@ -12,7 +12,19 @@ export default async function HomePage() {
 
   return (
     <Main className={tw("flex flex-col items-start justify-start", "py-8")}>
-      <About />
+      <section className="mb-12 flex w-full flex-wrap items-center justify-center">
+        <div className={tw("flex w-full flex-col items-start justify-start", "md:flex-row")}>
+          <div className={tw("flex flex-col items-start justify-start", "md:mt-0 md:text-start")}>
+            <Greeting />
+            <Paragraph id="description" className="mt-4">
+              Someone who interested in Frontend stuff. Familiar with Javascript/Typescript, React
+              Ecosystem, and Linux(for daily use). Try to follow best practices as much as i can. I
+              can work in a team or solo. In my spare time, i crafted something, go out to take some
+              photos, learn new things, or just improve my English.
+            </Paragraph>
+          </div>
+        </div>
+      </section>
       <section className="mb-12 flex w-full flex-wrap items-center justify-center">
         <div className="flex w-full flex-col items-start justify-start">
           <div>

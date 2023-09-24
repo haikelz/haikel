@@ -8,7 +8,7 @@ export async function GET(req: NextRequest) {
     const { searchParams } = new URL(req.nextUrl);
 
     const hasTitle = searchParams.has("title");
-    const title = hasTitle ? searchParams.get("title")?.slice(0, 100) : "Frontend Crafter";
+    const title = hasTitle ? searchParams.get("title")?.slice(0, 100) : "Frontend Web Developer";
 
     return new ImageResponse(
       (

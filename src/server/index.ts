@@ -3,13 +3,14 @@ import { eq, sql } from "drizzle-orm";
 import { z } from "zod";
 import db from "~lib/utils/db";
 import { guestbook } from "~lib/utils/db/schema";
+import { GuestbookProps } from "~types";
 
 const t = initTRPC.create();
 
 export const router = t.router;
 export const publicProcedure = t.procedure;
 
-async function submitMessage<T extends string>(message: T, email: T, username: T) {
+async function submitMessage<T extends string>(message: T, email: T, username: T): Promise<void> {
   try {
     await db.insert(guestbook).values({ message: message, email: email, username: username });
   } catch (err) {
@@ -17,7 +18,16 @@ async function submitMessage<T extends string>(message: T, email: T, username: T
   }
 }
 
-async function getGuestbook(key: string) {
+type StringWithNull<Type> = {
+  [Property in keyof Type]: string | null;
+};
+
+type GetGuestbookProps = StringWithNull<Omit<GuestbookProps, "id" | "created_at">> & {
+  id: number;
+  created_at: Date | null;
+};
+
+async function getGuestbook(key: string): Promise<GetGuestbookProps[] | undefined> {
   try {
     const data = await db
       .select({
@@ -36,7 +46,7 @@ async function getGuestbook(key: string) {
   }
 }
 
-async function deleteMessage(id: number) {
+async function deleteMessage(id: number): Promise<void> {
   try {
     await db.delete(guestbook).where(eq(guestbook.id, id));
   } catch (err) {
@@ -44,7 +54,7 @@ async function deleteMessage(id: number) {
   }
 }
 
-async function patchMessage(id: number, message: string) {
+async function patchMessage(id: number, message: string): Promise<void> {
   try {
     await db.update(guestbook).set({ message: message }).where(eq(guestbook.id, id));
   } catch (err) {

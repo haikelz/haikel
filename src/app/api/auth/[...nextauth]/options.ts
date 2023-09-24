@@ -1,4 +1,5 @@
 import type { NextAuthOptions } from "next-auth";
+import { Awaitable, User } from "next-auth/core/types";
 import GithubProvider, { GithubProfile } from "next-auth/providers/github";
 import GoogleProvider, { GoogleProfile } from "next-auth/providers/google";
 import { env } from "~env.mjs";
@@ -14,9 +15,12 @@ const {
 } = env;
 
 export const options: NextAuthOptions = {
+  theme: {
+    colorScheme: "auto",
+  },
   providers: [
     GithubProvider({
-      profile(profile: GithubProfile) {
+      profile(profile: GithubProfile): Awaitable<User> {
         return {
           ...profile,
           role: profile.login === GITHUB_USERNAME ? "admin" : "guest",
@@ -29,7 +33,7 @@ export const options: NextAuthOptions = {
       clientSecret: NEXT_PUBLIC_GITHUB_SECRET,
     }),
     GoogleProvider({
-      profile(profile: GoogleProfile) {
+      profile(profile: GoogleProfile): Awaitable<User> {
         return {
           ...profile,
           role: profile.email === EMAIL_NAME ? "admin" : "guest",

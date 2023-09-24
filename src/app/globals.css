@@ -1,94 +1,93 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "@unocss/reset/tailwind.css";
+@unocss all;
 
-@layer base {
-  body {
-    @apply m-0 h-[50vh];
-    font-family: var(--font-ibm-serif);
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--font-ibm-sans);
-  }
-
-  .prose pre,
-  pre code {
-    font-family: var(--font-ibm-mono);
-  }
-
-  button {
-    @apply outline-none;
-  }
+body {
+  @apply m-0 h-[50vh];
+  font-family: var(--font-ibm-serif);
 }
 
-@layer components {
-  /* 
-   * So, i divide the gradient styles for text into 2 parts, light mode and dark mode. 
-   * Why? Because i want to prevent issue "You cannot `@apply` the `dark:bg-green-700` utility here because it creates a circular dependency"
-   */
-
-  /* light mode */
-  .gradient {
-    @apply bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent;
-  }
-
-  /* dark mode */
-  .gradient-dark {
-    @apply bg-gradient-to-r from-blue-500 to-[#80D0C7] bg-clip-text text-transparent;
-  }
-
-  .shadow-smooth {
-    box-shadow: 0px 0px 40px -23px rgba(0, 0, 0, 1);
-    -webkit-box-shadow: 0px 0px 40px -23px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 0px 0px 40px -23px rgba(0, 0, 0, 1);
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  width: fit-content;
+  font-family: var(--font-ibm-sans);
 }
 
-@layer utilities {
-  .prose img {
-    @apply w-full rounded-sm;
-  }
+.prose code:not(:has(span)) {
+  @apply bg-gray-300 dark:bg-base-2 p-1 rounded-sm;
+  font-family: var(--font-ibm-serif);
+}
 
-  .prose video {
-    @apply rounded-sm shadow-md dark:shadow-gray-900;
-  }
+.prose code::before {
+  content: "";
+}
 
-  .prose h1 > a::before,
-  .prose h2 > a::before,
-  .prose h3 > a::before,
-  .prose h4 > a::before,
-  .prose h5 > a::before,
-  .prose h6 > a::before {
-    @apply mr-2 text-[#3B82F6];
-  }
+.prose code::after {
+  content: "";
+}
 
-  .prose h1 > a::before {
-    @apply hover:content-['#'];
-  }
+.prose pre code {
+  @apply font-semibold text-base;
+  font-family: var(--font-ibm-mono);
+}
 
-  .prose h2 > a::before {
-    @apply hover:content-['##'];
-  }
+.prose hr {
+  @apply border-gray-300;
+}
 
-  .prose h3 > a::before {
-    @apply hover:content-['###'];
-  }
+.prose ul {
+  @apply mb-0 mt-0 !important;
+}
 
-  .prose h4 > a::before {
-    @apply hover:content-['####'];
-  }
+.prose img {
+  @apply my-8 w-full rounded-sm;
+}
 
-  .prose h5 > a::before {
-    @apply hover:content-['#####'];
-  }
+.prose video {
+  @apply my-8 rounded-sm shadow-md dark:shadow-gray-900;
+}
 
-  .prose h6 > a::before {
-    @apply hover:content-['######'];
-  }
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  @apply font-bold text-inherit;
+}
+
+.prose a {
+  @apply underline-offset-[5px] decoration-dashed;
+}
+
+.prose a:hover {
+  @apply text-[#3B82F6] decoration-[#3B82F6];
+}
+
+button {
+  @apply outline-none;
+}
+
+/* 
+  * So, i divide the gradient styles for text into 2 parts, light mode and dark mode. 
+  * Why? Because i want to prevent issue "You cannot `@apply` the `dark:bg-green-700` utility here because it creates a circular dependency"
+*/
+
+/* light mode */
+.gradient {
+  @apply bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent;
+}
+
+/* dark mode */
+.gradient-dark {
+  @apply bg-gradient-to-r from-blue-500 to-[#80D0C7] bg-clip-text text-transparent;
+}
+
+.shadow-smooth {
+  box-shadow: 0px 0px 40px -23px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 0px 0px 40px -23px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 40px -23px rgba(0, 0, 0, 1);
 }

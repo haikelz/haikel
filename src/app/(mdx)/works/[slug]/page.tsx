@@ -67,7 +67,7 @@ export default async function DetailWorkPage({ params }: { params: { slug: strin
   return (
     <Main
       className={tw(
-        "flex dark:bg-grid-dark bg-center bg-grid-light  min-h-screen flex-col items-center justify-start"
+        "dark:bg-grid-dark bg-grid-light flex min-h-screen  flex-col items-center justify-start bg-center"
       )}
     >
       <ReadingProgress />
@@ -108,11 +108,7 @@ export default async function DetailWorkPage({ params }: { params: { slug: strin
           </div>
         </section>
         <article
-          className={tw(
-            "prose prose-gray mt-6 w-full max-w-full",
-            "md:prose-lg",
-            "dark:prose-invert"
-          )}
+          className={tw("prose prose-gray mt-6 w-full max-w-full md:text-lg", "dark:prose-invert")}
         >
           <p className={tw("text-right text-2xl font-bold", naskhArabic.className)}>
             بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ

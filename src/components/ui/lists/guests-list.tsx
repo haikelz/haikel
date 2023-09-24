@@ -1,21 +1,17 @@
 import { format } from "date-fns/esm";
 import { tw } from "~lib/helpers";
 import { ibmPlexSans } from "~lib/utils/fonts";
+import { GuestbookProps } from "~types";
 
 import { Paragraph } from "../typography";
 
-type GuestsListProps = {
-  guestbook: {
-    id: string;
-    message: string;
-    email: string;
-    username: string;
-    created_at: string;
-    userId: string;
-  }[];
+type WithoutNull<Type> = {
+  [Property in keyof Type]: string;
 };
 
-export function GuestsList({ guestbook }: GuestsListProps) {
+type GuestsListProps = WithoutNull<GuestbookProps>;
+
+export function GuestsList({ guestbook }: { guestbook: GuestsListProps[] }) {
   return (
     <>
       {guestbook.map((guest) => (

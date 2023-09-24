@@ -16,6 +16,8 @@ description: Tahapan instalasi dan setup Windi CSS di Next JS
 - [Penutup](#penutup)
 - [Referensi](#referensi)
 
+**Update 24 September 2023:** Untuk new project, instead of using Windicss yang udah [discontinued](https://windicss.org/posts/sunsetting.html), temen-temen bisa coba Uno CSS. Baca petunjuk installnya [disini](https://github.com/unocss/unocss/blob/main/examples/next/README.md).
+
 ## Pendahuluan
 
 [Windi CSS](https://windicss.org/) adalah sebuah Utility-First CSS Framework, yang menurut saya menarik karena dia menawarkan load time yang lebih cepat ketimbang Tailwind. Selain itu, di Website resminya juga menyebutkan bahwa Windi ini kompatibel dengan Tailwind V2. Bisa dibilang Windi CSS adalah alternatifnya Tailwind, dengan beberapa fitur tambahan. Jika sebelumnya projectnya memakai Tailwind untuk styling dan ingin migrasi ke windi, maka harusnya ga terlalu banyak perubahan, hanya butuh penyesuaian sedikit.
@@ -84,9 +86,9 @@ export default defineConfig({
 4. Tambahkan `import "windi.css"` di file `_app.js` atau `_app.tsx`
 
 ```tsx title="pages/_app.tsx"
-import "~/styles/globals.css";
 import type { AppProps } from "next/app";
 import "windi.css";
+import "~/styles/globals.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;
