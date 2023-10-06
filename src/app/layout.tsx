@@ -1,6 +1,5 @@
 import "@unocss/reset/tailwind.css";
-import Footer from "~components/footer";
-import Navbar from "~components/navbar";
+import Sidebar from "~components/ui/sidebar";
 import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { ibmPlexMono, ibmPlexSans, ibmPlexSerif } from "~lib/utils/fonts";
@@ -53,13 +52,14 @@ export default function RootLayout({ children }: ChildrenProps) {
           <div
             className={tw(
               "min-h-screen w-full",
-              "bg-azure text-base-0",
+              "bg-azure flex text-base-0",
               "dark:bg-black dark:text-gray-100"
             )}
           >
-            <Navbar />
-            <div className="px-4">{children}</div>
-            <Footer />
+            <Sidebar />
+            <div className="w-full">
+              <div className="px-4">{children}</div>
+            </div>
           </div>
         </Wrapper>
       </body>

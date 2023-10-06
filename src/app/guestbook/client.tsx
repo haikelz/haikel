@@ -118,7 +118,7 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
               <div className={session ? "flex space-x-3 justify-start items-center" : ""}>
                 <span
                   className={tw(
-                    "cursor-pointer text-xl font-bold",
+                    "cursor-pointer text-lg font-bold",
                     "hover:text-blue-500",
                     ibmPlexSans.className
                   )}
@@ -153,7 +153,7 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
                   </>
                 ) : null}
               </div>
-              <Paragraph className="mt-2 font-medium tracking-wide">
+              <Paragraph className="mt-2 text-base font-medium tracking-wide">
                 {guest.username}
                 {guest.created_at !== ""
                   ? `. ${format(new Date(guest.created_at as string), "LLLL d, yyyy")}`
@@ -183,7 +183,7 @@ function SignInWithGoogle() {
       onClick={() => signIn("google")}
     >
       <GoogleIcon />
-      <span className="text-base md:text-lg">Google</span>
+      <span className="text-base ">Google</span>
     </button>
   );
 }
@@ -202,7 +202,7 @@ function SignInWithGithub() {
       onClick={() => signIn("github")}
     >
       <IconBrandGithub size={22} />
-      <span className="text-base md:text-lg">Github</span>
+      <span className="text-base ">Github</span>
     </button>
   );
 }

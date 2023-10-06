@@ -11,13 +11,13 @@ export function NotesList({ filteredNotes, search }: { filteredNotes: Notes[]; s
     <>
       {filteredNotes.map((note) => (
         <div data-cy="note-item" key={note.slug} className="h-full">
-          <Paragraph className={tw("text-left font-medium", ibmPlexSans.className)}>
+          <Paragraph className={tw("text-left text-sm font-medium", ibmPlexSans.className)}>
             {format(new Date(note.date) ?? new Date(), "LLLL d, yyyy")}
           </Paragraph>
           <div className="mt-2">
             <Link
               className={tw(
-                "cursor-pointer text-xl font-bold",
+                "cursor-pointer text-lg font-bold",
                 "hover:text-blue-500",
                 ibmPlexSans.className
               )}

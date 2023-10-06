@@ -79,14 +79,14 @@ export default async function DetailWorkPage({ params }: { params: { slug: strin
           <div className="my-3 flex items-center">
             <AuthorImage />
             <div className={tw("tracking-[0.050em]", ibmPlexSans.className)}>
-              <span className={tw("text-base font-semibold leading-[1.75rem]", "md:text-lg")}>
+              <span className={tw("text-base font-semibold leading-[1.75rem]")}>
                 {author}, <ReadingTime content={body.raw} />.
               </span>{" "}
               {preview ? (
                 <button
                   type="button"
                   aria-label="Preview"
-                  className={tw("text-base leading-[1.75rem] tracking-[0.050em]", "md:text-lg")}
+                  className={tw("text-base leading-[1.75rem] tracking-[0.050em]")}
                 >
                   <UnderlineLink href={preview}>Preview</UnderlineLink>
                 </button>
@@ -96,10 +96,7 @@ export default async function DetailWorkPage({ params }: { params: { slug: strin
                 <button
                   type="button"
                   aria-label="Source"
-                  className={tw(
-                    "text-base font-normal leading-[1.75rem] tracking-[0.050em]",
-                    "md:text-lg"
-                  )}
+                  className={tw("text-base font-normal leading-[1.75rem] tracking-[0.050em]")}
                 >
                   <UnderlineLink href={repo}>Source</UnderlineLink>
                 </button>
@@ -107,10 +104,8 @@ export default async function DetailWorkPage({ params }: { params: { slug: strin
             </div>
           </div>
         </section>
-        <article
-          className={tw("prose prose-gray mt-6 w-full max-w-full md:text-lg", "dark:prose-invert")}
-        >
-          <p className={tw("text-right text-2xl font-bold", naskhArabic.className)}>
+        <article className={tw("prose prose-gray mt-6 w-full max-w-full", "dark:prose-invert")}>
+          <p className={tw("text-right text-xl font-bold", naskhArabic.className)}>
             بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
           </p>
           <Content components={{ LightboxImage, Video }} />

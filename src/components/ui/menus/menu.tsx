@@ -24,7 +24,7 @@ export default function Menu({ menuIcon, list, contentClassName }: MenuProps) {
       <DropdownMenuPortal>
         <DropdownMenuContent
           className={tw(
-            "right-0 z-50 mt-2 -translate-x-16 rounded-md bg-white",
+            "z-50 mt-2 right-0 -translate-y-4 -translate-x-12 rounded-md bg-white",
             "p-2 drop-shadow-md",
             "dark:bg-base-1 dark:text-gray-100",
             contentClassName

@@ -30,7 +30,7 @@ export function WorksList({ works }: { works: Works[] }) {
           <div>
             <Link href={`/${work.slug}`} aria-label={work.title}>
               <span
-                className={tw("text-xl font-bold", "hover:text-blue-500", ibmPlexSans.className)}
+                className={tw("text-lg font-bold", "hover:text-blue-500", ibmPlexSans.className)}
               >
                 {work.title}
               </span>

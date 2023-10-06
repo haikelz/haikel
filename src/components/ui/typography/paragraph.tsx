@@ -8,7 +8,7 @@ export function Paragraph({ className, children, ...props }: ParagraphProps) {
     <p
       className={tw(
         "text-base font-normal leading-[1.75] tracking-wide",
-        "md:text-lg md:leading-[1.7777778]",
+        "md:leading-[1.7777778]",
         className
       )}
       {...props}

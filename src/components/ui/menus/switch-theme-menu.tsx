@@ -34,11 +34,11 @@ export default function SwitchThemeMenu() {
       menuIcon={
         <button
           className={tw(
-            "overflow-hidden rounded-sm",
+            "rounded-sm",
             "p-1",
             "hover:bg-gray-200",
             "active:bg-gray-300",
-            "dark:hover:bg-base-2 dark:active:bg-base-1"
+            "dark:hover:bg-base-2 dark:active:bg-base-1 font-bold"
           )}
           type="button"
           aria-label="switch theme"
@@ -75,7 +75,7 @@ export default function SwitchThemeMenu() {
           </DropdownMenuItem>
         );
       })}
-      contentClassName="lg:-translate-x-20 -translate-x-5"
+      contentClassName="-translate-x-14 md:translate-x-14 md:-translate-y-10"
     />
   );
 }

@@ -17,7 +17,7 @@ export default function Greeting() {
           repeat={Infinity}
           className={tw(
             "bg-base-0 dark:bg-gray-100 px-1.5 py-0.5",
-            "text-2xl text-gray-100 dark:text-base-0 md:text-4xl"
+            "text-2xl text-gray-100 dark:text-base-0 md:text-3xl"
           )}
         />
       </div>

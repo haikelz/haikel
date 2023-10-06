@@ -2,7 +2,7 @@
 
 import { Notes } from "contentlayer/generated";
 import { Searcher } from "fast-fuzzy";
-import { useMemo, useState } from "react";
+import { useDeferredValue, useMemo, useState } from "react";
 import { SearchInput } from "~ui/inputs";
 import { NotesList } from "~ui/lists";
 import { Paragraph } from "~ui/typography";
@@ -17,6 +17,8 @@ type SearcherType = Searcher<
 export default function NotesClient({ notes }: { notes: Notes[] }) {
   const [search, setSearch] = useState<string>("");
 
+  const deferredSearch = useDeferredValue<string>(search);
+
   const filteredNotes = useMemo(() => {
     /**
      * Fuzzy search with fast-fuzzy
@@ -27,11 +29,11 @@ export default function NotesClient({ notes }: { notes: Notes[] }) {
     });
 
     // if user haven't input anything yet, then return all notes
-    if (search.toLowerCase() === "") return notes;
+    if (deferredSearch.toLowerCase() === "") return notes;
 
     // and if user already input something, then do fuzzy search
-    return searcher.search(search.toLowerCase());
-  }, [search, notes]);
+    return searcher.search(deferredSearch.toLowerCase());
+  }, [deferredSearch, notes]);
 
   return (
     <>

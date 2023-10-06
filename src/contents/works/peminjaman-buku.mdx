@@ -1,0 +1,95 @@
+---
+id: 2
+author: Haikel
+title: Peminjaman Buku
+stack:
+  - nextjs
+  - typescript
+  - tailwind
+  - jotai
+  - supabase
+description: peminjaman-buku is a simple book lending system
+repo: https://github.com/haikelz/peminjaman-buku
+---
+
+## Deskripsi
+
+**peminjaman-buku** adalah sebuah sistem peminjaman buku sederhana. Saya membuat project ini sebagai challenge kepada diri sendiri dan mencoba beberapa hal yang belum pernah diterapkan di real project, seperti mengatur multirole login, serta penerapan `useDeferredValue` hook.
+
+Flow sistemnya:
+
+1. User login ke peminjaman-buku. Disini terdapat dua skema, yakni login sebagai guest atau sebagai admin.
+
+2. Setelah login, maka akan diarahkan ke page `/dashboard`.
+
+3. User memilih buku yang akan dipinjam. Buku-buku ini akan dimasukkan ke Wishlist.
+
+4. User menuju ke page `/pinjam-buku`, dimana Wishlistnya ada disini. Di page ini, user bisa membatalkan peminjaman buku yang ada di Wishlist, atau langsung meminjam bukunya.
+
+5. Jika user jadi meminjam buku, maka batas waktu pengembalian bukunya adalah 7 hari setelah peminjaman buku. Jadi misalnya user meminjam tanggal 1, maka batas waktu terakhir mengembalikannya adalah tanggal 8.
+
+6. Jika user yang mengembalikan buku setelah batas waktu yang berlaku, maka akan dikenakan denda berupa uang Rp.2.000/hari(bisa dirubah oleh admin).
+
+Hampir semua data disimpan ke local storage, kecuali untuk data user yang **meminjam buku**. Jadi, untuk setiap user yang **meminjam buku**, maka datanya akan disimpan ke Supabase, dan akan ditampilkan ke sebuah table yang berada di page `/list-users`, dimana hanya admin yang bisa mengakses page ini. Admin juga bisa mendownload file CSV dari list-users nya.
+
+Untuk langkah-langkah setupnya, saya sudah jabarkan di repo Github.
+
+## Fitur
+
+- Multirole auth login guest and admin (with github, google, or credentials).
+- CRUD operations.
+- Search the books that user want.
+- Save the user data who lend a/the book to Supabase and display it into a table in `/list-users` page(only admin who can access this page).
+- Show the user profile.
+- Export the users list to CSV format and only admin who can download it.
+- Books recommendation
+
+## Screenshots
+
+<LightboxImage
+  src="https://ik.imagekit.io/haikelz/works/peminjaman-buku/ss-1.png?updatedAt=1696539078657"
+  alt="ss-1"
+/>
+
+<LightboxImage
+  src="https://ik.imagekit.io/haikelz/works/peminjaman-buku/ss-2.png?updatedAt=1696539078525"
+  alt="ss-2"
+/>
+
+<LightboxImage
+  src="https://ik.imagekit.io/haikelz/works/peminjaman-buku/ss-3.png?updatedAt=1696539078359"
+  alt="ss-3"
+/>
+
+<LightboxImage
+  src="https://ik.imagekit.io/haikelz/works/peminjaman-buku/ss-4.png?updatedAt=1696539078462"
+  alt="ss-4"
+/>
+
+<LightboxImage
+  src="https://ik.imagekit.io/haikelz/works/peminjaman-buku/ss-5.png?updatedAt=1696539078431"
+  alt="ss-5"
+/>
+
+<LightboxImage
+  src="https://ik.imagekit.io/haikelz/works/peminjaman-buku/ss-6.png?updatedAt=1696539078289"
+  alt="ss-6"
+/>
+
+<LightboxImage
+  src="https://ik.imagekit.io/haikelz/works/peminjaman-buku/ss-7.png?updatedAt=1696539078458"
+  alt="ss-7"
+/>
+
+<LightboxImage
+  src="https://ik.imagekit.io/haikelz/works/peminjaman-buku/ss-8.png?updatedAt=1696539078529"
+  alt="ss-8"
+/>
+
+## Tech Stack
+
+- Next JS
+- Typescript
+- Tailwind CSS with [Tail Admin Next JS Version](https://github.com/TailAdmin/free-nextjs-admin-dashboard)
+- Jotai
+- Supabase

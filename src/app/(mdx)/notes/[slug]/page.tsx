@@ -91,7 +91,7 @@ export default async function NotePage({ params }: { params: { slug: string } })
               <Paragraph
                 className={tw(
                   "text-base font-semibold tracking-[0.050em]",
-                  "md:text-lg",
+                  "",
                   ibmPlexSans.className
                 )}
               >
@@ -100,13 +100,8 @@ export default async function NotePage({ params }: { params: { slug: string } })
               </Paragraph>
             </div>
           </section>
-          <article
-            className={tw(
-              "prose prose-gray mt-6 w-full max-w-full md:text-lg",
-              "dark:prose-invert"
-            )}
-          >
-            <p className={tw("text-right text-2xl font-bold", naskhArabic.className)}>
+          <article className={tw("prose prose-gray mt-6 w-full max-w-full", "dark:prose-invert")}>
+            <p className={tw("text-right text-xl font-bold", naskhArabic.className)}>
               بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
             </p>
             <Content components={{ Video, LightboxImage }} />
