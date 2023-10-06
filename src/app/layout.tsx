@@ -52,7 +52,7 @@ export default function RootLayout({ children }: ChildrenProps) {
           <div
             className={tw(
               "min-h-screen w-full",
-              "bg-azure flex text-base-0",
+              "bg-azure flex flex-col-reverse md:flex-row text-base-0",
               "dark:bg-black dark:text-gray-100"
             )}
           >

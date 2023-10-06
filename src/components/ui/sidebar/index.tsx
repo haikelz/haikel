@@ -18,7 +18,7 @@ export default function Sidebar() {
         "dark:bg-base-1 drop-shadow-md md:px-2 md:py-4 px-4 py-2 items-center justify-between"
       )}
     >
-      <div className="bg-base-0 dark:bg-white">
+      <div className="bg-base-0 dark:bg-gray-100">
         <Link
           className={tw(
             "cursor-pointer border-none text-2xl font-bold text-white dark:text-base-0",

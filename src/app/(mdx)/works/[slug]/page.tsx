@@ -3,7 +3,6 @@ import { Metadata } from "next";
 import { getMDXComponent } from "next-contentlayer/hooks";
 import dynamic from "next/dynamic";
 import Main from "~components/main";
-import ReadingProgress from "~components/reading-progress";
 import { tw } from "~lib/helpers";
 import { ABSOLUTE_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { ibmPlexSans, naskhArabic } from "~lib/utils/fonts";
@@ -65,15 +64,16 @@ export default async function DetailWorkPage({ params }: { params: { slug: strin
   const Content = getMDXComponent(body.code);
 
   return (
-    <Main
-      className={tw(
-        "dark:bg-grid-dark bg-grid-light flex min-h-screen  flex-col items-center justify-start bg-center"
-      )}
-    >
-      <ReadingProgress />
-      <article className={tw("flex w-full flex-col flex-wrap justify-center py-8", "md:mb-3")}>
+    <Main className={tw("flex min-h-screen flex-col items-center justify-start bg-center")}>
+      <article
+        className={tw("flex w-full flex-col flex-wrap justify-center py-8 mb-12", "md:mb-3")}
+      >
         <section className="flex flex-col">
-          <Heading as="h1" className="gradient dark:gradient-dark">
+          <Heading
+            as="h1"
+            bg-gradient="to-r dark:from-blue-500 dark:to-[#80D0C7] from-pink-500 to-blue-500"
+            className="bg-clip-text text-transparent"
+          >
             {title}
           </Heading>
           <div className="my-3 flex items-center">

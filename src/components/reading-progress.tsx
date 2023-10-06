@@ -9,7 +9,7 @@ export default function ReadingProgress() {
   return (
     <div
       style={{ width: width + "%" }}
-      className={tw("fixed z-10 h-0.5 bg-rose-400", "dark:bg-blue-500")}
+      className={tw("fixed z-50 h-0.5 bg-rose-400", "dark:bg-blue-500")}
     ></div>
   );
 }

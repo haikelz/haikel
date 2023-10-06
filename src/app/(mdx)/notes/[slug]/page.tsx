@@ -14,7 +14,6 @@ import { Heading, Paragraph } from "~ui/typography";
 const Video = dynamic(() => import("~components/video"));
 const Comments = dynamic(() => import("~components/comments"));
 const ReadingTime = dynamic(() => import("~components/reading-time"));
-const ReadingProgress = dynamic(() => import("~components/reading-progress"));
 const LightboxImage = dynamic(() => import("~ui/images/lightbox-image"));
 
 export const revalidate = 60;
@@ -76,24 +75,21 @@ export default async function NotePage({ params }: { params: { slug: string } })
   return (
     <>
       <NoteViews slug={slug} />
-      <Main
-        className={tw(
-          "dark:bg-grid-dark bg-grid-light flex min-h-screen flex-col items-center justify-start bg-center"
-        )}
-      >
-        <ReadingProgress />
-        <article className={tw("flex w-full flex-col flex-wrap justify-center py-8", "md:mb-3")}>
+      <Main className={tw("flex min-h-screen flex-col items-center justify-start bg-center")}>
+        <article
+          className={tw("flex w-full flex-col flex-wrap justify-center py-8 mb-12", "md:mb-3")}
+        >
           <section className="flex flex-col">
-            <Heading as="h1" className="gradient dark:gradient-dark">
+            <Heading
+              as="h1"
+              bg-gradient="to-r dark:from-blue-500 dark:to-[#80D0C7] from-pink-500 to-blue-500"
+              className="bg-clip-text text-transparent"
+            >
               {title}
             </Heading>
             <div className="my-3 flex items-center">
               <Paragraph
-                className={tw(
-                  "text-base font-semibold tracking-[0.050em]",
-                  "",
-                  ibmPlexSans.className
-                )}
+                className={tw("text-base font-semibold tracking-[0.050em]", ibmPlexSans.className)}
               >
                 {format(new Date(date) ?? new Date(), "LLLL d, yyyy")} /{" "}
                 <ReadingTime content={body.raw} /> / {views} views
