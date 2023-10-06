@@ -42,7 +42,8 @@ export default async function HomePage() {
               Someone who interested in Frontend stuff. Familiar with Javascript/Typescript, React
               Ecosystem, and Linux(for daily use). Try to follow best practices as much as i can. I
               can work in a team or solo. In my spare time, i crafted something, go out to take some
-              photos, learn new things, or just improve my English.
+              photos, learn new things, or just improve my English. Look at some of my works and
+              notes below.
             </Paragraph>
             <ul className="flex items-center justify-center space-x-4">
               {socialMediaList.map((item) => {

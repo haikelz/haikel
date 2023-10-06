@@ -78,7 +78,7 @@
     "eslint-plugin-react": "7.28.0",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
-    "prettier": "^2.8.8",
+    "prettier": "^3.0.3",
     "rehype-shikiji": "^0.6.1",
     "typescript": "5.2.2",
     "unocss": "^0.56.1"

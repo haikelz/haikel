@@ -1,9 +1,9 @@
 import "@unocss/reset/tailwind.css";
-import Sidebar from "~components/ui/sidebar";
 import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { ibmPlexMono, ibmPlexSans, ibmPlexSerif } from "~lib/utils/fonts";
 import type { ChildrenProps } from "~types";
+import Sidebar from "~ui/sidebar";
 
 import "./globals.css";
 import Wrapper from "./wrapper";

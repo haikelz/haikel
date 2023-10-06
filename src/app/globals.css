@@ -4,6 +4,19 @@
 body {
   @apply m-0 h-[50vh];
   font-family: var(--font-ibm-serif);
+  scrollbar-width: thin;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  @apply bg-red dark:bg-blue-600;
+}
+
+body::-webkit-scrollbar-track {
+  @apply bg-gray-300 dark:bg-base-2;
 }
 
 h1,

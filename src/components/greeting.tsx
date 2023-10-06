@@ -13,6 +13,7 @@ export default function Greeting() {
           preRenderFirstString={true}
           sequence={["Frontend Web Developer", 2000, "Hobbyist Photographer", 2000]}
           wrapper="span"
+          speed={50}
           cursor={true}
           repeat={Infinity}
           className={tw(
