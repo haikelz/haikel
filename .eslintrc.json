@@ -2,7 +2,6 @@
   "extends": [
     "next",
     "next/core-web-vitals",
-    "turbo",
     "prettier",
     "plugin:jsx-a11y/recommended"
   ],
