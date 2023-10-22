@@ -26,7 +26,7 @@ export function SearchInput({ search, setSearch }: SearchInputProps) {
         name="search"
         placeholder="Search Here...."
         value={search}
-        onChange={(e) => setSearch(e.target.value)}
+        onChange={(e) => setSearch(e.currentTarget.value)}
       />
     </div>
   );
