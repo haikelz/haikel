@@ -1,5 +1,5 @@
 import { SearchIcon } from "lucide-react";
-import { Dispatch, SetStateAction } from "react";
+import { ChangeEvent, Dispatch, SetStateAction } from "react";
 import { tw } from "~lib/helpers";
 
 type SearchInputProps = {
@@ -26,7 +26,7 @@ export function SearchInput({ search, setSearch }: SearchInputProps) {
         name="search"
         placeholder="Search Here...."
         value={search}
-        onChange={(e) => setSearch(e.currentTarget.value)}
+        onChange={(e: ChangeEvent<HTMLInputElement>) => setSearch(e.currentTarget.value)}
       />
     </div>
   );
