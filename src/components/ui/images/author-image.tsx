@@ -11,8 +11,8 @@ import { tw } from "~lib/helpers";
 export default function AuthorImage() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const src = "https://avatars.githubusercontent.com/u/77146709?v=4";
-  const alt = "Haikel's Profile";
+  const src: string = "https://avatars.githubusercontent.com/u/77146709?v=4";
+  const alt: string = "Haikel's Profile";
 
   return (
     <>

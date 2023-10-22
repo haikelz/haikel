@@ -1,9 +1,8 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { IconBrandGithub, IconPencil, IconTrash } from "@tabler/icons-react";
 import { format } from "date-fns/esm";
-import { atom, useAtom } from "jotai";
+import { atom, useAtom, useSetAtom } from "jotai";
 import { Session } from "next-auth";
 import { signIn, signOut } from "next-auth/react";
 import { useForm } from "react-hook-form";
@@ -14,6 +13,7 @@ import { trpc } from "~lib/utils/trpc/client";
 import { GoogleIcon } from "~ui/svgs";
 import { Paragraph } from "~ui/typography";
 
+import { GithubIcon, PencilIcon, TrashIcon } from "lucide-react";
 import ErrorClient from "./error-client";
 import LoadingClient from "./loading-client";
 
@@ -32,10 +32,15 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
     handleSubmit,
   } = useForm({ defaultValues: { message: "" }, resolver: zodResolver(messageSchema) });
 
+  // post
   const postMutation = trpc.post.useMutation({ mutationKey: ["post-message"] });
+
+  // delete
   const deleteMutation = trpc.delete.useMutation({
     mutationKey: ["delete-message"],
   });
+
+  // update
   const updateMutation = trpc.patch.useMutation({
     mutationKey: ["update-message"],
   });
@@ -55,8 +60,8 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
     } else {
       postMutation.mutate({
         message: getValues("message"),
-        username: session?.user?.name as string,
-        email: session?.user?.email as string,
+        username: session?.user.name as string,
+        email: session?.user.email as string,
       });
     }
 
@@ -76,6 +81,8 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
 
   if (isLoading) return <LoadingClient />;
   if (isError) return <ErrorClient />;
+
+  const guestbook = data;
 
   return (
     <>
@@ -111,9 +118,9 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
           </form>
         </div>
       )}
-      {data?.length ? (
+      {guestbook?.length ? (
         <section className="mb-10 flex w-full flex-col space-y-8">
-          {data.map((guest) => (
+          {guestbook?.map((guest) => (
             <div data-cy="guest-item" key={guest.id} className="h-full">
               <div className={session ? "flex space-x-3 justify-start items-center" : ""}>
                 <span
@@ -135,9 +142,9 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
                         "dark:bg-base-1 bg-base-5",
                         "hover:bg-gray-200 dark:hover:bg-base-2 p-1 rounded-md"
                       )}
-                      onClick={() => handleDelete(guest.id)}
+                      onClick={() => handleDelete(Number(guest.id))}
                     >
-                      <IconTrash />
+                    <TrashIcon/>
                     </button>
                     <button
                       type="button"
@@ -146,9 +153,9 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
                         "dark:bg-base-1 bg-base-5",
                         "hover:bg-gray-200 dark:hover:bg-base-2 p-1 rounded-md"
                       )}
-                      onClick={() => handleEdit(guest.id, guest.message as string)}
+                      onClick={() => handleEdit(Number(guest.id), guest.message as string)}
                     >
-                      <IconPencil />
+                     <PencilIcon/> 
                     </button>
                   </>
                 ) : null}
@@ -201,8 +208,8 @@ function SignInWithGithub() {
       )}
       onClick={() => signIn("github")}
     >
-      <IconBrandGithub size={22} />
-      <span className="text-base ">Github</span>
+    <GithubIcon /> 
+      <span className="text-base">Github</span>
     </button>
   );
 }
@@ -222,4 +229,26 @@ export function SignOut() {
       here
     </button>
   );
+}
+
+const confirmDeleteAtom = atom<boolean>(false);
+const cancelModalAtom = atom<boolean>(false);
+
+export function ConfirmDeleteModal ( ) {
+  const [cancelModal, setCancelModal] = useAtom(cancelModalAtom);
+  
+  const setConfirmDelete= useSetAtom(confirmDeleteAtom); 
+
+  return (
+    <>
+      {cancelModal ? 
+        <div className="fixed z-50 inset-0 bg-black/70">
+          <div>
+            <button onClick={()=>setCancelModal(true)}>Cancel</button>
+            <button onClick={()=>setConfirmDelete(true)}>Delete</button>
+          </div>
+        </div>
+      :null}
+    </>
+  )
 }

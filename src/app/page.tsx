@@ -1,32 +1,68 @@
-import {
-  IconBrandFacebook,
-  IconBrandGithub,
-  IconBrandInstagram,
-  IconBrandLinkedin,
-  IconMail,
-  IconRss,
-} from "@tabler/icons-react";
 import { Notes, Works } from "contentlayer/generated";
+import {
+  FacebookIcon,
+  GithubIcon,
+  InstagramIcon,
+  LinkedinIcon,
+  LucideIcon,
+  MailIcon,
+  RssIcon,
+} from "lucide-react";
+import { Metadata } from "next";
 import Link from "next/link";
 import Greeting from "~components/greeting";
 import Main from "~components/main";
 import { tw } from "~lib/helpers";
 import { sortedAllNotes, sortedAllWorks } from "~lib/services";
+import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { NotesList, WorksList } from "~ui/lists";
 import { Heading, Paragraph, Underline, UnderlineLink } from "~ui/typography";
 
 const socialMediaList = [
-  { id: 1, icon: IconMail, route: "mailto:halo@haikel.app" },
-  { id: 2, icon: IconRss, route: "https://haikel.app/rss.xml" },
-  { id: 3, icon: IconBrandFacebook, route: "https://facebook.com/kelgfx" },
-  { id: 4, icon: IconBrandInstagram, route: "https://instagram.com/ekel.tsx" },
-  { id: 5, icon: IconBrandGithub, route: "https://github.com/haikelz" },
+  { id: 1, icon: MailIcon, route: "mailto:halo@haikel.app" },
+  { id: 2, icon: RssIcon, route: "https://haikel.app/rss.xml" },
+  { id: 3, icon: FacebookIcon, route: "https://facebook.com/kelgfx" },
+  { id: 4, icon: InstagramIcon, route: "https://instagram.com/ekel.tsx" },
+  { id: 5, icon: GithubIcon, route: "https://github.com/haikelz" },
   {
     id: 6,
-    icon: IconBrandLinkedin,
+    icon: LinkedinIcon,
     route: "https://www.linkedin.com/in/haikel",
   },
 ];
+
+const baseMetadata = {
+  title: "Haikel Ilham Hakim",
+  description: "Frontend Web Developer",
+  url: SITE_URL,
+};
+
+const { title, description, url } = baseMetadata;
+
+export const metadata: Metadata = {
+  title,
+  description,
+  openGraph: {
+    type: "website",
+    url,
+    title,
+    description,
+    images: [
+      {
+        url: DEFAULT_OG_URL,
+        alt: "OG Image",
+      },
+    ],
+    siteName: "haikel.app",
+  },
+  twitter: {
+    title,
+    description,
+    site: url,
+    card: "summary_large_image",
+  },
+  metadataBase: new URL(url),
+};
 
 export default async function HomePage() {
   const notes: Notes[] = sortedAllNotes.slice(0, 4);
@@ -39,15 +75,15 @@ export default async function HomePage() {
           <div className={tw("flex flex-col items-start justify-start", "md:mt-0 md:text-start")}>
             <Greeting />
             <Paragraph id="description" className="my-4">
-              Someone who interested in Frontend stuff. Familiar with Javascript/Typescript, React
-              Ecosystem, and Linux(for daily use). Try to follow best practices as much as i can. I
-              can work in a team or solo. In my spare time, i crafted something, go out to take some
-              photos, learn new things, or just improve my English. Look at some of my works and
-              notes below.
+              Someone who interested in Frontend stuff, with mainly focuses on building responsive,
+              interactive, maintainable, and accessible Websites. Familiar with
+              Javascript/Typescript, React Ecosystem, and Linux(for daily use). Always try to follow
+              best practices as much as i can. I can work in a team or solo. I love clean and
+              minimal design. Look at some of my works and notes below.
             </Paragraph>
             <ul className="flex items-center justify-center space-x-4">
               {socialMediaList.map((item) => {
-                const Icon = item.icon;
+                const Icon: LucideIcon = item.icon;
                 return (
                   <li className="transition-all hover:-translate-y-0.5" key={item.id}>
                     <Link href={item.route} target="_blank">
@@ -62,7 +98,7 @@ export default async function HomePage() {
                         )}
                         aria-label={`Icon ${item.id.toString()}`}
                       >
-                        <Icon size={22} />
+                        <Icon size={20} />
                       </button>
                     </Link>
                   </li>

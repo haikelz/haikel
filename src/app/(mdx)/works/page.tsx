@@ -1,4 +1,5 @@
 import { Works, allWorks } from "contentlayer/generated";
+import { Metadata } from "next";
 import Main from "~components/main";
 import { tw } from "~lib/helpers";
 import { sortedAllWorks } from "~lib/services";
@@ -14,7 +15,7 @@ const baseMetadata = {
 
 const { title, description, url } = baseMetadata;
 
-export const metadata = {
+export const metadata: Metadata = {
   title,
   description,
   openGraph: {

@@ -1,15 +1,15 @@
 "use client";
 
-import { IconAddressBook, IconListDetails, IconNotes, IconTags } from "@tabler/icons-react";
+import { BookMarkedIcon, ListIcon, LucideIcon, ScrollTextIcon, TagsIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { tw } from "~lib/helpers";
 
 const topNavList = [
-  { id: 1, route: "/works", icon: IconListDetails },
-  { id: 2, route: "/notes", icon: IconNotes },
-  { id: 3, route: "/tags", icon: IconTags },
-  { id: 4, route: "/guestbook", icon: IconAddressBook },
+  { id: 1, route: "/works", icon: ListIcon },
+  { id: 2, route: "/notes", icon: ScrollTextIcon },
+  { id: 3, route: "/tags", icon: TagsIcon },
+  { id: 4, route: "/guestbook", icon: BookMarkedIcon },
 ];
 
 export function Navigationlink() {
@@ -18,7 +18,7 @@ export function Navigationlink() {
   return (
     <>
       {topNavList.map((item) => {
-        const Icon = item.icon;
+        const Icon: LucideIcon = item.icon;
         return (
           <Link key={item.id} href={item.route}>
             <button
@@ -29,7 +29,7 @@ export function Navigationlink() {
                 pathname.includes(item.route) ? "bg-gray-200 dark:bg-base-2" : ""
               )}
             >
-              <Icon size={23} />
+              <Icon size={22} />
             </button>
           </Link>
         );

@@ -1,4 +1,5 @@
 import "@unocss/reset/tailwind.css";
+import { Metadata } from "next";
 import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { ibmPlexMono, ibmPlexSans, ibmPlexSerif } from "~lib/utils/fonts";
@@ -16,7 +17,7 @@ const baseMetadata = {
 
 const { title, description, url } = baseMetadata;
 
-export const metadata = {
+export const metadata: Metadata = {
   title,
   description,
   openGraph: {

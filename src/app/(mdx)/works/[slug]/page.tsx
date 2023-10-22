@@ -17,11 +17,9 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return allWorks.map((item) => ({ slug: item.slug.replace("works/", "") }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata | undefined> {
+export async function generateMetadata(
+  { params }: { params: { slug: string } }
+): Promise<Metadata | undefined> {
   const { slug } = params;
   const { title, description, author } = allWorks.find(
     (item) => item._raw.flattenedPath.replace("works/", "") === slug

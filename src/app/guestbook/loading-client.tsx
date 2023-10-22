@@ -2,7 +2,7 @@ import Main from "~components/main";
 import { tw } from "~lib/helpers";
 
 export default function LoadingClient() {
-  const array = [1, 2, 3, 4, 5];
+  const array: Array<number> = [1, 2, 3, 4, 5];
 
   return (
     <Main className={tw("flex flex-col items-start justify-start", "py-8")}>

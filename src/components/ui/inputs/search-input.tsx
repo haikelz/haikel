@@ -1,4 +1,4 @@
-import { IconSearch } from "@tabler/icons-react";
+import { SearchIcon } from "lucide-react";
 import { SetStateAction } from "react";
 import { tw } from "~lib/helpers";
 
@@ -11,7 +11,7 @@ export function SearchInput({ search, setSearch }: SearchInputProps) {
   return (
     <div className="relative my-6 w-full">
       <div className="absolute inset-y-0 left-0 flex items-center pl-3">
-        <IconSearch size={20} />
+        <SearchIcon size={20} />
       </div>
       <input
         className={tw(

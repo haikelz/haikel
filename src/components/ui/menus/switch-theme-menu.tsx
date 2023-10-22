@@ -1,7 +1,7 @@
 "use client";
 
 import { DropdownMenuItem } from "@radix-ui/react-dropdown-menu";
-import { IconDeviceDesktop, IconMoon, IconSunHigh } from "@tabler/icons-react";
+import { Monitor, MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { tw } from "~lib/helpers";
 import { ibmPlexSans } from "~lib/utils/fonts";
@@ -12,17 +12,17 @@ const themeOptionsList = [
   {
     id: 1,
     name: "Dark",
-    icon: IconMoon,
+    icon: MoonIcon,
   },
   {
     id: 2,
     name: "Light",
-    icon: IconSunHigh,
+    icon: SunIcon,
   },
   {
     id: 3,
     name: "System Theme",
-    icon: IconDeviceDesktop,
+    icon: Monitor,
   },
 ];
 
@@ -43,7 +43,7 @@ export default function SwitchThemeMenu() {
           type="button"
           aria-label="switch theme"
         >
-          {theme === "dark" ? <IconSunHigh size={22} /> : <IconMoon size={22} />}
+          {theme === "dark" ? <SunIcon /> : <MoonIcon />}
         </button>
       }
       list={themeOptionsList.map((item) => {

@@ -22,11 +22,9 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return allNotes.map((item) => ({ slug: item.slug.replace("notes/", "") }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata | undefined> {
+export async function generateMetadata(
+  { params }: { params: { slug: string } }
+): Promise<Metadata | undefined> {
   const { slug } = params;
   const { title, description, date, author } = allNotes.find(
     (item) => item._raw.flattenedPath.replace("notes/", "") === slug

@@ -1,4 +1,5 @@
 import { allNotes } from "contentlayer/generated";
+import { Metadata } from "next";
 import { useMemo } from "react";
 import Main from "~components/main";
 import { tw } from "~lib/helpers";
@@ -14,7 +15,7 @@ const baseMetadata = {
 
 const { title, description, url } = baseMetadata;
 
-export const metadata = {
+export const metadata: Metadata = {
   title,
   description,
   openGraph: {
