@@ -1,10 +1,13 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useQueryClient } from "@tanstack/react-query";
 import { format } from "date-fns/esm";
 import { atom, useAtom, useSetAtom } from "jotai";
+import { GithubIcon, PencilIcon, TrashIcon } from "lucide-react";
 import { Session } from "next-auth";
 import { signIn, signOut } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { tw } from "~lib/helpers";
 import { ibmPlexSans } from "~lib/utils/fonts";
@@ -13,7 +16,6 @@ import { trpc } from "~lib/utils/trpc/client";
 import { GoogleIcon } from "~ui/svgs";
 import { Paragraph } from "~ui/typography";
 
-import { GithubIcon, PencilIcon, TrashIcon } from "lucide-react";
 import ErrorClient from "./error-client";
 import LoadingClient from "./loading-client";
 
@@ -24,6 +26,10 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
   const [id, setId] = useAtom(idAtom);
   const [isEdited, setIsEdited] = useAtom(isEditedAtom);
 
+  const router = useRouter();
+
+  const queryClient = useQueryClient();
+
   const {
     getValues,
     setValue,
@@ -33,16 +39,21 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
   } = useForm({ defaultValues: { message: "" }, resolver: zodResolver(messageSchema) });
 
   // post
-  const postMutation = trpc.post.useMutation({ mutationKey: ["post-message"] });
+  const postMutation = trpc.post.useMutation({
+    mutationKey: ["post-message"],
+    onSuccess: () => queryClient.invalidateQueries(),
+  });
 
   // delete
   const deleteMutation = trpc.delete.useMutation({
-    mutationKey: ["delete-message"],
+    mutationKey: [id],
+    onSuccess: () => queryClient.invalidateQueries(),
   });
 
   // update
   const updateMutation = trpc.patch.useMutation({
-    mutationKey: ["update-message"],
+    mutationKey: [id],
+    onSuccess: () => queryClient.invalidateQueries(),
   });
 
   const { data, isLoading, isError } = trpc.get.useQuery(
@@ -65,12 +76,13 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
       });
     }
 
-    window.location.reload();
+    setValue("message", "");
+    router.refresh();
   }
 
   function handleDelete(id: number) {
     deleteMutation.mutate({ id: id });
-    window.location.reload();
+    router.refresh();
   }
 
   function handleEdit(id: number, message: string) {
@@ -120,7 +132,7 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
       )}
       {guestbook?.length ? (
         <section className="mb-10 flex w-full flex-col space-y-8">
-          {guestbook?.map((guest) => (
+          {guestbook.map((guest) => (
             <div data-cy="guest-item" key={guest.id} className="h-full">
               <div className={session ? "flex space-x-3 justify-start items-center" : ""}>
                 <span
@@ -132,8 +144,8 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
                 >
                   {guest.message}
                 </span>
-                {(session && guest.email === session?.user?.email) ||
-                session?.user?.role === "admin" ? (
+                {(session && guest.email === session?.user.email) ||
+                session?.user.role === "admin" ? (
                   <>
                     <button
                       type="button"
@@ -144,7 +156,7 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
                       )}
                       onClick={() => handleDelete(Number(guest.id))}
                     >
-                    <TrashIcon/>
+                      <TrashIcon size={22} />
                     </button>
                     <button
                       type="button"
@@ -155,7 +167,7 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
                       )}
                       onClick={() => handleEdit(Number(guest.id), guest.message as string)}
                     >
-                     <PencilIcon/> 
+                      <PencilIcon size={22} />
                     </button>
                   </>
                 ) : null}
@@ -208,7 +220,7 @@ function SignInWithGithub() {
       )}
       onClick={() => signIn("github")}
     >
-    <GithubIcon /> 
+      <GithubIcon />
       <span className="text-base">Github</span>
     </button>
   );
@@ -234,21 +246,21 @@ export function SignOut() {
 const confirmDeleteAtom = atom<boolean>(false);
 const cancelModalAtom = atom<boolean>(false);
 
-export function ConfirmDeleteModal ( ) {
+export function ConfirmDeleteModal() {
   const [cancelModal, setCancelModal] = useAtom(cancelModalAtom);
-  
-  const setConfirmDelete= useSetAtom(confirmDeleteAtom); 
+
+  const setConfirmDelete = useSetAtom(confirmDeleteAtom);
 
   return (
     <>
-      {cancelModal ? 
+      {cancelModal ? (
         <div className="fixed z-50 inset-0 bg-black/70">
           <div>
-            <button onClick={()=>setCancelModal(true)}>Cancel</button>
-            <button onClick={()=>setConfirmDelete(true)}>Delete</button>
+            <button onClick={() => setCancelModal(true)}>Cancel</button>
+            <button onClick={() => setConfirmDelete(true)}>Delete</button>
           </div>
         </div>
-      :null}
+      ) : null}
     </>
-  )
+  );
 }

@@ -1,9 +1,4 @@
 .git
-.next
-.turbo
-node_modules
 .github
 .husky
 cypress
-drizzle 
-.contentlayer
