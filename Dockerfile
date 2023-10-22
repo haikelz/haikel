@@ -11,6 +11,6 @@ RUN pnpm install
 COPY . ./
 RUN turbo run build
 
-# run dev
+# Run dev
 COPY .next ./.next
 CMD ["turbo", "run", "dev"]
