@@ -1,10 +1,10 @@
 import { SearchIcon } from "lucide-react";
-import { SetStateAction } from "react";
+import { Dispatch, SetStateAction } from "react";
 import { tw } from "~lib/helpers";
 
 type SearchInputProps = {
   search: string;
-  setSearch: (update: SetStateAction<string>) => void;
+  setSearch: Dispatch<SetStateAction<string>>;
 };
 
 export function SearchInput({ search, setSearch }: SearchInputProps) {
