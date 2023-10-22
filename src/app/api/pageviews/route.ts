@@ -10,7 +10,7 @@ async function handler(req: NextRequest): Promise<NextResponse> {
     return new NextResponse("must be json", { status: 400 });
   }
 
-  const body = await req.json();
+  const body: any = await req.json();
 
   let slug: string | undefined = undefined;
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useQueryClient } from "@tanstack/react-query";
+import { QueryClient, useQueryClient } from "@tanstack/react-query";
 import { format } from "date-fns/esm";
 import { atom, useAtom, useSetAtom } from "jotai";
 import { GithubIcon, PencilIcon, TrashIcon } from "lucide-react";
@@ -26,9 +26,10 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
   const [id, setId] = useAtom(idAtom);
   const [isEdited, setIsEdited] = useAtom(isEditedAtom);
 
+  const queryClient: QueryClient = useQueryClient();
+
   const router = useRouter();
 
-  const queryClient = useQueryClient();
 
   const {
     getValues,
