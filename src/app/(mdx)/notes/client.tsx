@@ -55,7 +55,7 @@ export default function NotesClient({ notes }: { notes: Notes[] }) {
           name="search"
           placeholder="Search Here...."
           value={search}
-          onChange={(e) => setSearch((e!.currentTarget as HTMLInputElement).value)}
+          onChange={(e) => setSearch(e.target.value)}
         />
       </div>
       {filteredNotes.length ? (
