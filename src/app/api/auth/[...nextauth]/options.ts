@@ -1,5 +1,4 @@
-import type { NextAuthOptions } from "next-auth";
-import { Awaitable, User } from "next-auth/core/types";
+import type { Awaitable, NextAuthOptions, User } from "next-auth";
 import GithubProvider, { GithubProfile } from "next-auth/providers/github";
 import GoogleProvider, { GoogleProfile } from "next-auth/providers/google";
 import { env } from "~env.mjs";
