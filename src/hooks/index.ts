@@ -1,1 +1,1 @@
-export { useWidth } from "./use-width";
+export { useClickOutside } from "./use-click-outside";

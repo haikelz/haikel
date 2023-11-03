@@ -1,5 +1,6 @@
 import "@unocss/reset/tailwind.css";
 import { Metadata } from "next";
+import BackToTop from "~components/back-to-top";
 import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { ibmPlexMono, ibmPlexSans, ibmPlexSerif } from "~lib/utils/fonts";

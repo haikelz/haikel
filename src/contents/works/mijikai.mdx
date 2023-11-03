@@ -7,6 +7,9 @@ stack:
   - typescript
   - tailwind
   - jotai
+  - trpc
+  - react-query
+  - nestjs
   - supabase
 description: Mijikai is a free shorten URL Website, without ads and tracker.
 preview: https://mijikai.space
@@ -22,13 +25,15 @@ repo: https://github.com/haikelz/mijikai
 
 Mijikai adalah sebuah layanan untuk memperpendek URL, tanpa iklan dan tanpa tracker(pelacak).
 
-Awal dapat ide ini karena melihat salah satu projectnya mas Irfan Maulana, yaitu [**ksana.in**](https://github.com/mazipan/ksana.in) . Saya penasaran gimana sih logic dalam memperpendek URL yang diberikan. Setelah beberapa penelusuran, akhirnya saya buat Website ini untuk implementasi logicnya, serta saya tambahkan beberapa fitur lain seperti generate Qr Code, mengumpulkan link yang sudah dibuat user dalam 1 table, dan hapus link.
+Awal dapat ide ini karena melihat salah satu projectnya mas Irfan Maulana, yaitu [**ksana.in**](https://github.com/mazipan/ksana.in) . Saya penasaran gimana sih logic dalam memperpendek URL yang diberikan. Setelah beberapa penelusuran, akhirnya saya buat Website ini untuk implementasi logicnya, serta saya tambahkan beberapa fitur lain seperti generate Qr Code, mengumpulkan link yang sudah dibuat user dalam 1 table, hapus link serta edit slug.
 
 Under the hood, saya memanfaatkan `Supabase` sebagai BaaS(Backend as a Service), `nanoid` untuk menggenerate random string yang akan digunakan sebagai URL yang diperpendek, juga memanfaatkan fitur `middleware` nya Next JS untuk mengeksekusi kode terlebih dahulu sebelum request selesai.
 
 ## Fitur
 
 - Shorten long URL
+- Custom slug
+- Edit slug
 - Convert shortened URL to QR Code
 - Show users link list
 - PWA
@@ -72,8 +77,16 @@ Under the hood, saya memanfaatkan `Supabase` sebagai BaaS(Backend as a Service),
 
 ## Tech Stack
 
+For Frontend side:
+
 - Next JS 13
 - Tailwind CSS with shadcn/ui
 - React Query
+- tRPC
 - Jotai
+
+For Backend side:
+
+- Nest JS
+- Nestia
 - Supabase

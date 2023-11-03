@@ -11,7 +11,7 @@ export default function Greeting() {
       <div className="mt-0.5 md:mt-0">
         <TypeAnimation
           preRenderFirstString={true}
-          sequence={["Frontend Web Developer", 2000, "Hobbyist Photographer", 2000]}
+          sequence={["Frontend Web Developer", 2000, "Photographer", 2000]}
           wrapper="span"
           speed={50}
           cursor={true}

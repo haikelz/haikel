@@ -12,4 +12,4 @@ async function handler(req: Request): Promise<Response> {
   return response;
 }
 
-export { handler as GET, handler as POST };
+export { handler as DELETE, handler as GET, handler as POST };

@@ -7,6 +7,8 @@ import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { TagsList } from "~ui/lists";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
+import TagsClient from "./client";
+
 const baseMetadata = {
   title: "Tags",
   description: "Select spesific notes based on the list of tags below.",
@@ -74,8 +76,8 @@ export default function Tags() {
           </Paragraph>
         </div>
       </section>
-      <section className="mt-6 flex flex-wrap gap-3">
-        <TagsList tagsList={tagsList} />
+      <section className="mt-6">
+        <TagsClient tagsList={tagsList} />
       </section>
     </Main>
   );

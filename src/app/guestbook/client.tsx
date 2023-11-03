@@ -30,7 +30,6 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
 
   const router = useRouter();
 
-
   const {
     getValues,
     setValue,
@@ -42,19 +41,19 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
   // post
   const postMutation = trpc.post.useMutation({
     mutationKey: ["post-message"],
-    onSuccess: () => queryClient.invalidateQueries(),
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['post-meesage'], exact: true }),
   });
 
   // delete
   const deleteMutation = trpc.delete.useMutation({
     mutationKey: [id],
-    onSuccess: () => queryClient.invalidateQueries(),
+    onSuccess: () => queryClient.removeQueries({ queryKey: [id], exact: true }),
   });
 
   // update
   const updateMutation = trpc.patch.useMutation({
     mutationKey: [id],
-    onSuccess: () => queryClient.invalidateQueries(),
+    onSuccess: () => queryClient.refetchQueries({ queryKey: [id], exact:true }),
   });
 
   const { data, isLoading, isError } = trpc.get.useQuery(

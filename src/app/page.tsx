@@ -77,9 +77,10 @@ export default async function HomePage() {
             <Paragraph id="description" className="my-4">
               Someone who interested in Frontend stuff, with mainly focuses on building responsive,
               interactive, maintainable, and accessible Websites. Familiar with
-              Javascript/Typescript, React Ecosystem, and Linux(for daily use). Always try to follow
-              best practices as much as i can. I can work in a team or solo. I love clean and
-              minimal design. Look at some of my works and notes below.
+              Javascript/Typescript, React Ecosystem, Linux(for daily use) and sometimes i do
+              backend things with Nest JS. Always try to follow best practices as much as i can. I
+              can work in a team or solo. I love clean and minimal design. Look at some of my works
+              and notes below.
             </Paragraph>
             <ul className="flex items-center justify-center space-x-4">
               {socialMediaList.map((item) => {

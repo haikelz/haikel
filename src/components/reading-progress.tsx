@@ -1,10 +1,29 @@
 "use client";
 
-import { useWidth } from "~hooks";
+import { atom, useAtom } from "jotai";
+import { useCallback, useEffect } from "react";
 import { tw } from "~lib/helpers";
 
+const widthAtom = atom<number>(0);
+
 export default function ReadingProgress() {
-  const width = useWidth();
+  const [width, setWidth] = useAtom(widthAtom);
+
+  const handleScroll = useCallback(() => {
+    const el = document.documentElement;
+
+    const scrollTop = el.scrollTop || document.body.scrollTop;
+    const scrollHeight = el.scrollHeight || document.body.scrollHeight;
+
+    const percent = (scrollTop / (scrollHeight - el.clientHeight)) * 100;
+
+    setWidth(percent);
+  }, [setWidth]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
 
   return (
     <div
