@@ -35,6 +35,7 @@ export default function TagsClient({ tagsList }: { tagsList: string[] }) {
       <div className="flex flex-wrap gap-3">
         {tagsList.map((item) => (
           <button
+            key={item}
             type="button"
             aria-label={`tag ${item}`}
             className={tw(
@@ -44,7 +45,7 @@ export default function TagsClient({ tagsList }: { tagsList: string[] }) {
                 ? "bg-red text-white dark:bg-blue-600"
                 : "bg-gray-200 dark:bg-base-2"
             )}
-            onClick={() => router.push("?" + createQueryString("tag", item))}
+            onClick={() => router.replace("?" + createQueryString("tag", item))}
           >
             <Paragraph className="text-center font-medium">{item}</Paragraph>
           </button>

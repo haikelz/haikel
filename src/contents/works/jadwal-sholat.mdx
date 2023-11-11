@@ -5,9 +5,7 @@ title: Jadwal Sholat
 stack:
   - nextjs
   - typescript
-  - windi
-  - swr
-  - framer-motion
+  - react-query
 description: A Website to get prayer schedule, read Al-Qur'an, and Asma'ul Husna
 preview: https://info-jadwal-sholat.vercel.app/
 repo: https://github.com/haikelz/jadwal-sholat
@@ -24,9 +22,9 @@ Jadwal Sholat adalah sebuah Aplikasi web untuk menampilkan Jadwal sholat, baca A
 
 Awalnya, ada jadwal puasa sunnah yang saya tambahkan di Website ini, namun pada tahun 2023, jadwal puasa sunnahnya tidak valid lagi(dikarenakan datanya dikhususkan untuk tahun 2022 saja). Jadi saya pun menonaktifkan fitur ini. Terima kasih banyak buat mas [Bagas](https://github.com/granitebps) yang udah buat API puasa sunnah untuk tahun lalu :D
 
-Website ini saya buat dengan Next JS, Tailwind CSS untuk styling(sekarang udah pindah ke Windi CSS), Zustand untuk state management, Framer Motion untuk animasi, SWR untuk data fetching, dan Jest untuk unit testing.
+Cukup banyak perubahan stack yang dipakai di Website ini, tapi core utama yang tetep dipakai adalah Next JS + Typescript.
 
-Untuk datanya, mayoritas berasal dari API, kecuali untuk Asma'ul Husna. Saya dapetin dari salah satu repo di Github(terima kasih banyak buat mas [Rivki](https://github.com/mikqi)). Website ini juga sudah PWA, jadi bisa diinstall di hp tanpa perlu bolak balik masuk browser.
+Website ini sudah PWA, jadi bisa diinstall di hp tanpa perlu bolak balik masuk browser.
 
 Pengerjaan website ini sebenarnya ga lama-lama banget, tapi yang bikin lama itu karena saya nyicil buat nambahin fitur-fitur baru. Saya belajar banyak dari project ini, terutama dalam meningkatkan kemampuan Next JS dan Typescript saya. Sampai sekarang, saya masih me-maintain website ini.
 
@@ -51,11 +49,12 @@ Pengerjaan website ini sebenarnya ga lama-lama banget, tapi yang bikin lama itu 
   src="https://ik.imagekit.io/haikelz/works/jadwal-sholat/asmaul-husna.png?updatedAt=1691490447465"
   alt="Screenshot 4"
 />
+
 ## Tech Stack
 
 - Next JS
 - Typescript
-- Windi CSS
-- SWR
-- Framer Motion
+- UnoCSS
+- React Query
 - Zustand
+- GraphQL(only for `/asmaul-husna` page)

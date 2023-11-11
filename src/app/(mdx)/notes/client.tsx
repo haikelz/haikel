@@ -20,6 +20,7 @@ export default function NotesClient({ notes }: { notes: Notes[] }) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
+  // searchParams implementation
   const createQueryString = useCallback(
     (name: string, value: string) => {
       const params = new URLSearchParams(searchParams);
@@ -40,8 +41,9 @@ export default function NotesClient({ notes }: { notes: Notes[] }) {
     });
 
     // if user haven't input anything yet, then return all notes
-    if (searchParams.get("note") === "" || searchParams.get("note") === null)
+    if (searchParams.get("note") === "" || searchParams.get("note") === null) {
       return notes;
+    }
 
     // and if user already input something, then do fuzzy search
     return searcher.search(searchParams.get("note") as string);
@@ -57,7 +59,7 @@ export default function NotesClient({ notes }: { notes: Notes[] }) {
           onChange={(e) =>
             e.target.value === ""
               ? router.replace("notes")
-              : router.push("?" + createQueryString("note", e.target.value))
+              : router.replace("?" + createQueryString("note", e.target.value))
           }
           className={tw(
             "block w-full border-2 border-base-0",
