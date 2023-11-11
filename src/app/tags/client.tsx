@@ -1,23 +1,34 @@
 "use client";
 
 import { allNotes } from "contentlayer/generated";
-import { atom, useAtom } from "jotai";
-import { useRef } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useCallback, useRef } from "react";
 import { useClickOutside } from "~hooks";
 import { tw } from "~lib/helpers";
 import { NotesList } from "~ui/lists";
 import { Paragraph } from "~ui/typography";
 
-const tagAtom = atom<string>("");
-
 export default function TagsClient({ tagsList }: { tagsList: string[] }) {
-  const [tag, setTag] = useAtom(tagAtom);
+  const searchParams = useSearchParams();
+  const router = useRouter();
 
   const ref = useRef<HTMLDivElement>(null);
 
-  const filteredNotes = allNotes.filter((item) => item.tags.includes(tag));
+  const filteredNotes = allNotes.filter((item) =>
+    item.tags.includes(searchParams.get("tag") as string)
+  );
 
-  useClickOutside(setTag, ref, "");
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams);
+      params.set(name, value);
+
+      return params.toString();
+    },
+    [searchParams]
+  );
+
+  useClickOutside(ref, router);
 
   return (
     <div ref={ref}>
@@ -29,9 +40,11 @@ export default function TagsClient({ tagsList }: { tagsList: string[] }) {
             className={tw(
               "px-4 py-1 transition-all",
               "hover:scale-110",
-              tag === item ? "bg-red text-white dark:bg-blue-600" : "bg-gray-200 dark:bg-base-2"
+              searchParams.get("tag") === item
+                ? "bg-red text-white dark:bg-blue-600"
+                : "bg-gray-200 dark:bg-base-2"
             )}
-            onClick={() => setTag(item)}
+            onClick={() => router.push("?" + createQueryString("tag", item))}
           >
             <Paragraph className="text-center font-medium">{item}</Paragraph>
           </button>
@@ -43,7 +56,9 @@ export default function TagsClient({ tagsList }: { tagsList: string[] }) {
             <NotesList filteredNotes={filteredNotes} />
           </div>
         ) : (
-          <Paragraph className="font-bold">No notes matching with tag!</Paragraph>
+          <Paragraph className="font-bold">
+            No notes matching with tag!
+          </Paragraph>
         )}
       </div>
     </div>

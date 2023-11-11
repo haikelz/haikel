@@ -52,7 +52,9 @@ export async function generateMetadata(
   };
 }
 
-export default async function DetailWorkPage({ params }: { params: { slug: string } }) {
+export default async function DetailWorkPage(
+  { params }: { params: { slug: string } }
+) {
   const { slug } = params;
 
   const { body, title, author, preview, repo } = allWorks.find(
@@ -62,9 +64,16 @@ export default async function DetailWorkPage({ params }: { params: { slug: strin
   const Content = getMDXComponent(body.code);
 
   return (
-    <Main className={tw("flex min-h-screen flex-col items-center justify-start bg-center")}>
+    <Main
+      className={tw(
+        "flex min-h-screen flex-col items-center justify-start bg-center"
+      )}
+    >
       <article
-        className={tw("flex w-full flex-col flex-wrap justify-center py-8 mb-12", "md:mb-3")}
+        className={tw(
+          "flex w-full flex-col flex-wrap justify-center py-8 mb-12",
+          "md:mb-3"
+        )}
       >
         <section className="flex flex-col">
           <Heading
@@ -84,7 +93,9 @@ export default async function DetailWorkPage({ params }: { params: { slug: strin
                 <button
                   type="button"
                   aria-label="Preview"
-                  className={tw("text-base leading-[1.75rem] tracking-[0.050em]")}
+                  className={tw(
+                    "text-base leading-[1.75rem] tracking-[0.050em]"
+                  )}
                 >
                   <UnderlineLink href={preview}>Preview</UnderlineLink>
                 </button>
@@ -94,7 +105,9 @@ export default async function DetailWorkPage({ params }: { params: { slug: strin
                 <button
                   type="button"
                   aria-label="Source"
-                  className={tw("text-base font-normal leading-[1.75rem] tracking-[0.050em]")}
+                  className={tw(
+                    "text-base font-normal leading-[1.75rem] tracking-[0.050em]"
+                  )}
                 >
                   <UnderlineLink href={repo}>Source</UnderlineLink>
                 </button>
@@ -102,8 +115,18 @@ export default async function DetailWorkPage({ params }: { params: { slug: strin
             </div>
           </div>
         </section>
-        <article className={tw("prose prose-gray mt-6 w-full max-w-full", "dark:prose-invert")}>
-          <p className={tw("text-right text-xl font-bold", naskhArabic.className)}>
+        <article
+          className={tw(
+            "prose prose-gray mt-6 w-full max-w-full",
+            "dark:prose-invert"
+          )}
+        >
+          <p
+            className={tw(
+              "text-right text-xl font-bold",
+              naskhArabic.className
+            )}
+          >
             بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
           </p>
           <Content components={{ LightboxImage, Video }} />

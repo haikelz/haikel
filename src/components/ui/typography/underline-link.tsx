@@ -6,7 +6,9 @@ type UnderlineLinkProps = HTMLAttributes<HTMLAnchorElement> & {
   href: string;
 };
 
-export function UnderlineLink({ children, href, className, ...props }: UnderlineLinkProps) {
+export function UnderlineLink(
+  { children, href, className, ...props }: UnderlineLinkProps
+) {
   return (
     <Link
       href={href}

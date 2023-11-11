@@ -7,6 +7,10 @@ type MainProps = ChildrenProps & {
 
 export default function Main({ children, className }: MainProps) {
   return (
-    <main className={tw("container mx-auto max-w-2xl tracking-wide", className)}>{children}</main>
+    <main
+      className={tw("container mx-auto max-w-2xl tracking-wide", className)}
+    >
+      {children}
+    </main>
   );
 }

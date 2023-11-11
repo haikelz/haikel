@@ -46,7 +46,12 @@ export default function NotesPage() {
   const notes: Notes[] = sortedAllNotes.slice(0, allNotes.length);
 
   return (
-    <Main className={tw("flex min-h-screen flex-col items-start justify-start", "py-8")}>
+    <Main
+      className={tw(
+        "flex min-h-screen flex-col items-start justify-start",
+        "py-8"
+      )}
+    >
       <section className="flex w-full flex-wrap items-start justify-start">
         <div>
           <Heading as="h2" className="text-left">
@@ -56,8 +61,8 @@ export default function NotesPage() {
         </div>
         <div className="w-full leading-relaxed">
           <Paragraph data-cy="description">
-            Sometimes, i write something. Mostly about technical stuff. So yeah, i call this as{" "}
-            <b>Notes</b>.
+            Sometimes, i write something. Mostly about technical stuff. So yeah,
+            i call this as <b>Notes</b>.
           </Paragraph>
         </div>
       </section>

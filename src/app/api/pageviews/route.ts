@@ -25,7 +25,10 @@ async function handler(req: NextRequest): Promise<NextResponse> {
   const ip = req.ip;
 
   if (ip) {
-    const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(ip));
+    const buf = await crypto.subtle.digest(
+      "SHA-256",
+      new TextEncoder().encode(ip)
+    );
     const hash = Array.from(new Uint8Array(buf))
       .map((item) => item.toString(16).padStart(2, "0"))
       .join("");

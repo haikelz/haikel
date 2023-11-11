@@ -10,9 +10,15 @@ const t = initTRPC.create();
 export const router = t.router;
 export const publicProcedure = t.procedure;
 
-async function submitMessage<T extends string>(message: T, email: T, username: T): Promise<void> {
+async function submitMessage<T extends string>(
+  message: T,
+  email: T,
+  username: T
+): Promise<void> {
   try {
-    await db.insert(guestbook).values({ message: message, email: email, username: username });
+    await db
+      .insert(guestbook)
+      .values({ message: message, email: email, username: username });
   } catch (err) {
     console.error(err);
   }
@@ -22,12 +28,16 @@ type StringWithNull<Type> = {
   [Property in keyof Type]: string | null;
 };
 
-type GetGuestbookProps = StringWithNull<Omit<GuestbookProps, "id" | "created_at">> & {
+type GetGuestbookProps = StringWithNull<
+  Omit<GuestbookProps, "id" | "created_at">
+> & {
   id: number;
   created_at: Date | null;
 };
 
-async function getGuestbook(key: string): Promise<GetGuestbookProps[] | undefined> {
+async function getGuestbook(
+  key: string
+): Promise<GetGuestbookProps[] | undefined> {
   try {
     const data = await db
       .select({
@@ -56,17 +66,22 @@ async function deleteMessage(id: number): Promise<void> {
 
 async function patchMessage(id: number, message: string): Promise<void> {
   try {
-    await db.update(guestbook).set({ message: message }).where(eq(guestbook.id, id));
+    await db
+      .update(guestbook)
+      .set({ message: message })
+      .where(eq(guestbook.id, id));
   } catch (err) {
     console.error(err);
   }
 }
 
 export const appRouter = router({
-  get: publicProcedure.input(z.object({ key: z.string() })).query(async ({ input }) => {
-    const guestbook = await getGuestbook(input.key);
-    return guestbook;
-  }),
+  get: publicProcedure
+    .input(z.object({ key: z.string() }))
+    .query(async ({ input }) => {
+      const guestbook = await getGuestbook(input.key);
+      return guestbook;
+    }),
 
   post: publicProcedure
     .input(
@@ -80,9 +95,11 @@ export const appRouter = router({
       await submitMessage(input.message, input.email, input.username);
     }),
 
-  delete: publicProcedure.input(z.object({ id: z.number() })).mutation(async ({ input }) => {
-    await deleteMessage(input.id);
-  }),
+  delete: publicProcedure
+    .input(z.object({ id: z.number() }))
+    .mutation(async ({ input }) => {
+      await deleteMessage(input.id);
+    }),
 
   patch: publicProcedure
     .input(z.object({ id: z.number(), message: z.string() }))

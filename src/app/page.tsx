@@ -71,22 +71,36 @@ export default async function HomePage() {
   return (
     <Main className={tw("flex flex-col items-start justify-start", "py-8")}>
       <section className="mb-12 flex w-full flex-wrap items-center justify-center">
-        <div className={tw("flex w-full flex-col items-start justify-start", "md:flex-row")}>
-          <div className={tw("flex flex-col items-start justify-start", "md:mt-0 md:text-start")}>
+        <div
+          className={tw(
+            "flex w-full flex-col items-start justify-start",
+            "md:flex-row"
+          )}
+        >
+          <div
+            className={tw(
+              "flex flex-col items-start justify-start",
+              "md:mt-0 md:text-start"
+            )}
+          >
             <Greeting />
             <Paragraph id="description" className="my-4">
-              Someone who interested in Frontend stuff, with mainly focuses on building responsive,
-              interactive, maintainable, and accessible Websites. Familiar with
-              Javascript/Typescript, React Ecosystem, Linux(for daily use) and sometimes i do
-              backend things with Nest JS. Always try to follow best practices as much as i can. I
-              can work in a team or solo. I love clean and minimal design. Look at some of my works
-              and notes below.
+              Someone who interested in Frontend stuff, with mainly focuses on
+              building responsive, interactive, maintainable, and accessible
+              Websites. Familiar with Javascript/Typescript, React Ecosystem,
+              Linux(for daily use) and sometimes i do backend things with Nest
+              JS. Always try to follow best practices as much as i can. I can
+              work in a team or solo. I love clean and minimal design. Look at
+              some of my works and notes below.
             </Paragraph>
             <ul className="flex items-center justify-center space-x-4">
               {socialMediaList.map((item) => {
                 const Icon: LucideIcon = item.icon;
                 return (
-                  <li className="transition-all hover:-translate-y-0.5" key={item.id}>
+                  <li
+                    className="transition-all hover:-translate-y-0.5"
+                    key={item.id}
+                  >
                     <Link href={item.route} target="_blank">
                       <button
                         type="button"
@@ -119,7 +133,11 @@ export default async function HomePage() {
             <WorksList works={works} />
           </div>
           <div className="flex w-full items-end justify-start">
-            <UnderlineLink href="/works" role="button" aria-label="See more works">
+            <UnderlineLink
+              href="/works"
+              role="button"
+              aria-label="See more works"
+            >
               See more works
             </UnderlineLink>
           </div>
@@ -135,7 +153,11 @@ export default async function HomePage() {
             <NotesList filteredNotes={notes} />
           </div>
           <div className="flex w-full items-start justify-start">
-            <UnderlineLink href="/notes" role="button" aria-label="See more notes">
+            <UnderlineLink
+              href="/notes"
+              role="button"
+              aria-label="See more notes"
+            >
               See more notes
             </UnderlineLink>
           </div>

@@ -13,7 +13,9 @@ export default function NoteViews({ slug }: { slug: string }) {
     async function noteViews(): Promise<void> {
       await ofetch(
         `${
-          condition === "development" ? NEXT_PUBLIC_DEVELOPMENT_URL : NEXT_PUBLIC_PRODUCTION_URL
+          condition === "development"
+            ? NEXT_PUBLIC_DEVELOPMENT_URL
+            : NEXT_PUBLIC_PRODUCTION_URL
         }/api/pageviews`,
         {
           method: "POST",

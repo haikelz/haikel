@@ -1,26 +1,24 @@
 "use client";
 
-import { SetStateAction } from "jotai";
-import { Dispatch, RefObject, useCallback, useEffect } from "react";
+import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
+import { RefObject, useCallback, useEffect } from "react";
 
 /**
- * A custom hook to detect if we click outside of the element
- * @param {Dispatch<SetStateAction<T>>} set setter
+ * A custom hook to detect if we click outside of the element. Only for /tags page
  * @param {RefObject<HTMLDivElement>} ref reference to `<div>` element
- * @param {T} value value
+ * @param {AppRouterInstance} router router
  */
 export function useClickOutside<T>(
-  set: Dispatch<SetStateAction<T>>,
   ref: RefObject<HTMLDivElement>,
-  value: T
+  router: AppRouterInstance
 ) {
   const handleClickOutside = useCallback(
     (e: Event) => {
       if (ref.current && !ref.current.contains(e.target as HTMLDivElement)) {
-        set(value);
+        router.replace("tags");
       }
     },
-    [ref, set]
+    [ref]
   );
 
   useEffect(() => {

@@ -18,7 +18,9 @@ const trpcClientAtom = atom(() =>
     links: [
       httpBatchLink({
         url: `${
-          condition === "development" ? NEXT_PUBLIC_DEVELOPMENT_URL : NEXT_PUBLIC_PRODUCTION_URL
+          condition === "development"
+            ? NEXT_PUBLIC_DEVELOPMENT_URL
+            : NEXT_PUBLIC_PRODUCTION_URL
         }/api/trpc`,
       }),
     ],

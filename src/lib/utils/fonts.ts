@@ -1,4 +1,9 @@
-import { IBM_Plex_Mono, IBM_Plex_Sans, IBM_Plex_Serif, Noto_Naskh_Arabic } from "next/font/google";
+import {
+  IBM_Plex_Mono,
+  IBM_Plex_Sans,
+  IBM_Plex_Serif,
+  Noto_Naskh_Arabic,
+} from "next/font/google";
 
 export const ibmPlexSerif = IBM_Plex_Serif({
   weight: ["400", "500", "600", "700"],

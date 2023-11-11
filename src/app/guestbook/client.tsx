@@ -36,12 +36,19 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
     formState: { errors },
     register,
     handleSubmit,
-  } = useForm({ defaultValues: { message: "" }, resolver: zodResolver(messageSchema) });
+  } = useForm({
+    defaultValues: { message: "" },
+    resolver: zodResolver(messageSchema),
+  });
 
   // post
   const postMutation = trpc.post.useMutation({
     mutationKey: ["post-message"],
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['post-meesage'], exact: true }),
+    onSuccess: () =>
+      queryClient.invalidateQueries({
+        queryKey: ["post-meesage"],
+        exact: true,
+      }),
   });
 
   // delete
@@ -53,12 +60,17 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
   // update
   const updateMutation = trpc.patch.useMutation({
     mutationKey: [id],
-    onSuccess: () => queryClient.refetchQueries({ queryKey: [id], exact:true }),
+    onSuccess: () =>
+      queryClient.refetchQueries({ queryKey: [id], exact: true }),
   });
 
   const { data, isLoading, isError } = trpc.get.useQuery(
     { key: "guestbook" },
-    { keepPreviousData: true, refetchOnWindowFocus: false, refetchOnReconnect: false }
+    {
+      keepPreviousData: true,
+      refetchOnWindowFocus: false,
+      refetchOnReconnect: false,
+    }
   );
 
   function onSubmit() {
@@ -132,9 +144,13 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
       )}
       {guestbook?.length ? (
         <section className="mb-10 flex w-full flex-col space-y-8">
-          {guestbook.map((guest) => (
+          {guestbook?.map((guest) => (
             <div data-cy="guest-item" key={guest.id} className="h-full">
-              <div className={session ? "flex space-x-3 justify-start items-center" : ""}>
+              <div
+                className={
+                  session ? "flex space-x-3 justify-start items-center" : ""
+                }
+              >
                 <span
                   className={tw(
                     "cursor-pointer text-lg font-bold",
@@ -144,7 +160,7 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
                 >
                   {guest.message}
                 </span>
-                {(session && guest.email === session?.user.email) ||
+                {(session && guest.email === session.user.email) ||
                 session?.user.role === "admin" ? (
                   <>
                     <button
@@ -165,7 +181,9 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
                         "dark:bg-base-1 bg-base-5",
                         "hover:bg-gray-200 dark:hover:bg-base-2 p-1 rounded-md"
                       )}
-                      onClick={() => handleEdit(Number(guest.id), guest.message as string)}
+                      onClick={() =>
+                        handleEdit(Number(guest.id), guest.message as string)
+                      }
                     >
                       <PencilIcon size={22} />
                     </button>
@@ -175,14 +193,19 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
               <Paragraph className="mt-2 text-base font-medium tracking-wide">
                 {guest.username}
                 {guest.created_at !== ""
-                  ? `. ${format(new Date(guest.created_at as string), "LLLL d, yyyy")}`
+                  ? `. ${format(
+                      new Date(guest.created_at as string),
+                      "LLLL d, yyyy"
+                    )}`
                   : null}
               </Paragraph>
             </div>
           ))}
         </section>
       ) : (
-        <Paragraph className="font-semibold">There is no messages now!</Paragraph>
+        <Paragraph className="font-semibold">
+          There is no messages now!
+        </Paragraph>
       )}
     </>
   );

@@ -1,6 +1,12 @@
 "use client";
 
-import { BookMarkedIcon, ListIcon, LucideIcon, ScrollTextIcon, TagsIcon } from "lucide-react";
+import {
+  BookMarkedIcon,
+  ListIcon,
+  LucideIcon,
+  ScrollTextIcon,
+  TagsIcon,
+} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { tw } from "~lib/helpers";
@@ -26,7 +32,9 @@ export function Navigationlink() {
               aria-label={item.route}
               className={tw(
                 "rounded-sm p-1 font-bold",
-                pathname.includes(item.route) ? "bg-gray-200 dark:bg-base-2" : ""
+                pathname.includes(item.route)
+                  ? "bg-gray-200 dark:bg-base-2"
+                  : ""
               )}
             >
               <Icon size={22} />

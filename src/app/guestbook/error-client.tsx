@@ -7,7 +7,8 @@ export default function ErrorClient() {
       <section className="flex flex-col items-center">
         <Heading as="h1">Error!</Heading>
         <Paragraph className="mt-2 font-semibold">
-          Error while fetching data! <UnderlineLink href="/">Back to Home</UnderlineLink>
+          Error while fetching data!{" "}
+          <UnderlineLink href="/">Back to Home</UnderlineLink>
         </Paragraph>
       </section>
     </Main>

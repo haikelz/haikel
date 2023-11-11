@@ -3,8 +3,8 @@
 import { Notes } from "contentlayer/generated";
 import { Searcher } from "fast-fuzzy";
 import { SearchIcon } from "lucide-react";
-import { useMemo } from "react";
-import { useForm } from "react-hook-form";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useCallback, useMemo } from "react";
 import { tw } from "~lib/helpers";
 import { NotesList } from "~ui/lists";
 import { Paragraph } from "~ui/typography";
@@ -17,7 +17,18 @@ type SearcherType = Searcher<
 >;
 
 export default function NotesClient({ notes }: { notes: Notes[] }) {
-  const { register, watch } = useForm({ defaultValues: { search: "" } });
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams);
+      params.set(name, value);
+
+      return params.toString();
+    },
+    [searchParams]
+  );
 
   const filteredNotes = useMemo(() => {
     /**
@@ -29,11 +40,12 @@ export default function NotesClient({ notes }: { notes: Notes[] }) {
     });
 
     // if user haven't input anything yet, then return all notes
-    if (watch("search").toLowerCase() === "") return notes;
+    if (searchParams.get("note") === "" || searchParams.get("note") === null)
+      return notes;
 
     // and if user already input something, then do fuzzy search
-    return searcher.search(watch("search").toLowerCase());
-  }, [watch("search"), notes]);
+    return searcher.search(searchParams.get("note") as string);
+  }, [searchParams, notes]);
 
   return (
     <>
@@ -42,7 +54,11 @@ export default function NotesClient({ notes }: { notes: Notes[] }) {
           <SearchIcon size={20} />
         </div>
         <input
-          {...register("search")}
+          onChange={(e) =>
+            e.target.value === ""
+              ? router.replace("notes")
+              : router.push("?" + createQueryString("note", e.target.value))
+          }
           className={tw(
             "block w-full border-2 border-base-0",
             "focus:border-blue-500 focus:ring-blue-500 focus:ring-1",
@@ -58,7 +74,10 @@ export default function NotesClient({ notes }: { notes: Notes[] }) {
       </div>
       {filteredNotes.length ? (
         <section className="mb-10 flex w-full flex-col space-y-8">
-          <NotesList filteredNotes={filteredNotes} search={watch("search")} />
+          <NotesList
+            filteredNotes={filteredNotes}
+            search={searchParams.get("note") as string}
+          />
         </section>
       ) : (
         <Paragraph data-cy="not-found-note" className="font-semibold">

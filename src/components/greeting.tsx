@@ -6,7 +6,10 @@ import { Heading } from "~ui/typography";
 
 export default function Greeting() {
   return (
-    <Heading as="h1" className="flex flex-col justify-center md:flex-row md:space-x-2">
+    <Heading
+      as="h1"
+      className="flex flex-col justify-center md:flex-row md:space-x-2"
+    >
       <span>I&#39;m Haikel, a</span>
       <div className="mt-0.5 md:mt-0">
         <TypeAnimation

@@ -1,4 +1,11 @@
-import { datetime, int, mysqlTable, primaryKey, timestamp, varchar } from "drizzle-orm/mysql-core";
+import {
+  datetime,
+  int,
+  mysqlTable,
+  primaryKey,
+  timestamp,
+  varchar,
+} from "drizzle-orm/mysql-core";
 import { AdapterAccount } from "next-auth/adapters";
 
 export const guestbook = mysqlTable("guestbook", {
@@ -16,7 +23,9 @@ export const accounts = mysqlTable(
     userId: varchar("userId", { length: 255 })
       .notNull()
       .references(() => guestbook.id, { onDelete: "cascade" }),
-    type: varchar("type", { length: 255 }).$type<AdapterAccount["type"]>().notNull(),
+    type: varchar("type", { length: 255 })
+      .$type<AdapterAccount["type"]>()
+      .notNull(),
     provider: varchar("provider", { length: 255 }).notNull(),
     providerAccountId: varchar("providerAccountId", { length: 255 }).notNull(),
     refresh_token: varchar("refresh_token", { length: 255 }),
@@ -28,7 +37,9 @@ export const accounts = mysqlTable(
     session_state: varchar("session_state", { length: 255 }),
   },
   (account) => ({
-    compoundKey: primaryKey(account.provider, account.providerAccountId),
+    compoundKey: primaryKey({
+      columns: [account.provider, account.providerAccountId],
+    }),
   })
 );
 
@@ -48,6 +59,6 @@ export const verificationTokens = mysqlTable(
     expires: timestamp("expires", { mode: "date" }).notNull(),
   },
   (vt) => ({
-    compoundKey: primaryKey(vt.identifier, vt.token),
+    compoundKey: primaryKey({ columns: [vt.identifier, vt.token] }),
   })
 );

@@ -5,7 +5,9 @@ import { ibmPlexSans } from "~lib/utils/fonts";
 
 import { Navigationlink } from "./navigation-link";
 
-const SwitchThemeMenu = dynamic(() => import("~ui/menus/switch-theme-menu"), { ssr: false });
+const SwitchThemeMenu = dynamic(() => import("~ui/menus/switch-theme-menu"), {
+  ssr: false,
+});
 
 export default function Sidebar() {
   return (

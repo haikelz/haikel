@@ -4,7 +4,6 @@ import { useMemo } from "react";
 import Main from "~components/main";
 import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
-import { TagsList } from "~ui/lists";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
 import TagsClient from "./client";
@@ -62,7 +61,12 @@ export default function Tags() {
   );
 
   return (
-    <Main className={tw("flex min-h-screen flex-col items-start justify-start", "py-8")}>
+    <Main
+      className={tw(
+        "flex min-h-screen flex-col items-start justify-start",
+        "py-8"
+      )}
+    >
       <section className="flex w-full flex-wrap items-start justify-start">
         <div>
           <Heading as="h2" className="text-left">

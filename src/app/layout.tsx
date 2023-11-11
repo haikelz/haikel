@@ -47,7 +47,11 @@ export default function RootLayout({ children }: ChildrenProps) {
   return (
     <html
       lang="en"
-      className={tw(ibmPlexSerif.variable, ibmPlexSans.variable, ibmPlexMono.variable)}
+      className={tw(
+        ibmPlexSerif.variable,
+        ibmPlexSans.variable,
+        ibmPlexMono.variable
+      )}
     >
       <body>
         <Wrapper>

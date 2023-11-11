@@ -58,7 +58,9 @@ export async function generateMetadata(
   };
 }
 
-export default async function NotePage({ params }: { params: { slug: string } }) {
+export default async function NotePage(
+  { params }: { params: { slug: string } }
+) {
   const { slug } = params;
 
   const { title, date, body } = allNotes.find(
@@ -66,16 +68,24 @@ export default async function NotePage({ params }: { params: { slug: string } })
   ) as Notes;
 
   // pageviews
-  const views = (await kv.get<number>(["pageviews", "notes", slug].join(":"))) ?? 0;
+  const views =
+    (await kv.get<number>(["pageviews", "notes", slug].join(":"))) ?? 0;
 
   const Content = getMDXComponent(body.code);
 
   return (
     <>
       <NoteViews slug={slug} />
-      <Main className={tw("flex min-h-screen flex-col items-center justify-start bg-center")}>
+      <Main
+        className={tw(
+          "flex min-h-screen flex-col items-center justify-start bg-center"
+        )}
+      >
         <article
-          className={tw("flex w-full flex-col flex-wrap justify-center py-8 mb-12", "md:mb-3")}
+          className={tw(
+            "flex w-full flex-col flex-wrap justify-center py-8 mb-12",
+            "md:mb-3"
+          )}
         >
           <section className="flex flex-col">
             <Heading
@@ -87,15 +97,28 @@ export default async function NotePage({ params }: { params: { slug: string } })
             </Heading>
             <div className="my-3 flex items-center">
               <Paragraph
-                className={tw("text-base font-semibold tracking-[0.050em]", ibmPlexSans.className)}
+                className={tw(
+                  "text-base font-semibold tracking-[0.050em]",
+                  ibmPlexSans.className
+                )}
               >
                 {format(new Date(date) ?? new Date(), "LLLL d, yyyy")} /{" "}
                 <ReadingTime content={body.raw} /> / {views} views
               </Paragraph>
             </div>
           </section>
-          <article className={tw("prose prose-gray mt-6 w-full max-w-full", "dark:prose-invert")}>
-            <p className={tw("text-right text-xl font-bold", naskhArabic.className)}>
+          <article
+            className={tw(
+              "prose prose-gray mt-6 w-full max-w-full",
+              "dark:prose-invert"
+            )}
+          >
+            <p
+              className={tw(
+                "text-right text-xl font-bold",
+                naskhArabic.className
+              )}
+            >
               بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
             </p>
             <Content components={{ Video, LightboxImage }} />

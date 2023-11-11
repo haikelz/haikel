@@ -4,7 +4,10 @@ import { MetadataRoute } from "next";
 export default function Sitemap(): MetadataRoute.Sitemap {
   const tags = allNotes
     .map((item) =>
-      item.tags.map((tag) => ({ url: `https://haikel.app/tags/${tag}`, lastModified: item.date }))
+      item.tags.map((tag) => ({
+        url: `https://haikel.app/tags/${tag}`,
+        lastModified: item.date,
+      }))
     )
     .flat();
 
@@ -17,10 +20,12 @@ export default function Sitemap(): MetadataRoute.Sitemap {
     url: `https://haikel.app/works/${item.slug}`,
   }));
 
-  const routes = ["/", "/works", "/notes", "/tags", "/guestbook"].map((route) => ({
-    url: `https://haikel.app${route}`,
-    lastModified: new Date().toISOString(),
-  }));
+  const routes = ["/", "/works", "/notes", "/tags", "/guestbook"].map(
+    (route) => ({
+      url: `https://haikel.app${route}`,
+      lastModified: new Date().toISOString(),
+    })
+  );
 
   return [...routes, ...notes, ...works, ...tags];
 }

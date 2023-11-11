@@ -6,7 +6,9 @@ export default function Loading() {
     <section className="flex min-h-screen items-center justify-center">
       <div role="status" className="flex items-center justify-center">
         <LoadingSvg />
-        <span className={tw("text-base font-bold", ibmPlexSans.className)}>Loading....</span>
+        <span className={tw("text-base font-bold", ibmPlexSans.className)}>
+          Loading....
+        </span>
       </div>
     </section>
   );

@@ -30,13 +30,19 @@ export function WorksList({ works }: { works: Works[] }) {
           <div>
             <Link href={`/${work.slug}`} aria-label={work.title}>
               <span
-                className={tw("text-lg font-bold", "hover:text-blue-500", ibmPlexSans.className)}
+                className={tw(
+                  "text-lg font-bold",
+                  "hover:text-blue-500",
+                  ibmPlexSans.className
+                )}
               >
                 {work.title}
               </span>
             </Link>
           </div>
-          <Paragraph className="my-2 tracking-wide">{work.description}</Paragraph>
+          <Paragraph className="my-2 tracking-wide">
+            {work.description}
+          </Paragraph>
           <div className={tw("flex space-x-2", ibmPlexSans.className)}>
             {work.stack.map((techstack, index) => (
               <div key={index + 1}>
