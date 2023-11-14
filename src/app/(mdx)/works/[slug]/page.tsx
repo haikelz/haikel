@@ -12,6 +12,7 @@ const LightboxImage = dynamic(() => import("~ui/images/lightbox-image"));
 const Video = dynamic(() => import("~components/video"));
 const AuthorImage = dynamic(() => import("~ui/images/author-image"));
 const ReadingTime = dynamic(() => import("~components/reading-time"));
+const BackToTop = dynamic(() => import("~components/back-to-top"));
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return allWorks.map((item) => ({ slug: item.slug.replace("works/", "") }));
@@ -130,6 +131,9 @@ export default async function DetailWorkPage(
             بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
           </p>
           <Content components={{ LightboxImage, Video }} />
+          <div className="w-full flex justify-end items-center mt-10">
+            <BackToTop />
+          </div>
         </article>
       </article>
     </Main>

@@ -6,7 +6,7 @@ import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { Heading, Paragraph, Underline } from "~ui/typography";
 
-import { ConfirmDeleteModal, FormAndGuestsList, SignOut } from "./client";
+import { FormAndGuestsList, SignOut } from "./client";
 
 const baseMetadata = {
   title: "Guestbook",
@@ -73,7 +73,6 @@ export default async function Guestbook() {
         </section>
         <FormAndGuestsList session={session} />
       </Main>
-      <ConfirmDeleteModal />
     </>
   );
 }

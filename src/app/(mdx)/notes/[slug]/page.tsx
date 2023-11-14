@@ -15,6 +15,7 @@ const Video = dynamic(() => import("~components/video"));
 const Comments = dynamic(() => import("~components/comments"));
 const ReadingTime = dynamic(() => import("~components/reading-time"));
 const LightboxImage = dynamic(() => import("~ui/images/lightbox-image"));
+const BackToTop = dynamic(() => import("~components/back-to-top"));
 
 export const revalidate = 60;
 
@@ -122,6 +123,9 @@ export default async function NotePage(
               بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
             </p>
             <Content components={{ Video, LightboxImage }} />
+            <div className="w-full flex justify-end items-center mt-10">
+              <BackToTop />
+            </div>
           </article>
           <Comments />
         </article>

@@ -1,13 +1,16 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { QueryClient, useQueryClient } from "@tanstack/react-query";
+import {
+  QueryClient,
+  keepPreviousData,
+  useQueryClient,
+} from "@tanstack/react-query";
 import { format } from "date-fns/esm";
-import { atom, useAtom, useSetAtom } from "jotai";
+import { atom, useAtom } from "jotai";
 import { GithubIcon, PencilIcon, TrashIcon } from "lucide-react";
 import { Session } from "next-auth";
 import { signIn, signOut } from "next-auth/react";
-import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { tw } from "~lib/helpers";
 import { ibmPlexSans } from "~lib/utils/fonts";
@@ -28,8 +31,6 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
 
   const queryClient: QueryClient = useQueryClient();
 
-  const router = useRouter();
-
   const {
     getValues,
     setValue,
@@ -44,30 +45,34 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
   // post
   const postMutation = trpc.post.useMutation({
     mutationKey: ["post-message"],
-    onSuccess: () =>
-      queryClient.invalidateQueries({
-        queryKey: ["post-meesage"],
+    onSettled: async () => {
+      return await queryClient.invalidateQueries({
+        queryKey: ["post-message"],
         exact: true,
-      }),
+      });
+    },
   });
 
   // delete
   const deleteMutation = trpc.delete.useMutation({
     mutationKey: [id],
-    onSuccess: () => queryClient.removeQueries({ queryKey: [id], exact: true }),
+    onSettled: async () => {
+      return await queryClient.invalidateQueries({ queryKey: [id], exact: true });
+    }, 
   });
 
   // update
   const updateMutation = trpc.patch.useMutation({
     mutationKey: [id],
-    onSuccess: () =>
-      queryClient.refetchQueries({ queryKey: [id], exact: true }),
+    onSettled: async () =>{
+      return await queryClient.invalidateQueries({ queryKey: [id], exact: true });
+    } 
   });
 
-  const { data, isLoading, isError } = trpc.get.useQuery(
+  const { data, isError, isPending } = trpc.get.useQuery(
     { key: "guestbook" },
     {
-      keepPreviousData: true,
+      placeholderData: keepPreviousData,
       refetchOnWindowFocus: false,
       refetchOnReconnect: false,
     }
@@ -89,12 +94,10 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
     }
 
     setValue("message", "");
-    router.refresh();
   }
 
   function handleDelete(id: number) {
     deleteMutation.mutate({ id: id });
-    router.refresh();
   }
 
   function handleEdit(id: number, message: string) {
@@ -103,7 +106,7 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
     setId(id);
   }
 
-  if (isLoading) return <LoadingClient />;
+  if (isPending) return <LoadingClient />;
   if (isError) return <ErrorClient />;
 
   const guestbook = data;
@@ -263,27 +266,5 @@ export function SignOut() {
     >
       here
     </button>
-  );
-}
-
-const confirmDeleteAtom = atom<boolean>(false);
-const cancelModalAtom = atom<boolean>(false);
-
-export function ConfirmDeleteModal() {
-  const [cancelModal, setCancelModal] = useAtom(cancelModalAtom);
-
-  const setConfirmDelete = useSetAtom(confirmDeleteAtom);
-
-  return (
-    <>
-      {cancelModal ? (
-        <div className="fixed z-50 inset-0 bg-black/70">
-          <div>
-            <button onClick={() => setCancelModal(true)}>Cancel</button>
-            <button onClick={() => setConfirmDelete(true)}>Delete</button>
-          </div>
-        </div>
-      ) : null}
-    </>
   );
 }

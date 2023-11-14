@@ -20,7 +20,6 @@ export default function NotesClient({ notes }: { notes: Notes[] }) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  // searchParams implementation
   const createQueryString = useCallback(
     (name: string, value: string) => {
       const params = new URLSearchParams(searchParams);

@@ -28,7 +28,7 @@ export default function TagsClient({ tagsList }: { tagsList: string[] }) {
     [searchParams]
   );
 
-  useClickOutside(ref, router);
+  useClickOutside(ref, "tags");
 
   return (
     <div ref={ref}>
