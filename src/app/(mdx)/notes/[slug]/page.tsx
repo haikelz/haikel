@@ -6,6 +6,7 @@ import { getMDXComponent } from "next-contentlayer/hooks";
 import dynamic from "next/dynamic";
 import Main from "~components/main";
 import NoteViews from "~components/note-views";
+import Toc from "~components/toc";
 import { tw } from "~lib/helpers";
 import { ABSOLUTE_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { ibmPlexSans, naskhArabic } from "~lib/utils/fonts";
@@ -71,7 +72,6 @@ export default async function NotePage(
   // pageviews
   const views =
     (await kv.get<number>(["pageviews", "notes", slug].join(":"))) ?? 0;
-
   const Content = getMDXComponent(body.code);
 
   return (
@@ -122,7 +122,9 @@ export default async function NotePage(
             >
               بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
             </p>
-            <Content components={{ Video, LightboxImage }} />
+            <div className="js-toc-content">
+              <Content components={{ Video, LightboxImage, Toc }} />
+            </div>
             <div className="w-full flex justify-end items-center mt-10">
               <BackToTop />
             </div>

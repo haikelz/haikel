@@ -1,4 +1,8 @@
-import { FieldDefs, defineDocumentType, makeSource } from "contentlayer/source-files";
+import {
+  FieldDefs,
+  defineDocumentType,
+  makeSource,
+} from "contentlayer/source-files";
 import rehypeShikiji, { RehypeShikijiOptions } from "rehype-shikiji";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
@@ -103,7 +107,10 @@ const Works = defineDocumentType(() => ({
 
 export default makeSource({
   mdx: {
-    rehypePlugins: [rehypeSlug, [rehypeShikiji as any, highlighterOptions]],
+    rehypePlugins: [
+      rehypeSlug({ prefix: "toc-heading" }),
+      [rehypeShikiji as any, highlighterOptions],
+    ],
     remarkPlugins: [remarkGfm],
   },
   contentDirPath: "./src/contents",

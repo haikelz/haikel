@@ -25,13 +25,13 @@ dependencies:
     version: 5.0.5(react-dom@18.2.0)(react@18.2.0)
   '@trpc/client':
     specifier: next
-    version: 11.0.0-alpha-next-2023-11-10-11-50-03.99(@trpc/server@11.0.0-alpha-next-2023-11-10-11-50-03.99)
+    version: 11.0.0-alpha-next-2023-11-11-17-32-01.100(@trpc/server@11.0.0-alpha-next-2023-11-11-17-32-01.100)
   '@trpc/react-query':
     specifier: next
-    version: 11.0.0-alpha-next-2023-11-10-11-50-03.99(@tanstack/react-query@5.0.5)(@trpc/client@11.0.0-alpha-next-2023-11-10-11-50-03.99)(@trpc/server@11.0.0-alpha-next-2023-11-10-11-50-03.99)(react-dom@18.2.0)(react@18.2.0)
+    version: 11.0.0-alpha-next-2023-11-11-17-32-01.100(@tanstack/react-query@5.0.5)(@trpc/client@11.0.0-alpha-next-2023-11-11-17-32-01.100)(@trpc/server@11.0.0-alpha-next-2023-11-11-17-32-01.100)(react-dom@18.2.0)(react@18.2.0)
   '@trpc/server':
     specifier: next
-    version: 11.0.0-alpha-next-2023-11-10-11-50-03.99
+    version: 11.0.0-alpha-next-2023-11-11-17-32-01.100
   '@unocss/reset':
     specifier: ^0.57.3
     version: 0.57.3
@@ -104,6 +104,9 @@ dependencies:
   tailwind-merge:
     specifier: ^2.0.0
     version: 2.0.0
+  tocbot:
+    specifier: ^4.22.0
+    version: 4.22.0
   yet-another-react-lightbox:
     specifier: ^3.15.1
     version: 3.15.1(react-dom@18.2.0)(react@18.2.0)
@@ -2466,32 +2469,32 @@ packages:
       - supports-color
     dev: true
 
-  /@trpc/client@11.0.0-alpha-next-2023-11-10-11-50-03.99(@trpc/server@11.0.0-alpha-next-2023-11-10-11-50-03.99):
-    resolution: {integrity: sha512-QUQRJl9T83eqLftQ1JVfmopqgseWv6zvZ1Ew+SUjr54u+lRWoUPy1CdW8//011e2RYlK31Oy2DDfO4UtMSmHGw==}
+  /@trpc/client@11.0.0-alpha-next-2023-11-11-17-32-01.100(@trpc/server@11.0.0-alpha-next-2023-11-11-17-32-01.100):
+    resolution: {integrity: sha512-KucniMMgAi2jei2j1r8s76Jy+c4H84Cdnp3ytCi9isw5m6+cj12c/j7CScLJ0xukwNLHsQywTQZQuI6umFrWAQ==}
     peerDependencies:
-      '@trpc/server': 11.0.0-alpha-next-2023-11-10-11-50-03.99+6ad78bc81
+      '@trpc/server': 11.0.0-alpha-next-2023-11-11-17-32-01.100+a69ae8503
     dependencies:
-      '@trpc/server': 11.0.0-alpha-next-2023-11-10-11-50-03.99
+      '@trpc/server': 11.0.0-alpha-next-2023-11-11-17-32-01.100
     dev: false
 
-  /@trpc/react-query@11.0.0-alpha-next-2023-11-10-11-50-03.99(@tanstack/react-query@5.0.5)(@trpc/client@11.0.0-alpha-next-2023-11-10-11-50-03.99)(@trpc/server@11.0.0-alpha-next-2023-11-10-11-50-03.99)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-qNnsuf3CnCo08ECr/vHixHSLB0m5zb1yFEWA8UznM/RI2xdQ5OwGm2V2WdaBxQtnBG1mv/dZ8Qmd9ApcE+jNRA==}
+  /@trpc/react-query@11.0.0-alpha-next-2023-11-11-17-32-01.100(@tanstack/react-query@5.0.5)(@trpc/client@11.0.0-alpha-next-2023-11-11-17-32-01.100)(@trpc/server@11.0.0-alpha-next-2023-11-11-17-32-01.100)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-Tod9DfYfOejmoopabQSGIhfXzecSAugBGauNhHZRKWsP6aj9ZR7pzowovP81i9s+SD/w7KZEmuIDIxY44y/Mxg==}
     peerDependencies:
       '@tanstack/react-query': ^5.0.0
-      '@trpc/client': 11.0.0-alpha-next-2023-11-10-11-50-03.99+6ad78bc81
-      '@trpc/server': 11.0.0-alpha-next-2023-11-10-11-50-03.99+6ad78bc81
+      '@trpc/client': 11.0.0-alpha-next-2023-11-11-17-32-01.100+a69ae8503
+      '@trpc/server': 11.0.0-alpha-next-2023-11-11-17-32-01.100+a69ae8503
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
     dependencies:
       '@tanstack/react-query': 5.0.5(react-dom@18.2.0)(react@18.2.0)
-      '@trpc/client': 11.0.0-alpha-next-2023-11-10-11-50-03.99(@trpc/server@11.0.0-alpha-next-2023-11-10-11-50-03.99)
-      '@trpc/server': 11.0.0-alpha-next-2023-11-10-11-50-03.99
+      '@trpc/client': 11.0.0-alpha-next-2023-11-11-17-32-01.100(@trpc/server@11.0.0-alpha-next-2023-11-11-17-32-01.100)
+      '@trpc/server': 11.0.0-alpha-next-2023-11-11-17-32-01.100
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@trpc/server@11.0.0-alpha-next-2023-11-10-11-50-03.99:
-    resolution: {integrity: sha512-7zM1agZVHvV6JkVZ+x2EZ6NZdD1do3DvQ7oqEZ4B6HrmGL2ovyOF8nPxVzyxNEqCK3IKoCWEWuB5trfpGKM5UA==}
+  /@trpc/server@11.0.0-alpha-next-2023-11-11-17-32-01.100:
+    resolution: {integrity: sha512-cKN5EongO/s0cc0bSJwHhy+sKsvVknOhclVh8BrkvJdDzRtuzuiHbDe9pLBYo+9jdNk7AVyivZAuyntWbx1lSw==}
     engines: {node: '>=18.0.0'}
     dev: false
 
@@ -8514,6 +8517,10 @@ packages:
     engines: {node: '>=8.0'}
     dependencies:
       is-number: 7.0.0
+
+  /tocbot@4.22.0:
+    resolution: {integrity: sha512-YHCs00HCNiHxUhksloa36fTfMEXEWV+vdPn3ARQfmj2u3PcUYIjJkfc+ABUfCF9Eb+LSy/QzuLl256fbsRnpHQ==}
+    dev: false
 
   /toml@3.0.0:
     resolution: {integrity: sha512-y/mWCZinnvxjTKYhJ+pYxwD0mRLVvOtdS2Awbgxln6iEnt4rk0yBxeSBHkGJcPucRiG0e55mwWp+g/05rsrd6w==}

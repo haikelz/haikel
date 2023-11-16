@@ -57,6 +57,7 @@
     "remark-gfm": "3.0.1",
     "rss": "^1.2.2",
     "tailwind-merge": "^2.0.0",
+    "tocbot": "^4.22.0",
     "yet-another-react-lightbox": "^3.15.1",
     "zod": "^3.22.4"
   },

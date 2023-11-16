@@ -2,7 +2,7 @@ import { HTMLAttributes } from "react";
 import { tw } from "~lib/helpers";
 
 type HeadingProps = HTMLAttributes<HTMLHeadingElement> & {
-  as: "h1" | "h2" | "h3" | "h4" | "h5";
+  as: "h1" | "h2" | "h3" | "h4";
 };
 
 export function Heading({ children, as, className, ...props }: HeadingProps) {
@@ -24,14 +24,6 @@ export function Heading({ children, as, className, ...props }: HeadingProps) {
         <h4 className={tw("text-lg font-bold", className)} {...props}>
           {children}
         </h4>
-      ) : as === "h5" ? (
-        <h5 className={tw("text-base font-bold", className)} {...props}>
-          {children}
-        </h5>
-      ) : as === "h6" ? (
-        <h6 className={tw("text-sm font-bold", className)} {...props}>
-          {children}
-        </h6>
       ) : null}
     </>
   );
