@@ -45,34 +45,32 @@ export default async function Guestbook() {
   const session: Session | null = await getServerSession(options);
 
   return (
-    <>
-      <Main
-        className={tw(
-          "flex min-h-screen flex-col items-start justify-start",
-          "py-8"
-        )}
-      >
-        <section className="flex w-full flex-wrap items-start justify-start">
-          <div>
-            <Heading as="h2" className="text-left">
-              Guestbook
-            </Heading>
-            <Underline />
-          </div>
-          <div className="w-full leading-relaxed">
-            <Paragraph data-cy="description">
-              Write a message for me and others.
-              {session ? (
-                <span>
-                  {" "}
-                  Want to Sign Out instead? Just click <SignOut />
-                </span>
-              ) : null}
-            </Paragraph>
-          </div>
-        </section>
-        <FormAndGuestsList session={session} />
-      </Main>
-    </>
+    <Main
+      className={tw(
+        "flex min-h-screen flex-col items-start justify-start",
+        "py-8"
+      )}
+    >
+      <section className="flex w-full flex-wrap items-start justify-start">
+        <div>
+          <Heading as="h2" className="text-left">
+            Guestbook
+          </Heading>
+          <Underline />
+        </div>
+        <div className="w-full leading-relaxed">
+          <Paragraph data-cy="description">
+            Write a message for me and others.
+            {session ? (
+              <span>
+                {" "}
+                Want to Sign Out instead? Just click <SignOut />
+              </span>
+            ) : null}
+          </Paragraph>
+        </div>
+      </section>
+      <FormAndGuestsList session={session} />
+    </Main>
   );
 }

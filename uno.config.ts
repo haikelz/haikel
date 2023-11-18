@@ -8,7 +8,13 @@ import {
 } from "unocss";
 
 export default defineConfig({
-  presets: [presetAttributify(), presetWind(), presetUno(), presetTypography(), presetTagify()],
+  presets: [
+    presetAttributify(),
+    presetWind(),
+    presetUno(),
+    presetTypography(),
+    presetTagify(),
+  ],
   theme: {
     boxShadow: {
       light: "8px 8px 0px -3px #0D1117",

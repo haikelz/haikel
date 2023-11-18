@@ -107,10 +107,7 @@ const Works = defineDocumentType(() => ({
 
 export default makeSource({
   mdx: {
-    rehypePlugins: [
-      rehypeSlug({ prefix: "toc-heading" }),
-      [rehypeShikiji as any, highlighterOptions],
-    ],
+    rehypePlugins: [rehypeSlug, [rehypeShikiji as any, highlighterOptions]],
     remarkPlugins: [remarkGfm],
   },
   contentDirPath: "./src/contents",

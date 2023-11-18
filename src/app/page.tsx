@@ -10,7 +10,6 @@ import {
 } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
-import Greeting from "~components/greeting";
 import Main from "~components/main";
 import { tw } from "~lib/helpers";
 import { sortedAllNotes, sortedAllWorks } from "~lib/services";
@@ -83,15 +82,23 @@ export default async function HomePage() {
               "md:mt-0 md:text-start"
             )}
           >
-            <Greeting />
+            <Heading
+              as="h1"
+              className="flex flex-col justify-center md:flex-row md:space-x-2"
+            >
+              I&#39;m Haikel Ilham Hakim
+            </Heading>
             <Paragraph id="description" className="my-4">
-              Someone who interested in Frontend stuff, with mainly focuses on
-              building responsive, interactive, maintainable, and accessible
-              Websites. Familiar with Javascript/Typescript, React Ecosystem,
-              Linux(for daily use) and sometimes i do backend things with Nest
-              JS. Always try to follow best practices as much as i can. I can
-              work in a team or solo. I love clean and minimal design. Look at
-              some of my works and notes below.
+              I&#39;m a Frontend Web Developer with mainly focuses on building
+              responsive, interactive, maintainable, and accessible Websites.
+              Familiar with Javascript/Typescript, React Ecosystem, Linux(for
+              daily use) and sometimes i do backend things with Nest JS. Always
+              try to follow best practices as much as i can. I can work in a
+              team or solo.
+              <br />
+              Apart from coding, i do photography with my camera. Mostly i took
+              street photos, or go to local event to have some photo shoots.
+              Look at some of my works and notes below.
             </Paragraph>
             <ul className="flex items-center justify-center space-x-4">
               {socialMediaList.map((item) => {
