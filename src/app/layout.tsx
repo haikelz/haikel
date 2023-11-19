@@ -1,10 +1,10 @@
 import "@unocss/reset/tailwind.css";
 import { Metadata } from "next";
+import Header from "~components/ui/header";
 import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { ibmPlexMono, ibmPlexSans, ibmPlexSerif } from "~lib/utils/fonts";
 import type { ChildrenProps } from "~types";
-import Sidebar from "~ui/sidebar";
 
 import "./globals.css";
 import Wrapper from "./wrapper";
@@ -57,12 +57,12 @@ export default function RootLayout({ children }: ChildrenProps) {
           <div
             className={tw(
               "min-h-screen w-full",
-              "flex flex-col-reverse md:flex-row text-base-0",
+              "text-base-0",
               "dark:text-gray-100 bg"
             )}
           >
-            <Sidebar />
-            <div className="w-full">
+            <Header />
+            <div className="w-full pt-12 sm:pt-0">
               <div className="px-4">{children}</div>
             </div>
           </div>

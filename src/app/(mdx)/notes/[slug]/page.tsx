@@ -84,7 +84,7 @@ export default async function NotePage(
       >
         <article
           className={tw(
-            "flex w-full flex-col flex-wrap justify-center py-8 mb-12",
+            "flex w-full flex-col flex-wrap justify-center py-8",
             "md:mb-3"
           )}
         >

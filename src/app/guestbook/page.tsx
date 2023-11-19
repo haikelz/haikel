@@ -48,7 +48,7 @@ export default async function Guestbook() {
     <Main
       className={tw(
         "flex min-h-screen flex-col items-start justify-start",
-        "py-8"
+        "pt-8"
       )}
     >
       <section className="flex w-full flex-wrap items-start justify-start">

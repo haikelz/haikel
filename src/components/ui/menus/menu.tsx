@@ -1,38 +1,87 @@
 "use client";
 
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuPortal,
-  DropdownMenuTrigger,
-} from "@radix-ui/react-dropdown-menu";
-import { ReactNode } from "react";
+import { atom, useAtom, useAtomValue } from "jotai";
+import { MenuIcon, MoonIcon, SunIcon, XIcon } from "lucide-react";
+import { useTheme } from "next-themes";
+import { usePathname } from "next/navigation";
 import { tw } from "~lib/helpers";
 
-type MenuProps = {
-  menuIcon: ReactNode;
-  list: ReactNode;
-  contentClassName?: string;
-};
+import { UnderlineLink } from "../typography";
 
-export default function Menu({ menuIcon, list, contentClassName }: MenuProps) {
+const topNavList = [
+  { id: 1, route: "/works", name: "Works" },
+  { id: 2, route: "/notes", name: "Notes" },
+  { id: 3, route: "/tags", name: "Tags" },
+  { id: 4, route: "/guestbook", name: "Guestbook" },
+];
+
+const isOpenAtom = atom<boolean>(false);
+
+export default function Menu() {
+  const isOpen = useAtomValue(isOpenAtom);
+
+  const pathname = usePathname();
+
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger data-cy="menu" asChild>
-        {menuIcon}
-      </DropdownMenuTrigger>
-      <DropdownMenuPortal>
-        <DropdownMenuContent
+    <>
+      {isOpen ? (
+        <div
           className={tw(
-            "z-50 mt-2 right-0 -translate-y-4 -translate-x-12 rounded-md bg-white",
-            "p-2 drop-shadow-md",
-            "dark:bg-base-1 dark:text-gray-100",
-            contentClassName
+            "space-y-4 pt-4 flex flex-col items-start justify-start",
+            "w-full sm:hidden"
           )}
         >
-          {list}
-        </DropdownMenuContent>
-      </DropdownMenuPortal>
-    </DropdownMenu>
+          {topNavList.map((item) => (
+            <UnderlineLink
+              className={tw(
+                pathname === item.route
+                  ? "decoration-dashed"
+                  : "decoration-none"
+              )}
+              key={item.id}
+              href={item.route}
+            >
+              {item.name}
+            </UnderlineLink>
+          ))}
+        </div>
+      ) : null}
+    </>
+  );
+}
+
+export function OpenMenu() {
+  const [isOpen, setIsOpen] = useAtom(isOpenAtom);
+
+  return (
+    <button
+      type="button"
+      aria-label="menu"
+      onClick={() => setIsOpen(!isOpen)}
+      className="block mr-4 sm:hidden"
+    >
+      {isOpen ? <XIcon /> : <MenuIcon />}
+    </button>
+  );
+}
+
+export function SwitchTheme() {
+  const { theme, setTheme } = useTheme();
+
+  return (
+    <button
+      className={tw(
+        "rounded-sm",
+        "p-1",
+        "hover:bg-gray-200",
+        "active:bg-gray-300",
+        "dark:hover:bg-base-2 dark:active:bg-base-1 font-bold"
+      )}
+      type="button"
+      aria-label="switch theme"
+      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+    >
+      {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+    </button>
   );
 }

@@ -68,8 +68,8 @@ export default async function HomePage() {
   const works: Works[] = sortedAllWorks.slice(0, 4);
 
   return (
-    <Main className={tw("flex flex-col items-start justify-start", "py-8")}>
-      <section className="mb-12 flex w-full flex-wrap items-center justify-center">
+    <Main className={tw("flex flex-col items-start justify-start", "pt-8")}>
+      <section className="flex mb-12 w-full flex-wrap items-center justify-center">
         <div
           className={tw(
             "flex w-full flex-col items-start justify-start",

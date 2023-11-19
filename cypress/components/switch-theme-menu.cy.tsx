@@ -1,4 +1,4 @@
-import SwitchThemeMenu from "~ui/menus/switch-theme-menu";
+import SwitchThemeMenu from "~components/ui/menus/switch-theme";
 
 describe("Switch Theme", () => {
   it("Should display switch theme button and test it", () => {

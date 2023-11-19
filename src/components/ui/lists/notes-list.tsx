@@ -49,14 +49,12 @@ export function NotesList(
           </Paragraph>
           <div className={tw("flex space-x-2", ibmPlexSans.className)}>
             {note.tags.map((tag) => (
-              <Link key={tag} href={`/tags/${tag}`} aria-label={tag}>
+              <Link key={tag} href={`/tags?tag=${tag}`} aria-label={tag}>
                 <span
                   className={tw(
                     "cursor-pointer rounded-sm",
-                    "border-2 border-gray-300",
-                    "px-1 font-medium",
-                    "dark:border-gray-500",
-                    "hover:text-blue-500 hover:decoration-blue-500"
+                    "bg-gray-200 dark:bg-base-2 dark:text-gray-100",
+                    "px-1 font-medium"
                   )}
                 >
                   {tag}

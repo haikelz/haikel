@@ -20,7 +20,7 @@ export function useClickOutside<T>(
         router.replace(href);
       }
     },
-    [ref, href]
+    [ref, href, router]
   );
 
   useEffect(() => {
