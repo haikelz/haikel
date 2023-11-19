@@ -58,7 +58,7 @@ export default function RootLayout({ children }: ChildrenProps) {
             className={tw(
               "min-h-screen w-full",
               "text-base-0",
-              "dark:text-gray-100 bg"
+              "dark:text-base-5 bg"
             )}
           >
             <Header />

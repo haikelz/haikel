@@ -1,7 +1,7 @@
 export function SwrIcon() {
   return (
     <svg
-      className="dark:bg-gray-100"
+      className="dark:bg-base-5"
       width="16px"
       height="16px"
       viewBox="0 0 512 121"

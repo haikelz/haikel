@@ -15,17 +15,17 @@ export default function Header() {
     <header
       className={tw(
         "max-w-full flex flex-col justify-center items-center w-full",
-        "fixed sm:sticky top-0 z-10 sm:px-2 sm:py-4 px-4 py-4 bg-azure/80",
+        "fixed sm:sticky top-0 z-10 sm:px-2 sm:py-4 px-4 py-4 bg-[#EFFFFD]/80",
         "dark:bg-black/80 backdrop-blur-md"
       )}
     >
       <nav
         className={tw("max-w-2xl w-full", "flex justify-between items-center")}
       >
-        <div className="bg-base-0 dark:bg-gray-100">
+        <div className="bg-base-0 dark:bg-base-5">
           <Link
             className={tw(
-              "cursor-pointer border-none text-2xl font-bold text-white dark:text-base-0",
+              "cursor-pointer border-none text-2xl font-bold text-base-5 dark:text-base-0",
               "tracking-widest outline-none",
               "transition-all",
               ibmPlexSans.className

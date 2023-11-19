@@ -20,8 +20,8 @@ function LoadingSvg() {
       aria-hidden="true"
       className={tw(
         "mr-2 h-8 w-8",
-        "animate-spin fill-blue-600 text-gray-200",
-        "dark:text-gray-600"
+        "animate-spin fill-blue-600 text-base-5",
+        "dark:text-base-3"
       )}
       viewBox="0 0 100 101"
       fill="none"

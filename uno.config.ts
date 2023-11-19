@@ -22,8 +22,6 @@ export default defineConfig({
       progress: "0 0 10px #29d, 0 0 5px #29d",
     },
     colors: {
-      azure: "#EFFFFD",
-      red: "#F84B3E",
       "base-0": "#0D1117",
       "base-1": "#161B22",
       "base-2": "#21262D",

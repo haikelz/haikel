@@ -16,20 +16,20 @@ export function Navigationlink() {
   const pathname = usePathname();
 
   return (
-    <>
-      <div className="space-x-4 hidden sm:block mr-4">
-        {topNavList.map((item) => (
-          <UnderlineLink
-            className={tw(
-              pathname === item.route ? "decoration-dashed" : "decoration-none"
-            )}
-            key={item.id}
-            href={item.route}
-          >
-            {item.name}
-          </UnderlineLink>
-        ))}
-      </div>
-    </>
+    <div className="space-x-4 hidden sm:block mr-4">
+      {topNavList.map((item) => (
+        <UnderlineLink
+          className={tw(
+            pathname.includes(item.route)
+              ? "decoration-dashed"
+              : "decoration-none"
+          )}
+          key={item.id}
+          href={item.route}
+        >
+          {item.name}
+        </UnderlineLink>
+      ))}
+    </div>
   );
 }

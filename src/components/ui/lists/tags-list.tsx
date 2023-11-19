@@ -15,10 +15,10 @@ export function TagsList({ tagsList }: { tagsList: string[] }) {
               "px-4 py-1 transition-all",
               "hover:scale-110",
               index % 2 === 0
-                ? "bg-gray-200 dark:bg-base-2"
+                ? "bg-base-5 dark:bg-base-2"
                 : index % 5 === 0
                 ? "bg-blue-300 dark:bg-blue-600"
-                : "bg-base-4 dark:bg-gray-600"
+                : "bg-base-4 dark:bg-base-3"
             )}
           >
             <Paragraph className="text-center font-medium">{item}</Paragraph>

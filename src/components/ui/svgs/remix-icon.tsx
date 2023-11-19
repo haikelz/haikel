@@ -3,7 +3,7 @@ export function RemixIcon() {
     <svg
       stroke="currentColor"
       fill="currentColor"
-      className="dark:text-gray-100"
+      className="dark:text-base-5"
       width="1em"
       height="1em"
       role="img"

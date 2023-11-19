@@ -114,8 +114,8 @@ export default async function HomePage() {
                         className={tw(
                           "rounded-sm",
                           "p-1",
-                          "hover:bg-gray-200",
-                          "active:bg-gray-300",
+                          "hover:bg-base-5",
+                          "active:bg-base-4",
                           "dark:hover:bg-base-2 dark:active:bg-base-1"
                         )}
                         aria-label={`Icon ${item.id.toString()}`}

@@ -12,11 +12,11 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-  @apply bg-red dark:bg-blue-600;
+  @apply bg-[#F84B3E] dark:bg-blue-600;
 }
 
 body::-webkit-scrollbar-track {
-  @apply bg-gray-300 dark:bg-base-2;
+  @apply bg-base-4 dark:bg-base-2;
 }
 
 h1,
@@ -30,8 +30,8 @@ h6 {
 }
 
 .prose code:not(:has(span)) {
-  @apply bg-gray-300 dark:bg-base-2 p-1 rounded-sm;
-  font-family: var(--font-ibm-serif);
+  @apply bg-base-5 dark:bg-base-2 px-1 py-0.5 rounded-sm;
+  font-family: var(--font-ibm-mono);
 }
 
 .prose code::before {
@@ -48,7 +48,7 @@ h6 {
 }
 
 .prose hr {
-  @apply border-gray-300;
+  @apply border-base-4;
 }
 
 .prose ul {
@@ -91,5 +91,5 @@ button {
 }
 
 .bg {
-  @apply bg-azure dark:bg-black;
+  @apply bg-[#EFFFFD] dark:bg-black;
 }

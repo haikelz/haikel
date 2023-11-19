@@ -171,7 +171,7 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
                       aria-label="delete message"
                       className={tw(
                         "dark:bg-base-1 bg-base-5",
-                        "hover:bg-gray-200 dark:hover:bg-base-2 p-1 rounded-md"
+                        "hover:bg-base-5 dark:hover:bg-base-2 p-1 rounded-md"
                       )}
                       onClick={() => handleDelete(Number(guest.id))}
                     >
@@ -182,7 +182,7 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
                       aria-label="edit message"
                       className={tw(
                         "dark:bg-base-1 bg-base-5",
-                        "hover:bg-gray-200 dark:hover:bg-base-2 p-1 rounded-md"
+                        "hover:bg-base-5 dark:hover:bg-base-2 p-1 rounded-md"
                       )}
                       onClick={() =>
                         handleEdit(Number(guest.id), guest.message as string)
@@ -242,7 +242,7 @@ function SignInWithGithub() {
         "flex items-center justify-center space-x-3 rounded-md",
         "bg-base-1",
         "px-3.5 py-2",
-        "font-semibold text-white"
+        "font-semibold text-base-5"
       )}
       onClick={() => signIn("github")}
     >

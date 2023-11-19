@@ -34,7 +34,7 @@ export default function Menu() {
           {topNavList.map((item) => (
             <UnderlineLink
               className={tw(
-                pathname === item.route
+                pathname.includes(item.route)
                   ? "decoration-dashed"
                   : "decoration-none"
               )}
@@ -73,8 +73,8 @@ export function SwitchTheme() {
       className={tw(
         "rounded-sm",
         "p-1",
-        "hover:bg-gray-200",
-        "active:bg-gray-300",
+        "hover:bg-base-5",
+        "active:bg-base-4",
         "dark:hover:bg-base-2 dark:active:bg-base-1 font-bold"
       )}
       type="button"

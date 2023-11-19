@@ -33,7 +33,7 @@ export default function TagsClient({ tagsList }: { tagsList: string[] }) {
   return (
     <div ref={ref}>
       <div className="flex flex-wrap gap-3">
-        {tagsList.map((item) => (
+        {tagsList.map((item, index) => (
           <button
             key={item}
             type="button"
@@ -42,8 +42,8 @@ export default function TagsClient({ tagsList }: { tagsList: string[] }) {
               "px-4 py-1 transition-all",
               "hover:scale-110",
               searchParams.get("tag") === item
-                ? "bg-red text-white dark:bg-blue-600"
-                : "bg-gray-200 dark:bg-base-2"
+                ? "bg-[#F84B3E] text-base-5 dark:bg-blue-600"
+                : "bg-base-5 dark:bg-base-2"
             )}
             onClick={() => router.replace("?" + createQueryString("tag", item))}
           >

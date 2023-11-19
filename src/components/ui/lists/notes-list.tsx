@@ -53,7 +53,7 @@ export function NotesList(
                 <span
                   className={tw(
                     "cursor-pointer rounded-sm",
-                    "bg-gray-200 dark:bg-base-2 dark:text-gray-100",
+                    "bg-base-5 dark:bg-base-2 dark:text-base-5",
                     "px-1 font-medium"
                   )}
                 >
