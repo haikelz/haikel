@@ -2,7 +2,6 @@
 @unocss all;
 
 body {
-  @apply m-0 h-[50vh];
   font-family: var(--font-ibm-serif);
   scrollbar-width: thin;
 }
@@ -92,4 +91,24 @@ button {
 
 .bg {
   @apply bg-[#EFFFFD] dark:bg-black;
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }

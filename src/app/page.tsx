@@ -89,7 +89,7 @@ export default async function HomePage() {
               I&#39;m Haikel Ilham Hakim
             </Heading>
             <Paragraph id="description" className="my-4">
-              I&#39;m a Frontend Web Developer with mainly focuses on building
+              A Frontend Web Developer with mainly focuses on building
               responsive, interactive, maintainable, and accessible Websites.
               Familiar with Javascript/Typescript, React Ecosystem, Linux(for
               daily use) and sometimes i do backend things with Nest JS. Always
