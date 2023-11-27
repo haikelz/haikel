@@ -13,7 +13,7 @@ export const env = createEnv({
     NEXTAUTH_SECRET: z.string().min(1),
     NEXTAUTH_URL: z.string().url().min(1),
     GITHUB_USERNAME: z.string().min(1),
-    EMAIL_NAME: z.string().min(1),
+    EMAIL_NAME: z.string().min(1).email(),
   },
   client: {
     NEXT_PUBLIC_PRODUCTION_URL: z.string().min(1).url(),

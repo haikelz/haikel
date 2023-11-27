@@ -2,9 +2,9 @@
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { httpBatchLink } from "@trpc/react-query";
+import type { ChildrenProps } from "@types";
 import { atom, useAtom } from "jotai";
 import { env } from "~env.mjs";
-import type { ChildrenProps } from "~types";
 
 import { trpc } from "./client";
 

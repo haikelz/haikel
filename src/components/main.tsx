@@ -1,5 +1,5 @@
+import type { ChildrenProps } from "@types";
 import { tw } from "~lib/helpers";
-import type { ChildrenProps } from "~types";
 
 type MainProps = ChildrenProps & {
   className: string;

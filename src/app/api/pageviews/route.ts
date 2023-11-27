@@ -7,7 +7,7 @@ async function handler(req: NextRequest): Promise<NextResponse> {
   }
 
   if (req.headers.get("Content-Type") !== "application/json") {
-    return new NextResponse("must be json", { status: 400 });
+    return new NextResponse("must be json!", { status: 400 });
   }
 
   const body: any = await req.json();

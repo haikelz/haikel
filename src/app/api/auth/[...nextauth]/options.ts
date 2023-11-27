@@ -35,7 +35,7 @@ export const options: NextAuthOptions = {
       profile(profile: GoogleProfile): Awaitable<User> {
         return {
           ...profile,
-          role: profile.email === EMAIL_NAME ? "admin" : "guest",
+          role: profile.email === EMAIL_NAME  ? "admin" : "guest",
           name: profile.name,
           id: profile.sub,
           image: profile.picture,
@@ -50,7 +50,8 @@ export const options: NextAuthOptions = {
     strategy: "jwt",
   },
   jwt: {
-    maxAge: 60 * 60 * 24 * 30,
+    // max age = 7 hari
+    maxAge: 60 * 60 * 24 * 7,
   },
   callbacks: {
     async jwt({ token, user }) {

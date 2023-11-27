@@ -8,10 +8,6 @@ export type GuestbookProps = {
   message: string;
 };
 
-export type IconClassNameProps = {
-  className?: string;
-};
-
 export type ThemeProps = {
   theme: string;
   changeTheme: () => void;

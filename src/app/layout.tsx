@@ -1,10 +1,10 @@
+import type { ChildrenProps } from "@types";
 import "@unocss/reset/tailwind.css";
 import { Metadata } from "next";
 import Header from "~components/ui/header";
 import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { ibmPlexMono, ibmPlexSans, ibmPlexSerif } from "~lib/utils/fonts";
-import type { ChildrenProps } from "~types";
 
 import "./globals.css";
 import Wrapper from "./wrapper";
