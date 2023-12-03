@@ -35,7 +35,7 @@
     "@trpc/server": "next",
     "@unocss/reset": "^0.57.3",
     "@vercel/kv": "^1.0.0",
-    "classix": "^2.1.35",
+    "clsx": "^2.0.0",
     "contentlayer": "^0.3.4",
     "date-fns": "^2.30.0",
     "drizzle-orm": "^0.29.0",

@@ -1,10 +1,10 @@
-import { cx } from "classix";
+import clsx, { ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 /**
  * A function that combine classix with tailwind merge
  *
- * @param {string[] | any} classes className
+ * @param {ClassValue[]} classes className
  * @returns {string} class
  */
-export const tw = (...classes: string[] | any) => twMerge(cx(...classes));
+export const tw = (...classes: ClassValue[]) => twMerge(clsx(...classes));

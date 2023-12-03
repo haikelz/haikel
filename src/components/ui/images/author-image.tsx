@@ -26,6 +26,7 @@ export default function AuthorImage() {
         height={25}
         loading="lazy"
         draggable={false}
+        fetchPriority="high"
         data-cy="author-image"
       />
       {isOpen ? (
@@ -42,6 +43,7 @@ export default function AuthorImage() {
                   alt={alt}
                   src={src}
                   loading="eager"
+                  fetchPriority="high"
                   draggable={false}
                   width={500}
                   height={500}

@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image, { ImageProps } from "next/image";
 import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import Captions from "yet-another-react-lightbox/plugins/captions";
@@ -8,12 +8,14 @@ import "yet-another-react-lightbox/plugins/captions.css";
 import "yet-another-react-lightbox/styles.css";
 import { tw } from "~lib/helpers";
 
-type LightboxImageProps = {
+type LightboxImageProps = ImageProps & {
   src: string;
   alt: string;
 };
 
-export default function LightboxImage({ src, alt }: LightboxImageProps) {
+export default function LightboxImage(
+  { src, alt, ...props }: LightboxImageProps
+) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
@@ -28,6 +30,7 @@ export default function LightboxImage({ src, alt }: LightboxImageProps) {
         height={1000}
         loading="lazy"
         data-cy="lightbox-image"
+        {...props}
       />
       {isOpen ? (
         <Lightbox
@@ -43,6 +46,7 @@ export default function LightboxImage({ src, alt }: LightboxImageProps) {
                   alt={alt}
                   src={src}
                   loading="eager"
+                  fetchPriority="high"
                   draggable={false}
                   width={1000}
                   height={1000}

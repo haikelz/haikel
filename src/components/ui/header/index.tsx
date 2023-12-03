@@ -7,6 +7,9 @@ import Menu, { OpenMenu } from "../menus/menu";
 import { Navigationlink } from "./navigation-link";
 
 const SwitchTheme = dynamic(() => import("~ui/menus/switch-theme"), {
+  loading: () => (
+    <div className="w-8 h-8 animate-pulse rounded-sm bg-base-5 dark:bg-base-2"></div>
+  ),
   ssr: false,
 });
 
