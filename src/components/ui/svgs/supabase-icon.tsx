@@ -9,7 +9,6 @@ export function SupabaseIcon() {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       preserveAspectRatio="xMidYMid"
     >
-      <title>supabase</title>
       <defs>
         <linearGradient
           x1="20.8617445%"
@@ -47,6 +46,7 @@ export function SupabaseIcon() {
           fill="#3ECF8E"
         ></path>
       </g>
+      <title>Supabase</title>
     </svg>
   );
 }

@@ -1,5 +1,4 @@
 export * from "./chakra-ui-icon";
-export * from "./facebook-icon";
 export * from "./framer-icon";
 export * from "./google-icon";
 export * from "./jotai-icon";

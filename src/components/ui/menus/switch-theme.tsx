@@ -19,6 +19,7 @@ export default function SwitchTheme() {
       type="button"
       aria-label="switch theme"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      title={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
     >
       {theme === "dark" ? <SunIcon /> : <MoonIcon />}
     </button>

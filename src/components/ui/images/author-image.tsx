@@ -26,6 +26,7 @@ export default function AuthorImage() {
         height={25}
         loading="lazy"
         draggable={false}
+        title={alt}
         fetchPriority="high"
         data-cy="author-image"
       />

@@ -30,6 +30,7 @@ export default function LightboxImage(
         height={1000}
         loading="lazy"
         data-cy="lightbox-image"
+        title={alt}
         {...props}
       />
       {isOpen ? (

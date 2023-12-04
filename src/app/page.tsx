@@ -18,15 +18,31 @@ import { NotesList, WorksList } from "~ui/lists";
 import { Heading, Paragraph, Underline, UnderlineLink } from "~ui/typography";
 
 const socialMediaList = [
-  { id: 1, icon: MailIcon, route: "mailto:halo@haikel.app" },
-  { id: 2, icon: RssIcon, route: "https://haikel.app/rss.xml" },
-  { id: 3, icon: FacebookIcon, route: "https://facebook.com/kelgfx" },
-  { id: 4, icon: InstagramIcon, route: "https://instagram.com/ekel.tsx" },
-  { id: 5, icon: GithubIcon, route: "https://github.com/haikelz" },
+  { id: 1, icon: MailIcon, route: "mailto:halo@haikel.app", title: "E-mail" },
+  { id: 2, icon: RssIcon, route: "https://haikel.app/rss.xml", title: "RSS" },
+  {
+    id: 3,
+    icon: FacebookIcon,
+    route: "https://facebook.com/kelgfx",
+    title: "Facebook",
+  },
+  {
+    id: 4,
+    icon: InstagramIcon,
+    route: "https://instagram.com/ekel.tsx",
+    title: "Instagram",
+  },
+  {
+    id: 5,
+    icon: GithubIcon,
+    route: "https://github.com/haikelz",
+    title: "Github",
+  },
   {
     id: 6,
     icon: LinkedinIcon,
     route: "https://www.linkedin.com/in/haikel",
+    title: "Linkedin",
   },
 ];
 
@@ -107,6 +123,7 @@ export default async function HomePage() {
                   <li
                     className="transition-all hover:-translate-y-0.5"
                     key={item.id}
+                    title={item.title}
                   >
                     <Link href={item.route} target="_blank">
                       <button

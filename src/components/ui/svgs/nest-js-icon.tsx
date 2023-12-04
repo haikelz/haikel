@@ -15,6 +15,7 @@ export function NestJsIcon() {
           fill="#E0234E"
         ></path>
       </g>
+      <title>Nest JS</title>
     </svg>
   );
 }

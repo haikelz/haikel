@@ -42,6 +42,7 @@ export function ViteIcon() {
           fill="url(#linearGradient-2)"
         ></path>
       </g>
+      <title>Vite</title>
     </svg>
   );
 }
