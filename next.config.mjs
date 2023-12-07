@@ -7,11 +7,27 @@ const nextConfig = {
   reactStrictMode: true,
   compress: true,
   images: {
-    domains: [
-      "avatars.githubusercontent.com",
-      "ik.imagekit.io",
-      "i.ibb.co",
-      "lh3.googleusercontent.com",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "ik.imagekit.io",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "i.ibb.co",
+        port: "",
+      },
     ],
   },
 };

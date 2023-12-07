@@ -28,4 +28,4 @@
 
 ## License
 
-MIT
+See the [License](https://github.com/haikelz/haikel/blob/master/LICENSE).

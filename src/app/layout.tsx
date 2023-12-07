@@ -1,5 +1,6 @@
 import type { ChildrenProps } from "@types";
 import "@unocss/reset/tailwind.css";
+import { Analytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
 import Header from "~components/ui/header";
 import { tw } from "~lib/helpers";
@@ -67,6 +68,7 @@ export default function RootLayout({ children }: ChildrenProps) {
             </div>
           </div>
         </Wrapper>
+        <Analytics />
       </body>
     </html>
   );
