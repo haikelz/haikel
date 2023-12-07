@@ -58,7 +58,7 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
     mutationKey: [id],
     onSettled: async () => {
       return await queryClient.invalidateQueries({ queryKey: [id], exact: true });
-    }, 
+    },
   });
 
   // update
@@ -66,7 +66,7 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
     mutationKey: [id],
     onSettled: async () =>{
       return await queryClient.invalidateQueries({ queryKey: [id], exact: true });
-    } 
+    }
   });
 
   const { data, isError, isPending } = trpc.get.useQuery(
@@ -94,10 +94,12 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
     }
 
     setValue("message", "");
+    window.location.reload();
   }
 
   function handleDelete(id: number) {
     deleteMutation.mutate({ id: id });
+    window.location.reload();
   }
 
   function handleEdit(id: number, message: string) {
