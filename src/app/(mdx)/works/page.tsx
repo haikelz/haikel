@@ -1,8 +1,8 @@
 import { Works, allWorks } from "contentlayer/generated";
 import { Metadata } from "next";
 import Main from "~components/main";
+import { sortedAllWorks } from "~features/works";
 import { tw } from "~lib/helpers";
-import { sortedAllWorks } from "~lib/services";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { WorksList } from "~ui/lists";
 import { Heading, Paragraph, Underline } from "~ui/typography";

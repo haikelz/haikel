@@ -50,7 +50,6 @@ export const options: NextAuthOptions = {
     strategy: "jwt",
   },
   jwt: {
-    // max age = 7 hari
     maxAge: 60 * 60 * 24 * 7,
   },
   callbacks: {

@@ -1,6 +1,7 @@
 import { Notes, Works } from "contentlayer/generated";
 import {
   FacebookIcon,
+  FileTextIcon,
   GithubIcon,
   InstagramIcon,
   LinkedinIcon,
@@ -11,8 +12,9 @@ import {
 import { Metadata } from "next";
 import Link from "next/link";
 import Main from "~components/main";
+import { sortedAllNotes } from "~features/notes";
+import { sortedAllWorks } from "~features/works";
 import { tw } from "~lib/helpers";
-import { sortedAllNotes, sortedAllWorks } from "~lib/services";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { NotesList, WorksList } from "~ui/lists";
 import { Heading, Paragraph, Underline, UnderlineLink } from "~ui/typography";
@@ -43,6 +45,12 @@ const socialMediaList = [
     icon: LinkedinIcon,
     route: "https://www.linkedin.com/in/haikel",
     title: "Linkedin",
+  },
+  {
+    id: 7,
+    icon: FileTextIcon,
+    route: "/resume.pdf",
+    title: "Resume",
   },
 ];
 

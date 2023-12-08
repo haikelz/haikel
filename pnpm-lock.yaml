@@ -35,9 +35,6 @@ dependencies:
   '@unocss/reset':
     specifier: ^0.58.0
     version: 0.58.0
-  '@vercel/analytics':
-    specifier: ^1.1.1
-    version: 1.1.1
   '@vercel/kv':
     specifier: ^1.0.0
     version: 1.0.0
@@ -2742,12 +2739,6 @@ packages:
     resolution: {integrity: sha512-gw6d4IA1biB4eye5ESaXc0zOlVQI94aptsBvVcTghYWu1kRmOrJFoMFEDCa8p5uzluyYAOFCuY2GWLR6O4ZoIw==}
     dependencies:
       crypto-js: 4.2.0
-    dev: false
-
-  /@vercel/analytics@1.1.1:
-    resolution: {integrity: sha512-+NqgNmSabg3IFfxYhrWCfB/H+RCUOCR5ExRudNG2+pcRehq628DJB5e1u1xqwpLtn4pAYii4D98w7kofORAGQA==}
-    dependencies:
-      server-only: 0.0.1
     dev: false
 
   /@vercel/kv@1.0.0:
@@ -8015,10 +8006,6 @@ packages:
     hasBin: true
     dependencies:
       lru-cache: 6.0.0
-
-  /server-only@0.0.1:
-    resolution: {integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==}
-    dev: false
 
   /set-function-length@1.1.1:
     resolution: {integrity: sha512-VoaqjbBJKiWtg4yRcKBQ7g7wnGnLV3M8oLvVWwOk2PdYY6PEFegR1vezXR0tw6fZGF9csVakIRjrJiy2veSBFQ==}

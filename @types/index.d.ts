@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 export type GuestbookProps = {
-  id: string;
+  id: number;
   created_at: string;
   email: string;
   username: string;

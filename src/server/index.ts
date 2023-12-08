@@ -1,8 +1,11 @@
 import { initTRPC } from "@trpc/server";
-import { eq, sql } from "drizzle-orm";
 import { z } from "zod";
-import db from "~lib/utils/db";
-import { guestbook } from "~lib/utils/db/schema";
+import {
+  deleteGuestbook,
+  getGuestbook,
+  patchGuestbook,
+  postGuestbook,
+} from "~features/guestbook";
 
 const t = initTRPC.create();
 
@@ -13,22 +16,8 @@ export const appRouter = router({
   get: publicProcedure
     .input(z.object({ key: z.string() }))
     .query(async ({ input }) => {
-      try {
-        const response = await db
-          .select({
-            id: guestbook.id,
-            message: guestbook.message,
-            email: guestbook.email,
-            username: guestbook.username,
-            created_at: guestbook.created_at,
-          })
-          .from(guestbook)
-          .orderBy(sql`${guestbook.id} desc`);
-
-        return response;
-      } catch (err) {
-        console.error(err);
-      }
+      const response = await getGuestbook();
+      return response;
     }),
 
   post: publicProcedure
@@ -40,38 +29,19 @@ export const appRouter = router({
       })
     )
     .mutation(async ({ input }) => {
-      try {
-        await db.insert(guestbook).values({
-          message: input.message,
-          email: input.email,
-          username: input.username,
-        });
-      } catch (err) {
-        console.error(err);
-      }
+      await postGuestbook(input);
     }),
 
   delete: publicProcedure
     .input(z.object({ id: z.number() }))
     .mutation(async ({ input }) => {
-      try {
-        await db.delete(guestbook).where(eq(guestbook.id, input.id));
-      } catch (err) {
-        console.error(err);
-      }
+      await deleteGuestbook(input);
     }),
 
   patch: publicProcedure
     .input(z.object({ id: z.number(), message: z.string() }))
     .mutation(async ({ input }) => {
-      try {
-        await db
-          .update(guestbook)
-          .set({ message: input.message })
-          .where(eq(guestbook.id, input.id));
-      } catch (err) {
-        console.error(err);
-      }
+      await patchGuestbook(input);
     }),
 });
 
