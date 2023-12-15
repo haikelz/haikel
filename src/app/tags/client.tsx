@@ -33,7 +33,7 @@ export default function TagsClient({ tagsList }: { tagsList: string[] }) {
   return (
     <div ref={ref}>
       <div className="flex flex-wrap gap-3">
-        {tagsList.map((item, index) => (
+        {tagsList.map((item) => (
           <button
             key={item}
             type="button"

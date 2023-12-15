@@ -1,6 +1,7 @@
 import type { ChildrenProps } from "@types";
 import "@unocss/reset/tailwind.css";
 import { Metadata } from "next";
+import { Viewport } from "next";
 import Header from "~components/ui/header";
 import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
@@ -40,6 +41,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
   },
   metadataBase: new URL(url),
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({ children }: ChildrenProps) {

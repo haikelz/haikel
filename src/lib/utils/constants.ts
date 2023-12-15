@@ -9,4 +9,4 @@ export const ABSOLUTE_OG_URL = NEXT_PUBLIC_VERCEL_URL
   ? "https://" + NEXT_PUBLIC_VERCEL_URL + "/api/og"
   : "/api/og";
 
-export const condition = process.env.NODE_ENV;
+export const CONDITION = process.env.NODE_ENV;

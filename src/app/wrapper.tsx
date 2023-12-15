@@ -1,6 +1,5 @@
 "use client";
 
-import { ReactLenis } from "@studio-freight/react-lenis";
 import { ChildrenProps } from "@types";
 import { Provider as JotaiProvider } from "jotai";
 import { SessionProvider } from "next-auth/react";
@@ -12,22 +11,7 @@ export default function Wrapper({ children }: ChildrenProps) {
     <SessionProvider>
       <JotaiProvider>
         <Provider>
-          <ThemeProvider attribute="class">
-            <ReactLenis
-              root
-              options={{
-                easing: (x: number) => 1 - Math.cos((x * Math.PI) / 2),
-                direction: "vertical",
-                gestureDirection: "vertical",
-                smooth: true,
-                smoothTouch: true,
-                touchMultiplier: 2,
-                smoothWheel: true,
-              }}
-            >
-              {children}
-            </ReactLenis>
-          </ThemeProvider>
+          <ThemeProvider attribute="class">{children}</ThemeProvider>
         </Provider>
       </JotaiProvider>
     </SessionProvider>

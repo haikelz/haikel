@@ -6,9 +6,8 @@ import type { ChildrenProps } from "@types";
 import { atom, useAtom } from "jotai";
 import { env } from "~env.mjs";
 
+import { CONDITION } from "../constants";
 import { trpc } from "./client";
-
-const condition = process.env.NODE_ENV;
 
 const { NEXT_PUBLIC_DEVELOPMENT_URL, NEXT_PUBLIC_PRODUCTION_URL } = env;
 
@@ -18,7 +17,7 @@ const trpcClientAtom = atom(() =>
     links: [
       httpBatchLink({
         url: `${
-          condition === "development"
+          CONDITION === "development"
             ? NEXT_PUBLIC_DEVELOPMENT_URL
             : NEXT_PUBLIC_PRODUCTION_URL
         }/api/trpc`,

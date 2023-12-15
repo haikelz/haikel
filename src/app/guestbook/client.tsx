@@ -21,11 +21,12 @@ import { Paragraph } from "~ui/typography";
 
 import ErrorClient from "./error-client";
 import LoadingClient from "./loading-client";
+import { GuestbookProps } from "@types";
 
 const idAtom = atom<number>(0);
 const isEditedAtom = atom<boolean>(false);
 
-export function FormAndGuestsList({ session }: { session: Session | null }) {
+export function FormAndGuestsList({ session }: { session: Session | null}) {
   const [id, setId] = useAtom(idAtom);
   const [isEdited, setIsEdited] = useAtom(isEditedAtom);
 
@@ -111,7 +112,7 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
   if (isPending) return <LoadingClient />;
   if (isError) return <ErrorClient />;
 
-  const guestbook = data;
+  const guestbook = data as GuestbookProps[];
 
   return (
     <>
@@ -147,9 +148,9 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
           </form>
         </div>
       )}
-      {guestbook?.length ? (
+      {guestbook.length ? (
         <section className="mb-10 flex w-full flex-col space-y-8">
-          {guestbook?.map((guest) => (
+          {guestbook.slice(guestbook.length < 100 ? 0 : 100, guestbook.length) .map((guest) => (
             <div data-cy="guest-item" key={guest.id} className="h-full">
               <div
                 className={
