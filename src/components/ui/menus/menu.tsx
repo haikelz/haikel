@@ -58,7 +58,13 @@ export function OpenMenu() {
       type="button"
       aria-label="menu"
       onClick={() => setIsOpen(!isOpen)}
-      className="block mr-4 sm:hidden"
+      className={tw(
+        "rounded-md block mr-4 sm:hidden",
+        "p-1",
+        "bg-base-5",
+        "active:bg-base-4",
+        "dark:bg-base-2 dark:active:bg-base-1 font-bold"
+      )}
     >
       {isOpen ? <XIcon /> : <MenuIcon />}
     </button>

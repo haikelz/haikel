@@ -49,7 +49,7 @@ const socialMediaList = [
   {
     id: 7,
     icon: FileTextIcon,
-    route: "/resume.pdf",
+    route: "https://read.cv/ekel",
     title: "Resume",
   },
 ];
