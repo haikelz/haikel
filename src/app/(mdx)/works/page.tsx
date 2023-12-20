@@ -60,9 +60,9 @@ export default function WorksPage() {
         <div className="w-full leading-relaxed">
           <Paragraph data-cy="description">List some of my works</Paragraph>
         </div>
-      </section>
-      <section className="mb-10 mt-6 flex w-full flex-col space-y-8">
-        <WorksList works={works} />
+        <div className="mb-10 mt-4 flex w-full flex-col space-y-8">
+          <WorksList works={works} />
+        </div>
       </section>
     </Main>
   );

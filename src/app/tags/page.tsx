@@ -79,9 +79,9 @@ export default function Tags() {
             Select spesific notes based on the list of tags below.
           </Paragraph>
         </div>
-      </section>
-      <section className="mt-6">
-        <TagsClient tagsList={tagsList} />
+        <div className="mt-4">
+          <TagsClient tagsList={tagsList} />
+        </div>
       </section>
     </Main>
   );

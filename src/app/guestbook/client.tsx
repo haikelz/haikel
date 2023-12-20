@@ -13,7 +13,7 @@ import { Session } from "next-auth";
 import { signIn, signOut } from "next-auth/react";
 import { useForm } from "react-hook-form";
 import { tw } from "~lib/helpers";
-import { ibmPlexSans } from "~lib/utils/fonts";
+import { inter } from "~lib/utils/fonts";
 import { messageSchema } from "~lib/utils/form-schema";
 import { trpc } from "~lib/utils/trpc/client";
 import { GoogleIcon } from "~ui/svgs";
@@ -161,7 +161,7 @@ export function FormAndGuestsList({ session }: { session: Session | null}) {
                   className={tw(
                     "cursor-pointer text-lg font-bold",
                     "hover:text-blue-500",
-                    ibmPlexSans.className
+                    inter.className
                   )}
                 >
                   {guest.message}

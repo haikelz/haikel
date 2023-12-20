@@ -2,7 +2,7 @@
 @unocss all;
 
 body {
-  font-family: var(--font-ibm-serif);
+  font-family: var(--font-inter);
   scrollbar-width: thin;
 }
 
@@ -11,7 +11,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-  @apply bg-[#F84B3E] dark:bg-blue-600;
+  @apply bg-base-0 dark:bg-base-5;
 }
 
 body::-webkit-scrollbar-track {
@@ -25,7 +25,7 @@ h4,
 h5,
 h6 {
   width: fit-content;
-  font-family: var(--font-ibm-sans);
+  font-family: var(--font-inter);
 }
 
 .prose code:not(:has(span)) {
@@ -68,7 +68,7 @@ h6 {
 .prose h4,
 .prose h5,
 .prose h6 {
-  @apply font-bold text-inherit;
+  @apply font-extrabold text-inherit;
 }
 
 .prose a {

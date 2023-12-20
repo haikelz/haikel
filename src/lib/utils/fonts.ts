@@ -1,17 +1,4 @@
-import {
-  IBM_Plex_Mono,
-  IBM_Plex_Sans,
-  IBM_Plex_Serif,
-  Noto_Naskh_Arabic,
-} from "next/font/google";
-
-export const ibmPlexSerif = IBM_Plex_Serif({
-  weight: ["400", "500", "600", "700"],
-  style: ["normal"],
-  subsets: ["latin"],
-  variable: "--font-ibm-serif",
-  display: "swap",
-});
+import { IBM_Plex_Mono, Inter, Noto_Naskh_Arabic } from "next/font/google";
 
 export const ibmPlexMono = IBM_Plex_Mono({
   weight: ["400", "500", "600", "700"],
@@ -29,10 +16,10 @@ export const naskhArabic = Noto_Naskh_Arabic({
   display: "swap",
 });
 
-export const ibmPlexSans = IBM_Plex_Sans({
-  weight: ["400", "500", "600", "700"],
+export const inter = Inter({
+  weight: ["400", "500", "600", "700", "800"],
   style: ["normal"],
   subsets: ["latin"],
-  variable: "--font-ibm-sans",
+  variable: "--font-inter",
   display: "swap",
 });

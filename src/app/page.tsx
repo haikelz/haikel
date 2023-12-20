@@ -1,4 +1,3 @@
-import { Notes, Works } from "contentlayer/generated";
 import {
   FacebookIcon,
   FileTextIcon,
@@ -12,12 +11,9 @@ import {
 import { Metadata } from "next";
 import Link from "next/link";
 import Main from "~components/main";
-import { sortedAllNotes } from "~features/notes";
-import { sortedAllWorks } from "~features/works";
 import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
-import { NotesList, WorksList } from "~ui/lists";
-import { Heading, Paragraph, Underline, UnderlineLink } from "~ui/typography";
+import { Heading, Paragraph } from "~ui/typography";
 
 const socialMediaList = [
   { id: 1, icon: MailIcon, route: "mailto:halo@haikel.app", title: "E-mail" },
@@ -88,16 +84,13 @@ export const metadata: Metadata = {
 };
 
 export default async function HomePage() {
-  const notes: Notes[] = sortedAllNotes.slice(0, 4);
-  const works: Works[] = sortedAllWorks.slice(0, 4);
-
   return (
     <Main className={tw("flex flex-col items-start justify-start", "pt-8")}>
-      <section className="flex mb-12 w-full flex-wrap items-center justify-center">
+      <section className="flex mb-10 w-full flex-wrap items-center justify-center">
         <div
           className={tw(
             "flex w-full flex-col items-start justify-start",
-            "md:flex-row"
+            "md:flex-row mb-10"
           )}
         >
           <div
@@ -106,24 +99,28 @@ export default async function HomePage() {
               "md:mt-0 md:text-start"
             )}
           >
-            <Heading
-              as="h1"
-              className="flex flex-col justify-center md:flex-row md:space-x-2"
-            >
-              I&#39;m Haikel Ilham Hakim
-            </Heading>
-            <Paragraph id="description" className="my-4">
-              A Frontend Web Developer with mainly focuses on building
-              responsive, interactive, maintainable, and accessible Websites.
-              Familiar with Javascript/Typescript, React Ecosystem, Linux(for
-              daily use) and sometimes i do backend things with Nest JS. Always
-              try to follow best practices as much as i can. I can work in a
-              team or solo.
-              <br />
-              Apart from coding, i do photography with my camera. Mostly i took
-              street photos, or go to local event to have some photo shoots.
-              Look at some of my works and notes below.
-            </Paragraph>
+            <div>
+              <Heading as="h1">I&#39;m Haikel Ilham Hakim</Heading>
+              <Paragraph id="description" className="my-4">
+                A <span className="font-bold">Frontend Web Developer</span> with
+                mainly focuses on building responsive, interactive,
+                maintainable, and accessible Websites. Familiar with{" "}
+                <span className="font-bold">
+                  Javascript/Typescript, React Ecosystem, Linux
+                </span>
+                (for daily use) and sometimes i do backend things with{" "}
+                <span className="font-bold">Nest JS</span>. Always try to follow
+                best practices as much as i can.{" "}
+                <span className="font-bold">Keep it simple</span>, is one of my
+                principles while building something.
+                <br />
+                Sometimes, i spend my time to write notes about my thought,
+                experiences, and technical stuff. Apart from coding, i do{" "}
+                <span className="font-bold">photography</span> with my camera.
+                Mostly i took street photos, or go to local event to have some
+                photo shoots.
+              </Paragraph>
+            </div>
             <ul className="flex items-center justify-center space-x-4">
               {socialMediaList.map((item) => {
                 const Icon: LucideIcon = item.icon;
@@ -152,46 +149,6 @@ export default async function HomePage() {
                 );
               })}
             </ul>
-          </div>
-        </div>
-      </section>
-      <section className="mb-12 flex w-full flex-wrap items-center justify-center">
-        <div className="flex w-full flex-col items-start justify-start">
-          <div>
-            <Heading as="h2">Featured Works</Heading>
-            <Underline />
-          </div>
-          <div className="mb-8 mt-6 flex w-full flex-col space-y-8">
-            <WorksList works={works} />
-          </div>
-          <div className="flex w-full items-end justify-start">
-            <UnderlineLink
-              href="/works"
-              role="button"
-              aria-label="See more works"
-            >
-              See more works
-            </UnderlineLink>
-          </div>
-        </div>
-      </section>
-      <section className="mb-12 flex w-full flex-wrap items-center justify-center">
-        <div className="flex w-full flex-col items-start justify-start">
-          <div>
-            <Heading as="h2">Latest Notes</Heading>
-            <Underline />
-          </div>
-          <div className="mb-8 mt-6 flex w-full flex-col space-y-8">
-            <NotesList filteredNotes={notes} />
-          </div>
-          <div className="flex w-full items-start justify-start">
-            <UnderlineLink
-              href="/notes"
-              role="button"
-              aria-label="See more notes"
-            >
-              See more notes
-            </UnderlineLink>
           </div>
         </div>
       </section>

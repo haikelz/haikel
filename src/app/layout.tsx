@@ -1,11 +1,10 @@
 import type { ChildrenProps } from "@types";
 import "@unocss/reset/tailwind.css";
-import { Metadata } from "next";
-import { Viewport } from "next";
+import { Metadata, Viewport } from "next";
 import Header from "~components/ui/header";
 import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
-import { ibmPlexMono, ibmPlexSans, ibmPlexSerif } from "~lib/utils/fonts";
+import { inter } from "~lib/utils/fonts";
 
 import "./globals.css";
 import Wrapper from "./wrapper";
@@ -53,11 +52,7 @@ export default function RootLayout({ children }: ChildrenProps) {
   return (
     <html
       lang="en"
-      className={tw(
-        ibmPlexSerif.variable,
-        ibmPlexSans.variable,
-        ibmPlexMono.variable
-      )}
+      className={tw(inter.variable, inter.variable, inter.variable)}
     >
       <body>
         <Wrapper>

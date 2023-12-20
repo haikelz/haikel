@@ -1,7 +1,7 @@
 import { Works } from "contentlayer/generated";
 import Link from "next/link";
 import { tw } from "~lib/helpers";
-import { ibmPlexSans } from "~lib/utils/fonts";
+import { inter } from "~lib/utils/fonts";
 import {
   ChakrauiIcon,
   FramerIcon,
@@ -33,7 +33,7 @@ export function WorksList({ works }: { works: Works[] }) {
                 className={tw(
                   "text-lg font-bold",
                   "hover:text-blue-500",
-                  ibmPlexSans.className
+                  inter.className
                 )}
               >
                 {work.title}
@@ -43,7 +43,7 @@ export function WorksList({ works }: { works: Works[] }) {
           <Paragraph className="my-2 tracking-wide">
             {work.description}
           </Paragraph>
-          <div className={tw("flex space-x-2", ibmPlexSans.className)}>
+          <div className={tw("flex space-x-2", inter.className)}>
             {work.stack.map((techstack, index) => (
               <div key={index + 1}>
                 {techstack === "nextjs" ? (

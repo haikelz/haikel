@@ -1,12 +1,12 @@
 import { tw } from "~lib/helpers";
-import { ibmPlexSans } from "~lib/utils/fonts";
+import { inter } from "~lib/utils/fonts";
 
 export default function Loading() {
   return (
     <section className="flex min-h-screen items-center justify-center">
       <div role="status" className="flex items-center justify-center">
         <LoadingSvg />
-        <span className={tw("text-base font-bold", ibmPlexSans.className)}>
+        <span className={tw("text-base font-bold", inter.className)}>
           Loading....
         </span>
       </div>

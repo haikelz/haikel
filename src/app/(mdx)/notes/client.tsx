@@ -43,14 +43,14 @@ export default function NotesClient({ notes }: { notes: Notes[] }) {
 
   return (
     <>
-      <div className="relative my-6 w-full">
+      <div className="relative my-4 w-full">
         <div className="absolute inset-y-0 left-0 flex items-center pl-3">
           <SearchIcon size={20} />
         </div>
         <input
           onChange={(e) => setSearch(e.target.value)}
           className={tw(
-            "block w-full border-2 border-base-0",
+            "block w-full border border-base-0",
             "focus:border-blue-500 focus:ring-blue-500 focus:ring-1",
             "dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:focus:ring-1",
             "dark:border-base-5 bg-white dark:bg-base-0",

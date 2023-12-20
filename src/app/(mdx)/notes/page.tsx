@@ -62,7 +62,7 @@ export default function NotesPage() {
         <div className="w-full leading-relaxed">
           <Paragraph data-cy="description">
             Sometimes, i write something. Mostly about technical stuff. So yeah,
-            i call this as <b>Notes</b>.
+            i call this as <span className="font-semibold">Notes</span>.
           </Paragraph>
         </div>
       </section>

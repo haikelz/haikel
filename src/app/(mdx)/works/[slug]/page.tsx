@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import Main from "~components/main";
 import { tw } from "~lib/helpers";
 import { ABSOLUTE_OG_URL, SITE_URL } from "~lib/utils/constants";
-import { ibmPlexSans, naskhArabic } from "~lib/utils/fonts";
+import { inter, naskhArabic } from "~lib/utils/fonts";
 import { Heading, UnderlineLink } from "~ui/typography";
 
 const LightboxImage = dynamic(() => import("~ui/images/lightbox-image"));
@@ -86,7 +86,7 @@ export default async function DetailWorkPage(
           </Heading>
           <div className="my-3 flex items-center">
             <AuthorImage />
-            <div className={tw("tracking-[0.050em]", ibmPlexSans.className)}>
+            <div className={tw("tracking-[0.050em]", inter.className)}>
               <span className={tw("text-base font-semibold leading-[1.75rem]")}>
                 {author}, <ReadingTime content={body.raw} />.
               </span>{" "}

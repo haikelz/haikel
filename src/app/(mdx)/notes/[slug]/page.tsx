@@ -8,7 +8,7 @@ import Main from "~components/main";
 import NoteViews from "~components/note-views";
 import { tw } from "~lib/helpers";
 import { ABSOLUTE_OG_URL, SITE_URL } from "~lib/utils/constants";
-import { ibmPlexSans, naskhArabic } from "~lib/utils/fonts";
+import { inter, naskhArabic } from "~lib/utils/fonts";
 import { Heading, Paragraph } from "~ui/typography";
 
 const Video = dynamic(() => import("~components/video"));
@@ -100,7 +100,7 @@ export default async function NotePage(
               <Paragraph
                 className={tw(
                   "text-base font-semibold tracking-[0.050em]",
-                  ibmPlexSans.className
+                  inter.className
                 )}
               >
                 {format(new Date(date) ?? new Date(), "LLLL d, yyyy")} /{" "}

@@ -4,9 +4,9 @@ export function Underline() {
   return (
     <div
       className={tw(
-        "mb-2 w-full rounded-sm",
-        "border-b-[3px] border-[#F84B3E]",
-        "dark:border-blue-500"
+        "mb-2 w-full rounded-full",
+        "border-b-[3px] border-base-0",
+        "dark:border-base-5"
       )}
     ></div>
   );

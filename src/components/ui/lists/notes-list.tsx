@@ -3,7 +3,7 @@ import format from "date-fns/format";
 import Link from "next/link";
 import reactStringReplace from "react-string-replace";
 import { tw } from "~lib/helpers";
-import { ibmPlexSans } from "~lib/utils/fonts";
+import { inter } from "~lib/utils/fonts";
 import { Paragraph } from "~ui/typography";
 
 export function NotesList(
@@ -14,10 +14,7 @@ export function NotesList(
       {filteredNotes.map((note) => (
         <div data-cy="note-item" key={note.slug} className="h-full">
           <Paragraph
-            className={tw(
-              "text-left text-sm font-medium",
-              ibmPlexSans.className
-            )}
+            className={tw("text-left text-sm font-medium", inter.className)}
           >
             {format(new Date(note.date) ?? new Date(), "LLLL d, yyyy")}
           </Paragraph>
@@ -26,7 +23,7 @@ export function NotesList(
               className={tw(
                 "cursor-pointer text-lg font-bold",
                 "hover:text-blue-500",
-                ibmPlexSans.className
+                inter.className
               )}
               href={`/${note.slug}`}
               aria-label={note.title}
@@ -47,7 +44,7 @@ export function NotesList(
           <Paragraph className="my-2 tracking-wide">
             {note.description}
           </Paragraph>
-          <div className={tw("flex space-x-2", ibmPlexSans.className)}>
+          <div className={tw("flex space-x-2", inter.className)}>
             {note.tags.map((tag) => (
               <Link key={tag} href={`/tags?tag=${tag}`} aria-label={tag}>
                 <span
