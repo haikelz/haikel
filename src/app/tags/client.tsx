@@ -51,7 +51,7 @@ export default function TagsClient({ tagsList }: { tagsList: string[] }) {
           </button>
         ))}
       </div>
-      <div className="mt-4">
+      <div className="mt-8">
         {filteredNotes.length ? (
           <div className="space-y-8">
             <NotesList filteredNotes={filteredNotes} />

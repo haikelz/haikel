@@ -5,7 +5,7 @@ type VideoProps = {
 
 export default function Video({ src, title }: VideoProps) {
   return (
-    <div className="relative my-4 h-0 max-w-full overflow-hidden rounded-sm pb-[56.25%]">
+    <div className="relative my-4 h-0 max-w-full overflow-hidden rounded-md pb-[56.25%]">
       <iframe
         src={src}
         title={title}

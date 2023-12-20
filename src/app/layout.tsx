@@ -4,7 +4,7 @@ import { Metadata, Viewport } from "next";
 import Header from "~components/ui/header";
 import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
-import { inter } from "~lib/utils/fonts";
+import { ibmPlexMono, inter } from "~lib/utils/fonts";
 
 import "./globals.css";
 import Wrapper from "./wrapper";
@@ -50,10 +50,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: ChildrenProps) {
   return (
-    <html
-      lang="en"
-      className={tw(inter.variable, inter.variable, inter.variable)}
-    >
+    <html lang="en" className={tw(inter.variable, ibmPlexMono.variable)}>
       <body>
         <Wrapper>
           <div

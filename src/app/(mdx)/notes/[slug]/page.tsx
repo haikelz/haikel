@@ -89,13 +89,7 @@ export default async function NotePage(
           )}
         >
           <section className="flex flex-col">
-            <Heading
-              as="h1"
-              bg-gradient="to-r dark:from-blue-500 dark:to-[#80D0C7] from-pink-500 to-blue-500"
-              className="bg-clip-text text-transparent"
-            >
-              {title}
-            </Heading>
+            <Heading as="h1">{title}</Heading>
             <div className="my-3 flex items-center">
               <Paragraph
                 className={tw(
@@ -108,12 +102,7 @@ export default async function NotePage(
               </Paragraph>
             </div>
           </section>
-          <article
-            className={tw(
-              "prose prose-gray mt-6 w-full max-w-full",
-              "dark:prose-invert"
-            )}
-          >
+          <article className={tw("prose mt-6 w-full max-w-full")}>
             <p
               className={tw(
                 "text-right text-xl font-bold",

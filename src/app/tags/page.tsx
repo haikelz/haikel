@@ -67,7 +67,7 @@ export default function Tags() {
         "pt-8"
       )}
     >
-      <section className="flex w-full flex-wrap items-start justify-start">
+      <section className="flex mb-10 w-full flex-wrap items-start justify-start">
         <div>
           <Heading as="h2" className="text-left">
             Tags

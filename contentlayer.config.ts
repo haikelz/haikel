@@ -8,7 +8,7 @@ import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 
 const highlighterOptions: RehypeShikijiOptions = {
-  theme: "poimandres",
+  theme: "vitesse-dark",
 };
 
 export const notesFields: FieldDefs = {
