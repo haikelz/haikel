@@ -50,7 +50,7 @@ export default function NotesClient({ notes }: { notes: Notes[] }) {
         <input
           onChange={(e) => setSearch(e.target.value)}
           className={tw(
-            "block w-full border border-base-0",
+            "block w-full border border-solid border-base-0",
             "focus:border-blue-500 focus:ring-blue-500 focus:ring-1",
             "dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:focus:ring-1",
             "dark:border-base-5 bg-white dark:bg-base-0",

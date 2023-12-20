@@ -28,6 +28,10 @@ h6 {
   font-family: var(--font-inter);
 }
 
+.prose {
+  @apply text-base-0 dark:text-base-5;
+}
+
 .prose code:not(:has(span)) {
   @apply bg-base-5 dark:bg-base-2 px-1 py-0.5 rounded-sm;
   font-family: var(--font-ibm-mono);
@@ -77,6 +81,10 @@ h6 {
 
 .prose a:hover {
   @apply text-[#3B82F6] decoration-[#3B82F6];
+}
+
+.prose :where(blockquote):not(:where(.not-prose, .not-prose *)) {
+  @apply border-l-[0.25em] border-solid border-base-0 dark:border-base-5;
 }
 
 button {
