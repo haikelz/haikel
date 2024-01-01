@@ -6,12 +6,14 @@ import {
   keepPreviousData,
   useQueryClient,
 } from "@tanstack/react-query";
+import { GuestbookProps } from "@types";
 import { format } from "date-fns/esm";
 import { atom, useAtom } from "jotai";
 import { GithubIcon, PencilIcon, TrashIcon } from "lucide-react";
 import { Session } from "next-auth";
 import { signIn, signOut } from "next-auth/react";
 import { useForm } from "react-hook-form";
+import TransitionLayout from "~components/transition-layout";
 import { tw } from "~lib/helpers";
 import { inter } from "~lib/utils/fonts";
 import { messageSchema } from "~lib/utils/form-schema";
@@ -21,12 +23,11 @@ import { Paragraph } from "~ui/typography";
 
 import ErrorClient from "./error-client";
 import LoadingClient from "./loading-client";
-import { GuestbookProps } from "@types";
 
 const idAtom = atom<number>(0);
 const isEditedAtom = atom<boolean>(false);
 
-export function FormAndGuestsList({ session }: { session: Session | null}) {
+export function FormAndGuestsList({ session }: { session: Session | null }) {
   const [id, setId] = useAtom(idAtom);
   const [isEdited, setIsEdited] = useAtom(isEditedAtom);
 
@@ -58,16 +59,22 @@ export function FormAndGuestsList({ session }: { session: Session | null}) {
   const deleteMutation = trpc.delete.useMutation({
     mutationKey: [id],
     onSettled: async () => {
-      return await queryClient.invalidateQueries({ queryKey: [id], exact: true });
+      return await queryClient.invalidateQueries({
+        queryKey: [id],
+        exact: true,
+      });
     },
   });
 
   // update
   const updateMutation = trpc.patch.useMutation({
     mutationKey: [id],
-    onSettled: async () =>{
-      return await queryClient.invalidateQueries({ queryKey: [id], exact: true });
-    }
+    onSettled: async () => {
+      return await queryClient.invalidateQueries({
+        queryKey: [id],
+        exact: true,
+      });
+    },
   });
 
   const { data, isError, isPending } = trpc.get.useQuery(
@@ -117,11 +124,16 @@ export function FormAndGuestsList({ session }: { session: Session | null}) {
   return (
     <>
       {!session ? (
-        <div className="my-4 flex items-center justify-center space-x-3">
+        <TransitionLayout
+          transition={{ duration: 0.3, delay: 0.5 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="my-4 flex items-center justify-center space-x-3"
+        >
           <SignInWithGithub />
           <span className="text-base">or</span>
           <SignInWithGoogle />
-        </div>
+        </TransitionLayout>
       ) : (
         <div className="w-full">
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -149,65 +161,71 @@ export function FormAndGuestsList({ session }: { session: Session | null}) {
         </div>
       )}
       {guestbook.length ? (
-        <section className="mb-10 flex w-full flex-col space-y-8">
-          {guestbook.slice(guestbook.length < 100 ? 0 : 100, guestbook.length) .map((guest) => (
-            <div data-cy="guest-item" key={guest.id} className="h-full">
-              <div
-                className={
-                  session ? "flex space-x-3 justify-start items-center" : ""
-                }
-              >
-                <span
-                  className={tw(
-                    "cursor-pointer text-lg font-bold",
-                    "hover:text-blue-500",
-                    inter.className
-                  )}
+        <TransitionLayout
+            transition={{ duration: 0.3, delay: 1 }}
+            initial={{y: 50, opacity: 0 }}
+            animate={{y: 0, opacity: 1 }}
+           className="mb-10 flex w-full flex-col space-y-8">
+          {guestbook
+            .slice(guestbook.length < 100 ? 0 : 100, guestbook.length)
+            .map((guest) => (
+              <div data-cy="guest-item" key={guest.id} className="h-full">
+                <div
+                  className={
+                    session ? "flex space-x-3 justify-start items-center" : ""
+                  }
                 >
-                  {guest.message}
-                </span>
-                {(session && guest.email === session.user.email) ||
-                session?.user.role === "admin" ? (
-                  <>
-                    <button
-                      type="button"
-                      aria-label="delete message"
-                      className={tw(
-                        "dark:bg-base-1 bg-base-5",
-                        "hover:bg-base-5 dark:hover:bg-base-2 p-1 rounded-md"
-                      )}
-                      onClick={() => handleDelete(Number(guest.id))}
-                    >
-                      <TrashIcon size={22} />
-                    </button>
-                    <button
-                      type="button"
-                      aria-label="edit message"
-                      className={tw(
-                        "dark:bg-base-1 bg-base-5",
-                        "hover:bg-base-5 dark:hover:bg-base-2 p-1 rounded-md"
-                      )}
-                      onClick={() =>
-                        handleEdit(Number(guest.id), guest.message as string)
-                      }
-                    >
-                      <PencilIcon size={22} />
-                    </button>
-                  </>
-                ) : null}
+                  <span
+                    className={tw(
+                      "cursor-pointer text-lg font-bold",
+                      "hover:text-blue-500",
+                      inter.className
+                    )}
+                  >
+                    {guest.message}
+                  </span>
+                  {(session && guest.email === session.user.email) ||
+                  session?.user.role === "admin" ? (
+                    <>
+                      <button
+                        type="button"
+                        aria-label="delete message"
+                        className={tw(
+                          "dark:bg-base-1 bg-base-5",
+                          "hover:bg-base-5 dark:hover:bg-base-2 p-1 rounded-md"
+                        )}
+                        onClick={() => handleDelete(Number(guest.id))}
+                      >
+                        <TrashIcon size={22} />
+                      </button>
+                      <button
+                        type="button"
+                        aria-label="edit message"
+                        className={tw(
+                          "dark:bg-base-1 bg-base-5",
+                          "hover:bg-base-5 dark:hover:bg-base-2 p-1 rounded-md"
+                        )}
+                        onClick={() =>
+                          handleEdit(Number(guest.id), guest.message as string)
+                        }
+                      >
+                        <PencilIcon size={22} />
+                      </button>
+                    </>
+                  ) : null}
+                </div>
+                <Paragraph className="mt-2 text-base font-medium tracking-wide">
+                  {guest.username}
+                  {guest.created_at !== ""
+                    ? `. ${format(
+                        new Date(guest.created_at as string),
+                        "LLLL d, yyyy"
+                      )}`
+                    : null}
+                </Paragraph>
               </div>
-              <Paragraph className="mt-2 text-base font-medium tracking-wide">
-                {guest.username}
-                {guest.created_at !== ""
-                  ? `. ${format(
-                      new Date(guest.created_at as string),
-                      "LLLL d, yyyy"
-                    )}`
-                  : null}
-              </Paragraph>
-            </div>
-          ))}
-        </section>
+            ))}
+        </TransitionLayout>
       ) : (
         <Paragraph className="font-semibold">
           There is no messages now!
@@ -260,7 +278,7 @@ export function SignOut() {
     <button
       className={tw(
         "cursor-pointer font-bold",
-        "underline decoration-dashed underline-offset-[5px]",
+        "underline decoration-solid underline-offset-[5px]",
         "hover:text-blue-500 hover:decoration-blue-500"
       )}
       type="button"

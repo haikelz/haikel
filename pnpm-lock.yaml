@@ -22,13 +22,13 @@ dependencies:
     version: 5.12.2(react@18.2.0)
   '@trpc/client':
     specifier: next
-    version: 11.0.0-alpha-next-2023-12-19-17-06-13.125(@trpc/server@11.0.0-alpha-next-2023-12-19-17-06-13.125)
+    version: 11.0.0-next-alpha.149(@trpc/server@11.0.0-next-alpha.149)
   '@trpc/react-query':
     specifier: next
-    version: 11.0.0-alpha-next-2023-12-19-17-06-13.125(@tanstack/react-query@5.12.2)(@trpc/client@11.0.0-alpha-next-2023-12-19-17-06-13.125)(@trpc/server@11.0.0-alpha-next-2023-12-19-17-06-13.125)(react-dom@18.2.0)(react@18.2.0)
+    version: 11.0.0-next-alpha.149(@tanstack/react-query@5.12.2)(@trpc/client@11.0.0-next-alpha.149)(@trpc/server@11.0.0-next-alpha.149)(react-dom@18.2.0)(react@18.2.0)
   '@trpc/server':
     specifier: next
-    version: 11.0.0-alpha-next-2023-12-19-17-06-13.125
+    version: 11.0.0-next-alpha.149
   '@vercel/kv':
     specifier: ^1.0.0
     version: 1.0.0
@@ -47,6 +47,9 @@ dependencies:
   fast-fuzzy:
     specifier: ^1.12.0
     version: 1.12.0
+  framer-motion:
+    specifier: ^10.16.16
+    version: 10.16.16(react-dom@18.2.0)(react@18.2.0)
   jotai:
     specifier: ^2.6.0
     version: 2.6.0(@types/react@18.2.42)(react@18.2.0)
@@ -77,6 +80,9 @@ dependencies:
   react-hook-form:
     specifier: ^7.48.2
     version: 7.48.2(react@18.2.0)
+  react-rough-notation:
+    specifier: ^1.0.5
+    version: 1.0.5(react-dom@18.2.0)(react@18.2.0)
   react-string-replace:
     specifier: ^1.1.1
     version: 1.1.1
@@ -864,6 +870,20 @@ packages:
   /@effect-ts/system@0.57.5:
     resolution: {integrity: sha512-/crHGujo0xnuHIYNc1VgP0HGJGFSoSqq88JFXe6FmFyXPpWt8Xu39LyLg7rchsxfXFeEdA9CrIZvLV5eswXV5g==}
     dev: false
+
+  /@emotion/is-prop-valid@0.8.8:
+    resolution: {integrity: sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==}
+    requiresBuild: true
+    dependencies:
+      '@emotion/memoize': 0.7.4
+    dev: false
+    optional: true
+
+  /@emotion/memoize@0.7.4:
+    resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
+    requiresBuild: true
+    dev: false
+    optional: true
 
   /@esbuild-kit/core-utils@3.3.2:
     resolution: {integrity: sha512-sPRAnw9CdSsRmEtnsl2WXWdyquogVpB3yZ3dgwJfe8zrOzTsV7cJvmwrKVa+0ma5BoiGJ+BoqkMvawbayKUsqQ==}
@@ -2239,32 +2259,32 @@ packages:
       - supports-color
     dev: true
 
-  /@trpc/client@11.0.0-alpha-next-2023-12-19-17-06-13.125(@trpc/server@11.0.0-alpha-next-2023-12-19-17-06-13.125):
-    resolution: {integrity: sha512-+3JGO7VeFZnYPE37HOU5sUqLev6GNxhIdeCdD3YGt1w0l78fr3sqUQgElc6tC9u7oqeoFC/75ewrCebjvkX5jQ==}
+  /@trpc/client@11.0.0-next-alpha.149(@trpc/server@11.0.0-next-alpha.149):
+    resolution: {integrity: sha512-5siTSTzcSt9WBTZ7VHTpyO9NJMh26ExEqSypsbyzkFfnHbqbQxttdEtJ2MTBm/Td87Hm2VpPL2WsjNs7kY0xHA==}
     peerDependencies:
-      '@trpc/server': 11.0.0-alpha-next-2023-12-19-17-06-13.125+4020eb690
+      '@trpc/server': 11.0.0-next-alpha.149+11361b82d
     dependencies:
-      '@trpc/server': 11.0.0-alpha-next-2023-12-19-17-06-13.125
+      '@trpc/server': 11.0.0-next-alpha.149
     dev: false
 
-  /@trpc/react-query@11.0.0-alpha-next-2023-12-19-17-06-13.125(@tanstack/react-query@5.12.2)(@trpc/client@11.0.0-alpha-next-2023-12-19-17-06-13.125)(@trpc/server@11.0.0-alpha-next-2023-12-19-17-06-13.125)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-JO2rMlU1AJ+gi1BVF45ja9uKM2SwOIk+EY1bv+z2mCA2VwpjgGsHrabI7wV71a+B/K8NR5ntJCZg4MCVQ1kztQ==}
+  /@trpc/react-query@11.0.0-next-alpha.149(@tanstack/react-query@5.12.2)(@trpc/client@11.0.0-next-alpha.149)(@trpc/server@11.0.0-next-alpha.149)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-KDikOzoaI6f4DtXVTXnn5d4y4iyEBPh9uRN1z8BVhF1T1nbjcAGSLABk40QfH9xgMW+PousCOO0UlSCDHkdA9A==}
     peerDependencies:
       '@tanstack/react-query': ^5.0.0
-      '@trpc/client': 11.0.0-alpha-next-2023-12-19-17-06-13.125+4020eb690
-      '@trpc/server': 11.0.0-alpha-next-2023-12-19-17-06-13.125+4020eb690
+      '@trpc/client': 11.0.0-next-alpha.149+11361b82d
+      '@trpc/server': 11.0.0-next-alpha.149+11361b82d
       react: '>=18.2.0'
       react-dom: '>=18.2.0'
     dependencies:
       '@tanstack/react-query': 5.12.2(react@18.2.0)
-      '@trpc/client': 11.0.0-alpha-next-2023-12-19-17-06-13.125(@trpc/server@11.0.0-alpha-next-2023-12-19-17-06-13.125)
-      '@trpc/server': 11.0.0-alpha-next-2023-12-19-17-06-13.125
+      '@trpc/client': 11.0.0-next-alpha.149(@trpc/server@11.0.0-next-alpha.149)
+      '@trpc/server': 11.0.0-next-alpha.149
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@trpc/server@11.0.0-alpha-next-2023-12-19-17-06-13.125:
-    resolution: {integrity: sha512-4bcvliAv4JhbEGNHnmTy3iA2chGppBtT7lqTFygf6o41haMvf0UX0CJ5MumshRkb3za218+xD9dKb0xlvhs+mg==}
+  /@trpc/server@11.0.0-next-alpha.149:
+    resolution: {integrity: sha512-+zj/pk8vIP1v7K/ntGo3HkB4UT4wHWSYlkUdTQrqk3SawOygk+D0aRYkXvg6D9wgUn3zFEKUyVR1OWbMXD53Gw==}
     dev: false
 
   /@types/acorn@4.0.6:
@@ -4705,6 +4725,24 @@ packages:
     engines: {node: '>=12.20.0'}
     dependencies:
       fetch-blob: 3.2.0
+    dev: false
+
+  /framer-motion@10.16.16(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-je6j91rd7NmUX7L1XHouwJ4v3R+SO4umso2LUcgOct3rHZ0PajZ80ETYZTajzEXEl9DlKyzjyt4AvGQ+lrebOw==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      tslib: 2.6.2
+    optionalDependencies:
+      '@emotion/is-prop-valid': 0.8.8
     dev: false
 
   /fs-extra@9.1.0:
@@ -7502,6 +7540,17 @@ packages:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
 
+  /react-rough-notation@1.0.5(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-TTDnw1Qn96PwitGsBsjNh4911+o26Vivj/dhHbsHHhN6lDgkQsFhv1X/eOnCjHA2EOyDE5JBQ1HEZ1yW8sCmKA==}
+    peerDependencies:
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      rough-notation: 0.5.1
+    dev: false
+
   /react-string-replace@1.1.1:
     resolution: {integrity: sha512-26TUbLzLfHQ5jO5N7y3Mx88eeKo0Ml0UjCQuX4BMfOd/JX+enQqlKpL1CZnmjeBRvQE8TR+ds9j1rqx9CxhKHQ==}
     engines: {node: '>=0.12.0'}
@@ -7796,6 +7845,10 @@ packages:
       '@rollup/rollup-win32-x64-msvc': 4.6.1
       fsevents: 2.3.3
     dev: true
+
+  /rough-notation@0.5.1:
+    resolution: {integrity: sha512-ITHofTzm13cWFVfoGsh/4c/k2Mg8geKgBCwex71UZLnNuw403tCRjYPQ68jSAd37DMbZIePXPjDgY0XdZi9HPw==}
+    dev: false
 
   /rss@1.2.2:
     resolution: {integrity: sha512-xUhRTgslHeCBeHAqaWSbOYTydN2f0tAzNXvzh3stjz7QDhQMzdgHf3pfgNIngeytQflrFPfy6axHilTETr6gDg==}

@@ -1,11 +1,12 @@
 import { Works, allWorks } from "contentlayer/generated";
 import { Metadata } from "next";
 import Main from "~components/main";
+import TransitionLayout from "~components/transition-layout";
+import { WorksList } from "~components/ui/lists";
+import { Heading, Notation, Paragraph } from "~components/ui/typography";
 import { sortedAllWorks } from "~features/works";
 import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
-import { WorksList } from "~ui/lists";
-import { Heading, Paragraph, Underline } from "~ui/typography";
 
 const baseMetadata = {
   title: "Works",
@@ -51,18 +52,31 @@ export default function WorksPage() {
       )}
     >
       <section className="flex w-full flex-wrap items-start justify-start">
-        <div>
+        <TransitionLayout
+          transition={{ duration: 0.3 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
           <Heading as="h2" className="text-left">
-            Works
+            <Notation
+              type="highlight"
+              animationDelay={500}
+              lightModeColor="#FFFF3F"
+              darkModeColor="#E11D48"
+            >
+              Works
+            </Notation>
           </Heading>
-          <Underline />
-        </div>
-        <div className="w-full leading-relaxed">
           <Paragraph data-cy="description">List some of my works</Paragraph>
-        </div>
-        <div className="mb-10 mt-4 flex w-full flex-col space-y-8">
+        </TransitionLayout>
+        <TransitionLayout
+          transition={{ duration: 0.3, delay: 0.5 }}
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          className="mb-10 mt-4 flex w-full flex-col space-y-8"
+        >
           <WorksList works={works} />
-        </div>
+        </TransitionLayout>
       </section>
     </Main>
   );

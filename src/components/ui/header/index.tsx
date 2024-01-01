@@ -18,7 +18,7 @@ export default function Header() {
     <header
       className={tw(
         "max-w-full flex flex-col justify-center items-center w-full",
-        "fixed sm:sticky top-0 z-10 sm:px-2 py-3 px-4 bg-[#EFFFFD]/80",
+        "fixed top-0 z-10 sm:px-2 py-3 px-4 bg-[#EFFFFD]/80",
         "dark:bg-black/80 backdrop-blur-md"
       )}
     >

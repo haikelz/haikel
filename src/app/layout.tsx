@@ -61,7 +61,7 @@ export default function RootLayout({ children }: ChildrenProps) {
             )}
           >
             <Header />
-            <div className="w-full pt-12 sm:pt-0">
+            <div className="w-full pt-12 sm:pt-14">
               <div className="px-4">{children}</div>
             </div>
           </div>

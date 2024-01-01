@@ -2,11 +2,12 @@ import { allNotes } from "contentlayer/generated";
 import { Metadata } from "next";
 import { useMemo } from "react";
 import Main from "~components/main";
+import TransitionLayout from "~components/transition-layout";
+import { Heading, Notation, Paragraph } from "~components/ui/typography";
 import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
-import { Heading, Paragraph, Underline } from "~ui/typography";
 
-import TagsClient from "./client";
+import Client from "./client";
 
 const baseMetadata = {
   title: "Tags",
@@ -68,20 +69,26 @@ export default function Tags() {
       )}
     >
       <section className="flex mb-10 w-full flex-wrap items-start justify-start">
-        <div>
-          <Heading as="h2" className="text-left">
-            Tags
+        <TransitionLayout
+          transition={{ duration: 0.3 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
+          <Heading as="h2" className="text-left mb-2">
+            <Notation
+              type="highlight"
+              animationDelay={500}
+              lightModeColor="#FFFF3F"
+              darkModeColor="#E11D48"
+            >
+              Tags
+            </Notation>
           </Heading>
-          <Underline />
-        </div>
-        <div className="w-full leading-relaxed">
           <Paragraph data-cy="description">
             Select spesific notes based on the list of tags below.
           </Paragraph>
-        </div>
-        <div className="mt-4">
-          <TagsClient tagsList={tagsList} />
-        </div>
+        </TransitionLayout>
+        <Client tagsList={tagsList} />
       </section>
     </Main>
   );

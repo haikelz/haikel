@@ -10,10 +10,12 @@ import {
 } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
+import { RoughNotationGroup } from "react-rough-notation";
 import Main from "~components/main";
+import TransitionLayout from "~components/transition-layout";
 import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
-import { Heading, Paragraph } from "~ui/typography";
+import { Heading, Notation, Paragraph } from "~ui/typography";
 
 const socialMediaList = [
   { id: 1, icon: MailIcon, route: "mailto:halo@haikel.app", title: "E-mail" },
@@ -99,56 +101,114 @@ export default async function HomePage() {
               "md:mt-0 md:text-start"
             )}
           >
-            <div>
+            <TransitionLayout
+              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
               <Heading as="h1">I&#39;m Haikel Ilham Hakim</Heading>
+            </TransitionLayout>
+            <TransitionLayout
+              transition={{ duration: 0.3, delay: 0.5 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
               <Paragraph id="description" className="my-4">
-                A <span className="font-bold">Frontend Web Developer</span> with
-                mainly focuses on building responsive, interactive,
-                maintainable, and accessible Websites. Familiar with{" "}
-                <span className="font-bold">
-                  Javascript/Typescript, React Ecosystem, Linux
-                </span>
-                (for daily use) and sometimes i do backend things with{" "}
-                <span className="font-bold">Nest JS</span>. Always try to follow
-                best practices as much as i can.{" "}
-                <span className="font-bold">Keep it simple</span>, is one of my
-                principles while building something.
-                <br />
-                Sometimes, i spend my time to write notes about my thought,
-                experiences, and technical stuff. Apart from coding, i do{" "}
-                <span className="font-bold">photography</span> with my camera.
-                Mostly i took street photos, or go to local event to have some
-                photo shoots.
-              </Paragraph>
-            </div>
-            <ul className="flex items-center justify-center space-x-4">
-              {socialMediaList.map((item) => {
-                const Icon: LucideIcon = item.icon;
-                return (
-                  <li
-                    className="transition-all hover:-translate-y-0.5"
-                    key={item.id}
-                    title={item.title}
+                <RoughNotationGroup show={true}>
+                  A{" "}
+                  <Notation
+                    type="highlight"
+                    lightModeColor="#FFFF3F"
+                    darkModeColor="#E11D48"
+                    animationDelay={1000}
                   >
-                    <Link href={item.route} target="_blank">
-                      <button
-                        type="button"
-                        className={tw(
-                          "rounded-sm",
-                          "p-1",
-                          "hover:bg-base-5",
-                          "active:bg-base-4",
-                          "dark:hover:bg-base-2 dark:active:bg-base-1"
-                        )}
-                        aria-label={`Icon ${item.id.toString()}`}
-                      >
-                        <Icon size={20} />
-                      </button>
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
+                    <span className="font-bold">Frontend Web Developer</span>
+                  </Notation>{" "}
+                  with mainly focuses on building responsive, interactive,
+                  maintainable, and accessible Websites. Familiar with{" "}
+                  <Notation
+                    type="underline"
+                    lightModeColor="#0D1117"
+                    darkModeColor="#ECF2F8"
+                    animationDelay={2000}
+                    strokeWidth={2}
+                    iterations={1}
+                  >
+                    <span className="font-bold">
+                      Javascript/Typescript, React Ecosystem, Linux
+                    </span>
+                  </Notation>
+                  (for daily use) and sometimes i do backend things with{" "}
+                  <Notation
+                    type="underline"
+                    lightModeColor="#0D1117"
+                    darkModeColor="#ECF2F8"
+                    animationDelay={3000}
+                    strokeWidth={2}
+                    iterations={1}
+                  >
+                    <span className="font-bold">Nest JS</span>
+                  </Notation>
+                  . Always try to follow best practices as much as i can.{" "}
+                  <Notation
+                    type="highlight"
+                    lightModeColor="#FFFF3F"
+                    darkModeColor="#E11D48"
+                    animationDelay={4000}
+                  >
+                    <span className="font-bold">Keep it simple</span>
+                  </Notation>
+                  , is one of my principles while building something.
+                  <br />
+                  Sometimes, i spend my time to write notes about my thought,
+                  experiences, and technical stuff. Apart from coding, i do{" "}
+                  <Notation
+                    type="highlight"
+                    lightModeColor="#FFFF3F"
+                    darkModeColor="#E11D48"
+                    animationDelay={5000}
+                  >
+                    <span className="font-bold">photography</span>
+                  </Notation>{" "}
+                  with my camera. Mostly i took street photos, or go to local
+                  event to have some photo shoots.
+                </RoughNotationGroup>
+              </Paragraph>
+            </TransitionLayout>
+            <TransitionLayout
+              transition={{ duration: 0.3, delay: 6 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
+              <ul className="flex items-center justify-center space-x-4">
+                {socialMediaList.map((item) => {
+                  const Icon: LucideIcon = item.icon;
+                  return (
+                    <li
+                      className="transition-all hover:-translate-y-0.5"
+                      key={item.id}
+                      title={item.title}
+                    >
+                      <Link href={item.route} target="_blank">
+                        <button
+                          type="button"
+                          className={tw(
+                            "rounded-sm",
+                            "p-1",
+                            "hover:bg-base-5",
+                            "active:bg-base-4",
+                            "dark:hover:bg-base-2 dark:active:bg-base-1"
+                          )}
+                          aria-label={`Icon ${item.id.toString()}`}
+                        >
+                          <Icon size={20} />
+                        </button>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </TransitionLayout>
           </div>
         </div>
       </section>

@@ -1,12 +1,11 @@
-import { Notes, allNotes } from "contentlayer/generated";
 import { Metadata } from "next";
 import Main from "~components/main";
-import { sortedAllNotes } from "~features/notes";
+import TransitionLayout from "~components/transition-layout";
+import { Heading, Notation, Paragraph } from "~components/ui/typography";
 import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
-import { Heading, Paragraph, Underline } from "~ui/typography";
 
-import NotesClient from "./client";
+import Client from "./client";
 
 const baseMetadata = {
   title: "Notes",
@@ -43,8 +42,6 @@ export const metadata: Metadata = {
 };
 
 export default function NotesPage() {
-  const notes: Notes[] = sortedAllNotes.slice(0, allNotes.length);
-
   return (
     <Main
       className={tw(
@@ -54,19 +51,29 @@ export default function NotesPage() {
     >
       <section className="flex w-full flex-wrap items-start justify-start">
         <div>
-          <Heading as="h2" className="text-left">
-            Notes
-          </Heading>
-          <Underline />
-        </div>
-        <div className="w-full leading-relaxed">
-          <Paragraph data-cy="description">
-            Sometimes, i write something. Mostly about technical stuff. So yeah,
-            i call this as <span className="font-semibold">Notes</span>.
-          </Paragraph>
+          <TransitionLayout
+            transition={{ duration: 0.3 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
+            <Heading as="h2" className="text-left mb-2">
+              <Notation
+                type="highlight"
+                animationDelay={500}
+                lightModeColor="#FFFF3F"
+                darkModeColor="#E11D48"
+              >
+                Notes
+              </Notation>
+            </Heading>
+            <Paragraph data-cy="description">
+              Sometimes, i write something. Mostly about technical stuff. So
+              yeah, i call this as <span className="font-semibold">Notes</span>.
+            </Paragraph>
+          </TransitionLayout>
+          <Client />
         </div>
       </section>
-      <NotesClient notes={notes} />
     </Main>
   );
 }

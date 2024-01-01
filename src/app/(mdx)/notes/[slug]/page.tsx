@@ -6,10 +6,11 @@ import { getMDXComponent } from "next-contentlayer/hooks";
 import dynamic from "next/dynamic";
 import Main from "~components/main";
 import NoteViews from "~components/note-views";
+import TransitionLayout from "~components/transition-layout";
 import { tw } from "~lib/helpers";
 import { ABSOLUTE_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { inter, naskhArabic } from "~lib/utils/fonts";
-import { Heading, Paragraph } from "~ui/typography";
+import { Heading, Notation, Paragraph } from "~ui/typography";
 
 const Video = dynamic(() => import("~components/video"));
 const Comments = dynamic(() => import("~components/comments"));
@@ -82,42 +83,63 @@ export default async function NotePage(
           "flex min-h-screen flex-col items-center justify-start bg-center"
         )}
       >
-        <article
-          className={tw(
-            "flex w-full flex-col flex-wrap justify-center py-8",
-            "md:mb-3"
-          )}
+        <TransitionLayout
+          transition={{ duration: 0.3 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="w-full"
         >
-          <section className="flex flex-col">
-            <Heading as="h1">{title}</Heading>
-            <div className="my-3 flex items-center">
-              <Paragraph
-                className={tw(
-                  "text-base font-semibold tracking-[0.050em]",
-                  inter.className
-                )}
-              >
-                {format(new Date(date) ?? new Date(), "LLLL d, yyyy")} /{" "}
-                <ReadingTime content={body.raw} /> / {views} views
-              </Paragraph>
-            </div>
-          </section>
-          <article className={tw("prose mt-6 w-full max-w-full")}>
-            <p
+          <article
+            className={tw(
+              "flex w-full flex-col flex-wrap justify-center py-8",
+              "md:mb-3"
+            )}
+          >
+            <section className="flex flex-col">
+              <Heading as="h1">
+                <Notation
+                  type="highlight"
+                  lightModeColor="#FFFF3F"
+                  darkModeColor="#E11D48"
+                  animationDelay={500}
+                >
+                  {title}
+                </Notation>
+              </Heading>
+              <div className="my-3 flex items-center">
+                <Paragraph
+                  className={tw(
+                    "text-base font-semibold tracking-[0.050em]",
+                    inter.className
+                  )}
+                >
+                  {format(new Date(date) ?? new Date(), "LLLL d, yyyy")} /{" "}
+                  <ReadingTime content={body.raw} /> / {views} views
+                </Paragraph>
+              </div>
+            </section>
+            <article
               className={tw(
-                "text-right text-xl font-bold",
-                naskhArabic.className
+                "prose prose-gray mt-6 w-full max-w-full",
+                "dark:prose-invert"
               )}
             >
-              بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
-            </p>
-            <Content components={{ Video, LightboxImage }} />
-            <div className="w-full flex justify-end items-center mt-10">
-              <BackToTop />
-            </div>
+              <p
+                className={tw(
+                  "text-right text-xl font-bold",
+                  naskhArabic.className
+                )}
+              >
+                بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+              </p>
+              <Content components={{ Video, LightboxImage }} />
+              <div className="w-full flex justify-end items-center mt-10">
+                <BackToTop />
+              </div>
+            </article>
+            <Comments />
           </article>
-          <Comments />
-        </article>
+        </TransitionLayout>
       </Main>
     </>
   );

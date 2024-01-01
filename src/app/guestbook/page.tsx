@@ -2,9 +2,10 @@ import { Metadata } from "next";
 import { Session, getServerSession } from "next-auth";
 import { options } from "~app/api/auth/[...nextauth]/options";
 import Main from "~components/main";
+import TransitionLayout from "~components/transition-layout";
+import { Heading, Notation, Paragraph } from "~components/ui/typography";
 import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
-import { Heading, Paragraph, Underline } from "~ui/typography";
 
 import { FormAndGuestsList, SignOut } from "./client";
 
@@ -53,24 +54,34 @@ export default async function Guestbook() {
     >
       <section className="flex w-full flex-wrap items-start justify-start">
         <div>
-          <Heading as="h2" className="text-left">
-            Guestbook
-          </Heading>
-          <Underline />
-        </div>
-        <div className="w-full leading-relaxed">
-          <Paragraph data-cy="description">
-            Write a message for me and others.
-            {session ? (
-              <span>
-                {" "}
-                Want to Sign Out instead? Just click <SignOut />
-              </span>
-            ) : null}
-          </Paragraph>
+          <TransitionLayout
+            transition={{ duration: 0.3 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
+            <Heading as="h2" className="text-left mb-2">
+              <Notation
+                type="highlight"
+                lightModeColor="#FFFF3F"
+                animationDelay={500}
+                darkModeColor="#E11D48"
+              >
+                Guestbook
+              </Notation>
+            </Heading>
+            <Paragraph data-cy="description">
+              Write a message for me and others.
+              {session ? (
+                <span>
+                  {" "}
+                  Want to Sign Out instead? Just click <SignOut />
+                </span>
+              ) : null}
+            </Paragraph>
+          </TransitionLayout>
+          <FormAndGuestsList session={session} />
         </div>
       </section>
-      <FormAndGuestsList session={session} />
     </Main>
   );
 }

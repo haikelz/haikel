@@ -1,10 +1,12 @@
 "use client";
 
-import { Notes } from "contentlayer/generated";
+import { Notes, allNotes } from "contentlayer/generated";
 import { Searcher } from "fast-fuzzy";
 import { atom, useAtom } from "jotai";
 import { SearchIcon } from "lucide-react";
 import { useDeferredValue, useMemo } from "react";
+import TransitionLayout from "~components/transition-layout";
+import { sortedAllNotes } from "~features/notes";
 import { tw } from "~lib/helpers";
 import { NotesList } from "~ui/lists";
 import { Paragraph } from "~ui/typography";
@@ -18,7 +20,9 @@ type SearcherProps = Searcher<
 
 const searchAtom = atom<string>("");
 
-export default function NotesClient({ notes }: { notes: Notes[] }) {
+export default function Client() {
+  const notes: Notes[] = sortedAllNotes.slice(0, allNotes.length);
+
   const [search, setSearch] = useAtom(searchAtom);
 
   const deferredSearch = useDeferredValue(search);
@@ -43,7 +47,12 @@ export default function NotesClient({ notes }: { notes: Notes[] }) {
 
   return (
     <>
-      <div className="relative my-4 w-full">
+      <TransitionLayout
+        transition={{ duration: 0.3, delay: 0.5 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="relative my-4 w-full"
+      >
         <div className="absolute inset-y-0 left-0 flex items-center pl-3">
           <SearchIcon size={20} />
         </div>
@@ -61,11 +70,16 @@ export default function NotesClient({ notes }: { notes: Notes[] }) {
           name="search"
           placeholder="Search Here...."
         />
-      </div>
+      </TransitionLayout>
       {filteredNotes.length ? (
-        <section className="mb-10 flex w-full flex-col space-y-8">
+        <TransitionLayout
+          transition={{ duration: 0.3, delay: 1 }}
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          className="mb-10 flex w-full flex-col space-y-8"
+        >
           <NotesList filteredNotes={filteredNotes} search={deferredSearch} />
-        </section>
+        </TransitionLayout>
       ) : (
         <Paragraph data-cy="not-found-note" className="font-semibold">
           The note that you search is not found!

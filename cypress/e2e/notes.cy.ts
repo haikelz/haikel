@@ -13,7 +13,11 @@ describe("Notes page", () => {
       );
 
     // test navbar
-    cy.get("nav").should("be.visible").get("a").should("be.visible").contains("は");
+    cy.get("nav")
+      .should("be.visible")
+      .get("a")
+      .should("be.visible")
+      .contains("は");
     cy.get(`[aria-label="switch theme"]`).should("be.visible");
     cy.get(`[data-cy="menu"]`).should("be.visible");
 
@@ -26,14 +30,14 @@ describe("Notes page", () => {
 
     // test search feature if user's input matched
     cy.get("input")
-      .type("Switching", { delay: 100 })
+      .type("Switching", { delay: 0.5 })
       .get(`[data-cy="note-item"]`)
       .should("be.visible");
 
     // test search feature if user's input is not matched
     cy.get("input")
       .clear()
-      .type("Not matched user input", { delay: 100 })
+      .type("Not matched user input", { delay: 0.5 })
       .get(`[data-cy="not-found-note"]`)
       .should("be.visible")
       .contains("The note that you search is not found!");

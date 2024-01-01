@@ -76,7 +76,7 @@ h6 {
 }
 
 .prose a {
-  @apply underline-offset-[5px] font-bold decoration-dashed;
+  @apply underline-offset-[5px] font-bold decoration-solid;
 }
 
 .prose a:hover {

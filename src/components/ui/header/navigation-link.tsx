@@ -21,7 +21,7 @@ export function Navigationlink() {
         <UnderlineLink
           className={tw(
             pathname.includes(item.route)
-              ? "decoration-dashed"
+              ? "decoration-solid"
               : "decoration-none"
           )}
           key={item.id}
