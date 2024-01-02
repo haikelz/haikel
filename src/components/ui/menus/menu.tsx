@@ -1,10 +1,13 @@
 "use client";
 
-import { atom, useAtom, useAtomValue } from "jotai";
+import { useAtom } from "jotai";
 import { MenuIcon, MoonIcon, SunIcon, XIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
+import { useRef } from "react";
+import { useClickOutside } from "~hooks";
 import { tw } from "~lib/helpers";
+import { isOpenAtom } from "~store";
 
 import { UnderlineLink } from "../typography";
 
@@ -15,17 +18,20 @@ const topNavList = [
   { id: 4, route: "/guestbook", name: "Guestbook" },
 ];
 
-const isOpenAtom = atom<boolean>(false);
-
 export default function Menu() {
-  const isOpen = useAtomValue(isOpenAtom);
+  const [isOpen, setIsOpen] = useAtom(isOpenAtom);
 
   const pathname = usePathname();
+
+  const mobileNavRef = useRef<HTMLDivElement>(null);
+
+  useClickOutside(setIsOpen, mobileNavRef);
 
   return (
     <>
       {isOpen ? (
         <div
+          ref={mobileNavRef}
           className={tw(
             "space-y-4 pt-4 flex flex-col items-start justify-start",
             "w-full sm:hidden"
@@ -33,6 +39,7 @@ export default function Menu() {
         >
           {topNavList.map((item) => (
             <UnderlineLink
+              role="button"
               className={tw(
                 pathname.includes(item.route)
                   ? "decoration-solid"
@@ -40,6 +47,7 @@ export default function Menu() {
               )}
               key={item.id}
               href={item.route}
+              onClick={() => setIsOpen(false)}
             >
               {item.name}
             </UnderlineLink>

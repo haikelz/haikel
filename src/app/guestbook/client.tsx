@@ -137,7 +137,7 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
       ) : (
         <div className="w-full">
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="my-6 w-full relative">
+            <TransitionLayout transition={{ duration: 0.3, delay: 1 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="my-6 w-full relative">
               <input
                 {...register("message")}
                 className={tw(
@@ -156,7 +156,7 @@ export function FormAndGuestsList({ session }: { session: Session | null }) {
               {errors.message ? (
                 <Paragraph className="mt-2">{errors.message.message}</Paragraph>
               ) : null}
-            </div>
+            </TransitionLayout>
           </form>
         </div>
       )}

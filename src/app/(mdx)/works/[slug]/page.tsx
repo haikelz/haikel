@@ -75,6 +75,7 @@ export default async function DetailWorkPage(
         transition={{ duration: 0.3 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
+        className="w-full"
       >
         <article
           className={tw(

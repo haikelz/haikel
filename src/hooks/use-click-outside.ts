@@ -1,26 +1,24 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import { RefObject, useCallback, useEffect } from "react";
+import { SetStateAction } from "jotai";
+import { Dispatch, RefObject, useCallback, useEffect } from "react";
 
 /**
- * A custom hook to detect if we click outside of the element. Devoted for `useSearchParams()`.
+ * A custom hook to detect if we click outside of the element.
  * @param {RefObject<HTMLDivElement>} ref reference to `<div>` element
  * @param {string} href href
  */
-export function useClickOutside<T>(
-  ref: RefObject<HTMLDivElement>,
-  href: string
-) {
-  const router = useRouter();
-
+export function useClickOutside(
+  set: Dispatch<SetStateAction<boolean>>,
+  ref: RefObject<HTMLDivElement>
+): void {
   const handleClickOutside = useCallback(
     (e: Event) => {
       if (ref.current && !ref.current.contains(e.target as HTMLDivElement)) {
-        router.replace(href);
+        set(false);
       }
     },
-    [ref, href, router]
+    [ref, set]
   );
 
   useEffect(() => {

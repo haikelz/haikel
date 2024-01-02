@@ -19,6 +19,7 @@ export function Navigationlink() {
     <div className="space-x-4 hidden sm:block mr-4">
       {topNavList.map((item) => (
         <UnderlineLink
+          role="button"
           className={tw(
             pathname.includes(item.route)
               ? "decoration-solid"
