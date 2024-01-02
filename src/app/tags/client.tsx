@@ -2,9 +2,8 @@
 
 import { allNotes } from "contentlayer/generated";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useCallback, useRef } from "react";
+import { useCallback } from "react";
 import TransitionLayout from "~components/transition-layout";
-import { useClickOutside } from "~hooks";
 import { tw } from "~lib/helpers";
 import { NotesList } from "~ui/lists";
 import { Paragraph } from "~ui/typography";
@@ -12,8 +11,6 @@ import { Paragraph } from "~ui/typography";
 export default function Client({ tagsList }: { tagsList: string[] }) {
   const searchParams = useSearchParams();
   const router = useRouter();
-
-  const ref = useRef<HTMLDivElement>(null);
 
   const filteredNotes = allNotes.filter((item) =>
     item.tags.includes(searchParams.get("tag") as string)
@@ -29,11 +26,9 @@ export default function Client({ tagsList }: { tagsList: string[] }) {
     [searchParams]
   );
 
-  useClickOutside(ref, "tags");
-
   return (
     <>
-      <div ref={ref} className="mt-4">
+      <div className="mt-4">
         <TransitionLayout
           transition={{ duration: 0.3, delay: 0.5 }}
           initial={{ opacity: 0 }}

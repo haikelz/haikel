@@ -5,8 +5,8 @@ import { Dispatch, RefObject, useCallback, useEffect } from "react";
 
 /**
  * A custom hook to detect if we click outside of the element.
- * @param {RefObject<HTMLDivElement>} ref reference to `<div>` element
- * @param {string} href href
+ * @param {Dispatch<SetStateAction<boolean>>} set setter
+ * @param {RefObject<HTMLDivElement>} ref reference
  */
 export function useClickOutside(
   set: Dispatch<SetStateAction<boolean>>,
