@@ -3,7 +3,6 @@
 import { allNotes } from "contentlayer/generated";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback } from "react";
-import TransitionLayout from "~components/transition-layout";
 import { tw } from "~lib/helpers";
 import { NotesList } from "~ui/lists";
 import { Paragraph } from "~ui/typography";
@@ -29,12 +28,7 @@ export default function Client({ tagsList }: { tagsList: string[] }) {
   return (
     <>
       <div className="mt-4">
-        <TransitionLayout
-          transition={{ duration: 0.3, delay: 0.5 }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="flex flex-wrap gap-3"
-        >
+        <div className="flex flex-wrap gap-3">
           {tagsList.map((item) => (
             <button
               key={item}
@@ -54,13 +48,8 @@ export default function Client({ tagsList }: { tagsList: string[] }) {
               <Paragraph className="text-center font-medium">{item}</Paragraph>
             </button>
           ))}
-        </TransitionLayout>
-        <TransitionLayout
-          transition={{ duration: 0.3, delay: 1 }}
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          className="mt-8"
-        >
+        </div>
+        <div className="mt-8">
           {filteredNotes.length ? (
             <div className="space-y-8">
               <NotesList filteredNotes={filteredNotes} />
@@ -70,7 +59,7 @@ export default function Client({ tagsList }: { tagsList: string[] }) {
               No notes matching with tag!
             </Paragraph>
           )}
-        </TransitionLayout>
+        </div>
       </div>
     </>
   );

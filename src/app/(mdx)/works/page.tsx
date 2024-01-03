@@ -57,25 +57,22 @@ export default function WorksPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
-          <Heading as="h2" className="text-left">
-            <Notation
-              type="highlight"
-              animationDelay={500}
-              lightModeColor="#FFFF3F"
-              darkModeColor="#E11D48"
-            >
-              Works
-            </Notation>
-          </Heading>
+          <div>
+            <Heading as="h2" className="text-left">
+              <Notation
+                type="highlight"
+                animationDelay={500}
+                lightModeColor="#FFFF3F"
+                darkModeColor="#E11D48"
+              >
+                Works
+              </Notation>
+            </Heading>
+          </div>
           <Paragraph data-cy="description">List some of my works</Paragraph>
-        </TransitionLayout>
-        <TransitionLayout
-          transition={{ duration: 0.3, delay: 0.5 }}
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          className="mb-10 mt-4 flex w-full flex-col space-y-8"
-        >
-          <WorksList works={works} />
+          <div className="mb-10 mt-4 flex w-full flex-col space-y-8">
+            <WorksList works={works} />
+          </div>
         </TransitionLayout>
       </section>
     </Main>

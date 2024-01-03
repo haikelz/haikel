@@ -50,12 +50,13 @@ export default function NotesPage() {
       )}
     >
       <section className="flex w-full flex-wrap items-start justify-start">
-        <div>
-          <TransitionLayout
-            transition={{ duration: 0.3 }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-          >
+        <TransitionLayout
+          transition={{ duration: 0.3 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="w-full"
+        >
+          <div>
             <Heading as="h2" className="text-left mb-2">
               <Notation
                 type="highlight"
@@ -66,13 +67,13 @@ export default function NotesPage() {
                 Notes
               </Notation>
             </Heading>
-            <Paragraph data-cy="description">
-              Sometimes, i write something. Mostly about technical stuff. So
-              yeah, i call this as <span className="font-semibold">Notes</span>.
-            </Paragraph>
-          </TransitionLayout>
+          </div>
+          <Paragraph data-cy="description">
+            Sometimes, i write something. Mostly about technical stuff. So yeah,
+            i call this as <span className="font-semibold">Notes</span>.
+          </Paragraph>
           <Client />
-        </div>
+        </TransitionLayout>
       </section>
     </Main>
   );

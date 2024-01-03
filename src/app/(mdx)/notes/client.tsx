@@ -5,7 +5,6 @@ import { Searcher } from "fast-fuzzy";
 import { atom, useAtom } from "jotai";
 import { SearchIcon } from "lucide-react";
 import { useDeferredValue, useMemo } from "react";
-import TransitionLayout from "~components/transition-layout";
 import { sortedAllNotes } from "~features/notes";
 import { tw } from "~lib/helpers";
 import { NotesList } from "~ui/lists";
@@ -47,12 +46,7 @@ export default function Client() {
 
   return (
     <>
-      <TransitionLayout
-        transition={{ duration: 0.3, delay: 0.5 }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="relative my-4 w-full"
-      >
+      <div className="relative my-4 w-full">
         <div className="absolute inset-y-0 left-0 flex items-center pl-3">
           <SearchIcon size={20} />
         </div>
@@ -70,16 +64,11 @@ export default function Client() {
           name="search"
           placeholder="Search Here...."
         />
-      </TransitionLayout>
+      </div>
       {filteredNotes.length ? (
-        <TransitionLayout
-          transition={{ duration: 0.3, delay: 1 }}
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          className="mb-10 flex w-full flex-col space-y-8"
-        >
+        <div className="mb-10 flex w-full flex-col space-y-8">
           <NotesList filteredNotes={filteredNotes} search={deferredSearch} />
-        </TransitionLayout>
+        </div>
       ) : (
         <Paragraph data-cy="not-found-note" className="font-semibold">
           The note that you search is not found!

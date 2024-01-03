@@ -53,12 +53,13 @@ export default async function Guestbook() {
       )}
     >
       <section className="flex w-full flex-wrap items-start justify-start">
-        <div>
-          <TransitionLayout
-            transition={{ duration: 0.3 }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-          >
+        <TransitionLayout
+          transition={{ duration: 0.3 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="w-full"
+        >
+          <div>
             <Heading as="h2" className="text-left mb-2">
               <Notation
                 type="highlight"
@@ -78,9 +79,9 @@ export default async function Guestbook() {
                 </span>
               ) : null}
             </Paragraph>
-          </TransitionLayout>
+          </div>
           <FormAndGuestsList session={session} />
-        </div>
+        </TransitionLayout>
       </section>
     </Main>
   );

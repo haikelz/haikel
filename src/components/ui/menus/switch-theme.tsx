@@ -1,16 +1,27 @@
 "use client";
 
+import { Variants } from "framer-motion";
 import { MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
+import TransitionLayout from "~components/transition-layout";
 import { tw } from "~lib/helpers";
+
+type VariantsConfigProps = {
+  toTop: Variants;
+  toBottom: Variants;
+};
 
 export default function SwitchTheme() {
   const { theme, setTheme } = useTheme();
 
+  function handleClick() {
+    setTheme(theme === "light" ? "dark" : "light");
+  }
+
   return (
     <button
       className={tw(
-        "rounded-md",
+        "rounded-md overflow-hidden",
         "p-1",
         "bg-base-5",
         "active:bg-base-4",
@@ -18,10 +29,16 @@ export default function SwitchTheme() {
       )}
       type="button"
       aria-label="switch theme"
-      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      onClick={handleClick}
       title={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
     >
-      {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+      <TransitionLayout
+        key={theme}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+      >
+        {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+      </TransitionLayout>
     </button>
   );
 }

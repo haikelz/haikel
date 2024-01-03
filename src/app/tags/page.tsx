@@ -73,22 +73,25 @@ export default function Tags() {
           transition={{ duration: 0.3 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
+          className="w-full"
         >
-          <Heading as="h2" className="text-left mb-2">
-            <Notation
-              type="highlight"
-              animationDelay={500}
-              lightModeColor="#FFFF3F"
-              darkModeColor="#E11D48"
-            >
-              Tags
-            </Notation>
-          </Heading>
-          <Paragraph data-cy="description">
-            Select spesific notes based on the list of tags below.
-          </Paragraph>
+          <div>
+            <Heading as="h2" className="text-left mb-2">
+              <Notation
+                type="highlight"
+                animationDelay={500}
+                lightModeColor="#FFFF3F"
+                darkModeColor="#E11D48"
+              >
+                Tags
+              </Notation>
+            </Heading>
+            <Paragraph data-cy="description">
+              Select spesific notes based on the list of tags below.
+            </Paragraph>
+          </div>
+          <Client tagsList={tagsList} />
         </TransitionLayout>
-        <Client tagsList={tagsList} />
       </section>
     </Main>
   );
