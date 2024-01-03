@@ -56,6 +56,7 @@ export default function WorksPage() {
           transition={{ duration: 0.3 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
+          className="w-full"
         >
           <div>
             <Heading as="h2" className="text-left">

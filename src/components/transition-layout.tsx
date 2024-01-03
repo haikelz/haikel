@@ -8,9 +8,5 @@ type TransitionLayoutProps = MotionProps & HTMLAttributes<HTMLDivElement>;
 export default function TransitionLayout(
   { children, ...props }: TransitionLayoutProps
 ) {
-  return (
-    <m.div initial={false} {...props}>
-      {children}
-    </m.div>
-  );
+  return <m.div {...props}>{children}</m.div>;
 }

@@ -7,7 +7,7 @@ import { Heading, Paragraph, UnderlineLink } from "~ui/typography";
 export default function ErrorPage() {
   return (
     <Main className="flex min-h-screen flex-col items-center justify-center text-center">
-      <section>
+      <section className="flex flex-col items-center justify-center">
         <TransitionLayout
           transition={{ duration: 0.3 }}
           initial={{ opacity: 0 }}
