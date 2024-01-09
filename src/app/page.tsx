@@ -47,7 +47,7 @@ const socialMediaList = [
   {
     id: 7,
     icon: FileTextIcon,
-    route: "https://read.cv/ekel",
+    route: "/Resume_HaikelIlhamHakim.pdf",
     title: "Resume",
   },
 ];
@@ -116,7 +116,7 @@ export default async function HomePage() {
                 >
                   <span className="font-bold">Frontend Web Developer</span>
                 </Notation>{" "}
-                with mainly focuses on building responsive, interactive,
+                with a main focus on building responsive, interactive,
                 maintainable, and accessible Websites. Familiar with{" "}
                 <span className="font-bold">
                   Javascript/Typescript, React Ecosystem, Linux
