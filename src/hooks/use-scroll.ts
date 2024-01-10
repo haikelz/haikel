@@ -21,7 +21,7 @@ export function useScroll<T extends HTMLElement>(ref: RefObject<T>) {
     }
 
     setScroll(position <= 0 ? 0 : position);
-  }, [setScroll, scroll, setShow]);
+  }, [setScroll, scroll, setShow, ref]);
 
   useEffect(() => {
     document.addEventListener("scroll", handleScroll, { passive: true });

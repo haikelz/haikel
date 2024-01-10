@@ -1,6 +1,6 @@
-export * from "./heading";
-export * from "./paragraph";
-export * from "./underline";
-export * from "./underline-span";
-export * from "./underline-link";
-export * from "./notation";
+export { Heading } from "./heading";
+export { Notation } from "./notation";
+export { Paragraph } from "./paragraph";
+export { Underline } from "./underline";
+export { UnderlineLink } from "./underline-link";
+export { UnderlineSpan } from "./underline-span";

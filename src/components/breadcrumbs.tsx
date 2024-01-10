@@ -19,7 +19,7 @@ export default function Breadcrumbs() {
     )}${pathnames[pathnames.length - 1].length < 10 ? "" : "..."}</span>`;
 
   return (
-    <div className="bg-base-4 dark:bg-base-1 rounded-md font-semibold px-2 py-0.5 w-fit">
+    <div className="bg-base-5 dark:bg-base-1 rounded-md font-semibold px-2 py-0.5 w-fit">
       <Link
         href="/"
         className="hover:font-black hover:underline hover:underline-offset-4"

@@ -58,8 +58,7 @@ export default function Header() {
                     "rounded-md",
                     "p-1",
                     "bg-base-5",
-                    "active:bg-base-4",
-                    "dark:bg-base-2 dark:active:bg-base-1 font-bold"
+                    "dark:bg-base-1 font-bold"
                   )}
                 >
                   <HomeIcon />
