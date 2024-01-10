@@ -17,6 +17,10 @@
 - Planetscale
 - Drizzle
 
+## Website Structure
+
+![Website Structure](public/docs/website-structure.png)
+
 ## Color Pallete
 
 ![color pallete](/public/docs/color-pallete.png)
