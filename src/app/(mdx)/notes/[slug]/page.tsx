@@ -4,6 +4,7 @@ import format from "date-fns/format";
 import { Metadata } from "next";
 import { getMDXComponent } from "next-contentlayer/hooks";
 import dynamic from "next/dynamic";
+import Breadcrumbs from "~components/breadcrumbs";
 import Main from "~components/main";
 import NoteViews from "~components/note-views";
 import TransitionLayout from "~components/transition-layout";
@@ -96,7 +97,8 @@ export default async function NotePage(
             )}
           >
             <section className="flex flex-col">
-              <Heading as="h1">
+              <Breadcrumbs />
+              <Heading as="h1" className="mt-8">
                 <Notation
                   type="highlight"
                   lightModeColor="#FFFF3F"

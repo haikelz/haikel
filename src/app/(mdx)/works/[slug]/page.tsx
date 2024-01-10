@@ -2,6 +2,7 @@ import { Works, allWorks } from "contentlayer/generated";
 import { Metadata } from "next";
 import { getMDXComponent } from "next-contentlayer/hooks";
 import dynamic from "next/dynamic";
+import Breadcrumbs from "~components/breadcrumbs";
 import Main from "~components/main";
 import TransitionLayout from "~components/transition-layout";
 import { tw } from "~lib/helpers";
@@ -84,7 +85,8 @@ export default async function DetailWorkPage(
           )}
         >
           <section className="flex flex-col">
-            <Heading as="h1" className="prose mt-6 w-full max-w-full">
+            <Breadcrumbs />
+            <Heading as="h1" className="mt-8 w-full max-w-full">
               <Notation
                 type="highlight"
                 animationDelay={500}
