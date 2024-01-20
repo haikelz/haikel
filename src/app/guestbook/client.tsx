@@ -19,9 +19,9 @@ import { trpc } from "~lib/utils/trpc/client";
 import { GoogleIcon } from "~ui/svgs";
 import { Paragraph } from "~ui/typography";
 
+import { GuestbookProps } from "@types";
 import ErrorClient from "./error-client";
 import LoadingClient from "./loading-client";
-import { GuestbookProps } from "@types";
 
 const idAtom = atom<number>(0);
 const isEditedAtom = atom<boolean>(false);
@@ -70,7 +70,9 @@ export function FormAndGuestsList({ session }: { session: Session | null}) {
     }
   });
 
-  const { data, isError, isPending } = trpc.get.useQuery(
+  const { data, isError, isPending } = trpc.get.useQuery
+
+  (
     { key: "guestbook" },
     {
       placeholderData: keepPreviousData,

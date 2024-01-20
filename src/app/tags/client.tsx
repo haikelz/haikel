@@ -2,7 +2,7 @@
 
 import { allNotes } from "contentlayer/generated";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 import { tw } from "~lib/helpers";
 import { NotesList } from "~ui/lists";
 import { Paragraph } from "~ui/typography";
@@ -11,8 +11,12 @@ export default function Client({ tagsList }: { tagsList: string[] }) {
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  const filteredNotes = allNotes.filter((item) =>
-    item.tags.includes(searchParams.get("tag") as string)
+  const filteredNotes = useMemo(
+    () =>
+      allNotes.filter((item) =>
+        item.tags.includes(searchParams.get("tag") as string)
+      ),
+    [searchParams]
   );
 
   const createQueryString = useCallback(
@@ -26,41 +30,37 @@ export default function Client({ tagsList }: { tagsList: string[] }) {
   );
 
   return (
-    <>
-      <div className="mt-4">
-        <div className="flex flex-wrap gap-3">
-          {tagsList.map((item) => (
-            <button
-              key={item}
-              type="button"
-              aria-label={`tag ${item}`}
-              className={tw(
-                "px-4 py-1 transition-all",
-                "hover:scale-110",
-                searchParams.get("tag") === item
-                  ? "bg-[#F84B3E] text-base-5 dark:bg-blue-600"
-                  : "bg-base-5 dark:bg-base-2"
-              )}
-              onClick={() =>
-                router.replace("?" + createQueryString("tag", item))
-              }
-            >
-              <Paragraph className="text-center font-medium">{item}</Paragraph>
-            </button>
-          ))}
-        </div>
-        <div className="mt-8">
-          {filteredNotes.length ? (
-            <div className="space-y-8">
-              <NotesList filteredNotes={filteredNotes} />
-            </div>
-          ) : (
-            <Paragraph className="font-bold">
-              No notes matching with tag!
-            </Paragraph>
-          )}
-        </div>
+    <div className="mt-4">
+      <div className="flex flex-wrap gap-3">
+        {tagsList.map((item) => (
+          <button
+            key={item}
+            type="button"
+            aria-label={`tag ${item}`}
+            className={tw(
+              "px-4 py-1 transition-all",
+              "hover:scale-110",
+              searchParams.get("tag") === item
+                ? "bg-[#F84B3E] text-base-5 dark:bg-blue-600"
+                : "bg-base-5 dark:bg-base-2"
+            )}
+            onClick={() => router.replace("?" + createQueryString("tag", item))}
+          >
+            <Paragraph className="text-center font-medium">{item}</Paragraph>
+          </button>
+        ))}
       </div>
-    </>
+      <div className="mt-8">
+        {filteredNotes.length ? (
+          <div className="space-y-8">
+            <NotesList filteredNotes={filteredNotes} />
+          </div>
+        ) : (
+          <Paragraph className="font-bold">
+            No notes matching with tag!
+          </Paragraph>
+        )}
+      </div>
+    </div>
   );
 }
