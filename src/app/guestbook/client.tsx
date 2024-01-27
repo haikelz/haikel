@@ -168,20 +168,21 @@ export function FormAndGuestsList({ session }: { session: Session | null}) {
                 >
                   {guest.message}
                 </span>
-                {(session && guest.email === session.user.email) ||
-                session?.user.role === "admin" ? (
+                {(session && guest.email === session.user.email) || session?.user.role === "admin" ? (
                   <>
-                    <button
-                      type="button"
-                      aria-label="delete message"
-                      className={tw(
-                        "dark:bg-base-1 bg-base-5",
-                        "hover:bg-base-5 dark:hover:bg-base-2 p-1 rounded-md"
-                      )}
-                      onClick={() => handleDelete(Number(guest.id))}
-                    >
-                      <TrashIcon size={22} />
-                    </button>
+                    {session?.user.role === "admin" ?
+                      <button
+                        type="button"
+                        aria-label="delete message"
+                        className={tw(
+                          "dark:bg-base-1 bg-base-5",
+                          "hover:bg-base-5 dark:hover:bg-base-2 p-1 rounded-md"
+                          )}
+                        onClick={() => handleDelete(Number(guest.id))}
+                      >
+                        <TrashIcon size={22} />
+                      </button>
+                    : null}
                     <button
                       type="button"
                       aria-label="edit message"

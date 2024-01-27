@@ -10,6 +10,7 @@ export default function NotFoundPage() {
           transition={{ duration: 0.3 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
+          className="text-center flex flex-col justify-center items-center"
         >
           <Heading as="h1">404 😴</Heading>
           <Paragraph className="mt-2 font-semibold">

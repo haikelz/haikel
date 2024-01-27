@@ -12,7 +12,7 @@ export default function ErrorPage() {
           transition={{ duration: 0.3 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="flex flex-col items-center justify-center"
+          className="text-center flex flex-col justify-center items-center"
         >
           <Heading as="h1">500 🤖</Heading>
           <Paragraph className="mt-2 font-semibold">
