@@ -8,6 +8,8 @@ export default function Breadcrumbs() {
   const pathname = usePathname();
   const pathnames = pathname.slice(1).split("/");
 
+  const lastIndexPathname = pathnames[pathnames.length - 1];
+
   return (
     <div className="bg-base-5 dark:bg-base-1 rounded-md font-semibold px-2 py-1 w-fit">
       <Link
@@ -32,7 +34,9 @@ export default function Breadcrumbs() {
         href={`/${pathnames.join("/")}`}
         className="font-black underline underline-offset-4"
       >
-        {pathnames[pathnames.length - 1]}
+        {lastIndexPathname.length > 10
+          ? lastIndexPathname.slice(0, 10) + "..."
+          : lastIndexPathname}
       </Link>
     </div>
   );
