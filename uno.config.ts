@@ -1,20 +1,7 @@
-import {
-  defineConfig,
-  presetAttributify,
-  presetTagify,
-  presetTypography,
-  presetUno,
-  presetWind,
-} from "unocss";
+import { defineConfig, presetTypography, presetUno, presetWind } from "unocss";
 
 export default defineConfig({
-  presets: [
-    presetAttributify(),
-    presetWind(),
-    presetUno(),
-    presetTypography(),
-    presetTagify(),
-  ],
+  presets: [presetWind(), presetUno(), presetTypography()],
   theme: {
     boxShadow: {
       light: "8px 8px 0px -3px #0D1117",

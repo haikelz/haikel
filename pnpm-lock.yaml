@@ -11,6 +11,9 @@ dependencies:
   '@hookform/resolvers':
     specifier: ^3.3.2
     version: 3.3.2(react-hook-form@7.48.2)
+  '@marsidev/react-turnstile':
+    specifier: ^0.4.1
+    version: 0.4.1(react-dom@18.2.0)(react@18.2.0)
   '@planetscale/database':
     specifier: ^1.11.0
     version: 1.11.0
@@ -1622,6 +1625,16 @@ packages:
     resolution: {integrity: sha512-QuTgnG52Poic7uM1AN5yJ09QMe0O28e10XzSvWDz02TJiiKee4stsiownEIadWm8nYzyDAyT+gKzUoZmiWQtsQ==}
     dependencies:
       '@lit-labs/ssr-dom-shim': 1.1.2
+    dev: false
+
+  /@marsidev/react-turnstile@0.4.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-uZusUW9mPr0csWpls8bApe5iuRK0YK7H1PCKqfM4djW3OA9GB9rU68irjk7xRO8qlHyj0aDTeVu9tTLPExBO4Q==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /@mdx-js/esbuild@2.3.0(esbuild@0.19.8):

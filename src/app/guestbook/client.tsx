@@ -1,36 +1,41 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  QueryClient,
-  keepPreviousData,
-  useQueryClient,
-} from "@tanstack/react-query";
+import { GuestbookProps } from "@types";
 import { format } from "date-fns/esm";
 import { atom, useAtom } from "jotai";
 import { GithubIcon, PencilIcon, TrashIcon } from "lucide-react";
 import { Session } from "next-auth";
 import { signIn, signOut } from "next-auth/react";
 import { useForm } from "react-hook-form";
+import Turnstile from "~components/turnstile";
+import { useGuestbook } from "~hooks";
 import { tw } from "~lib/helpers";
 import { inter } from "~lib/utils/fonts";
 import { messageSchema } from "~lib/utils/form-schema";
-import { trpc } from "~lib/utils/trpc/client";
 import { GoogleIcon } from "~ui/svgs";
 import { Paragraph } from "~ui/typography";
 
-import { GuestbookProps } from "@types";
+import { useState } from "react";
 import ErrorClient from "./error-client";
 import LoadingClient from "./loading-client";
 
 const idAtom = atom<number>(0);
 const isEditedAtom = atom<boolean>(false);
 
-export function FormAndGuestsList({ session }: { session: Session | null}) {
+export function FormAndGuestsList({ session }: { session: Session }) {
+  const [isShowLoginGuestbookMethod, setIsShowLoginGuestbookMethod] = useState<boolean>(false)
+
   const [id, setId] = useAtom(idAtom);
   const [isEdited, setIsEdited] = useAtom(isEditedAtom);
 
-  const queryClient: QueryClient = useQueryClient();
+
+  const { get, postMutation, updateMutation, deleteMutation } = useGuestbook({
+    getKey: "guestbook",
+    postKey: "post-message",
+    updateKey: id,
+    deleteKey: id,
+  });
 
   const {
     getValues,
@@ -42,44 +47,6 @@ export function FormAndGuestsList({ session }: { session: Session | null}) {
     defaultValues: { message: "" },
     resolver: zodResolver(messageSchema),
   });
-
-  // post
-  const postMutation = trpc.post.useMutation({
-    mutationKey: ["post-message"],
-    onSettled: async () => {
-      return await queryClient.invalidateQueries({
-        queryKey: ["post-message"],
-        exact: true,
-      });
-    },
-  });
-
-  // delete
-  const deleteMutation = trpc.delete.useMutation({
-    mutationKey: [id],
-    onSettled: async () => {
-      return await queryClient.invalidateQueries({ queryKey: [id], exact: true });
-    },
-  });
-
-  // update
-  const updateMutation = trpc.patch.useMutation({
-    mutationKey: [id],
-    onSettled: async () =>{
-      return await queryClient.invalidateQueries({ queryKey: [id], exact: true });
-    }
-  });
-
-  const { data, isError, isPending } = trpc.get.useQuery
-
-  (
-    { key: "guestbook" },
-    {
-      placeholderData: keepPreviousData,
-      refetchOnWindowFocus: false,
-      refetchOnReconnect: false,
-    }
-  );
 
   function onSubmit() {
     // detect if value are edited
@@ -111,19 +78,24 @@ export function FormAndGuestsList({ session }: { session: Session | null}) {
     setId(id);
   }
 
-  if (isPending) return <LoadingClient />;
-  if (isError) return <ErrorClient />;
+  if (get.isPending) return <LoadingClient />;
+  if (get.isError) return <ErrorClient />;
 
-  const guestbook = data as GuestbookProps[];
+  const guestbook = get.data as GuestbookProps[];
 
   return (
     <>
       {!session ? (
-        <div className="my-4 w-fit flex items-center justify-center space-x-3">
-          <SignInWithGithub />
-          <span className="text-base">or</span>
-          <SignInWithGoogle />
-        </div>
+        <>
+          {isShowLoginGuestbookMethod ?
+            <div className="my-4 w-fit flex items-center justify-center space-x-3">
+              <SignInWithGithub />
+              <span className="text-base">or</span>
+              <SignInWithGoogle />
+            </div>
+          : null}
+          <Turnstile setIsShowLoginGuestbookMethod={setIsShowLoginGuestbookMethod} />
+        </>
       ) : (
         <div className="w-full">
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -152,64 +124,67 @@ export function FormAndGuestsList({ session }: { session: Session | null}) {
       )}
       {guestbook.length ? (
         <section className="mb-10 flex w-full flex-col space-y-8">
-          {guestbook.slice(guestbook.length < 100 ? 0 : 100, guestbook.length) .map((guest) => (
-            <div data-cy="guest-item" key={guest.id} className="h-full">
-              <div
-                className={
-                  session ? "flex space-x-3 justify-start items-center" : ""
-                }
-              >
-                <span
-                  className={tw(
-                    "cursor-pointer text-lg font-bold",
-                    "hover:text-blue-500",
-                    inter.className
-                  )}
+          {guestbook
+            .slice(guestbook.length < 100 ? 0 : 100, guestbook.length)
+            .map((guest) => (
+              <div data-cy="guest-item" key={guest.id} className="h-full">
+                <div
+                  className={
+                    session ? "flex space-x-3 justify-start items-center" : ""
+                  }
                 >
-                  {guest.message}
-                </span>
-                {(session && guest.email === session.user.email) || session?.user.role === "admin" ? (
-                  <>
-                    {session?.user.role === "admin" ?
+                  <span
+                    className={tw(
+                      "cursor-pointer text-lg font-bold",
+                      "hover:text-blue-500",
+                      inter.className
+                    )}
+                  >
+                    {guest.message}
+                  </span>
+                  {(session && guest.email === session?.user.email) ||
+                  session?.user.role === "admin" ? (
+                    <>
+                      {session?.user.role === "admin" ? (
+                        <button
+                          type="button"
+                          aria-label="delete message"
+                          className={tw(
+                            "dark:bg-base-1 bg-base-5",
+                            "hover:bg-base-5 dark:hover:bg-base-2 p-1 rounded-md"
+                          )}
+                          onClick={() => handleDelete(Number(guest.id))}
+                        >
+                          <TrashIcon size={22} />
+                        </button>
+                      ) : null}
                       <button
                         type="button"
-                        aria-label="delete message"
+                        aria-label="edit message"
                         className={tw(
                           "dark:bg-base-1 bg-base-5",
                           "hover:bg-base-5 dark:hover:bg-base-2 p-1 rounded-md"
-                          )}
-                        onClick={() => handleDelete(Number(guest.id))}
+                        )}
+                        onClick={() =>
+                          handleEdit(Number(guest.id), guest.message as string)
+                        }
                       >
-                        <TrashIcon size={22} />
+                        <PencilIcon size={22} />
                       </button>
+                    </>
+                  ) : null}
+                </div>
+                <Paragraph className="mt-2 text-base font-medium tracking-wide">
+                  {guest.username}
+                  {guest.created_at !== ""
+                    ? `. ${format(
+                        new Date(guest.created_at as string),
+                        "LLLL d, yyyy"
+                      )}`
                     : null}
-                    <button
-                      type="button"
-                      aria-label="edit message"
-                      className={tw(
-                        "dark:bg-base-1 bg-base-5",
-                        "hover:bg-base-5 dark:hover:bg-base-2 p-1 rounded-md"
-                      )}
-                      onClick={() =>
-                        handleEdit(Number(guest.id), guest.message as string)
-                      }
-                    >
-                      <PencilIcon size={22} />
-                    </button>
-                  </>
-                ) : null}
+                </Paragraph>
               </div>
-              <Paragraph className="mt-2 text-base font-medium tracking-wide">
-                {guest.username}
-                {guest.created_at !== ""
-                  ? `. ${format(
-                      new Date(guest.created_at as string),
-                      "LLLL d, yyyy"
-                    )}`
-                  : null}
-              </Paragraph>
-            </div>
-          ))}
+            ))}
         </section>
       ) : (
         <Paragraph className="font-semibold">

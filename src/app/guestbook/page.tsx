@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Guestbook() {
-  const session: Session | null = await getServerSession(options);
+  const session = (await getServerSession(options)) as Session;
 
   return (
     <Main

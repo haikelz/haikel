@@ -1,8 +1,20 @@
+"use client";
+
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 import Main from "~components/main";
 import TransitionLayout from "~components/transition-layout";
 import { Heading, Paragraph, UnderlineLink } from "~ui/typography";
 
 export default function NotFoundPage() {
+  const router = useRouter();
+
+  useEffect(() => {
+    setTimeout(() => {
+      router.push("/");
+    }, 5000);
+  }, [router]);
+
   return (
     <Main className="flex min-h-screen flex-col items-center justify-center text-center">
       <section className="flex flex-col items-center justify-center">
