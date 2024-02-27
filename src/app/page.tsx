@@ -180,7 +180,7 @@ export default async function HomePage() {
                   </div>
                   <div>
                     <Paragraph className="font-semibold text-sm mt-1 md:mt-0">
-                      November 2023 - December 2023
+                      February 2024 - Now
                     </Paragraph>
                   </div>
                 </div>

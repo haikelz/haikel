@@ -1,4 +1,4 @@
-import { UnderlineLink } from "../typography";
+import { UnderlineLink } from "~components/ui/typography";
 
 export default function Footer() {
   return (

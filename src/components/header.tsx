@@ -1,15 +1,15 @@
 "use client";
 
-import { m } from "framer-motion";
-import { Contact, HomeIcon, NotebookIcon, NotebookPen } from "lucide-react";
+import { HomeIcon } from "lucide-react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useRef } from "react";
 import { useScroll } from "~hooks";
 import { tw } from "~lib/helpers";
 
-import Menu, { OpenMenu } from "../menus/menu";
-import { Navigationlink } from "./navigation-link";
+import Menu from "./ui/menus/menu";
+import { UnderlineLink } from "./ui/typography";
 
 const SwitchTheme = dynamic(() => import("~ui/menus/switch-theme"), {
   loading: () => (
@@ -65,5 +65,35 @@ export default function Header() {
         <Menu />
       </header>
     </>
+  );
+}
+
+const topNavList = [
+  { id: 1, route: "/works", name: "Works" },
+  { id: 2, route: "/notes", name: "Notes" },
+  { id: 3, route: "/tags", name: "Tags" },
+  { id: 4, route: "/guestbook", name: "Guestbook" },
+];
+
+export function Navigationlink() {
+  const pathname = usePathname();
+
+  return (
+    <div className="space-x-4 hidden sm:block mr-4">
+      {topNavList.map((item) => (
+        <UnderlineLink
+          role="button"
+          className={tw(
+            pathname.includes(item.route)
+              ? "decoration-solid"
+              : "decoration-none"
+          )}
+          key={item.id}
+          href={item.route}
+        >
+          {item.name}
+        </UnderlineLink>
+      ))}
+    </div>
   );
 }
