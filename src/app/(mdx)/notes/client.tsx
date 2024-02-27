@@ -70,7 +70,7 @@ export default function Client() {
         .with(
           { filteredNotes: P.when((filteredNotes) => filteredNotes.length) },
           () => (
-            <div className="grid grid-cols-1 mt-4 sm:grid-cols-2 grid-rows-1 w-full gap-4">
+            <div className="grid grid-cols-1 mt-4 sm:grid-cols-2 grid-rows-1 w-full gap-5">
               <NotesList
                 filteredNotes={filteredNotes}
                 search={deferredSearch}

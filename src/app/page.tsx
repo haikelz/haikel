@@ -107,8 +107,8 @@ export default async function HomePage() {
             <Heading as="h2">I&#39;m Haikel Ilham Hakim</Heading>
             <div className="my-4">
               <Paragraph id="description">
-                A <span className="font-bold">Frontend Web Engineer</span> with
-                a main focus on crafting responsive, interactive, maintainable,
+                A <span className="font-bold">Frontend Web Developer</span> with
+                a main focus on building responsive, interactive, maintainable,
                 and accessible Websites. Familiar with{" "}
                 <span className="font-bold">
                   Javascript/Typescript, React Ecosystem, Linux
@@ -289,7 +289,7 @@ export default async function HomePage() {
               )}
             >
               <Heading as="h2">Featured Works</Heading>
-              <div className="grid grid-cols-1 mt-4 sm:grid-cols-2 grid-rows-1 w-full gap-4">
+              <div className="grid grid-cols-1 mt-4 sm:grid-cols-2 grid-rows-1 w-full gap-5">
                 <WorksList works={works} />
               </div>
             </div>

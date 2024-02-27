@@ -113,3 +113,7 @@ button {
 .list-position-outside > li::marker {
   color: #9ca3af;
 }
+
+.dark .list-position-outside > li::marker {
+  color: #6b7280;
+}
