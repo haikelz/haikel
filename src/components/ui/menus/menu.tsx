@@ -5,6 +5,7 @@ import { MenuIcon, MoonIcon, SunIcon, XIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
 import { useRef } from "react";
+import { match } from "ts-pattern";
 import { useClickOutside } from "~hooks";
 import { tw } from "~lib/helpers";
 import { isOpenAtom } from "~store";
@@ -29,31 +30,33 @@ export default function Menu() {
 
   return (
     <>
-      {isOpen ? (
-        <div
-          ref={mobileNavRef}
-          className={tw(
-            "space-y-4 pt-4 flex flex-col items-start justify-start",
-            "w-full sm:hidden"
-          )}
-        >
-          {topNavList.map((item) => (
-            <UnderlineLink
-              role="button"
-              className={tw(
-                pathname.includes(item.route)
-                  ? "decoration-solid"
-                  : "decoration-none"
-              )}
-              key={item.id}
-              href={item.route}
-              onClick={() => setIsOpen(false)}
-            >
-              {item.name}
-            </UnderlineLink>
-          ))}
-        </div>
-      ) : null}
+      {match({ isOpen: isOpen })
+        .with({ isOpen: true }, () => (
+          <div
+            ref={mobileNavRef}
+            className={tw(
+              "space-y-4 pt-4 flex flex-col items-start justify-start",
+              "w-full sm:hidden"
+            )}
+          >
+            {topNavList.map((item) => (
+              <UnderlineLink
+                role="button"
+                className={tw(
+                  pathname.includes(item.route)
+                    ? "decoration-solid"
+                    : "decoration-none"
+                )}
+                key={item.id}
+                href={item.route}
+                onClick={() => setIsOpen(false)}
+              >
+                {item.name}
+              </UnderlineLink>
+            ))}
+          </div>
+        ))
+        .otherwise(() => null)}
     </>
   );
 }
@@ -73,7 +76,11 @@ export function OpenMenu() {
         "dark:bg-base-1 font-bold"
       )}
     >
-      {isOpen ? <XIcon /> : <MenuIcon />}
+      {match({ isOpen: isOpen })
+        .with({ isOpen: true }, () => <XIcon />)
+        .otherwise(() => (
+          <MenuIcon />
+        ))}
     </button>
   );
 }
@@ -94,7 +101,11 @@ export function SwitchTheme() {
       aria-label="switch theme"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
     >
-      {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+      {match({ theme: theme })
+        .with({ theme: "dark" }, () => <SunIcon />)
+        .otherwise(() => (
+          <MoonIcon />
+        ))}
     </button>
   );
 }

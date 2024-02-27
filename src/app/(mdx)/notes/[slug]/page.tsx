@@ -1,6 +1,6 @@
 import { kv } from "@vercel/kv";
 import { Notes, allNotes } from "contentlayer/generated";
-import format from "date-fns/format";
+import { format } from "date-fns";
 import { Metadata } from "next";
 import { getMDXComponent } from "next-contentlayer/hooks";
 import dynamic from "next/dynamic";
@@ -11,10 +11,9 @@ import TransitionLayout from "~components/transition-layout";
 import { tw } from "~lib/helpers";
 import { ABSOLUTE_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { inter, naskhArabic } from "~lib/utils/fonts";
-import { Heading, Notation, Paragraph } from "~ui/typography";
+import { Heading, Paragraph } from "~ui/typography";
 
 const Video = dynamic(() => import("~components/video"));
-const Comments = dynamic(() => import("~components/comments"));
 const ReadingTime = dynamic(() => import("~components/reading-time"));
 const LightboxImage = dynamic(() => import("~ui/images/lightbox-image"));
 const BackToTop = dynamic(() => import("~components/back-to-top"));
@@ -88,25 +87,15 @@ export default async function NotePage(
           transition={{ duration: 0.3 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="w-full"
+          className="w-full mb-3"
         >
           <article
-            className={tw(
-              "flex w-full flex-col flex-wrap justify-center py-8",
-              "md:mb-3"
-            )}
+            className={tw("flex w-full flex-col flex-wrap justify-center py-8")}
           >
             <section className="flex flex-col">
               <Breadcrumbs />
               <Heading as="h1" className="mt-8">
-                <Notation
-                  type="highlight"
-                  lightModeColor="#FFFF3F"
-                  darkModeColor="#E11D48"
-                  animationDelay={500}
-                >
-                  {title}
-                </Notation>
+                {title}
               </Heading>
               <div className="my-3 flex items-center">
                 <Paragraph
@@ -115,7 +104,7 @@ export default async function NotePage(
                     inter.className
                   )}
                 >
-                  {format(new Date(date) ?? new Date(), "LLLL d, yyyy")} /{" "}
+                  {format(new Date(date) ?? new Date(), "LLLL d, yyyy")}.{" "}
                   <ReadingTime content={body.raw} /> / {views} views
                 </Paragraph>
               </div>
@@ -139,7 +128,6 @@ export default async function NotePage(
                 <BackToTop />
               </div>
             </article>
-            <Comments />
           </article>
         </TransitionLayout>
       </Main>

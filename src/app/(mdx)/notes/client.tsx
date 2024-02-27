@@ -5,6 +5,7 @@ import { Searcher } from "fast-fuzzy";
 import { atom, useAtom } from "jotai";
 import { SearchIcon } from "lucide-react";
 import { useDeferredValue, useMemo } from "react";
+import { P, match } from "ts-pattern";
 import { sortedAllNotes } from "~features/notes";
 import { tw } from "~lib/helpers";
 import { NotesList } from "~ui/lists";
@@ -46,7 +47,7 @@ export default function Client() {
 
   return (
     <>
-      <div className="relative my-4 w-full">
+      <div className="relative mt-4 mb-6 w-full">
         <div className="absolute inset-y-0 left-0 flex items-center pl-3">
           <SearchIcon size={20} />
         </div>
@@ -65,15 +66,23 @@ export default function Client() {
           placeholder="Search Here...."
         />
       </div>
-      {filteredNotes.length ? (
-        <div className="mb-10 flex w-full flex-col space-y-8">
-          <NotesList filteredNotes={filteredNotes} search={deferredSearch} />
-        </div>
-      ) : (
-        <Paragraph data-cy="not-found-note" className="font-semibold">
-          The note that you search is not found!
-        </Paragraph>
-      )}
+      {match({ filteredNotes: filteredNotes })
+        .with(
+          { filteredNotes: P.when((filteredNotes) => filteredNotes.length) },
+          () => (
+            <div className="grid grid-cols-1 mt-4 sm:grid-cols-2 grid-rows-1 w-full gap-4">
+              <NotesList
+                filteredNotes={filteredNotes}
+                search={deferredSearch}
+              />
+            </div>
+          )
+        )
+        .otherwise(() => (
+          <Paragraph data-cy="not-found-note" className="font-semibold">
+            The note that you search is not found!
+          </Paragraph>
+        ))}
     </>
   );
 }

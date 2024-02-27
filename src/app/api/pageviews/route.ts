@@ -1,5 +1,6 @@
 import { kv } from "@vercel/kv";
 import { NextRequest, NextResponse } from "next/server";
+import { P, match } from "ts-pattern";
 
 async function handler(req: NextRequest): Promise<NextResponse> {
   if (req.method !== "POST") {
@@ -24,7 +25,7 @@ async function handler(req: NextRequest): Promise<NextResponse> {
 
   const ip = req.ip;
 
-  if (ip) {
+  match({ ip: ip }).with({ ip: P.when((ip) => ip) }, async () => {
     const buf = await crypto.subtle.digest(
       "SHA-256",
       new TextEncoder().encode(ip)
@@ -41,7 +42,7 @@ async function handler(req: NextRequest): Promise<NextResponse> {
     if (!isNew) {
       new NextResponse(null, { status: 202 });
     }
-  }
+  });
 
   await kv.incr(["pageviews", "notes", slug].join(":"));
   return new NextResponse(null, { status: 202 });

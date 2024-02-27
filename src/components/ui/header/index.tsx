@@ -1,7 +1,7 @@
 "use client";
 
 import { m } from "framer-motion";
-import { HomeIcon } from "lucide-react";
+import { Contact, HomeIcon, NotebookIcon, NotebookPen } from "lucide-react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRef } from "react";
@@ -44,25 +44,21 @@ export default function Header() {
             "flex justify-between items-center"
           )}
         >
-          <div>
-            <Link href="/" className="decoration-none">
-              <button
-                type="button"
-                aria-label="home"
-                className={tw(
-                  "rounded-md",
-                  "p-1",
-                  "bg-base-5",
-                  "dark:bg-base-1 font-bold"
-                )}
-              >
-                <HomeIcon />
-              </button>
-            </Link>
-          </div>
+          <Link href="/" className="decoration-none">
+            <button
+              type="button"
+              aria-label="home"
+              className={tw(
+                "rounded-md",
+                "p-1",
+                "bg-base-5",
+                "dark:bg-base-1 font-bold"
+              )}
+            >
+              <HomeIcon />
+            </button>
+          </Link>
           <div className="flex items-center justify-center">
-            <OpenMenu />
-            <Navigationlink />
             <SwitchTheme />
           </div>
         </nav>

@@ -3,6 +3,7 @@
 import { allNotes } from "contentlayer/generated";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useMemo } from "react";
+import { P, match } from "ts-pattern";
 import { tw } from "~lib/helpers";
 import { NotesList } from "~ui/lists";
 import { Paragraph } from "~ui/typography";
@@ -51,15 +52,20 @@ export default function Client({ tagsList }: { tagsList: string[] }) {
         ))}
       </div>
       <div className="mt-8">
-        {filteredNotes.length ? (
-          <div className="space-y-8">
-            <NotesList filteredNotes={filteredNotes} />
-          </div>
-        ) : (
-          <Paragraph className="font-bold">
-            No notes matching with tag!
-          </Paragraph>
-        )}
+        {match({ filteredNotes: filteredNotes })
+          .with(
+            { filteredNotes: P.when((filteredNotes) => filteredNotes.length) },
+            () => (
+              <div className="grid grid-cols-1 mt-4 sm:grid-cols-2 grid-rows-1 w-full gap-4">
+                <NotesList filteredNotes={filteredNotes} />
+              </div>
+            )
+          )
+          .otherwise(() => (
+            <Paragraph className="font-bold">
+              No notes matching with tag!
+            </Paragraph>
+          ))}
       </div>
     </div>
   );

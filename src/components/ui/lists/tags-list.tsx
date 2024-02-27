@@ -6,7 +6,7 @@ import { Paragraph } from "../typography";
 export function TagsList({ tagsList }: { tagsList: string[] }) {
   return (
     <>
-      {tagsList.map((item, index) => (
+      {tagsList.map((item) => (
         <Link data-cy="tag-item" key={item} href={`/tags/${item}`}>
           <button
             type="button"
@@ -14,11 +14,7 @@ export function TagsList({ tagsList }: { tagsList: string[] }) {
             className={tw(
               "px-4 py-1 transition-all",
               "hover:scale-110",
-              index % 2 === 0
-                ? "bg-base-5 dark:bg-base-2"
-                : index % 5 === 0
-                ? "bg-blue-300 dark:bg-blue-600"
-                : "bg-base-4 dark:bg-base-3"
+              "bg-base-5 dark:bg-base-2"
             )}
           >
             <Paragraph className="text-center font-medium">{item}</Paragraph>

@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 import Main from "~components/main";
 import TransitionLayout from "~components/transition-layout";
-import { Heading, Notation, Paragraph } from "~components/ui/typography";
 import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
+import { Heading, Paragraph } from "~ui/typography";
 
 import Client from "./client";
 
@@ -54,18 +54,11 @@ export default function NotesPage() {
           transition={{ duration: 0.3 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="w-full"
+          className="w-full mb-10"
         >
           <div>
-            <Heading as="h2" className="text-left mb-2">
-              <Notation
-                type="highlight"
-                animationDelay={500}
-                lightModeColor="#FFFF3F"
-                darkModeColor="#E11D48"
-              >
-                Notes
-              </Notation>
+            <Heading as="h1" className="text-left mb-2">
+              Notes
             </Heading>
           </div>
           <Paragraph data-cy="description">

@@ -2,6 +2,7 @@
 
 import { MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
+import { match } from "ts-pattern";
 import TransitionLayout from "~components/transition-layout";
 import { tw } from "~lib/helpers";
 
@@ -30,7 +31,11 @@ export default function SwitchTheme() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+        {match({ theme: theme })
+          .with({ theme: "dark" }, () => <SunIcon />)
+          .otherwise(() => (
+            <MoonIcon />
+          ))}
       </TransitionLayout>
     </button>
   );

@@ -100,3 +100,16 @@ button {
 .bg {
   @apply bg-[#EFFFFD] dark:bg-black;
 }
+
+.list-type-disc {
+  list-style-type: disc;
+}
+
+.list-position-outside {
+  list-style-position: outside;
+  padding-left: 1rem;
+}
+
+.list-position-outside > li::marker {
+  color: #9ca3af;
+}

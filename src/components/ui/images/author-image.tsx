@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { match } from "ts-pattern";
 import Lightbox from "yet-another-react-lightbox";
 import Captions from "yet-another-react-lightbox/plugins/captions";
 import "yet-another-react-lightbox/plugins/captions.css";
@@ -30,30 +31,32 @@ export default function AuthorImage() {
         fetchPriority="high"
         data-cy="author-image"
       />
-      {isOpen ? (
-        <Lightbox
-          open={isOpen}
-          close={() => setIsOpen(false)}
-          slides={[{ src: src, alt: alt, title: alt }]}
-          plugins={[Captions]}
-          render={{
-            slide: () => {
-              return (
-                <Image
-                  className="aspect-auto rounded-sm"
-                  alt={alt}
-                  src={src}
-                  loading="eager"
-                  fetchPriority="high"
-                  draggable={false}
-                  width={500}
-                  height={500}
-                />
-              );
-            },
-          }}
-        />
-      ) : null}
+      {match({ isOpen: isOpen })
+        .with({ isOpen: true }, () => (
+          <Lightbox
+            open={isOpen}
+            close={() => setIsOpen(false)}
+            slides={[{ src: src, alt: alt, title: alt }]}
+            plugins={[Captions]}
+            render={{
+              slide: () => {
+                return (
+                  <Image
+                    className="aspect-auto rounded-sm"
+                    alt={alt}
+                    src={src}
+                    loading="eager"
+                    fetchPriority="high"
+                    draggable={false}
+                    width={500}
+                    height={500}
+                  />
+                );
+              },
+            }}
+          />
+        ))
+        .otherwise(() => null)}
     </>
   );
 }

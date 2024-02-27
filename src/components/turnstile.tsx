@@ -37,7 +37,7 @@ export default function Turnstile(
 
   return (
     <form
-      className="mt-3 mb-6"
+      className="mt-3 mb-7"
       method="POST"
       action="/api/auth/turnstile"
       onSubmit={handleTurnstile}

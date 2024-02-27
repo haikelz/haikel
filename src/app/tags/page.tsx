@@ -1,11 +1,11 @@
 import { allNotes } from "contentlayer/generated";
 import { Metadata } from "next";
-import { useMemo } from "react";
+import { Suspense, useMemo } from "react";
 import Main from "~components/main";
 import TransitionLayout from "~components/transition-layout";
-import { Heading, Notation, Paragraph } from "~components/ui/typography";
 import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
+import { Heading, Paragraph } from "~ui/typography";
 
 import Client from "./client";
 
@@ -68,29 +68,30 @@ export default function Tags() {
         "pt-8"
       )}
     >
-      <section className="flex mb-10 w-full flex-wrap items-start justify-start">
+      <section className="flex w-full flex-wrap items-start justify-start">
         <TransitionLayout
           transition={{ duration: 0.3 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="w-full"
+          className="w-full mb-10"
         >
           <div>
-            <Heading as="h2" className="text-left mb-2">
-              <Notation
-                type="highlight"
-                animationDelay={500}
-                lightModeColor="#FFFF3F"
-                darkModeColor="#E11D48"
-              >
-                Tags
-              </Notation>
+            <Heading as="h1" className="text-left mb-2">
+              Tags
             </Heading>
             <Paragraph data-cy="description">
               Select spesific notes based on the list of tags below.
             </Paragraph>
           </div>
-          <Client tagsList={tagsList} />
+          <Suspense
+            fallback={
+              <div className="mt-4">
+                <Paragraph>Loading....</Paragraph>
+              </div>
+            }
+          >
+            <Client tagsList={tagsList} />
+          </Suspense>
         </TransitionLayout>
       </section>
     </Main>

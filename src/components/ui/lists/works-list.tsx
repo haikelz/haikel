@@ -1,5 +1,6 @@
 import { Works } from "contentlayer/generated";
 import Link from "next/link";
+import { match } from "ts-pattern";
 import { tw } from "~lib/helpers";
 import { inter } from "~lib/utils/fonts";
 import {
@@ -20,67 +21,65 @@ import {
   WindiCssIcon,
 } from "~ui/svgs";
 
-import { Paragraph } from "../typography";
+import { Heading, Paragraph } from "../typography";
 
 export function WorksList({ works }: { works: Works[] }) {
   return (
     <>
       {works.map((work, index) => (
-        <div data-cy="work-item" key={index + 1} className="h-full">
+        <Link
+          href={`/${work.slug}`}
+          aria-label={work.title}
+          data-cy="work-item"
+          key={index + 1}
+          className={tw(
+            "p-4 w-full group cursor-pointer flex flex-col",
+            "flex-wrap border-2 border-base-5 shadow-sm rounded-lg"
+          )}
+        >
           <div>
-            <Link href={`/${work.slug}`} aria-label={work.title}>
-              <span
+            <div className="w-fit">
+              <Heading
+                as="h3"
                 className={tw(
-                  "text-lg font-bold",
-                  "hover:text-blue-500",
+                  "text-lg",
+                  "group-hover:text-blue-500",
                   inter.className
                 )}
               >
                 {work.title}
-              </span>
-            </Link>
+              </Heading>
+            </div>
+            <Paragraph className="my-2 tracking-wide">
+              {work.description}
+            </Paragraph>
+            <div className={tw("flex mt-3 space-x-2", inter.className)}>
+              {work.stack.map((techstack, index) => (
+                <div key={index + 1}>
+                  {match({ techstack: techstack })
+                    .with({ techstack: "nextjs" }, () => <NextJsIcon />)
+                    .with({ techstack: "remix" }, () => <RemixIcon />)
+                    .with({ techstack: "tailwind" }, () => <TailwindcssIcon />)
+                    .with({ techstack: "react-query" }, () => (
+                      <ReactQueryIcon />
+                    ))
+                    .with({ techstack: "reactjs" }, () => <ReactIcon />)
+                    .with({ techstack: "supabase" }, () => <SupabaseIcon />)
+                    .with({ techstack: "typescript" }, () => <TypescriptIcon />)
+                    .with({ techstack: "framer-motion" }, () => <FramerIcon />)
+                    .with({ techstack: "swr" }, () => <SwrIcon />)
+                    .with({ techstack: "nestjs" }, () => <NestJsIcon />)
+                    .with({ techstack: "svelte" }, () => <SvelteIcon />)
+                    .with({ techstack: "chakra-ui" }, () => <ChakrauiIcon />)
+                    .with({ techstack: "windi" }, () => <WindiCssIcon />)
+                    .with({ techstack: "trpcs" }, () => <TrpcIcon />)
+                    .with({ techstack: "jotai" }, () => <JotaiIcon />)
+                    .otherwise(() => null)}
+                </div>
+              ))}
+            </div>
           </div>
-          <Paragraph className="my-2 tracking-wide">
-            {work.description}
-          </Paragraph>
-          <div className={tw("flex space-x-2", inter.className)}>
-            {work.stack.map((techstack, index) => (
-              <div key={index + 1}>
-                {techstack === "nextjs" ? (
-                  <NextJsIcon />
-                ) : techstack === "remix" ? (
-                  <RemixIcon />
-                ) : techstack === "tailwind" ? (
-                  <TailwindcssIcon />
-                ) : techstack === "react-query" ? (
-                  <ReactQueryIcon />
-                ) : techstack === "reactjs" ? (
-                  <ReactIcon />
-                ) : techstack === "supabase" ? (
-                  <SupabaseIcon />
-                ) : techstack === "typescript" ? (
-                  <TypescriptIcon />
-                ) : techstack === "framer-motion" ? (
-                  <FramerIcon />
-                ) : techstack === "swr" ? (
-                  <SwrIcon />
-                ) : techstack === "nestjs" ? (
-                  <NestJsIcon />
-                ) : techstack === "svelte" ? (
-                  <SvelteIcon />
-                ) : techstack === "chakra-ui" ? (
-                  <ChakrauiIcon />
-                ) : techstack === "windi" ? (
-                  <WindiCssIcon />
-                ) : techstack === "trpc" ? (
-                  <TrpcIcon />
-                ) : techstack === "jotai" ? (
-                  <JotaiIcon />
-                ) : null}
-              </div>
-            ))}
-          </div>
-        </div>
+        </Link>
       ))}
     </>
   );

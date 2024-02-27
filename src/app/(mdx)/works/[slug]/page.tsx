@@ -2,13 +2,14 @@ import { Works, allWorks } from "contentlayer/generated";
 import { Metadata } from "next";
 import { getMDXComponent } from "next-contentlayer/hooks";
 import dynamic from "next/dynamic";
+import { P, match } from "ts-pattern";
 import Breadcrumbs from "~components/breadcrumbs";
 import Main from "~components/main";
 import TransitionLayout from "~components/transition-layout";
 import { tw } from "~lib/helpers";
 import { ABSOLUTE_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { inter, naskhArabic } from "~lib/utils/fonts";
-import { Heading, Notation, UnderlineLink } from "~ui/typography";
+import { Heading, UnderlineLink } from "~ui/typography";
 
 const LightboxImage = dynamic(() => import("~ui/images/lightbox-image"));
 const Video = dynamic(() => import("~components/video"));
@@ -76,25 +77,15 @@ export default async function DetailWorkPage(
         transition={{ duration: 0.3 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="w-full"
+        className="w-full mb-3"
       >
         <article
-          className={tw(
-            "flex w-full flex-col flex-wrap justify-center py-8",
-            "md:mb-3"
-          )}
+          className={tw("flex w-full flex-col flex-wrap justify-center py-8")}
         >
           <section className="flex flex-col">
             <Breadcrumbs />
             <Heading as="h1" className="mt-8 w-full max-w-full">
-              <Notation
-                type="highlight"
-                animationDelay={500}
-                lightModeColor="#FFFF3F"
-                darkModeColor="#E11D48"
-              >
-                {title}
-              </Notation>
+              {title}
             </Heading>
             <div className="my-3 flex items-center">
               <AuthorImage />
@@ -104,29 +95,37 @@ export default async function DetailWorkPage(
                 >
                   {author}, <ReadingTime content={body.raw} />.
                 </span>{" "}
-                {preview ? (
-                  <button
-                    type="button"
-                    aria-label="Preview"
-                    className={tw(
-                      "text-base leading-[1.75rem] tracking-[0.050em]"
-                    )}
-                  >
-                    <UnderlineLink href={preview}>Preview</UnderlineLink>
-                  </button>
-                ) : null}
+                {match({ preview: preview })
+                  .with({ preview: P.when(() => preview) }, () => (
+                    <button
+                      type="button"
+                      aria-label="Preview"
+                      className={tw(
+                        "text-base leading-[1.75rem] tracking-[0.050em]"
+                      )}
+                    >
+                      <UnderlineLink href={preview as string}>
+                        Preview
+                      </UnderlineLink>
+                    </button>
+                  ))
+                  .otherwise(() => null)}
                 {preview && repo ? " / " : null}
-                {repo ? (
-                  <button
-                    type="button"
-                    aria-label="Source"
-                    className={tw(
-                      "text-base font-normal leading-[1.75rem] tracking-[0.050em]"
-                    )}
-                  >
-                    <UnderlineLink href={repo}>Source</UnderlineLink>
-                  </button>
-                ) : null}
+                {match({ repo: repo })
+                  .with({ repo: P.when((repo) => repo) }, () => (
+                    <button
+                      type="button"
+                      aria-label="Source"
+                      className={tw(
+                        "text-base font-normal leading-[1.75rem] tracking-[0.050em]"
+                      )}
+                    >
+                      <UnderlineLink href={repo as string}>
+                        Source
+                      </UnderlineLink>
+                    </button>
+                  ))
+                  .otherwise(() => null)}
               </div>
             </div>
           </section>

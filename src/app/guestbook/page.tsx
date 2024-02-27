@@ -3,9 +3,9 @@ import { Session, getServerSession } from "next-auth";
 import { options } from "~app/api/auth/[...nextauth]/options";
 import Main from "~components/main";
 import TransitionLayout from "~components/transition-layout";
-import { Heading, Notation, Paragraph } from "~components/ui/typography";
 import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
+import { Heading, Paragraph } from "~ui/typography";
 
 import { FormAndGuestsList, SignOut } from "./client";
 
@@ -57,18 +57,11 @@ export default async function Guestbook() {
           transition={{ duration: 0.3 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="w-full"
+          className="w-full mb-10"
         >
           <div>
-            <Heading as="h2" className="text-left mb-2">
-              <Notation
-                type="highlight"
-                lightModeColor="#FFFF3F"
-                animationDelay={500}
-                darkModeColor="#E11D48"
-              >
-                Guestbook
-              </Notation>
+            <Heading as="h1" className="text-left mb-2">
+              Guestbook
             </Heading>
             <Paragraph data-cy="description">
               Write a message for me and others.

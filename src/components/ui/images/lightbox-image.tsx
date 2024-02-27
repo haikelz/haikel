@@ -2,6 +2,7 @@
 
 import Image, { ImageProps } from "next/image";
 import { useState } from "react";
+import { match } from "ts-pattern";
 import Lightbox from "yet-another-react-lightbox";
 import Captions from "yet-another-react-lightbox/plugins/captions";
 import "yet-another-react-lightbox/plugins/captions.css";
@@ -33,30 +34,32 @@ export default function LightboxImage(
         title={alt}
         {...props}
       />
-      {isOpen ? (
-        <Lightbox
-          plugins={[Captions]}
-          open={isOpen}
-          close={() => setIsOpen(false)}
-          slides={[{ src: src, alt: alt, title: alt }]}
-          render={{
-            slide: () => {
-              return (
-                <Image
-                  className="aspect-auto rounded-sm"
-                  alt={alt}
-                  src={src}
-                  loading="eager"
-                  fetchPriority="high"
-                  draggable={false}
-                  width={1000}
-                  height={1000}
-                />
-              );
-            },
-          }}
-        />
-      ) : null}
+      {match({ isOpen: isOpen })
+        .with({ isOpen: true }, () => (
+          <Lightbox
+            plugins={[Captions]}
+            open={isOpen}
+            close={() => setIsOpen(false)}
+            slides={[{ src: src, alt: alt, title: alt }]}
+            render={{
+              slide: () => {
+                return (
+                  <Image
+                    className="aspect-auto rounded-sm"
+                    alt={alt}
+                    src={src}
+                    loading="eager"
+                    fetchPriority="high"
+                    draggable={false}
+                    width={1000}
+                    height={1000}
+                  />
+                );
+              },
+            }}
+          />
+        ))
+        .otherwise(() => null)}
     </>
   );
 }

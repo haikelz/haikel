@@ -2,12 +2,14 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { GuestbookProps } from "@types";
-import { format } from "date-fns/esm";
+import { format } from "date-fns";
 import { atom, useAtom } from "jotai";
 import { GithubIcon, PencilIcon, TrashIcon } from "lucide-react";
 import { Session } from "next-auth";
 import { signIn, signOut } from "next-auth/react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { P, match } from "ts-pattern";
 import Turnstile from "~components/turnstile";
 import { useGuestbook } from "~hooks";
 import { tw } from "~lib/helpers";
@@ -16,7 +18,6 @@ import { messageSchema } from "~lib/utils/form-schema";
 import { GoogleIcon } from "~ui/svgs";
 import { Paragraph } from "~ui/typography";
 
-import { useState } from "react";
 import ErrorClient from "./error-client";
 import LoadingClient from "./loading-client";
 
@@ -24,11 +25,11 @@ const idAtom = atom<number>(0);
 const isEditedAtom = atom<boolean>(false);
 
 export function FormAndGuestsList({ session }: { session: Session }) {
-  const [isShowLoginGuestbookMethod, setIsShowLoginGuestbookMethod] = useState<boolean>(false)
+  const [isShowLoginGuestbookMethod, setIsShowLoginGuestbookMethod] =
+    useState<boolean>(false);
 
   const [id, setId] = useAtom(idAtom);
   const [isEdited, setIsEdited] = useAtom(isEditedAtom);
-
 
   const { get, postMutation, updateMutation, deleteMutation } = useGuestbook({
     getKey: "guestbook",
@@ -50,18 +51,20 @@ export function FormAndGuestsList({ session }: { session: Session }) {
 
   function onSubmit() {
     // detect if value are edited
-    if (isEdited) {
-      updateMutation.mutate({
-        id: id,
-        message: getValues("message"),
-      });
-    } else {
-      postMutation.mutate({
-        message: getValues("message"),
-        username: session?.user.name as string,
-        email: session?.user.email as string,
-      });
-    }
+    match({ isEdited: isEdited })
+      .with({ isEdited: true }, () =>
+        updateMutation.mutate({
+          id: id,
+          message: getValues("message"),
+        })
+      )
+      .otherwise(() =>
+        postMutation.mutate({
+          message: getValues("message"),
+          username: session?.user.name as string,
+          email: session?.user.email as string,
+        })
+      );
 
     setValue("message", "");
     window.location.reload();
@@ -85,112 +88,149 @@ export function FormAndGuestsList({ session }: { session: Session }) {
 
   return (
     <>
-      {!session ? (
-        <>
-          {isShowLoginGuestbookMethod ?
-            <div className="my-4 w-fit flex items-center justify-center space-x-3">
-              <SignInWithGithub />
-              <span className="text-base">or</span>
-              <SignInWithGoogle />
-            </div>
-          : null}
-          <Turnstile setIsShowLoginGuestbookMethod={setIsShowLoginGuestbookMethod} />
-        </>
-      ) : (
-        <div className="w-full">
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="my-6 w-full relative">
-              <input
-                {...register("message")}
-                className={tw(
-                  "block w-full border-2 border-base-0",
-                  "focus:border-blue-500 focus:ring-blue-500 focus:ring-1",
-                  "dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:focus:ring-1",
-                  "dark:border-base-5 bg-white dark:bg-base-0",
-                  "rounded-md",
-                  "px-4 py-1.5 font-medium outline-none"
-                )}
-                type="text"
-                name="message"
-                required
-                placeholder="Add your message...."
-              />
-              {errors.message ? (
-                <Paragraph className="mt-2">{errors.message.message}</Paragraph>
-              ) : null}
-            </div>
-          </form>
-        </div>
-      )}
-      {guestbook.length ? (
-        <section className="mb-10 flex w-full flex-col space-y-8">
-          {guestbook
-            .slice(guestbook.length < 100 ? 0 : 100, guestbook.length)
-            .map((guest) => (
-              <div data-cy="guest-item" key={guest.id} className="h-full">
-                <div
-                  className={
-                    session ? "flex space-x-3 justify-start items-center" : ""
-                  }
-                >
-                  <span
-                    className={tw(
-                      "cursor-pointer text-lg font-bold",
-                      "hover:text-blue-500",
-                      inter.className
-                    )}
-                  >
-                    {guest.message}
-                  </span>
-                  {(session && guest.email === session?.user.email) ||
-                  session?.user.role === "admin" ? (
-                    <>
-                      {session?.user.role === "admin" ? (
-                        <button
-                          type="button"
-                          aria-label="delete message"
-                          className={tw(
-                            "dark:bg-base-1 bg-base-5",
-                            "hover:bg-base-5 dark:hover:bg-base-2 p-1 rounded-md"
-                          )}
-                          onClick={() => handleDelete(Number(guest.id))}
-                        >
-                          <TrashIcon size={22} />
-                        </button>
-                      ) : null}
-                      <button
-                        type="button"
-                        aria-label="edit message"
-                        className={tw(
-                          "dark:bg-base-1 bg-base-5",
-                          "hover:bg-base-5 dark:hover:bg-base-2 p-1 rounded-md"
-                        )}
-                        onClick={() =>
-                          handleEdit(Number(guest.id), guest.message as string)
-                        }
-                      >
-                        <PencilIcon size={22} />
-                      </button>
-                    </>
-                  ) : null}
-                </div>
-                <Paragraph className="mt-2 text-base font-medium tracking-wide">
-                  {guest.username}
-                  {guest.created_at !== ""
-                    ? `. ${format(
-                        new Date(guest.created_at as string),
-                        "LLLL d, yyyy"
-                      )}`
-                    : null}
-                </Paragraph>
+      {match({ session: session })
+        .with({ session: P.when((session) => !session) }, () => (
+          <>
+            {match({ isShowLoginGuestbookMethod })
+              .with(
+                {
+                  isShowLoginGuestbookMethod: true,
+                },
+                () => (
+                  <div className="my-4 w-fit flex items-center justify-center space-x-3">
+                    <SignInWithGithub />
+                    <span className="text-base">or</span>
+                    <SignInWithGoogle />
+                  </div>
+                )
+              )
+              .otherwise(() => null)}
+            <Turnstile
+              setIsShowLoginGuestbookMethod={setIsShowLoginGuestbookMethod}
+            />
+          </>
+        ))
+        .otherwise(() => (
+          <div className="w-full">
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <div className="my-6 w-full relative">
+                <input
+                  {...register("message")}
+                  className={tw(
+                    "block w-full border-2 border-base-0",
+                    "focus:border-blue-500 focus:ring-blue-500 focus:ring-1",
+                    "dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:focus:ring-1",
+                    "dark:border-base-5 bg-white dark:bg-base-0",
+                    "rounded-md",
+                    "px-4 py-1.5 font-medium outline-none"
+                  )}
+                  type="text"
+                  name="message"
+                  required
+                  placeholder="Add your message...."
+                />
+                {match(errors)
+                  .with({ message: P.when((message) => message) }, () => (
+                    <Paragraph className="mt-2">
+                      {errors.message?.message}
+                    </Paragraph>
+                  ))
+                  .otherwise(() => null)}
               </div>
-            ))}
-        </section>
-      ) : (
-        <Paragraph className="font-semibold">
-          There is no messages now!
-        </Paragraph>
-      )}
+            </form>
+          </div>
+        ))}
+      {match({ guestbook: guestbook })
+        .with({ guestbook: P.when((guestbook) => guestbook.length) }, () => (
+          <section className="mb-10 flex w-full flex-col space-y-8">
+            {guestbook
+              .slice(guestbook.length < 100 ? 0 : 100, guestbook.length)
+              .map((guest) => (
+                <div data-cy="guest-item" key={guest.id} className="h-full">
+                  <div
+                    className={
+                      session ? "flex space-x-3 justify-start items-center" : ""
+                    }
+                  >
+                    <span
+                      className={tw(
+                        "cursor-pointer text-lg font-bold",
+                        "hover:text-blue-500",
+                        inter.className
+                      )}
+                    >
+                      {guest.message}
+                    </span>
+                    {match({ session: session })
+                      .with(
+                        {
+                          session: P.when(
+                            (session) =>
+                              (session && guest.email === session?.user.email) ||
+                              session?.user.role === "admin"
+                          ),
+                        },
+                        () => (
+                          <>
+                            {match(session.user)
+                              .with(
+                                { role: P.when((role) => role === "admin") },
+                                () => (
+                                  <button
+                                    type="button"
+                                    aria-label="delete message"
+                                    className={tw(
+                                      "dark:bg-base-1 bg-base-5",
+                                      "hover:bg-base-5 dark:hover:bg-base-2 p-1 rounded-md"
+                                    )}
+                                    onClick={() =>
+                                      handleDelete(Number(guest.id))
+                                    }
+                                  >
+                                    <TrashIcon size={22} />
+                                  </button>
+                                )
+                              )
+                              .otherwise(() => null)}
+                            <button
+                              type="button"
+                              aria-label="edit message"
+                              className={tw(
+                                "dark:bg-base-1 bg-base-5",
+                                "hover:bg-base-5 dark:hover:bg-base-2 p-1 rounded-md"
+                              )}
+                              onClick={() =>
+                                handleEdit(
+                                  Number(guest.id),
+                                  guest.message as string
+                                )
+                              }
+                            >
+                              <PencilIcon size={22} />
+                            </button>
+                          </>
+                        )
+                      )
+                      .otherwise(() => null)}
+                  </div>
+                  <Paragraph className="mt-2 text-base font-medium tracking-wide">
+                    {guest.username}
+                    {guest.created_at !== ""
+                      ? `. ${format(
+                          new Date(guest.created_at as string),
+                          "LLLL d, yyyy"
+                        )}`
+                      : null}
+                  </Paragraph>
+                </div>
+              ))}
+          </section>
+        ))
+        .otherwise(() => (
+          <Paragraph className="font-semibold">
+            There is no messages now!
+          </Paragraph>
+        ))}
     </>
   );
 }

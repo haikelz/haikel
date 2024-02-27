@@ -1,10 +1,11 @@
 import type { ChildrenProps } from "@types";
 import "@unocss/reset/tailwind.css";
 import { Metadata, Viewport } from "next";
-import Header from "~components/ui/header";
 import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { ibmPlexMono, inter } from "~lib/utils/fonts";
+import Footer from "~ui/footer";
+import Header from "~ui/header";
 
 import "./globals.css";
 import Wrapper from "./wrapper";
@@ -63,6 +64,7 @@ export default function RootLayout({ children }: ChildrenProps) {
             <div className="w-full pt-12 sm:pt-14">
               <div className="px-4">{children}</div>
             </div>
+            <Footer />
           </div>
         </Wrapper>
       </body>
