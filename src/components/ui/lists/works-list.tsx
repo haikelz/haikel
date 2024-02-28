@@ -34,18 +34,14 @@ export function WorksList({ works }: { works: Works[] }) {
           key={index + 1}
           className={tw(
             "p-4 w-full bg-white dark:bg-base-0 group cursor-pointer flex flex-col",
-            "flex-wrap border-2 border-base-5 shadow-sm rounded-lg"
+            "flex-wrap border border-base-5 shadow-sm rounded-lg"
           )}
         >
           <div>
             <div className="w-fit">
               <Heading
                 as="h3"
-                className={tw(
-                  "text-lg",
-                  "group-hover:text-blue-500",
-                  inter.className
-                )}
+                className={tw("group-hover:text-blue-500", inter.className)}
               >
                 {work.title}
               </Heading>

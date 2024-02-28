@@ -18,7 +18,7 @@ export function NotesList(
           key={note.slug}
           className={tw(
             "p-4 w-full flex flex-col bg-white dark:bg-base-0",
-            "flex-wrap border-2 border-base-5 shadow-sm rounded-lg"
+            "flex-wrap border border-base-5 shadow-sm rounded-lg"
           )}
         >
           <div>

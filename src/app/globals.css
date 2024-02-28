@@ -105,3 +105,7 @@ button {
 .dark .list-position-outside > li::marker {
   color: #6b7280;
 }
+
+.modal-blur {
+  backdrop-filter: blur(20px);
+}

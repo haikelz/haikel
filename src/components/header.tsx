@@ -8,10 +8,10 @@ import { useRef } from "react";
 import { useScroll } from "~hooks";
 import { tw } from "~lib/helpers";
 
-import Menu from "./ui/menus/menu";
+import Menu, { OpenMenu } from "./ui/menu";
 import { UnderlineLink } from "./ui/typography";
 
-const SwitchTheme = dynamic(() => import("~ui/menus/switch-theme"), {
+const SwitchTheme = dynamic(() => import("~ui/menu/switch-theme"), {
   loading: () => (
     <div className="w-8 h-8 animate-pulse rounded-md bg-base-5 dark:bg-base-2"></div>
   ),
@@ -59,11 +59,12 @@ export default function Header() {
             </button>
           </Link>
           <div className="flex items-center justify-center">
+            <OpenMenu />
             <SwitchTheme />
           </div>
         </nav>
-        <Menu />
       </header>
+      <Menu />
     </>
   );
 }

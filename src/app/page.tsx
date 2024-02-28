@@ -1,4 +1,4 @@
-import { Notes, Works } from "contentlayer/generated";
+import { Works } from "contentlayer/generated";
 import {
   FacebookIcon,
   GithubIcon,
@@ -12,7 +12,6 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Main from "~components/main";
 import TransitionLayout from "~components/transition-layout";
-import { sortedAllNotes } from "~features/notes";
 import { sortedAllWorks } from "~features/works";
 import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
@@ -84,7 +83,6 @@ export const metadata: Metadata = {
 
 export default async function HomePage() {
   const works: Works[] = sortedAllWorks.slice(0, 4);
-  const notes: Notes[] = sortedAllNotes.slice(0, 4);
 
   return (
     <Main className={tw("flex flex-col items-start justify-start", "pt-8")}>

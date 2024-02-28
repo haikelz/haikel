@@ -12,17 +12,21 @@ import { tw } from "~lib/helpers";
 type LightboxImageProps = ImageProps & {
   src: string;
   alt: string;
+  className?: string;
 };
 
 export default function LightboxImage(
-  { src, alt, ...props }: LightboxImageProps
+  { src, alt, className, ...props }: LightboxImageProps
 ) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
     <>
       <Image
-        className={tw("aspect-auto cursor-pointer rounded-sm object-cover")}
+        className={tw(
+          "aspect-auto cursor-pointer rounded-sm object-cover",
+          className
+        )}
         onClick={() => setIsOpen(true)}
         decoding="async"
         src={src}
