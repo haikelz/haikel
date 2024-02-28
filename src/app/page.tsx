@@ -289,7 +289,7 @@ export default async function HomePage() {
               )}
             >
               <Heading as="h2">Featured Works</Heading>
-              <div className="grid grid-cols-1 mt-4 sm:grid-cols-2 grid-rows-1 w-full gap-5">
+              <div className="grid grid-cols-1 mt-4 sm:grid-cols-2 grid-rows-1 w-full gap-4">
                 <WorksList works={works} />
               </div>
             </div>

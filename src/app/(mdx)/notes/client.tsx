@@ -54,10 +54,10 @@ export default function Client() {
         <input
           onChange={(e) => setSearch(e.target.value)}
           className={tw(
-            "block w-full border border-solid border-base-0",
+            "block w-full border border-solid border-base-5",
             "focus:border-blue-500 focus:ring-blue-500 focus:ring-1",
             "dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:focus:ring-1",
-            "dark:border-base-5 bg-white dark:bg-base-0",
+            "dark:border-base-5 dark:bg-base-0",
             "rounded-md",
             "px-4 py-1.5 pl-12 font-medium outline-none"
           )}
@@ -70,7 +70,7 @@ export default function Client() {
         .with(
           { filteredNotes: P.when((filteredNotes) => filteredNotes.length) },
           () => (
-            <div className="grid grid-cols-1 mt-4 sm:grid-cols-2 grid-rows-1 w-full gap-5">
+            <div className="grid grid-cols-1 mt-4 sm:grid-cols-2 grid-rows-1 w-full gap-4">
               <NotesList
                 filteredNotes={filteredNotes}
                 search={deferredSearch}

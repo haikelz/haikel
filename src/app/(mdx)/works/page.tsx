@@ -64,7 +64,7 @@ export default function WorksPage() {
             </Heading>
           </div>
           <Paragraph data-cy="description">List some of my works</Paragraph>
-          <div className="grid grid-cols-1 mt-4 sm:grid-cols-2 grid-rows-1 w-full gap-5 mb-10">
+          <div className="grid grid-cols-1 mt-4 sm:grid-cols-2 grid-rows-1 w-full gap-4 mb-10">
             <WorksList works={works} />
           </div>
         </TransitionLayout>

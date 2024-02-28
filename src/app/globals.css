@@ -6,18 +6,6 @@ body {
   scrollbar-width: thin;
 }
 
-body::-webkit-scrollbar {
-  width: 10px;
-}
-
-body::-webkit-scrollbar-thumb {
-  @apply bg-base-0 dark:bg-base-5;
-}
-
-body::-webkit-scrollbar-track {
-  @apply bg-base-4 dark:bg-base-2;
-}
-
 h1,
 h2,
 h3,

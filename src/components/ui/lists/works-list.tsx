@@ -33,7 +33,7 @@ export function WorksList({ works }: { works: Works[] }) {
           data-cy="work-item"
           key={index + 1}
           className={tw(
-            "p-4 w-full group cursor-pointer flex flex-col",
+            "p-4 w-full bg-white dark:bg-base-0 group cursor-pointer flex flex-col",
             "flex-wrap border-2 border-base-5 shadow-sm rounded-lg"
           )}
         >
@@ -72,7 +72,7 @@ export function WorksList({ works }: { works: Works[] }) {
                     .with({ techstack: "svelte" }, () => <SvelteIcon />)
                     .with({ techstack: "chakra-ui" }, () => <ChakrauiIcon />)
                     .with({ techstack: "windi" }, () => <WindiCssIcon />)
-                    .with({ techstack: "trpcs" }, () => <TrpcIcon />)
+                    .with({ techstack: "trpc" }, () => <TrpcIcon />)
                     .with({ techstack: "jotai" }, () => <JotaiIcon />)
                     .otherwise(() => null)}
                 </div>

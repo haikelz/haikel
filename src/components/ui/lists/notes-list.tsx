@@ -17,7 +17,7 @@ export function NotesList(
           data-cy="note-item"
           key={note.slug}
           className={tw(
-            "p-4 w-full flex flex-col",
+            "p-4 w-full flex flex-col bg-white dark:bg-base-0",
             "flex-wrap border-2 border-base-5 shadow-sm rounded-lg"
           )}
         >
@@ -61,16 +61,17 @@ export function NotesList(
             </Paragraph>
             <div className={tw("flex space-x-2", inter.className)}>
               {note.tags.map((tag) => (
-                <Link key={tag} href={`/tags?tag=${tag}`} aria-label={tag}>
-                  <span
-                    className={tw(
-                      "cursor-pointer rounded-sm",
-                      "bg-base-5 dark:bg-base-2 dark:text-base-5",
-                      "px-1 font-medium"
-                    )}
-                  >
-                    {tag}
-                  </span>
+                <Link
+                  key={tag}
+                  href={`/tags?tag=${tag}`}
+                  aria-label={tag}
+                  className={tw(
+                    "cursor-pointer rounded-sm",
+                    "bg-base-5 dark:bg-base-2 dark:text-base-5",
+                    "px-1 font-medium"
+                  )}
+                >
+                  {tag}
                 </Link>
               ))}
             </div>
