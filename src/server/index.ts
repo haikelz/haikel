@@ -5,7 +5,7 @@ import {
   getGuestbook,
   patchGuestbook,
   postGuestbook,
-} from "~features/guestbook";
+} from "~features";
 
 const t = initTRPC.create();
 

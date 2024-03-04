@@ -7,13 +7,15 @@ const { NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SECRET_KEY } = env;
 export async function POST(request: NextRequest) {
   const { token } = await request.json();
 
+  const encoded = `secret=${encodeURIComponent(
+    NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SECRET_KEY
+  )}&response=${encodeURIComponent(token)}`;
+
   const response = await ofetch(
     "https://challenges.cloudflare.com/turnstile/v0/siteverify",
     {
       method: "POST",
-      body: `secret=${encodeURIComponent(
-        NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SECRET_KEY
-      )}&response=${encodeURIComponent(token)}`,
+      body: encoded,
       headers: {
         "content-type": "application/x-www-form-urlencoded",
       },

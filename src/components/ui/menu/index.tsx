@@ -5,6 +5,7 @@ import { MenuIcon, XIcon } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { match } from "ts-pattern";
 import TransitionLayout from "~components/transition-layout";
+import { useDisableScroll } from "~hooks";
 import { tw } from "~lib/helpers";
 import { isOpenAtom } from "~store";
 
@@ -22,6 +23,8 @@ export default function Menu() {
 
   const pathname = usePathname();
 
+  useDisableScroll(isOpen);
+
   return (
     <>
       {match({ isOpen: isOpen })
@@ -35,6 +38,9 @@ export default function Menu() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
+            <div className="fixed right-0 top-4">
+              <OpenMenu />
+            </div>
             <div
               className={tw(
                 "space-x-4 z-50 flex border border-solid border-base-5 rounded-lg bg-white dark:bg-base-1",
