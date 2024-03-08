@@ -20,6 +20,10 @@ export default function LightboxImage(
 ) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
+  function fallbackImage(e: any) {
+    e.target.src = "/gradient.png";
+  }
+
   return (
     <>
       <Image
@@ -36,6 +40,7 @@ export default function LightboxImage(
         loading="lazy"
         data-cy="lightbox-image"
         title={alt}
+        onError={fallbackImage}
         {...props}
       />
       {match({ isOpen: isOpen })
@@ -57,6 +62,7 @@ export default function LightboxImage(
                     draggable={false}
                     width={1000}
                     height={1000}
+                    onError={fallbackImage}
                   />
                 );
               },

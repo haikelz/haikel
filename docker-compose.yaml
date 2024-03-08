@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: cari-mahasiswa
+    container_name: haikel
     ports:
       - "3000:3000"
     volumes:

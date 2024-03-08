@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  Turnstile as ReactTurnstile,
-  TurnstileTheme,
-} from "@marsidev/react-turnstile";
-import { useTheme } from "next-themes";
+import { Turnstile as ReactTurnstile } from "@marsidev/react-turnstile";
 import { ofetch } from "ofetch";
 import { Dispatch, SetStateAction, useRef } from "react";
 import { env } from "~env.mjs";
@@ -18,8 +14,6 @@ export default function Turnstile(
     setIsShowLoginGuestbookMethod: Dispatch<SetStateAction<boolean>>;
   }
 ) {
-  const { theme } = useTheme();
-
   const formRef = useRef<HTMLFormElement>();
 
   async function handleTurnstile(): Promise<void> {
@@ -43,7 +37,7 @@ export default function Turnstile(
       onSubmit={handleTurnstile}
     >
       <ReactTurnstile
-        options={{ theme: theme as TurnstileTheme }}
+        options={{ theme: "light" }}
         siteKey={NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY}
         onSuccess={() => setIsShowLoginGuestbookMethod(true)}
       />
