@@ -10,7 +10,6 @@ import { AdapterAccount } from "next-auth/adapters";
 export const guestbook = sqliteTable("guestbook", {
   id: integer("id").primaryKey({ autoIncrement: true }).notNull(),
   created_at: text("created_at", { mode: "text" })
-    .notNull()
     .default(sql`CURRENT_TIMESTAMP`)
     .notNull(),
   email: text("email", { length: 191 }).notNull(),
