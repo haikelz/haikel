@@ -14,7 +14,7 @@
 - Jotai
 - React Query
 - tRPC
-- Planetscale
+- Turso DB
 - Drizzle
 
 ## Website Structure

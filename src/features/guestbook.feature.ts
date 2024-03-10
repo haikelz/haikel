@@ -1,11 +1,9 @@
 import { GuestbookProps } from "@types";
 import { eq, sql } from "drizzle-orm";
-import { guestbook } from "drizzle/schema";
-import db from "~lib/utils/db";
+import db from "drizzle/db";
+import { guestbook } from "drizzle/db/schema";
 
-type GetGuestbookProps = GuestbookProps & { created_at: string };
-
-export async function getGuestbook(): Promise<GetGuestbookProps[] | undefined> {
+export async function getGuestbook(): Promise<GuestbookProps[] | undefined> {
   try {
     const response = await db
       .select({
@@ -13,7 +11,7 @@ export async function getGuestbook(): Promise<GetGuestbookProps[] | undefined> {
         message: guestbook.message,
         email: guestbook.email,
         username: guestbook.username,
-        created_at: guestbook.createdAt,
+        created_at: guestbook.created_at,
       })
       .from(guestbook)
       .orderBy(sql`${guestbook.id} desc`);
