@@ -2,12 +2,13 @@ version: "3.5"
 
 services:
   app:
+    container_name: haikel
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: haikel
     ports:
-      - "3000:3000"
+      - 3000:3000
     volumes:
       - .:/app
       - /app/node_modules
+      - /app/.next

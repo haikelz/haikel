@@ -1,5 +1,9 @@
 cypress
+Dockerfile*
+docker-compose*
+.dockerignore
 .git
+.gitignore
 .github
 README.md
 LICENSE
@@ -7,3 +11,5 @@ cypress
 cypress.config.ts
 node_modules
 .next
+.husky
+.vscode
