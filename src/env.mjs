@@ -14,7 +14,7 @@ export const env = createEnv({
     NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SECRET_KEY: z.string().min(1),
     NEXTAUTH_SECRET: z.string().min(1),
     NEXTAUTH_URL: z.string().url().min(1),
-    GITHUB_USERNAME: z.string().min(1),
+    NEXT_PUBLIC_GITHUB_USERNAME: z.string().min(1),
     EMAIL_NAME: z.string().min(1).email(),
   },
   client: {

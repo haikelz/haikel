@@ -9,7 +9,7 @@ const {
   NEXT_PUBLIC_GOOGLE_ID,
   NEXT_PUBLIC_GOOGLE_SECRET,
   NEXTAUTH_SECRET,
-  GITHUB_USERNAME,
+  NEXT_PUBLIC_GITHUB_USERNAME,
   EMAIL_NAME,
 } = env;
 
@@ -22,7 +22,7 @@ export const options: NextAuthOptions = {
       profile(profile: GithubProfile): Awaitable<User> {
         return {
           ...profile,
-          role: profile.login === GITHUB_USERNAME ? "admin" : "guest",
+          role: profile.login === NEXT_PUBLIC_GITHUB_USERNAME ? "admin" : "guest",
           name: profile.name,
           id: profile.id.toString(),
           image: profile.avatar_url,
