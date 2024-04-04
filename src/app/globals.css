@@ -86,7 +86,7 @@ button {
 }
 
 .bg {
-  @apply bg-[#EFFFFD] dark:bg-black;
+  @apply bg-[#effffd] dark:bg-base-0;
 }
 
 .list-type-disc {

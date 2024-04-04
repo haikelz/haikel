@@ -30,9 +30,8 @@ export default function Header() {
         ref={headerRef}
         className={tw(
           "max-w-full flex flex-col justify-center items-center w-full",
-          "z-10 sm:px-2 py-3 px-4 bg-[#EFFFFD]/80",
-          "dark:bg-black/80 backdrop-blur-md",
-          "fixed top-0",
+          "z-10 sm:px-2 py-3 px-4",
+          "fixed top-0 dark:bg-base-0/80 bg-[#EFFFFD]/80 backdrop-blur-md",
           scroll > elementHeight + 20
             ? "border-b-[1.5px] border-gray-200 dark:border-gray-800"
             : ""
