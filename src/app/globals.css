@@ -89,6 +89,18 @@ button {
   @apply bg-[#effffd] dark:bg-base-0;
 }
 
+::-webkit-scrollbar-track {
+  @apply bg-base-5;
+}
+
+::-webkit-scrollbar {
+  @apply bg-base-5 w-2.5;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-base-3;
+}
+
 .list-type-disc {
   list-style-type: disc;
 }

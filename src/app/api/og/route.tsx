@@ -5,7 +5,7 @@ import { CONDITION } from "~lib/utils/constants";
 
 export const runtime = "edge";
 
-export async function GET(req: NextRequest) {
+export async function GET(req: NextRequest): Promise<ImageResponse> {
   try {
     const { searchParams } = new URL(req.nextUrl);
 

@@ -4,8 +4,8 @@ import { env } from "~env.mjs";
 
 const { NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SECRET_KEY } = env;
 
-export async function POST(request: NextRequest) {
-  const { token } = await request.json();
+export async function POST(req: NextRequest): Promise<NextResponse<string>> {
+  const { token } = await req.json();
 
   const encoded = `secret=${encodeURIComponent(
     NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SECRET_KEY

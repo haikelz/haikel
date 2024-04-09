@@ -10,6 +10,7 @@ export default function Footer() {
             <UnderlineLink href="https://github.com/haikelz">
               Haikel
             </UnderlineLink>
+            , with ☕ and 😴.
           </Paragraph>
         </div>
       </div>

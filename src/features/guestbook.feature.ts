@@ -17,8 +17,8 @@ export async function getGuestbook(): Promise<GuestbookProps[] | undefined> {
       .orderBy(sql`${guestbook.id} desc`);
 
     return response;
-  } catch (err) {
-    console.error(err);
+  } catch (err: any) {
+    throw new Error(err.message);
   }
 }
 
@@ -31,16 +31,16 @@ export async function postGuestbook(input: PostGuestbookProps): Promise<void> {
     await db
       .insert(guestbook)
       .values({ message: message, email: email, username: username });
-  } catch (err) {
-    console.error(err);
+  } catch (err: any) {
+    throw new Error(err.message);
   }
 }
 
 export async function deleteGuestbook(input: { id: number }): Promise<void> {
   try {
     await db.delete(guestbook).where(eq(guestbook.id, input.id));
-  } catch (err) {
-    console.error(err);
+  } catch (err: any) {
+    throw new Error(err.message);
   }
 }
 
@@ -55,7 +55,7 @@ export async function patchGuestbook(
       .update(guestbook)
       .set({ message: input.message })
       .where(eq(guestbook.id, input.id));
-  } catch (err) {
-    console.error(err);
+  } catch (err: any) {
+    throw new Error(err.message);
   }
 }
