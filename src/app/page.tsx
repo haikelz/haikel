@@ -196,16 +196,16 @@ function Experiences() {
             <ul className="list-type-disc list-position-outside">
               <li>
                 <Paragraph>
-                  Responsible as a Programmer to do market research, business
-                  analysis, usability testing, and build Frontend and Backend
-                  side of the project from scratch using React JS(Frontend) and
-                  Express JS(Backend).
+                  Responsible as a Programmer to do market research, conducted
+                  business analysis, performed usability testing, and
+                  constructed the Frontend and Backend of the project from
+                  scratch using React JS (Frontend) and Express JS (Backend).
                 </Paragraph>
               </li>
               <li>
                 <Paragraph>
-                  Worked closely with Designer and Project Manager to ensure the
-                  project runs smoothly.
+                  Worked closely with Designer and Project Manager to streamline
+                  project workflow.
                 </Paragraph>
               </li>
             </ul>
@@ -239,15 +239,9 @@ function Experiences() {
             <ul className="list-type-disc list-position-outside">
               <li>
                 <Paragraph>
-                  Learned and implemented some technologies to the real project
-                  such as Vue JS, CI/CD using Github Actions and Docker, unit
-                  testing using Jest, and state management using Pinia.
-                </Paragraph>
-              </li>
-              <li>
-                <Paragraph>
-                  Competencies that I developed: Javascript Framework, problem
-                  solving, CI/CD, deployment, and public speaking.
+                  Implemented Vue JS, CI/CD using Github Actions and Docker,
+                  unit testing using Jest, and state management using Pinia in a
+                  real project.
                 </Paragraph>
               </li>
             </ul>
