@@ -38,7 +38,7 @@ export async function generateMetadata(
       url: `${SITE_URL}/works/${slug}`,
       title,
       description,
-      siteName: "haikel.app",
+      siteName: "ekel.dev",
       images: [
         {
           url: `${ABSOLUTE_OG_URL}?title=${title}`,

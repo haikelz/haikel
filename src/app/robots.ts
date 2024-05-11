@@ -6,7 +6,7 @@ export default function Robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    host: "https://haikel.app/",
-    sitemap: "https://haikel.app/sitemap.xml",
+    host: "https://ekel.dev/",
+    sitemap: "https://ekel.dev/sitemap.xml",
   };
 }

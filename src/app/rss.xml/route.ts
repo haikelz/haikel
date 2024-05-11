@@ -6,11 +6,11 @@ import RSS, { FeedOptions } from "rss";
  */
 export async function GET() {
   const feedOptions: FeedOptions = {
-    title: "haikel.app",
-    description: `RSS Feed for haikel.app`,
-    site_url: "https://haikel.app",
-    feed_url: `https://haikel.app/rss.xml`,
-    image_url: `https://haikel.app/img/logo.png`,
+    title: "ekel.dev",
+    description: `RSS Feed for ekel.dev`,
+    site_url: "https://ekel.dev",
+    feed_url: `https://ekel.dev/rss.xml`,
+    image_url: `https://ekel.dev/img/logo.png`,
     pubDate: new Date(),
     copyright: `Crafted by Haikel`,
   };
@@ -22,7 +22,7 @@ export async function GET() {
       author: item.author,
       title: item.title,
       description: item.description,
-      url: `https://haikel.app/notes/${item.slug}`,
+      url: `https://ekel.dev/notes/${item.slug}`,
       date: item.date,
     });
   });

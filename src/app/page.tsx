@@ -19,8 +19,8 @@ import { WorksList } from "~ui/lists";
 import { Heading, Paragraph, UnderlineLink } from "~ui/typography";
 
 const socialMediaList = [
-  { id: 1, icon: MailIcon, route: "mailto:halo@haikel.app", title: "E-mail" },
-  { id: 2, icon: RssIcon, route: "https://haikel.app/rss.xml", title: "RSS" },
+  { id: 1, icon: MailIcon, route: "mailto:halo@ekel.dev", title: "E-mail" },
+  { id: 2, icon: RssIcon, route: "https://ekel.dev/rss.xml", title: "RSS" },
   {
     id: 3,
     icon: FacebookIcon,
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
         alt: "OG Image",
       },
     ],
-    siteName: "haikel.app",
+    siteName: "ekel.dev",
   },
   twitter: {
     title,
@@ -107,22 +107,23 @@ function Intro() {
     <div
       className={tw("flex flex-col items-start justify-start", "md:text-start")}
     >
-      <Heading as="h2">I&#39;m Haikel Ilham Hakim</Heading>
+      <Heading as="h1">Haikel Ilham Hakim</Heading>
       <div className="my-4">
         <Paragraph id="description">
-          A <span className="font-bold">Frontend Web Developer</span> with a
-          main focus on building responsive, interactive, maintainable, and
-          accessible Websites. Familiar with{" "}
-          <span className="font-bold">
-            Javascript/Typescript, React Ecosystem, Linux
-          </span>
-          (for daily use) and sometimes i do backend things with{" "}
-          <span className="font-bold">Nest JS</span>. Always try to follow best
-          practices as much as i can.{" "}
-          <span className="font-bold">Keep it simple</span>, is one of my
-          principles while building something. Apart from coding, i do{" "}
-          <span className="font-bold">photography</span> with my camera. Mostly
-          i took street photos, or go to local event to have some photo shoots.
+          I am a <b>Software Engineer(Frontend)</b> with 2+ years of experience
+          crafting responsive, interactive, maintainable, and accessible
+          Websites. Interested in Frontend world, User Interfaces/Experiences,
+          and DevOps/Infrastructure. I am a detail-oriented person, and quickly
+          adapt to new environments.{" "}
+          <b>
+            <i>Keep it simple</i>
+          </b>
+          , is one of my principles while crafting something.
+          <br />
+          Apart from coding, I do <b>Photography</b> with my camera. Mostly I
+          took street photos, nature, historic place, and cosplayer at an event.
+          I love this hobby because it gives me many perspective about life, and
+          of course, It&#39;s fun.
         </Paragraph>
       </div>
       <ul className="flex items-center justify-center space-x-4">
@@ -178,7 +179,7 @@ function Experiences() {
                     ibmPlexMono
                   )}
                 >
-                  Internship
+                  Apprenticeship
                 </code>
               </div>
               <Paragraph className="font-semibold mt-0.5">
@@ -192,7 +193,64 @@ function Experiences() {
             </div>
           </div>
           <div className="mt-2">
-            <Paragraph>MSIB 6 at Infinite Learning Batam</Paragraph>
+            <ul className="list-type-disc list-position-outside">
+              <li>
+                <Paragraph>
+                  Responsible as a Programmer to do market research, business
+                  analysis, usability testing, and build Frontend and Backend
+                  side of the project from scratch using React JS(Frontend) and
+                  Express JS(Backend).
+                </Paragraph>
+              </li>
+              <li>
+                <Paragraph>
+                  Worked closely with Designer and Project Manager to ensure the
+                  project runs smoothly.
+                </Paragraph>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="w-full">
+          <div className="flex flex-col md:flex-row w-full md:justify-between">
+            <div>
+              <div className="flex space-x-2 items-center w-fit">
+                <Heading as="h3">Rakamin x Core Initiative</Heading>
+                <code
+                  className={tw(
+                    "rounded-sm px-2 py-0.5 text-sm font-semibold dark:bg-base-1 bg-base-5",
+                    ibmPlexMono
+                  )}
+                >
+                  Internship
+                </code>
+              </div>
+              <Paragraph className="font-semibold mt-0.5">
+                Frontend Developer
+              </Paragraph>
+            </div>
+            <div>
+              <Paragraph className="font-semibold mt-1 md:mt-0 text-sm">
+                March 2024 - April 2024
+              </Paragraph>
+            </div>
+          </div>
+          <div className="mt-2">
+            <ul className="list-type-disc list-position-outside">
+              <li>
+                <Paragraph>
+                  Learned and implemented some technologies to the real project
+                  such as Vue JS, CI/CD using Github Actions and Docker, unit
+                  testing using Jest, and state management using Pinia.
+                </Paragraph>
+              </li>
+              <li>
+                <Paragraph>
+                  Competencies that I developed: Javascript Framework, problem
+                  solving, CI/CD, deployment, and public speaking.
+                </Paragraph>
+              </li>
+            </ul>
           </div>
         </div>
         <div className="w-full">
@@ -278,7 +336,7 @@ function Experiences() {
               <li>
                 <Paragraph>
                   Write documentation about the project and collaborate with
-                  other divisions
+                  other divisions.
                 </Paragraph>
               </li>
             </ul>

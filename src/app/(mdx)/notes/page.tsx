@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     url,
     title,
     description,
-    siteName: "haikel.app",
+    siteName: "ekel.dev",
     images: [
       {
         url: DEFAULT_OG_URL,
@@ -62,8 +62,8 @@ export default function NotesPage() {
             </Heading>
           </div>
           <Paragraph data-cy="description">
-            Sometimes, i write something. Mostly about technical stuff. So yeah,
-            i call this as <span className="font-semibold">Notes</span>.
+            Sometimes, I write something. Mostly about technical stuff. So yeah,
+            I call this as <span className="font-semibold">Notes</span>.
           </Paragraph>
           <Client />
         </TransitionLayout>

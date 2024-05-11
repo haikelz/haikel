@@ -42,7 +42,7 @@ export async function generateMetadata(
       title,
       description,
       publishedTime: date,
-      siteName: "haikel.app",
+      siteName: "ekel.dev",
       images: [
         {
           url: `${ABSOLUTE_OG_URL}?title=${title}`,
@@ -56,7 +56,7 @@ export async function generateMetadata(
       site: `${SITE_URL}/notes/${slug}`,
       card: "summary_large_image",
     },
-    metadataBase: new URL(`https://haikel.app/notes/${slug}`),
+    metadataBase: new URL(`https://ekel.dev/notes/${slug}`),
   };
 }
 

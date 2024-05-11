@@ -32,7 +32,7 @@ export const metadata: Metadata = {
         alt: "OG Image",
       },
     ],
-    siteName: "haikel.app",
+    siteName: "ekel.dev",
   },
   twitter: {
     title,

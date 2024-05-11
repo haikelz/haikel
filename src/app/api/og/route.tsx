@@ -93,7 +93,7 @@ export async function GET(req: NextRequest): Promise<ImageResponse> {
                   marginTop: 5,
                 }}
               >
-                https://haikel.app
+                https://ekel.dev
               </div>
             </span>
           </span>

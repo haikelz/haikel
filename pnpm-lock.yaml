@@ -22,13 +22,13 @@ dependencies:
     version: 5.24.8(react@18.2.0)
   '@trpc/client':
     specifier: next
-    version: 11.0.0-rc.330(@trpc/server@11.0.0-rc.330)
+    version: 11.0.0-rc.340(@trpc/server@11.0.0-rc.340)
   '@trpc/react-query':
     specifier: next
-    version: 11.0.0-rc.330(@tanstack/react-query@5.24.8)(@trpc/client@11.0.0-rc.330)(@trpc/server@11.0.0-rc.330)(react-dom@18.2.0)(react@18.2.0)
+    version: 11.0.0-rc.340(@tanstack/react-query@5.24.8)(@trpc/client@11.0.0-rc.340)(@trpc/server@11.0.0-rc.340)(react-dom@18.2.0)(react@18.2.0)
   '@trpc/server':
     specifier: next
-    version: 11.0.0-rc.330
+    version: 11.0.0-rc.340
   '@vercel/kv':
     specifier: ^1.0.1
     version: 1.0.1
@@ -2311,32 +2311,32 @@ packages:
       - supports-color
     dev: true
 
-  /@trpc/client@11.0.0-rc.330(@trpc/server@11.0.0-rc.330):
-    resolution: {integrity: sha512-7Z0Ty5BZgWm8SgDMh2Me+WoBOqHoB938S2lK7d5bK8jMwiatGeUpAOaOJ1047rCqnLSEPXYfy8ylaTOrfaLr3Q==}
+  /@trpc/client@11.0.0-rc.340(@trpc/server@11.0.0-rc.340):
+    resolution: {integrity: sha512-q2ecZW58LM9pKpzRt+um9Jh33Nmjt7qDZu3xsjMFD61QLE6M/Tply7lC02iqZzrXzTGxR0w2+dLdkkrSlITOKQ==}
     peerDependencies:
-      '@trpc/server': 11.0.0-rc.330+c89fb11f2
+      '@trpc/server': 11.0.0-rc.340+d1652d1bc
     dependencies:
-      '@trpc/server': 11.0.0-rc.330
+      '@trpc/server': 11.0.0-rc.340
     dev: false
 
-  /@trpc/react-query@11.0.0-rc.330(@tanstack/react-query@5.24.8)(@trpc/client@11.0.0-rc.330)(@trpc/server@11.0.0-rc.330)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-qkAu+xxPE4dN8osBdsQNMzdEdZw6S5KnGR0WH7sCG0Rx0R0ynH0QBxlmWfhiKTXkKd1yGHIkBlN4EB2bQJ64lw==}
+  /@trpc/react-query@11.0.0-rc.340(@tanstack/react-query@5.24.8)(@trpc/client@11.0.0-rc.340)(@trpc/server@11.0.0-rc.340)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-3c+KWh3+KN+T0gBKSnxzGfrHlX1NRK5u+v4BqFWLTBg0ADi2eVOgSpTaToF/WEea616kacmPh5ptJeK8SmyBKQ==}
     peerDependencies:
       '@tanstack/react-query': ^5.25.0
-      '@trpc/client': 11.0.0-rc.330+c89fb11f2
-      '@trpc/server': 11.0.0-rc.330+c89fb11f2
+      '@trpc/client': 11.0.0-rc.340+d1652d1bc
+      '@trpc/server': 11.0.0-rc.340+d1652d1bc
       react: '>=18.2.0'
       react-dom: '>=18.2.0'
     dependencies:
       '@tanstack/react-query': 5.24.8(react@18.2.0)
-      '@trpc/client': 11.0.0-rc.330(@trpc/server@11.0.0-rc.330)
-      '@trpc/server': 11.0.0-rc.330
+      '@trpc/client': 11.0.0-rc.340(@trpc/server@11.0.0-rc.340)
+      '@trpc/server': 11.0.0-rc.340
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@trpc/server@11.0.0-rc.330:
-    resolution: {integrity: sha512-fGVgu+w/ZUD3OmM1VjoeaMYZ7ZZicBSP+BbiR11A7tGh66IYuLquvPqNAT5ac3hrE/mJgYq1SMBBR321Z+YTfw==}
+  /@trpc/server@11.0.0-rc.340:
+    resolution: {integrity: sha512-fKzFeAzFbsezC8Jx6gIy4AjlzNvQy4aFc2LT0qIq7hNWYCkuv3gQ7ROgcIF4dUI0rfPC3Gt/y8PQjE+GayAhvA==}
     dev: false
 
   /@types/acorn@4.0.6:

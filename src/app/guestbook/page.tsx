@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     url,
     title,
     description,
-    siteName: "haikel.app",
+    siteName: "ekel.dev",
     images: [
       {
         url: DEFAULT_OG_URL,
