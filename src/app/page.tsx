@@ -110,11 +110,11 @@ function Intro() {
       <Heading as="h1">Haikel Ilham Hakim</Heading>
       <div className="my-4">
         <Paragraph id="description">
-          I am a <b>Software Engineer(Frontend)</b> with 2+ years of experience
-          crafting responsive, interactive, maintainable, and accessible
-          Websites. Interested in Frontend world, User Interfaces/Experiences,
-          and DevOps/Infrastructure. I am a detail-oriented person, and quickly
-          adapt to new environments.{" "}
+          An Informatics Engineering student with over 2 years of experience in
+          Web Development. Proven ability to collaborate effectively within a
+          team environment and deliver numerous Website Projects, both internal
+          and Open Source. Seeking to apply and expand skills in a professional
+          setting.{" "}
           <b>
             <i>Keep it simple</i>
           </b>
@@ -204,44 +204,20 @@ function Experiences() {
               </li>
               <li>
                 <Paragraph>
+                  Utilized Typescript as the main programming language for the
+                  Frontend side and Docker for isolated build.
+                </Paragraph>
+              </li>
+              <li>
+                <Paragraph>
                   Worked closely with Designer and Project Manager to streamline
                   project workflow.
                 </Paragraph>
               </li>
-            </ul>
-          </div>
-        </div>
-        <div className="w-full">
-          <div className="flex flex-col md:flex-row w-full md:justify-between">
-            <div>
-              <div className="flex space-x-2 items-center w-fit">
-                <Heading as="h3">Rakamin x Core Initiative</Heading>
-                <code
-                  className={tw(
-                    "rounded-sm px-2 py-0.5 text-sm font-semibold dark:bg-base-1 bg-base-5",
-                    ibmPlexMono
-                  )}
-                >
-                  Internship
-                </code>
-              </div>
-              <Paragraph className="font-semibold mt-0.5">
-                Frontend Developer
-              </Paragraph>
-            </div>
-            <div>
-              <Paragraph className="font-semibold mt-1 md:mt-0 text-sm">
-                March 2024 - April 2024
-              </Paragraph>
-            </div>
-          </div>
-          <div className="mt-2">
-            <ul className="list-type-disc list-position-outside">
               <li>
                 <Paragraph>
-                  Implemented Vue JS, CI/CD using Github Actions and Docker,
-                  unit testing using Jest, and state management using Pinia in a
-                  real project.
+                  Assisted colleagues in troubleshooting JavaScript and React
+                  JS-related issues.
                 </Paragraph>
               </li>
             </ul>
