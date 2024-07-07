@@ -4,6 +4,20 @@
     "build": {
       "outputs": [".next/**", "!.next/cache/**"]
     },
-    "lint": {}
-  }
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "dev": {
+      "cache": true,
+      "persistent": true
+    }
+  },
+  "globalEnv": [
+    "NODE_ENV",
+    "TURSO_DATABASE_URL",
+    "TURSO_AUTH_TOKEN",
+    "NEXTAUTH_SECRET",
+    "NEXTAUTH_URL",
+    "EMAIL_NAME"
+  ]
 }
