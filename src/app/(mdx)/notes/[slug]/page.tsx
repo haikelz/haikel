@@ -1,4 +1,3 @@
-import { kv } from "@vercel/kv";
 import { Notes, allNotes } from "contentlayer/generated";
 import { format } from "date-fns";
 import { Metadata } from "next";
@@ -24,9 +23,11 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return allNotes.map((item) => ({ slug: item.slug.replace("notes/", "") }));
 }
 
-export async function generateMetadata(
-  { params }: { params: { slug: string } }
-): Promise<Metadata | undefined> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata | undefined> {
   const { slug } = params;
   const { title, description, date, author } = allNotes.find(
     (item) => item._raw.flattenedPath.replace("notes/", "") === slug
@@ -60,24 +61,21 @@ export async function generateMetadata(
   };
 }
 
-export default async function NotePage(
-  { params }: { params: { slug: string } }
-) {
+export default async function NotePage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const { slug } = params;
 
   const { title, date, body } = allNotes.find(
     (item) => item._raw.flattenedPath.replace("notes/", "") === slug
   ) as Notes;
 
-  // pageviews
-  const views =
-    (await kv.get<number>(["pageviews", "notes", slug].join(":"))) ?? 0;
-
   const Content = getMDXComponent(body.code);
 
   return (
     <>
-      <NoteViews slug={slug} />
       <Main
         className={tw(
           "flex min-h-screen flex-col items-center justify-start bg-center"
@@ -105,7 +103,8 @@ export default async function NotePage(
                   )}
                 >
                   {format(new Date(date) ?? new Date(), "LLLL d, yyyy")}.{" "}
-                  <ReadingTime content={body.raw} /> / {views} views
+                  <ReadingTime content={body.raw} /> /{" "}
+                  <NoteViews slug={slug} title={title} /> views
                 </Paragraph>
               </div>
             </section>

@@ -188,7 +188,7 @@ function Experiences() {
             </div>
             <div>
               <Paragraph className="font-semibold text-sm mt-1 md:mt-0">
-                February 2024 - Now
+                Feb 2024 - Jun 2024
               </Paragraph>
             </div>
           </div>
@@ -243,7 +243,7 @@ function Experiences() {
             </div>
             <div>
               <Paragraph className="font-semibold mt-1 md:mt-0 text-sm">
-                November 2023 - December 2023
+                Nov 2023 - Dec 2023
               </Paragraph>
             </div>
           </div>
@@ -285,7 +285,7 @@ function Experiences() {
             </div>
             <div>
               <Paragraph className="font-semibold mt-1 md:mt-0 text-sm">
-                October 2022 - December 2022
+                Oct 2022 - Dec 2022
               </Paragraph>
             </div>
           </div>

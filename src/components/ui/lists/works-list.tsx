@@ -16,6 +16,7 @@ import {
   SvelteIcon,
   SwrIcon,
   TailwindcssIcon,
+  HonoJsIcon,
   TrpcIcon,
   TypescriptIcon,
   WindiCssIcon,
@@ -59,6 +60,7 @@ export function WorksList({ works }: { works: Works[] }) {
                     .with({ techstack: "react-query" }, () => (
                       <ReactQueryIcon />
                     ))
+                    .with({ techstack: "honojs" }, () => <HonoJsIcon />)
                     .with({ techstack: "reactjs" }, () => <ReactIcon />)
                     .with({ techstack: "supabase" }, () => <SupabaseIcon />)
                     .with({ techstack: "typescript" }, () => <TypescriptIcon />)

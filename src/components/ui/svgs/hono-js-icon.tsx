@@ -1,8 +1,8 @@
 export function HonoJsIcon() {
   return (
     <svg
-      width="256px"
-      height="330px"
+      width="1em"
+      height="1em"
       viewBox="0 0 256 330"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"

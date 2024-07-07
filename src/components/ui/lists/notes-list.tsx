@@ -7,9 +7,13 @@ import { tw } from "~lib/helpers";
 import { inter } from "~lib/utils/fonts";
 import { Heading, Paragraph } from "~ui/typography";
 
-export function NotesList(
-  { filteredNotes, search }: { filteredNotes: Notes[]; search?: string }
-) {
+export function NotesList({
+  filteredNotes,
+  search,
+}: {
+  filteredNotes: Notes[];
+  search?: string;
+}) {
   return (
     <>
       {filteredNotes.map((note) => (

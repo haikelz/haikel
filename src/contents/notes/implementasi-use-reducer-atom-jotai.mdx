@@ -23,14 +23,14 @@ const [state, dispatch] = useReducerAtom(initialAtom, reducer);
 Nah jadi si **initialState** nya(dalam hal ini **initialAtom**) berada di depan, kemudian diikuti dengan fungsi **reducer** nya. **initialState** mesti bernilai atom yang disediakan jotai. Kalau temen-temen pake typescript, pasti bakal ngedetect Error jika tidak pakai atom. Contoh:
 
 <LightboxImage
-  src="https://i.ibb.co/W288YqJ/2022-07-31-20-17.png"
+  src="https://ik.imagekit.io/haikelz/blog/implementasi-use-reducer-atom-jotai/error-usereduceratom.png?updatedAt=1720370891940"
   alt="Error initialState"
 />
 
 Padahal jika saya pakai `useReducer` biasa, dia ga bakal error
 
 <LightboxImage
-  src="https://i.ibb.co/1sZ0xjg/2022-07-31-20-23.png"
+  src="https://ik.imagekit.io/haikelz/blog/implementasi-use-reducer-atom-jotai/usereducer.png?updatedAt=1720370891898"
   alt="useReducer"
 />
 

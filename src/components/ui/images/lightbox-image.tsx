@@ -15,9 +15,12 @@ type LightboxImageProps = ImageProps & {
   className?: string;
 };
 
-export default function LightboxImage(
-  { src, alt, className, ...props }: LightboxImageProps
-) {
+export default function LightboxImage({
+  src,
+  alt,
+  className,
+  ...props
+}: LightboxImageProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   function fallbackImage(e: any) {
@@ -40,7 +43,6 @@ export default function LightboxImage(
         loading="lazy"
         data-cy="lightbox-image"
         title={alt}
-        onError={fallbackImage}
         {...props}
       />
       {match({ isOpen: isOpen })
@@ -62,7 +64,6 @@ export default function LightboxImage(
                     draggable={false}
                     width={1000}
                     height={1000}
-                    onError={fallbackImage}
                   />
                 );
               },

@@ -18,6 +18,12 @@ export const guestbook = sqliteTable("guestbook", {
   userId: text("userId", { length: 191 }),
 });
 
+export const pageviews = sqliteTable("pageviews", {
+  slug: text("slug").primaryKey(),
+  title: text("title").notNull().default("Judul"),
+  count: integer("count").notNull().default(0),
+});
+
 export const accounts = sqliteTable(
   "account",
   {
