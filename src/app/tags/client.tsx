@@ -40,9 +40,9 @@ export default function Client({ tagsList }: { tagsList: string[] }) {
             aria-label={`tag ${item}`}
             className={tw(
               "px-4 py-1 transition-all",
-              "hover:scale-110",
+              "hover:scale-110 border border-dashed",
               searchParams.get("tag") === item
-                ? "bg-[#F84B3E] text-base-5 dark:bg-blue-600"
+                ? "bg-[#F84B3E] text-base-5 dark:bg-blue-800"
                 : "bg-base-5 dark:bg-base-1"
             )}
             onClick={() => router.replace("?" + createQueryString("tag", item))}

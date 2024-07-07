@@ -166,7 +166,8 @@ export function FormAndGuestsList({ session }: { session: Session }) {
                         {
                           session: P.when(
                             (session) =>
-                              (session && guest.email === session?.user.email) ||
+                              (session &&
+                                guest.email === session?.user.email) ||
                               session?.user.role === "admin"
                           ),
                         },
@@ -278,7 +279,7 @@ export function SignOut() {
     <button
       className={tw(
         "cursor-pointer font-bold",
-        "underline decoration-solid underline-offset-[5px]",
+        "underline decoration-dashed underline-offset-[5px]",
         "hover:text-blue-500 hover:decoration-blue-500"
       )}
       type="button"

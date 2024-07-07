@@ -85,7 +85,7 @@ export function Navigationlink() {
           role="button"
           className={tw(
             pathname.includes(item.route)
-              ? "decoration-solid"
+              ? "decoration-dashed"
               : "decoration-none"
           )}
           key={item.id}

@@ -11,11 +11,12 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Main from "~components/main";
 import TransitionLayout from "~components/transition-layout";
-import { sortedAllWorks } from "~features";
+import LightboxImage from "~components/ui/images/lightbox-image";
+import { sortedAllNotes, sortedAllWorks } from "~features";
 import { tw } from "~lib/helpers";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { ibmPlexMono } from "~lib/utils/fonts";
-import { WorksList } from "~ui/lists";
+import { NotesList, WorksList } from "~ui/lists";
 import { Heading, Paragraph, UnderlineLink } from "~ui/typography";
 
 const socialMediaList = [
@@ -96,6 +97,7 @@ export default async function HomePage() {
           <Intro />
           <Experiences />
           <FeaturedWorks />
+          <LatestNotes />
         </TransitionLayout>
       </section>
     </Main>
@@ -335,6 +337,29 @@ function FeaturedWorks() {
       </div>
       <div className="w-full flex justify-end mt-4 w-fit">
         <UnderlineLink href="/works">See other works</UnderlineLink>
+      </div>
+    </div>
+  );
+}
+
+function LatestNotes() {
+  const notes = sortedAllNotes.slice(0, 4);
+
+  return (
+    <div>
+      <div
+        className={tw(
+          "flex flex-col items-start justify-start",
+          "mt-8 md:text-start"
+        )}
+      >
+        <Heading as="h2">Latest Notes</Heading>
+        <div className="grid grid-cols-1 mt-4 sm:grid-cols-2 grid-rows-1 w-full gap-4">
+          <NotesList filteredNotes={notes} />
+        </div>
+      </div>
+      <div className="w-full flex justify-end mt-4 w-fit">
+        <UnderlineLink href="/notes">See other notes</UnderlineLink>
       </div>
     </div>
   );

@@ -35,7 +35,7 @@ export function WorksList({ works }: { works: Works[] }) {
           key={index + 1}
           className={tw(
             "p-4 w-full bg-white dark:bg-base-0 group cursor-pointer flex flex-col",
-            "flex-wrap border border-base-5 shadow-sm rounded-lg"
+            "flex-wrap border border-dashed border-base-4 dark:border-base-5 shadow-sm"
           )}
         >
           <div>
@@ -47,7 +47,7 @@ export function WorksList({ works }: { works: Works[] }) {
                 {work.title}
               </Heading>
             </div>
-            <Paragraph className="my-2 tracking-wide">
+            <Paragraph className="my-2 tracking-wide line-clamp-2">
               {work.description}
             </Paragraph>
             <div className={tw("flex mt-3 space-x-2", inter.className)}>

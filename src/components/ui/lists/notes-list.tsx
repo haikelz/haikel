@@ -22,7 +22,7 @@ export function NotesList({
           key={note.slug}
           className={tw(
             "p-4 w-full flex flex-col bg-white dark:bg-base-0",
-            "flex-wrap border border-base-5 shadow-sm rounded-lg"
+            "flex-wrap border border-dashed border-base-4 dark:border-base-5 shadow-sm"
           )}
         >
           <div>
@@ -60,7 +60,7 @@ export function NotesList({
                 </Heading>
               </Link>
             </div>
-            <Paragraph className="my-2 tracking-wide">
+            <Paragraph className="my-2 tracking-wide line-clamp-2">
               {note.description}
             </Paragraph>
             <div className={tw("flex space-x-2", inter.className)}>
@@ -71,7 +71,7 @@ export function NotesList({
                   aria-label={tag}
                   className={tw(
                     "cursor-pointer rounded-sm",
-                    "bg-base-5 dark:bg-base-2 dark:text-base-5",
+                    "bg-base-5 text-sm dark:bg-base-2 dark:text-base-5",
                     "px-1 font-medium"
                   )}
                 >
