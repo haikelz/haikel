@@ -24,6 +24,11 @@ export const pageviews = sqliteTable("pageviews", {
   count: integer("count").notNull().default(0),
 });
 
+export const reactions = sqliteTable("reactions", {
+  slug: text("slug").primaryKey(),
+  love: integer("love").notNull().default(0),
+});
+
 export const accounts = sqliteTable(
   "account",
   {

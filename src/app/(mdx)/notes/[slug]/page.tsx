@@ -5,7 +5,6 @@ import { getMDXComponent } from "next-contentlayer/hooks";
 import dynamic from "next/dynamic";
 import Breadcrumbs from "~components/breadcrumbs";
 import Main from "~components/main";
-import NoteViews from "~components/note-views";
 import TransitionLayout from "~components/transition-layout";
 import { tw } from "~lib/helpers";
 import { ABSOLUTE_OG_URL, SITE_URL } from "~lib/utils/constants";
@@ -16,8 +15,10 @@ const Video = dynamic(() => import("~components/video"));
 const ReadingTime = dynamic(() => import("~components/reading-time"));
 const LightboxImage = dynamic(() => import("~ui/images/lightbox-image"));
 const BackToTop = dynamic(() => import("~components/back-to-top"));
+const NoteViews = dynamic(() => import("~components/note-views"));
+const Reactions = dynamic(() => import("~components/reactions"));
 
-export const revalidate = 60;
+export const revalidate = 0;
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return allNotes.map((item) => ({ slug: item.slug.replace("notes/", "") }));
@@ -103,8 +104,8 @@ export default async function NotePage({
                   )}
                 >
                   {format(new Date(date) ?? new Date(), "LLLL d, yyyy")}.{" "}
-                  <ReadingTime content={body.raw} /> /{" "}
-                  <NoteViews slug={slug} title={title} /> views
+                  <ReadingTime content={body.raw} /> / <NoteViews slug={slug} />{" "}
+                  views
                 </Paragraph>
               </div>
             </section>
@@ -123,7 +124,8 @@ export default async function NotePage({
                 بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
               </p>
               <Content components={{ Video, LightboxImage }} />
-              <div className="w-full flex justify-end items-center mt-10">
+              <div className="w-full flex justify-between items-center mt-10">
+                <Reactions slug={slug} />
                 <BackToTop />
               </div>
             </article>

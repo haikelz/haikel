@@ -35,7 +35,7 @@ export function WorksList({ works }: { works: Works[] }) {
           key={index + 1}
           className={tw(
             "p-4 w-full bg-white dark:bg-base-0 group cursor-pointer flex flex-col",
-            "flex-wrap border border-dashed border-base-4 dark:border-base-5 shadow-sm"
+            "flex-wrap border border-dashed border-base-4 dark:border-base-5"
           )}
         >
           <div>

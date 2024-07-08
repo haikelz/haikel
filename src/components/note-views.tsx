@@ -1,48 +1,17 @@
 "use client";
 
-import { useQuery } from "@tanstack/react-query";
-import { ofetch } from "ofetch";
-import { env } from "~env.mjs";
-import { CONDITION } from "~lib/utils/constants";
+import { keepPreviousData } from "@tanstack/react-query";
+import { trpc } from "~lib/utils/trpc/client";
 
-const { NEXT_PUBLIC_DEVELOPMENT_URL, NEXT_PUBLIC_PRODUCTION_URL } = env;
-
-type ViewsProps = {
-  count: number;
-};
-
-async function postViews(slug: string, title: string): Promise<number> {
-  const response: ViewsProps = await ofetch(
-    `${
-      CONDITION === "development"
-        ? NEXT_PUBLIC_DEVELOPMENT_URL
-        : NEXT_PUBLIC_PRODUCTION_URL
-    }/api/pageviews`,
+export default function NoteViews({ slug }: { slug: string }) {
+  const { data } = trpc.pageviews.post.useQuery(
+    { slug },
     {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ slug, title }),
+      refetchOnReconnect: false,
+      refetchOnWindowFocus: false,
+      placeholderData: keepPreviousData,
     }
   );
 
-  return response.count;
-}
-
-export default function NoteViews({
-  slug,
-  title,
-}: {
-  slug: string;
-  title: string;
-}) {
-  const { data } = useQuery({
-    queryKey: ["pageviews"],
-    queryFn: () => postViews(slug, title),
-    refetchOnReconnect: false,
-    refetchOnWindowFocus: false,
-  });
-
-  return data;
+  return data?.count;
 }

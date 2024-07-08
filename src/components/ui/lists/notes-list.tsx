@@ -22,7 +22,7 @@ export function NotesList({
           key={note.slug}
           className={tw(
             "p-4 w-full flex flex-col bg-white dark:bg-base-0",
-            "flex-wrap border border-dashed border-base-4 dark:border-base-5 shadow-sm"
+            "flex-wrap border border-dashed border-base-4 dark:border-base-5"
           )}
         >
           <div>

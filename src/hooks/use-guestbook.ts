@@ -14,18 +14,21 @@ type UseGuestbookProps<T> = {
   deleteKey: T;
 };
 
-export function useGuestbook(
-  { getKey, postKey, updateKey, deleteKey }: UseGuestbookProps<string | number>
-) {
+export function useGuestbook({
+  getKey,
+  postKey,
+  updateKey,
+  deleteKey,
+}: UseGuestbookProps<string | number>) {
   const queryClient: QueryClient = useQueryClient();
 
-  const postMutation = trpc.post.useMutation({
+  const postMutation = trpc.guestbook.post.useMutation({
     mutationKey: [postKey],
     onSettled: async () =>
       await queryClient.invalidateQueries({ queryKey: [postKey], exact: true }),
   });
 
-  const updateMutation = trpc.patch.useMutation({
+  const updateMutation = trpc.guestbook.patch.useMutation({
     mutationKey: [updateKey],
     onSettled: async () =>
       await queryClient.invalidateQueries({
@@ -34,7 +37,7 @@ export function useGuestbook(
       }),
   });
 
-  const deleteMutation = trpc.delete.useMutation({
+  const deleteMutation = trpc.guestbook.delete.useMutation({
     mutationKey: [deleteKey],
     onSettled: async () =>
       await queryClient.invalidateQueries({
@@ -43,7 +46,7 @@ export function useGuestbook(
       }),
   });
 
-  const get = trpc.get.useQuery(
+  const get = trpc.guestbook.get.useQuery(
     {
       key: getKey,
     },

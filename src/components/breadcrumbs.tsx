@@ -11,7 +11,7 @@ export default function Breadcrumbs() {
   const lastIndexPathname = pathnames[pathnames.length - 1];
 
   return (
-    <div className="bg-base-5 dark:bg-base-1 rounded-md font-semibold px-2 py-1 w-fit">
+    <div className="border border-dashed border-base-4 dark:border-base-5 bg-base-5 dark:bg-base-1 font-semibold px-2 py-1 w-fit">
       <Link href="/">Home</Link> <span>{" > "}</span>
       {pathnames.slice(0, pathnames.length - 1).map((item, index) => (
         <Fragment key={index + 1}>
@@ -19,10 +19,7 @@ export default function Breadcrumbs() {
           <span>{" > "}</span>
         </Fragment>
       ))}
-      <Link
-        href={`/${pathnames.join("/")}`}
-        className="font-black underline decoration-dashed underline-offset-4"
-      >
+      <Link href={`/${pathnames.join("/")}`} className="font-black">
         {lastIndexPathname.length > 10
           ? lastIndexPathname.slice(0, 10) + "..."
           : lastIndexPathname}
