@@ -6,7 +6,11 @@ import {
   patchGuestbook,
   postGuestbook,
 } from "~features";
-import { postPageViews, postReactions } from "~features/notes.feature";
+import {
+  getReactions,
+  postPageViews,
+  postReactions,
+} from "~features/notes.feature";
 
 const t = initTRPC.create();
 
@@ -55,6 +59,12 @@ export const appRouter = router({
       }),
   },
   reactions: {
+    get: publicProcedure
+      .input(z.object({ slug: z.string() }))
+      .query(async ({ input }) => {
+        const response = await getReactions(input);
+        return response;
+      }),
     post: publicProcedure
       .input(z.object({ slug: z.string() }))
       .mutation(async ({ input }) => {

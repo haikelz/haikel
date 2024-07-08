@@ -35,6 +35,20 @@ export async function postPageViews(input: { slug: string }) {
   };
 }
 
+export async function getReactions(input: { slug: string }) {
+  const data = await db
+    .select()
+    .from(reactions)
+    .where(eq(reactions.slug, input.slug))
+    .all();
+
+  const love = !data.length ? 0 : Number(data[0].love);
+
+  return {
+    love,
+  };
+}
+
 export async function postReactions(input: { slug: string }) {
   const data = await db
     .select()
