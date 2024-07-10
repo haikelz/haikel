@@ -13,7 +13,7 @@ import Main from "~components/main";
 import TransitionLayout from "~components/transition-layout";
 import LightboxImage from "~components/ui/images/lightbox-image";
 import { sortedAllNotes, sortedAllWorks } from "~features";
-import { tw } from "~lib/helpers";
+import { tw } from "~lib/utils/tw";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { ibmPlexMono } from "~lib/utils/fonts";
 import { NotesList, WorksList } from "~ui/lists";

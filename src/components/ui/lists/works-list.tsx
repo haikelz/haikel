@@ -1,7 +1,7 @@
 import { Works } from "contentlayer/generated";
 import Link from "next/link";
 import { match } from "ts-pattern";
-import { tw } from "~lib/helpers";
+import { tw } from "~lib/utils/tw";
 import { inter } from "~lib/utils/fonts";
 import {
   ChakrauiIcon,

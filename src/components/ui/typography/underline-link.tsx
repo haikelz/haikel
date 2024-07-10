@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { LinkHTMLAttributes } from "react";
-import { tw } from "~lib/helpers";
+import { tw } from "~lib/utils/tw";
 
 type UnderlineLinkProps = LinkHTMLAttributes<HTMLAnchorElement> & {
   href: string;

@@ -4,7 +4,7 @@ import { MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { match } from "ts-pattern";
 import TransitionLayout from "~components/transition-layout";
-import { tw } from "~lib/helpers";
+import { tw } from "~lib/utils/tw";
 
 export default function SwitchTheme() {
   const { theme, setTheme } = useTheme();

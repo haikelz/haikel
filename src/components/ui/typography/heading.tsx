@@ -1,6 +1,6 @@
 import { HTMLAttributes } from "react";
 import { match } from "ts-pattern";
-import { tw } from "~lib/helpers";
+import { tw } from "~lib/utils/tw";
 
 type HeadingProps = HTMLAttributes<HTMLHeadingElement> & {
   as: "h1" | "h2" | "h3" | "h4";

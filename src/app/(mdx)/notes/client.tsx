@@ -7,7 +7,7 @@ import { SearchIcon } from "lucide-react";
 import { useDeferredValue, useMemo } from "react";
 import { P, match } from "ts-pattern";
 import { sortedAllNotes } from "~features";
-import { tw } from "~lib/helpers";
+import { tw } from "~lib/utils/tw";
 import { NotesList } from "~ui/lists";
 import { Paragraph } from "~ui/typography";
 

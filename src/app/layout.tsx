@@ -3,7 +3,7 @@ import "@unocss/reset/tailwind.css";
 import { Metadata, Viewport } from "next";
 import Footer from "~components/footer";
 import Header from "~components/header";
-import { tw } from "~lib/helpers";
+import { tw } from "~lib/utils/tw";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { ibmPlexMono, inter } from "~lib/utils/fonts";
 

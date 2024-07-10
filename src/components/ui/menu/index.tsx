@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { match } from "ts-pattern";
 import TransitionLayout from "~components/transition-layout";
 import { useDisableScroll } from "~hooks";
-import { tw } from "~lib/helpers";
+import { tw } from "~lib/utils/tw";
 import { isOpenAtom } from "~store";
 
 import { UnderlineLink } from "../typography";

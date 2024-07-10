@@ -1,5 +1,5 @@
 import Main from "~components/main";
-import { tw } from "~lib/helpers";
+import { tw } from "~lib/utils/tw";
 
 export default function LoadingClient() {
   const array: Array<number> = [1, 2, 3, 4, 5];

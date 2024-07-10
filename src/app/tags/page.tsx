@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { Suspense, useMemo } from "react";
 import Main from "~components/main";
 import TransitionLayout from "~components/transition-layout";
-import { tw } from "~lib/helpers";
+import { tw } from "~lib/utils/tw";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { Heading, Paragraph } from "~ui/typography";
 

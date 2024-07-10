@@ -1,5 +1,5 @@
 import { HTMLAttributes } from "react";
-import { tw } from "~lib/helpers";
+import { tw } from "~lib/utils/tw";
 
 type ParagraphProps = HTMLAttributes<HTMLParagraphElement>;
 

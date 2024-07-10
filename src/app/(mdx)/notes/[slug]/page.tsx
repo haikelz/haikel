@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import Breadcrumbs from "~components/breadcrumbs";
 import Main from "~components/main";
 import TransitionLayout from "~components/transition-layout";
-import { tw } from "~lib/helpers";
+import { tw } from "~lib/utils/tw";
 import { ABSOLUTE_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { inter, naskhArabic } from "~lib/utils/fonts";
 import { Heading, Paragraph } from "~ui/typography";

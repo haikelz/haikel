@@ -6,7 +6,7 @@ import { P, match } from "ts-pattern";
 import Breadcrumbs from "~components/breadcrumbs";
 import Main from "~components/main";
 import TransitionLayout from "~components/transition-layout";
-import { tw } from "~lib/helpers";
+import { tw } from "~lib/utils/tw";
 import { ABSOLUTE_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { inter, naskhArabic } from "~lib/utils/fonts";
 import { Heading, UnderlineLink } from "~ui/typography";
@@ -21,9 +21,11 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return allWorks.map((item) => ({ slug: item.slug.replace("works/", "") }));
 }
 
-export async function generateMetadata(
-  { params }: { params: { slug: string } }
-): Promise<Metadata | undefined> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata | undefined> {
   const { slug } = params;
   const { title, description, author } = allWorks.find(
     (item) => item._raw.flattenedPath.replace("works/", "") === slug
@@ -56,9 +58,11 @@ export async function generateMetadata(
   };
 }
 
-export default async function DetailWorkPage(
-  { params }: { params: { slug: string } }
-) {
+export default async function DetailWorkPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const { slug } = params;
 
   const { body, title, author, preview, repo } = allWorks.find(

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef } from "react";
 import { useScroll } from "~hooks";
-import { tw } from "~lib/helpers";
+import { tw } from "~lib/utils/tw";
 
 import Menu, { OpenMenu } from "./ui/menu";
 import { UnderlineLink } from "./ui/typography";

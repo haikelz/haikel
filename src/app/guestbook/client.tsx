@@ -12,7 +12,7 @@ import { useForm } from "react-hook-form";
 import { P, match } from "ts-pattern";
 import Turnstile from "~components/turnstile";
 import { useGuestbook } from "~hooks";
-import { tw } from "~lib/helpers";
+import { tw } from "~lib/utils/tw";
 import { inter } from "~lib/utils/fonts";
 import { messageSchema } from "~lib/utils/form-schema";
 import { GoogleIcon } from "~ui/svgs";
@@ -53,26 +53,28 @@ export function FormAndGuestsList({ session }: { session: Session }) {
     // detect if value are edited
     match({ isEdited: isEdited })
       .with({ isEdited: true }, () =>
-        updateMutation.mutate({
-          id: id,
-          message: getValues("message"),
-        })
+        updateMutation
+          .mutateAsync({
+            id: id,
+            message: getValues("message"),
+          })
+          .then(() => get.refetch())
       )
       .otherwise(() =>
-        postMutation.mutate({
-          message: getValues("message"),
-          username: session?.user.name as string,
-          email: session?.user.email as string,
-        })
+        postMutation
+          .mutateAsync({
+            message: getValues("message"),
+            username: session?.user.name as string,
+            email: session?.user.email as string,
+          })
+          .then(() => get.refetch())
       );
 
     setValue("message", "");
-    window.location.reload();
   }
 
   function handleDelete(id: number) {
-    deleteMutation.mutate({ id: id });
-    window.location.reload();
+    deleteMutation.mutateAsync({ id: id }).then(() => get.refetch());
   }
 
   function handleEdit(id: number, message: string) {

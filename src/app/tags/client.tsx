@@ -4,7 +4,7 @@ import { allNotes } from "contentlayer/generated";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useMemo } from "react";
 import { P, match } from "ts-pattern";
-import { tw } from "~lib/helpers";
+import { tw } from "~lib/utils/tw";
 import { NotesList } from "~ui/lists";
 import { Paragraph } from "~ui/typography";
 

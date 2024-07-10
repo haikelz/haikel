@@ -14,7 +14,8 @@ export async function getGuestbook(): Promise<GuestbookProps[] | undefined> {
         created_at: guestbook.created_at,
       })
       .from(guestbook)
-      .orderBy(sql`${guestbook.id} desc`);
+      .orderBy(sql`${guestbook.id} desc`)
+      .all();
 
     return response;
   } catch (err: any) {
@@ -44,12 +45,10 @@ export async function deleteGuestbook(input: { id: number }): Promise<void> {
   }
 }
 
-export async function patchGuestbook(
-  input: {
-    message: string;
-    id: number;
-  }
-): Promise<void> {
+export async function patchGuestbook(input: {
+  message: string;
+  id: number;
+}): Promise<void> {
   try {
     await db
       .update(guestbook)

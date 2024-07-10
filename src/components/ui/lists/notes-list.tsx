@@ -3,7 +3,7 @@ import { format } from "date-fns";
 import Link from "next/link";
 import reactStringReplace from "react-string-replace";
 import { P, match } from "ts-pattern";
-import { tw } from "~lib/helpers";
+import { tw } from "~lib/utils/tw";
 import { inter } from "~lib/utils/fonts";
 import { Heading, Paragraph } from "~ui/typography";
 

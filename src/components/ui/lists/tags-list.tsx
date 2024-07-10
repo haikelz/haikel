@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { tw } from "~lib/helpers";
+import { tw } from "~lib/utils/tw";
 
 import { Paragraph } from "../typography";
 
