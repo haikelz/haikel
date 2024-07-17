@@ -11,11 +11,10 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Main from "~components/main";
 import TransitionLayout from "~components/transition-layout";
-import LightboxImage from "~components/ui/images/lightbox-image";
 import { sortedAllNotes, sortedAllWorks } from "~features";
-import { tw } from "~lib/utils/tw";
 import { DEFAULT_OG_URL, SITE_URL } from "~lib/utils/constants";
 import { ibmPlexMono } from "~lib/utils/fonts";
+import { tw } from "~lib/utils/tw";
 import { NotesList, WorksList } from "~ui/lists";
 import { Heading, Paragraph, UnderlineLink } from "~ui/typography";
 
@@ -141,11 +140,9 @@ function Intro() {
                 <button
                   type="button"
                   className={tw(
-                    "rounded-sm",
+                    "rounded-md",
                     "p-1",
-                    "hover:bg-base-5",
-                    "active:bg-base-4",
-                    "dark:hover:bg-base-2 dark:active:bg-base-1"
+                    "bg-base-5 dark:bg-base-1"
                   )}
                   aria-label={`Icon ${item.id.toString()}`}
                 >
@@ -168,7 +165,7 @@ function Experiences() {
         "mt-8 md:text-start w-full"
       )}
     >
-      <Heading as="h2">Experiences</Heading>
+      <Heading as="h2">Experience</Heading>
       <div className="w-full mt-4 space-y-5">
         <div className="w-full">
           <div className="flex flex-col md:flex-row w-full md:justify-between">

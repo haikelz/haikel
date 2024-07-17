@@ -1,0 +1,93 @@
+---
+author: Haikel
+title: Cara Melihat Status Rekomendasi Kampus Merdeka yang Tidak Muncul
+tags:
+  - msib
+  - intern
+date: 2024-07-17
+description: Melihat status rekomendasi Kampus Merdeka yang tidak muncul padahal rekomendasi sudah disetujui
+---
+
+Jadi, beberapa hari ini banyak orang yang dikejutkan dengan status rekomendasi MSIB Batch 7 yang kembali ke status belum melakukan rekomendasi, padahal kita sendiri sudah mendaftar ke berbagai mitra. Tenang saja, sebenarnya ini hanya masalah di Websitenya. Kita tinggal tunggu update fix bug dari developer platform Kampus Merdeka. Jika memang masih ragu dengan status rekomendasinya, temen - temen bisa mengeceknya dengan melakukan langkah - langkah berikut.
+
+**Note:** Cara ini mengharuskan temen - temen untuk menggunakan desktop / laptop. Karena kita akan menggunakan Postman. Download dulu [Postman](https://www.postman.com/) sesuai dengan OS desktop / laptop masing - masing.
+
+Berikut adalah langkah - langkahnya:
+
+- Pertama - tama, Login terlebih dahulu ke Website Kampus Merdeka. Kemudian pergi ke **Akun > Status Rekomendasi ke Program**. Nanti akan muncul tampilan seperti ini.
+
+<LightboxImage
+  src="https://ik.imagekit.io/haikelz/blog/cara-melihat-status-rekomendasi-kampus-merdeka-yang-tidak-muncul/screenshot-1.png?updatedAt=1721201652955"
+  alt="Status rekomendasi"
+/>
+
+Disini kita bisa melihat bahwa rekomendasinya tidak muncul padahal sudah disetujui.
+
+- Setelah itu, klik kanan pada mouse. Kemudian pilih **Inspect**. Nantinya akan muncul tampilan seperti ini:
+
+<LightboxImage
+  src="https://ik.imagekit.io/haikelz/blog/cara-melihat-status-rekomendasi-kampus-merdeka-yang-tidak-muncul/screenshot-2.png?updatedAt=1721201649949"
+  alt="Inspect"
+/>
+
+- Kemudian pilih tab Network
+
+<LightboxImage
+  src="https://ik.imagekit.io/haikelz/blog/cara-melihat-status-rekomendasi-kampus-merdeka-yang-tidak-muncul/screenshot-3.png?updatedAt=1721201649934"
+  alt="Inspect Network"
+/>
+
+Karena kita hanya ingin mendapatkan si API URL nya saja, jadi kita pilih **fetch/xhr**. Jika kita pilih **all**, maka semua assets termasuk gambar, fonts, akan ditampilkan juga.
+
+<LightboxImage
+  src="https://ik.imagekit.io/haikelz/blog/cara-melihat-status-rekomendasi-kampus-merdeka-yang-tidak-muncul/screenshot-4.png?updatedAt=1721201649543"
+  alt="Fetch and XHR"
+/>
+
+- Selanjutnya, kita akan mencari Request URL dan token yang didapat dari **Cookies** untuk kita Copy dan uji coba ke Postman. Coba scroll ke bawah, dan lihat apakah ada angka nomor 2 seperti gambar berikut:
+
+<LightboxImage
+  src="https://ik.imagekit.io/haikelz/blog/cara-melihat-status-rekomendasi-kampus-merdeka-yang-tidak-muncul/screenshot-5.png?updatedAt=1721201649617"
+  alt="API URL"
+/>
+
+- Jika ada, maka klik nomor 2 tersebut dan Copy si Request URL nya.
+
+<LightboxImage
+  src="https://ik.imagekit.io/haikelz/blog/cara-melihat-status-rekomendasi-kampus-merdeka-yang-tidak-muncul/screenshot-6.png?updatedAt=1721201649484"
+  alt="API URL (2)"
+/>
+
+- Kemudian kita pergi ke tab **Application**, setelah itu pilih **Cookies**. Copy semua value dari `mbkmtoken`.
+
+<LightboxImage
+  src="https://ik.imagekit.io/haikelz/blog/cara-melihat-status-rekomendasi-kampus-merdeka-yang-tidak-muncul/screenshot-7.png?updatedAt=1721201649743"
+  alt="MBKM Token"
+/>
+
+- Setelah selesai, selanjutnya buka Postman. Tampilan awalnya adalah seperti ini:
+
+<LightboxImage
+  src="https://ik.imagekit.io/haikelz/blog/cara-melihat-status-rekomendasi-kampus-merdeka-yang-tidak-muncul/screenshot-8.png?updatedAt=1721201649851"
+  alt="Postman UI"
+/>
+
+- Paste Request URL dan `mbkmtoken` yang telah dicopy tadi ke Postman seperti gambar berikut:
+
+<LightboxImage
+  src="https://ik.imagekit.io/haikelz/blog/cara-melihat-status-rekomendasi-kampus-merdeka-yang-tidak-muncul/screenshot-9.png?updatedAt=1721201649747"
+  alt="Paste copied API URL and MBKM Token to Postman"
+/>
+
+Untuk mengisi token, teman - teman bisa langsung aja pilih tab **Authorization**, dan ubah `Type` nya ke `Bearer Token`. Oh iya Endpointnya disini mesti kita ubah.
+
+Endpoint 2023/2 menandakan rekomendasi yang kita buat untuk MSIB 6. Jadi, untuk memeriksa rekomendasi MSIB Batch 7, maka kita ubah ke 2024/1. Setelah selesai, klik **Send**.
+
+Berikut adalah contoh Response Data yang didapat:
+
+<LightboxImage
+  src="https://ik.imagekit.io/haikelz/blog/cara-melihat-status-rekomendasi-kampus-merdeka-yang-tidak-muncul/screenshot-11.png?updatedAt=1721201649788"
+  alt="Response data"
+/>
+
+Seperti yang kita lihat, bahwa rekomendasi kita ke program sebenarnya tidak ada masalah atau tidak berubah sama sekali.
