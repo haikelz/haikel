@@ -139,11 +139,7 @@ function Intro() {
               <Link href={item.route} target="_blank">
                 <button
                   type="button"
-                  className={tw(
-                    "rounded-md",
-                    "p-1",
-                    "bg-base-5 dark:bg-base-1"
-                  )}
+                  className={tw("rounded-md", "p-1")}
                   aria-label={`Icon ${item.id.toString()}`}
                 >
                   <Icon size={20} />

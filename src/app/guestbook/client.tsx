@@ -12,14 +12,13 @@ import { useForm } from "react-hook-form";
 import { P, match } from "ts-pattern";
 import Turnstile from "~components/turnstile";
 import { useGuestbook } from "~hooks";
-import { tw } from "~lib/utils/tw";
 import { inter } from "~lib/utils/fonts";
 import { messageSchema } from "~lib/utils/form-schema";
+import { tw } from "~lib/utils/tw";
 import { GoogleIcon } from "~ui/svgs";
-import { Paragraph } from "~ui/typography";
+import { Heading, Paragraph, UnderlineLink } from "~ui/typography";
 
-import ErrorClient from "./error-client";
-import LoadingClient from "./loading-client";
+import Main from "~components/main";
 
 const idAtom = atom<number>(0);
 const isEditedAtom = atom<boolean>(false);
@@ -290,5 +289,35 @@ export function SignOut() {
     >
       here
     </button>
+  );
+}
+
+function LoadingClient() {
+  const array: Array<number> = [1, 2, 3, 4, 5];
+
+  return (
+    <Main className={tw("flex flex-col items-start justify-start", "py-8")}>
+      <div className="h-14 mb-4 animate-pulse bg-base-5 dark:bg-base-1 w-72"></div>
+      {array.map((item) => (
+        <div key={item} className={tw(item === 1 ? "" : "mt-10")}>
+          <div className="h-6 w-64 animate-pulse bg-base-5 dark:bg-base-1"></div>
+          <div className="h-6 w-64 animate-pulse bg-base-5 dark:bg-base-1 mt-4"></div>
+        </div>
+      ))}
+    </Main>
+  );
+}
+
+function ErrorClient() {
+  return (
+    <Main className="flex min-h-screen flex-col items-center justify-center text-center">
+      <section className="flex flex-col items-center">
+        <Heading as="h1">Error!</Heading>
+        <Paragraph className="mt-2 font-semibold">
+          Error while fetching data!{" "}
+          <UnderlineLink href="/">Back to Home</UnderlineLink>
+        </Paragraph>
+      </section>
+    </Main>
   );
 }
