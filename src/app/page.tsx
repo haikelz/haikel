@@ -1,5 +1,6 @@
 import {
   FacebookIcon,
+  FileText,
   GithubIcon,
   InstagramIcon,
   LinkedinIcon,
@@ -19,28 +20,29 @@ import { NotesList, WorksList } from "~ui/lists";
 import { Heading, Paragraph, UnderlineLink } from "~ui/typography";
 
 const socialMediaList = [
-  { id: 1, icon: MailIcon, route: "mailto:halo@ekel.dev", title: "E-mail" },
-  { id: 2, icon: RssIcon, route: "https://ekel.dev/rss.xml", title: "RSS" },
+  { id: 1, icon: FileText, route: "/CV.pdf", title: "CV" },
+  { id: 2, icon: MailIcon, route: "mailto:halo@ekel.dev", title: "E-mail" },
+  { id: 3, icon: RssIcon, route: "https://ekel.dev/rss.xml", title: "RSS" },
   {
-    id: 3,
+    id: 4,
     icon: FacebookIcon,
     route: "https://facebook.com/kelgfx",
     title: "Facebook",
   },
   {
-    id: 4,
+    id: 5,
     icon: InstagramIcon,
     route: "https://instagram.com/ekel.tsx",
     title: "Instagram",
   },
   {
-    id: 5,
+    id: 6,
     icon: GithubIcon,
     route: "https://github.com/haikelz",
     title: "Github",
   },
   {
-    id: 6,
+    id: 7,
     icon: LinkedinIcon,
     route: "https://www.linkedin.com/in/haikel",
     title: "Linkedin",

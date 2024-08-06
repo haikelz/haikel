@@ -1,6 +1,6 @@
 FROM node:alpine AS build
 
-RUN npm install -g pnpm turbo
+RUN npm install -g pnpm
 WORKDIR /app
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
@@ -9,6 +9,6 @@ COPY package.json pnpm-lock.yaml ./
 RUN pnpm install
 
 COPY . ./
-RUN turbo run build
+RUN pnpm run build
 
-CMD ["turbo", "run", "dev"]
+CMD ["pnpm", "run", "dev"]
