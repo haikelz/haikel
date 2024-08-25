@@ -1,0 +1,12 @@
+---
+const { src, title} = Astro.props
+---
+
+ <div class="relative my-4 h-0 max-w-full overflow-hidden rounded-md pb-[56.25%]">
+      <iframe
+        src={src}
+        title={title}
+        allow="autoplay"
+        class="absolute left-0 top-0 aspect-video h-full w-full border-0"
+      />
+    </div>

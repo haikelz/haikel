@@ -1,0 +1,33 @@
+---
+author: Haikel
+title: Migrasi Dari VScode ke Neovim
+tags:
+  - text-editor
+  - neovim
+  - vscode
+date: 2021-12-08
+description: Pindah Text Editor!!
+---
+
+**Update 2022-12-05:** Saya udah balik lagi ke VSCode wkwk(tetep pake keybinding Vim).
+
+[Visual Studio Code](https://code.visualstudio.com/) adalah sebuah text editor yang menawarkan banyak fitur, tapi sayangnya tidak terlalu ramah kepada low devices. Karena laptop saya juga termasuk kelas low, jadi saya pun memutuskan untuk pindah ke [Neovim](https://neovim.io/). Tulisan ini adalah tentang pengalaman saya beralih dari VScode ke Neovim, jadi tidak ada tutorial untuk setup Neovim disini.
+
+## Mengapa Neovim?
+
+Neovim itu fork dari [vim](https://www.vim.org/), dan menawarkan berbagai peningkatan dari vim. Kebetulan, sebelum full pindah ke Neovim, saya sudah memakai vim. Hanya saja vim nya saya pakai buat ngedit file sederhana saja, text editor utamanya ya tetep VScode.
+
+Kalau mau install, sesuaikan saja dengan distronya. Disini saya pakai Artix, jadi tinggal ketik `sudo pacman -S neovim`.
+
+Setelah pindah ke neovim, saya pun memutuskan untuk menggunakan konfigurasi yang ready atau siap pakai seperti <b><s>NvChad</s></b> [CosmicNvim](https://github.com/CosmicNvim/CosmicNvim). Mengapa ga setup sendiri? Waktunya eui, kurang. Jadi mending ngambil yang udah siap aja.
+
+<LightboxImage
+  src="https://ik.imagekit.io/haikelz/blog/vscode-neovim/neovim.png?updatedAt=1720370498003"
+  alt="NvChad"
+/>
+
+Saat memakai vim/neovim, dianjurkan untuk menggunakan **hjkl** ketimbang arrow keys, katanya karena biar jangkauan jari dengan huruf lain tidak terlalu jauh, misal kalo mau ke mode **insert**, kan deket tuh. Atau mode **visual** juga deket, sehingga hal ini membuatnya terasa lebih efisien ketimbang menggunakan tanda panah biasa.
+
+Tapi serius, hal ini memang agak susah. Seperti kebanyakan user lainnya yang baru pindah ke vim/neovim, saya udah kebiasaan pake navigasi panah atas bawah kanan kiri. But yeah, ini soal waktu aja sih. Lama-lama juga terbiasa.
+
+Untuk lebih lanjut mengenai mengapa penggunaan tanda panah di vim/neovim tidak dianjurkan, bisa dilihat [disini](https://superuser.com/questions/599150/why-arrow-keys-are-not-recommended-in-vim/599230)

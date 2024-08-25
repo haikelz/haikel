@@ -1,0 +1,11 @@
+---
+
+const {title, description } = Astro.props
+---
+
+    <main
+      class:list={["container mx-auto max-w-2xl tracking-wide", Astro.props.class]}
+      {...Astro.props}
+    >
+      <slot/>
+    </main>

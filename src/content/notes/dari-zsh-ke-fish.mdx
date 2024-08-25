@@ -1,0 +1,138 @@
+---
+author: Haikel
+title: Dari zsh ke fish
+tags:
+  - linux
+  - zsh
+  - fish
+date: 2022-06-28
+description: Catatan saya mengenai migrasi dari zsh ke fish dan bagaimana rasanya
+---
+
+## Pendahuluan
+
+Seperti yang kita tahu, zsh(**z**-**sh**ell) adalah sebuah shell yang commandnya mirip-mirip dengan sh. Bisa dibilang ini sh versi improvement dengan berbagai macam kustomisasi. Belakangan ini, saya tertarik untuk pindah ke fish(**f**riendly **i**nteractive **sh**ell), yang katanya udah banyak fitur out of the box. Di zsh, kita tidak akan mendapatkan itu dan yeps, mesti konfigurasi sendiri buat dapetin fitur kayak autocomplete, dan lainnya.
+
+**Mengapa saya pindah ke fish?**
+
+- Penasaran fish kayak gimana. Banyak yang bilang lebih bagus dan cepat ketimbang zsh.
+- Seperti yang sudah saya bilang di awal, untuk mendapatkan berbagai fitur yang mempermudah hidup, kita mesti konfigurasi dulu si zsh. Kalo di fish, "katanya" sih ga perlu ngonfig lagi. Jadi tinggal pakai. Inilah yang membuatnya menarik.
+
+## Proses Migrasi
+
+### 1. Instalasi fish
+
+Disini saya pake distro ubuntu based.
+
+```sh
+sudo apt-add-repository ppa:fish-shell/release-3
+sudo apt update
+sudo apt install fish
+```
+
+Untuk yang pake arch based, bisa install dengan perintah `sudo pacman -S fish`. Sebelum ngerubah default shellnya, mari kita cek si fish nya ada dimana:
+
+```sh
+~
+❯ which fish
+/usr/bin/fish
+```
+
+Seperti yang tertera, fish saya berada di `/usr/bin/fish`(tiap orang beda-beda, makanya cek dulu fish nya temen-temen ada dimana).
+
+Ubah default shell ke fish:
+
+```sh
+chsh -s /usr/bin/fish
+```
+
+Kalo udah, tinggal logout dan login lagi untuk melihat perubahannya.
+
+Oh ya soal konfigurasi, memang rada beda ama zsh. Untuk file confignya, bisa ditemukan di `~/.config/fish/config.fish`. Berikut contoh konfigurasi fish saya:
+
+```sh title="~/.config/fish/config.fish"
+set -Ua fish_user_paths ~/flutter/bin
+set -Ua fish_user_paths ~/Android/Sdk/cmdline-tools/latest/bin
+# export PATH=$ANDROID_SDK_ROOT/bin:$PATH
+
+# Golang
+set -Ua fish_user_paths /usr/local/go/bin
+
+# NodeJS fix Issues
+# export NODE_OPTIONS=--openssl-legacy-provider
+
+alias nv="~/.local/share/applications/Neovim/./nvim.appimage"
+
+# set -Ua fish_user_paths SDKMAN_DIR="~/.sdkman"
+# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# THEME PURE #
+set fish_function_path /home/yuu/.config/fish/functions/theme-pure/functions/ $fish_function_path
+source /home/yuu/.config/fish/functions/theme-pure/conf.d/pure.fish
+```
+
+Abaikan yang masih ada tulisan `export` nya. Ini awalnya konfigurasi zsh saya, kemudian saya pindahin ke fish. Dan masih sederhana juga. Namanya baru pindah yak, jadi menyesuaikan dulu.
+
+Untuk lebih detailnya, bisa lihat ke repositori [dotfiles saya](https://github.com/haikelz/dot/blob/master/.config/fish/config.fish)
+
+### 2. Instalasi oh-my-fish
+
+**oh-my-fish** kurang lebih sama saja fungsinya dengan **oh-my-zsh di zsh.** Untuk menginstallnya, kita masukkan perintah:
+
+```sh
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+```
+
+<LightboxImage
+  src="https://ik.imagekit.io/haikelz/blog/dari-fish-ke-zsh/oh-my-fish.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669162175073"
+  alt="oh-my-fish"
+/>
+
+Jika temen-temen mau ganti tema, bisa lihat daftarnya [disini](https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md). Disini, saya akan mengganti tema defaultnya ke pure(yep pas di zsh, saya juga pake pure).
+
+```sh
+curl git.io/pure-fish --output /tmp/pure_installer.fish --location --silent
+source /tmp/pure_installer.fish; and install_pure
+```
+
+Ganti directory `/tmp/` dengan directory yang temen-temen inginkan.
+
+**Sedikit Demo, hehe :D**
+
+<Video src="https://streamable.com/e/j7ac0d" title="Fish Demo" />
+
+### 3. Uninstall zsh dan oh-my-zsh
+
+Sebenarnya ini opsional, tapi karena default shellnya udah di fish, maka saya uninstall zsh beserta oh-my-zsh nya.
+
+```sh
+sudo apt --purge remove zsh
+```
+
+<LightboxImage
+  src="https://ik.imagekit.io/haikelz/blog/dari-fish-ke-zsh/uninstall-zsh.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669162135308"
+  alt="Uninstall zsh"
+/>
+
+Untuk uninstall oh-my-zsh, lakukan cara berikut:
+
+- Pergi ke direktori `~/.oh-my-zsh/tools/`
+- Nah disitu ada file yang namanya `uninstall.sh`
+- Ubah filenya jadi executable dengan perintah `sudo chmod 777 uninstall.sh`
+- Kemudian uninstall oh-my-zsh dengan `./uninstall.sh`
+
+<LightboxImage
+  src="https://ik.imagekit.io/haikelz/blog/dari-fish-ke-zsh/uninstall-oh-my-zsh.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669162160120"
+  alt="Uninstall oh-my-zsh"
+/>
+
+Dia bakal ngembaliin default shellnya ke sh. Dalam hal ini, kita rubah lagi ke fish dengan `chsh -s /usr/bin/fish`
+
+## Penutup
+
+Yeps sekian aja catatan ini. So far aman, dan nyaman juga pake fish. Ga terlalu mikirin time execution juga sih seperti kata orang-orang, cuma murni pengen nyoba hal yang baru aja. **Terima kasih 🌸**
+
+## Referensi
+
+- [Fish vs. Zsh vs. Bash and Why You Should Switch to Fish](https://betterprogramming.pub/fish-vs-zsh-vs-sh-reasons-why-you-need-to-switch-to-fish-4e63a66687eb)
+- [fish official website](https://fishshell.com/)

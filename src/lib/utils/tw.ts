@@ -1,0 +1,11 @@
+import clsx, { type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+/**
+ * A function that combine clsx with tailwind merge
+ *
+ * @param {ClassValue[]} classes className
+ * @returns {string} class
+ */
+export const tw = (...classes: ClassValue[]): string =>
+  twMerge(clsx(...classes));

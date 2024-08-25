@@ -3,6 +3,9 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "commit": "cz",
+    "prepare": "husky install",
+    "format": "prettier . --write",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
@@ -10,8 +13,35 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.14.5",
     "@astrojs/check": "^0.9.3",
+    "@astrojs/mdx": "^3.1.4",
+    "@astrojs/react": "^3.6.2",
+    "@astrojs/rss": "^4.0.7",
+    "@marsidev/react-turnstile": "^1.0.0",
+    "@types/react": "^18.3.4",
+    "@types/react-dom": "^18.3.0",
+    "astro": "^4.14.5",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.3.30",
+    "lucide-react": "^0.435.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.5.2",
     "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.2.0",
+    "@typescript-eslint/parser": "^8.2.0",
+    "@unocss/postcss": "^0.62.3",
+    "@unocss/preset-wind": "^0.62.3",
+    "@unocss/reset": "^0.62.3",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^9.9.1",
+    "eslint-plugin-astro": "^1.2.3",
+    "eslint-plugin-jsx-a11y": "^6.9.0",
+    "husky": "^9.1.5",
+    "postcss": "^8.4.41",
+    "unocss": "^0.62.3"
   }
 }

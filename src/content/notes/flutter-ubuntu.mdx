@@ -1,0 +1,73 @@
+---
+author: Haikel
+title: Setup Flutter dan Android SDK di Ubuntu Linux
+tags:
+  - linux
+  - flutter
+  - android
+date: 2022-04-04
+description: Setup Flutter serta Android SDK
+---
+
+Flutter adalah Framework Dart yang sering digunakan untuk Mobile App Development. Flutter juga bisa dipakai untuk Web, tapi ya performanya jelas belum terlalu bagus ketimbang Web konvensional yang memakai HTML CSS JS.
+
+Ada 2 cara menginstall Flutter di Ubuntu, yakni dengan Snapd dan manual. Tapi dalam hal ini, saya memilih untuk menginstallnya secara manual.
+
+1. Download Flutternya [disini](https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_2.10.4-stable.tar.xz), atau temen-temen juga bisa langsung clone Github Reponya si Flutter, pilih branch yang diinginkan. Defaultnya di branch `master`.
+
+2. Letakin Folder Flutternya. Terserah sih mau dimana, tapi saran saya letakin di `home/user/` aja.
+
+3. Tambahin path Flutter ke `.bashrc`, atau `.zshrc` jika temen-temen pake shell **zsh**. Karena saya ngeletakin folder Flutternya di `home/user/`, jadi:
+
+```sh
+export PATH=$PATH:~/flutter/bin
+```
+
+4. Setelah itu, coba close terminal dan buka terminalnya lagi. Kemudian kita ingin memeriksa apa-apa saja yang belum kita siapkan:
+
+```sh
+flutter doctor
+```
+
+<LightboxImage
+  src="https://ik.imagekit.io/haikelz/blog/flutter-ubuntu/2022-04-04-04-33.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669161855184"
+  alt="flutter doctor"
+/>
+
+Biasanya kalo temen-temen install IDE Android Studio, dia udah include sama Android SDK. Nah bagaimana kalau kita mau develop Flutter pake VSCode dan bukannya Android Studio?
+
+Oleh karena itu, Android SDK nya kita perlu install secara manual.
+
+Untuk install Android SDK:
+
+1. Pergi ke situsnya [developer android](https://developer.android.com/studio/releases/platform-tools), pilih "Download SDK Platform-Tools for Linux", kemudian Accept Terms and Conditions nya untuk mendownload.
+
+<LightboxImage
+  src="https://ik.imagekit.io/haikelz/blog/flutter-ubuntu/Screenshot-20220403-144926.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669161855238"
+  alt="Accept Terms and Conditions"
+/>
+
+2. Kemudian, tambahin path nya ke `.bashrc` atau `.zshrc`. Karena saya letakin si Android SDK ini di tempat
+   yang sama dengan Flutter tadi, yakni `home/user/`, jadi:
+
+```sh
+export PATH=$PATH:~/Android/Sdk/cmdline-tools/latest/bin
+```
+
+Kalo udah, close terminalnya.
+
+3. Nah, kemudian kita perlu untuk menginstall cmdline-tools dengan `sdkmanager`. Buka terminalnya lagi, ketikkan:
+
+```sh
+sdkmanager --install "cmdline-tools;latest"
+```
+
+4. Setelah itu, kita akan Accept Android Licences nya:
+
+```sh
+flutter doctor --android-licences
+```
+
+Selesai.
+
+**Tambahan:** Kalo sekiranya pengen ngetes Appnya langsung di Real Device, jangan lupa aktifkan USB Debugging di hpnya.

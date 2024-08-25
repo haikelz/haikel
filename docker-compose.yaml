@@ -1,0 +1,14 @@
+version: "3.5"
+
+services:
+  app:
+    container_name: haikel_astro
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.astro
